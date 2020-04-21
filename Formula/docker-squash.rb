@@ -12,6 +12,7 @@ class DockerSquash < Formula
     sha256 "acf125fff4af17093f168aa89c5e1d5842970435f1016749e4250d37d5653552" => :catalina
     sha256 "cdeaa159137369db885656b13f7f893b0ebff19898eabb3577d3fcac567b5f8d" => :mojave
     sha256 "afdfce8a93406db973df50f90527e4554769207e0c3b0b5de323fe2b0de1a419" => :high_sierra
+    sha256 "4a352212c85831f34d47a3d709124d83176654abaf40d60c790f6454ee15b002" => :x86_64_linux
   end
 
   depends_on "python@3.8"
