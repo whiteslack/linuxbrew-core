@@ -13,6 +13,7 @@ class Osc < Formula
     sha256 "d3904d858e171e390e66557cac6adfcb4088763cfc3d9d20d4db230a18a29325" => :catalina
     sha256 "3fa16b437b3b85f672f35b4ca47c588edd5dcdd04a088b9e198abeb65c1cff33" => :mojave
     sha256 "f140234da093e1ed0a0cc586e6972a690131991e5667cee4147ea5eed1c0a2d1" => :high_sierra
+    sha256 "20b8838573b0f87b1e834ae8f4b812921a0a733c985e8d9015a0009868a3f23e" => :x86_64_linux
   end
 
   depends_on "swig" => :build
