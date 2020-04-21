@@ -14,6 +14,7 @@ class AzureCli < Formula
     sha256 "130fe5aebe5c7771877b31248813054c55a29ddbe9389812bde0c41452a28548" => :catalina
     sha256 "436f07e44ad20b6f6e67b06355c8ae653ad8a0b82b8b33339c52ef7210b2bbb8" => :mojave
     sha256 "cfbbdfc33121355b579dd478cc080628c5114bf0f9be7f077591dcdda4799f5a" => :high_sierra
+    sha256 "065e5cd01b206dac43e8e35277ca4f13fe41a0c2ff9c9117123800b0d25803dd" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
