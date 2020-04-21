@@ -13,6 +13,7 @@ class Peru < Formula
     sha256 "eb1e744ad4162d35a84ea7e2eb53450bcad6acf803dc874093b96e3c81f85c3f" => :mojave
     sha256 "785a37bcc0a2d972b62946d989226eb35d72896439c27c4ce8c34fa3c65b6e91" => :high_sierra
     sha256 "2344e0f5c3f03c8aab73eec642082f4a5913cbda9370483689b1cc154648666d" => :sierra
+    sha256 "96aa42c11964fa5326bcbca9af36d4e9af4d7c38a2904101f61aad3628664845" => :x86_64_linux
   end
 
   depends_on "python"
