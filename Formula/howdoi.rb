@@ -12,6 +12,7 @@ class Howdoi < Formula
     sha256 "b2a140c27beb5eb6cf0828112a4c90983014d36d50c66096a68773b0d47410a8" => :catalina
     sha256 "eba1481a04f930805a0033c3213ae837464c600d6bc4f7bf3a3db4d17e328ae2" => :mojave
     sha256 "bb5109a1450ea626cfaacae8001b086495ba7b33a14e7ea6b27dcb243f2421be" => :high_sierra
+    sha256 "21c5f70f0b5e7e87a468f1873bbf5c97c3e5fcf9cf1df1d5ffbeb72f2c2ea1e4" => :x86_64_linux
   end
 
   depends_on "python@3.8"
