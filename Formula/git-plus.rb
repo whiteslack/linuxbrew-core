@@ -13,6 +13,7 @@ class GitPlus < Formula
     sha256 "f4ef55a7a9983b50f263cadc7f11a18225ed7f1736bbeb1077aca7f4f3506362" => :catalina
     sha256 "c265fd83d70e9b889e14b43cc20cff89b996ce0f81b2a00e235025982914d509" => :mojave
     sha256 "b5d09be155b8d7bfa239d5030f4e0adfadf91c08d32e3f9900d89d2d0a813870" => :high_sierra
+    sha256 "0d5bd54544863c900279948733a9c7b351378fe430f9d9aa5aca2067273cc92f" => :x86_64_linux
   end
 
   depends_on "python@3.8"
