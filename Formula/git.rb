@@ -2,16 +2,14 @@ class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
   # Note: Please keep these values in sync with git-gui.rb when updating.
-  url "https://www.kernel.org/pub/software/scm/git/git-2.26.1.tar.xz"
-  sha256 "888228408f254634330234df3cece734d190ef6381063821f31ec020538f0368"
-  revision 1
+  url "https://www.kernel.org/pub/software/scm/git/git-2.26.2.tar.xz"
+  sha256 "6d65132471df9e531807cb2746f8be317e22a343b9385bbe11c9ce7f0d2fc848"
   head "https://github.com/git/git.git", :shallow => false
 
   bottle do
-    sha256 "8cfa59f2744db5265337345fca63c77bfa89c1485af954c9368c0a76e7bdadff" => :catalina
-    sha256 "e2451e6df655f129fa7cfcdf182efa8f44d3bfbd34441c9dd23d20d82b9b3fe9" => :mojave
-    sha256 "fd29207ec2ad82f05f0244c6156a4f267023c660ed315d65f5619fbeeb489045" => :high_sierra
-    sha256 "b11fac41b9ed5491b3175284fe9e046ae1a170b36b6ab478aeecffceb3ce84b6" => :x86_64_linux
+    sha256 "74d378f6530877383f38b6d1a923e85fcb8b724ab02c49a6857f92ecc1a0b88f" => :catalina
+    sha256 "24c59ff8304d769971f3ed812245b80e8e8b07e0564dd702d141038636b35592" => :mojave
+    sha256 "a2dbc7b901424f621f8832a0848f9ded2079a3f98640814c0784676724dbb86a" => :high_sierra
   end
 
   depends_on "gettext"
@@ -26,13 +24,13 @@ class Git < Formula
   end
 
   resource "html" do
-    url "https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.26.1.tar.xz"
-    sha256 "e857bfef9f7f63b2a553564226500ccca8da40b71e1009fcc4fab84ad951b1b0"
+    url "https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.26.2.tar.xz"
+    sha256 "763c2ab83b980edb210d45d9ad25337afd3610ac3749f4124964f86bbdbb201e"
   end
 
   resource "man" do
-    url "https://www.kernel.org/pub/software/scm/git/git-manpages-2.26.1.tar.xz"
-    sha256 "a93cb7f45dab1fc45a9a4a6cfc32f1a8edd0894c0441e163951c323c7a184048"
+    url "https://www.kernel.org/pub/software/scm/git/git-manpages-2.26.2.tar.xz"
+    sha256 "433de104f74a855b7074d88a27e77bf6f0764074e449ffc863f987c124716465"
   end
 
   resource "Net::SMTP::SSL" do
