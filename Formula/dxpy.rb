@@ -12,6 +12,7 @@ class Dxpy < Formula
     sha256 "e187dbcaf01869a399c74636004b94790f8d59c6982876774da734e42437c01f" => :catalina
     sha256 "adf3b1d5ed5151315b950dce6055288ee38946e6c81c18e5c3beb30144b0ac8f" => :mojave
     sha256 "6844389f4cb3c9d17a2657076498e8dc872a2f4171aa9d13a8f4269414d1bff8" => :high_sierra
+    sha256 "1f0de5ff57ef87bb3e4c8c02d4c162e9c20aaea3ab3fe2feef5ea955245afd27" => :x86_64_linux
   end
 
   depends_on "python@3.8"
