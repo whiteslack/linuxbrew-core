@@ -14,6 +14,7 @@ class Passpie < Formula
     sha256 "8d0bea708df6b337834af0eff5e387a2f134001233171210f854a48b4b53bbbe" => :mojave
     sha256 "864bb80f52775b4941847c929922169fafebce6642ee7301f198e74acd6b0817" => :high_sierra
     sha256 "619b05a27170c7fd8881e1922a7836625175b984ecc1a2cdadb5103bff7a8b58" => :sierra
+    sha256 "a9754ec3adc9a443de0a7ea3f935f0dea3d67db98a12fdd3d9f7abbd307ed1a2" => :x86_64_linux
   end
 
   depends_on "gnupg"
