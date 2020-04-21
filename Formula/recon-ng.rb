@@ -12,6 +12,7 @@ class ReconNg < Formula
     sha256 "97bece24384f887d6202cbc969b09069360d943b4fbfb60bdd78d8a22dcd1cf3" => :catalina
     sha256 "8586f3b55873bc3024f77a5bdfa334cdf64c66290719317fde64884f2c24f049" => :mojave
     sha256 "fcf86a9934bcc8fb7cb5611736361225a0ec4f2141be5ba965bfc79f0b327f38" => :high_sierra
+    sha256 "91a77382d18bc1a9c7cf5f2aaa1f66474ba90a72f626262f30f41ab615e8cf41" => :x86_64_linux
   end
 
   depends_on "python"
