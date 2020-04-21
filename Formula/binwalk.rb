@@ -13,6 +13,7 @@ class Binwalk < Formula
     sha256 "80415911a04d2464b53a0000ccf62e8989690bed23277bebc91b83ff3fc13033" => :catalina
     sha256 "ff30030e127b5f3bc0292665d8d10d0783e6692198e86d05c48fcae1988df157" => :mojave
     sha256 "b3287fdb9563882a35f6a4bf62f1a5ca10fcdd0ca95614fd9452dbbe594a9f10" => :high_sierra
+    sha256 "18ff778c5c9313bd42d1f93d202d636c745df0a5361c82166d158a7aa5b22165" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
