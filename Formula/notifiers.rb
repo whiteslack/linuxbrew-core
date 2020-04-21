@@ -12,6 +12,7 @@ class Notifiers < Formula
     sha256 "e863c98a0deef506c93b6947df3487570d3b6713968779de3971f8fb77c1517a" => :catalina
     sha256 "e38c86c0923aa29d53a38095ae1162c1e64b30077666d08ffee9a5278adc8567" => :mojave
     sha256 "991eb6cde6f98169be00a5ff9e9a6f5cc5d65e73e09d1a48e3c8ba3b5160cbea" => :high_sierra
+    sha256 "497be30b0acf987515f569c48daada9be51e7dc89c9ba0e92429cdaff4c94a29" => :x86_64_linux
   end
 
   depends_on "python"
