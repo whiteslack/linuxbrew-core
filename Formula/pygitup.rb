@@ -12,6 +12,7 @@ class Pygitup < Formula
     sha256 "8dff3146af82b507e97ba0305f76d4aa6296b53b1a094e6cb3ed8b5cd8a4608c" => :catalina
     sha256 "bb4c2a88b4063544712c1f8a9704d7af97b11fb76d18ff9c6150a63d9bd59c5b" => :mojave
     sha256 "9ca0aeb55d9722c77c77616f2b95d8d53a8c685f5a9c515ddce380b2ae5ad672" => :high_sierra
+    sha256 "8445ac5cbf21ea5197ab6d0f3f7f71b1e2057a2e12bfbb890e42f3e343f61e02" => :x86_64_linux
   end
 
   depends_on "python@3.8"
