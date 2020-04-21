@@ -12,6 +12,7 @@ class Platformio < Formula
     sha256 "57fd95ebc84ab37a3ac4d52d6c7bc7f27c9f26231baf4032237121db939ea822" => :catalina
     sha256 "5479db901ef6a541b9337b481fa5d0487c4dfbee8271de20a8d057642d1148cb" => :mojave
     sha256 "64bdeec13390cef81ea0f6cf32b67ddda2c811320daa77b2c1d20a5b2f087c07" => :high_sierra
+    sha256 "b575ab3a712020ffafbd5ff43e9a06d187918cf8b3758e53939071e3068964e2" => :x86_64_linux
   end
 
   depends_on "python@3.8"
