@@ -12,6 +12,7 @@ class Termtosvg < Formula
     sha256 "98353f1a6df1675441bd9fbd7f7015905b654cdce008582072d6b7e8c8fdde42" => :catalina
     sha256 "94ec2cd77e154ba2314aeff68ce68ad7614c9a5c8be8bcf0830bc02b3f5b37a5" => :mojave
     sha256 "24b342f95d1700df9485dba70ef456a7f8bb64391a3b58502ca4c651e330f494" => :high_sierra
+    sha256 "b6c6f482ca0b463f65190c8672721c2bb855cfc37a3ade5aee05aa2ed3903e49" => :x86_64_linux
   end
 
   depends_on "python"
