@@ -10,6 +10,7 @@ class Goreleaser < Formula
     sha256 "1eff0288f0a733df9d5e0c51785c0c5ff33aece871c85aee4514cc5355e8c788" => :catalina
     sha256 "6b784dac26df8e834a008984a79f53fe56053753558e6a54d1e8aae62c19dc95" => :mojave
     sha256 "8969cd5024dbc95ebf83540aca8663e8699cae2bf26290d7198ae7767dd950de" => :high_sierra
+    sha256 "e4f2dc88e2a1aafd89f33933ec2bab06b04f0210703c49d884a4ab2f423e80e4" => :x86_64_linux
   end
 
   depends_on "go" => :build
