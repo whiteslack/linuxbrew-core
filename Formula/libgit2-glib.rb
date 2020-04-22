@@ -10,6 +10,7 @@ class Libgit2Glib < Formula
     sha256 "a5297beb6c9ab0602847472ec08fbd2eddad7e91ca3c78db15f4a8175912feea" => :catalina
     sha256 "ffff80b61a3dd453796abdd059803d887c6de603d501c65a153571a0c04be5ce" => :mojave
     sha256 "74b08631fc92b096f3034c512ea9f62889edc92c49c6581043fbf56256306ad4" => :high_sierra
+    sha256 "72407e0360d74e297a46316c2c06680a4b50d95315ded51bb1993e5d7c6a9e58" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
