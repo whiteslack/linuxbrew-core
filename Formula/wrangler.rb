@@ -26,6 +26,7 @@ class Wrangler < Formula
     sha256 "f666670522f930ed3b9412f2301bfaf6514db08c3ce48d1aa86419611dcd6783" => :catalina
     sha256 "f285e272fd51ca316f073bd5c0bbcaf285b5a0cbd453bc1f945efd67eca7c034" => :mojave
     sha256 "35f891e2ab69591e3d4bd907197b21fae3b23f9b727278e1c2cc577d10277660" => :high_sierra
+    sha256 "b4081c967cebd2d0ffe667f1ab8ee88ea6f345491874c7db49393483b05aa841" => :x86_64_linux
   end
 
   depends_on "erlang"
