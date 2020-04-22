@@ -9,6 +9,7 @@ class Lazygit < Formula
     sha256 "d6baa431a7322edcd2e86fc1bf46dc997e8f38bd0dc8df3606dcb5c4fe2d44c6" => :catalina
     sha256 "d8407f137d9c04b9c9d963ff161eb3d4433960eb1a7651656f9bf28556bfd5ec" => :mojave
     sha256 "c3818245476994213fcd40ffc2f492a251f947d29d94c589455bc4f546a11d9c" => :high_sierra
+    sha256 "cbf5d5e674277d02b0b243450ff002643d5d60d99561cd9aa44cac8a6870d443" => :x86_64_linux
   end
 
   depends_on "go" => :build
