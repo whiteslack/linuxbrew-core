@@ -5,15 +5,14 @@ class Gitfs < Formula
   homepage "https://www.presslabs.com/gitfs"
   url "https://github.com/presslabs/gitfs/archive/0.5.2.tar.gz"
   sha256 "921e24311e3b8ea3a5448d698a11a747618ee8dd62d5d43a85801de0b111cbf3"
-  revision OS.mac? ? 2 : 4
+  revision OS.mac? ? 3 : 5
   head "https://github.com/presslabs/gitfs.git"
 
   bottle do
     cellar :any
-    sha256 "01205b29c991e751cf6be6964df1f9398860606e3c284257c60d25fd13ec360f" => :catalina
-    sha256 "d9ff9a6216fa90698e730e0a3b3603e1a58726c6f603fb83e7ee5b5d6d9b7ae0" => :mojave
-    sha256 "cf5b89f294c252fea0862b1f5b14420a7077d3f02eecc21eda8e02f701ddf4a3" => :high_sierra
-    sha256 "55a449ac054e633fca654cf06b9b418eeaf39b380d5b3c5d03e4c9b1aa59550e" => :x86_64_linux
+    sha256 "a2bafe9a8ff3d0b0600c8b1cfc580646f0bf058db47655e0f708efd3c3b36583" => :catalina
+    sha256 "a1817085b653a485019f22acc6457b6ea858fba6209558991ef6efa72ce34f8d" => :mojave
+    sha256 "c35d61dcf4f5145067b88526b47c12363f794c30f414db0a56f3ff4251a5708e" => :high_sierra
   end
 
   depends_on "libgit2"

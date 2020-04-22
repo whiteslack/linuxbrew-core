@@ -5,15 +5,14 @@ class Salt < Formula
   homepage "https://s.saltstack.com/community/"
   url "https://files.pythonhosted.org/packages/28/63/ad60e60c982810d55e23012e2359c96f92694842a476708f44e5d671a9b6/salt-3000.tar.gz"
   sha256 "04fbc64933b375cbbefc9576bcc65167b74d5eec7f58e64d096d67529ea66500"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
   head "https://github.com/saltstack/salt.git", :branch => "develop", :shallow => false
 
   bottle do
     cellar :any
-    sha256 "ea459c7202a91afdd6a46b3ef76c0845a11f81ed07ae03a80d5f407a2d11cd45" => :catalina
-    sha256 "06e1bc585b3703784b097b92a82698e81bc0a35f38840bba290aa4f6d696e945" => :mojave
-    sha256 "22690a3800658bff62eac37e0634a445b8634bfc56789aa432d2ff1f282cc310" => :high_sierra
-    sha256 "d9485feef8a6622914734a1e80e46fc1705b7bd4a7bb39cbe550a67124fe6933" => :x86_64_linux
+    sha256 "3c1f68e1dfd495bd0eff8c09be38273c7318e08e591a2610bb454e7f768b1192" => :catalina
+    sha256 "2113ac5669fd5883e342b751f7d1f67264055524fca11fa48b741069ca621e8d" => :mojave
+    sha256 "b2bf7130f4ad792e0a14af237b0536c8e9f3642ea20521153fa35155fd7dfb6b" => :high_sierra
   end
 
   depends_on "swig" => :build
