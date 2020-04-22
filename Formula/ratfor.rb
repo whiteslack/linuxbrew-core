@@ -9,6 +9,7 @@ class Ratfor < Formula
     sha256 "053917ccdf191b7cb15adb1c207cb3f18553def7d4cc9584b09222be07754660" => :catalina
     sha256 "054cb6d92e13050233c54a5bbfdd1dc9fbaed09d63937b8426d543d9569ee07b" => :mojave
     sha256 "16c83b337e66de93f5e1b21d77242b849a4a1613e2c2e38d1971a77277924bce" => :high_sierra
+    sha256 "5469f16aeb09d9ede096088096bbec09f1b8d20351d7bbaf59b36f35eb7e44d0" => :x86_64_linux
   end
 
   depends_on "gcc" # for gfortran
