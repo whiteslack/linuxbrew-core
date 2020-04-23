@@ -9,6 +9,7 @@ class Znc < Formula
     sha256 "8f2902352bfff8c586709207b58b7d3c2eee2c7b6a3be1e0b8693dac62ef4f08" => :catalina
     sha256 "4f1e7688f53fafece49245e30b6f33245b091792f1f14f4a13e50619b0a3bacf" => :mojave
     sha256 "1c5f32604ecee0941c235c5b2730299ab02a4f0a5c44e8ac5860b0d5f35664d4" => :high_sierra
+    sha256 "7ccc797e390fed8d8bad0a9f1b9ac6ab9d821a69ada5b6f939c9970ac83bb03b" => :x86_64_linux
   end
 
   head do
