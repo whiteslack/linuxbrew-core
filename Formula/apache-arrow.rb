@@ -11,6 +11,7 @@ class ApacheArrow < Formula
     sha256 "c20eed2cd9e5c4f123086f9926598d674fa26579d9e87a019ef7d35d583719cc" => :catalina
     sha256 "fa2827d1df83272fa9809dedb4260e79e1e4af827f8bcf0cbf39b51ebcbe1377" => :mojave
     sha256 "b8f0b32f2da88189410c9588a9fbd44488477e087d71a92373c99e729318f3dc" => :high_sierra
+    sha256 "262e56139ceca92e7468ff3bcf20c404ea38f78e1342deb257632efea484f4fd" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
