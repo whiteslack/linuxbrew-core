@@ -3,14 +3,12 @@ class Znc < Formula
   homepage "https://wiki.znc.in/ZNC"
   url "https://znc.in/releases/archive/znc-1.7.5.tar.gz"
   sha256 "a8941e1385c8654287a4428018d93459482e9d5eeedf86bef7b020ddc5f24721"
-  revision 1 unless OS.mac?
+  revision OS.mac? ? 1 : 2
 
   bottle do
-    rebuild 1
-    sha256 "9dea1d38863b76a2e44bfa9f2d3a7a4f54e0100c3def895fba15d0170047e5d2" => :catalina
-    sha256 "365117d77ba2c98af90941e564039b0be8e77bf87f0edfa6195b9dceb4acb37e" => :mojave
-    sha256 "25d5dec6b535d2b39ffcbf68b0b740035f702e41f6d69fcae4b7d6343a5feece" => :high_sierra
-    sha256 "6042bb9b43295c3e3504e0ce3fd7e963486296f5207b2315541253f92a903f9f" => :x86_64_linux
+    sha256 "8f2902352bfff8c586709207b58b7d3c2eee2c7b6a3be1e0b8693dac62ef4f08" => :catalina
+    sha256 "4f1e7688f53fafece49245e30b6f33245b091792f1f14f4a13e50619b0a3bacf" => :mojave
+    sha256 "1c5f32604ecee0941c235c5b2730299ab02a4f0a5c44e8ac5860b0d5f35664d4" => :high_sierra
   end
 
   head do

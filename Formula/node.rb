@@ -3,15 +3,14 @@ class Node < Formula
   homepage "https://nodejs.org/"
   url "https://nodejs.org/dist/v13.13.0/node-v13.13.0.tar.xz"
   sha256 "6711730dfaae2423c8f74f4b5f389bb3f3f0d770eac271287fa9444a9568c773"
-  revision 1
+  revision 2
   head "https://github.com/nodejs/node.git"
 
   bottle do
     cellar :any
-    sha256 "68688400e48014895436d2492eaff043bf33735e3d24342621e313ae631b2dc1" => :catalina
-    sha256 "3a8aafde7772232484ccd4be9ce5cc2f5dbca9c7157bd275d29e7c513c41da85" => :mojave
-    sha256 "ab7d747b69de503ebaf050dd0f2185a664cfd782d5f223e65756d8fc4fcd4578" => :high_sierra
-    sha256 "a5cbb6d804331a00875c4cba65e87c0d669e1ba07bc94e606f551320325cc3b7" => :x86_64_linux
+    sha256 "6d057a10950415900f12d062585f242e99cf0c8840e0c571f6009319aed8a2b8" => :catalina
+    sha256 "c44dd7d1c67a52a7604e46f983f95e5f2ce9974f9c985e8603091575564f06a6" => :mojave
+    sha256 "500b3e317bc93fcda3760d45d812b57347499a61aa8c1c0d37d14007abdce52e" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
