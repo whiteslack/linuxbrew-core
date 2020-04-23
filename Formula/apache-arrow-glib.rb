@@ -10,6 +10,7 @@ class ApacheArrowGlib < Formula
     sha256 "8654499e86045a221e5a7d5d3030288d8a27ae06a8801dcfe8e82c7b86ec4653" => :catalina
     sha256 "cb9eee87497902c591de9edd7ffc7331541d02f21a4ea4255b0de1d0ff69de54" => :mojave
     sha256 "fa8dd856ba70113b4eaa3dd6d6a685115d377a1a82fddf839f2761b550ef31d3" => :high_sierra
+    sha256 "4ee8bec6cd07ba93161577c1a9817762aac3a9147b7e83fe5821a012de42191b" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
