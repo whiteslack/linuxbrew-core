@@ -11,6 +11,7 @@ class GitBug < Formula
     sha256 "6b22d352d4f7ac655ab3544593cbdbcb1d1ad6e2f87dd0f7066e31a9319aa97b" => :catalina
     sha256 "c5a308416b902fbd59bd1df0bd17074f5bc9d8de594a07573b8d074889cb45fd" => :mojave
     sha256 "0617df6821ac81888aa4ba8b38102031b17fb64b6b25b20554a454e3e4a1fd60" => :high_sierra
+    sha256 "1f8113daac2c7f44130d4b7df8dfb8103a2bfb70842da653945e39c55f2bacf1" => :x86_64_linux
   end
 
   depends_on "go" => :build
