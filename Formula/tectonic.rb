@@ -10,6 +10,7 @@ class Tectonic < Formula
     sha256 "422c0c1dfdc7c16ab45affc902ee755faa0d494276245d636e1695ac2d131dcb" => :catalina
     sha256 "33615609d3c28ed243573a67f61fba0c425174662e629e48f1913232afbb0735" => :mojave
     sha256 "4cd8a7098985b7cfe8ee97788ccb36d6e5dd023be2bb29e7aa6f35c5ef017c14" => :high_sierra
+    sha256 "54195bf8169b5e7979e9d99e43657201659468bc60562bdf823c0f9535b8e4c4" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
