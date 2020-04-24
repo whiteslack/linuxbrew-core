@@ -9,6 +9,7 @@ class Shadowenv < Formula
     sha256 "52b7c4f1fc51de46be4b4aeaea906e0731d2c38588d93b710da4b79db4207253" => :catalina
     sha256 "a04059c1cad563201760d0972dd22f18906087455120457d766fdab6a9c0310c" => :mojave
     sha256 "95d6a37741a4c6e75893ae9f2cadad33f29b27ced06f2ae2eabb0572bf00c189" => :high_sierra
+    sha256 "8ce3c741b4ef3be4934bb44397ab172d0c828cabd5b256f85e30bd52d731790c" => :x86_64_linux
   end
 
   depends_on "rust" => :build
