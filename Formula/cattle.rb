@@ -8,6 +8,7 @@ class Cattle < Formula
     sha256 "d721fea1c78f6b79eb7ae7e325442e276638919bdef0a21604e910501d4cc67f" => :catalina
     sha256 "7ce0b67200025300e8e326dc890c79b94be12b627ebc4bbf230ae64437aa286d" => :mojave
     sha256 "43b809e209b52621c0ac66810b751a22f43d1718f75f41c9c0364d6ecb762b83" => :high_sierra
+    sha256 "650f1eebb6873a8161a9c781a69e66a9bddc26a8788f47faecdff837e6de27a7" => :x86_64_linux
   end
 
   head do
