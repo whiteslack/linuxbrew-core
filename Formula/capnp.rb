@@ -10,6 +10,7 @@ class Capnp < Formula
     sha256 "741c2079361cdb5881a60684190bc4aa98ff9cc6f8d29aa46880e809ac1b06c3" => :catalina
     sha256 "f389012b8211b70af4fa7d2eed8db8ad399ef2bdc98e286fb57a4b1beb93dfe4" => :mojave
     sha256 "9c3beb8d8db3b372e4d2fd07d99a553fde6ff53824c6cfec82c3db41e212bc5b" => :high_sierra
+    sha256 "db7f26f75d26566d62caebd676bef134040fbf97d3129d63594b59bb28eef3ba" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
