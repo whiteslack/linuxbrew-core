@@ -9,6 +9,7 @@ class UserspaceRcu < Formula
     sha256 "ddb5e2f5e985cba860f36a5730d933d88b4b0e76b1a450a3e76b244a5a6f1935" => :catalina
     sha256 "09cbfc5e663214ad2df4e95cb2cf022ea6c153c6bc49d6918ec5c2e69e28a97b" => :mojave
     sha256 "501a8f37d104b1a8f5cb625d2e1a17615114caf57054b9df9fb52df62761f138" => :high_sierra
+    sha256 "e0d633513a646bbbe34f2db6214ba55c1b623e2fab1d237fdfc6172a68fdd9c4" => :x86_64_linux
   end
 
   def install
