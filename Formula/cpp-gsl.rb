@@ -10,6 +10,7 @@ class CppGsl < Formula
     sha256 "0e9dfbc376a213a6208fce22c4070ffd0ac7647f1304e97e5ddb01494c86bc0b" => :catalina
     sha256 "0e9dfbc376a213a6208fce22c4070ffd0ac7647f1304e97e5ddb01494c86bc0b" => :mojave
     sha256 "0e9dfbc376a213a6208fce22c4070ffd0ac7647f1304e97e5ddb01494c86bc0b" => :high_sierra
+    sha256 "ea944369c4918ddc9c66068ba4368e074b56a6934013e0aec7eeb0a3979a5f51" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
