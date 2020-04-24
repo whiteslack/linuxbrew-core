@@ -10,6 +10,7 @@ class Pspg < Formula
     sha256 "586f9209acd2acc43f599c8d467d633600ea46bfeef3c5de93bbc88fd9f49f96" => :catalina
     sha256 "0f13f6316c8752c65821ee1f4d02e927cd27e4616ebd22ff3c2d31ff000874d1" => :mojave
     sha256 "79ded916b55efc28d60681eb8a29de793b9276ec7692f8f6b4a85944a796f66a" => :high_sierra
+    sha256 "76bb23b7ed450ff6feefb9aaed844f356450f173b7ec05e64b42e044247234bf" => :x86_64_linux
   end
 
   depends_on "libpq"
