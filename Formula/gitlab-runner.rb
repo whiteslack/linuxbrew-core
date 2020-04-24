@@ -11,6 +11,7 @@ class GitlabRunner < Formula
     sha256 "40c6845599a01ffd4608c14eac9bf46fcf887e8001da9de0978de05a72c9ca56" => :catalina
     sha256 "2cdef07d545fbf831d7960865547314743fc79c398918bcb649517c02e69bc55" => :mojave
     sha256 "827c2e89b95720a9d9a7ba1d602a07da9a1f375dc912b81da0ff9434bfcdc3e9" => :high_sierra
+    sha256 "8fc2f154d7330f95c89f2cafe830b0af8ac55ad8160993bc8ab4f1cf608c80ec" => :x86_64_linux
   end
 
   depends_on "go" => :build
