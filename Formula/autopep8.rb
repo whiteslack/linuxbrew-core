@@ -3,16 +3,14 @@ class Autopep8 < Formula
 
   desc "Automatically formats Python code to conform to the PEP 8 style guide"
   homepage "https://github.com/hhatto/autopep8"
-  url "https://files.pythonhosted.org/packages/ca/d3/bb1c5781415b2a4f7d48bcd4c62e735d5ebf40d4f8c325d654870bedb7a6/autopep8-1.5.1.tar.gz"
-  sha256 "cc6be1dfd46f2c7fa00e84a357f1a269683985b09eaffb47654ed551194399eb"
-  revision 1 unless OS.mac?
+  url "https://files.pythonhosted.org/packages/41/5b/3bd26811d311ae0b819487a3d97557ca0181de1c49a8dca1ab2c8dfac4f6/autopep8-1.5.2.tar.gz"
+  sha256 "152fd8fe47d02082be86e05001ec23d6f420086db56b17fc883f3f965fb34954"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2f1564bd116ad939ed8fd2a497865c416fbfa939cf94242cec47f1dd15cd0a06" => :catalina
-    sha256 "7b3e36fcfef4a1475727845753b1f2a512fc1b982527cb5d0dba08b7fdd007df" => :mojave
-    sha256 "9178c1e4b633eaad87163a18b55a7818969b3464569d6bb87ceba0e2d1fbb8b4" => :high_sierra
-    sha256 "c62cef3442eb6da746cb1c96e70c3798ad0a16fad48f35a4ce29a2dbdbcba86b" => :x86_64_linux
+    sha256 "bde781d94e6eb9d19fefc497d0a7d1796c5469a51ad7f2b53e91d04890df99ac" => :catalina
+    sha256 "d99c255d341b7d4ef1ce58e74ff884f2f50ae7341c8ba2601c6798b21e3fc37a" => :mojave
+    sha256 "525a560a54f99aa3772f62853820d40e1d057a859c882d7fba8248866c3fc6fd" => :high_sierra
   end
 
   depends_on "python"
