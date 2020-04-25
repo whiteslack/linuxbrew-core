@@ -10,6 +10,7 @@ class Uchardet < Formula
     sha256 "34bd4791834a762da961de136a3cad253800a98deea2d1dededf8efb465f215d" => :catalina
     sha256 "a254139ee777de77d5907dfeb47d4306f2e5e5f0b3775edfedcbf1fcf217fdbe" => :mojave
     sha256 "a89237dd88e4190826ce6fb4a8a625711636db7d6c4ba10d5ddd56d37347e868" => :high_sierra
+    sha256 "6d5d176e4f2caae139d5f42376a08da54913f4018f26504267677f6ab319b641" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
