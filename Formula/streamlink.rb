@@ -3,15 +3,14 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://github.com/streamlink/streamlink/releases/download/1.4.0/streamlink-1.4.0.tar.gz"
-  sha256 "5499287d634c28e72ccc16a677f7873213dc6beaa4fdbe47cda7b997f1460192"
+  url "https://github.com/streamlink/streamlink/releases/download/1.4.1/streamlink-1.4.1.tar.gz"
+  sha256 "ed3278d18f17e473bf3b35c8943da9dc19a37d43ba6b8122e260d3f0d14485e8"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "563ad8279d825a866996a36a4a4c1d8388b8275b2e622b23f5154a0b3737f9b7" => :catalina
-    sha256 "d13be5a8cc30da9845de5343ea8c94f93636d9db3fad4069cc638875dddb65c9" => :mojave
-    sha256 "9aab3a159cd7edc33f2573a58fe3a2efcfb5a188c6f45c5d1e19b7a925641a47" => :high_sierra
-    sha256 "986e4353ff9c72178bb155f8d9d9abaa67ec77bb6f668bebbec43549c22abd6e" => :x86_64_linux
+    sha256 "541472aab0629e0b2ad66168a962b985c9a09a6c7ac620aa96ac7c7f2119c3a0" => :catalina
+    sha256 "475434dab231841da0a3f99f8d1a78882f46f6fd697e2c651badfa5bce1b64fa" => :mojave
+    sha256 "ad9c580399f80f4c6dc8869680c3a3c589c9c9b0b5831bd4c69014e2c7e42718" => :high_sierra
   end
 
   depends_on "python@3.8"
