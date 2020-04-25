@@ -11,6 +11,7 @@ class Xgboost < Formula
     sha256 "2da3c97326af103ab719531f3723df91970e0cfe930ba4c5a45f0377c5f7fa20" => :catalina
     sha256 "a9b1ee935c9aebba565add5b01290132588be5330df2b32ed9072909039d77a3" => :mojave
     sha256 "ebf1e65a2f69f4dc3bb0a137d304095aa6ed6774a087da4afde563a8cc19ac19" => :high_sierra
+    sha256 "c154c834df3ee6f6dbf13b4abc479e40688da88d7fba0d9e1c54a1af159bf9bc" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
