@@ -10,6 +10,7 @@ class Glm < Formula
     sha256 "9b661be1f704c2e946dbd4d4f96d58ae82427824ef88d7dd9f0f0cfc3fae2233" => :catalina
     sha256 "7210910c6f106de4c22874f3977b1457cea3db6bb03269ea6831ffae861bb80e" => :mojave
     sha256 "ea41bb7f8f195c22d6f7834c57684412d752e2c72ff795b9056dd90aaebf9d84" => :high_sierra
+    sha256 "c93e76e1625623a3b6a0255661c5fc12fbbf2b7480aa1a62227973fbba294964" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
