@@ -4,22 +4,21 @@ class Xgboost < Formula
   url "https://github.com/dmlc/xgboost.git",
       :tag      => "v1.0.2",
       :revision => "917b0a7b46954e9be36cbc430a1727bb093234bb"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "6aa29d41bb68563cc0ec2663fa8b8c748e0bd3b6be6605d2e0f86bec0d1178e0" => :catalina
-    sha256 "e2f717e66054ee2219ad3114ba0b87abf438205efeb5c97559cf418f68938aa2" => :mojave
-    sha256 "44a122a445528ced68ae2c2963c7b89e4835a83558ebc9191b72bedeedaa0270" => :high_sierra
-    sha256 "34cb1376b2c65b27351bd1975bc4f361adf8ae17d2a8f97b39eed55fa40a6d7b" => :x86_64_linux
+    sha256 "2da3c97326af103ab719531f3723df91970e0cfe930ba4c5a45f0377c5f7fa20" => :catalina
+    sha256 "a9b1ee935c9aebba565add5b01290132588be5330df2b32ed9072909039d77a3" => :mojave
+    sha256 "ebf1e65a2f69f4dc3bb0a137d304095aa6ed6774a087da4afde563a8cc19ac19" => :high_sierra
   end
 
   depends_on "cmake" => :build
+  depends_on "libomp"
 
   def install
     mkdir "build" do
-      system "cmake", *std_cmake_args,
-        ("-DUSE_OPENMP=0" if OS.mac?),
-        ".."
+      system "cmake", *std_cmake_args, ".."
       system "make"
       system "make", "install"
     end
