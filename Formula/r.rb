@@ -8,6 +8,7 @@ class R < Formula
     sha256 "3bef9d95610f3430495684b54276459bc9536fe36ba03d5bfa9471af2be59c49" => :catalina
     sha256 "618b26c4ed1ea1e3a87c889c15b3df78ee1692a0a0e294a6d6539b06c3b0f5f7" => :mojave
     sha256 "0a76ee20f84666203d85b07fbdaf45125ec0a93e0b541f91e58d92130830a6be" => :high_sierra
+    sha256 "9bb113f87fa2fa34d9c236fd17c967509403c1e107bab732b62175ba71a420de" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
