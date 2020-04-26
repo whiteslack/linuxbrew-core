@@ -1,30 +1,21 @@
 class Triangle < Formula
   desc "Convert images to computer generated art using Delaunay triangulation"
   homepage "https://github.com/esimov/triangle"
-  url "https://github.com/esimov/triangle/archive/v1.0.5.tar.gz"
-  sha256 "3e3e4338ae2b55a21cc742bd5c1c542a778fa0764b17a8f599099f7bf1eb257b"
+  url "https://github.com/esimov/triangle/archive/v1.1.1.tar.gz"
+  sha256 "e62b05cf654ee9c61b8145aaea32f54ee39da872cca37084c96db5cda6587ad1"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4fb744b3878eb0a3b661b939155929dd3e24050b6bdf79a21926309b9e37c030" => :catalina
-    sha256 "e9028dc0560174e50099fdb6efc3dcbb8ed75a8cfc983e2b923a18f54acb1807" => :mojave
-    sha256 "aca7f95503e929a3bc8b585e64177dec4d8625bd3d365b18d8fecc8fa463a859" => :high_sierra
-    sha256 "48ae218b4ecdf86ebe47e77d1d88661675a466bf98e7521b85373297d5504525" => :x86_64_linux
+    sha256 "a90c331e51936a58d69e47b7ce4d9925072b6024ad6b1d1fe9d75b17f2becf15" => :catalina
+    sha256 "6dc2d0aba307e988e2d4205881be47aef561ab3cea7d7bc5c378e23414782ad9" => :mojave
+    sha256 "d8859fc5b05f1faac1db7cd3130e6e8c8359724fc2162e5d6dc97d3e5198651d" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GOBIN"] = bin
-
-    dir = buildpath/"src/github.com/esimov/triangle"
-
-    dir.install buildpath.children
-
-    cd dir/"cmd/triangle" do
-      system "go", "install"
-    end
+    system "go", "build", "-mod=vendor", "-o", "#{bin}/triangle", "./cmd/triangle"
+    prefix.install_metafiles
   end
 
   test do

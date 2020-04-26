@@ -1,14 +1,14 @@
 class Gmailctl < Formula
   desc "Declarative configuration for Gmail filters"
   homepage "https://github.com/mbrt/gmailctl"
-  url "https://github.com/mbrt/gmailctl/archive/v0.6.0.tar.gz"
-  sha256 "e188d5d18ac84ca86c94fb2b90d219ae3bea1e1ddee1966fae904c93bf27f233"
+  url "https://github.com/mbrt/gmailctl/archive/v0.7.0.tar.gz"
+  sha256 "8c3d88c06709d4c96414fa0ba1a90f0f8f12026d726a1ddb54b439b4b5b6ec5f"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "3db529f324e1e7394f7b22e6bb3dad49e95ff3da4d8fdd974a53cbee9d29225f" => :catalina
-    sha256 "95376bd2e070749aa29e4f8e1e3a4a14ecd4aad551e213d25e7ba190f7bf6b3c" => :mojave
-    sha256 "11bb0716e718f20777b086b826e1bd7b74ab953307e84b7a95f44ef8c8d72409" => :high_sierra
+    sha256 "d3a358debf1f7335f2736a28437b8106f917a9449593a498ccf6ce2589d813aa" => :catalina
+    sha256 "7695c67ce6a12008b8c04a84d4899cf17d7bc5d3ad32a9bca35c101c1ca65195" => :mojave
+    sha256 "c2803a3f282d5b1b60b76552787d13ad54d0403537380daebdf09105793b87df" => :high_sierra
   end
 
   depends_on "go" => :build
