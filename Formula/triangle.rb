@@ -9,6 +9,7 @@ class Triangle < Formula
     sha256 "a90c331e51936a58d69e47b7ce4d9925072b6024ad6b1d1fe9d75b17f2becf15" => :catalina
     sha256 "6dc2d0aba307e988e2d4205881be47aef561ab3cea7d7bc5c378e23414782ad9" => :mojave
     sha256 "d8859fc5b05f1faac1db7cd3130e6e8c8359724fc2162e5d6dc97d3e5198651d" => :high_sierra
+    sha256 "c680c5a3bf252f325554769784947d2ed71936bb5a36d355f03328ee814d57dc" => :x86_64_linux
   end
 
   depends_on "go" => :build
