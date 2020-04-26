@@ -10,6 +10,7 @@ class Meson < Formula
     sha256 "cee7c436ddaf0ff5b6bf917b0f1de3a053ae2eab5246fb462dc361e611739778" => :catalina
     sha256 "cee7c436ddaf0ff5b6bf917b0f1de3a053ae2eab5246fb462dc361e611739778" => :mojave
     sha256 "cee7c436ddaf0ff5b6bf917b0f1de3a053ae2eab5246fb462dc361e611739778" => :high_sierra
+    sha256 "03858552a3df9aec3ba8b518fc6f7cab4ad19e3f01f87df55a75144453d5e5af" => :x86_64_linux
   end
 
   depends_on "ninja"
