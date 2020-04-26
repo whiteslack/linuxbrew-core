@@ -15,6 +15,9 @@ class MrubyCli < Formula
     sha256 "a06806ca6a22d3b015e073a984e832013f2efe729870e2aa6d0b17e91a4b9855" => :yosemite
   end
 
+  uses_from_macos "bison" => :build
+  uses_from_macos "ruby" => :build
+
   def install
     ENV["MRUBY_CLI_LOCAL"] = "true"
 
