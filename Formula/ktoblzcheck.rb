@@ -8,6 +8,7 @@ class Ktoblzcheck < Formula
     sha256 "93495421d21c635d04637865d68c922d70ed0112b01929d113d21cd533afabc1" => :catalina
     sha256 "447d1889a2350c704d8c4d276c8122f8ecd24b906f5b4944e39bdbb77bf39962" => :mojave
     sha256 "242eca7d985cf7d70b78a2838d96a7b91b1e67b68ca7376919296bc253a99540" => :high_sierra
+    sha256 "3aab611689ecaa01635149a3ff6b3207a2a7c36af07564f795f9050ab92e231d" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
