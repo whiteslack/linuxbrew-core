@@ -5,10 +5,10 @@ class Librsvg < Formula
   sha256 "28b63af85ced557383d3d3ece6e1f6938720dee1ecfa40d926bf1de4747c956e"
 
   bottle do
-    sha256 "c8e5a0f2ad09479b8cee52d47c9fa040702be19971e0cdab0078193944142b39" => :catalina
-    sha256 "fd169a74136443adc6e5f66869abea18d2ae881a009548a60a38ae9892dee2ac" => :mojave
-    sha256 "9403a885723c59eb499b0cad2be97c2745b499b83ef14b674c1c0f646a9e552c" => :high_sierra
-    sha256 "10cba8ff3ea748a2803def97d4c99045f46b13ebcc6eaec0ef5d24a20a60083d" => :x86_64_linux
+    rebuild 1
+    sha256 "d059b06a76d378ea008ce8058dbdfa965e542468ec10e30013a7a3a2c0518b2e" => :catalina
+    sha256 "7262c196e991c6f700783b7eb1a5989d11973c444dbd0f281688a659250f77da" => :mojave
+    sha256 "b5db19b2ed09cbd38aa5e72e4e2291d8d8d8a448fcca14bc74c823b82ff360ed" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build
@@ -17,7 +17,6 @@ class Librsvg < Formula
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
-  depends_on "libcroco"
   depends_on "pango"
 
   def install

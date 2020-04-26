@@ -37,7 +37,7 @@ class Vips < Formula
   depends_on "webp"
   depends_on "gobject-introspection" unless OS.mac?
 
-  uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
     # mozjpeg needs to appear before libjpeg, otherwise it's not used
