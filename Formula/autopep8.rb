@@ -5,16 +5,16 @@ class Autopep8 < Formula
   homepage "https://github.com/hhatto/autopep8"
   url "https://files.pythonhosted.org/packages/41/5b/3bd26811d311ae0b819487a3d97557ca0181de1c49a8dca1ab2c8dfac4f6/autopep8-1.5.2.tar.gz"
   sha256 "152fd8fe47d02082be86e05001ec23d6f420086db56b17fc883f3f965fb34954"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "bde781d94e6eb9d19fefc497d0a7d1796c5469a51ad7f2b53e91d04890df99ac" => :catalina
-    sha256 "d99c255d341b7d4ef1ce58e74ff884f2f50ae7341c8ba2601c6798b21e3fc37a" => :mojave
-    sha256 "525a560a54f99aa3772f62853820d40e1d057a859c882d7fba8248866c3fc6fd" => :high_sierra
-    sha256 "f2511c1112928fce905563de77b2fa0cd6ce6733c6ee90787d7031066fd987dc" => :x86_64_linux
+    sha256 "ff9215148302566d91dfa99d47cc71e3375be09bacf62cd79391421e85cab851" => :catalina
+    sha256 "ef8ac804ac624e53ab3dd33326cc193889ddfee64b57d2c4dd37c32d02e0227a" => :mojave
+    sha256 "8937748c1dbb5af4864b245d152a767fec8300430bd8f42351854eecede4c867" => :high_sierra
   end
 
-  depends_on "python"
+  depends_on "python@3.8"
 
   def install
     venv = virtualenv_create(libexec, "python3")
