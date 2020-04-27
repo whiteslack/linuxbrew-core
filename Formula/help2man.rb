@@ -10,6 +10,7 @@ class Help2man < Formula
     sha256 "cba0670fe0e53aea5168c16650daf10871a3c0590341097d5a7ca18bedb4bcb8" => :catalina
     sha256 "cba0670fe0e53aea5168c16650daf10871a3c0590341097d5a7ca18bedb4bcb8" => :mojave
     sha256 "cba0670fe0e53aea5168c16650daf10871a3c0590341097d5a7ca18bedb4bcb8" => :high_sierra
+    sha256 "93f5c1d8f0d05ee6be19259f0af279bf7151eb4a50078030af0952c75c57af61" => :x86_64_linux
   end
 
   def install
