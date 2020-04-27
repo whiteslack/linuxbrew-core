@@ -10,6 +10,7 @@ class Keepassc < Formula
     sha256 "d45c0751c541f70f630d57b6de4be54c7e404fa447b00c645da081baecf4ef07" => :catalina
     sha256 "278b472373d6b75a37833a23a7bfe472c4bdd56ee582534a82a28b0a9dcd5248" => :mojave
     sha256 "6304afecfb788ee22bf327d47ca046fc905db8383b348393eb7907f7b1479ce4" => :high_sierra
+    sha256 "69350832c62ff693c78b23de88aa9046a6993a09a19fd3d696ad69bc9211ce42" => :x86_64_linux
   end
 
   depends_on "python@3.8"
