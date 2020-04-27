@@ -14,6 +14,7 @@ class Khal < Formula
     sha256 "6d310786c31a7cdb4529ec2a28b094de5f458961ecd3b4edaa16049474910fa5" => :catalina
     sha256 "8c5773a8e532deee750356a65b1714a02ae5c974b4159263e873f0f70efda0ba" => :mojave
     sha256 "954d7aee32da8561dc770023c0bec4ac914eed5fb31d4fcbf22208cba426bf85" => :high_sierra
+    sha256 "d35936b286f8bdcc324d6d14735650c3e2785abbdf95d9e3ea8a05b8f9c409d1" => :x86_64_linux
   end
 
   depends_on "python@3.8"
