@@ -1,16 +1,14 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://github.com/fish-shell/fish-shell/releases/download/3.1.0/fish-3.1.0.tar.gz"
-  sha256 "e5db1e6839685c56f172e1000c138e290add4aa521f187df4cd79d4eab294368"
-  revision 1
+  url "https://github.com/fish-shell/fish-shell/releases/download/3.1.1/fish-3.1.1.tar.gz"
+  sha256 "07dc78eea3bc4cbd490b2f2a2e19e5771ac9e3b6b1a75893039ad8b34d6122b8"
 
   bottle do
-    cellar :any
-    sha256 "a78f5906eed06e141bc29f9e53a70a7995c51f59fd023e81f711c48a444e65e6" => :catalina
-    sha256 "78db7552dea983ae9ac5720160a012d93546d037d6d4f06bf9857b518b64a903" => :mojave
-    sha256 "b6fd10867ca24e5dbc708e0e8d9ff12fe615e76373e63e999475699dd691edc9" => :high_sierra
-    sha256 "df6c057778616aed7441219c18f1808bef9d6a123c7629f8a62eebf3f111d222" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "c0fe77f3abf382d4cf1b65677b44ae7283682d7c86f3b194de337b4835d9f6bc" => :catalina
+    sha256 "d1a94c227b7c241d93619c4541195db26167333d6e3dc748422d0bb9cebe0bf2" => :mojave
+    sha256 "5699fdcf95c4c70ec8e7cd7654009fafb3c72c5ac032fa308325831c222e9ad8" => :high_sierra
   end
 
   head do
@@ -23,16 +21,6 @@ class Fish < Formula
   depends_on "pcre2"
 
   uses_from_macos "ncurses"
-
-  # Fixes severe performance issues with one of the default prompt
-  # integrations. This has already been applied upstream and will
-  # be in the next release.
-  unless build.head?
-    patch do
-      url "https://github.com/Homebrew/formula-patches/raw/8743c955ae8809f692c92ef6b4bc78595bf98f50/fish/disable_svn_prompt.patch"
-      sha256 "953dfc21f45575022d8f47c8654da1908682de1711712a60d4220e3a4c8133b9"
-    end
-  end
 
   def install
     # In Homebrew's 'superenv' sed's path will be incompatible, so
