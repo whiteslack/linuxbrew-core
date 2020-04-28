@@ -3,15 +3,14 @@ class Platformio < Formula
 
   desc "Open-source ecosystem for embedded development"
   homepage "https://platformio.org/"
-  url "https://files.pythonhosted.org/packages/c9/52/4a0a630b8d8c1e82291992cd3176b571c44ca2f5369cee6628ec3462a191/platformio-4.3.2.tar.gz"
-  sha256 "60e5e48afe8eeaf8beeeed1cf53c565db7337ef5cd4cdb29d6d6965ff15f88a8"
+  url "https://files.pythonhosted.org/packages/84/30/fbeab6f6269df25dda9d25c3ab999511c0aedfb30ea76a817b74f36644aa/platformio-4.3.3.tar.gz"
+  sha256 "bf1d945aa5910a902dd21e7d82f4a54114a58b1d10e093394b29251e9536a9c9"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6d20a894b532c32f0aa8e1240272aa95a8eb80ae42cab42cf36373de2212a3dc" => :catalina
-    sha256 "906a344ecc0ef996a96b786c2e6d9911f517f36c70fb837f30682fc1ec488ca0" => :mojave
-    sha256 "50b134b3453c2d7d6f4c9d395ca65655f4c15fa9d9ad37f9eda85207da99d56c" => :high_sierra
-    sha256 "5e9902967a4ce41a48d8ce628cf4a9c3caeb908d5faf3f93a2f38ff9188d8607" => :x86_64_linux
+    sha256 "7f8ffc0f64c6db34701b2e727c6a2a83ffef63ae1c3580666271c1f38cafacd1" => :catalina
+    sha256 "6e159b5929f53a08f772af37d7a453c829295d5234bce648c34c324f84db5317" => :mojave
+    sha256 "eec4db4f6047a1bd65734a26ac3216523bd3c679e3da0c6a79243129c32bf206" => :high_sierra
   end
 
   depends_on "python@3.8"
