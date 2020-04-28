@@ -9,6 +9,7 @@ class AwsCdk < Formula
   bottle do
     cellar :any_skip_relocation
     sha256 "130d4a0e534d449fa6a980f91590b79f3d8f95cf522343e2d087dafd5e1fb620" => :catalina
+    sha256 "b4bb235e7d160ebe18fb88c459c3845f9501219107a06a674b6e932662924c18" => :x86_64_linux
   end
 
   depends_on "node"
