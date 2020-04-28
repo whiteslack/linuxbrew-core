@@ -3,14 +3,14 @@ class Dnstwist < Formula
 
   desc "Test domains for typo squatting, phishing and corporate espionage"
   homepage "https://github.com/elceef/dnstwist"
-  url "https://github.com/elceef/dnstwist/archive/20200424.tar.gz"
-  sha256 "49cd1e9f1f4cf3bfc83e88804e4f7ece26d15e1318bd3505e6f8e587ecfbcd8e"
+  url "https://github.com/elceef/dnstwist/archive/20200427.tar.gz"
+  sha256 "ee1e0b6b1710b09ae1d3db2279f00bab8a95eddada5af904f30b7643c8dc2731"
 
   bottle do
     cellar :any
-    sha256 "a42458b03e120a52a6ff37360a945aa34c5a94c12771bb728bdf5923c4b479d0" => :catalina
-    sha256 "4f2b0cbe6c6bc121f6a9c90faebd838e0250667c3825c201e161f1ecc491f89c" => :mojave
-    sha256 "adf27bc61089266a58d018acb6d24b4972e395f3f45853c531265a58f60567cc" => :high_sierra
+    sha256 "591c731cb45a43c32e3f233fce4573551719519069ea8b1e8d913dd10afb5667" => :catalina
+    sha256 "486c95755a10d5d5446bdf7b7972a3553ecfe6ceed73915fed9ea3610173fab9" => :mojave
+    sha256 "df58c586c3035a4c31fcd549db481ddfe23da3743939174f124462b815804f41" => :high_sierra
   end
 
   depends_on "geoip"
