@@ -15,6 +15,7 @@ class GhcAT86 < Formula
     sha256 "3c2e2f8d8e4661dd7e53ad5af08489e926bec111e0d16a12397bb22a73b12997" => :catalina
     sha256 "831a6537953f467724c4c3c45b16cc3e5ff944aa02f1e9b3b77e9bdbfcdfb9d2" => :mojave
     sha256 "945069d9d94b4fb657e6d9c3a2d516ec551aea7535824b029c8c0632329f40cf" => :high_sierra
+    sha256 "d5ad66580ebf15df5c29f0e14cf03ce7d48c16ea914ce8a93a1a86169ac91d9b" => :x86_64_linux
   end
 
   keg_only :versioned_formula
