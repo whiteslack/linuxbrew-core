@@ -9,6 +9,7 @@ class PinboardNotesBackup < Formula
     sha256 "1735309c67f5ff12f212c8f780fe0cfb3d0409c53ce9376ee265597ceb517693" => :catalina
     sha256 "244865afa3cd3d89f059dd4e6a162de07ce8d404c9ea2c05dc92ef17869c75e8" => :mojave
     sha256 "cddc7122a3aa1aec17c18d2e50f471a154db42006684b7ba8d5fb4b2cfd5842f" => :high_sierra
+    sha256 "ad74e5c67b808cf54af1b5ab3353a052f81238509073e6d3a99891e3aa977b28" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
