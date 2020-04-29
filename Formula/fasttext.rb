@@ -10,6 +10,7 @@ class Fasttext < Formula
     sha256 "ec085551ced1f55b863a65aa60ad8f31d796002702b7effaaaafbf1490df867f" => :catalina
     sha256 "79f08167fb55b478829434be84d919c08c888563e0abbdeb66bc19cd3e82457f" => :mojave
     sha256 "4602a32c2a373ed97de8fd36bf1e998299682d45e465af39026a32a3a06fe574" => :high_sierra
+    sha256 "d4fd7acfc3a9124e638070c4dca7baa43bc4092da9cb237d5467355560695f26" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
