@@ -1,15 +1,14 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://github.com/fish-shell/fish-shell/releases/download/3.1.1/fish-3.1.1.tar.gz"
-  sha256 "07dc78eea3bc4cbd490b2f2a2e19e5771ac9e3b6b1a75893039ad8b34d6122b8"
+  url "https://github.com/fish-shell/fish-shell/releases/download/3.1.2/fish-3.1.2.tar.gz"
+  sha256 "d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c0fe77f3abf382d4cf1b65677b44ae7283682d7c86f3b194de337b4835d9f6bc" => :catalina
-    sha256 "d1a94c227b7c241d93619c4541195db26167333d6e3dc748422d0bb9cebe0bf2" => :mojave
-    sha256 "5699fdcf95c4c70ec8e7cd7654009fafb3c72c5ac032fa308325831c222e9ad8" => :high_sierra
-    sha256 "22c2c8371c5af1c450c62079f60ec2df7b9b074d45641d30159dfb617240df21" => :x86_64_linux
+    sha256 "b158b7f8640feb7c622ff3ca92b1bd88565f274f3e761499f5926bb124eeff7d" => :catalina
+    sha256 "6797636eaba364d0cbbc0459103a8767598e985f01846cca6cb57c986dfee7b8" => :mojave
+    sha256 "2609577a0d9f6b661331adccf5d1d8e010662ffe128869757e0af9a6760e26fb" => :high_sierra
   end
 
   head do
