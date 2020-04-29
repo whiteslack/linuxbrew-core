@@ -8,6 +8,7 @@ class Rsyslog < Formula
     sha256 "e96baca2b20bcd84d5e0344387c7df8d48cf087d73911dcecf52c3ad546353bd" => :catalina
     sha256 "05c7536644033db84bcaf9528e916bdd4139cfb64db621a687aa6c717a077bfb" => :mojave
     sha256 "59c286cdf4a0cd35e59d3d433eb92ce8a81eca24fa9715ae392fb5c63a6030e4" => :high_sierra
+    sha256 "2eee0ee8f92d6a258407ff7c5ed66f926f97f1a44a04b86a7d9295b59ec4126b" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
