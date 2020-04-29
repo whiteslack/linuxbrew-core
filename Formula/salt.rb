@@ -5,14 +5,14 @@ class Salt < Formula
   homepage "https://s.saltstack.com/community/"
   url "https://files.pythonhosted.org/packages/b5/7b/e591ad97f038f32298ee6303414767cdd8df811c9daf5b48c37afe9610c3/salt-3000.1.tar.gz"
   sha256 "5ad18044b4a47690d09c3ebc842a64d58144d63f40019e867683377dbf337aab"
+  revision 1
   head "https://github.com/saltstack/salt.git", :branch => "develop", :shallow => false
 
   bottle do
     cellar :any
-    sha256 "4c5c5f5b01e3d2493d8288be3ba7622aff978ef01e7e9f494800e2779d60e6f3" => :catalina
-    sha256 "fb41dd810c61c3d5e5eadb29968909bf41a4317d6c47eb5e89bb90c41052a97e" => :mojave
-    sha256 "880d912a737adb1f3b18d90b3bc6f7175a1a7c2e50e614864033a3f5c99f209b" => :high_sierra
-    sha256 "75e0a8031600e05c4965b0050db2f625a2b6bb9a4cbf622dc7025d397d2925db" => :x86_64_linux
+    sha256 "da00dc5bae4f18d0c1fdf84e3360ce41b7f9a9855493e0765bc0e3b01df7dffd" => :catalina
+    sha256 "108fd3915e941873fd52f4e95ed039d6faf05135188e10f92c73bd71d7e0610a" => :mojave
+    sha256 "30a1edf41cdeb360b9cbbc2e06a65a9f4db053b99a19c54a276fb84e0debc5b4" => :high_sierra
   end
 
   depends_on "swig" => :build
@@ -83,14 +83,15 @@ class Salt < Formula
     sha256 "f991347f5b11589ac8dc5a3c8257a514cf802545b75c11133a43ae9f76388278"
   end
 
+  # Fix loading of unversioned /usr/lib/libcrypto.dylib, taken from https://github.com/saltstack/salt/pull/56958
+  # Remove when merged or https://github.com/saltstack/salt/issues/55084 is fixed
+  patch do
+    url "https://github.com/saltstack/salt/pull/56958/commits/3dea0e31759b6c2a2c7b46647827a72f7a20dafd.patch?full_index=1"
+    sha256 "ddc760333341afb41cbe4083d33b35b8f9a3a0370abd34d6929574d10688de91"
+  end
+
   def install
     ENV["SWIG_FEATURES"]="-I#{Formula["openssl@1.1"].opt_include}"
-
-    # Workaround for https://github.com/saltstack/salt/issues/55084
-    # Remove when fixed
-    inreplace "salt/utils/rsax931.py",
-              "lib = find_library('crypto')",
-              "lib = '#{Formula["openssl@1.1"].opt_lib}/libcrypto.#{OS.mac? ? "dylib" : "so"}'"
 
     # Fix building of M2Crypto on High Sierra https://github.com/Homebrew/homebrew-core/pull/45895
     ENV.delete("HOMEBREW_SDKROOT") if MacOS.version == :high_sierra

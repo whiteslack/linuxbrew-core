@@ -9,10 +9,10 @@ class Ghc < Formula
   sha256 "e0dcc0aaf3e234c5978f29e6df62947e97720ab404ec0158343df211c5480f89"
 
   bottle do
-    sha256 "efba70e7b2639df91b366fb54580b2de9cf8b774c367e4eeadf662bf8b6c7696" => :catalina
-    sha256 "6ce78524676be247d1729f219faea5fc0c91f084f48fce18d77d590d7f9d1a1b" => :mojave
-    sha256 "8724b8bd4409b1500ef78616a3edce4843c8c47e540605224458f6ff82dc213d" => :high_sierra
-    sha256 "3d94b4df190e7860bda6bbe7558e3ef8767accb9d8bc3b650a98dd38489018a9" => :x86_64_linux
+    rebuild 1
+    sha256 "644f628d168a0d6b0c711d8c06517a28fdeeee070bbcc002f43c7c04ee1d8f9b" => :catalina
+    sha256 "d613300e67690faa5bc229df61897928c5e522cbdf3c2fb13f8aba0eca41e60d" => :mojave
+    sha256 "6e29df6f20aea87a4328b9b23646b5378b1db7d7dc02417837dff6f5e93d312a" => :high_sierra
   end
 
   head do
@@ -28,7 +28,7 @@ class Ghc < Formula
     end
   end
 
-  depends_on "python" => :build
+  depends_on "python@3.8" => :build
   depends_on "sphinx-doc" => :build
 
   unless OS.mac?
@@ -67,6 +67,7 @@ class Ghc < Formula
 
     ENV["CC"] = ENV.cc
     ENV["LD"] = "ld"
+    ENV["PYTHON"] = Formula["python@3.8"].opt_bin/"python3"
 
     # Build a static gmp rather than in-tree gmp, otherwise all ghc-compiled
     # executables link to Homebrew's GMP.
