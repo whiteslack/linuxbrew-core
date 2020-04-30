@@ -43,6 +43,9 @@ jobs:
           rm -rf $(brew --repository ${{github.repository}})
           ln -s $GITHUB_WORKSPACE $(brew --repository ${{github.repository}})
 
+      - name: Run brew test-bot --only-cleanup-before
+        run: brew test-bot --only-cleanup-before
+
       - name: Run brew test-bot --only-setup
         run: brew test-bot --only-setup
 
