@@ -12,6 +12,7 @@ class Salt < Formula
     sha256 "778c5cb28a0c87e4ed03ad08022da680f3702d781b8f092210c106862bc70cc0" => :catalina
     sha256 "b28fc676d3c42bd671cb04675c070185548434f4751abeb99de53c8fc52d82e2" => :mojave
     sha256 "3b53eba80fe3df81b69be0c02c53c4b00f9af90685e2130a006c6f4f0c99d49b" => :high_sierra
+    sha256 "cdce171679f095948e8f0a5d3c48ab4f5ee9b6c8dfeb9585b5e72850e5d38a57" => :x86_64_linux
   end
 
   depends_on "swig" => :build
