@@ -9,6 +9,7 @@ class DatetimeFortran < Formula
     sha256 "73f230fd02a4dcc810e5dff0b6c91fd652d71d205aabad40b781fb5cc4b85ce3" => :catalina
     sha256 "53b0711bb7bae0a6ceab81d1c81475ab7d9b4a3faf9293ef5ef425d9f008cd51" => :mojave
     sha256 "4da37b7d4a520168a526cc63ed413c1bea31f769b02a7a471de1cf854623a379" => :high_sierra
+    sha256 "2ed43e360daeafb83a44c0694c7f41ccbdca610a09ccda2c4d61e2743c27fa5a" => :x86_64_linux
   end
 
   head do
