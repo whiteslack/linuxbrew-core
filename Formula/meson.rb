@@ -3,14 +3,14 @@ class Meson < Formula
   homepage "https://mesonbuild.com/"
   url "https://github.com/mesonbuild/meson/releases/download/0.54.1/meson-0.54.1.tar.gz"
   sha256 "2f76fb4572762be13ee479292610091b4509af5788bcceb391fe222bcd0296dc"
+  revision 2
   head "https://github.com/mesonbuild/meson.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cee7c436ddaf0ff5b6bf917b0f1de3a053ae2eab5246fb462dc361e611739778" => :catalina
-    sha256 "cee7c436ddaf0ff5b6bf917b0f1de3a053ae2eab5246fb462dc361e611739778" => :mojave
-    sha256 "cee7c436ddaf0ff5b6bf917b0f1de3a053ae2eab5246fb462dc361e611739778" => :high_sierra
-    sha256 "03858552a3df9aec3ba8b518fc6f7cab4ad19e3f01f87df55a75144453d5e5af" => :x86_64_linux
+    sha256 "82d63cb000617bab25c658c0279db5d2355b01338f156c9c2e43f37d274ed168" => :catalina
+    sha256 "82d63cb000617bab25c658c0279db5d2355b01338f156c9c2e43f37d274ed168" => :mojave
+    sha256 "82d63cb000617bab25c658c0279db5d2355b01338f156c9c2e43f37d274ed168" => :high_sierra
   end
 
   depends_on "ninja"
@@ -20,6 +20,8 @@ class Meson < Formula
   patch :DATA
 
   def install
+    Language::Python.rewrite_python_shebang(Formula["python@3.8"].opt_bin/"python3")
+
     version = Language::Python.major_minor_version Formula["python@3.8"].bin/"python3"
     ENV["PYTHONPATH"] = lib/"python#{version}/site-packages"
 
