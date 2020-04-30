@@ -8,6 +8,7 @@ class Algol68g < Formula
     sha256 "046ba5e9ec0d0856557085fdf1acde227cd829d9955da28046e98c9a5ee84c09" => :catalina
     sha256 "7e1acd53615ebc407aaae64eb23af6047dbbd42f967e422b3fcfa0c6d01307b6" => :mojave
     sha256 "18013401e3eed914022e0a34c6b9b1ed415ec679113de78970d74aa52b0a35e8" => :high_sierra
+    sha256 "54dfb7001fa1aba552b02d6c63bd20328b446170f06c432e1ddc1ab26e4cd5a1" => :x86_64_linux
   end
 
   depends_on "postgresql" unless OS.mac?
