@@ -50,9 +50,7 @@ jobs:
           brew test-bot --only-cleanup-before
 
       - name: Run brew test-bot --only-setup
-        run: |
-          cd ~/bottles
-          brew test-bot --only-setup
+        run: brew test-bot --only-setup
 
       - name: Run brew test-bot --only-formulae
         run: |
