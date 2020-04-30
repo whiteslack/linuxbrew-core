@@ -43,11 +43,13 @@ jobs:
           rm -rf $(brew --repository ${{github.repository}})
           ln -s $GITHUB_WORKSPACE $(brew --repository ${{github.repository}})
 
-      - name: Run brew test-bot --only-cleanup-before
+      - name: Test tap setup
         run: |
-          mkdir ~/bottles
-          cd ~/bottles
-          brew test-bot --only-cleanup-before
+          echo BRANCHES
+          git branch -a || true
+          echo
+          echo REMOTES
+          git remote -va || true
 
       - name: Run brew test-bot --only-setup
         run: brew test-bot --only-setup

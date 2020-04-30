@@ -3,6 +3,7 @@ class Ack < Formula
   homepage "https://beyondgrep.com/"
   url "https://beyondgrep.com/ack-v3.3.1"
   sha256 "e4fd286d5a56f459147d562660d2f8bc4548f2f1e2d8cf3a5265b70beedbfc87"
+  revision 1
 
   head do
     url "https://github.com/beyondgrep/ack3.git", :branch => "dev"
