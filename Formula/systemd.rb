@@ -7,6 +7,7 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git"
 
   bottle do
+    sha256 "ae26fdbe001f77a7b3c5f764bd7ad1571073ab5b0ba6743596e2438d92348f57" => :x86_64_linux
   end
 
   depends_on "coreutils" => :build
