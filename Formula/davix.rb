@@ -10,6 +10,7 @@ class Davix < Formula
     sha256 "31228a01aae02ff881132588f85e59c563d3bcaf206f7600afb16eed76f478c8" => :catalina
     sha256 "d7af8ace083026f5fbbebc6e986162b16f651df17bd64a5303f6f4af6a110a9c" => :mojave
     sha256 "562abf97a898044427a6f968145208d27ada1bf7b6e793fb64eb6fef5864731a" => :high_sierra
+    sha256 "9399c0b125164acb2b0a4e1cf48171e0c5dd5000513de0e81178185ff0c114f3" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
