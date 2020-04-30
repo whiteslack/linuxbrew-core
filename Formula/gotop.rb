@@ -9,6 +9,7 @@ class Gotop < Formula
     sha256 "64c1dbdac093d37353e400b5ee47a9e2bb2268bf26a11c1853c331da349c230e" => :catalina
     sha256 "dcca12e1f88c8f8b835257839b38930203fa9d6df475b672ad1a65f99bf34855" => :mojave
     sha256 "20a37aeed1acf7a6a99c2ec63783a65e1813c92811e042c21ddea3d5dd18b132" => :high_sierra
+    sha256 "95c6a9e0ffdeb9d16b5fa104306789570f35b550d53e1005caa04bbc6ea96267" => :x86_64_linux
   end
 
   depends_on "go" => :build
