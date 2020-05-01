@@ -3,17 +3,16 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://codeload.github.com/Azure/azure-cli/legacy.tar.gz/69c99339b7b56263eb8167df2eed0c5593963195"
-  version "2.5.0"
-  sha256 "629cec09f936181974d26fdcf32f59401730c3ae81642f7aa5b939ddc21cab08"
+  url "https://codeload.github.com/Azure/azure-cli/legacy.tar.gz/ba399c7187b5e1a7d2b202fe32e51a4eeb311fdd"
+  version "2.5.1"
+  sha256 "efa5c31620e327dd91609ae10e76b27f0ed7cde0da5585c044009d1e3b0be9b8"
   head "https://github.com/Azure/azure-cli.git"
 
   bottle do
     cellar :any
-    sha256 "61a368e63dfe60c5847dc668812a927d53a9de70524ee7efb2a348bceb823df1" => :catalina
-    sha256 "ea4e52bff8f730eba24c8f88e51503d697914ef565b6503e68d24c6916a596c2" => :mojave
-    sha256 "4d0383061da5cc1e18a11b4a83a718b4907396a541dc83e7d4df5e53ace11b73" => :high_sierra
-    sha256 "b7b385ec2c544915c1da232ab625c9c7fd39828c62b977052f955d34bd08e21c" => :x86_64_linux
+    sha256 "83f1c44ef002c76a657b8e10cb91d28e582a5be40991223c449632160863be41" => :catalina
+    sha256 "5a85012e0fc89eb421ba1c108ace1fbfe1c457cbd59804645701b6caeb66ec89" => :mojave
+    sha256 "f1854d8f43be1159127cb8f657376830908053793ec18b5325b14db2d60be092" => :high_sierra
   end
 
   depends_on "openssl@1.1"
@@ -176,8 +175,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-cosmosdb" do
-    url "https://files.pythonhosted.org/packages/e4/c1/6403c7fe8a340d11419c4e165b0ed265bed8e4ce69bde8b96b3ccaabea0e/azure-mgmt-cosmosdb-0.12.0.zip"
-    sha256 "c5fa48b406deb0502f6a3bd56130d31f640d146b167c1e7a422729684f86801d"
+    url "https://files.pythonhosted.org/packages/21/3e/0adc07a542aaf76231a14d9be2383245472abcf667d4dda8f77deb7d9b7c/azure-mgmt-cosmosdb-0.13.0.zip"
+    sha256 "e83d21462f9d5b02e90f5590c4247ab73e0ff85fc4ac1fba32be119a15b10c98"
   end
 
   resource "azure-mgmt-datalake-analytics" do
@@ -416,8 +415,8 @@ class AzureCli < Formula
   end
 
   resource "azure-multiapi-storage" do
-    url "https://files.pythonhosted.org/packages/7a/5f/2e01d7f11fd32ebc1f15473d5e2b80b3dc2d9dc3da96bb0f59a8e3415a17/azure-multiapi-storage-0.2.4.tar.gz"
-    sha256 "2f5e9d3aaef82c6b0e5a1e735bd02548063be6f4d2951ad94a0d9bde08bb0a7f"
+    url "https://files.pythonhosted.org/packages/4e/ff/2f9cc5f900c1a719ac22c855422c27c1e64aaebdbb5301bd6b8ce932dd75/azure-multiapi-storage-0.3.1.tar.gz"
+    sha256 "d91e9279241c94862c9425d6af6d2158b0e9a8095138f2c55fb238ed7dab5ab5"
   end
 
   resource "azure-nspkg" do
@@ -663,11 +662,6 @@ class AzureCli < Formula
   resource "websocket_client" do
     url "https://files.pythonhosted.org/packages/c5/01/8c9c7de6c46f88e70b5a3276c791a2be82ae83d8e0d0cc030525ee2866fd/websocket_client-0.56.0.tar.gz"
     sha256 "1fd5520878b68b84b5748bb30e592b10d0a91529d5383f74f4964e72b297fd3a"
-  end
-
-  resource "wheel" do
-    url "https://files.pythonhosted.org/packages/fa/b4/f9886517624a4dcb81a1d766f68034344b7565db69f13d52697222daeb72/wheel-0.30.0.tar.gz"
-    sha256 "9515fe0a94e823fd90b08d22de45d7bde57c90edce705b22f5e1ecf7e1b653c8"
   end
 
   resource "xmltodict" do

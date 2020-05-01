@@ -1,16 +1,14 @@
 class GsettingsDesktopSchemas < Formula
   desc "GSettings schemas for desktop components"
   homepage "https://download.gnome.org/sources/gsettings-desktop-schemas/"
-  url "https://download.gnome.org/sources/gsettings-desktop-schemas/3.36/gsettings-desktop-schemas-3.36.0.tar.xz"
-  sha256 "764ab683286536324533a58d4e95fc57f81adaba7d880dd0ebbbced63e960ea6"
-  revision 1
+  url "https://download.gnome.org/sources/gsettings-desktop-schemas/3.36/gsettings-desktop-schemas-3.36.1.tar.xz"
+  sha256 "004bdbe43cf8290f2de7d8537e14d8957610ca479a4fa368e34dbd03f03ec9d9"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d26e995e22d691f36e9b4d83f9ad7103db94abdba5350db1edd6327a0e1cab3a" => :catalina
-    sha256 "d26e995e22d691f36e9b4d83f9ad7103db94abdba5350db1edd6327a0e1cab3a" => :mojave
-    sha256 "d26e995e22d691f36e9b4d83f9ad7103db94abdba5350db1edd6327a0e1cab3a" => :high_sierra
-    sha256 "69f6e583fb9b770ce32872ae86e3988729c5852bf3bcb14c6fe0f20ecdbbefc1" => :x86_64_linux
+    sha256 "9aa8dd0116bae54cedb04a0fd4ac6e3fe69064b9ee6caf55d7b3b730781d1037" => :catalina
+    sha256 "9aa8dd0116bae54cedb04a0fd4ac6e3fe69064b9ee6caf55d7b3b730781d1037" => :mojave
+    sha256 "9aa8dd0116bae54cedb04a0fd4ac6e3fe69064b9ee6caf55d7b3b730781d1037" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build
