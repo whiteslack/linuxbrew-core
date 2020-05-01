@@ -1,14 +1,13 @@
 class Mednafen < Formula
   desc "Multi-system emulator"
   homepage "https://mednafen.github.io/"
-  url "https://mednafen.github.io/releases/files/mednafen-1.24.1.tar.xz"
-  sha256 "a47adf3faf4da66920bebb9436e28cbf87ff66324d0bb392033cbb478b675fe7"
+  url "https://mednafen.github.io/releases/files/mednafen-1.24.2.tar.xz"
+  sha256 "1169ded285bb56d359973d3d332f28e5d2e9e41768a9932383d1a0ef63057c6c"
 
   bottle do
-    sha256 "05d5e089426ad7855d7676b98cddd627bd4c0d9c1805612e3bcd7e9d4667c6c8" => :catalina
-    sha256 "8f424aa04340125fe6b0556bc8554a145b43e4f7319b316f3179794628ccf40d" => :mojave
-    sha256 "99b51ff663598acb7a178119a1510bf86f1d1002960f7b6c121911eec618650b" => :high_sierra
-    sha256 "22aa99843864ac77a7ccfcfa65f80cc4a851f5c0d662ff3ca8c6954654f2c47c" => :x86_64_linux
+    sha256 "9717843bf5d8d022042b782bd1239a18fd2d83086b9738abd115189eae5b87fc" => :catalina
+    sha256 "6b4b6408d9d7e07937b12083e0175eab8c7c30eb0f79d3c439b96346416f51eb" => :mojave
+    sha256 "54b53e70803b4849cc38f214212e26bb33a8eeb7b492cb665d5a40286b728166" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
