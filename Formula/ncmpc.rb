@@ -8,6 +8,7 @@ class Ncmpc < Formula
     sha256 "ca880e781bb617e6fbbcfb70168ac8939b8b5a04bbc24128d68bb9450b4af498" => :catalina
     sha256 "aacbb298f4ceb0911d117babf04e5ce7e2dc17f8999805bc40cd784c256814be" => :mojave
     sha256 "7891f4939522591774bdeab323a49c53f3f0742f64eed19389ece06762b2beec" => :high_sierra
+    sha256 "0bff9afcb637717dbfe70b964da475d071522223bb78e5bfa12872ac2b292425" => :x86_64_linux
   end
 
   depends_on "boost" => :build
