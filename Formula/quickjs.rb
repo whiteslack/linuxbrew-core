@@ -8,6 +8,7 @@ class Quickjs < Formula
     sha256 "05d2f8998a2fd13bb606e0bb74d3eef3a0b80977edf6e543b98fd0320715733d" => :catalina
     sha256 "4c7dc36152c0a7d04ab3be8ef7f22c91332816dada0a1c66ad87df3537237dd7" => :mojave
     sha256 "49747bbada54cb4b97c218a5fbc202247a0820e5c7f6f9ccaf7001b7581a3fdc" => :high_sierra
+    sha256 "6354cf6567968e5aa2248da36014894f0b55467ea48d2a8a143bd2ed3833c537" => :x86_64_linux
   end
 
   # Fix build on macOS
