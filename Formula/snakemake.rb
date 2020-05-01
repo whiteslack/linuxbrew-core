@@ -12,6 +12,7 @@ class Snakemake < Formula
     sha256 "afa0f699d100e4d967bb9116c9a6992f5eb18da90208cd955ba9267191704f16" => :catalina
     sha256 "4e0669d7dcb0c5a56a01b0f6574cb7efb88befea14fcf1c3823b0faaf94f3b01" => :mojave
     sha256 "e6e127d28d631c4ea7c1baf97ad681f5c5c916d21b1dfb64591dbf6ca37896b9" => :high_sierra
+    sha256 "db268e5ff1d1e528041008a6ba480e262dd2741c6cf03e42d001c0325993ef72" => :x86_64_linux
   end
 
   depends_on "python@3.8"
