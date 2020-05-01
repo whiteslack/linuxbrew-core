@@ -23,7 +23,6 @@ jobs:
           export HOMEBREW_NO_AUTO_UPDATE=1
           cd "$(brew --repo)"
           brew tap homebrew/test-bot
-          brew update-reset Library/Taps/homebrew/homebrew-test-bot
 
       - name: Run brew test-bot --only-tap-syntax
         run: brew test-bot --only-tap-syntax
