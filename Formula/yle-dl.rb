@@ -11,6 +11,7 @@ class YleDl < Formula
     sha256 "d73e66933f97c75fc332d215baad36a9ffd018f9408883e9d7f8e7d8747e7947" => :catalina
     sha256 "dbf08e78c6323acaa7b86a4fc957de9b447d11700e6654307c4ba34c39726b04" => :mojave
     sha256 "6ff391522b4df6204a2851c04bd1a8f74726f9cf1dcfa399e04d90d6a4a316d7" => :high_sierra
+    sha256 "34ae516b5bf7a358387419c607e9739866870c71cf9ac15141cb2b6a48077d09" => :x86_64_linux
   end
 
   depends_on "python@3.8"
