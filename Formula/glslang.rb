@@ -10,6 +10,7 @@ class Glslang < Formula
     sha256 "9db9f4d0af3d3945270e3fcfbb2e502f377f15d76810facf80862093a18b7a5d" => :catalina
     sha256 "24e6cb49dac7d598a0d12e055a67cd036196eb8cfb7f688b58240219e1a144b9" => :mojave
     sha256 "02af3328d6edf389d340d0c106c4366f575e5abf8db478e6b5c6fc99111b2c2c" => :high_sierra
+    sha256 "07a762e9f5dadc061c754bfedd4deedb1fefcc0b09ab615f39f1a88e8ce793a7" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
