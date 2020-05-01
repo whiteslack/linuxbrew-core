@@ -9,6 +9,7 @@ class Step < Formula
     sha256 "c3107e8fbaf0cf0e3b3d794f07f359d3502481d02031855da534f071024847c5" => :catalina
     sha256 "d28ef6c9039972543f78ebb73d8cab06c3534d4fbb81e2046d775f853e69cdc9" => :mojave
     sha256 "e72088273aa7059762ba26ce2af1ffc494315b173dca1de1cca0622b5c1c92c4" => :high_sierra
+    sha256 "1804eeda75286bad536802592d509fe7bb898aada7d783ef094093aa6a13b6fd" => :x86_64_linux
   end
 
   depends_on "dep" => :build
