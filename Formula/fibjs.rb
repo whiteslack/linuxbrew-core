@@ -10,6 +10,7 @@ class Fibjs < Formula
     sha256 "5c123ec4d010a5f4912b5dccb3af1d83aed12f1678c9314360c08208aef8655b" => :catalina
     sha256 "014db4fa7314f35b7ba0ea76a0d77c6d6ca59d00e7ffd9e22cab12f7cad2993b" => :mojave
     sha256 "8830b25d963bed8bebab3e2be4024ed925c702ef4e28d1c5679ca9304f73f266" => :high_sierra
+    sha256 "cde35c9ea42b5d238e13f4a5d58b02c6f646e7ea927b1877f480b77a340de67a" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
