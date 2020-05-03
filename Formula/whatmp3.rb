@@ -13,6 +13,7 @@ class Whatmp3 < Formula
     sha256 "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5" => :catalina
     sha256 "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5" => :mojave
     sha256 "04408ee4a9e3dc0fefe1430dd09a736d35c8a78dc2ccf600894f5f3600ad5ae5" => :high_sierra
+    sha256 "383a5ca439b98ca4ef37864c5bfaeff003bf4a7babb80505a388a22dd4301785" => :x86_64_linux
   end
 
   depends_on "flac"
