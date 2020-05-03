@@ -48,8 +48,7 @@ class Mpd < Formula
     ENV.libcxx if OS.mac?
     ENV.cxx11 unless OS.mac?
 
-    args = %W[
-      --prefix=#{prefix}
+    args = std_meson_args + %W[
       --sysconfdir=#{etc}
       -Dlibwrap=disabled
       -Dmad=disabled

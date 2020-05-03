@@ -4,24 +4,20 @@ class Re2 < Formula
   url "https://github.com/google/re2/archive/2020-05-01.tar.gz"
   version "20200501"
   sha256 "88864d7f5126bb17daa1aa8f41b05599aa6e3222e7b28a90e372db53c1c49aeb"
+  revision 1
   head "https://github.com/google/re2.git"
 
   bottle do
     cellar :any
-    sha256 "d813a9eedba207c59de4aab1cca479f70258c4b700ab0ba9375d6e22d4f61c24" => :catalina
-    sha256 "176c60943a53680b6d0ef31a97ab676233de964e67786fa746ea427fa678588e" => :mojave
-    sha256 "f877947838db370c6be899383ddde1f2058e2b55cdddfd933fd98d4bc9d0ef82" => :high_sierra
-    sha256 "cc0c670af214bcd6f6c12042837c2847bc1d03b92f7fc4ee7bacae6d1144fae4" => :x86_64_linux
+    sha256 "24de88e2c4a0ce890de51229d017c2d95920e60da5b156f52732ff1eae81340a" => :catalina
+    sha256 "02ab50a96b2b1deac2a7175fb1974563c06c9fe38d824147de837dfd0add601e" => :mojave
+    sha256 "265c167a79095a8902a9bc072e5765e6092780be07dc6d0ddc5f057198e1570c" => :high_sierra
   end
 
   def install
     ENV.cxx11
 
     system "make", "install", "prefix=#{prefix}"
-    MachO::Tools.change_dylib_id("#{lib}/libre2.7.0.0.dylib", "#{lib}/libre2.0.dylib") if OS.mac?
-    ext = OS.mac? ? "dylib" : "so"
-    lib.install_symlink "libre2.7.0.0.#{ext}" => "libre2.0.#{ext}"
-    lib.install_symlink "libre2.7.0.0.#{ext}" => "libre2.#{ext}"
   end
 
   test do

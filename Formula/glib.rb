@@ -37,7 +37,7 @@ class Glib < Formula
       "@@HOMEBREW_PREFIX@@", HOMEBREW_PREFIX
 
     # Disable dtrace; see https://trac.macports.org/ticket/30413
-    args = %W[
+    args = std_meson_args + %W[
       -Diconv=auto
       -Dgio_module_dir=#{HOMEBREW_PREFIX}/lib/gio/modules
       -Dbsymbolic_functions=false
@@ -49,7 +49,7 @@ class Glib < Formula
     args << "--libdir=#{lib}" unless OS.mac?
 
     mkdir "build" do
-      system "meson", "--prefix=#{prefix}", *args, ".."
+      system "meson", *args, ".."
       system "ninja", "-v"
       # Some files have been generated with a Python shebang, rewrite these too
       Language::Python.rewrite_python_shebang(Formula["python@3.8"].opt_bin/"python3")

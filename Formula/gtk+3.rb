@@ -42,8 +42,7 @@ class Gtkx3 < Formula
   patch :DATA
 
   def install
-    args = %W[
-      --prefix=#{prefix}
+    args = std_meson_args + %w[
       -Dgtk_doc=false
       -Dman=true
       -Dintrospection=true
