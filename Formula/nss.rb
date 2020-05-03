@@ -9,6 +9,7 @@ class Nss < Formula
     sha256 "79ae9615f454e499df9dbbf738082f8517e80f9834c1db166260e76ff26aa76e" => :catalina
     sha256 "8dcf8da1de0e61a07b31753739b8a4b2e78d9ff7fe4589a9084f48ca3c6de685" => :mojave
     sha256 "7b6499923488a485722f14b9218202a92bc300920487f99720db7b5c835e762b" => :high_sierra
+    sha256 "c23b9efd23c0c185db75f8cbe13a26d6ae4c227c3d884d4c3b39581816748fed" => :x86_64_linux
   end
 
   depends_on "nspr"
