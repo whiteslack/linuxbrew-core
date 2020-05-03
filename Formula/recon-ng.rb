@@ -12,6 +12,7 @@ class ReconNg < Formula
     sha256 "7b4b03cc22d532fa9dbef0f5b705bbf8fb2df69d75d124f06f171e7f9609c048" => :catalina
     sha256 "db7c9ed3ef46fb0b192f3fe4194902991b09afeeb56b766c9b212a8deed679b9" => :mojave
     sha256 "497f43629d955ccd254e1db15fa6ac4ebaea01a34023e8ffbfa5c0a1a0511af2" => :high_sierra
+    sha256 "cb64aff2e8edce7d5a338b901e0b0f60a5094e83c0f7bf1add677757bc130f66" => :x86_64_linux
   end
 
   depends_on "libyaml"
