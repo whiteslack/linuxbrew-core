@@ -5,13 +5,13 @@ class AnsibleAT28 < Formula
   homepage "https://www.ansible.com/"
   url "https://releases.ansible.com/ansible/ansible-2.8.11.tar.gz"
   sha256 "156caa8b6c60b9f0d5c7d57ee0f4e46d8e226147b58546be6a8ac52925a9c191"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "9bab83ee265c5e124229c4f9258af04a36237ba7720de2915367f726ea542867" => :catalina
-    sha256 "c7d5496063d4a1d72bcdfffc53dfbfdec3d0751e9c8965c35ef31205cf436789" => :mojave
-    sha256 "3f0a597a2beed699a18b11db6242a3f269f09489bf029e9c8b9d3bc293d2a1e4" => :high_sierra
-    sha256 "02fe2309b974b1d25e95f25536d369f6856aec40610d10481d5e473f50d68d39" => :x86_64_linux
+    sha256 "50f002c921c8b618be56f21bdff3134e6b543a5166a63cf98a18b613ba766be3" => :catalina
+    sha256 "0026bad18caa3e005fa7e8b9529ac35c82cd11d5291410473021e5ce4dc1a2a0" => :mojave
+    sha256 "b28065fe9900addaa30e3873141768e7532c34762493cfce94f743431d740c9e" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -19,7 +19,7 @@ class AnsibleAT28 < Formula
   depends_on "pkg-config" => :build
   depends_on "libyaml"
   depends_on "openssl@1.1"
-  depends_on "python"
+  depends_on "python@3.8"
 
   uses_from_macos "libffi"
   uses_from_macos "libxslt"
@@ -596,7 +596,7 @@ class AnsibleAT28 < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin"
 
     # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && MacOS.version == :sierra
