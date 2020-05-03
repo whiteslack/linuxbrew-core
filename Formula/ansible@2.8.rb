@@ -12,6 +12,7 @@ class AnsibleAT28 < Formula
     sha256 "50f002c921c8b618be56f21bdff3134e6b543a5166a63cf98a18b613ba766be3" => :catalina
     sha256 "0026bad18caa3e005fa7e8b9529ac35c82cd11d5291410473021e5ce4dc1a2a0" => :mojave
     sha256 "b28065fe9900addaa30e3873141768e7532c34762493cfce94f743431d740c9e" => :high_sierra
+    sha256 "071d8c4bec3cb300d62e7292e63589db007cc64e5e8254489657d6d93c2b92da" => :x86_64_linux
   end
 
   keg_only :versioned_formula
