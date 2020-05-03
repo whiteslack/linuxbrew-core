@@ -13,6 +13,7 @@ class Termius < Formula
     sha256 "6cf57f123ac50976b3d4439a14046489c42173f606bc750de90c8ab7bd84bf4d" => :catalina
     sha256 "82a302b40d54d5652fe16aad8e22ebc64d05b7f459fe304fe7da43cb4834de6a" => :mojave
     sha256 "7f7fe23ce8e5f082efe10c406176a5393e16ca9ae711736713f00fe239fdf4ee" => :high_sierra
+    sha256 "2b3b8281a5eae2d23c1cd3021528ed6c540e0d121ac0ef049da21e309b4d90ea" => :x86_64_linux
   end
 
   depends_on "libyaml"
