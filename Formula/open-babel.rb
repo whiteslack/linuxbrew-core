@@ -11,6 +11,7 @@ class OpenBabel < Formula
     sha256 "7584694b0de308bfb6aa6cebd66e49bb6905942078051441164b2541e6f91b60" => :catalina
     sha256 "2f410442f5b6e43250b5d89e26bc2ca5d22103dcb74d70bc2b90a1ec568528e7" => :mojave
     sha256 "84a7ec2b7bf945d7baa10faeecabc627ac089cfef3b8493408012e1d17b0dc39" => :high_sierra
+    sha256 "deebf7081c4d2c54be347a3876861156bb57e280cf7848059cf63ecce6800a7b" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
