@@ -9,6 +9,7 @@ class Conserver < Formula
     sha256 "ce9d095a9e435480fe4a8eb2e73c0732fe0d7eda89aafc98e0599453eaa8f626" => :catalina
     sha256 "70283393748aaf6397ea4b0bcdda5f7192597da2093e8fe0c21fcbc89cd5e900" => :mojave
     sha256 "e5de5fdc13fd75c8ab4cb11f0a86408b63b2683ac9aacf573d7df0500dc38210" => :high_sierra
+    sha256 "0ee043f7dd6beaa92ab45ca422e907247392f9e8273dac8fc0df2ee45d57d73e" => :x86_64_linux
   end
 
   def install
