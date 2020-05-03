@@ -8,6 +8,7 @@ class Proj < Formula
     sha256 "fdb7d2c46930c511e8fa1b90482844fece3389133fe76975289caa5ba9dd240d" => :catalina
     sha256 "0e1f0612e883f22be57a0e56ed9b0e41f1eab78a6ebfd82971adb0bbdc917ee3" => :mojave
     sha256 "0a9e92d03a7f49742887e67d5af87a5700f5dcce76aebe52c1304e8f0b0004fc" => :high_sierra
+    sha256 "235f8949f550800edd40e915e19c568adcab08cddb2d009017f3127b48fdb48f" => :x86_64_linux
   end
 
   head do
