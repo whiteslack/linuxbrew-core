@@ -10,6 +10,7 @@ class FluentBit < Formula
     sha256 "bee04637d261542b20ced7239fcf19a936732a74c2b385f6ea7725a218f46f59" => :catalina
     sha256 "d6e6caf354fc799c79fa837d145c593cadac28a7de03e88714faa56ed33c71a4" => :mojave
     sha256 "b226652b284edb2045743125baa15db5077ed1949230c65db737e70984b24faf" => :high_sierra
+    sha256 "433f62ec0d93a2203e9148f541889dad51296655ebda83669f978739fe955138" => :x86_64_linux
   end
 
   depends_on "bison" => :build
