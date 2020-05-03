@@ -1,8 +1,7 @@
 name: GitHub Actions CI
-on:
-  push:
-    branches: master
-  pull_request: []
+
+on: pull_request
+
 jobs:
   tap_syntax:
     runs-on: ubuntu-latest
