@@ -10,6 +10,7 @@ class Cmark < Formula
     sha256 "3af95418f96f4b0cec4bd76abaab312f3caf4cea591f38d3b725f15068d06491" => :catalina
     sha256 "7cbb32d00d44170f5fe426cf2f1d4b5d756738b18631a13f8c5f94524b39f73b" => :mojave
     sha256 "fb673191d96707019c8eefc224de72045149830f445fb7340c454cc6e8510981" => :high_sierra
+    sha256 "14f173767120e1a8b3b60f470e2b1812e2f3e295e5f92e9a19f8c49fb3822e05" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
