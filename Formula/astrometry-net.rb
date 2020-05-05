@@ -5,12 +5,13 @@ class AstrometryNet < Formula
   homepage "https://github.com/dstndstn/astrometry.net"
   url "https://github.com/dstndstn/astrometry.net/releases/download/0.80/astrometry.net-0.80.tar.gz"
   sha256 "6eb73c2371df30324d6532955c46d5f324f2aad87f1af67c12f9354cfd4a7864"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "00995f973c3c0b66f7114e02bfc4059b5e25c14b2db75c7097e9e9279fd99568" => :catalina
-    sha256 "a9c5de9e1b963538b3da68eee51c107c2946faa9d6e88f0438546c1468f9c609" => :mojave
-    sha256 "f1c0e6fb5dfb74960bd37fa6e2aa3cf771e2771ef7a20a296538822aff1fbfaa" => :high_sierra
+    sha256 "f14dae2b13a392a20c8ea79afcaadbedbb12c2bb069e30c3f6ce7728a5025053" => :catalina
+    sha256 "c041ec91a98fee73b1bc8502ae91d2f8ca38be69f65c3082e1190d2da3b233cd" => :mojave
+    sha256 "28e7a07cd1c305eadcfc900c2cf1724fd3a6711f82139d8e269319a02c710067" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -31,12 +32,9 @@ class AstrometryNet < Formula
   end
 
   def install
-    Language::Python.rewrite_python_shebang(Formula["python@3.8"].opt_bin/"python3")
-
     ENV["NETPBM_INC"] = "-I#{Formula["netpbm"].opt_include}/netpbm"
     ENV["NETPBM_LIB"] = "-L#{Formula["netpbm"].opt_lib} -lnetpbm"
     ENV["SYSTEM_GSL"] = "yes"
-    ENV["PYTHON_SCRIPT"] = Formula["python@3.8"].opt_bin/"python3"
     ENV["PYTHON"] = Formula["python@3.8"].opt_bin/"python3"
 
     venv = virtualenv_create(libexec, Formula["python@3.8"].opt_bin/"python3")
@@ -46,6 +44,7 @@ class AstrometryNet < Formula
     xy = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
     ENV["PY_BASE_INSTALL_DIR"] = libexec/"lib/python#{xy}/site-packages/astrometry"
     ENV["PY_BASE_LINK_DIR"] = libexec/"lib/python#{xy}/site-packages/astrometry"
+    ENV["PYTHON_SCRIPT"] = libexec/"bin/python3"
 
     system "make"
     system "make", "py"
@@ -55,8 +54,7 @@ class AstrometryNet < Formula
   end
 
   test do
-    xy = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
-    ENV["PYTHONPATH"] = libexec/"lib/python#{xy}/site-packages"
+    system "#{bin}/image2pnm", "-h"
     system "#{bin}/build-astrometry-index", "-d", "3", "-o", "index-9918.fits",
                                             "-P", "18", "-S", "mag", "-B", "0.1",
                                             "-s", "0", "-r", "1", "-I", "9918", "-M",
