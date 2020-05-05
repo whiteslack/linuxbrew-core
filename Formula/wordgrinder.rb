@@ -11,6 +11,7 @@ class Wordgrinder < Formula
     sha256 "79fa0f89e7e123f7746ab934514834eaaecd35fa228a64e243d620825e508f7d" => :catalina
     sha256 "daa17cb7ea4b7ad382352a18b359deaa7f1a9cd8b2c7c8949b2f6dca41f0674c" => :mojave
     sha256 "735f8f1c7d405d11e0fd464d937d3f943c192c939126ca610a388f145da1a7da" => :high_sierra
+    sha256 "2b195e83a932435477e27724538db25c4e87ae391c697059fb0ed3cf9e6ecdc1" => :x86_64_linux
   end
 
   depends_on "ninja" => :build
