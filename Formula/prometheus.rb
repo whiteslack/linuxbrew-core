@@ -6,10 +6,10 @@ class Prometheus < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f7d2c54e560ad73b1824c9277702f174f4aaa61c7999433f3320a86ff8a18442" => :catalina
-    sha256 "1a4f6d320a926f2ab481f6999f69ab4c62f0c3215c8df7c016d74e017e5e43fd" => :mojave
-    sha256 "e3cf440c9e38ed1e35aba7fa6491e479eaa103410c6671fd1d60a6233f5e053f" => :high_sierra
-    sha256 "b3aa8a60eeacad794fbf0169de3c9932ff694d0ef42347727740396d8d5960be" => :x86_64_linux
+    rebuild 1
+    sha256 "b9974e2e8f836d58b1ffb980c2680522a1b61104531b08d091ac13a3fcbd89d4" => :catalina
+    sha256 "da478883ce7840ccb0bc244749a869bb635c1fd8ba8ae26c392320bf29e7c227" => :mojave
+    sha256 "d669e17871c64a49313240c697102f541125cd5509ebb6ac102c68f05bcbd1c9" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -24,16 +24,19 @@ class Prometheus < Formula
     system "make", "build"
     bin.install %w[promtool prometheus]
     libexec.install %w[consoles console_libraries]
-  end
 
-  def post_install
-    (etc/"prometheus.args").write <<~EOS
+    (bin/"prometheus_brew_services").write <<~EOS
+      #!/bin/bash
+      exec #{bin}/prometheus_brew_services $(<#{etc}/prometheus.args)
+    EOS
+
+    (buildpath/"prometheus.args").write <<~EOS
       --config.file #{etc}/prometheus.yml
       --web.listen-address=127.0.0.1:9090
       --storage.tsdb.path #{var}/prometheus
     EOS
 
-    (etc/"prometheus.yml").write <<~EOS
+    (buildpath/"prometheus.yml").write <<~EOS
       global:
         scrape_interval: 15s
 
@@ -42,15 +45,14 @@ class Prometheus < Formula
           static_configs:
           - targets: ["localhost:9090"]
     EOS
+    etc.install "prometheus.args", "prometheus.yml"
   end
 
   def caveats
     <<~EOS
-      When used with `brew services`, prometheus' configuration is stored as command line flags in:
-        #{etc}/prometheus.args
-
-      Configuration for prometheus is located in the #{etc}/prometheus.yml file.
-
+      When run from `brew services`, `prometheus` is run from
+      `prometheus_brew_services` and uses the flags in:
+         #{etc}/prometheus.args
     EOS
   end
 
@@ -66,9 +68,7 @@ class Prometheus < Formula
           <string>#{plist_name}</string>
           <key>ProgramArguments</key>
           <array>
-            <string>sh</string>
-            <string>-c</string>
-            <string>#{opt_bin}/prometheus $(&lt; #{etc}/prometheus.args)</string>
+            <string>#{opt_bin}/prometheus_brew_services</string>
           </array>
           <key>RunAtLoad</key>
           <true/>
