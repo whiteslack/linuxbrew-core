@@ -1,15 +1,14 @@
 class Sd < Formula
   desc "Intuitive find & replace CLI"
   homepage "https://github.com/chmln/sd"
-  url "https://github.com/chmln/sd/archive/v0.7.4.tar.gz"
-  sha256 "94064871151b472b72ed8ace353182a9d0cbba7a961921a37a27d382eb613426"
+  url "https://github.com/chmln/sd/archive/v0.7.5.tar.gz"
+  sha256 "f4731fd6bd992eed06ed9326cdef22093605ff97df1dd856e31c5015f0720c66"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5bde1490283fa9844eb9af5ac0d8f2f3d744923c39a5b7c9bfd959b186a7571a" => :catalina
-    sha256 "8525800846c415c336621b5d9d284b01ab0d42603c4f9922d0c332d4d4bc0573" => :mojave
-    sha256 "e02cebee44a63afba05378546b86c58be59252dbd6acb99dd4a34aabeb19d861" => :high_sierra
-    sha256 "c8852d6035437f396b28ed692de7d2136708674f05e8c3e15fc5057f9fe63c83" => :x86_64_linux
+    sha256 "44240033f8630edb2524e9cee7ee30b56cea0d7c14a24f9362c311caa5b9fa4e" => :catalina
+    sha256 "970858444ff3977f4e12e0d2b5f9f617c1abb6f273e835d11a5cef014b8fe854" => :mojave
+    sha256 "5457b2b3f96c0f57d40d9fddf313116ac1f7b0c1d7203cd6b1b1b3ec7c9995b2" => :high_sierra
   end
 
   depends_on "rust" => :build

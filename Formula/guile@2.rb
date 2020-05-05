@@ -1,24 +1,19 @@
-class Guile < Formula
+class GuileAT2 < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
-  url "https://ftp.gnu.org/gnu/guile/guile-3.0.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/guile/guile-3.0.2.tar.xz"
-  sha256 "53c47d320533c80a3145adbd83e14bbe107c0441c18a8b214ff20849b28a9f8a"
+  url "https://ftp.gnu.org/gnu/guile/guile-2.2.7.tar.xz"
+  mirror "https://ftpmirror.gnu.org/guile/guile-2.2.7.tar.xz"
+  sha256 "cdf776ea5f29430b1258209630555beea6d2be5481f9da4d64986b077ff37504"
 
   bottle do
-    sha256 "2177e9ef48e8c0799f06ff8f0a79182da8e574f5024bd38fe89081905ed22616" => :catalina
-    sha256 "671957c077171576cc2d7598aae337492e2552bce75140e664dde11ac96c5096" => :mojave
-    sha256 "db9dd8dbb89b538da5d359f0ac17bd9df91102c92176525359e3fde279d66cd3" => :high_sierra
+    sha256 "2821f055df7815abc7467a42f1bd90a09672261a9aad4ce994111a59a2ce6dbe" => :catalina
+    sha256 "78e5fd69581a54b8d7c701e1fc03d96660b80a2699d7dad701cdd2865a5f2442" => :mojave
+    sha256 "2832668210b0ef94ae0596c7e27aca846f76453719df6a9103e34af9e885d031" => :high_sierra
   end
 
-  head do
-    url "https://git.savannah.gnu.org/git/guile.git"
+  keg_only :versioned_formula
 
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "gettext" => :build
-    uses_from_macos "flex" => :build
-  end
+  deprecate!
 
   depends_on "gnu-sed" => :build
   depends_on "bdw-gc"
@@ -28,7 +23,6 @@ class Guile < Formula
   depends_on "libunistring"
   depends_on "pkg-config" # guile-config is a wrapper around pkg-config.
   depends_on "readline"
-  depends_on "gperf" unless OS.mac?
 
   def install
     # Work around Xcode 11 clang bug
@@ -38,7 +32,6 @@ class Guile < Formula
     # Avoid superenv shim
     inreplace "meta/guile-config.in", "@PKG_CONFIG@", Formula["pkg-config"].opt_bin/"pkg-config"
 
-    system "./autogen.sh" unless build.stable?
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-libreadline-prefix=#{Formula["readline"].opt_prefix}",
@@ -54,7 +47,7 @@ class Guile < Formula
     # --with-xyz-prefix= for libffi and bdw-gc or a solid argument for
     # Homebrew automatically removing Cellar paths from .pc files in favour
     # of opt_prefix usage everywhere.
-    inreplace lib/"pkgconfig/guile-3.0.pc" do |s|
+    inreplace lib/"pkgconfig/guile-2.2.pc" do |s|
       s.gsub! Formula["bdw-gc"].prefix.realpath, Formula["bdw-gc"].opt_prefix
       s.gsub! Formula["libffi"].prefix.realpath, Formula["libffi"].opt_prefix
     end
