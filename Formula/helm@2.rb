@@ -10,6 +10,7 @@ class HelmAT2 < Formula
     sha256 "db1e48fcef31b7316b97fa0ccc802a69be0475df2ceecdf6fbbd234605dbfcd8" => :catalina
     sha256 "80618ff1e3c1c2ca59385a174f3409ec7cdd34f0581def1d4145b1bd0d918fb2" => :mojave
     sha256 "a572807ded8d5a5f4044cf899810225423c4868e92c66132177d96bf17e67414" => :high_sierra
+    sha256 "984f150201b3b969295ee9442a81ffff28c878bad053a72c40fc2184e33c018d" => :x86_64_linux
   end
 
   keg_only :versioned_formula
