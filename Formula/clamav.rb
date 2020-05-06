@@ -4,13 +4,12 @@ class Clamav < Formula
   url "https://www.clamav.net/downloads/production/clamav-0.102.2.tar.gz"
   mirror "https://fossies.org/linux/misc/clamav-0.102.2.tar.gz"
   sha256 "89fcdcc0eba329ca84d270df09d2bb89ae55f5024b0c3bddb817512fb2c907d3"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 "af683074259e803315ec885285e9fbf587d0ad477e6bec9b582b78f8750a04c6" => :catalina
-    sha256 "b90f89527a40bc9bce31678af32c3a257111940459a2c8d00a34d135b66ae33b" => :mojave
-    sha256 "7ee665bc22ee3bd1c412737d02a70b2a1c02bd000fcd6974f9a1a4c036bf657a" => :high_sierra
-    sha256 "379a37153379f8164036a56a202b9d457a2ad9a62491c6410964146641f81b2c" => :x86_64_linux
+    sha256 "03315a351ef099050af0c00a8989dd6d9ce522729f648faacb9960e0436d65aa" => :catalina
+    sha256 "7d00d36a11a8edbc643c92757a7206598db4e629d9cd379be8fdaad106da61d7" => :mojave
+    sha256 "0bdd0b6b44fedbb2e1bea8fdccc49b5e5d5b6c00d6dcd6c7440eb10537c648d1" => :high_sierra
   end
 
   head do
@@ -43,8 +42,7 @@ class Clamav < Formula
       --libdir=#{lib}
       --sysconfdir=#{etc}/clamav
       --disable-zlib-vcheck
-      --with-llvm=yes
-      --with-system-llvm=no
+      --with-llvm=no
       --with-libiconv-prefix=#{Formula["libiconv"].opt_prefix}
       --with-iconv=#{Formula["libiconv"].opt_prefix}
       --with-libjson-static=#{Formula["json-c"].opt_prefix}/lib/libjson-c.a
