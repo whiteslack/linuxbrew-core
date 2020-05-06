@@ -10,6 +10,7 @@ class Clamav < Formula
     sha256 "03315a351ef099050af0c00a8989dd6d9ce522729f648faacb9960e0436d65aa" => :catalina
     sha256 "7d00d36a11a8edbc643c92757a7206598db4e629d9cd379be8fdaad106da61d7" => :mojave
     sha256 "0bdd0b6b44fedbb2e1bea8fdccc49b5e5d5b6c00d6dcd6c7440eb10537c648d1" => :high_sierra
+    sha256 "4afca19fe09a1bafd4ce8fa31eb45e5ecb2c4c6533a1bdd74abecb3797f835a8" => :x86_64_linux
   end
 
   head do
