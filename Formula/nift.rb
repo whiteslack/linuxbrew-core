@@ -1,15 +1,14 @@
 class Nift < Formula
   desc "Cross-platform open source framework for managing and generating websites"
   homepage "https://nift.cc/"
-  url "https://github.com/nifty-site-manager/nsm/archive/v2.3.7.tar.gz"
-  sha256 "b624eeb76c1b171670973bd94bb8a62484e76124fdc3f36a8e71938e182ff244"
+  url "https://github.com/nifty-site-manager/nsm/archive/v2.3.8.tar.gz"
+  sha256 "4bd42efbdbc05e121e7ee4ccf93640635dd4ee32532232f5e5a9e59f11238ad9"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6ba456a4cc04bfa8bfce07394d18d680f1cdb0f36e81bfdf264eeb3c68f95f98" => :catalina
-    sha256 "50d9b27d887301626a680f438a0a7aba625fe59e9d8a4dceb035172e5b209430" => :mojave
-    sha256 "8cbc1db254391eeedc7d1a5c83953215c30fb0ad5c7d1bbb27157009ab9a8a69" => :high_sierra
-    sha256 "58721b874083a6cf590a978d2af64e9a93eb50dd7da5350040e21ab37142baf6" => :x86_64_linux
+    sha256 "801ddbb3b789d00425b908c2b11e0410dc486a3ef4ef52ebc97021bba4477571" => :catalina
+    sha256 "47bed5d6082af273eced0323100ffd67874fcfe03d131d8e9745dec67f846f4c" => :mojave
+    sha256 "b4560359c2f69e2ddf978c7dd57f7b9d8182a8d60c3539ecb6737ee4d290719e" => :high_sierra
   end
 
   depends_on "luajit" unless OS.mac?

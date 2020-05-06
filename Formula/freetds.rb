@@ -1,14 +1,13 @@
 class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
   homepage "https://www.freetds.org/"
-  url "https://www.freetds.org/files/stable/freetds-1.1.33.tar.gz"
-  sha256 "86cb2cbe7768075674ceeb99f52c5ba0f861deb53c1d9b901abb8cf4b362de10"
+  url "https://www.freetds.org/files/stable/freetds-1.1.36.tar.gz"
+  sha256 "1c306e658e10a325eefddfd662cec3a6d9065fe61c515f26d4f1fb6c4c62405d"
 
   bottle do
-    sha256 "2e4b532377ca55da4789362b2123b4e890d42cbf8600c8fc89b44983dd887dd5" => :catalina
-    sha256 "30890cb1671978000bdb8c48d7aabe28b038cc6d5fc69eea82efb5228eb888e6" => :mojave
-    sha256 "f134fb528b5facf98b109ee6f59847517b269b1b6bab725f4738121b2af56153" => :high_sierra
-    sha256 "c1428d4df977df6cbb0742645f25c87094aa6dde59ed03a0c3860a6092d5f766" => :x86_64_linux
+    sha256 "a3e22cf599c870153f33d225e8839078c6c2c759e98f620541aa671f7cdcff89" => :catalina
+    sha256 "395b46028182ffba1cf5975272551c440ba6398c1a6c32c6a24eda83105fb612" => :mojave
+    sha256 "6df1c0993d1d06beffb798e39382ceb8f820ced333a4dcaf9925d3712d1b56f7" => :high_sierra
   end
 
   head do
