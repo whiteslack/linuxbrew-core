@@ -10,6 +10,7 @@ class Lv < Formula
     sha256 "74f154bdfaabb2819bfab9969a88addff7e0b08cca3aafe3ea13805fa588e68d" => :catalina
     sha256 "491aa872d9c617f7d323aa368498f25728d25bbdf1e60fde272e62b149831c99" => :mojave
     sha256 "90a79ade2abcd36772eb50db1c93298a67766d626a5316a3eeb1638312fbd377" => :high_sierra
+    sha256 "5aa1bbb834caa980cc77fb6d2b27ab0ffefacb644351e0ff572d9a4f0e78b168" => :x86_64_linux
   end
 
   depends_on "gzip" unless OS.mac?
