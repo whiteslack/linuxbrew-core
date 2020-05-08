@@ -1,42 +1,23 @@
 require "language/haskell"
 
-class Ghc < Formula
+class GhcAT88 < Formula
   include Language::Haskell::Cabal
 
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/8.10.1/ghc-8.10.1-src.tar.xz"
-  sha256 "4e3b07f83a266b3198310f19f71e371ebce97c769b14f0d688f4cbf2a2a1edf5"
+  url "https://downloads.haskell.org/~ghc/8.8.3/ghc-8.8.3-src.tar.xz"
+  sha256 "e0dcc0aaf3e234c5978f29e6df62947e97720ab404ec0158343df211c5480f89"
 
   bottle do
-    sha256 "0771a43a5fd75ac8f3814367e0b99b27881b6730ced580eca109516aa250be4a" => :catalina
-    sha256 "12b0bfdf7570a348bda4ff916f3319a30c8cd82957725a78ba0ef25a1e42fdcc" => :mojave
-    sha256 "ab8ed6381773c90a5687843743b67e80ea7305cbebf056d0c1cceedb0ecc3490" => :high_sierra
+    sha256 "7968d8e75b49c4b4177aeec21bc09dc62dd039d973cfe5be6432ad54bd44ee38" => :catalina
+    sha256 "25ea38aa4d2e3089518f52af08083f7715843fdfda2637f92f478e3b4cc5540d" => :mojave
+    sha256 "de3fad18e3656100e3e57411281bedd903d1aae583b046c6b2916b2d29800acc" => :high_sierra
   end
 
-  head do
-    url "https://gitlab.haskell.org/ghc/ghc.git", :branch => "ghc-8.10"
+  keg_only :versioned_formula
 
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-
-    resource "cabal" do
-      url "https://hackage.haskell.org/package/cabal-install-3.0.0.0/cabal-install-3.0.0.0.tar.gz"
-      sha256 "a432a7853afe96c0fd80f434bd80274601331d8c46b628cd19a0d8e96212aaf1"
-    end
-  end
-
-  depends_on "python@3.8" => :build
+  depends_on "python" => :build
   depends_on "sphinx-doc" => :build
-
-  unless OS.mac?
-    depends_on "m4" => :build
-    depends_on "ncurses"
-
-    # This dependency is needed for the bootstrap executables.
-    depends_on "gmp" => :build
-  end
 
   resource "gmp" do
     url "https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz"
@@ -45,27 +26,17 @@ class Ghc < Formula
     sha256 "87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912"
   end
 
-  # https://www.haskell.org/ghc/download_ghc_8_10_1.html#macosx_x86_64
+  # https://www.haskell.org/ghc/download_ghc_8_8_3.html#macosx_x86_64
   # "This is a distribution for Mac OS X, 10.7 or later."
   # A binary of ghc is needed to bootstrap ghc
   resource "binary" do
-    if OS.linux?
-      url "https://downloads.haskell.org/~ghc/8.10.1/ghc-8.10.1-x86_64-deb9-linux.tar.xz"
-      sha256 "d1cf7886f27af070f3b7dbe1975a78b43ef2d32b86362cbe953e79464fe70761"
-    else
-      url "https://downloads.haskell.org/~ghc/8.10.1/ghc-8.10.1-x86_64-apple-darwin.tar.xz"
-      sha256 "65b1ca361093de4804a7e40b3e68178e1ef720f84f743641ec8d95e56a45b3a8"
-    end
+    url "https://downloads.haskell.org/~ghc/8.8.3/ghc-8.8.3-x86_64-apple-darwin.tar.xz"
+    sha256 "7016de90dd226b06fc79d0759c5d4c83c2ab01d8c678905442c28bd948dbb782"
   end
 
   def install
-    # Work around Xcode 11 clang bug
-    # https://bitbucket.org/multicoreware/x265/issues/514/wrong-code-generated-on-macos-1015
-    ENV.append_to_cflags "-fno-stack-check" if DevelopmentTools.clang_build_version >= 1010
-
     ENV["CC"] = ENV.cc
     ENV["LD"] = "ld"
-    ENV["PYTHON"] = Formula["python@3.8"].opt_bin/"python3"
 
     # Build a static gmp rather than in-tree gmp, otherwise all ghc-compiled
     # executables link to Homebrew's GMP.
@@ -74,33 +45,14 @@ class Ghc < Formula
     # GMP *does not* use PIC by default without shared libs so --with-pic
     # is mandatory or else you'll get "illegal text relocs" errors.
     resource("gmp").stage do
-      args = if OS.mac?
-        "--build=#{Hardware.oldest_cpu}-apple-darwin#{`uname -r`.to_i}"
-      else
-        "--build=core2-linux-gnu"
-      end
       system "./configure", "--prefix=#{gmp}", "--with-pic", "--disable-shared",
-                            *args
+                            "--build=#{Hardware.oldest_cpu}-apple-darwin#{`uname -r`.to_i}"
       system "make"
       system "make", "install"
     end
 
     args = ["--with-gmp-includes=#{gmp}/include",
             "--with-gmp-libraries=#{gmp}/lib"]
-
-    unless OS.mac?
-      # Fix error while loading shared libraries: libgmp.so.10
-      ln_s Formula["gmp"].lib/"libgmp.so", gmp/"lib/libgmp.so.10"
-      ENV.prepend_path "LD_LIBRARY_PATH", gmp/"lib"
-      # Fix /usr/bin/ld: cannot find -lgmp
-      ENV.prepend_path "LIBRARY_PATH", gmp/"lib"
-      # Fix ghc-stage2: error while loading shared libraries: libncursesw.so.5
-      ln_s Formula["ncurses"].lib/"libncursesw.so", gmp/"lib/libncursesw.so.5"
-      # Fix ghc-stage2: error while loading shared libraries: libtinfo.so.5
-      ln_s Formula["ncurses"].lib/"libtinfo.so", gmp/"lib/libtinfo.so.5"
-      # Fix ghc-pkg: error while loading shared libraries: libncursesw.so.6
-      ENV.prepend_path "LD_LIBRARY_PATH", Formula["ncurses"].lib
-    end
 
     # As of Xcode 7.3 (and the corresponding CLT) `nm` is a symlink to `llvm-nm`
     # and the old `nm` is renamed `nm-classic`. Building with the new `nm`, a
@@ -118,16 +70,6 @@ class Ghc < Formula
     end
 
     resource("binary").stage do
-      # Change the dynamic linker and RPATH of the binary executables.
-      if OS.linux? && Formula["glibc"].installed?
-        keg = Keg.new(prefix)
-        ["ghc/stage2/build/tmp/ghc-stage2"].concat(Dir["libraries/*/dist-install/build/*.so",
-            "rts/dist/build/*.so*", "utils/*/dist*/build/tmp/*"]).each do |s|
-          file = Pathname.new(s)
-          keg.change_rpath(file, Keg::PREFIX_PLACEHOLDER, HOMEBREW_PREFIX.to_s) if file.dynamic_elf?
-        end
-      end
-
       binary = buildpath/"binary"
 
       system "./configure", "--prefix=#{binary}", *args
