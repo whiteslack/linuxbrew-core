@@ -13,6 +13,7 @@ class Bench < Formula
     sha256 "a1e643d10bcde9bd745eba1b515488c65493cf7d9879cbd7a58bd3661bb6bbdc" => :catalina
     sha256 "ea2a40fb086803f1b7f6a35a9f34aa89509bbbc010a37228fa83ed4ccd1139be" => :mojave
     sha256 "2263dbeca7bcff6a01109ea94a3d27fd4aed15b8c0fe27be5f78f86919c631d4" => :high_sierra
+    sha256 "d9dbd94296661e7d9e24a927ecd08600fe67e6676e80a6d61395559f874694f2" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
