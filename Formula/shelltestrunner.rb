@@ -14,6 +14,7 @@ class Shelltestrunner < Formula
     sha256 "330c8aeff49dc1901a460586c90ce7540ad33451a4fa94ec4917ad2959780adc" => :catalina
     sha256 "f1f921cc6c8fd64b1b99f483e47f1f06c4b8a39f74a823ac96df22cef9d5cf34" => :mojave
     sha256 "f494b35cab29e3a942562230b461c44a8274f7564e8863400fdf68176f3b292d" => :high_sierra
+    sha256 "2b45d7754293903b1b61b93f367f30ffcf518c926081a25c7a67a24d938cc0be" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
