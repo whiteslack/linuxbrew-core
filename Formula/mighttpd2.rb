@@ -13,6 +13,7 @@ class Mighttpd2 < Formula
     sha256 "3deac246044c856f3b85c98ad7de72f3da58078a4a8fb1f8b621a3d0ac4ddf93" => :catalina
     sha256 "c0ead6b222cc7564253a15ce33a4db37e4b08a3e65d9a035e901c76484b2f8f3" => :mojave
     sha256 "e583e8b97857ae8cd8c545355e4f2f257584ada8c678a534096277b3ac323de4" => :high_sierra
+    sha256 "92ceeab85d461b14aa77035c00402160dd394e7ae68d8b91059733c307e581c7" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
