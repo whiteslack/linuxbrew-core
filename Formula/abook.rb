@@ -9,6 +9,7 @@ class Abook < Formula
     sha256 "09e77aa3db2cf8a702effbebbbf83f7a2f860b0d5db6bcf37549edb7db5438a7" => :catalina
     sha256 "a6ab99c751a03e11e2ace660ad9325a9fe4262598f284c0fb87626778383e29d" => :mojave
     sha256 "a0461ecc678e5cb65a901bd39dbd7f0f8015a29ed605e6cf28f1315d5c347ecb" => :high_sierra
+    sha256 "e575a49ba5afa49d6e3838ee6600f1372a97817fa5849ec1587ea559db216e42" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
