@@ -11,6 +11,7 @@ class Bento4 < Formula
     sha256 "c2a563a7f037d33921334541e706a3f98ae0556ff08ba3e33992d4c26342de19" => :catalina
     sha256 "f74dc8941419a6fffe52606dd40e2f612a8b8713ea6249fc6d20b6f3656e1859" => :mojave
     sha256 "39cf05c54bc595fa014196b8f0fa0847e2d39d25e720bf9c6b581a578a77631b" => :high_sierra
+    sha256 "4e8f883c55edd2f50eb6886668b04ebbe48d82688be5a50b234db59b964390b6" => :x86_64_linux
   end
 
   depends_on "cmake" => :build unless OS.mac?
