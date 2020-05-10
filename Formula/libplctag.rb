@@ -9,6 +9,7 @@ class Libplctag < Formula
     sha256 "ada6532b7a4d7795e4076287012f5d7943d6f47a1841ec483c69ccfaf1bb8176" => :catalina
     sha256 "923714a1e235142d584a71ec9f854d1b7bf73b7e1486257207e11a0f68144f36" => :mojave
     sha256 "fbfcc0140439b27881dec7e5d2dd10a865b7c72ed0e7ef267e27e40dd38735a7" => :high_sierra
+    sha256 "0cd014a7c9ac2d527717fccf806059d1310db57d217f1edb7eeade3ed9dbe7c0" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
