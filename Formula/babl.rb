@@ -11,6 +11,7 @@ class Babl < Formula
     sha256 "bf355edff79acdd3cb2925486c285e335159998e9c1033b50ac1d3e45bcb8bf2" => :catalina
     sha256 "006a8102eb5512992ac1cca31851026a4202eb11cc80dababd95662680637a4b" => :mojave
     sha256 "de56e5e2e7df44e673e1aacfa0742b9d2753d3803da8fb6d68cb82739782206f" => :high_sierra
+    sha256 "40493de97dbb826ae5e0de67435c10e5ecef2850e39c5da50c84818d6a6487d3" => :x86_64_linux
   end
 
   depends_on "glib" => :build # for gobject-introspection
