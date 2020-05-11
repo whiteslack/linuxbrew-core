@@ -12,6 +12,7 @@ class Vapoursynth < Formula
     sha256 "1ec7b431eb7330f55b6faec6db47bc46a8dca4e7ccac155c6dcd8e114928d548" => :catalina
     sha256 "1c1ac3d53af915f9f437f9686ce2d1946987a15b930564dbe6e587ec400364f0" => :mojave
     sha256 "6138f5a2e56576dde5ddf38e9bc196c4f69c9e908cec5b8ec9a5b58103b19c33" => :high_sierra
+    sha256 "53a4316d07d52799e779bbbc629aa7477859bc1dafa510b6057a6dc100af6eb4" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
