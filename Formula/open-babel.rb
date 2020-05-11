@@ -1,17 +1,15 @@
 class OpenBabel < Formula
   desc "Chemical toolbox"
   homepage "https://openbabel.org"
-  url "https://github.com/openbabel/openbabel/archive/openbabel-3-0-0.tar.gz"
-  version "3.0.0"
-  sha256 "5c630c4145abae9bb4ab6c56a940985acb6dadf3a8c3a8073d750512c0220f30"
-  revision 1
+  url "https://github.com/openbabel/openbabel/archive/openbabel-3-1-1.tar.gz"
+  version "3.1.1"
+  sha256 "c97023ac6300d26176c97d4ef39957f06e68848d64f1a04b0b284ccff2744f02"
   head "https://github.com/openbabel/openbabel.git"
 
   bottle do
-    sha256 "7584694b0de308bfb6aa6cebd66e49bb6905942078051441164b2541e6f91b60" => :catalina
-    sha256 "2f410442f5b6e43250b5d89e26bc2ca5d22103dcb74d70bc2b90a1ec568528e7" => :mojave
-    sha256 "84a7ec2b7bf945d7baa10faeecabc627ac089cfef3b8493408012e1d17b0dc39" => :high_sierra
-    sha256 "deebf7081c4d2c54be347a3876861156bb57e280cf7848059cf63ecce6800a7b" => :x86_64_linux
+    sha256 "997886c087d6c342ea47649bb6de0e50fa807a2116aaad2119490b8921b85edf" => :catalina
+    sha256 "d8bf12ee10f070e6ca4396fa37d02da80f5449f5c3927a0050ffbb028331a01a" => :mojave
+    sha256 "035d300440fbfaaf20939137db63e8f78246983a16db563dcd1b66f4980685f4" => :high_sierra
   end
 
   depends_on "cmake" => :build
