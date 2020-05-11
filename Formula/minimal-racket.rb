@@ -9,6 +9,7 @@ class MinimalRacket < Formula
     sha256 "c16ada1784dafe74e56c4a860f310752060fb161a4acce72bd9f3ac9f85897f3" => :catalina
     sha256 "7b32a64228abada82c29a05e5bac3fc172b49adb2d86fa27f46665b416f1825b" => :mojave
     sha256 "a8d174fecc59249af342499b0a174d78f07bd4ea037cd71a177487b980579d7b" => :high_sierra
+    sha256 "64335ab620279f39ac776fa9f29827c7c157019bc3c5c634d45d2967da532804" => :x86_64_linux
   end
 
   uses_from_macos "libffi"
