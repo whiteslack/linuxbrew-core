@@ -3,16 +3,14 @@ class PythonMarkdown < Formula
 
   desc "Python implementation of Markdown"
   homepage "https://pypi.python.org/pypi/Markdown"
-  url "https://files.pythonhosted.org/packages/98/79/ce6984767cb9478e6818bd0994283db55c423d733cc62a88a3ffb8581e11/Markdown-3.2.1.tar.gz"
-  sha256 "90fee683eeabe1a92e149f7ba74e5ccdc81cd397bd6c516d93a8da0ef90b6902"
-  revision 1
+  url "https://files.pythonhosted.org/packages/44/30/cb4555416609a8f75525e34cbacfc721aa5b0044809968b2cf553fd879c7/Markdown-3.2.2.tar.gz"
+  sha256 "1fafe3f1ecabfb514a5285fca634a53c1b32a81cb0feb154264d55bf2ff22c17"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "794749d9f07df8c18e77027ad4962bf607b86b82a2bff7c863fab628e421f0bb" => :catalina
-    sha256 "c1b7907a2e382d8bac8811d20d680aeb4da4b26af5a14ccc2399f5eb60b28ec5" => :mojave
-    sha256 "f7d01b91d1a72658fd467591800934c03f6041a38ea07d23a16c9a7a42eb5c6a" => :high_sierra
-    sha256 "211d997a518149882ba8cd03dfcec5a52a9958d52599da7a8dc38b001512ae4f" => :x86_64_linux
+    sha256 "a5a1565cdb0c20aa5d1101039e8ed69110dd36262224ed6e2ee107a6d6a0cdc3" => :catalina
+    sha256 "54d88c62588de8fef562e815b9cb0e83177798c9276b881401b4445e78605872" => :mojave
+    sha256 "80a8cba20c744e0e49f211240883b9f8fbbd0676c95e9f43abbaf1b290f435b0" => :high_sierra
   end
 
   depends_on "python@3.8"
