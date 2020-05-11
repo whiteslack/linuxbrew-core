@@ -9,6 +9,7 @@ class Gom < Formula
     sha256 "2d41e90512e737bfd112ba64278fda9c0dbaf1ab7dbd00732ed6ebb644da31e0" => :catalina
     sha256 "619f71c318e02d8c33e4d827aedfaad09d6f349d92408bb9a40097dba99eb65e" => :mojave
     sha256 "7566dd0ded406861960ebd556ce0d7f7e6e48eac4e72ab88aa9934d554ad638b" => :high_sierra
+    sha256 "c5455a6035a88623ef30ed945616512b55da83e3db0f30b169e8155ba0c37792" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
