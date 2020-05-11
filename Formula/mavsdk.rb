@@ -10,6 +10,7 @@ class Mavsdk < Formula
     sha256 "3ddc5fe48ddcc2264c242f524f8277628d485724e2ad159ad691a82b51ce1ff2" => :catalina
     sha256 "619db79cab731beece5cbd367d789ff8747efcbd9f0b94915f02c6debd749099" => :mojave
     sha256 "f80177abb051de50313ef7cc6ad247e11447ea308da89401cc93c83d1fbe501a" => :high_sierra
+    sha256 "4c00e15969b24b24369583342c5a84d383fcc7fbe0eb317f634e328383ec9bc0" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
