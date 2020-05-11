@@ -1,16 +1,15 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
   homepage "https://xrootd.slac.stanford.edu/"
-  url "https://xrootd.slac.stanford.edu/download/v4.11.3/xrootd-4.11.3.tar.gz"
-  sha256 "8e7a64fd55dfb452b6d5f76a9a97c493593943227b377623a3032da9197c7f65"
+  url "https://xrootd.slac.stanford.edu/download/v4.12.0/xrootd-4.12.0.tar.gz"
+  sha256 "69ef4732256d9a88127de4bfdf96bbf73348e0c70ce1d756264871a0ffadd2fc"
   head "https://github.com/xrootd/xrootd.git"
 
   bottle do
     cellar :any
-    sha256 "ca8ad23240dae85b67da21790451ae0c48a6e56e446aea537eb78253cf608181" => :catalina
-    sha256 "7f39d25830dd021e4bf747c851f06ec7eb8d80c10d6aa859b8a1a390993d72ef" => :mojave
-    sha256 "533a3137dece016eedf34125a830937004a3bc2a907bc32929adacd5ce74f759" => :high_sierra
-    sha256 "f8293cd4999ff735ab723602ef5709411d0bd1b5ec1e60d84b77374c18ea9e33" => :x86_64_linux
+    sha256 "ca8bf41840e9be4351c25f309af3c51075c1c7ec34a8ac1d36e53d5956a3f5d1" => :catalina
+    sha256 "43f4f1fbb893a02accef9afbcec430b6045ab88fa25cf3990b38450c47027a42" => :mojave
+    sha256 "21f2b97f720a1d70142cdd945130cfcc75b8d5b2f56d867aac527c2485928eb1" => :high_sierra
   end
 
   depends_on "cmake" => :build
