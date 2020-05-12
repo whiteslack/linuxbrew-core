@@ -9,6 +9,7 @@ class Travis < Formula
     sha256 "6d7a6ebd1e4a3185754508a174482739b421f46dfb21021db03fcfdc825144d0" => :catalina
     sha256 "7f1ce4a29047c7cf3e6092b25a1277f417dd5ceab77b7e5ebc9f4698376503cf" => :mojave
     sha256 "e8ff975c95cff2c07f6437f38b6749751c087dc2cee6ca9ac8017268e890dfb9" => :high_sierra
+    sha256 "9ea2b9863fa62631862b087b41c7980f74daa36c212e2a609ef4e24561017be2" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
