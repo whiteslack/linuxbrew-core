@@ -9,6 +9,7 @@ class CAres < Formula
     sha256 "0ba43741f90d2529cf03785faf077ee38898124474bd147718ed8a9ccf0f68a5" => :catalina
     sha256 "5c144152a0ea9ce016043fc37b6f456f9a8270298432d5283c52ec3676c70b3c" => :mojave
     sha256 "a2761fa50d7e565997a8c1f5fffdad4ad439b5f5245852b5bf6c431b85fe447a" => :high_sierra
+    sha256 "9653f87c516fe97a45f9bd9b7d663aabe12b6550f96ef8564a843182daf35a24" => :x86_64_linux
   end
 
   head do
