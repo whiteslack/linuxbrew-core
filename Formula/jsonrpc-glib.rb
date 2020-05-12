@@ -9,6 +9,7 @@ class JsonrpcGlib < Formula
     sha256 "a51dd608adcefb9e3514534e49a5db64ad1e38b407b8d9349df7f3eb08bc5fe7" => :catalina
     sha256 "b0ef1160532600a75471bb0e4cc3f48e7f092111ffa7d494534e46db43accabc" => :mojave
     sha256 "298d4a37194ab19bc753bb4f7022ec0d34d12a30dd4860806582cda4406b62ec" => :high_sierra
+    sha256 "f9a00cf5f3f45d3d78d16fee1ccb012aa437eaede1d2510b13904bf94df69450" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
