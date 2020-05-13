@@ -1,15 +1,14 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
   homepage "https://kuma.io/"
-  url "https://github.com/Kong/kuma.git",
-      :tag      => "0.4.0",
-      :revision => "a37aaadf84e97fa9e5135c31353b51ba6a2245f3"
+  url "https://github.com/Kong/kuma/archive/0.5.0.tar.gz"
+  sha256 "a5d84ca9e1d91a8c0cb0095ab3a68bb40c49f09eb0989e3aaa89b89424a58ae1"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "eff8edfec8b9f41c9488bf4bf34518af27b5272ccf25935e94e14716fb09e055" => :catalina
-    sha256 "2fa66e54b56d29ed3d2ded1d486e5107bb03b95f1b819a366e8ee0207d8a7388" => :mojave
-    sha256 "e0022bc88bbfd96c5897e99f4f73866f6c3580a99e0ade811d3aeb3f177312fa" => :high_sierra
+    sha256 "a70f728d9658c016ad600d77082f87e0b765c926983b2062caa26cecd2522121" => :catalina
+    sha256 "9e3367de422712aaa6edd06d55ba32df5bb62ea568d634a9d484f8847d972676" => :mojave
+    sha256 "3411ece1648746fe532a51ab5f6747404a6b5eecd0f0fd136acb0d23dba28edb" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -20,7 +19,7 @@ class Kumactl < Formula
     srcpath.install buildpath.children
 
     cd srcpath do
-      system "make", "build/kumactl"
+      system "make", "build/kumactl", "BUILD_INFO_VERSION=#{version}"
       prefix.install_metafiles
       bin.install outpath/"kumactl"
     end
