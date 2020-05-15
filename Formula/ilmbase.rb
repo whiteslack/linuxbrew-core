@@ -8,6 +8,7 @@ class Ilmbase < Formula
     sha256 "4748d38413303488484f98d5fbb94bb90a3f2e6a7fc9830fe5ce12463ef6812b" => :catalina
     sha256 "c3645960e26293a38a9ed68996c21f9bdd00bf138c66a187d97b3be9a6f63247" => :mojave
     sha256 "833b56397ee633635ae29f4b7c5f526590038cdda44bf1250fbee59bbada4013" => :high_sierra
+    sha256 "d4c2043c0f4ff630e7e926a1deab724997d9ab81b17ec78f9737e4ea54edb1b5" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
