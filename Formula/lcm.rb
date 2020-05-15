@@ -12,6 +12,7 @@ class Lcm < Formula
     sha256 "70db20b2479715ceac73fd10d65dbdd9d0db2939a27006d824d508c998c4ba4f" => :catalina
     sha256 "d17f35983d9b396339f527e2486d224b1d31e2342df26441c9ef2d694314ffc7" => :mojave
     sha256 "cf6e8b17fca7a9d9d5b53970348e97b4ef5b61107531238d9acab4f5eead09bc" => :high_sierra
+    sha256 "09a112a27b077aaf56342964593a542e3a1a5dc70e0d973e743e607fa9ff3303" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
