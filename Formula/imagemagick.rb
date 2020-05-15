@@ -4,13 +4,13 @@ class Imagemagick < Formula
   url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-11.tar.xz"
   mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-11.tar.xz"
   sha256 "a06d686bbad1eae663b2571bd7bb45f0e1ba438ed2217863d2e79ab394c5dfbd"
+  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git"
 
   bottle do
-    sha256 "7e29dcc73c3f9cd58d6f147433fc84f93acc908ce83237d747d531f3e951144c" => :catalina
-    sha256 "f2e5ee2693d5b90320bc3b60f727f2125a967a8159f701b2d7d6a3d71f1088d9" => :mojave
-    sha256 "725dc997eef6695b0e29b6539453b8941fed31512fdf77a6bfbf4ae628a1d199" => :high_sierra
-    sha256 "d818a41a64334c341d04a486847797cb1f117833207154e6d683e4130e97fb4c" => :x86_64_linux
+    sha256 "9faae11e19c19922c913d2f7cdb0671bf8eeb1129df44954b7caaa19bd9d506d" => :catalina
+    sha256 "6f668cbae832bbc5bed6f8ec33938e9d88b6ec21ce7a380d84bf808275da7a85" => :mojave
+    sha256 "85ec406d86b6e2d4899a3b632a202c26e8d8c50a9521c5e0b941d5a3d2199b24" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

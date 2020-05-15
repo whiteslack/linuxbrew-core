@@ -3,13 +3,12 @@ class OpencvAT2 < Formula
   homepage "https://opencv.org/"
   url "https://github.com/opencv/opencv/archive/2.4.13.7.tar.gz"
   sha256 "192d903588ae2cdceab3d7dc5a5636b023132c8369f184ca89ccec0312ae33d0"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 "31719e8af1404aca919073f25576ff2dceb880aa0fc91d863f7a73ac0073f598" => :catalina
-    sha256 "b2b37e62a774c9ddbf4c20686daa27d4e61230366345e685b9be5ea7c99536a2" => :mojave
-    sha256 "5a3ab48231f3e591399d33f8cc9029dc9ebd8a49e4fcd9a02ce24de3b49aa70d" => :high_sierra
-    sha256 "ab5b0e70bf30095549df75f0c64eb59b79541cf9c682e0f7e93151e04f23e8dc" => :x86_64_linux
+    sha256 "c0f0a78c1c2b0741f8ac593de584fc6155e3e4909df7b1f6236d9051a4a3e190" => :catalina
+    sha256 "cf01dbd34bf585edfed3dc590ad6a7a230a26a41124404af66f28b5923d5ae80" => :mojave
+    sha256 "4b2f49091bd23be08bdfcfd17b829a048e94cbeb4bc6ce7c244d8b29d9421eca" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -67,6 +66,7 @@ class OpencvAT2 < Formula
 
     mkdir "build" do
       system "cmake", "..", *args
+      inreplace "modules/core/version_string.inc", "#{HOMEBREW_SHIMS_PATH}/mac/super/", ""
       system "make"
       system "make", "install"
     end
