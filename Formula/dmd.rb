@@ -26,6 +26,7 @@ class Dmd < Formula
     sha256 "2a3d60bb722c8a2222d639802d9daca2f23967a5d3dc52d0908b3c7b01d400a3" => :catalina
     sha256 "cd1eb63007da7a74a50fe48a76c05b1c78eec3016fee6be3dd6ecb4851e86776" => :mojave
     sha256 "4771a5b877c70c8eb7089681eb26e8f86cb7c2e94a934a4eb46c7cbd228e1075" => :high_sierra
+    sha256 "83c93d12c8b13ef26b56da324360e2581fd3876e942019482eb20bca60deaaeb" => :x86_64_linux
   end
 
   head do
