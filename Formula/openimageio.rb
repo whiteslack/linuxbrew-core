@@ -11,6 +11,7 @@ class Openimageio < Formula
     sha256 "9ae1b0c7c7be6836a5bbea76c527fcdc7570bc65453c7017f8bb5d2aeae14cb3" => :catalina
     sha256 "e3dc3d089d3a48c7a4f1e7a473de28b2eade9def62a6c059a1a9a28721df7646" => :mojave
     sha256 "1ab7696569fd8ad1e41e4ef305a235bf6aeae4826db26de7d3815fe94f78b8c5" => :high_sierra
+    sha256 "6b576def944472e050091fd25e5e23cb9f8675f97723ed41f64449e8e00c191c" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
