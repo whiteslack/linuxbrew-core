@@ -10,6 +10,7 @@ class Fmt < Formula
     sha256 "9de1ed4c9ead235d231dd0e893e587213795aea11793bce19193fcae519c9b4c" => :catalina
     sha256 "6150b22430f009a6e04368f4c182a9830f6d1f802e942421f4b107c6403d474d" => :mojave
     sha256 "3410c7b3f411cf56e329c7d303c5ff238f723879402d0f870b94475221934e4f" => :high_sierra
+    sha256 "80b833921700b9849b8e5cbe8a53afabc20c028b468d03d59252d2ddd2a4afac" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
