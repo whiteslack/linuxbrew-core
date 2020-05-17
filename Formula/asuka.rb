@@ -12,6 +12,10 @@ class Asuka < Formula
   end
 
   depends_on "rust" => :build
+  unless OS.mac?
+    depends_on "pkg-config" => :build
+    depends_on "openssl@1.1"
+  end
 
   uses_from_macos "ncurses"
 
