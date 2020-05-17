@@ -9,6 +9,7 @@ class Tintin < Formula
     sha256 "5655e2bfaf4fb9932f2b9317745f97b73162bd12d926a8fd9783002449d8ed3a" => :catalina
     sha256 "b10d78dd09e94adac5f9a4aaeddc756b7ee578e9a77ef9f81f8c4f1941f90c3c" => :mojave
     sha256 "9f4a88c8da68bde84fc56b34ef86b53e1691d33a59e340c54aa18b50c7c88f46" => :high_sierra
+    sha256 "0ec3e73d4252b9addaaf36fe5aeb16f2dd5e70017bd3dc5f1d8599507f1c6827" => :x86_64_linux
   end
 
   depends_on "gnutls"
