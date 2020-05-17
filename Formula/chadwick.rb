@@ -9,6 +9,7 @@ class Chadwick < Formula
     sha256 "693c6ee0980401936a83453bdbc398aeb0eb06ba9bb8e101046508b14edfdc98" => :catalina
     sha256 "a068fd25b1e8b3d6f9a56a8a1d4ac18a49f07f82450b1ab3f3766b86fb0a362a" => :mojave
     sha256 "427b5c0fca10b23b66c56bda3537080df2ba467edea59a9dfd2f0fba56f50f9b" => :high_sierra
+    sha256 "0ac0ab43ad4ecd66454b88ba1f04ac9c8e258caf0ea1202012e3d9d1dd2794a5" => :x86_64_linux
   end
 
   def install
