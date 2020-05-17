@@ -12,6 +12,7 @@ class AwscliAT1 < Formula
     sha256 "54c0fa9e28973e907726c6b7123139329fc84c602d7e3ea9d7960df94e73a7e5" => :catalina
     sha256 "473a2fb319e00776c2df367a86d7f0385ec6f6cbdcdd6d1f3d322a746b1275fa" => :mojave
     sha256 "95da6a211f7710e3025193dc9509ab98144a74e651888e0c693d58f969338132" => :high_sierra
+    sha256 "b0dc4ef01fac5859aba65c93d26cf02f3e557bd4b2f55bd45d49835f2258c44d" => :x86_64_linux
   end
 
   keg_only :versioned_formula
