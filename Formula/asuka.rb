@@ -9,6 +9,7 @@ class Asuka < Formula
     sha256 "e822cdbdf7c6eeaefabde6c69853ed5acdab7b959d44feff9e5c6eb44ea4b75c" => :catalina
     sha256 "95691f54ea6f8e5e218ec152b0d9685a4a8f4d59075207a1f75958333a174410" => :mojave
     sha256 "422e2efe84c94e78b3f1ab4bf9928d594c83e09b8ad1e32aabf04b17c2b8bb8a" => :high_sierra
+    sha256 "f206b7b5d50c3d84d69162b708465dd945a5e48e2cb577469aa605c42f937d7b" => :x86_64_linux
   end
 
   depends_on "rust" => :build
