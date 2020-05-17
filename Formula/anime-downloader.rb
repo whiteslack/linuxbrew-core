@@ -3,16 +3,15 @@ class AnimeDownloader < Formula
 
   desc "Download your favourite anime"
   homepage "https://github.com/vn-ki/anime-downloader"
-  url "https://files.pythonhosted.org/packages/02/11/9cee7a0d15cb6b9e0796e10f1ed6e5e59bba5dd95cfdc9737c9ff6bd86f4/anime-downloader-4.2.0.tar.gz"
-  sha256 "186005777d479483cf680a2736a02e85753a0e6aa30abb639560b7576eb5f5a3"
+  url "https://files.pythonhosted.org/packages/f5/61/feb32904b5fa1d1e36908bb781f722e924402e329dbb538ce5cb5eb8c44c/anime-downloader-4.3.0.tar.gz"
+  sha256 "761a0be674a63438b0bce680eebba651fbb8624f14d9c84390d63515e033aff7"
   head "https://github.com/vn-ki/anime-downloader.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "499dd80af5f48604bd1dcc4d6368f7b779a81a547094505dd67ab42d0b583c5d" => :catalina
-    sha256 "f512fd4707d4d70894ee25141fda56279f0d999b7c695afba6b94c40bc6eb8c8" => :mojave
-    sha256 "e20fa7e4604b8c9d11a2dd6bf5311683eba99b68c1e827ed5e5d28dc143a1c56" => :high_sierra
-    sha256 "36ede1810e9c2686cf04822b2b0fde5e975cb567942564cc8bdc86f3a0ccfd12" => :x86_64_linux
+    sha256 "afabaec3f49758f2d6c802a3f6cc732d359bc1aa4f96102d5bbb5db7cb28851f" => :catalina
+    sha256 "7c10ffe30e521687890945769fe95f9d3f08262e8d9a3055072a63b749d9cb26" => :mojave
+    sha256 "842d8ee3c6fc388e9bfb18f9d05f3c07bdeb9aa6b77a218fb05b0803036cd942" => :high_sierra
   end
 
   depends_on "aria2"
