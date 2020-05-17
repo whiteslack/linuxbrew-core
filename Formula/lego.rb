@@ -10,6 +10,7 @@ class Lego < Formula
     sha256 "1f28d7b0efe03365a9fb281c9ea680a5e9715d43cb6bd8ef99b18ac0def3a105" => :catalina
     sha256 "8602e35affcfc310f79723eccffbb6da9e87d9dab69537b1ae86831c1a4b702c" => :mojave
     sha256 "af3237e22b689aa1428f85b2f4a670f3a43e860019865825bb45c86231e18a6e" => :high_sierra
+    sha256 "4953ab8b3846549d28faaa25369f6179750350f555b15a4ac4f8d5540b4f18f6" => :x86_64_linux
   end
 
   depends_on "go" => :build
