@@ -10,6 +10,7 @@ class Forcecli < Formula
     sha256 "b4e2f2425b38eb74ed2cff1b2ab9bfb99210f5a527bc82f3c2abafbd4a21d94e" => :catalina
     sha256 "168945571441dec3ee1eece262ab3f8363e831a4ff585748355b31a59de24feb" => :mojave
     sha256 "6597c18df4c105cda4053a33da3536c16bb5560d46caeb28b0040c4e50fa3d75" => :high_sierra
+    sha256 "c4859dc2e6593ea29fa6ef1d30ad93a2ae9b72247d6a8d56366b5ac79ffdfbcc" => :x86_64_linux
   end
 
   depends_on "go" => :build
