@@ -10,6 +10,7 @@ class ProtocGenGo < Formula
     sha256 "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb" => :catalina
     sha256 "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb" => :mojave
     sha256 "82ce3ce8a8e158bc9202aebfa2cfcbd5b398aeed9530614ece2d101c7e3e01fb" => :high_sierra
+    sha256 "2133f24af66538d7e053e92e1d246f279e885e55bd03613b9a1f74b346ae6611" => :x86_64_linux
   end
 
   depends_on "go" => :build
