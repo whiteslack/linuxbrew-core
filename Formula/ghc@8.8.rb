@@ -17,7 +17,7 @@ class GhcAT88 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "python" => :build
+  depends_on "python@3.8" => :build
   depends_on "sphinx-doc" => :build
 
   unless OS.mac?

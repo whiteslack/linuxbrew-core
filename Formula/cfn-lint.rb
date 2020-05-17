@@ -3,15 +3,14 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-python-lint/"
-  url "https://files.pythonhosted.org/packages/6d/e4/9cfbff9aeae701095a4005e281e5199d180dd34cdaacefab5839ec1c3a4c/cfn-lint-0.30.1.tar.gz"
-  sha256 "5001d5fa0e1b255d546fe966c0111a6aeaf26dc583249df626488622929e419b"
+  url "https://files.pythonhosted.org/packages/0d/d9/1ed56ec2d1282c522a1b369e0545e226b885373ee2b261b04f579c516a2d/cfn-lint-0.31.1.tar.gz"
+  sha256 "ef3a33a4df06b4955c938274e816a6ad16da5bf36abc9c80821b06d0ec9a340c"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "207c834fc4bd3cb9fe488c2ee854cc5dabe4661597265ad40debb2039dfdd000" => :catalina
-    sha256 "c85bc73be2feccd3101dbcc690ab1b4634231ac535df00a2c8550efc20a12c0a" => :mojave
-    sha256 "392f691e4d28ccf2cd2a01e3b4b56ce6ad68fcb5fa639fbf31bd0f7346adcaef" => :high_sierra
-    sha256 "591d453b8d2f007204dea9f79da355efd910e696377413ea9c866ae56b2be08e" => :x86_64_linux
+    sha256 "7f154c48bf4f3a233b83ae221ae0a78f4c4dc2305cea9cc45cc18973674e646a" => :catalina
+    sha256 "0700460a1e3f91e09344c72e11b7853f434f2b4f19c8fafb26c356abe6c7d558" => :mojave
+    sha256 "137b79624b9abcd7bcc8913f2d4b419579b58c2a8647bd188906f37d9d75c5f5" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -85,6 +84,12 @@ class CfnLint < Formula
   resource "jsonschema" do
     url "https://files.pythonhosted.org/packages/69/11/a69e2a3c01b324a77d3a7c0570faa372e8448b666300c4117a516f8b1212/jsonschema-3.2.0.tar.gz"
     sha256 "c8a85b28d377cc7737e46e2d9f2b4f44ee3c0e1deac6bf46ddefc7187d30797a"
+  end
+
+  # only doing this because junit-xml source is not available in PyPI for v1.9
+  resource "junit-xml" do
+    url "https://github.com/kyrus/python-junit-xml.git",
+        :revision => "4bd08a272f059998cedf9b7779f944d49eba13a6"
   end
 
   resource "more-itertools" do
