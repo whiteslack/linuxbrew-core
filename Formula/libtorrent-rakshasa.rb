@@ -9,6 +9,7 @@ class LibtorrentRakshasa < Formula
     sha256 "207e33009028a8721a89c91139fe78fea1cd9fb8a05862286264dfc53548886a" => :catalina
     sha256 "94afd9fcef673d4e3945c13085df931e12c1bf2422bf6a2ad2c6848634c2fa65" => :mojave
     sha256 "135df02ce3bb98b05d9f849b8014087e8acaefcc24b1547ff9b1740bbd74492a" => :high_sierra
+    sha256 "fd0289f02557000737c036cb0321fcf42a84effd36af56375989c968c2fc88cf" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
