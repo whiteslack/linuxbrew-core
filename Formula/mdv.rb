@@ -11,6 +11,7 @@ class Mdv < Formula
     sha256 "ba336eac38af86dd98d74dbba06226d13b0bc8af719e1e40a863f9f394da4de8" => :catalina
     sha256 "ecb421e63e0278668ae2d570c8095186cb3e4695c5ba9891f20d16c2ba3c6e6c" => :mojave
     sha256 "3b9847a65d7c9820148cd848687efdb598193cc76abb031c1f71841bad2ec60d" => :high_sierra
+    sha256 "e370954645d6b5ee9df0493e067a2da288f2e62c96ebcf2977bb62e9dbcb4382" => :x86_64_linux
   end
 
   depends_on "python@3.8"
