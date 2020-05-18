@@ -14,6 +14,7 @@ class HaskellStack < Formula
     sha256 "de6d561271fd1a422e4b4e85e9d71fd0cd87870d524e984aec3caab4762753ed" => :catalina
     sha256 "bffb38f057df538f22407b0c7e62cf224f60851b4845f8ef3cd7ee603f030fed" => :mojave
     sha256 "00038523c213ac96e759c01108a9867a55afc6ba3ea32646962493f29667b702" => :high_sierra
+    sha256 "f642874c842e39813d0557c78a2c0d6aa1478b882247742a33108c3f4dc64a7a" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
