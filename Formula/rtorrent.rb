@@ -9,6 +9,7 @@ class Rtorrent < Formula
     sha256 "2040210e9850a74760c06cd96dab5e7dfbec58187e768127e657216f51f30e87" => :catalina
     sha256 "1e9e0d6926724f70776d19c39377c422e17cfa61729043853b48159e2df779c0" => :mojave
     sha256 "079eb5eee6d8844045cf37f88f153d0be37731caa53768a50799acbd13a2ef6b" => :high_sierra
+    sha256 "e51d70a7e0e81dbbb8b79cbc09b0d184b1e61e358abee761fddbbeebe64e20e1" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
