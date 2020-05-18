@@ -10,6 +10,7 @@ class ErlangAT22 < Formula
     sha256 "2a479a0747b354992d65e6abf4d6bc7b776b460fb9e69b975ec1e5bacc8d21a0" => :catalina
     sha256 "f3e6720c3ca38669232e46f2ffc9abaea1626ef0286af8fc1fe6cfe34ab3efd3" => :mojave
     sha256 "c3a070c5f750e1cde904346475ce91dddab621e2ca21e522893b32dd720cef23" => :high_sierra
+    sha256 "204d1304062dd07487110537174ec9443d27252dc9063ee852171bcd8c5fff86" => :x86_64_linux
   end
 
   keg_only :versioned_formula
