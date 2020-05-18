@@ -11,6 +11,7 @@ class Augustus < Formula
     sha256 "14e2ca7f36d9f579c4c04e9cd50dd941abcafcb1d7195dcef4a299773aa199b6" => :catalina
     sha256 "4525c482c78d272c6094e2689a3cfa2221c9a57f455d34e5f497015938a3550e" => :mojave
     sha256 "217c1233a38cc11b261fa1481b41362b14afeeaaa16ec83f1afff04639961054" => :high_sierra
+    sha256 "2a1db11f97c9a1aaa3a55f1a182efb173f8fb8bbffc6fbc70974d6c834630181" => :x86_64_linux
   end
 
   depends_on "boost" => :build
