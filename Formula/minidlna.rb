@@ -10,6 +10,7 @@ class Minidlna < Formula
     sha256 "0a82c3c230a67f0271ccd965714a311f91cca8245f1ac99fe3da224a77767f17" => :catalina
     sha256 "c0dd14e634b64fffddd900a81db969fe74b26a3a01638f4959852c1b9cf544c9" => :mojave
     sha256 "120b4962ca10c9463ebe1c1af3df56ce2b31def22e9e97a8327c879a7ae4c5c0" => :high_sierra
+    sha256 "e60814b6c372ce9b1023809d1da69205eded13369cf58ac6199d2c84a20e458c" => :x86_64_linux
   end
 
   head do
