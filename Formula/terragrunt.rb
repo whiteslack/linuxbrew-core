@@ -10,6 +10,7 @@ class Terragrunt < Formula
     sha256 "d3387016a9cbdaacf93cfc8d5a7651d5f0d5fb16a75a29221710ea2b96abcd0e" => :catalina
     sha256 "90803d4576d0c7cacbea4b6d917c3fa49918b2c1372affd403fb9726dd643553" => :mojave
     sha256 "f3c5a664d8f63df49563c5d065ab09076eb0a62b1b096a95d161c4c5a2e09619" => :high_sierra
+    sha256 "1c0e98a5d8f77f9d34ed3829ffddbdd88a00f641ef8be4059b4963457bf0084c" => :x86_64_linux
   end
 
   depends_on "go" => :build
