@@ -10,6 +10,7 @@ class Vcs < Formula
     sha256 "b3531908db412427f55f442a5ddddc79bb23916740a9be8808864ff098283fc7" => :catalina
     sha256 "b3531908db412427f55f442a5ddddc79bb23916740a9be8808864ff098283fc7" => :mojave
     sha256 "25e828b307df1eae19bc5bf09e37e23cd7be0951e4934258c0647e2af4e7a4bb" => :high_sierra
+    sha256 "4636df6b70014972e159f91ebb7a35d41c5932c060af10988ee827b5a04d569f" => :x86_64_linux
   end
 
   depends_on "ffmpeg"
