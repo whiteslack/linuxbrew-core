@@ -19,6 +19,7 @@ class SaneBackends < Formula
     sha256 "4d9b0e82a282fc75379e56de828da1601a63bdc49afe7be8a0e685a1ec5f2f6a" => :catalina
     sha256 "52405560cb01a2b2cc6afdcc813d2ef57386b09790f36df3126a0764ece0005b" => :mojave
     sha256 "9911d3ac5aebaa5c7313d2076ddb355b4f9d4475fb94b774373445ef97313297" => :high_sierra
+    sha256 "d08be2635f20c43efb789e0f34456c56d551d7739e7c62de418dd89ff8f379d7" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
