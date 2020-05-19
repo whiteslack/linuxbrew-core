@@ -9,6 +9,7 @@ class Scrcpy < Formula
     sha256 "abf410584d0f5a7d548e6387d519828928848f13628eb4648c21ba27f5e6bf01" => :catalina
     sha256 "793e676cabad87a158a718d3cb10d08b236fd495eeb51edd0fb226bf94f073ca" => :mojave
     sha256 "aea222ffafd1317bbc08a9e05782902625786b316ece650341a5b912afdd6c57" => :high_sierra
+    sha256 "9c9f6cd20824c09c88494d952b0af5ac2cefa8a8b99795a89a05b154e71c7803" => :x86_64_linux
   end
 
   depends_on "meson" => :build
