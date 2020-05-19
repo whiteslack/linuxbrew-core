@@ -21,7 +21,7 @@ jobs:
         run: |
           mkdir ~/bottles
           cd ~/bottles
-          brew update-reset $(brew --repo ${{github.repository}})
+          brew update-reset
           brew test-bot \
             --tap=homebrew/core \
             --keep-old \
