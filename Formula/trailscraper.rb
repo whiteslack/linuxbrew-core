@@ -11,6 +11,7 @@ class Trailscraper < Formula
     sha256 "d86bcf1d9bbb2b3f32c2fd096f79ad92e417ed2defc7b4c3606842ed3dae3fc2" => :catalina
     sha256 "5bcf661b1dc5be7ba1d3a75f48cf6cbcc23f9130a85918111a3e3b42bcec960e" => :mojave
     sha256 "dcf453b4faf51fbd81fdc73ad354a119fc4089291b604c02aedd9f29ae1d5248" => :high_sierra
+    sha256 "9ab7c4404ff87867b74746db28442e4eddddb6691efb26bb1da6a406d8ec1d89" => :x86_64_linux
   end
 
   depends_on "python@3.8"
