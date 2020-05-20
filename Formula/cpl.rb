@@ -10,6 +10,7 @@ class Cpl < Formula
     sha256 "477077e46d63da4596429a0f71012969a8bec6a91db94aa838a7e040c18713c7" => :catalina
     sha256 "64c1e2fb6caadfcdb36731d7e197dd234a03afbe531ce0d418fe05b4719a96d3" => :mojave
     sha256 "8959f7d8558635bf89222d668ab7ef4f6f91059652350c74bc493d17d66b7c54" => :high_sierra
+    sha256 "7d9346a069f5136e0f3e6008fe5a39e3575afde3071a022c2c848c4ffd7c236b" => :x86_64_linux
   end
 
   depends_on "cfitsio"
