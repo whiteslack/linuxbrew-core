@@ -8,6 +8,7 @@ class Fontforge < Formula
     sha256 "f2a861d9e005be0529b4a9d18df5a0b71593f807c17b83aa079442b05a637cf9" => :catalina
     sha256 "9a1c7d709333b87451146f49e309f12126f8ae52036e2f459476d409b7ae7aca" => :mojave
     sha256 "5751d301e37649f5fb07cebd915be0a80a5443766ef23d70ef90dfe61bc1ff33" => :high_sierra
+    sha256 "c1e021ab901c7cba724d467173ece620674e2f464986c7e92bcd1e7ca9a99a98" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
