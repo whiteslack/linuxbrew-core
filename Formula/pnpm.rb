@@ -11,6 +11,7 @@ class Pnpm < Formula
     sha256 "aae61c95b02ca652a58c44c347567d46f2d1a2a24d7f9cd79bf1f532132e0c5f" => :catalina
     sha256 "cfe43030eb6ead3679c348e74ea06e8d45fc55e1215ceac97c60c981d4998fa0" => :mojave
     sha256 "472cafa1e4e9ae5a6caa33dcdee411dba269f01903bd4c3493d5821bdd2a2716" => :high_sierra
+    sha256 "7d5977be42a1282d33e2f6dec16e82e6bb9478dfff208b02ef64e64045560d9b" => :x86_64_linux
   end
 
   depends_on "node"
