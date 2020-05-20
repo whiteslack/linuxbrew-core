@@ -1,14 +1,13 @@
 class Sentencepiece < Formula
   desc "Unsupervised text tokenizer and detokenizer"
   homepage "https://github.com/google/sentencepiece"
-  url "https://github.com/google/sentencepiece/archive/v0.1.86.tar.gz"
-  sha256 "a8744e5d2943112e24b69a7ec895d8ea26c41bb55464b78af9c396d10fb3e02a"
+  url "https://github.com/google/sentencepiece/archive/v0.1.90.tar.gz"
+  sha256 "e87b491d1d9e58657d3856e521e37ebff4f03e5501047c709db125d0375c7e83"
 
   bottle do
-    sha256 "8b4bc405045212b612d915a96aad81c05a6f916d6769a2bc2c952238ff78dc98" => :catalina
-    sha256 "d6d03e58c3c958dd718bc93868d2b7e94872f2f32019fd49d9647ec0b5f4ee64" => :mojave
-    sha256 "2d602907dd89dc64704f646985dbea6e1c878a695bfb27245fc3d6fe29db5a50" => :high_sierra
-    sha256 "5a57e675dd9875f1313735992f94199ed5307bcc48c3046eccf9babdf748f61a" => :x86_64_linux
+    sha256 "a76efbe9aa72abd0a119faf3b3694e77102284b22ec567a2d18472ec52d7c402" => :catalina
+    sha256 "f7244e947ec84c223e441c07482e8805cc9e590ce6f2dc93a4c1c5049c7a4a4f" => :mojave
+    sha256 "78bb55baa1320006ffe370dba1c6c90b08aa567ae20627b409627d179c128e38" => :high_sierra
   end
 
   depends_on "cmake" => :build

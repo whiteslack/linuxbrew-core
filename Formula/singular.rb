@@ -1,15 +1,14 @@
 class Singular < Formula
   desc "Computer algebra system for polynomial computations"
   homepage "https://www.singular.uni-kl.de/"
-  url "ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/4-1-3/singular-4.1.3p1.tar.gz"
-  version "4.1.3p1"
-  sha256 "5c527d8ed244a4ae74cb98b718deac58c09b0bd75d6ed7fc1ded1ec865ae02b8"
+  url "ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/4-1-3/singular-4.1.3p2.tar.gz"
+  version "4.1.3p2"
+  sha256 "573f4ea5f526c6d80da3feef56362e0069e3b1a889f320ef9882996fbc857587"
 
   bottle do
-    sha256 "cfae6f7caed42457b53162e4b8bb1ad2bb6fed62eeaf0ebe010a6078ed648553" => :catalina
-    sha256 "a1ef3230103e83b912220afbd87d055174c0261857068498cb3ea85598523ea8" => :mojave
-    sha256 "bbc3ef698536d7f5d3beb0be0daf667d71e6257b6a290b6ac3b1a6008b2ab6c7" => :high_sierra
-    sha256 "0621eeb764d5c9625db99217d0a805da6e9ef395c2750ea756d78899cd09836f" => :x86_64_linux
+    sha256 "a86e08a456bded36927341743e2f406620cba345956fe07cc9d5bb12e7a633bd" => :catalina
+    sha256 "49fff6a1abc194a46f3b894ada49093c057d1c69a12180697a6c8dbff85777f5" => :mojave
+    sha256 "5f7e0397c191718ca5be15495d5618ad5a071cc93bd933a516494d7fc3366087" => :high_sierra
   end
 
   head do

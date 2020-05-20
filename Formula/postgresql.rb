@@ -3,13 +3,13 @@ class Postgresql < Formula
   homepage "https://www.postgresql.org/"
   url "https://ftp.postgresql.org/pub/source/v12.3/postgresql-12.3.tar.bz2"
   sha256 "94ed64a6179048190695c86ec707cc25d016056ce10fc9d229267d9a8f1dcf41"
+  revision 1
   head "https://github.com/postgres/postgres.git"
 
   bottle do
-    sha256 "20d092bf2cfc52f70d065668f42d9c4a2720c5c556f170ff9de5ef0ed3703ea8" => :catalina
-    sha256 "43283740f0cd4d30ef3734e7b31d88333159024c968b34203f9b807126fb5b1c" => :mojave
-    sha256 "c39065fcb78bd940373129e9cd67a5f6ef866405e749b4ca673f62fe69e28cb2" => :high_sierra
-    sha256 "f79bc6028be1195d0424a2a5633560ec6cbeba904e09f503c51d19b47d9f8a49" => :x86_64_linux
+    sha256 "1972a584c8dc364b970c239fd7a88420f3034834f495c43331b141c3e9f28e1e" => :catalina
+    sha256 "58e24d7e59d364ba6eaf734645ed0827c313d05d1908ab1780110cf1ea4fd0d6" => :mojave
+    sha256 "e88e4580ce95958c76e450d9f26ae6ca4eb18946a725cc80227c334283ab366d" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -26,9 +26,6 @@ class Postgresql < Formula
   uses_from_macos "perl"
 
   def install
-    # avoid adding the SDK library directory to the linker search path
-    ENV["XML2_CONFIG"] = "xml2-config --exec-prefix=/usr"
-
     ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib} -L#{Formula["readline"].opt_lib}"
     ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["readline"].opt_include}"
 
