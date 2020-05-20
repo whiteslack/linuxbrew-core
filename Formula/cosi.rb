@@ -11,6 +11,7 @@ class Cosi < Formula
     sha256 "30bbb457c0fb67ee264331e434068a4a747ece4cbc536cb75d289a06e93988e2" => :catalina
     sha256 "2ddd695441977b1cd435fbae28d9aa864d48b7a90ec24971348d91b5d0e551df" => :mojave
     sha256 "00663999a04ee29f52e334022cc828d7ebe89a442f1e713afb2167112f4ebf75" => :high_sierra
+    sha256 "a85b745a4bb4a8952e0fc0b53a7a07964f81270460c0d0eab46e43245d469605" => :x86_64_linux
   end
 
   depends_on "go" => :build
