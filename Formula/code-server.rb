@@ -9,6 +9,7 @@ class CodeServer < Formula
     sha256 "264a0e3f0d0599162849cfb15b2168d99598ecefc5e8e557acf19ee66d38af12" => :catalina
     sha256 "53fb6108f1191f1c58aed508142f85bc2e4bdc598e2620b03339567f215c1829" => :mojave
     sha256 "ea8feb22ef6521c511562e693a8f4779b581ea2930fdb927bbf41b3260959467" => :high_sierra
+    sha256 "e0bc071acdc79d2f4112daa4c7e624d19f3dcafc56b6ecb6fc11c4b75454ef4d" => :x86_64_linux
   end
 
   depends_on "python@3.8" => :build
