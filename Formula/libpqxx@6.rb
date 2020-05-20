@@ -1,26 +1,24 @@
-class Libpqxx < Formula
+class LibpqxxAT6 < Formula
   desc "C++ connector for PostgreSQL"
   homepage "https://pqxx.org/development/libpqxx/"
-  url "https://github.com/jtv/libpqxx/archive/7.1.1.tar.gz"
-  sha256 "cdf1efdc77de20e65f3affa0d4d9f819891669feb159eff8893696bf7692c00d"
+  url "https://github.com/jtv/libpqxx/archive/6.4.6.tar.gz"
+  sha256 "2280621eee7ec675ed6751abac2273f0ac41395e99be96e06584a54a0cc3985a"
 
   bottle do
     cellar :any
-    sha256 "b345cab517eb13cdd870059c16d48c61a10b5bae38c086a808a705120282ecd3" => :catalina
-    sha256 "bcdb2b1bbb468ff8f2cacc8e020e07f64da6a0669e981d5c397c2d2adc284b8a" => :mojave
-    sha256 "62a1a92df805584ff9ffd9321996767d814fd2a84167b1cb0130bc7c6d0bb4a6" => :high_sierra
+    sha256 "9e895c25d4b2bcab931ae5095e7710ee71005faba3607fb4b94e87bbb0df1617" => :catalina
+    sha256 "9bbc89817da8c93f4fcad89e9ed43545da579733db8d77dd313e1b0fc375adca" => :mojave
+    sha256 "040431f687f56ae15c0a9109b2c74d1f4a7ab643ef64ee9f376a76d1c4837207" => :high_sierra
   end
+
+  keg_only :versioned_formula
+
+  deprecate!
 
   depends_on "pkg-config" => :build
   depends_on "python@3.8" => :build
   depends_on "xmlto" => :build
   depends_on "libpq"
-  depends_on "postgresql"
-
-  unless OS.mac?
-    depends_on "doxygen" => :build
-    depends_on "xmlto" => :build
-  end
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin"
@@ -38,7 +36,7 @@ class Libpqxx < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lpqxx",
+    system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lpqxx",
            "-I#{include}", "-o", "test"
     # Running ./test will fail because there is no runnning postgresql server
     # system "./test"
