@@ -8,6 +8,7 @@ class Sentencepiece < Formula
     sha256 "a76efbe9aa72abd0a119faf3b3694e77102284b22ec567a2d18472ec52d7c402" => :catalina
     sha256 "f7244e947ec84c223e441c07482e8805cc9e590ce6f2dc93a4c1c5049c7a4a4f" => :mojave
     sha256 "78bb55baa1320006ffe370dba1c6c90b08aa567ae20627b409627d179c128e38" => :high_sierra
+    sha256 "de197cd4a2da0d9a71ae576fc866a69f9a06d2e9c49aa62b4fc6f95c891149c3" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
