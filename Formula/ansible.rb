@@ -12,6 +12,7 @@ class Ansible < Formula
     sha256 "e32992a535d6110b5ef5423af253dcbd0dde44cc195328f3240e548bfaa3bef7" => :catalina
     sha256 "cfb0435e297d999afce997a78aa5b4435643bc35c095a6be897153febadf469b" => :mojave
     sha256 "eeaa65482d27c3672e37f3f0f80c21557a9a9789b9928c7098537562e2f0daac" => :high_sierra
+    sha256 "846dcd2d0eef2fa305b49d8390ab5604480905d2b49a40d3b61ae54713747612" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
