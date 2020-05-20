@@ -3,12 +3,12 @@ class Fontforge < Formula
   homepage "https://fontforge.github.io"
   url "https://github.com/fontforge/fontforge/archive/20200314.tar.gz"
   sha256 "ad0eb017379c6f7489aa8e2d7c160f19140d1ac6351f20df1d9857d9428efcf2"
+  revision 1
 
   bottle do
-    sha256 "f2a861d9e005be0529b4a9d18df5a0b71593f807c17b83aa079442b05a637cf9" => :catalina
-    sha256 "9a1c7d709333b87451146f49e309f12126f8ae52036e2f459476d409b7ae7aca" => :mojave
-    sha256 "5751d301e37649f5fb07cebd915be0a80a5443766ef23d70ef90dfe61bc1ff33" => :high_sierra
-    sha256 "c1e021ab901c7cba724d467173ece620674e2f464986c7e92bcd1e7ca9a99a98" => :x86_64_linux
+    sha256 "6d2000c43d84a3353e7e27923c62ced0e5892338e69c6d341e61194cc70c1b4a" => :catalina
+    sha256 "3c94c039f0524bdf6e4748f65b7677c9d73ecd07718221dbc8eb1c143fe236d1" => :mojave
+    sha256 "1252f93604edae781fd5035ba5c367d820e341c13eec155bb24cf9ad5499dc4a" => :high_sierra
   end
 
   depends_on "cmake" => :build
