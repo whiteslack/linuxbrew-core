@@ -9,6 +9,7 @@ class Libksba < Formula
     sha256 "14b9bc72288c2fc4061ea49261427aa9e00738a383433302ff86ae18095b2f4a" => :catalina
     sha256 "153e805e508005ebd9c8eca39b4027f35cddcc123583a421664746dda51ddbc9" => :mojave
     sha256 "ed07783410f48fe767e96ad596b570ccd0d849715af99b84f99918428953a9a5" => :high_sierra
+    sha256 "2940af0dca37428f21fd62ee0cce5666234385a73435350d3ae24edc7673776a" => :x86_64_linux
   end
 
   depends_on "libgpg-error"
