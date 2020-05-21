@@ -9,6 +9,7 @@ class Dav1d < Formula
     sha256 "8379e085d9affd2875a551e49c4c7caaf1d447f8364b6c7844f73171d9cfbd9b" => :catalina
     sha256 "55b1064d9dc5ea0fc6b226aa07d7b8f64c2a47d8fe3928b6b4a3ac06c7e7d846" => :mojave
     sha256 "672248c6e4bb67b74cb6d367e0bd75e93e70cba1445783c6c8bfde511252f23f" => :high_sierra
+    sha256 "a7654eb38652b941257d6e9620dcc5a2c7277eb9f78270e160564ebe46e852c7" => :x86_64_linux
   end
 
   depends_on "meson" => :build
