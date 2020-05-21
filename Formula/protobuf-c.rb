@@ -10,6 +10,7 @@ class ProtobufC < Formula
     sha256 "2af1cf51bac889177c41922236c9a1433749952e4bc76e7a7493bb9c96745319" => :catalina
     sha256 "0a8fc62ce9acd99178e21afc4a994cb762c9e13a3d3fec887a19ab0706f9acc8" => :mojave
     sha256 "1a66fd256c32caaff9e52748fd7f9987580b36425682d5a6263c0c0db011c405" => :high_sierra
+    sha256 "85c352c6a8325b5c2cd8358dc58d93aeec4077b49691f638f80e1daf7e939e6e" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
