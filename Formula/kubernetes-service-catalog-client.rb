@@ -10,6 +10,7 @@ class KubernetesServiceCatalogClient < Formula
     sha256 "fab55f3ff9b603beae7a4f8a5c0ea79cd3c4a24a821b4249dc2f9d2c345fa094" => :catalina
     sha256 "c1107702caae510cb024520cd793a999581d7133159a03d84e727198e34fda8e" => :mojave
     sha256 "dc5468299aea99767c0fdd5d7da91fdde53bee5b44d012476ead31c5d2288e2a" => :high_sierra
+    sha256 "2c09f927feba47d2d0ea1ee6ef07ff4b0ffa29f3f2389d48d8b8b5e6f05e72d7" => :x86_64_linux
   end
 
   depends_on "go" => :build
