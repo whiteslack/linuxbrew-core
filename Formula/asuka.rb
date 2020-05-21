@@ -6,10 +6,10 @@ class Asuka < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e822cdbdf7c6eeaefabde6c69853ed5acdab7b959d44feff9e5c6eb44ea4b75c" => :catalina
-    sha256 "95691f54ea6f8e5e218ec152b0d9685a4a8f4d59075207a1f75958333a174410" => :mojave
-    sha256 "422e2efe84c94e78b3f1ab4bf9928d594c83e09b8ad1e32aabf04b17c2b8bb8a" => :high_sierra
-    sha256 "f206b7b5d50c3d84d69162b708465dd945a5e48e2cb577469aa605c42f937d7b" => :x86_64_linux
+    rebuild 1
+    sha256 "3ff6b3aa52148d1468bf6d59d63302c76069dbad963f8722f7e87e53342c40a4" => :catalina
+    sha256 "0042a8cf343f444996bcd95e6b279e891e360f309bea3901a02b983833f48dc8" => :mojave
+    sha256 "174f726dde72bd1ef2a31a0c4b49728338c60521b4ca2c8c3364ceb6f54a0b4d" => :high_sierra
   end
 
   depends_on "rust" => :build
@@ -25,39 +25,21 @@ class Asuka < Formula
   end
 
   test do
-    require "openssl"
-    require "pty"
+    input, _, wait_thr = Open3.popen2 "script -q screenlog.txt"
+    input.puts "stty rows 80 cols 43"
+    input.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}/asuka"
+    sleep 1
+    input.putc "g"
+    sleep 1
+    input.puts "gemini://gemini.circumlunar.space"
+    sleep 10
+    input.putc "q"
+    input.puts "exit"
 
-    system "openssl", "req", "-newkey", "rsa:2048",
-           "-nodes", "-keyout", "localhost.key",
-           "-nodes", "-x509", "-out", "localhost.crt",
-           "-subj", "/CN=localhost"
-
-    ssl_context = OpenSSL::SSL::SSLContext.new
-    ssl_context.cert = OpenSSL::X509::Certificate.new(File.open("localhost.crt"))
-    ssl_context.key = OpenSSL::PKey::RSA.new(File.open("localhost.key"))
-
-    begin
-      server = OpenSSL::SSL::SSLServer.new(TCPServer.new(1965), ssl_context)
-      server_pid = fork do
-        connection = server.accept
-        msg = connection.gets
-        assert_match "gemini://127.0.0.1/\r\n", msg
-        connection.puts "20 text/plain\r\n"
-        connection.puts "Hello world!"
-        server.close
-      end
-
-      output, input, client_pid = PTY.spawn "#{bin}/asuka"
-      sleep 1
-      input.putc "g"
-      sleep 1
-      input.puts "gemini://127.0.0.1"
-      output.gets
-
-      Process.wait server_pid
-    ensure
-      Process.kill("TERM", client_pid)
-    end
+    screenlog = (testpath/"screenlog.txt").read
+    assert_match /# Project Gemini/, screenlog
+    assert_match /Gemini is a new internet protocol/, screenlog
+  ensure
+    Process.kill("TERM", wait_thr.pid)
   end
 end
