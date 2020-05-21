@@ -175,6 +175,8 @@ class Mysql < Formula
   end
 
   test do
+    return if Process.uid.zero?
+
     # Expects datadir to be a completely clean dir, which testpath isn't.
     dir = Dir.mktmpdir
     system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
