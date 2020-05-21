@@ -10,6 +10,7 @@ class Mosh < Formula
     sha256 "d864ba6a3869df2fd47894862f5f0b7d8e5f5f55daf58742243fa3ca8c69d474" => :catalina
     sha256 "1f46edf8fbd83303ea4156530357207b6ad538a6abbbd5118f9c39e4898a4a19" => :mojave
     sha256 "c8aa1ef313d62059bd8abee131880d5fa73f45e961388c055bc5f89970bcaf24" => :high_sierra
+    sha256 "2ed3c3b6564e47f224182f9a798d53fa655abdb6d3c73f6a7be919235118e3dd" => :x86_64_linux
   end
 
   head do
