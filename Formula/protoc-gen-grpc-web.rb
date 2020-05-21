@@ -12,6 +12,7 @@ class ProtocGenGrpcWeb < Formula
     sha256 "9ea8d0854a7150369ef456888b09e06a3eccb8000292e32c85a791923b29dae9" => :catalina
     sha256 "e726aaefde24e772f4063778399f8d12e286361c3413e22d04c642ca89a1acc6" => :mojave
     sha256 "6804424f4eb74a1a9aa4173c03e33ee471d5b40f32890322faa10d2a914c8160" => :high_sierra
+    sha256 "426f013611579a61a168d8d409a668adff51f08b0469e244a2af0b18777026a3" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
