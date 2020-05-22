@@ -1,16 +1,14 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-4.2.2.tar.xz"
-  sha256 "cb754255ab0ee2ea5f66f8850e1bd6ad5cac1cd855d0a2f4990fb8c668b0d29c"
-  revision 5
+  url "https://ffmpeg.org/releases/ffmpeg-4.2.3.tar.xz"
+  sha256 "9df6c90aed1337634c1fb026fb01c154c29c82a64ea71291ff2da9aacb9aad31"
   head "https://github.com/FFmpeg/FFmpeg.git"
 
   bottle do
-    sha256 "1dc595f883d51b4a66471587e433501c572d2a7e2ee76d09c6072b43db9f1bdd" => :catalina
-    sha256 "9959bf4032591ca53acb97bda383b61fbe7afb6bd216332e66f5133b2508356f" => :mojave
-    sha256 "ec288d5147dbeb6683ec4af04d378eee9a08969fbf9311a6fc0fd94e69f40185" => :high_sierra
-    sha256 "20be9a66b327600de62f08fe0e0a85700a858872abca50834079b9d2efd4fdcc" => :x86_64_linux
+    sha256 "ddb666ec5e4e1e6cdf0a2069388a2396935ee420ae5a5aa0cb3e196183c9a675" => :catalina
+    sha256 "a1330763738e2d6474bd34bf8707a5b24721e9eb733e690855a3bf048dee4c33" => :mojave
+    sha256 "9d895f4cde8d14d9dc781cf030c07b4263a7d7ce48fa0933d592f498b1934eb0" => :high_sierra
   end
 
   depends_on "nasm" => :build
