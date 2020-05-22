@@ -10,6 +10,7 @@ class Wireshark < Formula
     sha256 "92ee317ff4290c3c93a6bbfda5de62095da7cca4f0cc881914632fbbdfc3528e" => :catalina
     sha256 "3efa164bfe9b96f82c54334fc9b665a781fa4bdacd14626f4c8433521e0105f8" => :mojave
     sha256 "b8c334c790c9ba8923d5ebccdc0199a120cb07f265dd70aad6e1faf6360233cc" => :high_sierra
+    sha256 "7555b9fba7911c6259ab7302a496850023d5c2ee1f41c83f91b94a3b198df123" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
