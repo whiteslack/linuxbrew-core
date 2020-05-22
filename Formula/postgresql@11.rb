@@ -41,7 +41,6 @@ class PostgresqlAT11 < Formula
       --with-libxslt
       --with-openssl
       --with-perl
-      --with-tcl
       --with-uuid=e2fs
     ]
     if OS.mac?
@@ -50,6 +49,7 @@ class PostgresqlAT11 < Formula
         --with-gssapi
         --with-ldap
         --with-pam
+        --with-tcl
       ]
     end
 
