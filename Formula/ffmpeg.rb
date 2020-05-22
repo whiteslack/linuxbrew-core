@@ -9,6 +9,7 @@ class Ffmpeg < Formula
     sha256 "ddb666ec5e4e1e6cdf0a2069388a2396935ee420ae5a5aa0cb3e196183c9a675" => :catalina
     sha256 "a1330763738e2d6474bd34bf8707a5b24721e9eb733e690855a3bf048dee4c33" => :mojave
     sha256 "9d895f4cde8d14d9dc781cf030c07b4263a7d7ce48fa0933d592f498b1934eb0" => :high_sierra
+    sha256 "e8ce56b8f48e01c12819952a4e40e993be7a9dbfe829c919ac3ab34d828ca729" => :x86_64_linux
   end
 
   depends_on "nasm" => :build
