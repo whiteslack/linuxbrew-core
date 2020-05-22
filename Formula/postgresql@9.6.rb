@@ -3,12 +3,12 @@ class PostgresqlAT96 < Formula
   homepage "https://www.postgresql.org/"
   url "https://ftp.postgresql.org/pub/source/v9.6.18/postgresql-9.6.18.tar.bz2"
   sha256 "517ec282b785e6d22f360c30ba0c5e2a506fca5ca07dcc545427511d94c89999"
+  revision 1
 
   bottle do
-    sha256 "18c096727108b1e77f8eaa3ca64dcf1e85c087ee109392600cee265bc81299f4" => :catalina
-    sha256 "18df9ed600aac743384581597b492aa344c72d114bd1dfbefda26a83e28c3b7f" => :mojave
-    sha256 "5e3a0e8e95ab7f3ef65106bdd2114091d03c2a93130d8a644b4e47532d67517d" => :high_sierra
-    sha256 "16d1a06a6ae52c6d6abd177bf6c793456e467c1dacdcadb58a63bc746bc98fde" => :x86_64_linux
+    sha256 "f347514af589033fde29c8760afb57e319c1eee18b844a53973e0b9622ecad6d" => :catalina
+    sha256 "f9375e4815818eb782d735bc230bbe66ec95d1aba2eff815733f5ab05ba86ff6" => :mojave
+    sha256 "5f0a6602686eabd4c2303cc76265f4a1df0c8779f24dc201bb6531bfa5e06786" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -39,6 +39,7 @@ class PostgresqlAT96 < Formula
       --with-libxml
       --with-libxslt
       --with-perl
+      --with-tcl
       --with-uuid=e2fs
     ]
     if OS.mac?
@@ -48,31 +49,6 @@ class PostgresqlAT96 < Formula
         --with-ldap
         --with-pam
       ]
-    end
-
-    # The CLT is required to build Tcl support on 10.7 and 10.8 because
-    # tclConfig.sh is not part of the SDK
-    if OS.mac?
-      args << "--with-tcl"
-      if File.exist?("#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework/tclConfig.sh")
-        args << "--with-tclconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework"
-      end
-    end
-
-    # As of Xcode/CLT 10.x the Perl headers were moved from /System
-    # to inside the SDK, so we need to use `-iwithsysroot` instead
-    # of `-I` to point to the correct location.
-    # https://www.postgresql.org/message-id/153558865647.1483.573481613491501077%40wrigleys.postgresql.org
-    if DevelopmentTools.clang_build_version >= 1000
-      inreplace "configure",
-                "-I$perl_archlibexp/CORE",
-                "-iwithsysroot $perl_archlibexp/CORE"
-      inreplace "contrib/hstore_plperl/Makefile",
-                "$(perl_archlibexp)/CORE",
-                "-iwithsysroot $(perl_archlibexp)/CORE"
-      inreplace "src/pl/plperl/GNUmakefile",
-                "$(perl_archlibexp)/CORE",
-                "-iwithsysroot $(perl_archlibexp)/CORE"
     end
 
     system "./configure", *args

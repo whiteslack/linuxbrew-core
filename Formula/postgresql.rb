@@ -3,14 +3,13 @@ class Postgresql < Formula
   homepage "https://www.postgresql.org/"
   url "https://ftp.postgresql.org/pub/source/v12.3/postgresql-12.3.tar.bz2"
   sha256 "94ed64a6179048190695c86ec707cc25d016056ce10fc9d229267d9a8f1dcf41"
-  revision 1
+  revision 2
   head "https://github.com/postgres/postgres.git"
 
   bottle do
-    sha256 "1972a584c8dc364b970c239fd7a88420f3034834f495c43331b141c3e9f28e1e" => :catalina
-    sha256 "58e24d7e59d364ba6eaf734645ed0827c313d05d1908ab1780110cf1ea4fd0d6" => :mojave
-    sha256 "e88e4580ce95958c76e450d9f26ae6ca4eb18946a725cc80227c334283ab366d" => :high_sierra
-    sha256 "e3cd5b437575b712da84aab4c1a331142719dbe79fdf3cdf0d317fd36115254b" => :x86_64_linux
+    sha256 "0b5cd2df2eca116eecd25166a5256b8ae4f0aa3798d98bff5031eb3e8fe81ad8" => :catalina
+    sha256 "26c8924fb3d1dae70c7a8b11c69a214deba1c0e88eefbd5620a1460a5173dcc7" => :mojave
+    sha256 "9f4aecff80078c188bf586fbedd3d7d9253986e6c084b8875536ae35c8cf3351" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -44,6 +43,7 @@ class Postgresql < Formula
       --with-libxslt
       --with-openssl
       --with-perl
+      --with-tcl
       --with-uuid=e2fs
     ]
     if OS.mac?
@@ -53,15 +53,6 @@ class Postgresql < Formula
         --with-ldap
         --with-pam
       ]
-    end
-
-    # The CLT is required to build Tcl support on 10.7 and 10.8 because
-    # tclConfig.sh is not part of the SDK
-    if OS.mac?
-      args << "--with-tcl"
-      if File.exist?("#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework/tclConfig.sh")
-        args << "--with-tclconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework"
-      end
     end
 
     system "./configure", *args

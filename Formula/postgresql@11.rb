@@ -3,12 +3,12 @@ class PostgresqlAT11 < Formula
   homepage "https://www.postgresql.org/"
   url "https://ftp.postgresql.org/pub/source/v11.8/postgresql-11.8.tar.bz2"
   sha256 "eaf2f4329ccc349c89e950761b81daf8c99bb8966abcab5665ccd6ee95c77ae2"
+  revision 1
 
   bottle do
-    sha256 "6116cb9a2822f353b15ea4a2829422b4464365b463d0c4b2bd12e91c7524c0fc" => :catalina
-    sha256 "12b6b78453930978946feefcce2ca32090909c71474773b55896b851d4451632" => :mojave
-    sha256 "ed1bd475edf030658b06064ddbdab658c46c3b55d859ba114429ee3cbe6fa5fe" => :high_sierra
-    sha256 "9d2a9c596bf354a1b20a407c4b4326e9598931719404911fbce60f35a49903dc" => :x86_64_linux
+    sha256 "0b7485f02a4645bc0c835d5bfd5766c871c27282acbcc0dedfce8652c318cae8" => :catalina
+    sha256 "c5775463f96853e3ca58ff447c7bf7bc811991ecb9fb3e0a0c75a5cbf90ea2aa" => :mojave
+    sha256 "86cbfc8de2354ba85063acdd12d0493e0a5c9af5498d4f2174af7e9019962d11" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -41,6 +41,7 @@ class PostgresqlAT11 < Formula
       --with-libxslt
       --with-openssl
       --with-perl
+      --with-tcl
       --with-uuid=e2fs
     ]
     if OS.mac?
@@ -50,14 +51,6 @@ class PostgresqlAT11 < Formula
         --with-ldap
         --with-pam
       ]
-    end
-    # The CLT is required to build Tcl support on 10.7 and 10.8 because
-    # tclConfig.sh is not part of the SDK
-    if OS.mac?
-      args << "--with-tcl"
-      if File.exist?("#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework/tclConfig.sh")
-        args << "--with-tclconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework"
-      end
     end
 
     system "./configure", *args
