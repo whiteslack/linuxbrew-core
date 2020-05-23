@@ -9,6 +9,7 @@ class Gau < Formula
     sha256 "8fbfdf238dd7408adf09c159338c48e67ee9030f80f129a3b20683a960ab4531" => :catalina
     sha256 "d24c1d256af7be9370ec0d12d5deddabde47885d8d2b387ce5bfb6eb0a36e05c" => :mojave
     sha256 "67ece09c592ad7cdab9ec296e8fbff86fb23410a149aa9bb8f7a295d55661ab7" => :high_sierra
+    sha256 "306ecf62ff965e5091dd7992d9f94b2021443f17925d422feb212568b5d4e82e" => :x86_64_linux
   end
 
   depends_on "go" => :build
