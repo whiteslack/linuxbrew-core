@@ -14,6 +14,7 @@ class Netpbm < Formula
     sha256 "9e71235d1f28b7d929f73a17711946e4424af4a65788e7b8dbf4090c6b99f87a" => :catalina
     sha256 "ef247da24981c815fdc80b8f1efcaf7132fcbe1fcc78947a983a8a2a06b28146" => :mojave
     sha256 "13780d3a1ab3ec9856a8da98909829a4457f514031db7844245158a649d9feea" => :high_sierra
+    sha256 "b4d35ff43c349559fbac0901b9a4c78f40af0a8b57cfd39893b52e386663e07e" => :x86_64_linux
   end
 
   depends_on "jasper"
