@@ -10,6 +10,7 @@ class Gocloc < Formula
     sha256 "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b" => :catalina
     sha256 "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b" => :mojave
     sha256 "a6dc5fa859f29d07e0668c169dfc4d240dbd46a8e79fbc63c31261cdf4f6a79b" => :high_sierra
+    sha256 "e4a95f92cafb4c3b3e73dc3f14694edd56d9def873d3eee328bee5a27eefdf0f" => :x86_64_linux
   end
 
   depends_on "go" => :build
