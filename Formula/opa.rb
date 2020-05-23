@@ -10,6 +10,7 @@ class Opa < Formula
     sha256 "416bb2cfc4e7248a2f718f407e56364c6f007ea39246667fad38ace6ee4a462d" => :catalina
     sha256 "4d36cc920f0e09fa13bba51b8add92df0f3d774915af06f703c7fbc0cec573df" => :mojave
     sha256 "5bdfb14651c15d302d716dd88086a9761fd5e0e0af36a1f34532b309200a1a64" => :high_sierra
+    sha256 "ae6b49620585157d0981008ef3b50932dd79e46172c64c62f8c1d842de393a1b" => :x86_64_linux
   end
 
   depends_on "go" => :build
