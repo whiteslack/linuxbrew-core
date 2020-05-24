@@ -3,14 +3,14 @@ class Jc < Formula
 
   desc "Serializes the output of command-line tools to structured JSON output"
   homepage "https://github.com/kellyjonbrazil/jc"
-  url "https://files.pythonhosted.org/packages/95/2d/29f6b667297b871fbc31322907a01e425747e35ab41ed7c7b80bb5659fbb/jc-1.10.12.tar.gz"
-  sha256 "176fc867d00e011aecca7a8c4327286183e38ea7dbe8dcd9ddfb086097824ad9"
+  url "https://files.pythonhosted.org/packages/5c/c3/f5f5f3034deacb5e4b368706b17a6b4f346307af9b4404a91619d2c2096a/jc-1.11.0.tar.gz"
+  sha256 "b754e3e34b0b29db629d4340a13e09f4f50f74a932ba0a5203d42bfbd49f46a4"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0260e9f9faf1fc4fb53a5b78126f469697e2be201f70613d2262c1445381ef3e" => :catalina
-    sha256 "d3214ce7a342d93ebdb52b773f5a39581b28af78b08d9d50cca22d594cb773ee" => :mojave
-    sha256 "2800cd0f759b7e917456276b814d1716f14c72c48fef65807b69439eafa4b1aa" => :high_sierra
+    sha256 "c695a06c816b254c6f009f73e0fe17fd376acc3ea36c9b569e5c7e1a42d578d5" => :catalina
+    sha256 "0760c0f60f3ecbd599c03a8493ad2665f4f93e72c77ed0522377884894ee9c25" => :mojave
+    sha256 "9a807c33b63b4fe64cbb5fbeb27fc29462e2a5adbd534e47c31b669bbbaf403b" => :high_sierra
   end
 
   depends_on "python@3.8"
