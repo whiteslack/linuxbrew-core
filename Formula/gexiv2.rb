@@ -8,6 +8,7 @@ class Gexiv2 < Formula
     sha256 "1f8d42d1bb3e9ca58311b3a08b0576993007cb0d580e8740663e7ad4a055fb52" => :catalina
     sha256 "7d97c40bab30a98f845560e0e6d12ea514ecceee3aab447f9a06664474d2ba10" => :mojave
     sha256 "98515f671493f424a126e54ed940358f87a26d1bb049051735014b7c8a070900" => :high_sierra
+    sha256 "c93601e8e58ce6f7f75dbe8d2323ab788647360d137bfd7a6c37983ef4149239" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
