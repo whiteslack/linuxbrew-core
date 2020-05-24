@@ -11,6 +11,7 @@ class Pachi < Formula
     sha256 "e1cac19564a176a50d27f08b4e395a53ff4144dc17fd93dcaa013adfc8cca83a" => :catalina
     sha256 "76edc1b521dfb93e8c6573b689c8bc5a01103888f2f7310fd46aa53d8b6ea0dc" => :mojave
     sha256 "476509041b907edfd0380bc91a3fd4fc41b359bae58524ab4ab8017df4f61fe0" => :high_sierra
+    sha256 "ec9d2b2b59cf163a751244b940e06fcb0ef27be4a8513d82b7860bbd3e3e84b5" => :x86_64_linux
   end
 
   fails_with :clang if MacOS.version == :mavericks
