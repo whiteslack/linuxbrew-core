@@ -10,6 +10,7 @@ class Exif < Formula
     sha256 "3d4f3d7c86e7c112f9164970cb5e283a96d82235c1633f15de6683b04ec7df87" => :catalina
     sha256 "a600fdec30f561aaf97184c57ef77697cb617dd19795cb89201f9851646e9fad" => :mojave
     sha256 "f8978e60a9eedc21fe0da30fa0a6bf900635635a5b1fa827473881b25c12d542" => :high_sierra
+    sha256 "8438f2222826401362f27847816d58636ee07b0e3374847f12407ee28a3ed7f3" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
