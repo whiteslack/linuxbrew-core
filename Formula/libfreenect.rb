@@ -10,6 +10,7 @@ class Libfreenect < Formula
     sha256 "a9098e0b3d868c85de4b0bb243d16200361002ff5d27d6d9c9bc5a08fb6ab95a" => :catalina
     sha256 "d150e4351036b1b3174d24c359736e04a3bbdbe966c77b1714f0edbef486d012" => :mojave
     sha256 "c08bad975cc7175fdf88a603fb300cac3493f0e20172fc99a69da568d4ad68ff" => :high_sierra
+    sha256 "88289db3b849dbc03e8dd1c5f08b52b30f7cbcc9e4c1ede64e731bffbd0eb78b" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
