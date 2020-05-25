@@ -9,6 +9,7 @@ class Snapraid < Formula
     sha256 "428afbfefb0bba0949f706e908c9837044b484c4af591525b36ad35121a5e660" => :catalina
     sha256 "cee9e0baa9510de52e801afb91c003d02493d2dc15f679c1da9aabec05180501" => :mojave
     sha256 "e50021d135a1ce085093c8d7a50aa559c786919fca20355cb5cda6db213da822" => :high_sierra
+    sha256 "b7b8c7695957d199d58a08aa06aeb1cada9f0c8bf47da242a54dd2e90743f6a2" => :x86_64_linux
   end
 
   head do
