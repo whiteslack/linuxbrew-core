@@ -9,6 +9,7 @@ class Qrcp < Formula
     sha256 "857aa5ad50a7a2124a1c37f7f206b25a65d9f3c76bae0ec9223945238c83d0eb" => :catalina
     sha256 "5a1bede14f849cd49815b351325d5f375a9d7dc4d7ae8abd4053505f3fc1b6b0" => :mojave
     sha256 "aba7e5ceb1c788d2eeae3e117e6dcae5c14530e5b759832adac7a6f4296565cd" => :high_sierra
+    sha256 "b2c2e39e419678c35eb87516efa36c9f5f49e57c5272ff3ba7e611c41117edd7" => :x86_64_linux
   end
 
   depends_on "go" => :build
