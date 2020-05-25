@@ -9,6 +9,7 @@ class SpiceProtocol < Formula
     sha256 "e1ade135b57cc78000d754e20b86ac2ce39f3a6bb466095995cc1dd1b57f7e96" => :catalina
     sha256 "e1ade135b57cc78000d754e20b86ac2ce39f3a6bb466095995cc1dd1b57f7e96" => :mojave
     sha256 "e1ade135b57cc78000d754e20b86ac2ce39f3a6bb466095995cc1dd1b57f7e96" => :high_sierra
+    sha256 "2e663218d3d7af6bb02013a5972be57fa0a258ca161371b9d8e9c4b566ec5990" => :x86_64_linux
   end
 
   depends_on "meson" => :build
