@@ -10,6 +10,7 @@ class Gdb < Formula
     sha256 "9ad6c9a4147783a50f9e67a8d683c6dc070c738da06bfe8e2bf5cdd7bdfb5763" => :catalina
     sha256 "4908f6954fbcccf317e4297e42f6b85ebcab003ff9d96f00f25023616782c0c1" => :mojave
     sha256 "ac2a55847a2cf167e05e639003813606b32827e5f05995ff3544530e49b09d7a" => :high_sierra
+    sha256 "edbe6eca8692baa0c0f4ff13fb8aa30593975a53a4084d48b98e2d6fec56c051" => :x86_64_linux
   end
 
   depends_on "guile"
