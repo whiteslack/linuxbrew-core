@@ -3,13 +3,13 @@ class Sundials < Formula
   homepage "https://computation.llnl.gov/casc/sundials/main.html"
   url "https://computation.llnl.gov/projects/sundials/download/sundials-5.3.0.tar.gz"
   sha256 "88dff7e11a366853d8afd5de05bf197a8129a804d9d4461fb64297f1ef89bca7"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "ce7631fff95a27b2a1b3aaae734f787b237e2ae123a3c79ed6c2867c8bd78b0c" => :catalina
-    sha256 "4803df32afafb0aee71c4f1a299541bb09f1da7f7bcd6798274613d03b2e7d0f" => :mojave
-    sha256 "3d2a4408fb64c0ffa3c593556a403edc975364df553335b368e8087ff1aca68e" => :high_sierra
-    sha256 "1d7eb671ff9cee51ae4877507c21ce156aae492b297c90a0744b954beb894828" => :x86_64_linux
+    sha256 "fff1df3841c80eb3c2a6471e53ad2e8f29f97eb1e8498f8e85dc919616c68d0f" => :catalina
+    sha256 "63e63e0f7f928cd656613dc6344aaaaf11acd25e8c3148d3ac9a5b86dfe6c3df" => :mojave
+    sha256 "04f549daeb21124cfa74aeddb7c7baf58f7f482faec96cd4f5bc96f206414896" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -24,8 +24,6 @@ class Sundials < Formula
   def install
     blas = "-L#{Formula["openblas"].opt_lib} -lopenblas"
     args = std_cmake_args + %W[
-      -DCMAKE_C_COMPILER=#{OS.mac? ? "/usr/bin/clang" : "/usr/bin/gcc"}
-      -DCMAKE_CXX_COMPILER=#{OS.mac? ? "/usr/bin/clang++" : "/usr/bin/g++"}
       -DBUILD_SHARED_LIBS=ON
       -DKLU_ENABLE=ON
       -DKLU_LIBRARY_DIR=#{Formula["suite-sparse"].opt_lib}
@@ -40,20 +38,17 @@ class Sundials < Formula
       system "cmake", "..", *args
       system "make", "install"
     end
+
+    # Only keep one example for testing purposes
+    (pkgshare/"examples").install Dir[prefix/"examples/nvector/serial/*"] \
+                                  - Dir[prefix/"examples/nvector/serial/{CMake*,Makefile}"]
+    rm_rf prefix/"examples"
   end
 
   test do
-    cp Dir[prefix/"examples/nvector/serial/*"], testpath
-    args = %W[
-      -I#{include}
-      test_nvector.c
-      sundials_nvector.c
-      test_nvector_serial.c
-      -L#{lib}
-      -lsundials_nvecserial
-    ]
-    args << "-lm" unless OS.mac?
-    system ENV.cc, *args
+    cp Dir[pkgshare/"examples/*"], testpath
+    system ENV.cc, "-I#{include}", "test_nvector.c", "sundials_nvector.c",
+                   "test_nvector_serial.c", "-L#{lib}", "-lsundials_nvecserial"
     assert_match "SUCCESS: NVector module passed all tests",
                  shell_output("./a.out 42 0")
   end
