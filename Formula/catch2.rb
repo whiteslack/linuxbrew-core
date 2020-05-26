@@ -9,6 +9,7 @@ class Catch2 < Formula
     sha256 "a4064b4dfc8aa9c26e720d829e57dd685f444f621b5f0ceb84c942d700b524a1" => :catalina
     sha256 "a4064b4dfc8aa9c26e720d829e57dd685f444f621b5f0ceb84c942d700b524a1" => :mojave
     sha256 "a4064b4dfc8aa9c26e720d829e57dd685f444f621b5f0ceb84c942d700b524a1" => :high_sierra
+    sha256 "99f71ed30a23e47a1ded5df17c4389a8289444433e6e19e5c65a845bb7a2dc23" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
