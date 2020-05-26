@@ -10,6 +10,7 @@ class Sfk < Formula
     sha256 "008d880b4b2a3d06e60fb28bc9950d2774de8e1430c99922779ea3f81b8b3fd9" => :catalina
     sha256 "b4e4dfaf137db0eb4f759e707be3be8e2f8cf3bba2c98452e53d16006a3de5ee" => :mojave
     sha256 "708df4b05628a36d80a818ad487cce07b2ff6de924b7106df7dd31877a7354f1" => :high_sierra
+    sha256 "191d9ecdb54e135d647b0caca66c16567bd09e0162e10b5cb8c642c844710db1" => :x86_64_linux
   end
 
   def install
