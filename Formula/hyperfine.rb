@@ -9,6 +9,7 @@ class Hyperfine < Formula
     sha256 "0442a6f327081df37ce855d91fdf7bdf2136b8ef4f2039313274820936314c2f" => :catalina
     sha256 "4922076ae457efd2423a728e543fc2c3546f6e035f475e2f65b2cbcb977d2d38" => :mojave
     sha256 "d489a6d7cb337646e3f9954bc888cc8c6f42af5181ab6c0c4da51c65e8e5efa6" => :high_sierra
+    sha256 "e67d0addc8268385075d08ab53f60be3b35db893119ce800dee09e2805be01bf" => :x86_64_linux
   end
 
   depends_on "rust" => :build
