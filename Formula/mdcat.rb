@@ -1,15 +1,14 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https://github.com/lunaryorn/mdcat"
-  url "https://github.com/lunaryorn/mdcat/archive/mdcat-0.17.0.tar.gz"
-  sha256 "bccbc4d80747aea61ecc3ffae17c5a14acbb0e80d485ca654c9d8261ceafe1da"
+  url "https://github.com/lunaryorn/mdcat/archive/mdcat-0.17.1.tar.gz"
+  sha256 "f531447edf7a2433148af15f555f7771756c1cfa7d4c69684e09cb18ab9e89df"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b6081ece2ca84550848656d0e08ab604c28acf032f36852c20c38ab39a68d4b9" => :catalina
-    sha256 "6a984d6e9dc81bfbb591e1fe5e158acebfd7d9e91f9f2f70eab6d4f39fd0bf44" => :mojave
-    sha256 "f3ca8d4271f615d08b2ba53b6262611d7a101f56683d271a020876fb805f0d63" => :high_sierra
-    sha256 "43d8044253f8f34ac503cbc224d67f8421eb7a470d5d5786432b76026b20589a" => :x86_64_linux
+    sha256 "693e5416a91677cf7a4f4e3fe67ea09269f2ea4ac7228b3b175a8fc965dbe049" => :catalina
+    sha256 "00ab6130b8ed81a4e9e027adc2fcf885edf70815fc12a814225aa34af28cc32a" => :mojave
+    sha256 "ebadeb272afb1e3aeb0af6925965ce46b09c429d5ffd8fb58abafe07f1d9cdbd" => :high_sierra
   end
 
   depends_on "cmake" => :build

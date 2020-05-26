@@ -3,12 +3,13 @@ class Singular < Formula
   homepage "https://www.singular.uni-kl.de/"
   url "ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/4-1-3/singular-4.1.3p2.tar.gz"
   version "4.1.3p2"
-  sha256 "573f4ea5f526c6d80da3feef56362e0069e3b1a889f320ef9882996fbc857587"
+  sha256 "ee7ac6076d7f8622a1f24d37e9b632bae0700c6e314f56728400be136df64494"
+  revision 1
 
   bottle do
-    sha256 "a86e08a456bded36927341743e2f406620cba345956fe07cc9d5bb12e7a633bd" => :catalina
-    sha256 "49fff6a1abc194a46f3b894ada49093c057d1c69a12180697a6c8dbff85777f5" => :mojave
-    sha256 "5f7e0397c191718ca5be15495d5618ad5a071cc93bd933a516494d7fc3366087" => :high_sierra
+    sha256 "ec4a73d624d17771e510be59ee936fdb6575a6651292a95797f3f92f167042c3" => :catalina
+    sha256 "b1f33f87b56645ba798dddc2ed4492d50dacb02aa8142e6052802e6b6197a711" => :mojave
+    sha256 "ffc36b5ecccb30537bf16f92e1321d51eaaa9d5faabca727eb4ba2a2f3d555c3" => :high_sierra
   end
 
   head do
