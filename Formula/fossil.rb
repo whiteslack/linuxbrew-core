@@ -10,6 +10,7 @@ class Fossil < Formula
     sha256 "7150f265bb051a7fa08ec937cfbbca186f9a17d3a2cee97fcbf9cdc1d7640a0d" => :catalina
     sha256 "747af87e2e1be5c9b5ffe39f7623a38c6c02fa79d2e0c57f1388a7bf226d4a8d" => :mojave
     sha256 "b1fa6b1c31527b905a46dead91e1692a1c04240776a9a91b263c020c96e97ae0" => :high_sierra
+    sha256 "a5177e08aa1cad1bbee57dbc412cf44bb0142439440c5a41b78e0eeed5a39613" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
