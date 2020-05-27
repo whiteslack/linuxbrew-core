@@ -10,6 +10,7 @@ class Pipx < Formula
     sha256 "9d3b8ecd4650b1877c489951f774c1a5eedcb289497cbf9d8b3102d1d71322c6" => :catalina
     sha256 "9d3b8ecd4650b1877c489951f774c1a5eedcb289497cbf9d8b3102d1d71322c6" => :mojave
     sha256 "9d3b8ecd4650b1877c489951f774c1a5eedcb289497cbf9d8b3102d1d71322c6" => :high_sierra
+    sha256 "fa70f56b4300da6e3adb65e01e8a27f85bb12b70b90389f4b6cf23b06f2bec2e" => :x86_64_linux
   end
 
   depends_on "python@3.8"
