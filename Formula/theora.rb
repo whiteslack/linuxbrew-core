@@ -10,6 +10,7 @@ class Theora < Formula
     sha256 "69f9b7922ddae2c007ad5329d53067838e2208051f3a54926f8cb46a7753b1a3" => :catalina
     sha256 "243d34cb232ae0f7b45d7e2973c247ae68a57d8a4c50a2ee9e2bc7aeeabe5c78" => :mojave
     sha256 "4b5021649d047cbd556387ca6a8bd535cd8f9129be0a48f2d21bde8fb957a3b1" => :high_sierra
+    sha256 "734173b4b0e2a70db8041fd445de9239c3af9244724d2d6da5fd51e7aff1ebb2" => :x86_64_linux
   end
 
   head do
