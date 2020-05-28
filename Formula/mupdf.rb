@@ -3,6 +3,7 @@ class Mupdf < Formula
   homepage "https://mupdf.com/"
   url "https://mupdf.com/downloads/archive/mupdf-1.17.0-source.tar.xz"
   sha256 "c935fb2593d9a28d9b56b59dad6e3b0716a6790f8a257a68fa7dcb4430bc6086"
+  revision 1 unless OS.mac?
   head "https://git.ghostscript.com/mupdf.git"
 
   bottle do
@@ -15,7 +16,7 @@ class Mupdf < Formula
   depends_on "openssl@1.1"
   depends_on :x11 if OS.mac?
   unless OS.mac?
-    depends_on "linuxbrew/xorg/mesa"
+    depends_on "mesa"
     depends_on "linuxbrew/xorg/glu"
     depends_on "linuxbrew/xorg/xinput"
   end
