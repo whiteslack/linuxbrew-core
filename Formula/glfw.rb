@@ -11,6 +11,7 @@ class Glfw < Formula
     sha256 "deaf1b20e9fc336d5f0c9a927bc07f2c509fc63538c39e4ab3a024ca7c6170d8" => :catalina
     sha256 "0c0de277c23273346d703004279d92d17a8962f4d62bf01f76021beea3c3f20a" => :mojave
     sha256 "c6a198383ef979823c1e0071e65771ed9059626071390f2dc5b84b218dc565c3" => :high_sierra
+    sha256 "e773566038a5c495c49a93c128984eaeb29111ff8af7a2a3d7df0a478caff85a" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
