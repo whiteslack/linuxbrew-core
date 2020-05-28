@@ -3,7 +3,7 @@ class Glew < Formula
   homepage "https://glew.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/glew/glew/2.1.0/glew-2.1.0.tgz"
   sha256 "04de91e7e6763039bc11940095cd9c7f880baba82196a7765f727ac05a993c95"
-  revision 1
+  revision OS.mac? ? 1 : 2
   head "https://github.com/nigels-com/glew.git"
 
   bottle do
@@ -15,8 +15,8 @@ class Glew < Formula
 
   depends_on "cmake" => :build
   unless OS.mac?
-    depends_on "linuxbrew/xorg/mesa" # required to build
-    depends_on "freeglut" # required for test
+    depends_on "mesa" => :build
+    depends_on "freeglut" => :test
   end
 
   def install
