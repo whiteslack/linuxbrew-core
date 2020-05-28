@@ -3,13 +3,13 @@ class RedisAT40 < Formula
   homepage "https://redis.io/"
   url "https://github.com/antirez/redis/archive/4.0.14.tar.gz"
   sha256 "3b8c6ea4c9db944fe6ec427c1b11d912ca6c5c5e17ee4cfaea98bbda90724752"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "1cb4eec013855da8a906bed731e12362d7aec2af55332e359d65973d6748c188" => :catalina
-    sha256 "8a839696d4e505f8b0ed087b36aef04283c19ca5fc26583162521a536b462603" => :mojave
-    sha256 "49243bf412bde70ec57e1bf3094c602e9b2c672e81431024f0c1474b24e90c54" => :high_sierra
+    sha256 "a3da3a3af97a3ca5c36c2399defd06e6cbbd0b105980b2d626f224e384adc017" => :catalina
+    sha256 "3cbcec571f8c420f2f6daacbef87ed462229f31e4d189be36bee7795a25fc050" => :mojave
+    sha256 "e2c6a35a448d8a5bc23182d07a499e7005681d522131253d9087de9c091ba8f5" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -17,9 +17,6 @@ class RedisAT40 < Formula
   deprecate!
 
   def install
-    # Architecture isn't detected correctly on 32bit Snow Leopard without help
-    ENV["OBJARCH"] = "-arch #{MacOS.preferred_arch}"
-
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}"
 
     %w[run db/redis log].each { |p| (var/p).mkpath }
