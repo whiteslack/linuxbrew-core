@@ -1,7 +1,7 @@
 class Vtk < Formula
   desc "Toolkit for 3D computer graphics, image processing, and visualization"
   homepage "https://www.vtk.org/"
-  revision 10
+  revision OS.mac? ? 10 : 11
   head "https://github.com/Kitware/VTK.git"
 
   stable do
@@ -45,7 +45,7 @@ class Vtk < Formula
     depends_on "szip"
     depends_on "zlib"
     depends_on "tcl-tk"
-    depends_on "linuxbrew/xorg/mesa"
+    depends_on "mesa"
     depends_on "linuxbrew/xorg/xorg"
   end
 
