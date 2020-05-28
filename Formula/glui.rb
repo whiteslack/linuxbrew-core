@@ -3,6 +3,7 @@ class Glui < Formula
   homepage "https://glui.sourceforge.io/"
   url "https://github.com/libglui/glui/archive/2.37.tar.gz"
   sha256 "f7f6983f7410fe8dfaa032b2b7b1aac2232ec6a400a142b73f680683dad795f8"
+  revision 1 unless OS.mac?
 
   bottle do
     cellar :any_skip_relocation
@@ -10,7 +11,6 @@ class Glui < Formula
     sha256 "24c323dbaa5f6f1b01fbf8f837c379ef503d323a448d2bb3d673c31ced622f0d" => :mojave
     sha256 "7cd9b9d6bffa3b6b6ff806c4041f495d5a7ef40296cb50097db25d17eb616265" => :high_sierra
     sha256 "c087de27b46b86a14d583904e0a9d293428af37d8710b521ae7aeeb5174fc8fd" => :sierra
-    sha256 "ced67e3385abf140b19c5e17c530fabe66022ba3a7ec3ad8117ec5dadcb9b801" => :x86_64_linux
   end
 
   # Fix compiler warnings in glui.h. Merged into master on November 28, 2016.
@@ -21,8 +21,8 @@ class Glui < Formula
 
   unless OS.mac?
     depends_on "freeglut"
+    depends_on "mesa"
     depends_on "linuxbrew/xorg/glu"
-    depends_on "linuxbrew/xorg/mesa"
   end
 
   def install
