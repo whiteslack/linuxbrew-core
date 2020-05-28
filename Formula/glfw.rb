@@ -17,12 +17,12 @@ class Glfw < Formula
 
   unless OS.mac?
     depends_on "freeglut"
-    depends_on "mesa"
     depends_on "linuxbrew/xorg/libx11"
     depends_on "linuxbrew/xorg/libxcursor"
     depends_on "linuxbrew/xorg/libxi"
     depends_on "linuxbrew/xorg/libxinerama"
     depends_on "linuxbrew/xorg/libxrandr"
+    depends_on "mesa"
   end
 
   def install

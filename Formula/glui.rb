@@ -21,8 +21,8 @@ class Glui < Formula
 
   unless OS.mac?
     depends_on "freeglut"
-    depends_on "mesa"
     depends_on "linuxbrew/xorg/glu"
+    depends_on "mesa"
   end
 
   def install

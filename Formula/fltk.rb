@@ -16,8 +16,8 @@ class Fltk < Formula
   depends_on "jpeg"
   depends_on "libpng"
   unless OS.mac?
-    depends_on "mesa"
     depends_on "linuxbrew/xorg/xorg"
+    depends_on "mesa"
   end
 
   def install

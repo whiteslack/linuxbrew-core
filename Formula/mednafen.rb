@@ -17,10 +17,11 @@ class Mednafen < Formula
   depends_on :macos => :sierra # needs clock_gettime
   depends_on "sdl2"
 
+  uses_from_macos "zlib"
+
   unless OS.mac?
-    depends_on "zlib"
-    depends_on "mesa"
     depends_on "linuxbrew/xorg/glu"
+    depends_on "mesa"
   end
 
   def install

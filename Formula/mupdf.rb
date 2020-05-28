@@ -16,9 +16,9 @@ class Mupdf < Formula
   depends_on "openssl@1.1"
   depends_on :x11 if OS.mac?
   unless OS.mac?
-    depends_on "mesa"
     depends_on "linuxbrew/xorg/glu"
     depends_on "linuxbrew/xorg/xinput"
+    depends_on "mesa"
   end
 
   conflicts_with "mupdf-tools",

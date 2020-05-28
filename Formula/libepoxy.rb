@@ -17,9 +17,9 @@ class Libepoxy < Formula
   depends_on "pkg-config" => :build
   unless OS.mac?
     depends_on "freeglut"
-    depends_on "mesa"
     depends_on "linuxbrew/xorg/xorg"
     depends_on "linuxbrew/xorg/xorgproto"
+    depends_on "mesa"
   end
 
   def install
