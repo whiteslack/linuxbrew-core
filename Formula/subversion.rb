@@ -157,7 +157,7 @@ class Subversion < Formula
     if OS.mac?
       inreplace "Makefile" do |s|
         s.change_make_var! "SWIG_PL_INCLUDES",
-          "$(SWIG_INCLUDES) -arch #{MacOS.preferred_arch} -g -pipe -fno-common " \
+          "$(SWIG_INCLUDES) -arch x86_64 -g -pipe -fno-common " \
           "-DPERL_DARWIN -fno-strict-aliasing -I#{HOMEBREW_PREFIX}/include -I#{perl_core}"
       end
     end

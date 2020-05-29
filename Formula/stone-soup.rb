@@ -3,12 +3,12 @@ class StoneSoup < Formula
   homepage "https://crawl.develz.org/"
   url "https://crawl.develz.org/release/0.24/stone_soup-0.24.0.tar.xz"
   sha256 "eb069ae421d4246a3332d9081fb6e08b4bfaa71c407ffc17c194c5f9170d7561"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 "4e69f1d18080dda379fd029a52d1bbd0847f9233e99cd1197e0d5a3af2004030" => :catalina
-    sha256 "2c413dd1f10ab3efc5297dbf98ad4f3438a9ee465efeef6e5f20ad9411dbcd06" => :mojave
-    sha256 "404fb3e216b2b99ed046927508d6076624ab7b72e5915ea04eaf95eaf8ee54be" => :high_sierra
+    sha256 "7cf945fbee6be6dff59257cab7c4d1e37154012db05eda662fce07de0030792b" => :catalina
+    sha256 "a8be120a1590ccef04dee4eca9ad603cba128ebbc84239e07c84210d9702dfd1" => :mojave
+    sha256 "8132209e7cf957ed398e8fdd70fa5bc9fea1a808d82fdc6f9dc69b137c6f29c3" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -62,10 +62,7 @@ class StoneSoup < Formula
 
       system "make", "install",
         "DEVELOPER_DIR=#{devdir}", "SDKROOT=#{MacOS.sdk_path}",
-        # stone-soup tries to use `uname -m` to determine build -arch,
-        # which is frequently wrong on OS X
-        "SDK_VER=#{MacOS.version}", "MARCH=#{MacOS.preferred_arch}",
-        *args
+        "SDK_VER=#{MacOS.version}", *args
     end
   end
 
