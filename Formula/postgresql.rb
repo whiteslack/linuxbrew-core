@@ -3,14 +3,13 @@ class Postgresql < Formula
   homepage "https://www.postgresql.org/"
   url "https://ftp.postgresql.org/pub/source/v12.3/postgresql-12.3.tar.bz2"
   sha256 "94ed64a6179048190695c86ec707cc25d016056ce10fc9d229267d9a8f1dcf41"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3: 4
   head "https://github.com/postgres/postgres.git"
 
   bottle do
-    sha256 "0b5cd2df2eca116eecd25166a5256b8ae4f0aa3798d98bff5031eb3e8fe81ad8" => :catalina
-    sha256 "26c8924fb3d1dae70c7a8b11c69a214deba1c0e88eefbd5620a1460a5173dcc7" => :mojave
-    sha256 "9f4aecff80078c188bf586fbedd3d7d9253986e6c084b8875536ae35c8cf3351" => :high_sierra
-    sha256 "63562f21031644e70de41b1f5ba728314bf354a402589fc329e708b47f9d63f5" => :x86_64_linux
+    sha256 "f669793743849ffa5a02fee6942dd0acf73a718ec4291b936bdff1a2907183e8" => :catalina
+    sha256 "7d471063e15a2f2e361fa90d102c9f49c78e4d062909eabd801eaff0160e716b" => :mojave
+    sha256 "dd4506b7af84a92c98ee3506167e688a68dd44b2cd9cde10b8ec1e0ec5e96b03" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -55,6 +54,10 @@ class Postgresql < Formula
         --with-tcl
       ]
     end
+
+    # PostgreSQL by default uses xcodebuild internally to determine this,
+    # which does not work on CLT-only installs.
+    args << "PG_SYSROOT=#{MacOS.sdk_path}" if MacOS.sdk_root_needed?
 
     system "./configure", *args
     system "make"

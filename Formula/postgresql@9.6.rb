@@ -3,13 +3,12 @@ class PostgresqlAT96 < Formula
   homepage "https://www.postgresql.org/"
   url "https://ftp.postgresql.org/pub/source/v9.6.18/postgresql-9.6.18.tar.bz2"
   sha256 "517ec282b785e6d22f360c30ba0c5e2a506fca5ca07dcc545427511d94c89999"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
 
   bottle do
-    sha256 "f347514af589033fde29c8760afb57e319c1eee18b844a53973e0b9622ecad6d" => :catalina
-    sha256 "f9375e4815818eb782d735bc230bbe66ec95d1aba2eff815733f5ab05ba86ff6" => :mojave
-    sha256 "5f0a6602686eabd4c2303cc76265f4a1df0c8779f24dc201bb6531bfa5e06786" => :high_sierra
-    sha256 "7256802509e02b28a32e9fdd76641e13c2563d9fbde1060e6a6c0dd23be553f8" => :x86_64_linux
+    sha256 "bb2dcc5e902d8a008ee4910b649859c9a1c36c379984fd154993f815845456b3" => :catalina
+    sha256 "1f8222b21e01eb165b53c1a1cfdfbef3fdb669078ec4104294d4816da5ab5fda" => :mojave
+    sha256 "10253285381fec67b3329251271a72e7d6011b6f622ad645b85b39a74a800ab8" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -51,6 +50,10 @@ class PostgresqlAT96 < Formula
         --with-tcl
       ]
     end
+
+    # PostgreSQL by default uses xcodebuild internally to determine this,
+    # which does not work on CLT-only installs.
+    args << "PG_SYSROOT=#{MacOS.sdk_path}" if MacOS.sdk_root_needed?
 
     system "./configure", *args
     system "make"

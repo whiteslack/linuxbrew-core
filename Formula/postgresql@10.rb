@@ -3,13 +3,12 @@ class PostgresqlAT10 < Formula
   homepage "https://www.postgresql.org/"
   url "https://ftp.postgresql.org/pub/source/v10.13/postgresql-10.13.tar.bz2"
   sha256 "4d701f450cd92ffb123cf6c296e9656abbc2ab7ea6507894ff1e2475ae0754e1"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
 
   bottle do
-    sha256 "ef796bc0e8079e784258059aca1593dd7b067bc1e8e6773f909396d562bf333f" => :catalina
-    sha256 "0d829c35685dbdeb711042e65427551f00f79dba833833d95b4ed5df790c2746" => :mojave
-    sha256 "fc2dd3e82a49a82be1554c89fea909543c0b5a3b8ad66c64275ca72a03d6e8e8" => :high_sierra
-    sha256 "768c3368fdf85e13449141437927871223f21330d928257e5be7bb3b8f492bc4" => :x86_64_linux
+    sha256 "ecba4a4894f071d4ddd6b7cc943f205208c34eac89838c86721be6df8e8a09d9" => :catalina
+    sha256 "c0174ea020d69a420f7931fbdab92d10ae605d4893047dd3bfdccc0abd9293d8" => :mojave
+    sha256 "663ca45daf777784956f5b991c336c61db7da71490a2a4aeaff16d2fc0faf1bd" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -51,6 +50,10 @@ class PostgresqlAT10 < Formula
         --with-tcl
       ]
     end
+
+    # PostgreSQL by default uses xcodebuild internally to determine this,
+    # which does not work on CLT-only installs.
+    args << "PG_SYSROOT=#{MacOS.sdk_path}" if MacOS.sdk_root_needed?
 
     system "./configure", *args
     system "make"
