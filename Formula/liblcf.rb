@@ -11,6 +11,7 @@ class Liblcf < Formula
     sha256 "1765ea5fd438e35c255104fcf3670f4fb20b44b0d88dfc5579deeb95fd0567a1" => :catalina
     sha256 "626aeacfaba89b8d5bb57945c4f82c33758e7a78de2b2d87261e6e83e874a7bc" => :mojave
     sha256 "b508d5fd894f0962328296f0d292eb3cd88e48d42d20e75934b7b9abad62c53a" => :high_sierra
+    sha256 "ceb6f33dda029e2f510741eb4e6c6fc45ea13fdf797c84dcd8cc00f315d4dfae" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
