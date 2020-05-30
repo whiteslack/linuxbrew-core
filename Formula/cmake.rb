@@ -4,8 +4,8 @@ class Cmake < Formula
   head "https://gitlab.kitware.com/cmake/cmake.git"
 
   stable do
-    url "https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar.gz"
-    sha256 "fc77324c4f820a09052a7785549b8035ff8d3461ded5bbd80d252ae7d1cd3aa5"
+    url "https://github.com/Kitware/CMake/releases/download/v3.17.3/cmake-3.17.3.tar.gz"
+    sha256 "0bd60d512275dc9f6ef2a2865426a184642ceb3761794e6b65bff233b91d8c40"
 
     # Allows CMAKE_FIND_FRAMEWORKS to work with CMAKE_FRAMEWORK_PATH, which brew sets.
     # Remove with 3.18.0.
@@ -17,10 +17,9 @@ class Cmake < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5498aed6134742450b1237e0f033ff388831a6c06e9d96524b1e14ebceef1cb1" => :catalina
-    sha256 "edc5ec271841a8b8558f8d60ef510c7d7abc91e91cc4fb0422389fad99073857" => :mojave
-    sha256 "fc6cba3364bbb477e2e4ac53a002a85976a30c437d0dfb39c528342d6d85b0fd" => :high_sierra
-    sha256 "37f7bb84f51c34e1d0a5f008ccc6162db4242997d9e2dfb19ea472dab24fe9b7" => :x86_64_linux
+    sha256 "564519865874717cf13a1418e256722bf7b33ccafff19d3c28333e5f8f3a783e" => :catalina
+    sha256 "9ca139a61e79b6f4a274b7b3ac9b0d22d456b37362b4a3405641698bc9afc73c" => :mojave
+    sha256 "0a6f34d0b0a70d12ccdf4e3b134f240dc38e5391eebee24c63958081b970f5ae" => :high_sierra
   end
 
   depends_on "sphinx-doc" => :build

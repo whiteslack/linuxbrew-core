@@ -6,10 +6,10 @@ class Guile < Formula
   sha256 "53c47d320533c80a3145adbd83e14bbe107c0441c18a8b214ff20849b28a9f8a"
 
   bottle do
-    sha256 "2177e9ef48e8c0799f06ff8f0a79182da8e574f5024bd38fe89081905ed22616" => :catalina
-    sha256 "671957c077171576cc2d7598aae337492e2552bce75140e664dde11ac96c5096" => :mojave
-    sha256 "db9dd8dbb89b538da5d359f0ac17bd9df91102c92176525359e3fde279d66cd3" => :high_sierra
-    sha256 "4572e4f5381b4fabdbf7b2148455f702a3b2c172aa39b2b5b15ffad0aa1340a9" => :x86_64_linux
+    rebuild 1
+    sha256 "808df92dc5ff90ec8adb4982b79b15c327c8c4c09f7f4daf604c27b26f8707ee" => :catalina
+    sha256 "964061794cfc8c234b04d006e5d10149dcb3535226d60f35b0d27999e8711eaa" => :mojave
+    sha256 "ee278a2db99ec6421873081c7e0c726f3587f864456276862f01fd17eb94fcee" => :high_sierra
   end
 
   head do
@@ -61,6 +61,24 @@ class Guile < Formula
     end
 
     (share/"gdb/auto-load").install Dir["#{lib}/*-gdb.scm"]
+  end
+
+  def post_install
+    # Create directories so installed modules can create links inside.
+    (HOMEBREW_PREFIX/"lib/guile/3.0/site-ccache").mkpath
+    (HOMEBREW_PREFIX/"share/guile/site/3.0").mkpath
+  end
+
+  def caveats
+    <<~EOS
+      Guile libraries can now be installed here:
+          Source files: #{HOMEBREW_PREFIX}/share/guile/site/3.0
+        Compiled files: #{HOMEBREW_PREFIX}/lib/guile/3.0/site-ccache
+
+      Add the following to your .bashrc or equivalent:
+        export GUILE_LOAD_PATH="#{HOMEBREW_PREFIX}/share/guile/site/3.0"
+        export GUILE_LOAD_COMPILED_PATH="#{HOMEBREW_PREFIX}/lib/guile/3.0/site-ccache"
+    EOS
   end
 
   test do

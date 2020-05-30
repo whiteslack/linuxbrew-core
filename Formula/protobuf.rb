@@ -7,10 +7,10 @@ class Protobuf < Formula
   head "https://github.com/protocolbuffers/protobuf.git"
 
   bottle do
-    sha256 "6b13b089c2754bb9df99f2621ea0fd0fd5feccca601aaca10dc6982927c6fc3a" => :catalina
-    sha256 "b09bdcad4bde73a6d9f5675979da6f10b16b9620a26b5bc6a7639d03e3b7fccb" => :mojave
-    sha256 "af2d9b9bc381ef83a030cef3960a5e72bd1007e5ae34d5b8a9f3b7901cdfdd19" => :high_sierra
-    sha256 "8cda963affc5fb4165ad414c0594294696e16915170f3292a94a26731d5235f5" => :x86_64_linux
+    rebuild 1
+    sha256 "5a8215a162e0b88fde57874602dd81562dbbfe99ecf049eb91053e66d2864908" => :catalina
+    sha256 "94aa87127887fcc40d905d1fee42d471cf441092f086bd069bdf597c653776f5" => :mojave
+    sha256 "4067093b635959e9d474e04412f55ca61258c5f8d90d6649802fab17a3f23fb3" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -44,7 +44,8 @@ class Protobuf < Formula
     system "make", "install"
 
     # Install editor support and examples
-    doc.install "editors", "examples"
+    pkgshare.install "editors/proto.vim", "examples"
+    elisp.install "editors/protobuf-mode.el"
 
     ENV.append_to_cflags "-I#{include}"
     ENV.append_to_cflags "-L#{lib}"

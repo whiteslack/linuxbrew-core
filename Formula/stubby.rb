@@ -6,10 +6,10 @@ class Stubby < Formula
   head "https://github.com/getdnsapi/stubby.git", :branch => "develop"
 
   bottle do
-    sha256 "ad68e436a7243e41453e644529964001b45602473326fba37e7dbfe57be20686" => :catalina
-    sha256 "581ab7f709c5736d868fa394a91a3e917a97d518eadbb06525bae1b448bc8908" => :mojave
-    sha256 "d929b09280c4f602e6b81b9f39f31574199221bf6b48f163da677295a2ebfb2c" => :high_sierra
-    sha256 "d83adbcf313a25a6f0ec4ed250a455ce18b0835eb0ca718715a416935295bd15" => :x86_64_linux
+    rebuild 1
+    sha256 "aaa2e665539768e5095b04cdbbf61b8b865334770e4608f144096f010631d47c" => :catalina
+    sha256 "be2d27bc1ceb52f5728c34b179ba4b57593ded2e66c87c4ab26fa6e89ac26ece" => :mojave
+    sha256 "437687f0eebd8218424dbefd61988a5ebb9c2a4487c779c36a329deaf2c2ad92" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -18,7 +18,8 @@ class Stubby < Formula
   depends_on "libyaml"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", "-DCMAKE_INSTALL_RUNSTATEDIR=#{HOMEBREW_PREFIX}/var/run/", \
+                    "-DCMAKE_INSTALL_SYSCONFDIR=#{HOMEBREW_PREFIX}/etc", ".", *std_cmake_args
     system "make", "install"
   end
 
