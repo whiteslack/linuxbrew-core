@@ -1,28 +1,21 @@
 class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via Apache/NGINX"
   homepage "https://www.phusionpassenger.com/"
-  url "https://github.com/phusion/passenger/releases/download/release-6.0.4/passenger-6.0.4.tar.gz"
-  sha256 "ec1e4b555c176642c1c316897177d54b6f7d369490280e8ee3e54644e40b250b"
-  revision 7
+  url "https://github.com/phusion/passenger/releases/download/release-6.0.5/passenger-6.0.5.tar.gz"
+  sha256 "94c25d5669c6cd1bc93854a020701c9869012eec621bce331bfe2d0c9c8c3532"
   head "https://github.com/phusion/passenger.git", :branch => "stable-6.0"
 
   bottle do
     cellar :any
-    sha256 "b43bf5fa841a597dab5efb6ad144b0c45f09461dd6a730a65bb8a611099773a4" => :catalina
-    sha256 "3ecd5d83603e811ebacb01469fbeb4763c693a95f59666ee1bd8a392b1fa7d04" => :mojave
-    sha256 "f6c5a09acc6d18971828cbb58658522115bd71b3b2adf082d2bc3a118bf80b29" => :high_sierra
+    sha256 "1be0ca82f0f6cfa53d26cea7e92eb484cfc63829f8f32d81be9f13c25aeea265" => :catalina
+    sha256 "0c751f5561066a361a0d73429d86ff5a74aa0d8fe166a12fbe5eaf5a31f0a87b" => :mojave
+    sha256 "7abd8306bd85d11d8c254945485c8003231b97fc38ee3ce44118f50077f6dc25" => :high_sierra
   end
 
   # to build nginx module
   depends_on "nginx" => [:build, :test]
   depends_on "openssl@1.1"
   depends_on "pcre"
-
-  # Enables setting temp path to avoid sandbox violations, already merged upstream
-  patch do
-    url "https://github.com/phusion/passenger/commit/e512231f.patch?full_index=1"
-    sha256 "9f39f5c1c8b68516f7bac0ba07921144a5de30b6a72ef2423ea83a77d512bea8"
-  end
 
   def install
     if MacOS.version >= :mojave && MacOS::CLT.installed?

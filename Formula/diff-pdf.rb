@@ -3,13 +3,13 @@ class DiffPdf < Formula
   homepage "https://vslavik.github.io/diff-pdf/"
   url "https://github.com/vslavik/diff-pdf/releases/download/v0.4.1/diff-pdf-0.4.1.tar.gz"
   sha256 "0eb81af6b06593488acdc5924a199f74fe3df6ecf2a0f1be208823c021682686"
-  revision 2
+  revision 3
 
   bottle do
     cellar :any
-    sha256 "a3e92cfda284e36dcf074032dbea1532fcbc929e97ac2297e5158e0580af6367" => :catalina
-    sha256 "460b61cddc4bfd049c28337b5b30179d3029129a0e484001e7467acd40f0b51e" => :mojave
-    sha256 "94d9290d9735942681d560be7439c08cddfebac246d3576a579021f01f3e5d95" => :high_sierra
+    sha256 "9a8f2656e6cbea41f2fb3b4a660997bbaf088b74685fbc96fb6c82f68b3bc34b" => :catalina
+    sha256 "52e2dd7983cc2ab92b99987da438757eaadd098aff3b493ca88db98996f2f7e9" => :mojave
+    sha256 "364c1ecd345d11ec57e8a91bd4f3368bd5aa1d15244abc582461e09275c8f072" => :high_sierra
   end
 
   depends_on "autoconf" => :build
