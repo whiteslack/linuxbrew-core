@@ -9,6 +9,7 @@ class Bwfmetaedit < Formula
     sha256 "72cdfdf26527d3a82cac945c81a9a53097dd4831f3a315fdbd1dc67e0f1a01d0" => :catalina
     sha256 "3afb53dc8f46493cc50dbce9d6369b84385110b908a847d2ab84eca9c06ff8cb" => :mojave
     sha256 "332b5ad0e217e6433f51d25135f98036120f6444820dcece627228c1fdfe881c" => :high_sierra
+    sha256 "4e4215948f108e5b28c52e1614ca3bff59efddcd651e599e45dba402c979f93f" => :x86_64_linux
   end
 
   def install
