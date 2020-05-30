@@ -1,16 +1,14 @@
 class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.13.0.tar.bz2"
-  mirror "https://archive.apache.org/dist/subversion/subversion-1.13.0.tar.bz2"
-  sha256 "bc50ce2c3faa7b1ae9103c432017df98dfd989c4239f9f8270bb3a314ed9e5bd"
-  revision 5
+  url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.0.tar.bz2"
+  mirror "https://archive.apache.org/dist/subversion/subversion-1.14.0.tar.bz2"
+  sha256 "6ba8e218f9f97a83a799e58a3c6da1221d034b18d9d8cbbcb6ec52ab11722102"
 
   bottle do
-    sha256 "0c131c339c9d452563aeda9dffc0acbe2f75be6d4ab3f8eda3ffdab7b0e06a67" => :catalina
-    sha256 "a19ac8763a4d06dd030d6f41cb5b64e15bae68f33b95ebb677040e58d4a1f9f1" => :mojave
-    sha256 "a901ee429676a52297443213f234d4b30e21a7c25a660fed21d767bc2fd0a5e1" => :high_sierra
-    sha256 "2898a45955cc9120b9b82ad4906bb09f4ac1545dde6c78918e35108a0e3eeb01" => :x86_64_linux
+    sha256 "e9eff2a2edfbf1a2434fb4435819c3a05642c2f89fdfda65ef3722c91eab7db9" => :catalina
+    sha256 "03b0c8f9e31ba6bd81b3565578b71862600877a87faea1c1f0363c89d6bbe3e4" => :mojave
+    sha256 "6ef21764ae411bc699bc7593670eed6780db6b0f72b0e533f01c5d1fda2bdf7b" => :high_sierra
   end
 
   head do
@@ -23,8 +21,9 @@ class Subversion < Formula
 
   depends_on "openjdk" => :build
   depends_on "pkg-config" => :build
+  depends_on "python@3.8" => :build
   depends_on "scons" => :build # For Serf
-  depends_on "swig@3" => :build # https://issues.apache.org/jira/browse/SVN-4818
+  depends_on "swig" => :build
   depends_on "apr"
   depends_on "apr-util"
 
@@ -32,9 +31,6 @@ class Subversion < Formula
   # gettext, lz4, perl, sqlite and utf8proc for consistency
   depends_on "gettext"
   depends_on "lz4"
-  depends_on :macos if OS.mac? # Due to Python 2
-  # See https://github.com/Homebrew/homebrew-core/issues/53193#issue-600482673
-  # Will work with Python 3.8 in subversion 1.14
   depends_on "openssl@1.1" # For Serf
   depends_on "perl"
   depends_on "python@3.8" unless OS.mac?
@@ -48,22 +44,26 @@ class Subversion < Formula
   uses_from_macos "ruby"
   uses_from_macos "zlib"
 
+  resource "py3c" do
+    url "https://github.com/encukou/py3c/archive/v1.1.tar.gz"
+    sha256 "c7ffc22bc92dded0ca859db53ef3a0b466f89a9f8aad29359c9fe4ff18ebdd20"
+  end
+
   resource "serf" do
     url "https://www.apache.org/dyn/closer.lua?path=serf/serf-1.3.9.tar.bz2"
     mirror "https://archive.apache.org/dist/serf/serf-1.3.9.tar.bz2"
     sha256 "549c2d21c577a8a9c0450facb5cca809f26591f048e466552240947bdf7a87cc"
   end
 
-  # Fix #23993 by stripping flags swig can't handle from SWIG_CPPFLAGS
   # Prevent "-arch ppc" from being pulled in from Perl's $Config{ccflags}
   # Prevent linking into a Python Framework
   patch :DATA if OS.mac?
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin"
+    py3c_prefix = buildpath/"py3c"
+    serf_prefix = libexec/"serf"
 
-    serf_prefix = OS.mac? ? libexec/"serf" : prefix
-
+    resource("py3c").unpack py3c_prefix
     resource("serf").stage do
       unless OS.mac?
         inreplace "SConstruct" do |s|
@@ -110,6 +110,7 @@ class Subversion < Formula
       --with-apxs=no
       --with-jdk=#{Formula["openjdk"].opt_prefix}
       --with-ruby-sitedir=#{lib}/ruby
+      --with-py3c=#{py3c_prefix}
       --with-serf=#{serf_prefix}
       --with-sqlite=#{Formula["sqlite"].opt_prefix}
       --with-zlib=#{zlib}
@@ -118,12 +119,13 @@ class Subversion < Formula
       --without-gpg-agent
       --enable-javahl
       --without-jikes
+      <<<<<<< HEAD
       RUBY=#{ruby}
+      =======
+      PYTHON=#{Formula["python@3.8"].opt_bin}/python3
+      RUBY=/usr/bin/ruby
+      >>>>>>> 1935bc45ce
     ]
-
-    # The system Python is built with llvm-gcc, so we override this
-    # variable to prevent failures due to incompatible CFLAGS
-    ENV["ac_cv_python_compile"] = ENV.cc
 
     inreplace "Makefile.in",
               "toolsdir = @bindir@/svn-tools",
@@ -142,7 +144,7 @@ class Subversion < Formula
 
     system "make", "swig-py"
     system "make", "install-swig-py"
-    (lib/"python2.7/site-packages").install_symlink Dir["#{lib}/svn-python/*"]
+    (lib/"python3.8/site-packages").install_symlink Dir["#{lib}/svn-python/*"]
 
     # Java and Perl support don't build correctly in parallel:
     # https://github.com/Homebrew/homebrew/issues/20415
@@ -212,17 +214,3 @@ index a60430b..bd9b017 100644
      INC  => join(' ', $includes, $cppflags,
                   " -I$swig_srcdir/perl/libsvn_swig_perl",
                   " -I$svnlib_srcdir/include",
-
-diff --git a/build/get-py-info.py b/build/get-py-info.py
-index 29a6c0a..dd1a5a8 100644
---- a/build/get-py-info.py
-+++ b/build/get-py-info.py
-@@ -83,7 +83,7 @@ def link_options():
-   options = sysconfig.get_config_var('LDSHARED').split()
-   fwdir = sysconfig.get_config_var('PYTHONFRAMEWORKDIR')
-
--  if fwdir and fwdir != "no-framework":
-+  if fwdir and fwdir != "no-framework" and sys.platform != 'darwin':
-
-     # Setup the framework prefix
-     fwprefix = sysconfig.get_config_var('PYTHONFRAMEWORKPREFIX')

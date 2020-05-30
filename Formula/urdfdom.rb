@@ -3,20 +3,25 @@ class Urdfdom < Formula
   homepage "https://wiki.ros.org/urdf/"
   url "https://github.com/ros/urdfdom/archive/1.0.4.tar.gz"
   sha256 "8f3d56b0cbc4b84436d8baf4c8346cd2ee7ffb257bba5ddd9892c41bf516edc4"
-  revision 1
+  revision 2
 
   bottle do
     cellar :any
-    sha256 "5828c253e91dee4ee57acd08ea0ac0a524543dbf23a8da2df1c95193d0e0345c" => :catalina
-    sha256 "5b8413b4cd6468a324bc73335655e3a5a6add6e2c7a092339333f717ef3ba414" => :mojave
-    sha256 "517db80473a63c059e85a6f49ec0bc18af579351b15fb0f3c83cc5720f7d19d1" => :high_sierra
-    sha256 "e6a7cc28844683ac783abd0baf544eaa2e67cc5dddaac06aaccba62c767e90c1" => :x86_64_linux
+    sha256 "1a4cf15eac5ab20085f401c827511eddd6075f2d4511f9b4a72c7388d587a91b" => :catalina
+    sha256 "8f9f55abf13706344949050a7fb077e4394daef2556a09b03deef1481eef432f" => :mojave
+    sha256 "a80e9b0bb93db5384993499150c28c883cc1f839e4e9fa7e933bf85067be1818" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "console_bridge"
   depends_on "tinyxml"
   depends_on "urdfdom_headers"
+
+  patch do
+    # Fix for finding console_bridge 1.0
+    url "https://github.com/ros/urdfdom/commit/6faba176d41cf39114785a3e029013f941ed5a0e.diff?full_index=1"
+    sha256 "f914442c1a3197cd8ac926fd2f7ef1a61f81f54b701515b87f7ced7a59078eb4"
+  end
 
   def install
     ENV.cxx11
