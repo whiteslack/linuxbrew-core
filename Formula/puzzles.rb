@@ -2,16 +2,16 @@ class Puzzles < Formula
   desc "Collection of one-player puzzle games"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
   # Extract https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles.tar.gz to get the version number
-  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20200413.2a0e91b.tar.gz"
-  version "20200413"
-  sha256 "fca9da3c80e5d1391f2f4bc94fd6536236ffacc4118e9f69ec7fc8a2c2170606"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20200524.66b9e8c.tar.gz"
+  version "20200524"
+  sha256 "0509039291b384d85835e726ac0db9cee850e9466da01f96be35e046a3869358"
   head "https://git.tartarus.org/simon/puzzles.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f236b75458f6bff7ac8ce9e6372f1587a771c9cb58d51a23158609c27db066de" => :catalina
-    sha256 "315631a0710e349c3b65c1ce176e1ae3fdbd598b0a8b077da2b32f5b404ed72d" => :mojave
-    sha256 "25c6d1412caef61b381b5b3b73aba66834f72197d8488a55a87b5694430e6d66" => :high_sierra
+    sha256 "feb80a8da8591259aae67f3594e9eec1dca17d32a25822147bec353eed6830ae" => :catalina
+    sha256 "77448c9b84c0c293473abbb5345d31b4bb984d7fb24d3be62ebe3103beda3abb" => :mojave
+    sha256 "b6f43fec8b75e417f5be8acc4a765583a98df03b62a0f9f43e168599ed6a90b8" => :high_sierra
   end
 
   depends_on "halibut"

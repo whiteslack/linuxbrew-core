@@ -3,15 +3,14 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://github.com/witten/borgmatic/archive/1.5.4.tar.gz"
-  sha256 "4de8ea1f9376952dcfec9006da7011d2e55051a782a97f3ae569f51e46d14c38"
+  url "https://github.com/witten/borgmatic/archive/1.5.5.tar.gz"
+  sha256 "e945fae6f4fc343afcf8afc5459dbd921642a1d1a700e281737813c1782b1290"
 
   bottle do
     cellar :any
-    sha256 "2e69a07934cb4fddd13869450aebc6357a45d28cd2078899e95e1a0158977daa" => :catalina
-    sha256 "0c5cf5d17085238f3c813aaedc104d145ebccf094759ccff9ddadcbbaf46edbe" => :mojave
-    sha256 "2dfe1c8eb60774865c14f884120ad1878c58ee2b9826db3cf791984ea321fec7" => :high_sierra
-    sha256 "250ed6f9641b1d26288de00252786f5c9b5ee8d51eb26d565a7da692a9b197f3" => :x86_64_linux
+    sha256 "7b8172c56d6da060e6cd62d668faa16bf6bd16669c07b956b8ca00dd61b927e1" => :catalina
+    sha256 "c62a0a95c7bfda81fa0ebc993576f1d13beb168a67eac3c00cddde748e293ea9" => :mojave
+    sha256 "7102840330a371a2d1e4215ef2d58e31af11d6079ad37c2c777c70eb71bc3371" => :high_sierra
   end
 
   depends_on "libyaml"
@@ -73,8 +72,8 @@ class Borgmatic < Formula
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/21/9f/b251f7f8a76dec1d6651be194dfba8fb8d7781d10ab3987190de8391d08e/six-1.14.0.tar.gz"
-    sha256 "236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"
+    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
+    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
   end
 
   resource "urllib3" do
@@ -130,7 +129,7 @@ class Borgmatic < Formula
       info --debug #{repo_path}
       init --encryption repokey --debug #{repo_path}
       prune --keep-daily 7 --prefix {hostname}- #{repo_path}
-      create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /home /etc /var/log/syslog*
+      create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home /var/log/syslog*
       check --prefix {hostname}- #{repo_path}
       list --json #{repo_path}
     EOS
