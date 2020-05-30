@@ -3,13 +3,12 @@ class PostgresqlAT10 < Formula
   homepage "https://www.postgresql.org/"
   url "https://ftp.postgresql.org/pub/source/v10.13/postgresql-10.13.tar.bz2"
   sha256 "4d701f450cd92ffb123cf6c296e9656abbc2ab7ea6507894ff1e2475ae0754e1"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
 
   bottle do
-    sha256 "ecba4a4894f071d4ddd6b7cc943f205208c34eac89838c86721be6df8e8a09d9" => :catalina
-    sha256 "c0174ea020d69a420f7931fbdab92d10ae605d4893047dd3bfdccc0abd9293d8" => :mojave
-    sha256 "663ca45daf777784956f5b991c336c61db7da71490a2a4aeaff16d2fc0faf1bd" => :high_sierra
-    sha256 "ff5542249a7f8a99de377fa9305c7285c3ee4a98ae85ec3eb9316f99c5333ac8" => :x86_64_linux
+    sha256 "c812a9a2c22c61cbf408572a1a038ae5bac1c745eba15df0b0edf93543844813" => :catalina
+    sha256 "e4eb27c6604afda16097707ece291b7e4ce15d55f20e489c3a9d7e7d9bcc14da" => :mojave
+    sha256 "63157238b665f29e47a1a27aab8d707279d0d8dda4a60540c57ff804ec5c7a2f" => :high_sierra
   end
 
   keg_only :versioned_formula

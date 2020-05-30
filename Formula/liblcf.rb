@@ -3,14 +3,14 @@ class Liblcf < Formula
   homepage "https://easyrpg.org/"
   url "https://easyrpg.org/downloads/player/0.6.2/liblcf-0.6.2.tar.xz"
   sha256 "c48b4f29ee0c115339a6886fc435b54f17799c97ae134432201e994b1d3e0d34"
+  revision 1
   head "https://github.com/EasyRPG/liblcf.git"
 
   bottle do
     cellar :any
-    sha256 "2e9d41df9271f2aff0121b88f1d2fa4257a0c4dd3baeb5ee516e90ae67c884eb" => :catalina
-    sha256 "f4518edc8ebea5c1022e505e57dee8d0f9e2be481108171089e069867e2e5139" => :mojave
-    sha256 "ee900d1f90e33cd831a1e8e215813cd31daa8d6e90d08423bb78484f5176728d" => :high_sierra
-    sha256 "07ae479f1c38ef37cf612f887762c29c3d45848c3e17e4a0d51ded2cfaf286bf" => :x86_64_linux
+    sha256 "1765ea5fd438e35c255104fcf3670f4fb20b44b0d88dfc5579deeb95fd0567a1" => :catalina
+    sha256 "626aeacfaba89b8d5bb57945c4f82c33758e7a78de2b2d87261e6e83e874a7bc" => :mojave
+    sha256 "b508d5fd894f0962328296f0d292eb3cd88e48d42d20e75934b7b9abad62c53a" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

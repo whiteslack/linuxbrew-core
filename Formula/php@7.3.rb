@@ -4,12 +4,12 @@ class PhpAT73 < Formula
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
   url "https://www.php.net/distributions/php-7.3.18.tar.xz"
   sha256 "7b3e2479a8d6fd7666dcdef8aec50d49c4599cc6ee86e48d41724cfd99cc9e58"
+  revision 1
 
   bottle do
-    sha256 "1d3b7911027df95574a7baab7b773ffd82466e7983da084dcd40798d569c82f6" => :catalina
-    sha256 "1dc88149adda07464a6277911498e929a51860a8db148c8e7340df97cb51b7ff" => :mojave
-    sha256 "4a71e17d0bc1a47852fff108c32621037891220138ef0a440f82b3c1bb818145" => :high_sierra
-    sha256 "cf1e9c47ff034f045af3efdb9f25cccf775d50427a0f4ab6a9e219028f0286ec" => :x86_64_linux
+    sha256 "8857380145c6034544e176cbb43dc1cfc1fc1cdc9adc5e961d4fd23c54ba7c45" => :catalina
+    sha256 "3c00aaf1eceb423072e55e091e791d5c5a17c5032abedf6935ac53ef0e98335a" => :mojave
+    sha256 "8c4ec0944c719593618109ca349a7a88a631044de4614e7e620c2d7811216749" => :high_sierra
   end
 
   keg_only :versioned_formula

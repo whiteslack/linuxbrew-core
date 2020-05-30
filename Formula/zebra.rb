@@ -3,12 +3,12 @@ class Zebra < Formula
   homepage "https://www.indexdata.com/zebra"
   url "http://ftp.indexdata.dk/pub/zebra/idzebra-2.1.4.tar.gz"
   sha256 "f45b0461cf40fafddd97d447695a087be0ba0981c108bf509d4c11f6d1db1ae2"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 "5066c7d093041a7d10b29610c386afe6bd0cfa94bfde501b72211315d2d52564" => :catalina
-    sha256 "2fb1fda49a7e7c83e994a6c16ef0baafbe3f162e22837332aa9233c5f2fc2357" => :mojave
-    sha256 "2542ae3153d6c0bcebc199e7d303d74f541088906b191f18d29c8119316822b9" => :high_sierra
+    sha256 "06034a1fa44ffa343907b961799909eb32556f300129109c05771ad9cc5ef82d" => :catalina
+    sha256 "33810ebcbd8ce8a0b3e972a98a9be0a000d064122fc41b58ce748479fb286275" => :mojave
+    sha256 "d8c190c482b012b20ad5b2f14fd7c5d59ac4a50aaa75b126871efff83b2999a1" => :high_sierra
   end
 
   depends_on "icu4c"

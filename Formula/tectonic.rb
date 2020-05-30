@@ -3,14 +3,13 @@ class Tectonic < Formula
   homepage "https://tectonic-typesetting.github.io/"
   url "https://github.com/tectonic-typesetting/tectonic/archive/v0.1.12.tar.gz"
   sha256 "30d2e0fe31145a10097368f11a00540ba201be43d28e7ad580699f47bfa70bf4"
-  revision 1
+  revision 2
 
   bottle do
     cellar :any
-    sha256 "422c0c1dfdc7c16ab45affc902ee755faa0d494276245d636e1695ac2d131dcb" => :catalina
-    sha256 "33615609d3c28ed243573a67f61fba0c425174662e629e48f1913232afbb0735" => :mojave
-    sha256 "4cd8a7098985b7cfe8ee97788ccb36d6e5dd023be2bb29e7aa6f35c5ef017c14" => :high_sierra
-    sha256 "54195bf8169b5e7979e9d99e43657201659468bc60562bdf823c0f9535b8e4c4" => :x86_64_linux
+    sha256 "bd48e4e17779696ca1e647b1809ffbe65821e6387e1c787acf0ab1168bd6c059" => :catalina
+    sha256 "b01e0fad7b78afa074addd3e4e423211a4c66b327a6365639fb1f70b20af2f1e" => :mojave
+    sha256 "1a9f68211f8f9e8268652eb367d1cbafcab3bfcd5779a0be9d71ef456b326de9" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

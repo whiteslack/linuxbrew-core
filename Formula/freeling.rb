@@ -3,12 +3,12 @@ class Freeling < Formula
   homepage "http://nlp.lsi.upc.edu/freeling/"
   url "https://github.com/TALP-UPC/FreeLing/releases/download/4.1/FreeLing-4.1.tar.gz"
   sha256 "ccb3322db6851075c9419bb5e472aa6b2e32cc7e9fa01981cff49ea3b212247e"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 "403173c0b34efd8a6c085f99215ca96e84290b6c624790377207375e212cb226" => :catalina
-    sha256 "7cebf4632f99818baf291c406b8843697e61d9ee8f0cc85440fbb3d24df570e2" => :mojave
-    sha256 "ffa9b765488a46e642d057187b793ed4e2cb53fb533b770b52ec6aec1acff6f1" => :high_sierra
+    sha256 "a5500cffa2b4b1bdc057e43376ea5327d38866289cd44f6a89a60655223f6527" => :catalina
+    sha256 "d708b3a477c5249b9f82f7e5636a6560ca8c9d32c893c1a541fcb29362f47b72" => :mojave
+    sha256 "5e47503c307820eef22fdbb3d4f352e26296ae3476c09f0070e35f19b36fac55" => :high_sierra
   end
 
   depends_on "cmake" => :build

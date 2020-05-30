@@ -1,16 +1,15 @@
 class Icu4c < Formula
   desc "C/C++ and Java libraries for Unicode and globalization"
   homepage "http://site.icu-project.org/home"
-  url "https://github.com/unicode-org/icu/releases/download/release-66-1/icu4c-66_1-src.tgz"
-  version "66.1"
-  sha256 "52a3f2209ab95559c1cf0a14f24338001f389615bf00e2585ef3dbc43ecf0a2e"
+  url "https://github.com/unicode-org/icu/releases/download/release-67-1/icu4c-67_1-src.tgz"
+  version "67.1"
+  sha256 "94a80cd6f251a53bd2a997f6f1b5ac6653fe791dfab66e1eb0227740fb86d5dc"
 
   bottle do
     cellar :any
-    sha256 "f01dbe4266d1180c1da01d973200ed897cfa8ec8bf505c0f57f7f693bc566062" => :catalina
-    sha256 "60e51b89507cf03f1d6ed59deda226b600f96f763dea9a415dfa8ebb42c197a0" => :mojave
-    sha256 "87f2446c5de0991c6bf959a61e63a746ebb6687f6bd68186ecd74ff6801a41b1" => :high_sierra
-    sha256 "2d3ad8136ae3650424a0d3e34fe6ef4ccdec60a9d7b2a40c04745e0083bbe0e1" => :x86_64_linux
+    sha256 "2d1e91b5127f66e7941790c004817c94c892725c88f84f1e4c37297fcbc0c72f" => :catalina
+    sha256 "b6069459c78f18045ee922ce5cb5b235d4b479597d79c3c298d09e0de3d70794" => :mojave
+    sha256 "0720bd47f020d5ca895ae79eb61623ed3c7de0d4c4f221613105f47147aec01f" => :high_sierra
   end
 
   keg_only :provided_by_macos, "macOS provides libicucore.dylib (but nothing else)"
