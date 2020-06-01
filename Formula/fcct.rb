@@ -1,15 +1,15 @@
 class Fcct < Formula
   desc "Fedora CoreOS Config Transpiler"
   homepage "https://github.com/coreos/fcct"
-  url "https://github.com/coreos/fcct/archive/v0.5.0.tar.gz"
-  sha256 "50912f67ecc2da62b45f597522a685350422998d5840a18828fc9505a5dc51db"
+  url "https://github.com/coreos/fcct/archive/v0.6.0.tar.gz"
+  sha256 "2cd630f37fcd549e931df9a01f94f0f783e06463701b9f8b5ab9b293515f9915"
   head "https://github.com/coreos/fcct.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9b500067fe6d756f885caca1674610317b051c676dc1d84d8113577dd70219fc" => :catalina
-    sha256 "e2bc7e8eed8a4644611fdb6434d22d868dbe3f2ec62233f4f9f310219e9cdcc7" => :mojave
-    sha256 "9a5c29f52996817e56f2fee20bccb81d4ad3409b2fa3b9455f84e4394c8af289" => :high_sierra
+    sha256 "1b525343e7d1401c4de2694c7ed25a40d05e607900519ce36c63e76166fde16b" => :catalina
+    sha256 "6b968d4d747e4eb678ab899ff539e49ed771f5a0cc2f87a359e2e404b1e7f12b" => :mojave
+    sha256 "bd2d80c315a29dba226b390329418701e2a149d50c4a16a5fad4a9083f26b433" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -25,7 +25,7 @@ class Fcct < Formula
   test do
     (testpath/"example.fcc").write <<~EOS
       variant: fcos
-      version: 1.0.0
+      version: 1.1.0
       passwd:
         users:
           - name: core
@@ -35,7 +35,7 @@ class Fcct < Formula
 
     (testpath/"broken.fcc").write <<~EOS
       variant: fcos
-      version: 1.0.0
+      version: 1.1.0
       passwd:
         users:
           - name: core
