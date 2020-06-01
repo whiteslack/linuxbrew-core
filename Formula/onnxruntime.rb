@@ -2,15 +2,14 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
   url "https://github.com/microsoft/onnxruntime.git",
-    :tag      => "v1.2.0",
-    :revision => "dacb42fe0480e5632a5b6d9ece5cd92558c8e177"
+    :tag      => "v1.3.0",
+    :revision => "eb5da13bb5744c92583e03f8c7a7ddd8198e6771"
 
   bottle do
     cellar :any
-    sha256 "a5935c1e3f8fe7a403b72ddca24d3a2a9a7bc6e4fc7a6cb2998172dcd1a1745a" => :catalina
-    sha256 "202a746514ce9bde4087833a2fe54d624874598ffa7442b05fbfcceb4d680f5e" => :mojave
-    sha256 "00d907d20c9c498b267027f873152534a00d2eecba27a2f5ab06e510ed199a61" => :high_sierra
-    sha256 "e10778e52182212d5d4e8894d59bb0c6e9d561f3bb9d5f5458028720a883e0ed" => :x86_64_linux
+    sha256 "07fa4a98ecb70a70dc1d325401c859e534957307c5d6de419326bc5360b03e2e" => :catalina
+    sha256 "90d5fa38c83f552f2b7150af0bd64fa827cb8d1379309b479085ec7a9f215e6e" => :mojave
+    sha256 "64a845ee9d26c3e4a443654677efad48985464a3e081f9ce1054d5fee1f45224" => :high_sierra
   end
 
   depends_on "cmake" => :build

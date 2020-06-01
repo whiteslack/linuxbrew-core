@@ -3,18 +3,20 @@ class Redis < Formula
   homepage "https://redis.io/"
   url "http://download.redis.io/releases/redis-6.0.4.tar.gz"
   sha256 "3337005a1e0c3aa293c87c313467ea8ac11984921fab08807998ba765c9943de"
+  revision 1
   head "https://github.com/antirez/redis.git", :branch => "unstable"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cf6c70f5dd84eb7f1898e2b69aaa6bfc4bf73f185a719de62ff315cf61a2a5be" => :catalina
-    sha256 "9d5967a3fb25a127873f9254876bd37807ef1b471282e7839cbbc023d720fac0" => :mojave
-    sha256 "86e6cb79be1c3b61e6b448f2b5db92320990cf4dc4a908ddd2445eb160805c71" => :high_sierra
-    sha256 "7848ea7e2e10c32573a11269e426347f8c6b58de5f6dbea1cbd832c62476d1fb" => :x86_64_linux
+    sha256 "bb93b0a7b0176cad197f016aad08f84aeb310c901018bfecb9a6fb973d424d76" => :catalina
+    sha256 "0496d421d4ce024d2336a68adcf27569a5075d313420b4804080559af54199e2" => :mojave
+    sha256 "d50a4af7f067d64a0b70aa4e3d10aeff83e9cd64f5541719a5a94e25a1c0a2b2" => :high_sierra
   end
 
+  depends_on "openssl@1.1"
+
   def install
-    system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}"
+    system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
 
     %w[run db/redis log].each { |p| (var/p).mkpath }
 
