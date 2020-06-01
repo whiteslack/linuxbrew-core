@@ -12,6 +12,7 @@ class Cppad < Formula
     sha256 "4ef0d734cddee5d7dfde8398b8b295cc35100424639db041816459636de3087f" => :catalina
     sha256 "948e5a9ae91c50297d528c87b1f38afcd15f4e6b6f162ce7ddffa2f43b329143" => :mojave
     sha256 "d74b4ab769dccd4537ef03dd28fea858b81ee2938df776e5d45a23069c57c142" => :high_sierra
+    sha256 "3f24f827195344fe1e1a9eca220cca50b3a7417553c1e4d6ffce7f9ed46e9b96" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
