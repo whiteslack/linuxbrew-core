@@ -3,12 +3,12 @@ class Scrcpy < Formula
   homepage "https://github.com/Genymobile/scrcpy"
   url "https://github.com/Genymobile/scrcpy/archive/v1.14.tar.gz"
   sha256 "45353b6e6cf1efbc8aadf2a51103242460562f6a55c6772037f492716b3fca07"
+  revision 1
 
   bottle do
-    sha256 "5e5d9398b908dc42c7a88b1968299fbde78edb4fbe8cd9c88d714c8404f13d3d" => :catalina
-    sha256 "180fce03a2e503450c31dc28d6ac89e0be4a8d2cf2903622869d8cf48c6a26c1" => :mojave
-    sha256 "ad0b949624712701021bc8b69ed0699ff2dee7b8ec0bcb79aba26b4c871a900f" => :high_sierra
-    sha256 "a4f1936be13186031c9e26dad6dc7b8f3cfafd4bf28a2a6aba46f79aff0c4e5b" => :x86_64_linux
+    sha256 "cd68e22dbb71217ef2b2cfcb36c1805ee9c5e9502e0b8ec9401d12b620b5237f" => :catalina
+    sha256 "e238570d316bf7b7cd644020320bd0cb548fd312a8a551567009ac870e7c8cb2" => :mojave
+    sha256 "f89663e0942ec853ce720aaa3408a973aa5f14c4e858a869b9395728998bd0b7" => :high_sierra
   end
 
   depends_on "meson" => :build

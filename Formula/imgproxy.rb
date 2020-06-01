@@ -3,13 +3,14 @@ class Imgproxy < Formula
   homepage "https://imgproxy.net"
   url "https://github.com/imgproxy/imgproxy/archive/v2.13.1.tar.gz"
   sha256 "1a65fd8579e9a9f6a393d4d768f517e48e090707a11cc02bb46153e26ac0c833"
+  revision 1
   head "https://github.com/imgproxy/imgproxy.git"
 
   bottle do
     cellar :any
-    sha256 "aa216dfb0bd348df0369d6ea2d5269866dbc71d125ec9ed3f16eec27840ab61f" => :catalina
-    sha256 "dc8416f0e42e868bf4b8d340f02c3c2cc19f960e4a21adfa36424288f2152821" => :mojave
-    sha256 "27950f4ad2bfa34bd62294324775244bec3f019c5ec9dcdc3785624ce772474f" => :high_sierra
+    sha256 "1d689272611de42065d737bc031d2bad4b1b0218e753e1291a194f476ebd4323" => :catalina
+    sha256 "a250050aa34ac48c89246349cee3321f3e6bdfa2ee89d6f03a21997df33cb394" => :mojave
+    sha256 "b817b2307645cb4148b64575fe99630f7a5b197ca4b28ac217a855fc79aa5ebf" => :high_sierra
   end
 
   depends_on "go" => :build

@@ -3,14 +3,13 @@ class Unpaper < Formula
   homepage "https://www.flameeyes.com/projects/unpaper"
   url "https://www.flameeyes.com/files/unpaper-6.1.tar.xz"
   sha256 "237c84f5da544b3f7709827f9f12c37c346cdf029b1128fb4633f9bafa5cb930"
-  revision 3
+  revision 4
 
   bottle do
     cellar :any
-    sha256 "e4ef8b38c6ae08675c8f806cc542ad7a47e3eba36c57ceab5c98c3d0380667ce" => :catalina
-    sha256 "4507de47a88550a6c00a90e25e85ad45885cc20cc1d8bb0bacbbc70315d3fbaf" => :mojave
-    sha256 "4b57d65c5d7da4def8d1421928a2d1a5b0ce5083d0f832590f9d15521cc01784" => :high_sierra
-    sha256 "c2b89cf570a1ba3e218338491a92ae4fc15e8d68d358958af30e4d578c1c29ae" => :x86_64_linux
+    sha256 "c72b06d6ed960566861cfdd9e01949fe3b532c21efb380606f2b0820d7592c47" => :catalina
+    sha256 "e391cb0121a88acbadb26933c12c6066c638e802578650655260507e0dea490f" => :mojave
+    sha256 "d347977d11838ca92f9f648eda8b35da43e2b0fc5973f025081b55c1a11b0d2b" => :high_sierra
   end
 
   head do

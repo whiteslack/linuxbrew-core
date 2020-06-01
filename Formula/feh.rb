@@ -1,13 +1,13 @@
 class Feh < Formula
   desc "X11 image viewer"
   homepage "https://feh.finalrewind.org/"
-  url "https://feh.finalrewind.org/feh-3.4.tar.bz2"
-  sha256 "18545ca5c7537268810bec564db9cd3ad1ca98c2a2f23ec243d3bac56cfc0365"
+  url "https://feh.finalrewind.org/feh-3.4.1.tar.bz2"
+  sha256 "782463034ab0135bc8438515191f986db23a79d502154d23a7c07a7574907b7b"
 
   bottle do
-    sha256 "243213f9dda328512d1f9edb33acb3d4a270d84ee56d94404a697d5d109a8946" => :catalina
-    sha256 "182c119d7b0d6b050b56f1dff8eb760a3d7c4ad9d2376598dd29a0539123e195" => :mojave
-    sha256 "0d9ef02cfe0582e2289b1ef2255ad8a6535c91ccfeb1f57849463a020714be92" => :high_sierra
+    sha256 "98b2f6ddf9c5c6a8125b21c61b26d0d3700ca162a93ec066a1561f5527a6a8e9" => :catalina
+    sha256 "90542761b029fe82938b6394800471fc66b07feb6efc541662e734a8e607d66c" => :mojave
+    sha256 "531714d85099fa6387282950462b646877d9e15ddae0f7e76864d27df0c81373" => :high_sierra
   end
 
   depends_on "imlib2"
