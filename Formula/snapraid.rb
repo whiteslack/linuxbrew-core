@@ -1,15 +1,14 @@
 class Snapraid < Formula
   desc "Backup program for disk arrays"
   homepage "https://snapraid.sourceforge.io/"
-  url "https://github.com/amadvance/snapraid/releases/download/v11.4/snapraid-11.4.tar.gz"
-  sha256 "1de47b8277c7dd9c339396efdd2b12a865ff82fdf6ab47cb945f2e21717451c9"
+  url "https://github.com/amadvance/snapraid/releases/download/v11.5/snapraid-11.5.tar.gz"
+  sha256 "1f5267261bdbcf4d48b9359ce67184df11905590739140f740327fb73bcecafa"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "428afbfefb0bba0949f706e908c9837044b484c4af591525b36ad35121a5e660" => :catalina
-    sha256 "cee9e0baa9510de52e801afb91c003d02493d2dc15f679c1da9aabec05180501" => :mojave
-    sha256 "e50021d135a1ce085093c8d7a50aa559c786919fca20355cb5cda6db213da822" => :high_sierra
-    sha256 "b7b8c7695957d199d58a08aa06aeb1cada9f0c8bf47da242a54dd2e90743f6a2" => :x86_64_linux
+    sha256 "d92da7dbdf737efbbeee7025c7d1ed0bc01c1f3cbaf29f0b8ded4b264ff627e8" => :catalina
+    sha256 "8ccbba9450a1f49a2d1b9d0424d9dee7ffaac4348f0cf4edf0bfb2b8858f5885" => :mojave
+    sha256 "db38538cd61796483d63bb4cf8aa687f8801796abb4074e2a5a69e8cefcaae96" => :high_sierra
   end
 
   head do

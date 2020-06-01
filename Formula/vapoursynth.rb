@@ -5,14 +5,14 @@ class Vapoursynth < Formula
   homepage "http://www.vapoursynth.com"
   url "https://github.com/vapoursynth/vapoursynth/archive/R50.tar.gz"
   sha256 "b9dc7ce904c6a3432df7491b7052bc4cf09ccf1e7a703053f8079a2267522f97"
+  revision 1
   head "https://github.com/vapoursynth/vapoursynth.git"
 
   bottle do
     cellar :any
-    sha256 "1ec7b431eb7330f55b6faec6db47bc46a8dca4e7ccac155c6dcd8e114928d548" => :catalina
-    sha256 "1c1ac3d53af915f9f437f9686ce2d1946987a15b930564dbe6e587ec400364f0" => :mojave
-    sha256 "6138f5a2e56576dde5ddf38e9bc196c4f69c9e908cec5b8ec9a5b58103b19c33" => :high_sierra
-    sha256 "53a4316d07d52799e779bbbc629aa7477859bc1dafa510b6057a6dc100af6eb4" => :x86_64_linux
+    sha256 "4839ac1ac710a243b886789f560029e1e6e5f6b13eedb2a07f2666877fb17e54" => :catalina
+    sha256 "7264f344e3cf299a5e8ceaf9ef910db025ff403552af63a2cfd8e77cdf28c5d0" => :mojave
+    sha256 "5c190cc18c3b61b2425c01ef2d007a7fcf8c13866be3e73ce9fe48e558622117" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -37,6 +37,7 @@ class Vapoursynth < Formula
     system "./configure", "--prefix=#{prefix}",
                           "--with-cython=#{buildpath}/cython/bin/cython",
                           "--with-plugindir=#{HOMEBREW_PREFIX}/lib/vapoursynth"
+    system "make", 'LIBS="$(python3-config --ldflags --embed)"'
     system "make", "install"
     %w[eedi3 miscfilters morpho removegrain vinverse vivtc].each do |filter|
       rm prefix/"vapoursynth/lib#{filter}.la"

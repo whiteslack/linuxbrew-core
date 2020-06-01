@@ -1,14 +1,13 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
   homepage "https://www.zabbix.com/"
-  url "https://cdn.zabbix.com/zabbix/sources/stable/5.0/zabbix-5.0.0.tar.gz"
-  sha256 "5a1762fd2bb7275d9a28c6dfa9a6d46d84be749f9bf50a36eb8fcd20fb8bb6eb"
+  url "https://cdn.zabbix.com/zabbix/sources/stable/5.0/zabbix-5.0.1.tar.gz"
+  sha256 "20a19e5cf2354ffcbbe24521b04becfc9875e57289c00da71999de60c4a853b6"
 
   bottle do
-    sha256 "772ca82d64f14572c455b6efdfa7b83435d030ab9e214277142b7ee45be738ab" => :catalina
-    sha256 "e0801987dff6c7c497bb6bfe8daf94bdd04485e5d0ae206f4feed7d50c070768" => :mojave
-    sha256 "e803f1b0669ef7b14bd2f1fa9d829160904da9d1bffa28f5b43a0ee6eda18808" => :high_sierra
-    sha256 "65e19c1764380118ad3ab6fb24e640661d9136811e874747bdd33a5c6dcbd531" => :x86_64_linux
+    sha256 "2ac9eaa79b953244dda80543660b22150d7c6e9ce444386e5448f63cf76df412" => :catalina
+    sha256 "0c52ff483bc2081662b76f0e0c5cfc10b933780a149bc14c29869ee3ea74f424" => :mojave
+    sha256 "b336bc2a9533f0d54e2c6277cd3cd9de3577596049aa44bfbb4ba2791d3bfa9c" => :high_sierra
   end
 
   depends_on "openssl@1.1"
