@@ -9,6 +9,7 @@ class Sniffglue < Formula
     sha256 "9eb84327d14362e98f5c28bc8de59d85fb975348206d7d17d2e9ca601743a4b2" => :catalina
     sha256 "7cf69e349503bc79fd6143df0ade8e5e2afb7bbe08b25374da4507216fd90a3f" => :mojave
     sha256 "765e71bbc155e4aca03eba31e3827564413114e7812d33769e8b91c3bfc9f761" => :high_sierra
+    sha256 "b3d79da07b68c8c19dd0071eb2c5ed6e5d36e8e5334e84c9e2e115ecb8b7c6e6" => :x86_64_linux
   end
 
   depends_on "rust" => :build
