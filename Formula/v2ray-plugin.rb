@@ -10,6 +10,7 @@ class V2rayPlugin < Formula
     sha256 "891f541e150a393ff20caa78eb79ef12f60929fb9e5b35826e2e639c46a61dc2" => :catalina
     sha256 "cb8ff7b812aa561f9e23935461968ba1c26cbe393c599aab4e1753b37702748b" => :mojave
     sha256 "f11b330c3dc9c445b757188057c93ce94de89f03f4adfa1a8c6405f5ba66b400" => :high_sierra
+    sha256 "9f166878ef3c67edc8db5f733ce4efce0ab1112fd9e41d8efc80bc595065fef7" => :x86_64_linux
   end
 
   depends_on "go" => :build
