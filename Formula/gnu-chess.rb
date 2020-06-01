@@ -9,6 +9,7 @@ class GnuChess < Formula
     sha256 "85423112485c7dbe474c99c93008b8a7a7a8c9a9737bbda3e372fde8674cbef1" => :catalina
     sha256 "4bc514e190844faa459fbbc204c7bdd4699cb6cd09011811ae0999429343f0da" => :mojave
     sha256 "81883d1506513bdb4feff2617b492237aef06a2f17f3bd4eb81e68142c4d73af" => :high_sierra
+    sha256 "5ca8e427ba137ed7427eb0042f9af61c4052c38799e10458d23057886489770d" => :x86_64_linux
   end
 
   head do
