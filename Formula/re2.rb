@@ -11,6 +11,7 @@ class Re2 < Formula
     sha256 "48ad8c2246404a35143979d581775732ab8b7fd36e4ce46bdd56161461ff3d76" => :catalina
     sha256 "c9f8b50a653058ad70414e0e2e3380e62627a536933de636fa0d3e3a85026a94" => :mojave
     sha256 "018cc829f15a4e1ce8db138bed45cda78b890ed9bb9b93916ce8a12d68d9ad59" => :high_sierra
+    sha256 "d77874ce02fb478319276d541d5fc60dc8ea3110e4cd30809439d9120fe5a4e9" => :x86_64_linux
   end
 
   def install
