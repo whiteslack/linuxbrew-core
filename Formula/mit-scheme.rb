@@ -50,11 +50,9 @@ class MitScheme < Formula
 
     inreplace "microcode/configure" do |s|
       s.gsub! "/usr/local", prefix
-      if OS.mac?
-        # Fixes "configure: error: No MacOSX SDK for version: 10.10"
-        # Reported 23rd Apr 2016: https://savannah.gnu.org/bugs/index.php?47769
-        s.gsub! /SDK=MacOSX\$\{MACOSX\}$/, "SDK=MacOSX#{MacOS.sdk.version}"
-      end
+      # Fixes "configure: error: No MacOSX SDK for version: 10.10"
+      # Reported 23rd Apr 2016: https://savannah.gnu.org/bugs/index.php?47769
+      s.gsub! /SDK=MacOSX\$\{MACOS\}$/, "SDK=MacOSX#{MacOS.sdk.version}"
     end
 
     inreplace "edwin/compile.sh" do |s|
