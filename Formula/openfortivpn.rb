@@ -3,12 +3,12 @@ class Openfortivpn < Formula
   homepage "https://github.com/adrienverge/openfortivpn"
   url "https://github.com/adrienverge/openfortivpn/archive/v1.14.1.tar.gz"
   sha256 "bc62fc6ecaaa6c6f8f2510e14a067a0cb9762158d9460c04555990bba44b50ca"
+  revision 1
 
   bottle do
-    sha256 "24503fbd02ac8e4a01375736e1cb969d107e7b8f648f77b499c12ee60107c9dc" => :catalina
-    sha256 "34d19a2a925c131deb5b29a06b03000ef91864c7a2d0ceeb1e19276060089b37" => :mojave
-    sha256 "2a6916f7bc0742cdd3c028c9990790b547b95e971f6786204d3d04ebc631db6b" => :high_sierra
-    sha256 "cf5baf79e972e5f804a0be7f702a70763fe878913bd3fae6dfd6db5e6b6e3f44" => :x86_64_linux
+    sha256 "0c04566ef63f3cc1cb5062c3a18b78f6fed368dd6d449670e3a2fedf2d6f3806" => :catalina
+    sha256 "d35fe4166d8371cf285e6b54fe3b92d380bb8932b9f307f3ba1d6f51650013d0" => :mojave
+    sha256 "7bb4c80c9b516bc18ab034ef0d928d254212aec7d4ee34d43e3f94fe16115044" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -20,7 +20,8 @@ class Openfortivpn < Formula
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+                          "--prefix=#{prefix}",
+                          "--sysconfdir=#{etc}/openfortivpn"
     system "make", "install"
   end
   test do

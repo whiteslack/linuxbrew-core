@@ -1,18 +1,16 @@
 class Re2 < Formula
   desc "Alternative to backtracking PCRE-style regular expression engines"
   homepage "https://github.com/google/re2"
-  url "https://github.com/google/re2/archive/2020-05-01.tar.gz"
-  version "20200501"
-  sha256 "88864d7f5126bb17daa1aa8f41b05599aa6e3222e7b28a90e372db53c1c49aeb"
-  revision 1
+  url "https://github.com/google/re2/archive/2020-06-01.tar.gz"
+  version "20200601"
+  sha256 "fb8e0f4ed7a212e3420507f27933ef5a8c01aec70e5148c6a35313573269fae6"
   head "https://github.com/google/re2.git"
 
   bottle do
     cellar :any
-    sha256 "24de88e2c4a0ce890de51229d017c2d95920e60da5b156f52732ff1eae81340a" => :catalina
-    sha256 "02ab50a96b2b1deac2a7175fb1974563c06c9fe38d824147de837dfd0add601e" => :mojave
-    sha256 "265c167a79095a8902a9bc072e5765e6092780be07dc6d0ddc5f057198e1570c" => :high_sierra
-    sha256 "923c2b0132eafbab5f68317104a42c4814a063dd4111c3a6fdf166f2d5560c2d" => :x86_64_linux
+    sha256 "48ad8c2246404a35143979d581775732ab8b7fd36e4ce46bdd56161461ff3d76" => :catalina
+    sha256 "c9f8b50a653058ad70414e0e2e3380e62627a536933de636fa0d3e3a85026a94" => :mojave
+    sha256 "018cc829f15a4e1ce8db138bed45cda78b890ed9bb9b93916ce8a12d68d9ad59" => :high_sierra
   end
 
   def install
