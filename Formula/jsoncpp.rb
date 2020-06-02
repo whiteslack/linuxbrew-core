@@ -10,6 +10,7 @@ class Jsoncpp < Formula
     sha256 "0e937647ccad5ed68b70aa059027e367f120f7b6ad8657bfbd17ab4835a134a8" => :catalina
     sha256 "c235548c34fbf5359a780f292b20c13e17ff6a4f2de02ec5cb2116bff2b6cbf1" => :mojave
     sha256 "a31ea936169d1e199425e5125cea17ff5d61467e3825ce988a610adec0cc027b" => :high_sierra
+    sha256 "eac77f889b698124d2f434eccceeccd8f21c499e99db5a22a452bfc094257b55" => :x86_64_linux
   end
 
   depends_on "meson" => :build
