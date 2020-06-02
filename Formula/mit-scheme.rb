@@ -53,7 +53,7 @@ class MitScheme < Formula
       if OS.mac?
         # Fixes "configure: error: No MacOSX SDK for version: 10.10"
         # Reported 23rd Apr 2016: https://savannah.gnu.org/bugs/index.php?47769
-        s.gsub! /SDK=MacOSX\${MACOSX}$/, "SDK=MacOSX#{MacOS.sdk.version}"
+        s.gsub! /SDK=MacOSX\$\{MACOSX\}$/, "SDK=MacOSX#{MacOS.sdk.version}"
       end
     end
 
