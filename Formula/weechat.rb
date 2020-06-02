@@ -10,6 +10,7 @@ class Weechat < Formula
     sha256 "69cc0e5f741a67197201d89fa70d89d0e2f86b2a345fa42d00c5d974df237fdb" => :catalina
     sha256 "10de66ac4ed1b2f4f4754d027eabe39bb6b20adcc4c5583993860c87a937bde4" => :mojave
     sha256 "9c0dedb818b3e0c49fe9675145310d7e62af029918be200607f6eb53c5b4f235" => :high_sierra
+    sha256 "8fde99d87e4f8b7e90fe5fa10d8ac77075a1cc85cca4824a5c8c9747bd23c1be" => :x86_64_linux
   end
 
   depends_on "asciidoctor" => :build
