@@ -4,7 +4,6 @@ on: pull_request
 
 jobs:
   tap_syntax:
-    if: startsWith(github.event.pull_request.title, 'Merge') == true
     runs-on: ubuntu-latest
     container:
       image: homebrew/ubuntu16.04:master
@@ -28,6 +27,7 @@ jobs:
         run: brew test-bot --only-tap-syntax
 
   tests:
+    needs: tap_syntax
     if: startsWith(github.event.pull_request.title, 'Merge') == false
     runs-on: ubuntu-latest
     container:
