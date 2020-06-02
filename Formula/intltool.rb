@@ -44,7 +44,7 @@ class Intltool < Formula
     system "make", "install"
     unless OS.mac?
       Dir[bin/"intltool-*"].each do |f|
-        inreplace f, %r{^#!\/.*\/perl -w}, "#!/usr/bin/env perl"
+        inreplace f, %r{^#!/.*/perl -w}, "#!/usr/bin/env perl"
         inreplace f, /^(use strict;)/, "\\1\nuse warnings;"
       end
     end
