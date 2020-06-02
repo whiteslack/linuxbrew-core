@@ -7,30 +7,21 @@ class Calicoctl < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0a4bede065a95f53668bd45f88446d2a30d87b6e4a2b72be04ceb27d8f54399b" => :catalina
-    sha256 "a0b74a08c607a55cd3b1485bd55a4a6d5ef02a2ee3b1c8bd230c113ec6deb9c3" => :mojave
-    sha256 "1e43d96c2fe04420119c51e504ca9659e963eecd7ae0b2770a0c82df622c9dd0" => :high_sierra
-    sha256 "15d8f6a75034c153589f108e1996b82bb3b0c4b7eaf26d322956e94b86e0f1af" => :x86_64_linux
+    rebuild 1
+    sha256 "c54ed319108c12dfc2240485e47201d2ea9a24d46103703db2bbfbf8ec9a79f4" => :catalina
+    sha256 "733acfb76724283e82f1d888ee452fcd8e377749d464925c145bad18551604a7" => :mojave
+    sha256 "af30a792d0df3653c9cc0fe0620471aac40db94319fcee83229d80dfd253d346" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    dir = buildpath/"src/github.com/projectcalico/calicoctl"
-    dir.install buildpath.children
-
-    cd dir do
-      commands = "github.com/projectcalico/calicoctl/calicoctl/commands"
-      system "go", "build", "-v", "-o", "dist/calicoctl-darwin-amd64",
-                            "-ldflags", "-X #{commands}.VERSION=#{stable.specs[:tag]} " \
-                                        "-X #{commands}.GIT_REVISION=#{stable.specs[:revision][0, 8]} " \
-                                        "-s -w",
-                            "calicoctl/calicoctl.go"
-      bin.install "dist/calicoctl-darwin-amd64" => "calicoctl"
-      prefix.install_metafiles
-    end
+    commands = "github.com/projectcalico/calicoctl/calicoctl/commands"
+    system "go", "build", *std_go_args,
+                          "-ldflags", "-X #{commands}.VERSION=#{stable.specs[:tag]} " \
+                                      "-X #{commands}.GIT_REVISION=#{stable.specs[:revision][0, 8]} " \
+                                      "-s -w",
+                          "calicoctl/calicoctl.go"
   end
 
   test do
