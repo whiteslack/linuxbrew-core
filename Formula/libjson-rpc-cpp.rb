@@ -3,14 +3,14 @@ class LibjsonRpcCpp < Formula
   homepage "https://github.com/cinemast/libjson-rpc-cpp"
   url "https://github.com/cinemast/libjson-rpc-cpp/archive/v1.3.0.tar.gz"
   sha256 "cf132ad9697b034f22ff37d12a1f1c6f2647ec2236701de5e76f6036ab664156"
+  revision 1
   head "https://github.com/cinemast/libjson-rpc-cpp.git"
 
   bottle do
     cellar :any
-    sha256 "f4aef6279f5c511ca7fae59ef1546dad08f4520e332649581fce18e1d94395e5" => :catalina
-    sha256 "7b854658a9794f7f042ab6e398a23c387fb704773f50d930040cddc536c05359" => :mojave
-    sha256 "ad7ca67a02fd0aa8c7b62503a2ad05f5cce5afc67c6bb8b9d306f8b3e39776a6" => :high_sierra
-    sha256 "e14fbc75ad03d0cefdd749291b2ca848c525417b8b1a9b666254e50c5c5d7dc7" => :x86_64_linux
+    sha256 "b8a99a97b7ebbcb40cc19ad3f4805a93270e376fe7ef4ccbc02235c0f94f4c74" => :catalina
+    sha256 "15fbc327291d065a0a691f14ea90367923296da22a4012247a2083ebec8eca3b" => :mojave
+    sha256 "d3e24865583d50b44a833b08fb90093a2db62bda4615e3c734ffe5cd2bda23ff" => :high_sierra
   end
 
   depends_on "cmake" => :build

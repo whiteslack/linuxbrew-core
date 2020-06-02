@@ -1,14 +1,13 @@
 class Gjs < Formula
   desc "JavaScript Bindings for GNOME"
   homepage "https://gitlab.gnome.org/GNOME/gjs/wikis/Home"
-  url "https://download.gnome.org/sources/gjs/1.64/gjs-1.64.2.tar.xz"
-  sha256 "15ff834d374df19595d955f03e6b60631a3bb14fabda36d00f81ab3eabd3997b"
-  revision 1
+  url "https://download.gnome.org/sources/gjs/1.64/gjs-1.64.3.tar.xz"
+  sha256 "9d96e154601c39f901ea2205b85f3bf4106cffe80dd5d97ab9f5ae56331185e6"
 
   bottle do
-    sha256 "f5e2dd58764e1637aec5b0d95cd8ba1b795ed9b02740347812a3e6a1969e7955" => :catalina
-    sha256 "d79dbdc532a5191682c361ab48e93c959bd991c9e7f1bf535907e12c216d0d7b" => :mojave
-    sha256 "c64d7499171a5ece13b1ac19162abee5c56416221d4350bf51eee2942ed93ddf" => :high_sierra
+    sha256 "df98384f46fed27842f6891a3a7fe46afc198c370275b98fd0b720e8952ca293" => :catalina
+    sha256 "0999ade386d5397547e9907df670da537ec30ff2f43f133936279961bcb8cdf2" => :mojave
+    sha256 "611383231c504ea40be930359e663d6e91e5130c30bc1ac78ec4de96339bc1d3" => :high_sierra
   end
 
   depends_on "autoconf@2.13" => :build
@@ -23,13 +22,12 @@ class Gjs < Formula
   depends_on "readline"
 
   resource "mozjs68" do
-    url "https://archive.mozilla.org/pub/firefox/releases/68.5.0esr/source/firefox-68.5.0esr.source.tar.xz"
-    sha256 "52e784f98a37624e8b207f1b23289c2c88f66dd923798cae891a586a6d94a6d1"
+    url "https://archive.mozilla.org/pub/firefox/releases/68.8.0esr/source/firefox-68.8.0esr.source.tar.xz"
+    sha256 "fa5b2266d225878d4b35694678f79fd7e7a6d3c62759a40326129bd90f63e842"
   end
 
   def install
     ENV.cxx11
-    ENV["_MACOSX_DEPLOYMENT_TARGET"] = ENV["MACOSX_DEPLOYMENT_TARGET"]
 
     resource("mozjs68").stage do
       inreplace "config/rules.mk",
@@ -42,6 +40,9 @@ class Gjs < Formula
 
       mkdir("build") do
         ENV["PYTHON"] = "python"
+        ENV["_MACOSX_DEPLOYMENT_TARGET"] = ENV["MACOSX_DEPLOYMENT_TARGET"]
+        ENV["CC"] = Formula["llvm"].opt_bin/"clang"
+        ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
         system "../js/src/configure", "--prefix=#{prefix}",
                               "--with-system-nspr",
                               "--with-system-zlib",

@@ -3,12 +3,13 @@ class Lgogdownloader < Formula
   homepage "https://sites.google.com/site/gogdownloader/"
   url "https://sites.google.com/site/gogdownloader/lgogdownloader-3.7.tar.gz"
   sha256 "984859eb2e0802cfe6fe76b1fe4b90e7354e95d52c001b6b434e0a9f5ed23bf0"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "5e70091768d53a815135dcc4bed8cc6e0ff059bc45474570b96fabedce3fc4a6" => :catalina
-    sha256 "767486fb7d6ba4c26c91de77fababebc1e56f1db7810139b0f2f0de02ebd3583" => :mojave
-    sha256 "368e0b5873a6881a71a9416fba2ae7d54a930b34dc27adcfbed0b7cd32a9453f" => :high_sierra
+    sha256 "bca44f870354015fcb3eb10d3f92ab89d53e9ab5105162a5516bb2e35124328e" => :catalina
+    sha256 "fd1a8455473243e5d239fdfca4ef143acf5b09633f08fa67cc56e9196d8fd722" => :mojave
+    sha256 "cacd049687f57f97e7de0c0a00601b1f7e3bfdcb1418a633e9bebcf5b402f3ea" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -22,7 +23,8 @@ class Lgogdownloader < Formula
   depends_on "tinyxml2"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", *std_cmake_args, "-DJSONCPP_INCLUDE_DIR=#{Formula["jsoncpp"].opt_include}"
+
     system "make", "install"
   end
 
