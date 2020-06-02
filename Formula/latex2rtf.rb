@@ -8,6 +8,7 @@ class Latex2rtf < Formula
     sha256 "be21a155b6d80c651312135de1348e1847ac57b1b1d612bf820e92fe663e9b10" => :catalina
     sha256 "7c933531921ef07cc2471938266c91380d2364761b01fad8680bc70648812b19" => :mojave
     sha256 "cf6c89983b5c8593a74f62e86825f4a9e7cc7f31fb83639c8247c51fa4d3975a" => :high_sierra
+    sha256 "86750f7e83cc9177b0751dea5fbf86a5671f0521d0f69eee13200a3eedbc7a83" => :x86_64_linux
   end
 
   def install
