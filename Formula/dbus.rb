@@ -10,6 +10,7 @@ class Dbus < Formula
     sha256 "db3b485e8763fb2a9be8876eaf71f73101964c2a62950faafe46b53ddeb0e9a9" => :catalina
     sha256 "603c1f498659a45af2d0267c7e42926136cb0997d8462886b50f37cb3bc1ffcf" => :mojave
     sha256 "14db248f05b8f20db085cfd60f4ac9132403c9c16898b236a9c2f7b61017ae0a" => :high_sierra
+    sha256 "19597b1374873684f890709dff9a88bcdf1e6b1570dc578c6d88f57f0c76ff6e" => :x86_64_linux
   end
 
   head do
