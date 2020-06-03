@@ -9,6 +9,7 @@ class Monolith < Formula
     sha256 "dfe598be69f1960dbf3168d1f4f18f385ccc771912196fe903f7850426ef8116" => :catalina
     sha256 "99ff8d9c27b9d6fa01c45d91307b73bab26c1245803909f0ebe22eadafdb329d" => :mojave
     sha256 "4f7ecfda2f7bf61a960d53a804a64d89fce3cae3f9c48b1a28e8b75fe435df82" => :high_sierra
+    sha256 "337c4859931b7ced1053707ee1851e969ff45cf7948656b5cc3f9eb35428f357" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
