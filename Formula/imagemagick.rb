@@ -4,13 +4,13 @@ class Imagemagick < Formula
   url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-16.tar.xz"
   mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-16.tar.xz"
   sha256 "7f97da9e14c68ec291afbd5f97f9df91593dd2df7e96bc306cc60fb08d5bd195"
+  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git"
 
   bottle do
-    sha256 "9fa91b9807a7b136e0326978c0cefb163c819c919584dfcdccd2626892f69e4c" => :catalina
-    sha256 "33244b953157c062224843dd197b4d225ba05ec0064b8e70c93f5770d89ddae4" => :mojave
-    sha256 "ba876799fe0877e634fd57dbf353abc2a2337b48360945dc1b6f043fd40816d7" => :high_sierra
-    sha256 "ea9f71eac17cf2ed760c41c608fbc05a5ac6733c6b08d6a67d0b5cc439f2729b" => :x86_64_linux
+    sha256 "98af413a72d43867d96dcea2b504b06ec353901679c3842364655621c1093f8e" => :catalina
+    sha256 "5fa12de78c4bed0ff25214cc1c472c71f9478510615cb7bac52799a56e6fcbe2" => :mojave
+    sha256 "24965fdb3b83cd90a3a7da74447571b2f7d6a440e4c2d025c0e063988a9053c1" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -18,6 +18,7 @@ class Imagemagick < Formula
   depends_on "ghostscript"
   depends_on "jpeg"
   depends_on "libheif"
+  depends_on "liblqr"
   depends_on "libomp"
   depends_on "libpng"
   depends_on "libtiff"
@@ -55,6 +56,7 @@ class Imagemagick < Formula
       --with-heic=yes
       --with-gslib
       --with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts
+      --with-lqr
       --without-fftw
       --without-pango
       --without-x
