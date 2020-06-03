@@ -9,6 +9,7 @@ class Rbspy < Formula
     sha256 "3c1cf783482e2b510aaff073a82ab4858b01feaa5327cc3f8666ca2cf2ea3756" => :catalina
     sha256 "e0867eac5b9f432fa1218271c1f4ced724e23c99e79d6692e127cb07aaafbe91" => :mojave
     sha256 "64e1e766071f1d8155011465545d66e78a20fc5fa0fb164a98c885eb3e452882" => :high_sierra
+    sha256 "91423e04832e8089eee81fbabd4179d61b68eca4786ab1355ab3be34c569fceb" => :x86_64_linux
   end
 
   depends_on "rust" => :build
