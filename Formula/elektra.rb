@@ -9,6 +9,7 @@ class Elektra < Formula
     sha256 "e621021dfaf81727f50302993a94b0f06eaccfc0c4d57c6879bbb0d3d5a42368" => :catalina
     sha256 "761e2bc6bbda33e08a6aebe9ea36d490d05b6bf0ec6e4d1bf3d9dc92ceb72ac0" => :mojave
     sha256 "f53a1b4ba82ab8165ec9b265e2fe71b1cbd97b47d9ce5e2607e7fe35a3814b0e" => :high_sierra
+    sha256 "20539e26a296c10a387abf04ceb870cf2148aa0a404b7c6df1aaf9b669a403a7" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
