@@ -5,14 +5,13 @@ class Pipenv < Formula
   homepage "https://pipenv.pypa.io/"
   url "https://files.pythonhosted.org/packages/5f/0a/ef03dd42bed968f779eeaf9a98e32e875bfd18cf9ba61ede407364903c1e/pipenv-2020.5.28.tar.gz"
   sha256 "81862314929e3e532502e25bab3c6ba969c0cf67dcaa9d63c2c931ee2d61541c"
-  revision 1 unless OS.mac?
+  revision OS.mac? ? 1 : 2
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ea010edf851e0ee91832442600b4ececb758bace313025ca6539c70075c565c6" => :catalina
-    sha256 "56d542eeb4a6f380fb3970d70341400f3243a71cebe760034fc1199e83e624b5" => :mojave
-    sha256 "e93154ac01d82e9e4e046c134727a866567db4f4112413360b5431bee09424eb" => :high_sierra
-    sha256 "d40179729274809b6040e958005252f500b95ff5532d30c40a7452ca6c2d7fb9" => :x86_64_linux
+    sha256 "e80933ef998897e4577c7ebd362367da28c9b3b5339342c889b5277b1a0446a0" => :catalina
+    sha256 "8c483497bfc0b7dea6d00ad99092540cd1ea1108996890049d2206dd8a5dfea6" => :mojave
+    sha256 "c4c146f76b032f8c5d423c27aca5bb0ace5c8a722194f7fd968f9e90ec09a13b" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -69,10 +68,10 @@ class Pipenv < Formula
     }
     (bin/"pipenv").write_env_script(libexec/"bin/pipenv", env)
 
-    output = Utils.popen_read("SHELL=bash #{libexec}/bin/pipenv --completion")
+    output = Utils.safe_popen_read({ "SHELL" => "bash" }, libexec/"bin/pipenv", "--completion", { :err => :err })
     (bash_completion/"pipenv").write output
 
-    output = Utils.popen_read("SHELL=zsh #{libexec}/bin/pipenv --completion")
+    output = Utils.safe_popen_read({ "SHELL" => "zsh" }, libexec/"bin/pipenv", "--completion", { :err => :err })
     (zsh_completion/"_pipenv").write output
   end
 
