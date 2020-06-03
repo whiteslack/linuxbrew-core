@@ -9,6 +9,7 @@ class Yash < Formula
     sha256 "7e92afc1391f9d80bcab553e29705fd0cb11c88ae10448a7d57d408284c8490f" => :catalina
     sha256 "1ce52a85f6ed173af4e6e296a1051b08536a31d7e7c8704d0324bb4d2c751fad" => :mojave
     sha256 "026106ab6ee3296619ad4cd762756d4676713feb7060172cabc39e92d8f222a0" => :high_sierra
+    sha256 "3299c1fe075f40a2b7bb51154f731557c726490ec7a9d08290a2562073a8a83b" => :x86_64_linux
   end
 
   depends_on "gettext"
