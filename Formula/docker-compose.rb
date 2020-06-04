@@ -12,6 +12,7 @@ class DockerCompose < Formula
     sha256 "cd12694e2bcdc21219c7ec2f0cccf6130a70ec8cc0ab5e70d52945a862266b2f" => :catalina
     sha256 "c653c2767b67475a87b6f52d275dbcdb1de0bf2d56989c6555781a090a1fe81f" => :mojave
     sha256 "0357d87553355e3df806a15292b06693c973a1f0457b536f175c5ee5405db6ed" => :high_sierra
+    sha256 "eeed6d53ec4dac936986af5a603cb67d25d19654dc5ee1829d69306289ffef8e" => :x86_64_linux
   end
 
   depends_on "libyaml"
