@@ -1,16 +1,14 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https://adios2.readthedocs.io"
-  url "https://github.com/ornladios/ADIOS2/archive/v2.5.0.tar.gz"
-  sha256 "7c8ff3bf5441dd662806df9650c56a669359cb0185ea232ecb3578de7b065329"
-  revision 2
+  url "https://github.com/ornladios/ADIOS2/archive/v2.6.0.tar.gz"
+  sha256 "45b41889065f8b840725928db092848b8a8b8d1bfae1b92e72f8868d1c76216c"
   head "https://github.com/ornladios/ADIOS2.git", :branch => "master"
 
   bottle do
-    sha256 "c317685a1b0aea372bf5c0ca50eb632ebe804fea5a4fbdc8a11ba8921c3853de" => :catalina
-    sha256 "98cbaa27c5fe28190836b0c7b8e8a521e36ae5c6c1f142f9f8167afd86e15122" => :mojave
-    sha256 "efd2cb19cdfe79c5306e4d15c5f553f6319b92c6f2183488b163801f31f158b7" => :high_sierra
-    sha256 "d61eb21c60cae2171ddf920251477ff54c24f04a6bdc289c6f39cc85bd937d4f" => :x86_64_linux
+    sha256 "70af70aa0923bd141c545211bacad82c881959bd27fe5e6e1eab891e34dcf139" => :catalina
+    sha256 "2e8d20303fea3a882a2e121b0db5423886fccfae4cd02eedaa9321055b32e3fb" => :mojave
+    sha256 "f1f7bd1e46bf719fddca91bf9e805fdfa1a12f562f15a55e6c891489900288bf" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -26,11 +24,12 @@ class Adios2 < Formula
 
   uses_from_macos "bzip2"
 
-  # HighSierra build issue with JSON support, fix already in post-2.5.0 master
-  # reference: https://github.com/ornladios/ADIOS2/pull/1805
+  # macOS 10.13 configuration-time issue detecting float types
+  # reference: https://github.com/ornladios/ADIOS2/pull/2305
+  # can be removed after v2.6.0
   patch do
-    url "https://github.com/ornladios/ADIOS2/pull/1805.patch?full_index=1"
-    sha256 "6760801cfddc48c6df158295e58d007c8b07abb82a1e79ee89c5a1e3e955d2c1"
+    url "https://github.com/ornladios/ADIOS2/pull/2305.patch?full_index=1"
+    sha256 "6d0b84af71d6ccf4cf1cdad5e064cca837d505334316e7e78d18fa30a959666a"
   end
 
   def install
@@ -46,6 +45,7 @@ class Adios2 < Formula
       -DADIOS2_USE_DataSpaces=OFF
       -DADIOS2_USE_Fortran=ON
       -DADIOS2_USE_HDF5=OFF
+      -DADIOS2_USE_IME=OFF
       -DADIOS2_USE_MGARD=OFF
       -DADIOS2_USE_MPI=ON
       -DADIOS2_USE_PNG=ON

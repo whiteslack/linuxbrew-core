@@ -1,16 +1,14 @@
 class Gnutls < Formula
   desc "GNU Transport Layer Security (TLS) Library"
   homepage "https://gnutls.org/"
-  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.6/gnutls-3.6.13.tar.xz"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.6/gnutls-3.6.13.tar.xz"
-  sha256 "32041df447d9f4644570cf573c9f60358e865637d69b7e59d1159b7240b52f38"
-  revision 2
+  url "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.6/gnutls-3.6.14.tar.xz"
+  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.6/gnutls-3.6.14.tar.xz"
+  sha256 "5630751adec7025b8ef955af4d141d00d252a985769f51b4059e5affa3d39d63"
 
   bottle do
-    sha256 "40615ea7396142c9337b7f1d8d70d7d1e1d61672cf10a60b09fa22faea6aa06b" => :catalina
-    sha256 "d4bcb18b32154069da1878f8499bdf0f391f9b537d6843a445279a6b819fd1b7" => :mojave
-    sha256 "7c063a60ae1ab8719bdda9af5d87579f967ea53b158ecbc8f5a8b54a7e9e4f8e" => :high_sierra
-    sha256 "6a491f987661c2a607c7515a9d5b4870caf61c1a37233aa69d8e3000ca9d0ae5" => :x86_64_linux
+    sha256 "ed76b5d22e195a797c2d01ab2f4a8e769a023b056b17e86f11cb6b9af200babe" => :catalina
+    sha256 "d57c7537ca0565e8c8fdf13beb4b082548f87a0df2295469596f1cfe3067faae" => :mojave
+    sha256 "2773c249c2a71f299261889185bda3950ed15150ff09529a71f88c30d68ff26f" => :high_sierra
   end
 
   depends_on "autoconf" => :build

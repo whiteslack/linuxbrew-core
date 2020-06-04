@@ -3,13 +3,14 @@ class Odin < Formula
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin/archive/v0.12.0.tar.gz"
   sha256 "8356124c8cc7e08ac39872e5bb10593a412e67f81df621124097facd9b2b26cc"
+  revision 1
   head "https://github.com/odin-lang/Odin.git"
 
   bottle do
     cellar :any
-    sha256 "742f1adfd7a9ff880ad2fb80759e3a239530f6774bcf77ca5b5f650e88b3ee31" => :catalina
-    sha256 "80b0b0d73769b90551a5e759d82b41e16af6993540936dc2e94363e46ac1b0c1" => :mojave
-    sha256 "579b027ea67fcb8d0095f2a49e96a6660c903474bb145f930406caea8cc15ae7" => :high_sierra
+    sha256 "fa220553a803117a6da6b751710098c3bab7149548328d34fcc0e20d46a208ef" => :catalina
+    sha256 "55a364b6cf75db9dbb38a0f0bba169e26ccc291d9c1e7e61db943e1c43c3aa7a" => :mojave
+    sha256 "5db7f315b542a5c648a72a682a8f026dbfd37c9ebacf81cdb29cde972b023cbc" => :high_sierra
   end
 
   depends_on "llvm"
@@ -22,8 +23,9 @@ class Odin < Formula
     (bin/"odin").write <<~EOS
       #!/bin/bash
       export PATH="#{Formula["llvm"].opt_bin}:$PATH"
-      exec -a odin #{libexec}/odin "$@"
+      exec -a odin "#{libexec}/odin" "$@"
     EOS
+    pkgshare.install "examples"
   end
 
   test do
