@@ -12,6 +12,7 @@ class Tldr < Formula
     sha256 "41a6db2e28eeae00ff6d1888948d8b7d0f01cd67b3f271341b856cded07ba6ca" => :catalina
     sha256 "7f10022d0c6648741457c2562bc5e521d8dd88dfc4c4d68d1c886739ffd7eb45" => :mojave
     sha256 "c932bd8516b6690c45dcbf90ced6ad94d4a0aa5a366de532fe90c4ab82b9a2ad" => :high_sierra
+    sha256 "5783e97f5eca1bd13f00c7bbce75db77d8340f677d1344aaa0aa7d4547035d41" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
