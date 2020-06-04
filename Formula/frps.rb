@@ -7,29 +7,22 @@ class Frps < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b1f2f28f18b53ca6041b7e3b55156a26c131fe1c163a1a559ffa158836ab75af" => :catalina
-    sha256 "dfc09d5fb82cdb397f955ef6bc2ba9f2d7fa7b5f00cf2aae5ed7bd427f3f7fa6" => :mojave
-    sha256 "de264b527c16414a7ae39b8334c953b8d9464c27b8b1c4f1ffc8300f35d3e0af" => :high_sierra
-    sha256 "83728e8f405ade3a3ad8680175d3943a67154f657e2f581b8d9a34e8abe20e87" => :x86_64_linux
+    rebuild 1
+    sha256 "ebc86082a21c9c7050154c679dc0f55b6e397fb05142fe11b0ec14093cf716ed" => :catalina
+    sha256 "e128a70843505b72e81e63e1bb4dfb9615755257127c4c260836c94e648d00b1" => :mojave
+    sha256 "11a0d53a68c156d0b9761f94f1a4a8710af73978fb33f808f2c70b02ddb5999a" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    contents = Dir["{*,.git,.gitignore}"]
-    (buildpath/"src/github.com/fatedier/frp").install contents
-
     (buildpath/"bin").mkpath
     (etc/"frp").mkpath
 
-    cd "src/github.com/fatedier/frp" do
-      system "make", "frps"
-      bin.install "bin/frps"
-      etc.install "conf/frps.ini" => "frp/frps.ini"
-      etc.install "conf/frps_full.ini" => "frp/frps_full.ini"
-      prefix.install_metafiles
-    end
+    system "make", "frps"
+    bin.install "bin/frps"
+    etc.install "conf/frps.ini" => "frp/frps.ini"
+    etc.install "conf/frps_full.ini" => "frp/frps_full.ini"
   end
 
   plist_options :manual => "frps -c #{HOMEBREW_PREFIX}/etc/frp/frps.ini"
@@ -60,21 +53,16 @@ class Frps < Formula
   end
 
   test do
-    system bin/"frps", "-v"
+    assert_match version.to_s, shell_output("#{bin}/frps -v")
     assert_match "Flags", shell_output("#{bin}/frps --help")
 
-    begin
-      read, write = IO.pipe
-      pid = fork do
-        exec bin/"frps", :out => write
-      end
-      sleep 3
-
-      output = read.gets
-      assert_match "frps tcp listen on", output
-    ensure
-      Process.kill(9, pid)
-      Process.wait(pid)
+    read, write = IO.pipe
+    fork do
+      exec bin/"frps", :out => write
     end
+    sleep 3
+
+    output = read.gets
+    assert_match "frps tcp listen on", output
   end
 end
