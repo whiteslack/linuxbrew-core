@@ -12,6 +12,7 @@ class Typescript < Formula
     sha256 "779039544d1368e6ec44f113ba767c79b4e1076962e62a09bf7e5bb0fe1f3b27" => :catalina
     sha256 "ab53bdb6c982c386ba60d4d8181d72ad1f9d2a104327c4ad5e51c26945a1945a" => :mojave
     sha256 "fa630d551345769bbd4a87cf3b6b588b9dee142f5391e78fa01c52f0e464cc51" => :high_sierra
+    sha256 "2b3bfb4225797cbc1e53bf6fba8f250227f7af8ba4bc0a3049198f0dd79ea13d" => :x86_64_linux
   end
 
   depends_on "node"
