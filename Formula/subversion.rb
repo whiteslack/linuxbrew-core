@@ -95,6 +95,9 @@ class Subversion < Formula
       system "scons", "install"
     end
 
+    # svn can't find libserf-1.so.1 at runtime without this
+    ENV.append "LDFLAGS", "-Wl,-rpath=#{serf_prefix}/lib" unless OS.mac?
+
     # Use existing system zlib
     # Use dep-provided other libraries
     # Don't mess with Apache modules (since we're not sudo)
@@ -120,12 +123,8 @@ class Subversion < Formula
       --without-gpg-agent
       --enable-javahl
       --without-jikes
-      <<<<<<< HEAD
-      RUBY=#{ruby}
-      =======
       PYTHON=#{Formula["python@3.8"].opt_bin}/python3
-      RUBY=/usr/bin/ruby
-      >>>>>>> 1935bc45ce
+      RUBY=#{ruby}
     ]
 
     inreplace "Makefile.in",
