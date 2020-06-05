@@ -11,6 +11,7 @@ class Mruby < Formula
     sha256 "1266b351ab448a0d30f7a6bea0bf5e395b3ee40af5eb134c7a6c6bad3c958457" => :catalina
     sha256 "ec046526f5cdc28b079efe9d514702a8b98a61f6388fb4479f0e0666559e5997" => :mojave
     sha256 "1b924c188725c14fd0958f5c5314f723cdfca53fc9eb59b266d7b1678e43552c" => :high_sierra
+    sha256 "48ae21caf1af48eabf2526f3f442084ab00c502e14c58ae5a61d49726a9c80da" => :x86_64_linux
   end
 
   depends_on "bison" => :build
