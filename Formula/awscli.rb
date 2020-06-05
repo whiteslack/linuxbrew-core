@@ -11,6 +11,7 @@ class Awscli < Formula
     sha256 "01440c5c930f7359393dac61df4654c08ebd50b8e75a9236afc9443a114d1be9" => :catalina
     sha256 "f52319e5e2fa4574710a24ae0fb142dc8b69a0e1d62f5b08f85d0bf47e32da36" => :mojave
     sha256 "ab9215620e96017257a88a0fbfeaeaba898bdaca0885c2afef1608daea3fdb35" => :high_sierra
+    sha256 "0f86c7736b2bee5066e628f900deb7ef64fe4ae843a29d6ecde4c7196e7d05f0" => :x86_64_linux
   end
 
   depends_on "libyaml" unless OS.mac?
