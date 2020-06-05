@@ -16,7 +16,9 @@ class Apr < Formula
 
   keg_only :provided_by_macos, "Apple's CLT provides apr"
 
-  depends_on "util-linux" # for libuuid
+  on_linux do
+    depends_on "util-linux"
+  end
 
   def install
     ENV["SED"] = "sed" # prevent libtool from hardcoding sed path from superenv

@@ -32,9 +32,12 @@ class Freeswitch < Formula
   depends_on "speexdsp"
   depends_on "sqlite"
 
+  on_linux do
+    depends_on "util-linux"
+  end
+
   unless OS.mac?
     depends_on "libedit"
-    depends_on "util-linux" # for libuuid
     depends_on "zlib"
   end
 
