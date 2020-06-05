@@ -20,6 +20,10 @@ class Xapian < Formula
     depends_on "zlib"
   end
 
+  on_linux do
+    depends_on "util-linux"
+  end
+
   skip_clean :la
 
   resource "bindings" do

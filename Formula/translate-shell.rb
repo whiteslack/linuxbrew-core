@@ -18,6 +18,10 @@ class TranslateShell < Formula
   depends_on "rlwrap"
   depends_on "util-linux" unless OS.mac?
 
+  on_linux do
+    depends_on "util-linux"
+  end
+
   def install
     system "make"
     bin.install "build/trans"

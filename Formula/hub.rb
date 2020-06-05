@@ -20,6 +20,10 @@ class Hub < Formula
     depends_on "ruby" => :build
   end
 
+  on_linux do
+    depends_on "util-linux"
+  end
+
   def install
     system "make", "install", "prefix=#{prefix}"
 

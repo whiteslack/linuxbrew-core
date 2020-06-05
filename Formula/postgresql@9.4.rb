@@ -23,6 +23,10 @@ class PostgresqlAT94 < Formula
   uses_from_macos "libxslt"
   uses_from_macos "perl"
 
+  on_linux do
+    depends_on "util-linux"
+  end
+
   def install
     # Fix "configure: error: readline library not found"
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && (MacOS.version == :sierra || MacOS.version == :el_capitan)

@@ -30,7 +30,9 @@ class Jack < Formula
   depends_on "libsamplerate"
   depends_on "libsndfile"
 
-  depends_on "util-linux" unless OS.mac?
+  on_linux do
+    depends_on "util-linux"
+  end
 
   def install
     if OS.mac?
