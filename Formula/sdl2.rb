@@ -21,6 +21,10 @@ class Sdl2 < Formula
     depends_on "libtool" => :build
   end
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   unless OS.mac?
     depends_on "pkg-config" => :build
     depends_on "linuxbrew/xorg/libice"

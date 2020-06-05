@@ -18,7 +18,9 @@ class Pwntools < Formula
 
   uses_from_macos "libffi"
 
-  depends_on "pkg-config" => :build unless OS.mac? # for libffi
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
 
   conflicts_with "moreutils", :because => "Both install `errno` binaries"
 

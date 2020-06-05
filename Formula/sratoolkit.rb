@@ -18,7 +18,9 @@ class Sratoolkit < Formula
   uses_from_macos "libxml2"
   uses_from_macos "perl"
 
-  depends_on "pkg-config" => :build unless OS.mac?
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
 
   resource "ngs-sdk" do
     url "https://github.com/ncbi/ngs/archive/2.10.0.tar.gz"

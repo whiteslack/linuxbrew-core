@@ -17,6 +17,10 @@ class Wrk < Formula
   depends_on "openssl@1.1"
   depends_on "makedepend" => :build unless OS.mac?
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   conflicts_with "wrk-trello", :because => "both install `wrk` binaries"
 
   def install

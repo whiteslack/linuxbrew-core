@@ -31,6 +31,10 @@ class OpenjdkAT11 < Formula
     depends_on "linuxbrew/xorg/libxtst"
   end
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   resource "boot-jdk" do
     if OS.mac?
       url "https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_osx-x64_bin.tar.gz"

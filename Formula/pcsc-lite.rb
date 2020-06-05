@@ -14,10 +14,11 @@ class PcscLite < Formula
 
   keg_only :shadowed_by_macos, "macOS provides PCSC.framework"
 
-  unless OS.mac?
+  on_linux do
     depends_on "pkg-config" => :build
-    depends_on "libusb"
   end
+
+  depends_on "libusb" unless OS.mac?
 
   def install
     args = %W[--disable-dependency-tracking

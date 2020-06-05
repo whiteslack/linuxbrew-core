@@ -18,8 +18,11 @@ class Nushell < Formula
 
   uses_from_macos "zlib"
 
-  unless OS.mac?
+  on_linux do
     depends_on "pkg-config" => :build
+  end
+
+  unless OS.mac?
     depends_on "linuxbrew/xorg/libxcb"
     depends_on "linuxbrew/xorg/libx11"
   end

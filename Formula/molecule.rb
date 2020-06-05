@@ -24,6 +24,10 @@ class Molecule < Formula
     depends_on "gmp"
   end
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   # Collect requirements from:
   #  molecule
   #  docker-py

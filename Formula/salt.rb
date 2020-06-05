@@ -23,9 +23,11 @@ class Salt < Formula
   depends_on "python"
   depends_on "zeromq"
 
-  unless OS.mac?
-    # pkg-config helps "setup.py" find libffi
+  on_linux do
     depends_on "pkg-config" => :build
+  end
+
+  unless OS.mac?
     depends_on "gmp"
     depends_on "libffi"
     depends_on "pcre"
@@ -58,6 +60,8 @@ class Salt < Formula
     url "https://files.pythonhosted.org/packages/68/3c/1317a9113c377d1e33711ca8de1e80afbaf4a3c950dd0edfaf61f9bfe6d8/backports_abc-0.5.tar.gz"
     sha256 "033be54514a03e255df75c5aee8f9e672f663f93abb723444caec8fe43437bde"
   end
+
+  # Homebrew installs optional dependencies: M2Crypto, pygit2
 
   resource "cached-property" do
     url "https://files.pythonhosted.org/packages/57/8e/0698e10350a57d46b3bcfe8eff1d4181642fd1724073336079cb13c5cf7f/cached-property-1.5.1.tar.gz"

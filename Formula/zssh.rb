@@ -22,6 +22,10 @@ class Zssh < Formula
     depends_on "readline"
   end
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
