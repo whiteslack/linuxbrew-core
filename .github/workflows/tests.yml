@@ -6,14 +6,6 @@ jobs:
   tap_syntax:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out tap
-        uses: actions/checkout@v2
-
-      - name: Set up tap
-        run: |
-          rm -rf $(brew --repository ${{github.repository}})
-          ln -s $GITHUB_WORKSPACE $(brew --repository ${{github.repository}})
-
       - name: Set up Homebrew
         id: set-up-homebrew
         run: |
