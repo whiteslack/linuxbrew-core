@@ -13,6 +13,7 @@ class Hadolint < Formula
     sha256 "63418b66810e1792249522adb0ec5a4b952e4bef34a5425525ca2d7eccbc69ee" => :catalina
     sha256 "519d3abecbff0d2cc2aaead01027d18e3b061c45dd63de429c4baab0c677b1ed" => :mojave
     sha256 "bc87517a3a30252c0477e4862146ac33604b355a8c900f566bfaa1f404a284ad" => :high_sierra
+    sha256 "a868185b4115999f81aa072623e67a81b8bd08dfc0b42ed4f5e12eeaa39a11e8" => :x86_64_linux
   end
 
   depends_on "haskell-stack" => :build
