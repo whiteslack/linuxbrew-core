@@ -9,6 +9,7 @@ class Helmfile < Formula
     sha256 "757c145b8d9d71ae03fb424adf3e4c8b0a60cc10c8de922faa4370c77a4f2263" => :catalina
     sha256 "d047319c9ef67794bcb4dfabf8ae0edf424f8d327463c9775a74d9ddaedf4824" => :mojave
     sha256 "e860b8160599ef95dbd4fa6d756b41d4513efa48dbc3e785a8c50e392793a277" => :high_sierra
+    sha256 "cd5d61c13b75aadfc78ad0bcfa1b64de3e2d8e68f492acaef381bd3a670c2276" => :x86_64_linux
   end
 
   depends_on "go" => :build
