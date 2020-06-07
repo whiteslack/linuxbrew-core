@@ -3,13 +3,13 @@ class Mpv < Formula
   homepage "https://mpv.io"
   url "https://github.com/mpv-player/mpv/archive/v0.32.0.tar.gz"
   sha256 "9163f64832226d22e24bbc4874ebd6ac02372cd717bef15c28a0aa858c5fe592"
-  revision 3
+  revision 4
   head "https://github.com/mpv-player/mpv.git"
 
   bottle do
-    sha256 "2d876a83a16151f8e820a466905b3c1eca6a3e4cf340b3fefe77ed269006da9f" => :catalina
-    sha256 "88c3537f6820033349f954bb3f1d4a6b04d8dbdc49a4c90f51a1b3deacc83f65" => :mojave
-    sha256 "a50cb9ef8311708303761b82a39c42d3b6d605f1a60eb9798cde1632a4dc494d" => :high_sierra
+    sha256 "31a266861581541259febc854141b8bfe7d2a3d9f4093817ace56cf9d7be8c37" => :catalina
+    sha256 "79293ea402914b0063cc79cab13198e564a9b136edd22dcb911c7c586cb45525" => :mojave
+    sha256 "dff49871ba198a445b63a53cb1d5ffab6a9a8eb42803830aeccebab9e3ca4f10" => :high_sierra
   end
 
   depends_on "docutils" => :build
@@ -23,10 +23,8 @@ class Mpv < Formula
   depends_on "libass"
   depends_on "little-cms2"
   depends_on "lua@5.1"
-
   depends_on "mujs"
   depends_on "uchardet"
-  depends_on "vapoursynth"
   depends_on "youtube-dl"
 
   def install
@@ -34,6 +32,9 @@ class Mpv < Formula
     # or getdefaultlocale in docutils. Force the default c/posix locale since
     # that's good enough for building the manpage.
     ENV["LC_ALL"] = "C"
+
+    # libarchive is keg-only
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libarchive"].opt_lib/"pkgconfig"
 
     args = %W[
       --prefix=#{prefix}
