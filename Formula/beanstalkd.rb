@@ -9,6 +9,7 @@ class Beanstalkd < Formula
     sha256 "eb308ce225c6f335a5a27518b63f8ce70caa263e94afbb7d9c2bb9000c12d974" => :catalina
     sha256 "da06f9b4142a163f26de89e5d67c729fd4edd9fbd2dcf3ada91507f92f45ec93" => :mojave
     sha256 "d57a1db5de295181c1f5596951160cc65b7f27645806fb35834f6409cbc57a6e" => :high_sierra
+    sha256 "71c624737a869ad08a91ab865c6a353fb63cbcb5313e18e1294424321e3458c9" => :x86_64_linux
   end
 
   def install
