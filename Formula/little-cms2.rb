@@ -12,6 +12,7 @@ class LittleCms2 < Formula
     sha256 "0a03a16dbbb3628e5ab6ce8a99c302222aa062cb412d94939a59ec9ff15af843" => :catalina
     sha256 "cd6e44776acd687870dcde0a5d0e180f0023c9ea4d1cf0010ff2084a286c0153" => :mojave
     sha256 "7d397c359911bea902ae0bb5463a8bad2f5cf1ecd08fddcdceadb26a7474b0a9" => :high_sierra
+    sha256 "5a66e118095a6050056698eeca01541daf82cb114a4019cde5f325563cf7ca76" => :x86_64_linux
   end
 
   depends_on "jpeg"
