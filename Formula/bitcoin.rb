@@ -1,38 +1,32 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://bitcoin.org/"
-  url "https://bitcoin.org/bin/bitcoin-core-0.19.1/bitcoin-0.19.1.tar.gz"
-  sha256 "f2591d555b8e8c2e1bd780e40d53a91e165d8b3c7e0391ae2d24a0c0f23a7cc0"
+  url "https://bitcoin.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz"
+  sha256 "ec5a2358ee868d845115dc4fc3ed631ff063c57d5e0a713562d083c5c45efb28"
+  head "https://github.com/bitcoin/bitcoin.git"
 
   bottle do
     cellar :any
-    sha256 "e1902a3ca29ed8ad78379f8f8bc321336839b2a58162262849482901b275c5b7" => :catalina
-    sha256 "1465bd8b7f32cfed0fdf696b0b49d531fc5bbe6b755b4842479c932baff97930" => :mojave
-    sha256 "c8b49b2a830d79dd64730b6ff82067f2712f422057bb6756e5849581560eb876" => :high_sierra
-    sha256 "d23f84eb3364b93cb89351a3597c41dbf16d76406727efce689429c8b7322092" => :x86_64_linux
+    sha256 "bd973d1a270840ac5d1e2832c557117563ddeeb0a2bb80376ece027faf712d8e" => :catalina
+    sha256 "edbe7d600b27737c0dfe002a6c447e1f17910746aecb2f7724af256253b60eb2" => :mojave
+    sha256 "32bab1fc1ea25e3881570088aecce050c10f46f57601981db797ec66c6b94ad4" => :high_sierra
   end
 
-  head do
-    url "https://github.com/bitcoin/bitcoin.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "berkeley-db@4"
   depends_on "boost"
   depends_on "libevent"
   depends_on "miniupnpc"
-  depends_on "openssl@1.1"
-  depends_on "bsdmainutils" => :build unless OS.mac? # `hexdump` from bsdmainutils required to compile tests
   depends_on "zeromq"
+  depends_on "bsdmainutils" => :build unless OS.mac? # `hexdump` from bsdmainutils required to compile tests
 
   def install
     ENV.delete("SDKROOT") if MacOS.version == :el_capitan && MacOS::Xcode.version >= "8.0"
 
-    system "./autogen.sh" if build.head?
+    system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",

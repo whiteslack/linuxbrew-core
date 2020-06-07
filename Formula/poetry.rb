@@ -3,15 +3,14 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
-  url "https://files.pythonhosted.org/packages/2c/79/7fc6e1ac5ebff02e39f24a17ddf56ef6370797a8371e6cfc5c7b56d3a1ea/poetry-1.0.5.tar.gz"
-  sha256 "8e195ea8a4bce4f418a23fd828aa2f9ce06be7655720efd1d95beb0ee641030a"
-  revision 2
+  url "https://files.pythonhosted.org/packages/97/65/6de531fc3bedaa98751d1afbfdb4840c489bd1a828a94e9704cf6f841b44/poetry-1.0.8.tar.gz"
+  sha256 "2e1d932ac2bc300feecf001837d854ca692bce4083822591da4596ebfb5576e9"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b081ec3078113af5a1bf669742a3bd2e298f26a3e1d1cf6a34b66f2d7a9dff84" => :catalina
-    sha256 "73e61326e2f5d555d3ef86a26febaa85f687d4e46bb4ee72d44eb789f464140a" => :mojave
-    sha256 "8c586cabadd254a343075a78116a706cd0ad0eec1a4c97f09e88683f208fa674" => :high_sierra
+    sha256 "608011ff2a2e6c16b7e76a789e84671464f1865274c5af22039c8ae17726c8a1" => :catalina
+    sha256 "606bd6d764e16949835673bbe8cd8ecc618570d039fa4c4b13ef4fc34926251a" => :mojave
+    sha256 "9aa1081091cd1b9248e7cbac4d63257abf3ff50bcbbce0b661c44eea39f9736d" => :high_sierra
   end
 
   depends_on "python@3.8"

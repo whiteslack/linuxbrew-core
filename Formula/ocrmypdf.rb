@@ -3,15 +3,14 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://github.com/jbarlow83/OCRmyPDF"
-  url "https://files.pythonhosted.org/packages/14/45/a2315680b83ec61fee6771408338754b37b678e56dacb9abdc770190b759/ocrmypdf-9.8.1.tar.gz"
-  sha256 "5eb039dc460038517a20650de74b05744a7808ee89c387a6e9aedf258ebd0afc"
+  url "https://files.pythonhosted.org/packages/e9/15/f126999a5fa467662835013d51793ea20eb24aac509252b0a5b1a5f403f3/ocrmypdf-9.8.2.tar.gz"
+  sha256 "ab67b6780a32add781c1a21c9fc9ac7957b958ac0ffd32bb2fc6ea5be6c369cd"
 
   bottle do
     cellar :any
-    sha256 "fb2cf35af42a17b093e547aac91b67553d3b607ea001a5512afc1a5b868e3662" => :catalina
-    sha256 "9094ae460c7cd0e0ace439b14d653f15bd6f85329b5ae10894d7470bc7bcbcb2" => :mojave
-    sha256 "40bfe0537527918723717c0bbddb176896d2b7ce1d9ef9fd9b776a59b055828d" => :high_sierra
-    sha256 "ec33ebcf58053c8640d33bff8cefe965ec5fe86770dbda73fc9c15fbf42125ca" => :x86_64_linux
+    sha256 "519e4fe434836b89ac03b9a69643e197f0b1dc976a2d4aea69cb9afc70c1ca35" => :catalina
+    sha256 "0c641f9cd41acc54057870ce35b24cee53b8aff178dea7fb236f1fab2e1b3f38" => :mojave
+    sha256 "43d6fabd087ef819abec71a986ea1f5e0b8bbacb50bd3101d74c52517e1a986f" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

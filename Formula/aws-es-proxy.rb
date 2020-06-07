@@ -6,10 +6,10 @@ class AwsEsProxy < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "45a608977ee8179e9a3356a6aec67ac28fb45a2eaa220f12ed14ab3502786671" => :catalina
-    sha256 "75ef7d6a9a21e85cc0686eb218eb22c571222432751ecc10fbb53761e17c4977" => :mojave
-    sha256 "57b9c927fbf351bf8b2b7b87bd21496ce473cd6058615cf8639621fd8d39a32d" => :high_sierra
-    sha256 "b98bcd2f3f89a378d1bbaa70af1afc4509bfeefadf3460a228adc9e16ffa5159" => :x86_64_linux
+    rebuild 1
+    sha256 "dcde740b60a4c8d4e79ac43000992151727939f312cbbedb536ec36ed1cb43cb" => :catalina
+    sha256 "7a4e3468b4ac116b63824fe7d96b53bc82bd2c8020bb525cf1ecf2a5cf23418e" => :mojave
+    sha256 "87f6a4e1f5b0a7fdf110ef2502bbcdbf1228db7ba9eb12be26b144812202ea03" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -29,15 +29,14 @@ class AwsEsProxy < Formula
   end
 
   test do
-    begin
-      io = IO.popen("#{bin}/aws-es-proxy -endpoint https://dummy-host.eu-west-1.es.amazonaws.com",
-                    :err => [:child, :out])
-      sleep 2
-    ensure
-      Process.kill("SIGINT", io.pid)
-      Process.wait(io.pid)
-    end
+    address = "127.0.0.1:#{free_port}"
+    endpoint = "https://dummy-host.eu-west-1.es.amazonaws.com"
 
-    assert_match "Listening on", io.read
+    fork { exec "#{bin}/aws-es-proxy", "-listen=#{address}", "-endpoint=#{endpoint}" }
+    sleep 2
+
+    output = shell_output("curl --silent #{address}")
+    assert_match endpoint, output
+    assert_match "no such host", output
   end
 end
