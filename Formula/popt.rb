@@ -11,6 +11,7 @@ class Popt < Formula
     sha256 "26d76db3d80802bbc9c93b935bea569d8640cb081d75ff58e240cc90cb0bdb5a" => :catalina
     sha256 "62d43c019e6968bc603f4e5ae323ca957d50bccb0d1e797eba6d411c8f3941e4" => :mojave
     sha256 "bc17d5c36c45dfba60d51599cc910f0533f7a600d983e433000c445d261a204f" => :high_sierra
+    sha256 "d7730b8456a3fc8c4f9bfb571b95dd715c2c987674e115c16808ff7e08284c1a" => :x86_64_linux
   end
 
   def install
