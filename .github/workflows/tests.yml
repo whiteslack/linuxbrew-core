@@ -1,7 +1,8 @@
 name: GitHub Actions CI
-
-on: pull_request
-
+on:
+  push:
+    branches: master
+  pull_request: []
 jobs:
   tap_syntax:
     runs-on: ubuntu-latest
@@ -48,7 +49,7 @@ jobs:
 
       - name: Cache Bundler RubyGems
         id: cache
-        uses: actions/cache@v2
+        uses: actions/cache@v1
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
@@ -68,7 +69,7 @@ jobs:
 
   tests:
     needs: tap_syntax
-    if: startsWith(github.event.pull_request.title, 'Merge') == false
+    if: github.event_name == 'pull_request' && startsWith(github.event.pull_request.title, 'Merge') == false
     runs-on: ubuntu-latest
     container:
       image: homebrew/ubuntu16.04:master
