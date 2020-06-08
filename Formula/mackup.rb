@@ -12,6 +12,7 @@ class Mackup < Formula
     sha256 "be195c66e0330cd8cbc4bef06e8be0d919d613774870de537af8b6ef81d22ad2" => :catalina
     sha256 "8ee4dc679e9c944d3407febb22b7b0cb59fc2cd45308ffaf637ff0e11bb26604" => :mojave
     sha256 "da0ee240b7e1b3626becaea6b66673a58a9c0ec803e6e5da4e4f95672a51879b" => :high_sierra
+    sha256 "cdbd31fa0cb9c39f5995654680bbb712168b86d71a3ab538396ff8a0600ee67a" => :x86_64_linux
   end
 
   depends_on "python@3.8"
