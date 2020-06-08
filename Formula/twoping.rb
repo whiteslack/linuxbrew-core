@@ -1,17 +1,15 @@
 class Twoping < Formula
   desc "Ping utility to determine directional packet loss"
   homepage "https://www.finnie.org/software/2ping/"
-  url "https://www.finnie.org/software/2ping/2ping-4.3.tar.gz"
-  sha256 "d729c021ed5bcd29137da520a465632e19cf4c4339e0426546593379a570327e"
-  revision 1
+  url "https://www.finnie.org/software/2ping/2ping-4.4.tar.gz"
+  sha256 "b4392abda19c9982127cbd7f21b9ed88aabec4cdda66d4789ce644c7fca084c7"
   head "https://github.com/rfinnie/2ping.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8d8ff40ccff243a282ebd2b342f1546a99ea439aed1dae81abc25926fb8185a2" => :catalina
-    sha256 "8d8ff40ccff243a282ebd2b342f1546a99ea439aed1dae81abc25926fb8185a2" => :mojave
-    sha256 "8d8ff40ccff243a282ebd2b342f1546a99ea439aed1dae81abc25926fb8185a2" => :high_sierra
-    sha256 "28f56b55ab020e35a86bd0d82bc639299c132a3c7b0004c52c53a57b81933855" => :x86_64_linux
+    sha256 "35d34d2b20db56adaa08728de0346a419822efec1cf343118fef9ec777929f7f" => :catalina
+    sha256 "35d34d2b20db56adaa08728de0346a419822efec1cf343118fef9ec777929f7f" => :mojave
+    sha256 "35d34d2b20db56adaa08728de0346a419822efec1cf343118fef9ec777929f7f" => :high_sierra
   end
 
   depends_on "python@3.8"
