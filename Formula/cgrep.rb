@@ -10,6 +10,7 @@ class Cgrep < Formula
     sha256 "cee7f82d8e3e6b46e2afae649e13cf55202771da2473fbbebc6a712aa2f46496" => :catalina
     sha256 "0ac8d5bcfc0ce6d295aa617cf0e5c624c61df4fc28a2ddb8c7b21bf753c7e369" => :mojave
     sha256 "55118e5aa9a1999081105f7b2aa3e00793de45623fa61c0e69c6830e598d045a" => :high_sierra
+    sha256 "faed5ae9e1b22ce868f4ec9605a6efe66b093017475f6b6eeed44c30b6de8b65" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
