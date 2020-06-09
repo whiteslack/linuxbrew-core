@@ -11,6 +11,7 @@ class Wxmac < Formula
     sha256 "110aa0b2134d8bff1647de0cd8500f160133794b347f789bba3e1894b991b788" => :catalina
     sha256 "5f703423fc3f1e36d647a2d8be2d271a92f5d60f49ceba8e3478391bbd4f5303" => :mojave
     sha256 "1de8aa03e1c50af387888ffa51cfa4e0c99d158f25edb0acbf312e10c629a31d" => :high_sierra
+    sha256 "13900a86c338c0fd7e97b61b5146d881a5738852474b461675e6c95b60bc5328" => :x86_64_linux
   end
 
   depends_on "jpeg"
