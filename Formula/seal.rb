@@ -1,15 +1,14 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://github.com/microsoft/SEAL/archive/v3.5.1.tar.gz"
-  sha256 "9dfb1482d0bade6c1c76f2aa06aca6203f98aadc4ad94ca0f316be916b45fbd5"
+  url "https://github.com/microsoft/SEAL/archive/v3.5.3.tar.gz"
+  sha256 "97c8cceb45c82ef70a0bdc220a187aa632785b5cc9872edae760c15e23386070"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "52c0c69a916e496c79bf9ecb96b96a4c1f5251b4dc0b882caa75b4797f94ad85" => :catalina
-    sha256 "965bf9e01fd2942ea460463f1d0ba980ed4dcc6c98db2d613ab9e7df4037cf4a" => :mojave
-    sha256 "d8bb4cdf57efa3373547a0cd7b9ed5f259d5e7d96fd8e6754f532bcd78b4421a" => :high_sierra
-    sha256 "1e9016f4276e2d251af777253904fcc50cefc4720c71d7c8f276d7fdfcc71cb2" => :x86_64_linux
+    sha256 "f19ba8e84c703407764104f9bc94c8969a6e06c8037c8fd6ad441c7e1873bd92" => :catalina
+    sha256 "1f95b66033ca7223891f5726e3e66047dbce43a45ca2b7647b5c2497bc6227e3" => :mojave
+    sha256 "30fc4de4872f7bebb9f1091cb34d7acec81aec23490158dce0f658f474691fa0" => :high_sierra
   end
 
   depends_on "cmake" => [:build, :test]
@@ -40,7 +39,7 @@ class Seal < Formula
     # Chip in a new "CMakeLists.txt" for example code tests
     (testpath/"examples/CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.12)
-      project(SEALExamples VERSION 3.5.1 LANGUAGES CXX)
+      project(SEALExamples VERSION #{version} LANGUAGES CXX)
       # Executable will be in ../bin
       set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SEALExamples_SOURCE_DIR}/../bin)
 
@@ -57,7 +56,7 @@ class Seal < Formula
       )
 
       # Import Microsoft SEAL
-      find_package(SEAL 3.5.1 EXACT REQUIRED
+      find_package(SEAL #{version} EXACT REQUIRED
           # Providing a path so this can be built without installing Microsoft SEAL
           PATHS ${SEALExamples_SOURCE_DIR}/../src/cmake
       )
