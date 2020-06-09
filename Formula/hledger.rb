@@ -9,6 +9,7 @@ class Hledger < Formula
     sha256 "f14eb6659b2d23f3134b7596d732c4f80fae76fceaceeda30689b8c9df4b626e" => :catalina
     sha256 "1cdbc6211c26cc20c7ac4cd18aaaa635c1f27d49feed6fbaa5442073c03218d4" => :mojave
     sha256 "3111c83cbd8bb5f0aeb6b719c2ccc9d55b2199f4bfae8361abc3dc7c482f29eb" => :high_sierra
+    sha256 "b2d10de6547529ef73e9732939db59dbd94ba1b1b9430ab6d90a74237914a10e" => :x86_64_linux
   end
 
   depends_on "ghc@8.8" => :build
