@@ -10,6 +10,7 @@ class PdftkJava < Formula
     sha256 "a5f0aa0254d46f621c2639ec6586195e648f48429e4bcace507116419ac4e086" => :catalina
     sha256 "0ab7caaa273b91e57bf35a229f5278cad08d74265fb7f34c436539900f788018" => :mojave
     sha256 "30a6f07b82b28c7b40144693d6a862e5992df1386dde4641df2fdf66da086dbf" => :high_sierra
+    sha256 "98788a11a9ccbc9124e80f3ae4e8e62e975de1336eeb6ae1c7cbd858f23459fd" => :x86_64_linux
   end
 
   depends_on "gradle" => :build
