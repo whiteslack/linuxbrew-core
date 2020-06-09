@@ -9,6 +9,7 @@ class Ompl < Formula
     sha256 "f58fc1ff49aeac3a38aa2629385019ad854e9624b4c6e3a3f9051456494984f9" => :catalina
     sha256 "9d66bb50880af5db4f3fc3a1d85140170643518fc72e78ccc6b7b7814261d198" => :mojave
     sha256 "b11650509f65bcf45ea04acdd7fe4bebaff22f829c512d73c308e75476f0a94a" => :high_sierra
+    sha256 "5b833df1f9b5ec36c24c634b3daf63eae92e578d4e39f79d36dd9e34d45b5fce" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
