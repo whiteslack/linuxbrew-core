@@ -12,6 +12,7 @@ class GimmeAwsCreds < Formula
     sha256 "eacd3675525424d7037ba47d81f7b4082cda80d7fefea63f85152a4ea0302530" => :catalina
     sha256 "373d17d151ae4f43ab99dee2f6b89a20076e85a320fcc1bdbf8ce9aeba929a6c" => :mojave
     sha256 "6a715fe2a9ac1f4def3bbd19b9d6ccadf0c26a146360992c2d7eeb542f85e88d" => :high_sierra
+    sha256 "0b5f69d0629e195a41983d0db6949397e8f2cfd351fa3b6e1fa5fd79a5811b1b" => :x86_64_linux
   end
 
   depends_on "python@3.8"
