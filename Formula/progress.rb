@@ -10,6 +10,7 @@ class Progress < Formula
     sha256 "104d62681c513b6c3e7d997245768d7e2e3941ab43dc37fb67b33bb188e4acc4" => :catalina
     sha256 "62ea2e563eac2c9c9ad6f8eb3d5565024b2e303313c6d5cf509901893ee01d32" => :mojave
     sha256 "699d0712e633d357dbd853e797e94f85bee3af00f70b9e206fe6335d620b8e5c" => :high_sierra
+    sha256 "385ee973bc032739cdd9d64e6a6673a17e330adc855eb887eb69bc0f3cf8d970" => :x86_64_linux
   end
 
   uses_from_macos "ncurses"
