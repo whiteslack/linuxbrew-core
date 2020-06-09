@@ -11,6 +11,7 @@ class Pass < Formula
     sha256 "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3" => :catalina
     sha256 "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3" => :mojave
     sha256 "8130755986b8124ead30b7444bbab1f5b12b5481ddf914a310e221fdda736eb3" => :high_sierra
+    sha256 "348fab786e1ea979375eec5dc48555b145917457773c0901240889c768202e7f" => :x86_64_linux
   end
 
   depends_on "gnu-getopt"
