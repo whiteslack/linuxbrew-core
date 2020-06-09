@@ -9,6 +9,7 @@ class Vis < Formula
     sha256 "370791e6f8c70327d9afc8049fe8f8ff16a9e843835efe9f606dbdef6c2319f3" => :catalina
     sha256 "3f39518139d63c87a5a499a3ae53829bde4ed1b1eecbc5344d1bfe883ea16b7c" => :mojave
     sha256 "166b64aad19e64712cfbf1f3da60cebf1fb6351b3f32921aa10060081cbcef3a" => :high_sierra
+    sha256 "283bddc7847fbed054f3d63c613bc61be37337b9386e1506246fc43e7d5b00d1" => :x86_64_linux
   end
 
   depends_on "luarocks" => :build
