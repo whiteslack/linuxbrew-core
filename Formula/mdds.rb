@@ -3,13 +3,14 @@ class Mdds < Formula
   homepage "https://gitlab.com/mdds/mdds"
   url "https://kohei.us/files/mdds/src/mdds-1.6.0.tar.bz2"
   sha256 "f1585c9cbd12f83a6d43d395ac1ab6a9d9d5d77f062c7b5f704e24ed72dae07d"
+  head "https://gitlab.com/mdds/mdds.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b62a69bbecdd3c731bf16c6fcc3384b2fa67c34295cfa1013914af13620511ef" => :catalina
-    sha256 "b62a69bbecdd3c731bf16c6fcc3384b2fa67c34295cfa1013914af13620511ef" => :mojave
-    sha256 "b62a69bbecdd3c731bf16c6fcc3384b2fa67c34295cfa1013914af13620511ef" => :high_sierra
-    sha256 "38434783a73a02101b11c8d9a06dbd6199d9612fc1d0d96d45c0a93bcb05dfcb" => :x86_64_linux
+    rebuild 1
+    sha256 "3a34d290152006eb29ab3995754f57de22dddd7c8d95c95c98af206324a12041" => :catalina
+    sha256 "3a34d290152006eb29ab3995754f57de22dddd7c8d95c95c98af206324a12041" => :mojave
+    sha256 "3a34d290152006eb29ab3995754f57de22dddd7c8d95c95c98af206324a12041" => :high_sierra
   end
 
   depends_on "autoconf" => :build

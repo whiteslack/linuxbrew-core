@@ -3,14 +3,14 @@ class Wxmac < Formula
   homepage "https://www.wxwidgets.org"
   url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5.1/wxWidgets-3.0.5.1.tar.bz2"
   sha256 "440f6e73cf5afb2cbf9af10cec8da6cdd3d3998d527598a53db87099524ac807"
+  revision 1
   head "https://github.com/wxWidgets/wxWidgets.git"
 
   bottle do
     cellar :any
-    sha256 "4fdfe968d1a5cb02e4a7e471da8e2720acd5115a4ea8c4d37e50868ba902dbeb" => :catalina
-    sha256 "cfafdd11d3d6d243c49ed265d815116761cec2a5571016cd85ebf175a3acf345" => :mojave
-    sha256 "2868c7658bc88c332db80f9010c3a0f03cacbccb54bb9edf94255bd1b49ab0df" => :high_sierra
-    sha256 "6871830cfb7274ad24e4ff1f057563a254048a51e7f6a99af7744b4345721d9d" => :x86_64_linux
+    sha256 "110aa0b2134d8bff1647de0cd8500f160133794b347f789bba3e1894b991b788" => :catalina
+    sha256 "5f703423fc3f1e36d647a2d8be2d271a92f5d60f49ceba8e3478391bbd4f5303" => :mojave
+    sha256 "1de8aa03e1c50af387888ffa51cfa4e0c99d158f25edb0acbf312e10c629a31d" => :high_sierra
   end
 
   depends_on "jpeg"
@@ -40,6 +40,7 @@ class Wxmac < Formula
       "--enable-svg",
       "--enable-unicode",
       "--enable-webkit",
+      "--enable-webview",
       "--with-expat",
       "--with-libjpeg",
       "--with-libpng",
