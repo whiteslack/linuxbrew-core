@@ -3,18 +3,18 @@
 class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/5.14/5.14.2/single/qt-everywhere-src-5.14.2.tar.xz"
-  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.14/5.14.2/single/qt-everywhere-src-5.14.2.tar.xz"
-  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.14/5.14.2/single/qt-everywhere-src-5.14.2.tar.xz"
-  sha256 "c6fcd53c744df89e7d3223c02838a33309bd1c291fcb6f9341505fe99f7f19fa"
+  url "https://download.qt.io/official_releases/qt/5.15/5.15.0/single/qt-everywhere-src-5.15.0.tar.xz"
+  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.0/single/qt-everywhere-src-5.15.0.tar.xz"
+  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.0/single/qt-everywhere-src-5.15.0.tar.xz"
+  sha256 "22b63d7a7a45183865cc4141124f12b673e7a17b1fe2b91e433f6547c5d548c3"
 
   head "https://code.qt.io/qt/qt5.git", :branch => "dev", :shallow => false
 
   bottle do
     cellar :any
-    sha256 "235bbe918f05509380ba870b24a84e14cbac044b56ade7b824408ad11963de41" => :catalina
-    sha256 "356f2d8914429724dc0b98ab194b3c32417870008650342a21ddbb26c130743d" => :mojave
-    sha256 "78f577a236c2eee17e371ae5efe951b80e01f6e2a491b6922442b71e0a2cf3e6" => :high_sierra
+    sha256 "c1094fb3e2c5efa2580f4ad36f240a83b08a5118aa8f12a526f08fca27e6d6c7" => :catalina
+    sha256 "86674d9e61e1f75a20029974a01804a9fa0e6ea2fdc8fe10cb964ab8aea2a4e4" => :mojave
+    sha256 "c579327b288cfe0f23d6bd41e6e3b672538b6f19fbc0379322ce5c0ba422e794" => :high_sierra
   end
 
   keg_only "Qt 5 has CMake issues when linked"
@@ -52,10 +52,6 @@ class Qt < Formula
   uses_from_macos "bison"
   uses_from_macos "flex"
   uses_from_macos "sqlite"
-
-  # Fix build on 10.15.4 SDK, included in 5.15
-  # https://github.com/qt/qtwebengine/commit/5d2026cb04ef8fd408e5722a84e2affb5b9a3119
-  patch :DATA
 
   def install
     # Workaround for disk space issues on github actions
@@ -163,27 +159,3 @@ class Qt < Formula
     system "./hello"
   end
 end
-
-__END__
---- a/qtwebengine/src/buildtools/config/mac_osx.pri
-+++ b/qtwebengine/src/buildtools/config/mac_osx.pri
-@@ -9,6 +9,10 @@
-      isEmpty(QMAKE_MAC_SDK_VERSION): error("Could not resolve SDK version for \'$${QMAKE_MAC_SDK}\'")
- }
- 
-+# chromium/build/mac/find_sdk.py expects the SDK version (mac_sdk_min) in Major.Minor format.
-+# If Patch version is provided it fails with "Exception: No Major.Minor.Patch+ SDK found"
-+QMAKE_MAC_SDK_VERSION_MAJOR_MINOR = $$section(QMAKE_MAC_SDK_VERSION, ".", 0, 1)
-+
- QMAKE_CLANG_DIR = "/usr"
- QMAKE_CLANG_PATH = $$eval(QMAKE_MAC_SDK.macx-clang.$${QMAKE_MAC_SDK}.QMAKE_CXX)
- !isEmpty(QMAKE_CLANG_PATH) {
-@@ -28,7 +32,7 @@
-     clang_base_path=\"$${QMAKE_CLANG_DIR}\" \
-     clang_use_chrome_plugins=false \
-     mac_deployment_target=\"$${QMAKE_MACOSX_DEPLOYMENT_TARGET}\" \
--    mac_sdk_min=\"$${QMAKE_MAC_SDK_VERSION}\" \
-+    mac_sdk_min=\"$${QMAKE_MAC_SDK_VERSION_MAJOR_MINOR}\" \
-     use_external_popup_menu=false
- 
- qtConfig(webengine-spellchecker) {

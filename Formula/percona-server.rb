@@ -16,16 +16,12 @@ class PerconaServer < Formula
   end
 
   depends_on "cmake" => :build
-  unless OS.mac?
+  depends_on "openssl@1.1"
+
+  on_linux do
     depends_on "readline"
     depends_on "libedit"
   end
-
-  # https://github.com/Homebrew/homebrew-core/issues/1475
-  # Needs at least Clang 3.3, which shipped alongside Lion.
-  # Note: MySQL themselves don't support anything below Sierra.
-  depends_on :macos => :yosemite
-  depends_on "openssl@1.1"
 
   conflicts_with "mariadb", "mysql",
     :because => "percona, mariadb, and mysql install the same binaries."

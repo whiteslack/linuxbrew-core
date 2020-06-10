@@ -1,16 +1,15 @@
 class Assh < Formula
   desc "Advanced SSH config - Regex, aliases, gateways, includes and dynamic hosts"
   homepage "https://manfred.life/assh"
-  url "https://github.com/moul/assh/archive/v2.9.1.tar.gz"
-  sha256 "fed8876c574061c239a1d159d9c7197e8bda94f6610f6e29e682d8b6dde60852"
+  url "https://github.com/moul/advanced-ssh-config/archive/v2.9.3.tar.gz"
+  sha256 "d700a23a97b579aa48ee8ecc6d30878acc0840d368c7a0089c7c20f6fa028c71"
   head "https://github.com/moul/assh.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "210b380b1af14b7f4ea11f3c0f9546d7def3694f2adc5fcdaee31ab13112a5e8" => :catalina
-    sha256 "cfa4b2e02ad1806a693f8a2474db2d0ea14c9613f86d961f9c7de3574547af2a" => :mojave
-    sha256 "2564d6cb2cc3d52adc1db3ea4f74c1c73bded0cecfdd1079ac0dd6b88ddbe1c1" => :high_sierra
-    sha256 "d3d4acb6f54cdf3e8542dbb712bf9a7ed73efc3e1ea45329edda6e5cc232325b" => :x86_64_linux
+    sha256 "4e652381a62b966d3b90ba2cdcb7aaedf9676f3054e97dd52ed06be509aee560" => :catalina
+    sha256 "3ee9c68e116a26eb1c771777dbf67f7e0a15090eddf842c549fbaa564d05304b" => :mojave
+    sha256 "8199f891c20cd044bc6a3ff818416bf6822b0af84bfde9cc38a272e47acd6eff" => :high_sierra
   end
 
   depends_on "go" => :build

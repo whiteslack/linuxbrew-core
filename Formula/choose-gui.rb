@@ -11,9 +11,8 @@ class ChooseGui < Formula
     sha256 "3cd12daccad8f8381c3b37f2eb59a48ff2671f18e4cbc539daa1cb6ee606568c" => :high_sierra
   end
 
-  if OS.mac?
+  on_macos do
     depends_on :xcode => :build
-    depends_on :macos => :yosemite
   end
 
   conflicts_with "choose", :because => "both install a `choose` binary"

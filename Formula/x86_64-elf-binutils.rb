@@ -1,26 +1,24 @@
 class X8664ElfBinutils < Formula
-  desc "FSF Binutils for x86_64-elf cross development"
+  desc "GNU Binutils for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
   url "https://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.gz"
   mirror "https://ftpmirror.gnu.org/binutils/binutils-2.34.tar.gz"
   sha256 "53537d334820be13eeb8acb326d01c7c81418772d626715c7ae927a7d401cab3"
+  revision 1
 
   bottle do
-    sha256 "57141264369389b9c50019aac6bb0f6dcf19935f20ea8fab57b56d4c4451066a" => :catalina
-    sha256 "2fa4917e60d82c29d70b90a5a725ecb26a29aa5cf148af16e73af045ee431c59" => :mojave
-    sha256 "ed28927581eb4e2a8bfd10134eec40e1b1055161a5fb26580453943fb3bffe72" => :high_sierra
-    sha256 "cee6958f6e16d168dd261d46952a8a36071f2f0fd79f17c0d75b92fe18c389c6" => :x86_64_linux
+    sha256 "1d80291a30992f7d7cdbb8b057fa8dbf945425c89592b2b7ceeb02612269e3f0" => :catalina
+    sha256 "c09647bc99180ed5ee504e7282ba8cb453c85ed9473458d3a4ebcdfe84fd43f8" => :mojave
+    sha256 "68415da4e030aca55b4d077c134d23ca56820fd01b07c4eb9f67ed22decf1e41" => :high_sierra
   end
 
   uses_from_macos "texinfo"
 
   def install
     system "./configure", "--target=x86_64-elf",
-                          "--enable-targets=all",
-                          "--enable-multilib",
-                          "--enable-64-bit-bfd",
-                          "--disable-werror",
-                          "--prefix=#{prefix}"
+                          "--prefix=#{prefix}",
+                          "--infodir=#{info}/x86_64-elf-binutils",
+                          "--disable-nls"
     system "make"
     system "make", "install"
   end
@@ -37,6 +35,6 @@ class X8664ElfBinutils < Formula
     EOS
     system "#{bin}/x86_64-elf-as", "--64", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf64-x86-64",
-      shell_output("#{Formula["x86_64-elf-binutils"].bin}/x86_64-elf-objdump -a test-s.o")
+      shell_output("#{bin}/x86_64-elf-objdump -a test-s.o")
   end
 end

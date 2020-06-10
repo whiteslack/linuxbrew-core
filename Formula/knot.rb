@@ -24,7 +24,6 @@ class Knot < Formula
   depends_on "fstrm"
   depends_on "gnutls"
   depends_on "libidn2"
-  depends_on :macos => :yosemite if OS.mac? # due to AT_REMOVEDIR
   depends_on "protobuf-c"
   depends_on "userspace-rcu"
 

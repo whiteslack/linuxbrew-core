@@ -15,12 +15,12 @@ class Git < Formula
 
   depends_on "gettext"
   depends_on "pcre2"
-  depends_on "linux-headers" unless OS.mac?
 
-  if !OS.mac? || MacOS.version < :yosemite
-    depends_on "openssl@1.1"
+  on_linux do
     depends_on "curl"
     depends_on "expat"
+    depends_on "linux-headers"
+    depends_on "openssl@1.1"
     depends_on "zlib"
   end
 

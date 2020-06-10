@@ -12,7 +12,6 @@ class Gnupg < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "sqlite" => :build if !OS.mac? || MacOS.version == :mavericks
   depends_on "adns"
   depends_on "gettext"
   depends_on "gnutls"
@@ -23,7 +22,11 @@ class Gnupg < Formula
   depends_on "libusb"
   depends_on "npth"
   depends_on "pinentry"
-  depends_on "libidn" unless OS.mac?
+
+  on_linux do
+    depends_on "sqlite" => :build
+    depends_on "libidn"
+  end
 
   def install
     system "./configure", "--disable-dependency-tracking",

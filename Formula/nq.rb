@@ -15,8 +15,6 @@ class Nq < Formula
     sha256 "6275d5e82b0031b90db56ceb085221afdf23b1fd21744848281bcd6cc07b6212" => :x86_64_linux
   end
 
-  depends_on :macos => :yosemite
-
   def install
     system "make", "all", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"

@@ -16,7 +16,6 @@ class DockerMachineDriverXhyve < Formula
 
   depends_on "go" => :build
   depends_on "docker-machine"
-  depends_on :macos => :yosemite if OS.mac?
 
   def install
     (buildpath/"gopath/src/github.com/zchee/docker-machine-driver-xhyve").install \
