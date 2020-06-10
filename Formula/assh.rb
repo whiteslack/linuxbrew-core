@@ -10,6 +10,7 @@ class Assh < Formula
     sha256 "4e652381a62b966d3b90ba2cdcb7aaedf9676f3054e97dd52ed06be509aee560" => :catalina
     sha256 "3ee9c68e116a26eb1c771777dbf67f7e0a15090eddf842c549fbaa564d05304b" => :mojave
     sha256 "8199f891c20cd044bc6a3ff818416bf6822b0af84bfde9cc38a272e47acd6eff" => :high_sierra
+    sha256 "c0ab4b3eb22d6d429a630f4f4a31806aadba019430119134d0f458e7f29b4511" => :x86_64_linux
   end
 
   depends_on "go" => :build
