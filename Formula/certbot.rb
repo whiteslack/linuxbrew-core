@@ -18,9 +18,12 @@ class Certbot < Formula
   depends_on "dialog"
   depends_on "openssl@1.1"
   depends_on "python@3.8"
-  depends_on "pkg-config" => :build unless OS.mac?
 
   uses_from_macos "libffi"
+
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
 
   unless OS.mac?
     # https://github.com/pypa/setuptools/issues/2017#issuecomment-605354361

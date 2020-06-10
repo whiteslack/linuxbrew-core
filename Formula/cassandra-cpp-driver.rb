@@ -20,6 +20,10 @@ class CassandraCppDriver < Formula
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   def install
     Dir.mkdir "build"
     Dir.chdir "build" do

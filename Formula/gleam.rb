@@ -16,7 +16,9 @@ class Gleam < Formula
   depends_on "erlang"
   depends_on "rebar3"
 
-  depends_on "pkg-config" => :build unless OS.mac?
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
 
   def install
     system "cargo", "install", "--locked", "--root", prefix, "--path", "."
