@@ -11,6 +11,7 @@ class Breezy < Formula
     sha256 "be4d6a419337a7bdecd038f2a7bab9d339bf2382075d297775093bdcd5600eb6" => :catalina
     sha256 "96453e37097279e25b8ffb3bab54a65d6d89b9eda7dbf8907e628925eccea5e9" => :mojave
     sha256 "b888aa310c7e937cdfae4fe45c5ace6b6521649215841a332a962b061d1e07e4" => :high_sierra
+    sha256 "c7438be4ae720f977a91a7521775a4c6a750dd42446fc2e8878673080dc7a4ca" => :x86_64_linux
   end
 
   depends_on "cython" => :build
