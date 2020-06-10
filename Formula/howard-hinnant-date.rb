@@ -9,6 +9,7 @@ class HowardHinnantDate < Formula
     sha256 "336157e546ea77db5ec3c0360b4e873e8c6ec265aa6dedb2fe19d45a6df207fb" => :catalina
     sha256 "20a35158d9c478a553baae673544620546db6f31825f9e052a0bbf07086e773e" => :mojave
     sha256 "f23b72ea88d5c0bc12f2e93dff65ba6a9867d88831294fc5c770f2d0a39762fa" => :high_sierra
+    sha256 "22c1c286e4ca22f4aef885239fa19ce328d683bd6a0d53ae8b06add94b26c5b5" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
