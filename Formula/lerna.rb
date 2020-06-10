@@ -11,6 +11,7 @@ class Lerna < Formula
     sha256 "5f2b51b458e4379c8f4bf192eb532e567fa2a209eff59fc78aa4a73a2c95c9a4" => :catalina
     sha256 "363088564849de9b6c79ac5cdbbb872ca43841b0d80af27c85c696cbd2dc75bb" => :mojave
     sha256 "833823b45ebd250a74b170f980861ae9cc6831040e5362309e637d13291a97af" => :high_sierra
+    sha256 "9717fa362cf5fc1839425d0ab84a82ea15164261e597f717778bdd9f85050f2b" => :x86_64_linux
   end
 
   depends_on "node"
