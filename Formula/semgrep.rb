@@ -4,15 +4,15 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.live"
   url "https://github.com/returntocorp/semgrep.git",
-    :tag      => "v0.9.0",
-    :revision => "1225d5f753ce45e4571f79e75e754a95b4adb81e"
+    :tag      => "v0.10.0",
+    :revision => "201128f2abd8d1a34ded75c2672c38163a09378d"
   head "https://github.com/returntocorp/semgrep.git", :branch => "develop"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "115f7ef4a1c5c6661de4331bbec8ff25a26e0d7957c2d5af0cc69afb1640debb" => :catalina
-    sha256 "08371c78f846d4de8e4ec10a8ab7c30d3af9533bfa559a94ddf943a3b779d4c4" => :mojave
-    sha256 "3a15c328bacd603dddcd1badf6ff9d14ccf17a49a173eb1101247c298273ced9" => :high_sierra
+    sha256 "de82b598218630158b966017722fcf3cebe5c61ace209efa545b74b53efd9171" => :catalina
+    sha256 "10dccd852366c970b648d7b5d50a22f5b4b7730695f558c133259bc96b305560" => :mojave
+    sha256 "384c9c97f38493f32a788be426e2d7e2a8a512f67477961693745b23a7b9822c" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -60,6 +60,16 @@ class Semgrep < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/98/c3/2c227e66b5e896e15ccdae2e00bbc69aa46e9a8ce8869cc5fa96310bf612/attrs-19.3.0.tar.gz"
     sha256 "f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"
+  end
+
+  resource "ruamel.yaml" do
+    url "https://files.pythonhosted.org/packages/16/8b/54a26c1031595e5edd0e616028b922d78d8ffba8bc775f0a4faeada846cc/ruamel.yaml-0.16.10.tar.gz"
+    sha256 "099c644a778bf72ffa00524f78dd0b6476bca94a1da344130f4bf3381ce5b954"
+  end
+
+  resource "ruamel.yaml.clib" do
+    url "https://files.pythonhosted.org/packages/92/28/612085de3fae9f82d62d80255d9f4cf05b1b341db1e180adcf28c1bf748d/ruamel.yaml.clib-0.2.0.tar.gz"
+    sha256 "b66832ea8077d9b3f6e311c4a53d06273db5dc2db6e8a908550f3c14d67e718c"
   end
 
   def install
