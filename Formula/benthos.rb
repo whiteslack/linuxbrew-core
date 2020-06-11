@@ -9,6 +9,7 @@ class Benthos < Formula
     sha256 "b01d4117e4133e0d0a3f3a491d6d27775b0d459d041c03ca32be9e8ea401a2fd" => :catalina
     sha256 "7da85e02185751e006b4bb6ee6e5f6771519ea98e98c33893e1d8690737255a7" => :mojave
     sha256 "5ac803ca081885e5a3d920a2e95ac0607081141250d8ccded589602c3ca7823c" => :high_sierra
+    sha256 "dc5db03cfb5b5caefa4495d2dc586de53f9dd55db47d6c8b780be64bb392d7aa" => :x86_64_linux
   end
 
   depends_on "go" => :build
