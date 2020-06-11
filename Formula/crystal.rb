@@ -4,20 +4,19 @@ class Crystal < Formula
   revision 1 unless OS.mac?
 
   stable do
-    url "https://github.com/crystal-lang/crystal/archive/0.34.0.tar.gz"
-    sha256 "973293ffbcfa4fb073f6a2f833b0ce5b82b72f7899427f39d7e5610ffc9029c8"
+    url "https://github.com/crystal-lang/crystal/archive/0.35.0.tar.gz"
+    sha256 "9281afe3bee8cffff5d3aa32e66ed2129946893fe65a3791f3f27b5b13abc006"
 
     resource "shards" do
-      url "https://github.com/crystal-lang/shards/archive/v0.10.0.tar.gz"
-      sha256 "3aea420df959552d1866d473c878ab1ed0b58489c4c9881ef40a170cfb775459"
+      url "https://github.com/crystal-lang/shards/archive/v0.11.1.tar.gz"
+      sha256 "e78095867334b4058f860c6da8dc3892994769ef51795de74ffb708a66c6847d"
     end
   end
 
   bottle do
-    sha256 "7f6f09fefecbeab7ff11bcd35b501339f99aa2b4409c8612e1eae2c4ad0a206c" => :catalina
-    sha256 "a2a5055a9abe2db444e2a165133703a1c203d692f66c0e1fb326c97a28c8ef80" => :mojave
-    sha256 "c37811acb4753d689d8d7455b0ddfd64bf9530c430240563608e05b6bed8cedd" => :high_sierra
-    sha256 "7a1dbe1bf7b314b502852d49cbdc48a7a9a21b62552525c2ca397fa09b5a00ad" => :x86_64_linux
+    sha256 "0d5901c5cd88efa6ea70edd375cc6838435c54a520fca6a5457f60f869acb1da" => :catalina
+    sha256 "bd5c2056860edf33395c89f30a89a69b0819a6bf2741fa724e96602ccf16a645" => :mojave
+    sha256 "2c596258ff743cbf5fd1dfca86b23c6d62062ab59cbb4e0ff5c2184fce1c2a75" => :high_sierra
   end
 
   head do
@@ -55,23 +54,18 @@ class Crystal < Formula
 
   resource "boot" do
     if OS.mac?
-      url "https://github.com/crystal-lang/crystal/releases/download/0.33.0/crystal-0.33.0-1-darwin-x86_64.tar.gz"
-      version "0.33.0-1"
-      sha256 "edb48d4d8276fc5e689fb95c5dc669d115ad3d1bf22485dad77d44a370e585fd"
+      url "https://github.com/crystal-lang/crystal/releases/download/0.34.0/crystal-0.34.0-1-darwin-x86_64.tar.gz"
+      version "0.34.0-1"
+      sha256 "979b3006b03e5c598deb0c5a519b7fc9c5a805c930416b77b492a28af0a3a972"
     else
-      url "https://github.com/crystal-lang/crystal/releases/download/0.33.0/crystal-0.33.0-1-linux-x86_64.tar.gz"
-      version "0.33.0-1"
-      sha256 "9b9e078e9ba24fb97ee591d5f0a57c88cd018bd85ed6bdde9a30e5834b158128"
+      url "https://github.com/crystal-lang/crystal/releases/download/0.34.0/crystal-0.34.0-1-linux-x86_64.tar.gz"
+      version "0.34.0-1"
+      sha256 "f1235f92d65140edd4a51c198f3c221379af8188b06ae96b7377e0a80c99181a"
     end
   end
 
   def install
     (buildpath/"boot").install resource("boot")
-
-    ENV["CRYSTAL_CONFIG_BUILD_COMMIT"] = Utils.popen_read("git rev-parse --short HEAD").strip if build.head?
-
-    ENV["CRYSTAL_CONFIG_PATH"] = "lib:#{prefix/"src"}"
-    ENV["CRYSTAL_CONFIG_LIBRARY_PATH"] = prefix/"embedded/lib"
     ENV.append_path "PATH", "boot/bin"
 
     resource("bdw-gc").stage(buildpath/"gc")
@@ -83,37 +77,49 @@ class Crystal < Formula
       system "make"
     end
 
-    ENV.prepend_path "CRYSTAL_LIBRARY_PATH", buildpath/"gc/.libs"
-
     # Build crystal
+    crystal_build_opts = []
+    crystal_build_opts << "release=true"
+    crystal_build_opts << "FLAGS=--no-debug"
+    crystal_build_opts << "CRYSTAL_CONFIG_LIBRARY_PATH="
+    if build.head?
+      crystal_build_opts << "CRYSTAL_CONFIG_BUILD_COMMIT=#{Utils.popen_read("git rev-parse --short HEAD").strip}"
+    end
     (buildpath/".build").mkpath
     system "make", "deps"
-    system "bin/crystal", "build",
-                          "-D", "without_openssl",
-                          "-D", "without_zlib",
-                          "-D", "preview_overflow",
-                          "-o", ".build/crystal",
-                          "src/compiler/crystal.cr",
-                          "--release", "--no-debug", "--threads=1"
+    system "make", "crystal", *crystal_build_opts
 
-    # Build shards
+    # Build shards (with recently built crystal)
+    #
+    # Setup the same path the wrapper script would, but just for building shards.
+    # NOTE: it seems that the installed crystal in bin/"crystal" can be used while
+    #       building the formula. Otherwise this ad-hoc setup could be avoided.
+    embedded_crystal_path=`"#{buildpath/".build/crystal"}" env CRYSTAL_PATH`.strip
+    ENV["CRYSTAL_PATH"] = "#{embedded_crystal_path}:#{buildpath/"src"}"
+    ENV["CRYSTAL_LIBRARY_PATH"] = buildpath/"gc/.libs"
+
+    # Install shards
     resource("shards").stage do
-      system buildpath/"boot/#{OS.mac? ? "embedded/" : ""}bin/shards", "install",
-                                                   "--production"
+      ENV["CRYSTAL_OPTS"] = "--release --no-debug"
+      system "make", "bin/shards", "CRYSTAL=#{buildpath/"bin/crystal"}",
+                                   "SHARDS=#{buildpath/"boot/embedded/bin/shards"}"
 
-      system buildpath/"bin/crystal", "build",
-                                      "-o", buildpath/".build/shards",
-                                      "src/shards.cr",
-                                      "--release", "--no-debug"
-
+      # Install shards
+      bin.install "bin/shards"
       man1.install "man/shards.1"
       man5.install "man/shard.yml.5"
     end
 
-    bin.install ".build/shards"
+    # Install crystal
     libexec.install ".build/crystal"
-    (bin/"crystal").write_env_script libexec/"crystal",
-      :PKG_CONFIG_PATH => "${PKG_CONFIG_PATH:+$PKG_CONFIG_PATH:}#{Formula["openssl@1.1"].opt_lib/"pkgconfig"}"
+    (bin/"crystal").write <<~SH
+      #!/bin/bash
+      EMBEDDED_CRYSTAL_PATH=$("#{libexec/"crystal"}" env CRYSTAL_PATH)
+      export CRYSTAL_PATH="${CRYSTAL_PATH:-"$EMBEDDED_CRYSTAL_PATH:#{prefix/"src"}"}"
+      export CRYSTAL_LIBRARY_PATH="${CRYSTAL_LIBRARY_PATH:+$CRYSTAL_LIBRARY_PATH:}#{prefix/"embedded/lib"}:/usr/lib:/usr/local/lib"
+      export PKG_CONFIG_PATH="${PKG_CONFIG_PATH:+$PKG_CONFIG_PATH:}#{Formula["openssl"].opt_lib/"pkgconfig"}"
+      exec "#{libexec/"crystal"}" "${@}"
+    SH
 
     prefix.install "src"
     (prefix/"embedded/lib").install "#{buildpath/"gc"}/.libs/libgc.a"

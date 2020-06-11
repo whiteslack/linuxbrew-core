@@ -19,6 +19,11 @@ class AwsOkta < Formula
     depends_on "libusb"
   end
 
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "libusb"
+  end
+
   def install
     system "go", "build", "-ldflags", "-s -w -X main.Version=#{version}", "-trimpath", "-o", bin/"aws-okta"
     prefix.install_metafiles

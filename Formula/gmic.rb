@@ -1,15 +1,15 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_2.9.0.tar.gz"
-  sha256 "6233695f9b27999dcc7cc3aa7480b0f192bd44de85209091a3b4b8a65ae8c4b5"
+  url "https://gmic.eu/files/source/gmic_2.9.1.tar.gz"
+  sha256 "50c9dd418b8d0e80c703c2e2b179b6049343567483d37d9ff6c642c6ede95d8d"
   head "https://github.com/dtschump/gmic.git"
 
   bottle do
     cellar :any
-    sha256 "a345d7fa1d3b10d213a47fdc852eebda078398b2b08941b67df2bb118a1b2d02" => :catalina
-    sha256 "ae75a74723fa3be4de55a2a24cffa546c0ecbb3db889f4316cb39eed01f4ffd9" => :mojave
-    sha256 "b26d3ce1f76cdaaba61ceb2bd76c237a399b4bd448b1d7d46602516ed61a8a92" => :high_sierra
+    sha256 "183c99cebc7e117f17d258c875e859aad64f0d2b4837386fb76be23341f9ff95" => :catalina
+    sha256 "32903db189cdbbc67e0445786b483d3266c36033e4ea9ac4473972844460dc37" => :mojave
+    sha256 "c012e70fb7185d12e44fbb64e1a27dcaaad6089c57a7b8862fb984c66b32eeee" => :high_sierra
   end
 
   depends_on "cmake" => :build

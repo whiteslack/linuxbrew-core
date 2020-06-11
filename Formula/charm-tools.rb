@@ -22,11 +22,9 @@ class CharmTools < Formula
 
   uses_from_macos "libffi"
 
-  unless OS.mac?
-    # pkg-config helps setuptools find libffi
+  on_linux do
     depends_on "pkg-config" => :build
-    depends_on "libffi" # for cffi
-    depends_on "gmp" # for pycrypto
+    depends_on "gmp"
   end
 
   # Additionally include ndg-httpsclient for requests[security]

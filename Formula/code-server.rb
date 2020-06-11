@@ -16,9 +16,12 @@ class CodeServer < Formula
   depends_on "yarn" => :build
   depends_on "node"
 
-  unless OS.mac?
+  on_linux do
     depends_on "pkg-config" => :build
     depends_on "libsecret"
+  end
+
+  unless OS.mac?
     depends_on "linuxbrew/xorg/libxkbfile"
     depends_on "linuxbrew/xorg/libx11"
   end

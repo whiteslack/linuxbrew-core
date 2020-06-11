@@ -16,10 +16,10 @@ class AwsElasticbeanstalk < Formula
 
   depends_on "python@3.8"
 
-  unless OS.mac?
-    # pkg-config helps setuptools find libffi
+  uses_from_macos "libffi"
+
+  on_linux do
     depends_on "pkg-config" => :build
-    depends_on "libffi"
   end
 
   resource "attrs" do

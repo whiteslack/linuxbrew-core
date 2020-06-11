@@ -32,6 +32,8 @@ class Cairo < Formula
     depends_on "linuxbrew/xorg/libxrender"
   end
 
+  uses_from_macos "zlib"
+
   def install
     args = %W[
       --disable-dependency-tracking

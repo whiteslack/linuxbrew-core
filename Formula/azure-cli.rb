@@ -19,9 +19,9 @@ class AzureCli < Formula
   depends_on "openssl@1.1"
   depends_on "python@3.8"
 
-  unless OS.mac?
-    # pkg-config helps setuptools find libffi
-    depends_on "libffi"
+  uses_from_macos "libffi"
+
+  on_linux do
     depends_on "pkg-config" => :build
   end
 

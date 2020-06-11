@@ -16,9 +16,10 @@ class Aria2 < Formula
   depends_on "libssh2"
 
   uses_from_macos "libxml2"
-  unless OS.mac?
+  uses_from_macos "zlib"
+
+  on_linux do
     depends_on "openssl@1.1"
-    depends_on "zlib"
   end
 
   def install

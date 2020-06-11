@@ -20,6 +20,10 @@ class Cgal < Formula
   depends_on "mpfr"
   depends_on "openssl@1.1" unless OS.mac?
 
+  on_linux do
+    depends_on "openssl@1.1"
+  end
+
   def install
     args = std_cmake_args + %w[
       -DCMAKE_CXX_FLAGS='-std=c++14'

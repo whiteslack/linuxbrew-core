@@ -23,9 +23,11 @@ class Dbus < Formula
   end
 
   depends_on "xmlto" => :build if OS.mac?
-  unless OS.mac?
+
+  uses_from_macos "expat"
+
+  on_linux do
     depends_on "pkg-config" => :build
-    depends_on "expat"
   end
 
   if OS.mac?

@@ -32,6 +32,10 @@ class Curl < Formula
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "openssl@1.1"
+  end
+
   def install
     system "./buildconf" if build.head?
 
