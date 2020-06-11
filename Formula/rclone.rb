@@ -10,6 +10,7 @@ class Rclone < Formula
     sha256 "9e7972ecbf01cbd968d39db16546afb93935cca75fb913fc2bf12b1707cc5b8c" => :catalina
     sha256 "328b00b22013fa1818bd3c11f4eac843a31d6892a7471030293b5027d3f05cd6" => :mojave
     sha256 "fd48cf2f9b72b1cd8b61643ebce1cd9e9063822965f5335f2444e2c254e99db8" => :high_sierra
+    sha256 "38ab4b8ab3c42340035c46ea76c8acdfb5da1b14195d47002b9ad074dc801088" => :x86_64_linux
   end
 
   depends_on "go" => :build
