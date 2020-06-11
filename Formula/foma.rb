@@ -22,6 +22,12 @@ class Foma < Formula
     depends_on "zlib"
   end
 
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "readline"
+  end
+
   def install
     system "make"
     system "make", "install", "prefix=#{prefix}"

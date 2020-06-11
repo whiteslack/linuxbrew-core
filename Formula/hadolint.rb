@@ -20,6 +20,12 @@ class Hadolint < Formula
   uses_from_macos "xz"
   depends_on "gmp" unless OS.mac?
 
+  uses_from_macos "xz"
+
+  on_linux do
+    depends_on "gmp"
+  end
+
   def install
     unless OS.mac?
       gmp = Formula["gmp"]

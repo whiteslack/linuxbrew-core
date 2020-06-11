@@ -21,6 +21,10 @@ class Libpq < Formula
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "readline"
+  end
+
   def install
     system "./configure", "--disable-debug",
                           "--prefix=#{prefix}",

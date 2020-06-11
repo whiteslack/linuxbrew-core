@@ -15,9 +15,10 @@ class Ldc < Formula
   depends_on "cmake" => :build
   depends_on "llvm"
 
-  unless OS.mac?
+  uses_from_macos "libxml2" => :build
+
+  on_linux do
     depends_on "pkg-config" => :build
-    depends_on "libxml2" => :build
   end
 
   resource "ldc-bootstrap" do

@@ -15,10 +15,8 @@ class Libpcap < Formula
 
   keg_only :provided_by_macos
 
-  unless OS.mac?
-    depends_on "bison" => :build
-    depends_on "flex" => :build
-  end
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   def install
     system "./configure", "--prefix=#{prefix}",

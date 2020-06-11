@@ -20,6 +20,9 @@ class Hub < Formula
     depends_on "ruby" => :build
   end
 
+  uses_from_macos "groff" => :build
+  uses_from_macos "ruby" => :build
+
   on_linux do
     depends_on "util-linux"
   end

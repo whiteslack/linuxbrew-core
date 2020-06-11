@@ -50,7 +50,7 @@ class Git < Formula
     ENV["LIBPCREDIR"] = Formula["pcre2"].opt_prefix
     ENV["V"] = "1" # build verbosely
 
-    perl_version = Utils.popen_read("perl --version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
+    perl_version = Utils.safe_popen_read("perl --version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
 
     if OS.mac?
       ENV["PERLLIB_EXTRA"] = %W[
