@@ -1,14 +1,14 @@
 class Immudb < Formula
   desc "Lightweight, high-speed immutable database"
   homepage "https://www.codenotary.io"
-  url "https://github.com/codenotary/immudb/archive/v0.6.0.tar.gz"
-  sha256 "2bed8d984767c970b8e0dc15a89db5737e909b3052489debd8db47c9ea3906ec"
+  url "https://github.com/codenotary/immudb/archive/v0.6.1.tar.gz"
+  sha256 "313f09b82f89208705daaf0be16238e1a4f90e590edd038c1719d181ce0ed653"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "846f1978ea3a1cbe033bfb6348e0928bff997f00477b2f17b70c1bdcb8e31b58" => :catalina
-    sha256 "d23f02317c490e9c2cb8cc197e12158f4c62234a2444632bf134b7536f15db55" => :mojave
-    sha256 "418cd7b6e40299176b0659fe8dc81bc12226ada04b315ed07d011eb5a657ab48" => :high_sierra
+    sha256 "769e04db2fd4329c20b6c0a608a3929f774b380071bac36e98a0416457077276" => :catalina
+    sha256 "de2a723ef1e42c3b4757951280bc74d8af0d615221fd9513fd423d48c33c29b0" => :mojave
+    sha256 "0594c1e0fb1a8dafaf8f8b06f768c3626704260d07a328891a72c2db59834887" => :high_sierra
   end
 
   depends_on "go" => :build

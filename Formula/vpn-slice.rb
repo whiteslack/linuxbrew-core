@@ -3,15 +3,15 @@ class VpnSlice < Formula
 
   desc "Vpnc-script replacement for easy and secure split-tunnel VPN setup"
   homepage "https://github.com/dlenski/vpn-slice"
-  url "https://github.com/dlenski/vpn-slice/archive/v0.14.1.tar.gz"
-  sha256 "75403735e0ff95ff8b1c9620e5d272fbde37d6a54881de5582956aeb31ff01b7"
+  url "https://github.com/dlenski/vpn-slice/archive/v0.14.2.tar.gz"
+  sha256 "cae69cfe2994fea487f563edb601f7ef8a59b5059baa104349121764da9d37a2"
   head "https://github.com/dlenski/vpn-slice.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f9f1e9ed1b74162a4de1d50ebe332cc77798684733370f7cf6a0905259252fa5" => :catalina
-    sha256 "e0cc5a67fc5c6d3942710243d44c8ae48274ed881b971ddb76ff80aeb256bc45" => :mojave
-    sha256 "3ad4e5dc295b0cc0c8d489738fc80a55658b1bda71a3e838b75aa4e4b96c2e47" => :high_sierra
+    sha256 "350f4032091eaf9e5daeae9bc4232e7eb6f873dc0fd2cd838bdb5feed820ec1a" => :catalina
+    sha256 "b8057aa360ec68539ec028a0f30a883440bcf7cb2d72e62159594e5ec4146017" => :mojave
+    sha256 "7f6c4cb4440b65b6579bd3796591ee95a7caeda748f40c82aea386b089d2898b" => :high_sierra
   end
 
   depends_on "python@3.8"
