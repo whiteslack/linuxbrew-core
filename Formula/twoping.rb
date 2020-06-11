@@ -10,6 +10,7 @@ class Twoping < Formula
     sha256 "c072b4dccf205261e7a5fedcbee5a3968e1a58a42772ba235a4e710652886c52" => :catalina
     sha256 "c072b4dccf205261e7a5fedcbee5a3968e1a58a42772ba235a4e710652886c52" => :mojave
     sha256 "c072b4dccf205261e7a5fedcbee5a3968e1a58a42772ba235a4e710652886c52" => :high_sierra
+    sha256 "5c08af3ef2b59b7febdfaf9d4b178223b08a04fad0f2d454f336193367bcbcd2" => :x86_64_linux
   end
 
   depends_on "python@3.8"
