@@ -1,14 +1,14 @@
 class Bgpdump < Formula
   desc "C library for analyzing MRT/Zebra/Quagga dump files"
   homepage "https://github.com/RIPE-NCC/bgpdump/wiki"
-  url "https://github.com/RIPE-NCC/bgpdump/archive/v1.6.1.tar.gz"
-  sha256 "abf52f2c50844b61dcac9fae74628e47cf3e854e1e2a62003e814ea8c3882950"
+  url "https://github.com/RIPE-NCC/bgpdump/archive/v1.6.2.tar.gz"
+  sha256 "415692c173a84c48b1e927a6423a4f8fd3e6359bc3008c06b7702fe143a76223"
 
   bottle do
     cellar :any
-    sha256 "7e50f91444d64c2b76ce16391a879d0afe678456cd2f619d506134c4d7d35834" => :catalina
-    sha256 "406ef291f4a600d418b7af2e2c70abaf2a752c63ed77e7f787897631d5ebfa92" => :mojave
-    sha256 "7348bfb1fa936eea53b0790002c67edd75831f6754b2fa5b3120ceb76df70a51" => :high_sierra
+    sha256 "f7c93574ccb3a6eaa05910009e26068f99f14082df78d3b2b0b84166488657e5" => :catalina
+    sha256 "271ccd88799103255a673c6eafba9ec39320a8eb1a5a80bc8eef25ec508c31a6" => :mojave
+    sha256 "441599b105e925cf6875f3e1d1a380cf94ec1069b214872173cd08736cd8671c" => :high_sierra
   end
 
   depends_on "autoconf" => :build
