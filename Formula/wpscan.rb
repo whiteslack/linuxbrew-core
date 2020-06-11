@@ -10,6 +10,7 @@ class Wpscan < Formula
     sha256 "202f067c8019102a570f95ac29d60a5010498cedf047e3fb4cd7aab4636f0959" => :catalina
     sha256 "d5cff4f5d3649adab8cd5195266f2e0634d2c8993714f7e59f9d8d8d0bc53dc2" => :mojave
     sha256 "ce604ef3517c146a2922cb3d75ec18d5e740262e5c7b178565e25c07bb410f36" => :high_sierra
+    sha256 "dee7a3e1fc967c67dda5b9bba12c204a753aeddde23d41b121f459bcd2567d9c" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
