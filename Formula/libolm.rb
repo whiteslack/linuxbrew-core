@@ -9,6 +9,7 @@ class Libolm < Formula
     sha256 "bbe4e24d1c0a1e584d2feb1b4cdcf2b3b6f995e8e01b48367d2b60d5b25ab2c6" => :catalina
     sha256 "0bcc49962732ee4eb211fc59abbc803444dab90486539f76605b233bdb765705" => :mojave
     sha256 "7c5a282fba56d8968e138cd7c36949757397f8cc2ba8446c683cf3b24f5ff6aa" => :high_sierra
+    sha256 "932520df706720622b76d062d56a54d4ca9d9aa790b2146f31514aec520798ab" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
