@@ -1,15 +1,14 @@
 class Okteto < Formula
   desc "Build better apps by developing and testing code directly in Kubernetes"
   homepage "https://okteto.com"
-  url "https://github.com/okteto/okteto/archive/1.8.10.tar.gz"
-  sha256 "9014d24eec13f10558fef441103e106455efa0f57b111861f7c97fdef8337f1e"
+  url "https://github.com/okteto/okteto/archive/1.8.11.tar.gz"
+  sha256 "3831c56e7b029e1b33035b603747876dda610df8b9cf97c5f1576dd8e207f1e4"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "eb023060965faafbc9de4bc43f16cd2de5602d04a9a7406526d6034bbf496dc2" => :catalina
-    sha256 "e6a2ccd38a461dea692eba928e5efdc7962cd01c9f99f1dcd876f0644454d971" => :mojave
-    sha256 "fbec3c679310478aeb634ea580eed8d395efe0760c5d6bbea64a05c09020f1fb" => :high_sierra
-    sha256 "81eff6b730924ce338eafee97b031e47e7cee2f6c06557245ac4b227d8aec57a" => :x86_64_linux
+    sha256 "9b69eebf6f1c6265c3263cea3e78976deec86f414deb1dea376ab643e21c2448" => :catalina
+    sha256 "c15a8cec83100f58facaa33576a1591367d7969d95e02f044de3a3848adf7159" => :mojave
+    sha256 "1d1038f3dd9da34a346a2804849b4e4b963af38d56288286724947296471be94" => :high_sierra
   end
 
   depends_on "go" => :build
