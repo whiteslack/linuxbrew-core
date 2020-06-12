@@ -17,6 +17,9 @@ class Tippecanoe < Formula
     depends_on "zlib"
   end
 
+  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"

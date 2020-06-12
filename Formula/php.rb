@@ -2,16 +2,14 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-7.4.6.tar.xz"
-  mirror "https://fossies.org/linux/www/php-7.4.6.tar.xz"
-  sha256 "d740322f84f63019622b9f369d64ea5ab676547d2bdcf12be77a5a4cffd06832"
-  revision 1
+  url "https://www.php.net/distributions/php-7.4.7.tar.xz"
+  mirror "https://fossies.org/linux/www/php-7.4.7.tar.xz"
+  sha256 "53558f8f24cd8ab6fa0ea252ca8198e2650160649681ce5230c1df1dc2b52faf"
 
   bottle do
-    sha256 "f9bda8ea1bf0108091487a5595b02cc66370198296f7a78d033ccbc7c9f9958c" => :catalina
-    sha256 "a5c17a3e4a186cece0e483a2e4cf8d6ac41826decfe826f01688f5d53e170d36" => :mojave
-    sha256 "75345ed154fd07c14153e9285db4ac65e7be511392bce7708d1da7179267d881" => :high_sierra
-    sha256 "f147f3e65c312cb7f43a0b3cc43f04dbecae5103b50280f60e70bd1d0eb90921" => :x86_64_linux
+    sha256 "ccf94b39c146eb766a2f3bd250008fa13649814968c3dbd17a9801fd0d70a87e" => :catalina
+    sha256 "eda05d8ddbcf4d611b64836bc7902ee1e2dad3e49eeb494ad3493f5c1589fcf9" => :mojave
+    sha256 "f1409ba91d2446d9eabac8933ac102c64f6f5491ffea8c822ee0daff8572bd1c" => :high_sierra
   end
 
   head do

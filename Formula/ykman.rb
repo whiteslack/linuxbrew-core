@@ -26,8 +26,11 @@ class Ykman < Formula
     depends_on "pcsc-lite"
   end
 
+  uses_from_macos "libffi"
+
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "pcsc-lite"
   end
 
   resource "cffi" do

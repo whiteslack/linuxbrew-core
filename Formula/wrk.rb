@@ -18,6 +18,7 @@ class Wrk < Formula
   depends_on "makedepend" => :build unless OS.mac?
 
   on_linux do
+    depends_on "makedepend" => :build
     depends_on "pkg-config" => :build
   end
 

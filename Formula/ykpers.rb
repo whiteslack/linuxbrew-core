@@ -18,6 +18,10 @@ class Ykpers < Formula
   depends_on "libyubikey"
   depends_on "libusb" unless OS.mac?
 
+  on_linux do
+    depends_on "libusb"
+  end
+
   def install
     backend = OS.mac? ? "osx" : "libusb-1.0"
     libyubikey_prefix = Formula["libyubikey"].opt_prefix

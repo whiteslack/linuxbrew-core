@@ -16,6 +16,10 @@ class Zola < Formula
   depends_on "rust" => :build
   depends_on "openssl@1.1" unless OS.mac?
 
+  on_linux do
+    depends_on "openssl@1.1"
+  end
+
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix unless OS.mac?
     system "cargo", "install", "--locked", "--root", prefix, "--path", "."

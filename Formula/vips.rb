@@ -37,6 +37,10 @@ class Vips < Formula
   depends_on "webp"
   depends_on "gobject-introspection" unless OS.mac?
 
+  on_linux do
+    depends_on "gobject-introspection"
+  end
+
   uses_from_macos "zlib"
 
   def install

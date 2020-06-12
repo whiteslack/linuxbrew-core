@@ -20,6 +20,8 @@ class Xapian < Formula
     depends_on "zlib"
   end
 
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "util-linux"
   end

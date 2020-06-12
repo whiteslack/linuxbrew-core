@@ -20,6 +20,13 @@ class Teleport < Formula
     depends_on "netcat" => :test
   end
 
+  uses_from_macos "curl" => :test
+  uses_from_macos "zip"
+
+  on_linux do
+    depends_on "netcat" => :test
+  end
+
   conflicts_with "etsh", :because => "both install `tsh` binaries"
 
   def install
