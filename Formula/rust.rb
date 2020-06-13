@@ -42,12 +42,12 @@ class Rust < Formula
   uses_from_macos "zlib"
 
   resource "cargobootstrap" do
-    on_macos do
+    if OS.mac?
       # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
       url "https://static.rust-lang.org/dist/2020-05-07/cargo-0.44.0-x86_64-apple-darwin.tar.gz"
       sha256 "1071c520204a9e8fe4dd0de66a07a083f06abba16ac88f1df72231328a6395e6"
     end
-    on_linux do
+    unless OS.mac?
       # From: https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
       url "https://static.rust-lang.org/dist/2020-05-07/cargo-0.44.0-x86_64-unknown-linux-gnu.tar.gz"
       sha256 "e4c8533670a64a85ee1a367e4bb9d63a2d6b3e9949e116ec956cec15df9a67bd"
