@@ -10,6 +10,7 @@ class Cassowary < Formula
     sha256 "b8f7d3def722987e81c22df1ea898ed28973476fc309988756c573f0372b381a" => :catalina
     sha256 "10de18f2c186dffe62c5407365f5201379b0f3da3bc37eb9e0b60fd465959c19" => :mojave
     sha256 "2eb13fb3ce1f657d59791152266497761fc5c6a562c49f96ec6b7cf81c3099aa" => :high_sierra
+    sha256 "38691ea7460a2f2228f145f210c3f9f7608e50d6f989a13507e9b073be10dae6" => :x86_64_linux
   end
 
   depends_on "go" => :build
