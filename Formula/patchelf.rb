@@ -10,6 +10,7 @@ class Patchelf < Formula
     sha256 "8f57b65d6a11bfe332e7663b144c0e4e9842291c2b0a4055bd10794b2911dac4" => :mojave
     sha256 "98e221be1ce346f4c33bee1fc87b7dba33aafcc88c98ac061e04a69c9c9e9584" => :high_sierra
     sha256 "2504614537c2837d9668389349586730c38b93a632175e1cf80568b0650eb5aa" => :sierra
+    sha256 "7f19eacef4e3d18d9c82a4f4060bd86abeb912a4a76fa37c29f0bb104a38b2a2" => :x86_64_linux # glibc 2.13
   end
 
   resource "hellworld" do
