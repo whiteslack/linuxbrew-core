@@ -3,30 +3,29 @@ class Dmd < Formula
   homepage "https://dlang.org/"
 
   stable do
-    url "https://github.com/dlang/dmd/archive/v2.092.0.tar.gz"
-    sha256 "e21b7d20c2251fb5c8a77d573f1f3ee5038c6a719bd3902c019d616e2e8e7f72"
+    url "https://github.com/dlang/dmd/archive/v2.092.1.tar.gz"
+    sha256 "765226feaeaabcfdc5d771566af16058d51b017b8b19c5d91a3faa9c69bdd373"
 
     resource "druntime" do
-      url "https://github.com/dlang/druntime/archive/v2.092.0.tar.gz"
-      sha256 "a33dbd54439bac4fda0f8c6de3ff54787a456fcea66dae64c91415d151e7e3df"
+      url "https://github.com/dlang/druntime/archive/v2.092.1.tar.gz"
+      sha256 "c28a60ed4dcb7b1d0e171d45f48a5876814ca629e5359592806074fcd4609cc4"
     end
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/v2.092.0.tar.gz"
-      sha256 "e7e6529ae79e088ce2e1b79793151d15b8b1f80221c50dfa8ecafc149bd8cc31"
+      url "https://github.com/dlang/phobos/archive/v2.092.1.tar.gz"
+      sha256 "15547631ce3cb618cc096da728746dc725d429cf0796e646c310efb21e345ce1"
     end
 
     resource "tools" do
-      url "https://github.com/dlang/tools/archive/v2.092.0.tar.gz"
-      sha256 "169891c348bc282b570ed84ef8b26683c7dc0c04e391132fecef96dcfa23042d"
+      url "https://github.com/dlang/tools/archive/v2.092.1.tar.gz"
+      sha256 "8db4d21c6348fc25143d532e56f345198a384cce85c08979aca2476211e15113"
     end
   end
 
   bottle do
-    sha256 "2a3d60bb722c8a2222d639802d9daca2f23967a5d3dc52d0908b3c7b01d400a3" => :catalina
-    sha256 "cd1eb63007da7a74a50fe48a76c05b1c78eec3016fee6be3dd6ecb4851e86776" => :mojave
-    sha256 "4771a5b877c70c8eb7089681eb26e8f86cb7c2e94a934a4eb46c7cbd228e1075" => :high_sierra
-    sha256 "83c93d12c8b13ef26b56da324360e2581fd3876e942019482eb20bca60deaaeb" => :x86_64_linux
+    sha256 "90cd978b1793cea1804fc18c99c46f64966b392b634bcf3874f5a7846d264bd0" => :catalina
+    sha256 "8710eba4bf54759b19a89aef4c77188ceb1c3da9f6eef5d100986309f2bd625c" => :mojave
+    sha256 "ef79ba1e5aa6e2605dc601e5cd4618dd66854fe3813b10cabff2352877485e9d" => :high_sierra
   end
 
   head do
