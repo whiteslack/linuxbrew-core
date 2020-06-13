@@ -10,6 +10,7 @@ class GoogleBenchmark < Formula
     sha256 "d81d77c351b590b574869d88e22203aa3728410bc1d775f10bec672bf947e0af" => :catalina
     sha256 "ec80102ba3d26ce496a543a5270b4958c25cac3fc72c23f1daceff49bfafc467" => :mojave
     sha256 "407dfc8c6995f34fc9b6fd7da02747d538326462402e744e2318a2db5e3e86ed" => :high_sierra
+    sha256 "624bd758002c1a758fce0c2ac07298b237b1bffef348965cd7fa38b608c8da23" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
