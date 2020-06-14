@@ -1,14 +1,14 @@
 class Handbrake < Formula
   desc "Open-source video transcoder available for Linux, Mac, and Windows"
   homepage "https://handbrake.fr/"
-  url "https://github.com/HandBrake/HandBrake/releases/download/1.3.2/HandBrake-1.3.2-source.tar.bz2"
-  sha256 "ec6feba97f426d545ec56cf1472eae5795d768bc1aec56c23bb76fc6b2ecf270"
+  url "https://github.com/HandBrake/HandBrake/releases/download/1.3.3/HandBrake-1.3.3-source.tar.bz2"
+  sha256 "218a37d95f48b5e7cf285363d3ab16c314d97627a7a710cab3758902ae877f85"
   head "https://github.com/HandBrake/HandBrake.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5b3cff9f9dd148a8f4a5b7d63fc35212b5384db92644693b0299b11d9cbc249d" => :catalina
-    sha256 "b8335de02478b205184ef2c2fa57c84f2d53dc416f01b0d05ba68430a2305ddd" => :mojave
+    sha256 "79cad2f66f656641da650bac57445c033ed6e23ac4707a96b1bdd38298fba007" => :catalina
+    sha256 "7930401b64b3960fb96edf3da3d3b235fe881c1282b9db2be303e99a5b15d473" => :mojave
   end
 
   depends_on "autoconf" => :build
