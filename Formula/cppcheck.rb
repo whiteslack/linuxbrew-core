@@ -9,6 +9,7 @@ class Cppcheck < Formula
     sha256 "ddc02ed55b089565973fc8936be8a0ae23829827d0bb8730f2dad2582ad68450" => :catalina
     sha256 "416cb05e0dbd7f6b4a8c63a8dfe3a6c1d6d24c7c5d121842a4fab38bc70177f8" => :mojave
     sha256 "4ea4c94f96f842874d9b07e5fd267df48d638c186ea26ee17715c1b130a0248b" => :high_sierra
+    sha256 "0e740708792cd975b7a877b01d1127bb4a0295ad821f4e9c9806ee6322f3ab71" => :x86_64_linux
   end
 
   depends_on "python@3.8" => :test
