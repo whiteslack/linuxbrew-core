@@ -11,6 +11,7 @@ class Jrnl < Formula
     sha256 "b3f7dd1f487839f2273a0712ac0a9d657f7b48d3df3d738758cf0687553e02fa" => :catalina
     sha256 "ac70ed6ad6dce9b1a6b50e31044c1e61122c92ddf17ee94d79b3ddcb8615a426" => :mojave
     sha256 "510441890267a12380241808df81fd063ebda4d9328d01cc33e17b60b16d9b7c" => :high_sierra
+    sha256 "a21c202f18e2ad8815a7ee63fdc2ae0683564764ad2ed8e951a4d4e934a4bfd8" => :x86_64_linux
   end
 
   depends_on "python@3.8"
