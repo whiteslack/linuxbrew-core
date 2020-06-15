@@ -10,6 +10,7 @@ class Flint < Formula
     sha256 "41b01ee2208f8d0218a460621bc0c7abf3191b66593148570b2c8eb471fdf5e3" => :catalina
     sha256 "6a28c66f7966de0a3eb2c8ce590164f3ddacfca7b7152221bd266262f682fe7d" => :mojave
     sha256 "0759d28fbb6175c70d6ccddc9bb9f38a38284eb28ebe2d76ddcca6d4c5ed13ec" => :high_sierra
+    sha256 "d9123f31984ee545ba19b593e33e6e88d3112f9edbd5489bdb95d6df036733f6" => :x86_64_linux
   end
 
   depends_on "gmp"
