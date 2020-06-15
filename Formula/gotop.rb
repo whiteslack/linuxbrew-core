@@ -1,24 +1,28 @@
 class Gotop < Formula
   desc "Terminal based graphical activity monitor inspired by gtop and vtop"
   homepage "https://github.com/xxxserxxx/gotop"
-  url "https://github.com/xxxserxxx/gotop/archive/v3.5.3.tar.gz"
-  sha256 "fd9ecc1f9fcd622dc88f93af87fdf6a12020cec424d742deb1865853b38d5605"
+  url "https://github.com/xxxserxxx/gotop/archive/v4.0.1.tar.gz"
+  sha256 "38a34543ed828ed8cedd93049d9634c2e578390543d4068c19f0d0c20aaf7ba0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b58594789760418f414c59d6894b0fb65be0e6c187ba82abe16ef85b0352152b" => :catalina
-    sha256 "6774800971a481e6376ac3e014ce1ca05d617b565e664dc1ce57655f1c9d1c98" => :mojave
-    sha256 "9089ba9be47d82d4af9fec33575e43ce50aabf3676354484381ea23d5e6ba68a" => :high_sierra
-    sha256 "5283bdf8ece6a114255b548d450b9ff11ea842aaa5252cef0fc6abcf9e9b0e51" => :x86_64_linux
+    sha256 "5a61acb05457b28a32d342fc75376785873ec8f9fd73209f079550051851ea54" => :catalina
+    sha256 "c758b1001a0de9af2572871c05cd3ec78341e31e2e870a9a147cea493f85baa6" => :mojave
+    sha256 "194a6ee2f9ab9922b23a91d8868ac7802f611f238d56d10c79da4c9263a9afa4" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "./cmd/gotop"
+    time = `date +%Y%m%dT%H%M%S`.chomp
+    system "go", "build", *std_go_args, "-ldflags",
+           "-X main.Version=#{version} -X main.BuildDate=#{time}", "./cmd/gotop"
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/gotop --version").chomp
+    assert_match version.to_s, shell_output("#{bin}/gotop --version").chomp
+
+    system bin/"gotop", "--write-config"
+    assert_predicate testpath/"Library/Application Support/gotop/gotop.conf", :exist?
   end
 end
