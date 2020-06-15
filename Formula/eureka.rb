@@ -10,6 +10,7 @@ class Eureka < Formula
     sha256 "78923a432ed0b00a266aba6680ad1b1c948e7c31a74b32babad1ffe45bc7dc20" => :catalina
     sha256 "88b2371865f81cf092a3ab85c757bba880a3e3aef9c379ef880972fb75f80d93" => :mojave
     sha256 "ef7f1bde80157ad17a9a789028bd0b0fee6e62f93f66b545a15c8bd753a58767" => :high_sierra
+    sha256 "0b8830ebb9cf3815d340ea455923e529c176166395016c7841467ff5a9bd8366" => :x86_64_linux
   end
 
   depends_on "rust" => :build
