@@ -9,6 +9,7 @@ class G3log < Formula
     sha256 "b819589f20ba980113593517ca9d54109a9a7cec22f756126021e2276a56bca4" => :catalina
     sha256 "1b95598a1e31c627a40d9a2b67edd10a35209dc1c426849163ee297ca05e2bc6" => :mojave
     sha256 "ac0ea62242bf04f640a7bd2cdd56a0ab585cef139748e47fe4d3ec118510dfd0" => :high_sierra
+    sha256 "fb0a95939bd2ba482c47a18a31fbf7f1ba0cfe64a79c91fc1683529c813f6eab" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
