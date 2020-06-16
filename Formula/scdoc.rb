@@ -9,6 +9,7 @@ class Scdoc < Formula
     sha256 "cd14869a1ee30fb2cbb096f9a9f73438448fad68fbd048a4eed46394695f62ca" => :catalina
     sha256 "12f800d4af4950f91eceba248a2576dfc2eb6100d35e400ffcd043d0c6885a82" => :mojave
     sha256 "d6913f7e41d5e6f000a7b0e83d86d9d6975cd0d98769e73e88c0248be3b48685" => :high_sierra
+    sha256 "9e48bfde2f4ba09785940f07ffa7292879f108c3fb1ce1286127b88a38b2d9f8" => :x86_64_linux
   end
 
   def install
