@@ -1,14 +1,13 @@
 class Ilmbase < Formula
   desc "OpenEXR ILM Base libraries (high dynamic-range image file format)"
   homepage "https://www.openexr.com/"
-  url "https://github.com/openexr/openexr/archive/v2.5.1.tar.gz"
-  sha256 "11f806bf256453e39fc33bd1cf1fa576a54f144cedcdd3e6935a177e5a89d02e"
+  url "https://github.com/openexr/openexr/archive/v2.5.2.tar.gz"
+  sha256 "5da8dff448d0c4a529e52c97daf238a461d01cd233944f75095668d6d7528761"
 
   bottle do
-    sha256 "4748d38413303488484f98d5fbb94bb90a3f2e6a7fc9830fe5ce12463ef6812b" => :catalina
-    sha256 "c3645960e26293a38a9ed68996c21f9bdd00bf138c66a187d97b3be9a6f63247" => :mojave
-    sha256 "833b56397ee633635ae29f4b7c5f526590038cdda44bf1250fbee59bbada4013" => :high_sierra
-    sha256 "d4c2043c0f4ff630e7e926a1deab724997d9ab81b17ec78f9737e4ea54edb1b5" => :x86_64_linux
+    sha256 "13a8f951e15caa1f4f633ec718e4f5b9c19d741a6e8ec2c015f1c59d466f2005" => :catalina
+    sha256 "f21663911237058c5c531d806456ebc23e30020f838145d8b13010515364647a" => :mojave
+    sha256 "854208849e5fa1be263e25031ad21308582d57999c643baef67b8ec40d32cfb3" => :high_sierra
   end
 
   depends_on "cmake" => :build
