@@ -1,20 +1,20 @@
 class StoneSoup < Formula
   desc "Dungeon Crawl Stone Soup: a roguelike game"
   homepage "https://crawl.develz.org/"
-  url "https://crawl.develz.org/release/0.24/stone_soup-0.24.0.tar.xz"
-  sha256 "eb069ae421d4246a3332d9081fb6e08b4bfaa71c407ffc17c194c5f9170d7561"
-  revision 2
+  url "https://github.com/crawl/crawl/archive/0.25.0.tar.gz"
+  sha256 "999438343bb1953508dc06535cf71907a118e1765b5c837ba56869859b6ed25c"
 
   bottle do
-    sha256 "7cf945fbee6be6dff59257cab7c4d1e37154012db05eda662fce07de0030792b" => :catalina
-    sha256 "a8be120a1590ccef04dee4eca9ad603cba128ebbc84239e07c84210d9702dfd1" => :mojave
-    sha256 "8132209e7cf957ed398e8fdd70fa5bc9fea1a808d82fdc6f9dc69b137c6f29c3" => :high_sierra
+    sha256 "7c668b8d8a862c7ca37be32002b2b10689c4b8ebd53cc75c9d2236eecb0185dc" => :catalina
+    sha256 "2a71971d6bdee93844c05089b6c4d0fe91b2c11792409550ff7629546104722a" => :mojave
+    sha256 "76db4783ef4ec3373e3f0fd074e6183526de42718fe9dec051d0afc9802ec22e" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "python@3.8" => :build
   depends_on "lua@5.1"
   depends_on "pcre"
+  depends_on "sqlite"
 
   resource "PyYAML" do
     url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
@@ -31,16 +31,17 @@ class StoneSoup < Formula
       system "python3", *Language::Python.setup_install_args(buildpath/"vendor")
     end
 
-    cd "source" do
+    cd "crawl-ref/source" do
+      File.write("util/release_ver", version.to_s)
       args = %W[
         prefix=#{prefix}
         DATADIR=data
         NO_PKGCONFIG=
         BUILD_ZLIB=
-        BUILD_SQLITE=yes
+        BUILD_SQLITE=
         BUILD_FREETYPE=
         BUILD_LIBPNG=
-        BUILD_LUA=y
+        BUILD_LUA=
         BUILD_SDL2=
         BUILD_SDL2MIXER=
         BUILD_SDL2IMAGE=

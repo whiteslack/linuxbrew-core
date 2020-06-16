@@ -3,26 +3,26 @@ class Redo < Formula
 
   desc "Implements djb's redo: an alternative to make"
   homepage "https://redo.rtfd.io/"
-  url "https://github.com/apenwarr/redo/archive/redo-0.42a.tar.gz"
-  sha256 "0ff0fd29f2767fe33374cfac97fd13b3dd27207bdacbeb5e02039b992d4fb815"
+  url "https://github.com/apenwarr/redo/archive/redo-0.42c.tar.gz"
+  sha256 "6f1600c82d00bdfa75445e1e161477f876bd2615eb4371eb1bcf0a7e252dc79f"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6969cbd2833a19d8af5d95e74afdd6cb64998dc27d216989b5b4696965956610" => :catalina
-    sha256 "b9bfebfc669160a22dc5262bb4ab7845ef0774aa9bba82385e8fd58e6fb9726e" => :mojave
-    sha256 "b7308d0a6341f3e70922fffb9dcbcede4ca4257ecb553a28b8ea4da2a869382f" => :high_sierra
+    sha256 "a1198ba3e8feb77e588367d6c829fccd07a89baa0eb85a0dddbd27d75d926fa6" => :catalina
+    sha256 "801a8288a70e024e715b8fdfdcf6b2eca37d51ddb5f3b64d0809bf929c46e180" => :mojave
+    sha256 "78615055158a19503f04f1ef8698b4dc9cf7f61753b9f5bc59bd3fe99c2c11d9" => :high_sierra
   end
 
   depends_on "python@3.8"
 
   resource "Markdown" do
-    url "https://files.pythonhosted.org/packages/98/79/ce6984767cb9478e6818bd0994283db55c423d733cc62a88a3ffb8581e11/Markdown-3.2.1.tar.gz"
-    sha256 "90fee683eeabe1a92e149f7ba74e5ccdc81cd397bd6c516d93a8da0ef90b6902"
+    url "https://files.pythonhosted.org/packages/44/30/cb4555416609a8f75525e34cbacfc721aa5b0044809968b2cf553fd879c7/Markdown-3.2.2.tar.gz"
+    sha256 "1fafe3f1ecabfb514a5285fca634a53c1b32a81cb0feb154264d55bf2ff22c17"
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/3b/e4/7cfc641f11e0eef60123912611a5c9ee7d4638da7325878b695b9ae4bb6f/beautifulsoup4-4.9.0.tar.gz"
-    sha256 "594ca51a10d2b3443cbac41214e12dbb2a1cd57e1a7344659849e2e20ba6a8d8"
+    url "https://files.pythonhosted.org/packages/c6/62/8a2bef01214eeaa5a4489eca7104e152968729512ee33cb5fbbc37a896b7/beautifulsoup4-4.9.1.tar.gz"
+    sha256 "73cc4d115b96f79c7d77c1c7f7a0a8d4c57860d1041df407dd1aae7f07a77fd7"
   end
 
   def install

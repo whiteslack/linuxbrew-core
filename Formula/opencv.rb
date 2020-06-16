@@ -3,13 +3,12 @@ class Opencv < Formula
   homepage "https://opencv.org/"
   url "https://github.com/opencv/opencv/archive/4.3.0.tar.gz"
   sha256 "68bc40cbf47fdb8ee73dfaf0d9c6494cd095cf6294d99de445ab64cf853d278a"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 "5a123c64d35007e57e11c8abeb2ed880ea6341a96a664b924316d054ac1b0021" => :catalina
-    sha256 "b6d989b586a116bb787880f26880dcdb7cf10baebbe157f9bae339a5a949a356" => :mojave
-    sha256 "6bff21c66b62117bd724d68e2e703f793980226ba8190317b9400859f90a0083" => :high_sierra
-    sha256 "0732908f18c997eb00e49b7896e0582309412d781fac5480d5d8c02ec4629e66" => :x86_64_linux
+    sha256 "0d457dd4616dd0f7788ff299c39274aa54a9477fe3b290430576408f1ac47cb5" => :catalina
+    sha256 "b8b104f25eb19a2b26b681bee7c791d9afa2a5648e65210bc0766df363f5fc34" => :mojave
+    sha256 "c49eeb4793c2a85efe9cacb691b1d54298858c7f486d4b97ee95c8d8a910ab16" => :high_sierra
   end
 
   depends_on "cmake" => :build

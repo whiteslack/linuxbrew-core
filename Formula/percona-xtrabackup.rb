@@ -1,14 +1,13 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-2.4.14/source/tarball/percona-xtrabackup-2.4.14.tar.gz"
-  sha256 "4dffa6986aef358675b318b3b9f4a9b8df48e8fc4987ad2469bba1b186b47662"
-  revision 3
+  url "https://www.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.12/source/tarball/percona-xtrabackup-8.0.12.tar.gz"
+  sha256 "047d336601d08822ef8e3747dc966e47234987ef8499b7089d34abe7c81922cb"
 
   bottle do
-    sha256 "668e937c8b5bfd4494325f3fb1cad14dca148c572002f4701a8c74e1a7333247" => :catalina
-    sha256 "9c9b799666a1f0ce3a56d86b01989370a0717aa62497241528005c13f2a2dc01" => :mojave
-    sha256 "1776bd19664d4e423558bde7d5c9260ef6859220f7fe5a287f802ee25f1eeba8" => :high_sierra
+    sha256 "756a719c9b743bf8bf83aeface7b6c1d12c9f9ab84f0a28ed835e6f6a09e9a89" => :catalina
+    sha256 "b8cd364cd20e99bbf09f7797be06fe662b7815a5b82a97566e17d48ddb3aadea" => :mojave
+    sha256 "a7392083a646d6cd1197cef9e6ff4e4e7bf19d7b18012ae9ea71879af9c201f3" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -29,8 +28,8 @@ class PerconaXtrabackup < Formula
   end
 
   resource "boost" do
-    url "https://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.bz2"
-    sha256 "727a932322d94287b62abb1bd2d41723eec4356a7728909e38adb65ca25241ca"
+    url "https://downloads.sourceforge.net/project/boost/boost/1.70.0/boost_1_70_0.tar.bz2"
+    sha256 "430ae8354789de4fd19ee52f3b1f739e1fba576f0aded0897c3c2bc00fb38778"
   end
 
   def install
@@ -48,17 +47,17 @@ class PerconaXtrabackup < Formula
     # See https://bugs.python.org/issue18378#msg215215
     ENV["LC_ALL"] = "en_US.UTF-8"
 
-    # 1.59.0 specifically required. Detailed in cmake/boost.cmake
-    (buildpath/"boost_1_59_0").install resource("boost")
-    cmake_args << "-DWITH_BOOST=#{buildpath}/boost_1_59_0"
+    # 1.70.0 specifically required. Detailed in cmake/boost.cmake
+    (buildpath/"boost_1_70_0").install resource("boost")
+    cmake_args << "-DWITH_BOOST=#{buildpath}/boost_1_70_0"
 
     cmake_args.concat std_cmake_args
 
-    system "cmake", *cmake_args
-    system "make"
-    system "make", "install"
-
-    share.install "share/man"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make"
+      system "make", "install"
+    end
 
     # remove conflicting library that is already installed by mysql
     rm lib/"libmysqlservices.a"
@@ -82,5 +81,9 @@ class PerconaXtrabackup < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/xtrabackup --version 2>&1")
+
+    mkdir "backup"
+    output = shell_output("#{bin}/xtrabackup --target-dir=backup --backup 2>&1", 1)
+    assert_match "Failed to connect to MySQL server", output
   end
 end
