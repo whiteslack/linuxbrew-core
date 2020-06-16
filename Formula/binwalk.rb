@@ -5,21 +5,19 @@ class Binwalk < Formula
   homepage "https://github.com/ReFirmLabs/binwalk"
   url "https://github.com/ReFirmLabs/binwalk/archive/v2.2.0.tar.gz"
   sha256 "f5495f0e4c5575023d593f7c087c367675df6aeb7f4d9a2966e49763924daa27"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
   head "https://github.com/ReFirmLabs/binwalk.git"
 
   bottle do
     cellar :any
-    sha256 "80415911a04d2464b53a0000ccf62e8989690bed23277bebc91b83ff3fc13033" => :catalina
-    sha256 "ff30030e127b5f3bc0292665d8d10d0783e6692198e86d05c48fcae1988df157" => :mojave
-    sha256 "b3287fdb9563882a35f6a4bf62f1a5ca10fcdd0ca95614fd9452dbbe594a9f10" => :high_sierra
-    sha256 "18ff778c5c9313bd42d1f93d202d636c745df0a5361c82166d158a7aa5b22165" => :x86_64_linux
+    sha256 "d412322a98c5207c19bdf2d0b7d6abcb6133f875fc48d6227c4c69213e761852" => :catalina
+    sha256 "0edd480cef965ccd9d112aa0f2699e53420aab5a9c9d7397856d6dc0c476cae8" => :mojave
+    sha256 "8ce1ff5841406677da86e5b0976dd7230ae814616a3b368eb8020c467b2e4235" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "swig" => :build
   depends_on "freetype"
-  depends_on "gcc" # for gfortran
   depends_on "libpng"
   depends_on "p7zip"
   depends_on "python@3.8"
