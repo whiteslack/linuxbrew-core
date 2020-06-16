@@ -9,6 +9,7 @@ class Latexdiff < Formula
     sha256 "8eb979b1b52125f102bbc56bbc4611d5b8075f003318307a2205485d95c789aa" => :catalina
     sha256 "8eb979b1b52125f102bbc56bbc4611d5b8075f003318307a2205485d95c789aa" => :mojave
     sha256 "8eb979b1b52125f102bbc56bbc4611d5b8075f003318307a2205485d95c789aa" => :high_sierra
+    sha256 "d9cb7732a465de6fa6084717b20e21bcb708fbe55e46c847eabbc9613871fbae" => :x86_64_linux
   end
 
   # osx default perl cause compilation error
