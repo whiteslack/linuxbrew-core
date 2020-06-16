@@ -11,6 +11,7 @@ class Ed < Formula
     sha256 "c8ffa15f236faed29b760318f598903144a8f30ed6a09161f67578b9789760c9" => :catalina
     sha256 "2d8205eb80873325eb1b485238270df1d0e4ad71212d02f48dffbbdb77b529ed" => :mojave
     sha256 "57b85675d5c24f9fa076b9e115274f03c8ec136a36400956b488d6e11fb37e5c" => :high_sierra
+    sha256 "097142ff8a9a39656648d9410269047249755173afa49999432ccdbc93f31270" => :x86_64_linux
   end
 
   keg_only :provided_by_macos
