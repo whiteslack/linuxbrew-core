@@ -9,6 +9,7 @@ class GitInteractiveRebaseTool < Formula
     sha256 "ab2feae40a1c22695f88383fc0d25bd1ce90499cf74004719fbaf7540a673f09" => :catalina
     sha256 "50a7e6d5e3b6e0cdb75f9dd83fde8c9d473a632c8f22f575591fe4b5469a19bf" => :mojave
     sha256 "530ae677663e9773d05a17878a1e28e91e8751d9b9ac8cffdb0acaad7a7d1e8b" => :high_sierra
+    sha256 "f1cd9eceb7b054cd42567bb39666177feedc7da72b74accfc9fa040c19a970d2" => :x86_64_linux
   end
 
   depends_on "rust" => :build
