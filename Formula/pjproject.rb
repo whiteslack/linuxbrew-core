@@ -22,9 +22,9 @@ class Pjproject < Formula
     system "make"
     system "make", "install"
 
-    arch = Utils.popen_read("uname -m").chomp
+    arch = Utils.safe_popen_read("uname -m").chomp
     if OS.mac?
-      rel = Utils.popen_read("uname -r").chomp
+      rel = Utils.safe_popen_read("uname -r").chomp
       bin.install "pjsip-apps/bin/pjsua-#{arch}-apple-darwin#{rel}" => "pjsua"
     else
       bin.install "pjsip-apps/bin/pjsua-#{arch}-unknown-linux-gnu" => "pjsua"

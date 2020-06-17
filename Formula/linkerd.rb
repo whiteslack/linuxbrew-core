@@ -28,8 +28,12 @@ class Linkerd < Formula
     system "bin/build-cli-bin"
     bin.install "target/cli/#{os}/linkerd"
 
+    # Install bash completion
+    output = Utils.safe_popen_read("#{bin}/linkerd completion bash")
+    (bash_completion/"linkerd").write output
+
     # Install zsh completion
-    output = Utils.popen_read("#{bin}/linkerd completion zsh")
+    output = Utils.safe_popen_read("#{bin}/linkerd completion zsh")
     (zsh_completion/"linkerd").write output
 
     prefix.install_metafiles
