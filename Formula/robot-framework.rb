@@ -3,15 +3,15 @@ class RobotFramework < Formula
 
   desc "Open source test framework for acceptance testing"
   homepage "https://robotframework.org/"
-  url "https://github.com/robotframework/robotframework/archive/v3.2.tar.gz"
-  sha256 "2a037c6bb40186e90fe576605070ba85dd911bb10077631eb77cd4c991c65ae7"
+  url "https://github.com/robotframework/robotframework/archive/v3.2.1.tar.gz"
+  sha256 "9805faa0990125ff2c9689b673448d5f47e78470e7a8e95af1606a775fa8379f"
   head "https://github.com/robotframework/robotframework.git"
 
   bottle do
     cellar :any
-    sha256 "b7e99de0f4b8f95980ef637412b018a6dc9e0427af7d2cf3079f6099262cf425" => :catalina
-    sha256 "f52ffb451ddfabfc911361975be0dab5921c27a7818981dbf386a5e831126357" => :mojave
-    sha256 "aed680f5f0f2644cec35c5370758364ac10d4af09d92389ca1b5835e7fb15a19" => :high_sierra
+    sha256 "bf2616c09938e74e4f02b6539c4e63ce5a930a367a624256f9cb236ec40332a1" => :catalina
+    sha256 "8bf25bce831e36a1dea5abec244c246900d6aeea405228400c43122b34c5e742" => :mojave
+    sha256 "19aafae1b8d94f325b596e44938c6d105052fdfcaadc892e14f650af33f0509d" => :high_sierra
   end
 
   depends_on "openssl@1.1"

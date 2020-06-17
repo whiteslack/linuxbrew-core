@@ -1,14 +1,14 @@
 class NodeExporter < Formula
   desc "Prometheus exporter for machine metrics"
   homepage "https://prometheus.io/"
-  url "https://github.com/prometheus/node_exporter/archive/v1.0.0.tar.gz"
-  sha256 "2d82dac251e789b75879ebf1ebe94d1dc15c59ffa28ffe4e15b8d2ff63190607"
+  url "https://github.com/prometheus/node_exporter/archive/v1.0.1.tar.gz"
+  sha256 "a841bf3e236376840be9e1d8e6c4a38196be6f3957b0982d1c7970a5e416b0ad"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "3b769106181397037df9e1b06a585d2e239a609f547591d8bc2471315e0c58a1" => :catalina
-    sha256 "ca08d87cf7d8b935c085291a4338acb09fce5fa2b6633099ff50e9e86a375f4d" => :mojave
-    sha256 "11963681c146e9f6defaa836f1c5a39d3e2ee7fc452ffc6114b2e1bf7230d87b" => :high_sierra
+    sha256 "7b68d39007278906d3a749370131c4ee7026f410350c48de3f65eeb4bd0c9310" => :catalina
+    sha256 "1ff2d6c27e863565b9b6415ee406d8f2585366c855f7ff9d64577043dec78b7e" => :mojave
+    sha256 "3d902e39d3d2be664928596a6a1af176af4a73194d3714341c6e365be3894d86" => :high_sierra
   end
 
   depends_on "go" => :build

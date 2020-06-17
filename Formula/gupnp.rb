@@ -1,14 +1,16 @@
 class Gupnp < Formula
+  include Language::Python::Shebang
+
   desc "Framework for creating UPnP devices and control points"
   homepage "https://wiki.gnome.org/Projects/GUPnP"
   url "https://download.gnome.org/sources/gupnp/1.2/gupnp-1.2.2.tar.xz"
   sha256 "9a80bd953e5c8772ad26b72f8da01cbe7241a113edd6084903f413ce751c9989"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 "6035c0c11dcbbb621d02eb5927586148d76263a2a77ffd2530b8ed5bb34a59bf" => :catalina
-    sha256 "a87a97704971d8b5a9a58ab2a05c1c347591ca0f02228601885aa18ba5235c6a" => :mojave
-    sha256 "992103509a9d4529027fe8a04a0af41e55f07a55b0f23f707c27f035765d1988" => :high_sierra
+    sha256 "0a7248c3b761e36ec36188d4b730c69cfd9c7fb5ea247e994bbce44dd8bf6366" => :catalina
+    sha256 "efc4a54b6df3d4794c0a3e7ea6080839a5a29048af02201161ae7447f72c6a02" => :mojave
+    sha256 "01d9c2e45bbcd2c0c2fb1a1cc630020a87f95aee47226cff9859b561a8aabb57" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build
@@ -22,11 +24,11 @@ class Gupnp < Formula
   depends_on "python@3.8"
 
   def install
-    Language::Python.rewrite_python_shebang(Formula["python@3.8"].opt_bin/"python3")
     mkdir "build" do
       system "meson", *std_meson_args, ".."
       system "ninja"
       system "ninja", "install"
+      bin.find { |f| rewrite_shebang detected_python_shebang, f }
     end
   end
 

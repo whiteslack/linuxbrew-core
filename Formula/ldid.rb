@@ -4,13 +4,14 @@ class Ldid < Formula
   url "https://git.saurik.com/ldid.git",
       :tag      => "v2.1.2",
       :revision => "c2f8abf013b22c335f44241a6a552a7767e73419"
+  revision 1
   head "https://git.saurik.com/ldid.git"
 
   bottle do
     cellar :any
-    sha256 "ba28d7176a7327d74561b0cc183900ef636039b788ca5294aea2f4c3cabfb1e3" => :catalina
-    sha256 "9341d755d86dd76e99e65eac8c68f8a0769754bcd9800549ed9ec0387434369f" => :mojave
-    sha256 "3cce5ada2635006f922c17090d391ac024314cdea90ee518fbfd791f6158f4ca" => :high_sierra
+    sha256 "fdd2c5d784f91bcbe6117d16763c3b552f08c8aa1783cb0d7017fb1832f353d3" => :catalina
+    sha256 "b76050d24afe9f92eb6a7f53233c27a530ae59454f7193ff82bcade593022645" => :mojave
+    sha256 "2a0dd3dd8e0b34980260054420212932e4010eea4e4245307919527aaca7df58" => :high_sierra
   end
 
   depends_on "libplist"
@@ -25,7 +26,7 @@ class Ldid < Formula
                     "-I.",
                     "-framework", "CoreFoundation",
                     "-framework", "Security",
-                    "-lcrypto", "-lplist", "-lxml2"
+                    "-lcrypto", "-lplist-2.0", "-lxml2"
     bin.install "ldid"
     ln_s bin/"ldid", bin/"ldid2"
   end
