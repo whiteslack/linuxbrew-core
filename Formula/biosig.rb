@@ -9,6 +9,7 @@ class Biosig < Formula
     sha256 "20194b1c9d0612bb01ea9f43179948836f5d87a47e968ab16d0a8feba5aa8aac" => :catalina
     sha256 "4e0fe111e22317ea618fd72aa58965f78d306144ba436b77ca7c218dfdd52c0d" => :mojave
     sha256 "5b85fd02cc34333fa228132165941036208729437b484e6f62f1e3525ba4ca5b" => :high_sierra
+    sha256 "69b247e1cfefc09bcc1c05d4e9550ff7ed96c1b5f52f37f2134875d51189ee44" => :x86_64_linux
   end
 
   depends_on "gawk" => :build
