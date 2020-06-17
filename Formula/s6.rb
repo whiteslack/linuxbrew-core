@@ -8,6 +8,7 @@ class S6 < Formula
     sha256 "94906378d458e78a0909dc89bd5672ca8d33645b1b070be4974ac7ebe0f3aa15" => :catalina
     sha256 "e4024234358147987f7f6f599b73ddfd9bbe5e5fd414efcbc53577045a1dbb78" => :mojave
     sha256 "d6be4dd0697c711c1e35fe25e4f1365bcb1c198ab8fc8c3f3d7169b29ccb4372" => :high_sierra
+    sha256 "2c6df1a6ff78142090330b0ec9f0e1f375a7fceb17fc2f75804d8109e4c43540" => :x86_64_linux
   end
 
   resource "skalibs" do
