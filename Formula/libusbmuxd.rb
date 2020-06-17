@@ -10,6 +10,7 @@ class Libusbmuxd < Formula
     sha256 "72fcc67099f03a3d68faa131eaf464a431e5d5eaea0a5ddb9b8414c065f7ef73" => :catalina
     sha256 "132ee76aa823e51abb97c92c53ab8a30819720ced7020080f949cf4fd937f6ea" => :mojave
     sha256 "67c3d43cb2a1ebfd68fba1c9b51b419288fedefc93f101adeea1b5f6bdf1ad77" => :high_sierra
+    sha256 "cea8ac47904a4a0dac13f9420ec2c8639e03f8cad78f373b521bb93e1431618f" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
