@@ -1,7 +1,7 @@
 class Ntfs3g < Formula
   desc "Read-write NTFS driver for FUSE"
   homepage "https://www.tuxera.com/community/open-source-ntfs-3g/"
-  revision 2
+  revision 3
   stable do
     url "https://tuxera.com/opensource/ntfs-3g_ntfsprogs-2017.3.23.tgz"
     sha256 "3e5a021d7b761261836dcb305370af299793eedbded731df3d6943802e1262d5"
@@ -15,9 +15,9 @@ class Ntfs3g < Formula
 
   bottle do
     cellar :any
-    sha256 "d336f9c7dbdcba28ed416704db13091db3494769f598b38b027022846aa77cdd" => :catalina
-    sha256 "67179cbc357c2d28304851f0abe3f42a0c6171200e79888a20ba732309ec84c9" => :mojave
-    sha256 "f26c2db849a54951a5daddbdecc779ca9a2ef4b066a1fe2dda134ea34436d32b" => :high_sierra
+    sha256 "9c6c2e3fc6864c06f39a2fd1c0ef6f0bb5a70e1b3d1a2acca9dd02640dc9cf8d" => :catalina
+    sha256 "46b6cf9852d3998b0569aae41093268c8564b094b47d39ed8abb3b4c9fcf1ff7" => :mojave
+    sha256 "9aacf48dddca2908a65fe4ee8c071d4ac614cdb15f24d200612415111cf0ff13" => :high_sierra
   end
 
   head do
@@ -45,6 +45,7 @@ class Ntfs3g < Formula
       --exec-prefix=#{prefix}
       --mandir=#{man}
       --with-fuse=external
+      --enable-extra
     ]
 
     system "./autogen.sh" if build.head?
@@ -64,23 +65,22 @@ class Ntfs3g < Formula
         USER_ID=#{Process.uid}
         GROUP_ID=#{Process.gid}
 
-        if [ `/usr/bin/stat -f %u /dev/console` -ne 0 ]; then
-          USER_ID=`/usr/bin/stat -f %u /dev/console`
-          GROUP_ID=`/usr/bin/stat -f %g /dev/console`
+        if [ "$(/usr/bin/stat -f %u /dev/console)" -ne 0 ]; then
+          USER_ID=$(/usr/bin/stat -f %u /dev/console)
+          GROUP_ID=$(/usr/bin/stat -f %g /dev/console)
         fi
 
         #{opt_bin}/ntfs-3g \\
           -o volname="${VOLUME_NAME}" \\
           -o local \\
           -o negative_vncache \\
-          -o auto_xattr \\
           -o auto_cache \\
           -o noatime \\
           -o windows_names \\
-          -o user_xattr \\
+          -o streams_interface=openxattr \\
           -o inherit \\
-          -o uid=$USER_ID \\
-          -o gid=$GROUP_ID \\
+          -o uid="$USER_ID" \\
+          -o gid="$GROUP_ID" \\
           -o allow_other \\
           -o big_writes \\
           "$@" >> /var/log/mount-ntfs-3g.log 2>&1

@@ -18,9 +18,8 @@ class Bc < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "ed" => :build unless OS.mac?
-
   uses_from_macos "bison" => :build
+  uses_from_macos "ed" => :build
   uses_from_macos "texinfo" => :build
   uses_from_macos "flex"
 

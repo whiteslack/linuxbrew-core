@@ -10,16 +10,16 @@ class Allureofthestars < Formula
   head "https://github.com/AllureOfTheStars/Allure.git"
 
   bottle do
-    rebuild 2
-    sha256 "e8e53b6165ef8de7a92048a5768cbbb17d0901a0c4f3fbb34eb57d79eaa8fe4f" => :catalina
-    sha256 "89d961dd52842e4ec8e44d40fe0f5385845792637f836108dabee5cadc91fe9d" => :mojave
-    sha256 "3f8b9d0a2e203c896ae4a0a1a340f5e794f5ff6d26203195669de31ecd116c53" => :high_sierra
-    sha256 "d0b79ff0b741433981f799b2abab234c4e65bf50e6073721a16e05222b552dfc" => :x86_64_linux
+    rebuild 3
+    sha256 "cdcc579293d895e65bdfd907c2ab4d66db89e0389f78df9acaf1ea556ea47c63" => :catalina
+    sha256 "4b18f47a9ade6d260030488503b5bb3021ae523cf3b54960c8092495f0ffd47c" => :mojave
+    sha256 "2a056d85e8a4794158435ca324f7bc81d8dcb098770ec1d3d288dfcc77553c47" => :high_sierra
   end
 
   depends_on "cabal-install" => :build
   depends_on "ghc@8.8" => :build
   depends_on "pkg-config" => :build
+  depends_on "gmp"
   depends_on "sdl2_ttf"
 
   def install

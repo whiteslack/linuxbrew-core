@@ -13,9 +13,11 @@ class Lv < Formula
     sha256 "5aa1bbb834caa980cc77fb6d2b27ab0ffefacb644351e0ff572d9a4f0e78b168" => :x86_64_linux
   end
 
-  depends_on "gzip" unless OS.mac?
-
   uses_from_macos "ncurses"
+
+  on_linux do
+    depends_on "gzip"
+  end
 
   # See https://github.com/Homebrew/homebrew-core/pull/53085
   patch :DATA

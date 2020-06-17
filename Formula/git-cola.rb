@@ -17,6 +17,8 @@ class GitCola < Formula
   depends_on "python@3.8"
   depends_on "rsync" unless OS.mac?
 
+  uses_from_macos "rsync"
+
   def install
     ENV.delete("PYTHONPATH")
     system "make", "PYTHON=#{Formula["python@3.8"].opt_bin}/python3", "prefix=#{prefix}", "install"

@@ -17,6 +17,8 @@ class KubernetesCli < Formula
   depends_on "go" => :build
   depends_on "rsync" => :build unless OS.mac?
 
+  uses_from_macos "rsync" => :build
+
   def install
     ENV["GOPATH"] = buildpath
     os = OS.linux? ? "linux" : "darwin"

@@ -4,16 +4,17 @@ class Istioctl < Formula
   url "https://github.com/istio/istio.git",
       :tag      => "1.6.2",
       :revision => "70f86ede30e826dd18542e95d856255e9780a24f"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fe775223ea6b3744836cb12118afa17aa4b14ccfbc12b031853a0683ee1d5d2f" => :catalina
-    sha256 "fe775223ea6b3744836cb12118afa17aa4b14ccfbc12b031853a0683ee1d5d2f" => :mojave
-    sha256 "fe775223ea6b3744836cb12118afa17aa4b14ccfbc12b031853a0683ee1d5d2f" => :high_sierra
-    sha256 "a35df5dbf67378c47340b7083425b3657b1855bb2ec783499bbe30d191bfaf56" => :x86_64_linux
+    sha256 "6bfe45d629c898f4957d8c73cae1c0ac64c71084d83748933548cde141684b4c" => :catalina
+    sha256 "6bfe45d629c898f4957d8c73cae1c0ac64c71084d83748933548cde141684b4c" => :mojave
+    sha256 "6bfe45d629c898f4957d8c73cae1c0ac64c71084d83748933548cde141684b4c" => :high_sierra
   end
 
   depends_on "go" => :build
+  depends_on "go-bindata" => :build
 
   def install
     ENV["GOPATH"] = buildpath
@@ -27,7 +28,7 @@ class Istioctl < Formula
     srcpath.install buildpath.children
 
     cd srcpath do
-      system "make", "istioctl", "istioctl.completion"
+      system "make", "gen-charts", "istioctl", "istioctl.completion"
       prefix.install_metafiles
       bin.install outpath/"istioctl"
       bash_completion.install outpath/"release/istioctl.bash"

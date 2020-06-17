@@ -21,7 +21,9 @@ class HaskellStack < Formula
 
   uses_from_macos "zlib"
 
-  depends_on "gmp" unless OS.mac?
+  on_linux do
+    depends_on "gmp"
+  end
 
   # Stack requires stack to build itself. Yep.
   resource "bootstrap-stack" do
