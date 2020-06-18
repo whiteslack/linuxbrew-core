@@ -9,6 +9,7 @@ class Seal < Formula
     sha256 "a6220dff48ac029ae26e262ac604267a9df4c36f444878af75864bee18f305c1" => :catalina
     sha256 "2e7ea5ac3e4c7f2771929d610cc2a4c4527d0687e9beb834484a408641dd6ef3" => :mojave
     sha256 "73e34c7c5517f9a57d9f6bfb94ce5902dca5af69bc05b20a8dd6fd5d3d2653dc" => :high_sierra
+    sha256 "949766f001624d5e5f3b6df73a40f0d9992647e8e41ca0a85efce464f585fef4" => :x86_64_linux
   end
 
   depends_on "cmake" => [:build, :test]
