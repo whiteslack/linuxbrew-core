@@ -2,44 +2,37 @@ class SyncGateway < Formula
   desc "Make Couchbase Server a replication endpoint for Couchbase Lite"
   homepage "https://docs.couchbase.com/sync-gateway"
   url "https://github.com/couchbase/sync_gateway.git",
-      :tag      => "2.7.1",
-      :revision => "a08bf70a05fc5b94e62c6aa2d349d3f1e261f1cc"
+      :tag      => "2.7.3",
+      :revision => "33d352f97798e45360155b63c022e8a39485134e"
   head "https://github.com/couchbase/sync_gateway.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ac5dcfffc0199d3ee6e1971765890f288480177437fec0dab20189ddcba3a5c3" => :catalina
-    sha256 "05ff270d6f387c8251ebb9a121642d350505ca8447914303a786bf8b7eafd166" => :mojave
-    sha256 "82751dbdc0c8efa02c3694f9482d9678539414387427a173b0a85eede93c6c6a" => :high_sierra
+    sha256 "885917ee4f3b7f02070b06fbd5d5eabb6bf87d482c4b53155ddc4f3acddc769f" => :catalina
+    sha256 "a3245e0aeebe1eed105b27c998c8f2de56b5bd54a1d85b2178842a1cff58ac79" => :mojave
+    sha256 "6ed26ea71c7fa4dc4d539caa767ffc46fbaa1166e1746b5569aa4782d003e624" => :high_sierra
   end
 
   depends_on "gnupg" => :build
   depends_on "go" => :build
-  depends_on :macos # Due to Python 2
-
-  resource "depot_tools" do
-    url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
-        :revision => "b97d193baafa7343cc869e2b48d3bffec46a0c31"
-  end
+  depends_on "repo" => :build
+  depends_on "python@3.8"
 
   def install
     # Cache the vendored Go dependencies gathered by depot_tools' `repo` command
     repo_cache = buildpath/"repo_cache/#{name}/.repo"
     repo_cache.mkpath
 
-    (buildpath/"depot_tools").install resource("depot_tools")
-    ENV.prepend_path "PATH", buildpath/"depot_tools"
-
     (buildpath/"build").install_symlink repo_cache
     cp Dir["*.sh"], "build"
 
     git_commit = `git rev-parse HEAD`.chomp
     manifest = buildpath/"new-manifest.xml"
-    manifest.write Utils.popen_read "python", "rewrite-manifest.sh",
-                                    "--manifest-url",
-                                    "file://#{buildpath}/manifest/default.xml",
-                                    "--project-name", "sync_gateway",
-                                    "--set-revision", git_commit
+    manifest.write Utils.safe_popen_read "python", "rewrite-manifest.sh",
+                                         "--manifest-url",
+                                         "file://#{buildpath}/manifest/default.xml",
+                                         "--project-name", "sync_gateway",
+                                         "--set-revision", git_commit
     cd "build" do
       mkdir "godeps"
       system "repo", "init", "-u", stable.url, "-m", "manifest/default.xml"
@@ -52,7 +45,7 @@ class SyncGateway < Formula
   end
 
   test do
-    pid = fork { exec "#{bin}/sync_gateway" }
+    pid = fork { exec "#{bin}/sync_gateway_ce" }
     sleep 1
     Process.kill("SIGINT", pid)
     Process.wait(pid)
