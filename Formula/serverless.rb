@@ -3,19 +3,21 @@ require "language/node"
 class Serverless < Formula
   desc "Build applications with serverless architectures"
   homepage "https://serverless.com"
-  url "https://github.com/serverless/serverless/archive/v1.72.0.tar.gz"
-  sha256 "bd00ac97ec68b81c1621d45d6f236d2f3c022f597cf81d7f281c2377d62bfed4"
+  url "https://github.com/serverless/serverless/archive/v1.73.1.tar.gz"
+  sha256 "c659421b197177ba6c250b50038b4c9eb0c26dcb4216442fb6824245547c51b7"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1297141373119832beaee0ba906ea096309d78047c7622fbe10f3b8ec8d865f6" => :catalina
-    sha256 "b6dcde83c58dc681f709634ec50b37b05f98264b43a6c161e0fb8445d9dfdbf6" => :mojave
-    sha256 "063c2dd7f94ea1ac711776f3d0b89e20cca1c9aebb18997fa46ca3a3848ffd87" => :high_sierra
-    sha256 "a9d1b74610e26b26cc6f1a63f43d5aeb0d8a49bc71e9400dde58a496a5067c0b" => :x86_64_linux
+    sha256 "5e387d83787603d2431eadb5ec9677735675fbdefa1ee7e614dbdb5a844151cc" => :catalina
+    sha256 "187756ea8fc97ef0c2c98c0ad63c8e285ac3afd3407e71f3a98db841937de56a" => :mojave
+    sha256 "d3c55a19a3591c355a5c20ef3a247f79aa8ef89baf9af66902704cfd37d144c1" => :high_sierra
   end
 
   depends_on "node"
-  depends_on "python" unless OS.mac?
+
+  on_linux do
+    depends_on "python"
+  end
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)

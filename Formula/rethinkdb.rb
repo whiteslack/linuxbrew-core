@@ -3,14 +3,13 @@ class Rethinkdb < Formula
   homepage "https://rethinkdb.com/"
   url "https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.0.tgz"
   sha256 "bfb0708710595c6762f42e25613adec692cf568201cd61da74c254f49fa9ee4c"
-  revision 1
+  head "https://github.com/rethinkdb/rethinkdb.git", :branch => "next"
 
   bottle do
     cellar :any
-    sha256 "ce3f886f880a43649c486fcc6c467e3ca44f526f06c4abeb7509e949b43b600e" => :catalina
-    sha256 "7ecafe14d01b8289df21dae7cc8f6d6313bd2adb0e690be386d3bb09cf0efae8" => :mojave
-    sha256 "fcec71e74c936790031c212773b91aea4c62fb80c0e25207c1162c3a486bf2da" => :high_sierra
-    sha256 "28cc039c31b7c360f5032048a725ca9067b4c7c16feb1a40c282ca2fbe729cea" => :x86_64_linux
+    sha256 "1c2ef66f6bf7d2efdf55b377032955905186c74a0dacf1306665671931e1159c" => :catalina
+    sha256 "5db706fb3f48f378771f5076d167e3d3dc5441b328e3b194e7337fe7bd7dde97" => :mojave
+    sha256 "7d37fba07988bc8adc4ef0dece038adf443b02d868fdf22d018360fb8958383b" => :high_sierra
   end
 
   depends_on "boost" => :build
@@ -23,6 +22,7 @@ class Rethinkdb < Formula
 
   def install
     args = ["--prefix=#{prefix}"]
+    args += ["--allow-fetch"] if build.head?
 
     # rethinkdb requires that protobuf be linked against libc++
     # but brew's protobuf is sometimes linked against libstdc++

@@ -6,10 +6,10 @@ class Scummvm < Formula
   head "https://github.com/scummvm/scummvm.git"
 
   bottle do
-    sha256 "d07a54cb41ab353a80387858d68934d48455c6986d94550b0c360c0ce0a8ee86" => :catalina
-    sha256 "8cc270e65a0de57d96ba87a974db23dcdac3066d39f80ee691772c8838e0fdb0" => :mojave
-    sha256 "601596e0bd89f8f051c63e61e5ea21f76460027545734ea173361b67faa388c7" => :high_sierra
-    sha256 "2aa6029b81d5c5fb9aabc555c99638a563a11dc2dfec8b2c9b62afc4cebf9ad6" => :x86_64_linux
+    rebuild 1
+    sha256 "2d1de2f1efde7505ec7b06a2dfd90e287d6d816d5082f7a89ae2f44c6c25b9d8" => :catalina
+    sha256 "5b28e8e3d52ce3b1d9a0a172483090a8926c4f9244915b6af5a38b3c02c1eca8" => :mojave
+    sha256 "a31b470f92fa3f75ce56c01c45c4c6c09960b001e6b96e90149e58932e3c4bee" => :high_sierra
   end
 
   depends_on "a52dec"
@@ -27,7 +27,7 @@ class Scummvm < Formula
 
   # Support fluid-synth 2.1
   patch do
-    url "https://sources.debian.org/data/main/s/scummvm/2.1.1+dfsg1-1/debian/patches/git_fluidsynth_update.patch"
+    url "https://sources.debian.org/data/main/s/scummvm/2.1.2+dfsg1-1/debian/patches/git_fluidsynth_update.patch"
     sha256 "4e03d4b685bf38c2367bb669867175bd4b84039a678613bf6e32a34591b382c6"
   end
 

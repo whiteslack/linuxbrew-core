@@ -3,13 +3,13 @@ class Ffmpeg < Formula
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-4.3.tar.xz"
   sha256 "1d0ad06484f44bcb97eba5e93c40bcb893890f9f64aeb43e46cd9bb4cbd6795d"
+  revision 1
   head "https://github.com/FFmpeg/FFmpeg.git"
 
   bottle do
-    sha256 "83498d1894ac1c39843e56278bbab2cb6717cf7c939dee4615f9022d87aa59dc" => :catalina
-    sha256 "70740a4219091f2dd5a229835f2ec95392b767d64e2e7d3c5888dde5e557d5a9" => :mojave
-    sha256 "127f91a9cf3bec041a9d815435d585d428d6264d3a61bd2e0600cd256ba72a58" => :high_sierra
-    sha256 "0213b673962c88ef23282ee54398ab00cfadc6bcbe02a2c32411cb4f6b256b11" => :x86_64_linux
+    sha256 "5dccea5f0d7ff92fc94e8564d8717f59766ee0db5b8df8a60996e27c57ef3dfc" => :catalina
+    sha256 "75b4d5c0639f24f4a49226e7d3d49be35f80ec3680a6d0fdd7d2da4544d366b2" => :mojave
+    sha256 "f4817a0d1cc8675d8785c13a5ea055ff296b241fb1d8a8a1eb301f6a075565b3" => :high_sierra
   end
 
   depends_on "nasm" => :build
@@ -31,6 +31,7 @@ class Ffmpeg < Formula
   depends_on "opencore-amr"
   depends_on "openjpeg"
   depends_on "opus"
+  depends_on "rav1e"
   depends_on "rtmpdump"
   depends_on "rubberband"
   depends_on "sdl2"
@@ -67,6 +68,7 @@ class Ffmpeg < Formula
       --enable-libdav1d
       --enable-libmp3lame
       --enable-libopus
+      --enable-librav1e
       --enable-librubberband
       --enable-libsnappy
       --enable-libsrt
