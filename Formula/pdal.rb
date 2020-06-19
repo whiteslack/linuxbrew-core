@@ -3,12 +3,13 @@ class Pdal < Formula
   homepage "https://www.pdal.io/"
   url "https://github.com/PDAL/PDAL/releases/download/2.1.0/PDAL-2.1.0-src.tar.gz"
   sha256 "c300de7935d52cb96e24bdaceea5d189b1840e88636e6deca1f6dad51f909571"
+  revision 1
   head "https://github.com/PDAL/PDAL.git"
 
   bottle do
-    sha256 "80efce0dcdc05c162474156febe44961f7efd9e58fe234566df2597141e4678b" => :catalina
-    sha256 "ca60deeda7305438f673881f12425ca6cc51f9d8f06bf493581105165181f290" => :mojave
-    sha256 "f2ea432dde7b45ddd71fa79c52960554a2812d1840c9354f5602795bc5d241ca" => :high_sierra
+    sha256 "332feb8e61a019dc8dd130be5b2b0aacf0200bcdc861b547dd270cd96fecd813" => :catalina
+    sha256 "c1b129ee18b0fb9cf67de9a149a9d636d64d7f04d24d25ba5567f755b85cdb03" => :mojave
+    sha256 "cdb1c42f388ed209b9b569c381f3657c88fcf1112aa0ff8d1d98cf8914093eee" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -31,6 +32,7 @@ class Pdal < Formula
                          "-DBUILD_PLUGIN_SQLITE=ON"
 
     system "make", "install"
+    rm_rf "test/unit"
     doc.install "examples", "test"
   end
 

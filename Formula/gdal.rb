@@ -1,20 +1,21 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://www.gdal.org/"
-  url "https://download.osgeo.org/gdal/2.4.4/gdal-2.4.4.tar.xz"
-  sha256 "a383bd3cf555d6e1169666b01b5b3025b2722ed39e834f1b65090f604405dcd8"
-  revision 7
+  url "https://download.osgeo.org/gdal/3.1.0/gdal-3.1.0.tar.xz"
+  sha256 "e754a22242ccbec731aacdb2333b567d4c95b9b02d3ba1ea12f70508d244fcda"
 
   bottle do
-    sha256 "27048486f535fa7951e8658255f3468afc5756116efb8ad4b1a1a84f2ca507fa" => :catalina
-    sha256 "87b01cf50cfe7fbf41e5cc97ccdee96e43196d5d9ef0ced7852c2b62177e1e31" => :mojave
-    sha256 "048f3fa95ef0465b6886a7b87e929a7a2a7d02d16125f65dbacafac9b5eeadb1" => :high_sierra
+    sha256 "0fa8ba696f7997dece5800fa019e886a408c9928b7ca01d2b54314f2d082b992" => :catalina
+    sha256 "fae94bf380adca82e3c4e40fa9c4b71b098dcc7a3af71b8d4bf826e016c581df" => :mojave
+    sha256 "cc012673b87204bd25b8750e4e02c479baed911141a6cc008234334fe964beb8" => :high_sierra
   end
 
   head do
     url "https://github.com/OSGeo/gdal.git"
     depends_on "doxygen" => :build
   end
+
+  depends_on "pkg-config" => :build
 
   depends_on "cfitsio"
   depends_on "epsilon"
@@ -53,12 +54,6 @@ class Gdal < Formula
 
   conflicts_with "cpl", :because => "both install cpl_error.h"
 
-  # Patch for Poppler v0.85 and above
-  patch :p2 do
-    url "https://github.com/OSGeo/gdal/commit/d587c2b0.diff?full_index=1"
-    sha256 "9a6f473751e4e940f499b09fa0113a69c9977ef13f9a619f654142d4388ae568"
-  end
-
   def install
     # Fixes: error: inlining failed in call to always_inline __m128i _mm_shuffle_epi8
     ENV.append_to_cflags "-msse4.1" if ENV["CI"]
@@ -95,7 +90,7 @@ class Gdal < Formula
       "--with-jpeg=#{Formula["jpeg"].opt_prefix}",
       "--with-libjson-c=#{Formula["json-c"].opt_prefix}",
       "--with-libtiff=#{Formula["libtiff"].opt_prefix}",
-      "--with-pg=#{Formula["libpq"].opt_prefix}/bin/pg_config",
+      "--with-pg=yes",
       "--with-png=#{Formula["libpng"].opt_prefix}",
       "--with-spatialite=#{Formula["libspatialite"].opt_prefix}",
       "--with-sqlite3=#{Formula["sqlite"].opt_prefix}",
