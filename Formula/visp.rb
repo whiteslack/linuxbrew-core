@@ -3,12 +3,12 @@ class Visp < Formula
   homepage "https://visp.inria.fr/"
   url "https://gforge.inria.fr/frs/download.php/latestfile/475/visp-3.3.0.tar.gz"
   sha256 "f2ed11f8fee52c89487e6e24ba6a31fa604b326e08fb0f561a22c877ebdb640d"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 "ba28b194717945e8114583256144012b67aefb09f81f3ce4301e0390433a9a57" => :catalina
-    sha256 "57a65ea9d20f282b5ced57f1b0f16fc8f215bd47f1edc0efb62bd47e3648cdac" => :mojave
-    sha256 "c6c1b6b8a0513a735824f2e4ad32f9b45697d99e8ceb573032fdacd3f8648609" => :high_sierra
+    sha256 "29ba40f83638ecb4787d9ada356a75397511c7e4dd7c48b21bd0e52e082a244e" => :catalina
+    sha256 "9be8d5ee91606420f909967cb22143a03030f1f56e460c3a9c710c90e49d0d02" => :mojave
+    sha256 "e50ce7d7ebb651ef5c71336d4c18d87754088f0c0dbbd8c50c9fc30803b742c9" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -26,6 +26,16 @@ class Visp < Formula
     ENV.cxx11
 
     sdk = MacOS::CLT.installed? ? "" : MacOS.sdk_path
+
+    # Avoid superenv shim references
+    inreplace "CMakeLists.txt" do |s|
+      s.sub! /CMake build tool:"\s+\${CMAKE_BUILD_TOOL}/,
+             "CMake build tool:            gmake\""
+      s.sub! /C\+\+ Compiler:"\s+\${VISP_COMPILER_STR}/,
+             "C++ Compiler:                clang++\""
+      s.sub! /C Compiler:"\s+\${CMAKE_C_COMPILER}/,
+             "C Compiler:                  clang\""
+    end
 
     system "cmake", ".", "-DBUILD_DEMOS=OFF",
                          "-DBUILD_EXAMPLES=OFF",
