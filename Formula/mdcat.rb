@@ -1,27 +1,23 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https://github.com/lunaryorn/mdcat"
-  url "https://github.com/lunaryorn/mdcat/archive/mdcat-0.18.4.tar.gz"
-  sha256 "ecb4085e7687376d87fb2564ee73c2cfe4566787533731b2d81b1973c78f1aa8"
+  url "https://github.com/lunaryorn/mdcat/archive/mdcat-0.19.0.tar.gz"
+  sha256 "2e50dbb8f80b74dbed1cc69c731d8c782df35f2e968fc833b11640272d00f3cf"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a91f25b70cfc0b67f6e08f3eb5afb60feecd478531935429c72afa7d75e80e33" => :catalina
-    sha256 "52e129aa30ad8cfaf78560ff4a80905b479569ba49f60c2bc45cac8660b17e36" => :mojave
-    sha256 "ee40526c09883d4e0c4eda86ca22f6850da5cc9393c1498e1e5f4a30756b5e52" => :high_sierra
-    sha256 "62eb93d3cbac9f3f39eed6721e66ccc8dbc2ca9028ac0897793fa970406e07bd" => :x86_64_linux
+    sha256 "dcddb07828db6973b4badb8522a5733cde29114b3cdaa16bb7b676ccdf7faf48" => :catalina
+    sha256 "aac82a12f878e80161925f6a95238a85d853040c9273e53fcaffe534843265cf" => :mojave
+    sha256 "143bd89cf97a6357f6b29241f8b23a5bf71f3e0144d227196d91fe4ca486fbc6" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
-  unless OS.mac?
+
+  on_linux do
     depends_on "llvm" => :build
     depends_on "pkg-config" => :build
     depends_on "openssl@1.1"
-  end
-
-  on_linux do
-    depends_on "pkg-config" => :build
   end
 
   def install
