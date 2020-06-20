@@ -10,6 +10,7 @@ class Calicoctl < Formula
     sha256 "8de790a124ab604ed37a27516adc4037fd556b418798e7bcb0fb71658520c831" => :catalina
     sha256 "cc705142d894a3eb3e0385b0dfb4b892214a7655c08ef76751bc3907b9adbed8" => :mojave
     sha256 "d46e338642a4c1056cd4b16e10fd80415c8519364072c303f4b3a2c36946ccd7" => :high_sierra
+    sha256 "6552212ae8e478536f93865e1c52794fcdcfc99856ead7bb997045370acb4f96" => :x86_64_linux
   end
 
   depends_on "go" => :build
