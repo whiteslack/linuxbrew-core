@@ -9,6 +9,7 @@ class Alpine < Formula
     sha256 "3e775bad34dc730ad9c15e3df30e753842ee542695172362cc648ead05e4d151" => :catalina
     sha256 "5492f86a14779b434ebb069bcef8ae551c93dc8835106d6144699e54191de3bd" => :mojave
     sha256 "f7b9f13b015de8e08ec73b1e4784abc64e5cf01785ef722ffa3d80441248a640" => :high_sierra
+    sha256 "8e85aed88d88baccdd32a18ba82bb4a926a1d180ff45a4728bb5052b84fef689" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
