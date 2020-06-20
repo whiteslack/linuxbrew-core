@@ -8,6 +8,7 @@ class DesktopFileUtils < Formula
     sha256 "44cf2d14136f1cb8db3f8718c91191d90a3ca0196f7407d69311d08318807268" => :catalina
     sha256 "261a93f32847cacd90116ab52adb2390fc2c3f8a6dd494c8c1cd4b363f67e7c5" => :mojave
     sha256 "5d4fa139c491db6e82bf48c1325c202fe14c82db1450b8e1bf6ea9dbfae5663f" => :high_sierra
+    sha256 "4bb5e40066b9bac14dde657599564949cd7e92c7b89e6e2dba5db5308c5719d5" => :x86_64_linux
   end
 
   depends_on "meson" => :build
