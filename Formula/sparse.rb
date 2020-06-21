@@ -9,6 +9,7 @@ class Sparse < Formula
     sha256 "d2ef22c9e1333a70053230705caff9baf80075c4039a485e3a778abc0ca3b415" => :catalina
     sha256 "cbd74528c1f37f44079f866fa8da5e6571929e35afd4102244cbfa103e5f2950" => :mojave
     sha256 "c81ad2c94b22452119bcf5c6347ef6426ee245afbd750bf0c0f6c35f3c8c6b75" => :high_sierra
+    sha256 "d4e47a2015df16335510520873c4600cda7426acc133db509bb28a26773bca4c" => :x86_64_linux
   end
 
   depends_on "gcc" if DevelopmentTools.clang_build_version < 1100
