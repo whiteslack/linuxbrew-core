@@ -19,6 +19,10 @@ class GlibNetworking < Formula
   depends_on "gsettings-desktop-schemas"
   depends_on "libidn" unless OS.mac?
 
+  on_linux do
+    depends_on "libidn"
+  end
+
   link_overwrite "lib/gio/modules"
 
   def install

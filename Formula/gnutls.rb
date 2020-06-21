@@ -24,6 +24,10 @@ class Gnutls < Formula
   depends_on "unbound"
   depends_on "autogen" unless OS.mac?
 
+  on_linux do
+    depends_on "autogen" => :build
+  end
+
   def install
     args = %W[
       --disable-dependency-tracking

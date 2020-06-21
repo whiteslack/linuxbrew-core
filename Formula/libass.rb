@@ -30,6 +30,10 @@ class Libass < Formula
   depends_on "harfbuzz"
   depends_on "fontconfig" unless OS.mac?
 
+  on_linux do
+    depends_on "fontconfig"
+  end
+
   def install
     system "autoreconf", "-i" if build.head?
     system "./configure", "--disable-dependency-tracking",

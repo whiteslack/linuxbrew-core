@@ -29,6 +29,10 @@ class Gegl < Formula
   depends_on "libpng"
   depends_on "cairo" unless OS.mac?
 
+  on_linux do
+    depends_on "cairo"
+  end
+
   conflicts_with "coreutils", :because => "both install `gcut` binaries"
 
   def install

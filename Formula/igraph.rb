@@ -18,6 +18,10 @@ class Igraph < Formula
 
   uses_from_macos "libxml2"
 
+  on_linux do
+    depends_on "openblas"
+  end
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
