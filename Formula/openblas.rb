@@ -10,6 +10,7 @@ class Openblas < Formula
     sha256 "78adf725595ca6ea98e97cadf2f13cd49bf7abe7fe1e57f9d8cc47f1f0312d2f" => :catalina
     sha256 "ae33553b0f7745b167eac0fbd2e93dc1ac010c1bb5a57d893e5e5bd84b56ca88" => :mojave
     sha256 "7b54bb60994215c561da00595aa4c2f049869b9e0a1d4b3c88d64f95ae47ed9f" => :high_sierra
+    sha256 "b693e9f47af8fa7f96ba79903c3f957acaccca5ab4552760ba15ed1ac96d27df" => :x86_64_linux
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"
