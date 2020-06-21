@@ -12,6 +12,7 @@ class Genometools < Formula
     sha256 "2c49e8ae31d2e3d26e90c174bb4fb1e8e007f36bd9b9508220ff321ca3520d05" => :catalina
     sha256 "c6509a3719aaa5e946f2e395c1ddcbe73c36ca8e1e965edb76136b00a3565c71" => :mojave
     sha256 "89448e5e80e60f6d62ad7cc30892ae6d67fbc7af83e8ee7ce71e232884fe6721" => :high_sierra
+    sha256 "498ffb5e06a3146339e6323c4a362bc8ae9b6b4ce1ca178d8486c84b60b0c477" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
