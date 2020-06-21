@@ -11,6 +11,7 @@ class Ghq < Formula
     sha256 "0a7607973ad62e4351d8203a656327ae133cada0a4d548788e47b5feab888791" => :catalina
     sha256 "0ab21fea8eef3b7c44937e6d55552a8430c5395a5fee6a29eae4bcafd4050061" => :mojave
     sha256 "29c7c51bee87f14e3b0a875b204ca0c09195a8459d9e11ae4f174fd837bee891" => :high_sierra
+    sha256 "7c1a60d0626978b2caedfd00778b5f94c275af237f13af887e0e6b3fc1a45d34" => :x86_64_linux
   end
 
   depends_on "go" => :build
