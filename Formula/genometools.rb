@@ -4,14 +4,14 @@ class Genometools < Formula
   # genometools does not have source code on par with their binary dist on their website
   url "https://github.com/genometools/genometools/archive/v1.6.1.tar.gz"
   sha256 "528ca143a7f1d42af8614d60ea1e5518012913a23526d82e434f0dad2e2d863f"
+  revision 1
   head "https://github.com/genometools/genometools.git"
 
   bottle do
     cellar :any
-    sha256 "ad70e641acbcb15ab36a397118153a9df2cdc35df17e3f85a8ed2654ee66d6f7" => :catalina
-    sha256 "b0706d03817d379cd234ac98263d9c9db8bd746d2f58e080a1e596856be84c36" => :mojave
-    sha256 "aaba0d92269fe7da4195d3cf9861692b2437cfe6e1dc3fc04a66ab04bfd4ee95" => :high_sierra
-    sha256 "d66e94274aa7b85b99c0275fecc80f1c125a11a16ee2f6edf46e6438da76f60c" => :x86_64_linux
+    sha256 "2c49e8ae31d2e3d26e90c174bb4fb1e8e007f36bd9b9508220ff321ca3520d05" => :catalina
+    sha256 "c6509a3719aaa5e946f2e395c1ddcbe73c36ca8e1e965edb76136b00a3565c71" => :mojave
+    sha256 "89448e5e80e60f6d62ad7cc30892ae6d67fbc7af83e8ee7ce71e232884fe6721" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

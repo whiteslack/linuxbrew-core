@@ -1,14 +1,13 @@
 class DesktopFileUtils < Formula
   desc "Command-line utilities for working with desktop entries"
   homepage "https://wiki.freedesktop.org/www/Software/desktop-file-utils/"
-  url "https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-0.25.tar.xz"
-  sha256 "438199400333300fb8a14033d7c2f24ce3cf2e300312da9ff0b3337e35d06b8e"
+  url "https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-0.26.tar.xz"
+  sha256 "b26dbde79ea72c8c84fb7f9d870ffd857381d049a86d25e0038c4cef4c747309"
 
   bottle do
-    sha256 "44cf2d14136f1cb8db3f8718c91191d90a3ca0196f7407d69311d08318807268" => :catalina
-    sha256 "261a93f32847cacd90116ab52adb2390fc2c3f8a6dd494c8c1cd4b363f67e7c5" => :mojave
-    sha256 "5d4fa139c491db6e82bf48c1325c202fe14c82db1450b8e1bf6ea9dbfae5663f" => :high_sierra
-    sha256 "4bb5e40066b9bac14dde657599564949cd7e92c7b89e6e2dba5db5308c5719d5" => :x86_64_linux
+    sha256 "fba87a1749b744c74510df1a49ed7627615ab10a2398922eac1389f4e35a5cb8" => :catalina
+    sha256 "2e6548daf5b3fd3f038205986130d39390fd4b22955ed07ad06f6378d5e6e5f2" => :mojave
+    sha256 "12e7bfe0f9a579f826f7c74f5a67d41ed4dee469f1cf0f3b4be89ef9e884996e" => :high_sierra
   end
 
   depends_on "meson" => :build
