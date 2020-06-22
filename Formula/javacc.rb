@@ -9,6 +9,7 @@ class Javacc < Formula
     sha256 "437cd3787126ac8a517e0f293396a3c0a1aff532f189872cf8d8729e47aae414" => :catalina
     sha256 "c24483964d08486d08e3391f1d0229920d22444b93d9ba00665e917446990a0d" => :mojave
     sha256 "f648f62353a5e42238f7d3422debd34c8c33a529e8b3cee6a9a13f97f68719ce" => :high_sierra
+    sha256 "e6591e18669616b13d259f80c5f75af3a92236fd486438e82a274bc9e024792f" => :x86_64_linux
   end
 
   depends_on "ant" => :build
