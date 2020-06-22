@@ -1,15 +1,13 @@
 class Graphene < Formula
   desc "Thin layer of graphic data types"
   homepage "https://ebassi.github.io/graphene/"
-  url "https://download.gnome.org/sources/graphene/1.10/graphene-1.10.0.tar.xz"
-  sha256 "406d97f51dd4ca61e91f84666a00c3e976d3e667cd248b76d92fdb35ce876499"
-  revision 2
+  url "https://download.gnome.org/sources/graphene/1.10/graphene-1.10.2.tar.xz"
+  sha256 "e97de8208f1aac4f913d4fa71ab73a7034e807186feb2abe55876e51c425a7f6"
 
   bottle do
-    sha256 "311714c109289ca8e7482597caaec84560c04a09bb72eee16321e59245b0b7d1" => :catalina
-    sha256 "709d0e1fd062908d9ffb2a3e827090fe293b1483c91ae147d46b28d5b0913e4b" => :mojave
-    sha256 "314c03ef076f4e2c07ac9213790e19601f83a069b86970c4643a5e340c946d90" => :high_sierra
-    sha256 "c80d53748bd3538395b71c49e5b9abe9966a400cf459f5a3b0c503bc8f952803" => :x86_64_linux
+    sha256 "d8519d2811ee796969121cd0b087fb7a5e96c2952c69bb2dfe206f3efc299e31" => :catalina
+    sha256 "0e7e238034cfcd390b8bd0e49bd6ba3c23dcdbff7c9a1cea5e626b34a3381acb" => :mojave
+    sha256 "7bcd5ab83e1509ddeec6b710ba2a69c99bb92438344694423b1c886346fd44c2" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build

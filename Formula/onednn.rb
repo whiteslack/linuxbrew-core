@@ -1,15 +1,15 @@
-class MklDnn < Formula
-  desc "Intel Math Kernel Library for Deep Neural Networks"
-  homepage "https://01.org/mkl-dnn"
-  url "https://github.com/intel/mkl-dnn/archive/v1.4.tar.gz"
-  sha256 "54737bcb4dc1961d32ee75da3ecc529fa48198f8b2ca863a079e19a9c4adb70f"
+class Onednn < Formula
+  desc "Basic building blocks for deep learning applications"
+  homepage "https://01.org/oneDNN"
+  url "https://github.com/oneapi-src/onednn/archive/v1.5.tar.gz"
+  sha256 "2aacc00129418185e0bc1269d3ef82f93f08de2c336932989c0c360279129edb"
+  head "https://github.com/oneapi-src/onednn.git"
 
   bottle do
     cellar :any
-    sha256 "28d3e88f803aecac82aaf70c6fb5f9ec5372ce68446bb71cd38e75edc5fa97b8" => :catalina
-    sha256 "70128d845c6d9ca4c9d2798bed1c2f5ed19cb73e4da841e4f7d8e06462eca5fb" => :mojave
-    sha256 "c3a25f4b25ff821a136cf9c7eee62e38185314a287bc9fcff2596b7c1f31dcfc" => :high_sierra
-    sha256 "0396b701a13789370aae86e02ca78d88a3858b512f2a45855cb3672bc4c00a70" => :x86_64_linux
+    sha256 "6c0397633ae7e439d40026bff8593cdf90385b3f08e2a5286c9dbb1684e16097" => :catalina
+    sha256 "179cc20a24a1181e27ecacbdc2ea43f8ebf4575ab798dca288fa32f842c3fbaf" => :mojave
+    sha256 "6a22a61f6c15c14487513dc882c1f762036131a15cf4b2b743bb1590e3f207f3" => :high_sierra
   end
 
   depends_on "cmake" => :build
