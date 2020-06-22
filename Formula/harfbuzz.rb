@@ -9,6 +9,7 @@ class Harfbuzz < Formula
     sha256 "895c050d4c7cf989e3fd212e88ab904db5d91900b3e7455ff2f026574923042b" => :catalina
     sha256 "2e8462507d2501793c335f4c7aff91dd8d2e38beb060fc416af7d9bf577158a9" => :mojave
     sha256 "9ca4eaac80b2db11439e865f977d6b7b330b2bd5ca8f558e23be49acda67b23e" => :high_sierra
+    sha256 "a00d74acb32149639beba6fab99ae0bb1d19966ea7c12e65a618996cde986f8f" => :x86_64_linux
   end
 
   head do
