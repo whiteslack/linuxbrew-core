@@ -9,6 +9,7 @@ class Tnftp < Formula
     sha256 "92c012e712577f8241e239849d4b73dd5dba36a74b6bd66db6b834488a8d82cf" => :catalina
     sha256 "54e3a99702280bcc89879a9f520441113686869981ec534fa74db2df3fa7b774" => :mojave
     sha256 "ba323276cf1be330ad3fccab6cd4339e11bb67428ead33128b809b7fdfd7bf80" => :high_sierra
+    sha256 "925083cf63f151a7f217b39e8e1f182c59c809f28ed393cc1adbdd326a5245e5" => :x86_64_linux
   end
 
   conflicts_with "inetutils", :because => "both install `ftp' binaries"
