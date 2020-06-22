@@ -10,6 +10,7 @@ class GitExtras < Formula
     sha256 "9c3bdaa055a224b1c01f2800f22c37dc67dcc906e5be8cbd7a545d3e20772992" => :catalina
     sha256 "9c3bdaa055a224b1c01f2800f22c37dc67dcc906e5be8cbd7a545d3e20772992" => :mojave
     sha256 "9c3bdaa055a224b1c01f2800f22c37dc67dcc906e5be8cbd7a545d3e20772992" => :high_sierra
+    sha256 "9ec8d9f5168d97f463ec30a5ccbcec0406defa98fd6a65a6e357247e5af0d7c8" => :x86_64_linux
   end
 
   depends_on "bsdmainutils" => :build unless OS.mac?
