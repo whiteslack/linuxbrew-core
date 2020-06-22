@@ -1,41 +1,25 @@
 class Tnftp < Formula
   desc "NetBSD's FTP client (built from macOS Sierra sources)"
   homepage "https://opensource.apple.com/"
-  url "https://opensource.apple.com/tarballs/lukemftp/lukemftp-16.tar.gz"
-  version "20070806"
-  sha256 "ba35a8e3c2e524e5772e729f592ac0978f9027da2433753736e1eb1f1351ae9d"
+  url "https://ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20151004.tar.gz"
+  sha256 "c94a8a49d3f4aec1965feea831d4d5bf6f90c65fd8381ee0863d11a5029a43a0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d64ad33eea88bd1b7f061c0eec784d259183d60376d0e5e4dbf3d07aef49ff74" => :catalina
-    sha256 "286b8f6bfb0217e88c81305e28eb32aaa78c3d0528518372191c8364c080f351" => :mojave
-    sha256 "d10b32070661a883375a361016f73c3be47f9702be5fa902ca491d3f12ed8022" => :high_sierra
-    sha256 "8aca7a23ac918f7a69b13df67452420fb711e320cc57743cefd15134516da1ab" => :sierra
-    sha256 "fdaf7c1ab1fcb48226a9846452b352e4da302ac6aca61a74a67f97b8bb21c942" => :el_capitan
+    sha256 "92c012e712577f8241e239849d4b73dd5dba36a74b6bd66db6b834488a8d82cf" => :catalina
+    sha256 "54e3a99702280bcc89879a9f520441113686869981ec534fa74db2df3fa7b774" => :mojave
+    sha256 "ba323276cf1be330ad3fccab6cd4339e11bb67428ead33128b809b7fdfd7bf80" => :high_sierra
   end
-
-  depends_on :xcode => :build if OS.mac?
 
   conflicts_with "inetutils", :because => "both install `ftp' binaries"
 
   def install
-    # Trying to use Apple's pre-supplied Makefile resulted
-    # in headaches... they have made the build process
-    # specifically for installing to /usr/bin and so it
-    # just doesn't play well with homebrew.
+    system "./configure", "--prefix=#{prefix}"
+    system "make", "all"
 
-    # so just build straight from ftp's own sources
-    # from the extracted 20070806 tarball which have
-    # already been patched
-    cd "tnftp" do
-      system "./configure"
-      system "make", "all"
-      system "strip", "-x", "src/ftp" # this is done in Apple's `post-install` target
-
-      bin.install "src/ftp"
-      man1.install "src/ftp.1"
-      prefix.install_metafiles
-    end
+    bin.install "src/tnftp" => "ftp"
+    man1.install "src/ftp.1"
+    prefix.install_metafiles
   end
 
   test do

@@ -1,15 +1,14 @@
 class Check < Formula
   desc "C unit testing framework"
   homepage "https://libcheck.github.io/check/"
-  url "https://github.com/libcheck/check/releases/download/0.14.0/check-0.14.0.tar.gz"
-  sha256 "bd0f0ca1be65b70238b32f8e9fe5d36dc2fbf7a759b7edf28e75323a7d74f30b"
+  url "https://github.com/libcheck/check/releases/download/0.15.0/check-0.15.0.tar.gz"
+  sha256 "aea2e3c68fa6e1e92378e744b1c0db350ccda4b6bd0d19530d0ae185b3d1ac60"
 
   bottle do
     cellar :any
-    sha256 "c6adc313137a97331bebce862758d1235f590c37bfc855920f953edf858c8d85" => :catalina
-    sha256 "244b4b72dfed2d2950e3f3183e8d3a1207fef62470643097402dbf34b5223303" => :mojave
-    sha256 "b61bb914f053c31a8dcb86394d10d3e3b77b2d71ebe2c4f21585f05f15594d8e" => :high_sierra
-    sha256 "a70d4cd0cb5ce7dfa792fc10109cf64211fe0cc61853a2861eb7c8ccf69b73b4" => :x86_64_linux
+    sha256 "dbc7dd0d84f86a9ad3813a4ad45b076903120f0e3d0cb949c46f2dfc448e7d3c" => :catalina
+    sha256 "9820eed7640c7e834672ea0a378b37ebc8825b0513de1b06b6321eb51c799686" => :mojave
+    sha256 "f1f7a1f81a08235f922124a0e833fd9862e9e53931c5113ad543b42c4636a2b6" => :high_sierra
   end
 
   on_linux do

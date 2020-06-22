@@ -3,15 +3,14 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://github.com/iterative/dvc/archive/0.94.1.tar.gz"
-  sha256 "a884a3e26891ef164ab7d75b297edcef8bcf894a6df945d76325085a5f17f953"
+  url "https://github.com/iterative/dvc/archive/1.0.0.tar.gz"
+  sha256 "d143d7adc00b190be60a161687a03efc1b98b14eecd023d1287640dd050277e6"
 
   bottle do
     cellar :any
-    sha256 "f80e75d3974cb0f1afa9282fda2c3a9bead3235cd5461c8dcd4ceabbba289c19" => :catalina
-    sha256 "ff0d51afdb72437b6c0744a51feaac25e05344be49898207b87c997d50ecc4e3" => :mojave
-    sha256 "6b38a51229cfdda828be38efb9477e89302bcffe9bf530b77a9b5c874c652042" => :high_sierra
-    sha256 "8620b222e6d9fa2bc1f9633f837f9bf24ac1fcf2bdba5d435da9daf4ceb6e83c" => :x86_64_linux
+    sha256 "35c8b4190683830ef67d5fbdd4598960b81dfa082c9e2626c9f1c679cae102fb" => :catalina
+    sha256 "2ce4aaf16afdbe94dd7d876a508e88baeb4fe7e33fdb1734d501acc293d90939" => :mojave
+    sha256 "7b536337bf167065d631e55cbe10cc7a22db2c9631d3a4bc22d97198ae944a6e" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -49,11 +48,11 @@ class Dvc < Formula
 
     venv.pip_install_and_link buildpath
 
-    bash_completion.install "scripts/completion/dvc.bash" => "dvc"
-    zsh_completion.install "scripts/completion/dvc.zsh"
+    (bash_completion/"dvc").write `#{bin}/dvc completion -s bash`
+    (zsh_completion/"_dvc").write `#{bin}/dvc completion -s zsh`
   end
 
   test do
-    system "#{bin}/dvc", "--version"
+    system "#{bin}/dvc", "version"
   end
 end
