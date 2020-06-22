@@ -21,6 +21,7 @@ class Perkeep < Formula
     sha256 "36f18ad54a3e656ac5da55fc438636aac922e107ad1082e0dad7353626f0db84" => :catalina
     sha256 "51f41c16b3c4ea80d6a77c5badf28dca0ec323bd5aa2f1f90e855ce568b1c8ca" => :mojave
     sha256 "b188c23945a51d253dc6c4435afaa509a2ddaf151124ef1f08a1186611041c92" => :high_sierra
+    sha256 "898a24470e101148d7b96ec5521cab6a1cb3ad051f251f1b21e0fb2b6113df4f" => :x86_64_linux
   end
 
   head do
