@@ -10,6 +10,7 @@ class Onednn < Formula
     sha256 "6c0397633ae7e439d40026bff8593cdf90385b3f08e2a5286c9dbb1684e16097" => :catalina
     sha256 "179cc20a24a1181e27ecacbdc2ea43f8ebf4575ab798dca288fa32f842c3fbaf" => :mojave
     sha256 "6a22a61f6c15c14487513dc882c1f762036131a15cf4b2b743bb1590e3f207f3" => :high_sierra
+    sha256 "04fdb4ac676485411e0ded983a6c37bae780d4851e17e7c6446c7ad4459406da" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
