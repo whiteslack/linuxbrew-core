@@ -1,17 +1,16 @@
 class Rsync < Formula
   desc "Utility that provides fast incremental file transfer"
   homepage "https://rsync.samba.org/"
-  url "https://rsync.samba.org/ftp/rsync/rsync-3.2.0.tar.gz"
-  mirror "https://mirrors.kernel.org/gentoo/distfiles/rsync-3.2.0.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-3.2.0.tar.gz"
-  sha256 "90127fdfb1a0c5fa655f2577e5495a40907903ac98f346f225f867141424fa25"
+  url "https://rsync.samba.org/ftp/rsync/rsync-3.2.1.tar.gz"
+  mirror "https://mirrors.kernel.org/gentoo/distfiles/rsync-3.2.1.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-3.2.1.tar.gz"
+  sha256 "95f2dd62979b500a99b34c1a6453a0787ada0330e4bec7fcffad37b9062d58d3"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0fe5b44bca80ba7fa3add41a736725a7f86fc60791157de5ec89dc93597dff09" => :catalina
-    sha256 "bba164a8807192941ff3e67e9c85edbe55359a482daa6841d5071dadf353448d" => :mojave
-    sha256 "457f95da0f300bfa4e18727afa6aa5d8487b699aabed8caa73e82c9bdf19e293" => :high_sierra
-    sha256 "a14bd2ca03ce1d2484914edd9551e5312ce7000e4d1bce6792288a33576c3540" => :x86_64_linux
+    sha256 "21895f23aed9113a620917e2eb1245a0b0391a5ac60c015961244a32d87af9b5" => :catalina
+    sha256 "be472ad40b805c49164e72f8afaf08de36687431879549d107c8e9e8dc550ddc" => :mojave
+    sha256 "6cc76004fca133f99d8eb7818d827ea5ac7fac6485bade98d9b7a3b0e3443fd3" => :high_sierra
   end
 
   depends_on "lz4"
@@ -23,11 +22,11 @@ class Rsync < Formula
   uses_from_macos "zlib"
 
   # hfs-compression.diff has been marked by upstream as broken since 3.1.3
-  # and has not been reported fixed as of 3.2.0
+  # and has not been reported fixed as of 3.2.1
   patch do
-    url "https://download.samba.org/pub/rsync/src/rsync-patches-3.2.0.tar.gz"
-    mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-patches-3.2.0.tar.gz"
-    sha256 "bad70e6caad30ad12f0333529911b0f9c63f2ed096d6d649c2db2f6d9eec6e58"
+    url "https://download.samba.org/pub/rsync/src/rsync-patches-3.2.1.tar.gz"
+    mirror "https://www.mirrorservice.org/sites/rsync.samba.org/rsync-patches-3.2.1.tar.gz"
+    sha256 "6e0233a3c2381bff36b91d791d0c16a9c362856c6baf70dbaa1c43049992e336"
     apply "patches/fileflags.diff",
           "patches/crtimes.diff"
   end
@@ -45,16 +44,6 @@ class Rsync < Formula
     # SIMD code throws ICE or is outright unsupported due to lack of support for
     # function multiversioning on older verions of macOS
     args << "--disable-simd" if MacOS.version < :catalina
-
-    # Fix assembly to build correctly on macOS. Issue already resolved upstream,
-    # but source file has already been modified heavily since release, so applying
-    # upstream patches would be cumbersome. Remove on next release.
-    inreplace "lib/md5-asm-x86_64.s" do |s|
-      s.gsub! ".type md5_process_asm,@function\n", ""
-      s.gsub! ".L_md5_process_asm_end:\n" \
-              ".size md5_process_asm,.L_md5_process_asm_end-md5_process_asm\n",
-              ""
-    end
 
     system "./configure", *args
     system "make"

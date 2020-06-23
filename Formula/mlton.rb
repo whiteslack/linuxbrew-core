@@ -4,25 +4,26 @@ class Mlton < Formula
   url "https://downloads.sourceforge.net/project/mlton/mlton/20180207/mlton-20180207.src.tgz"
   version "20180207"
   sha256 "872cd98da3db720cbe05f673eaa1776d020d828713753f18fa5dd6a268195fef"
+  revision 1
   head "https://github.com/MLton/mlton.git"
 
   bottle do
     cellar :any
-    sha256 "9697202bdf505babc899053dfe2cf2377c9062ce97c3f38dc99754ac48fb4c0e" => :mojave
-    sha256 "c3712458c252eba59c3b370f99662cc02e06f6aad3b5e0bb5abe6980541bac9c" => :high_sierra
-    sha256 "7605c1540d4449fdcda1802ee31dd891dc3d197081747744b575300bebe9000c" => :sierra
-    sha256 "7182b0b044b789e03f99577dc993e0cb9737b9c175dd17815018fa777d0f4214" => :el_capitan
-    sha256 "7dc9bce7607cd50b2093e1e7e7298b459cb75c921943dfbcabb830bf99e2e55a" => :x86_64_linux
+    sha256 "e4d9e5fec0e55d60bdc81cd6ffc97183ba8cd5c66c78fedcaa0a4272d582144c" => :catalina
+    sha256 "2749da8835666e447d6b8ab53046efe6ae8dbc9d85c2183c1fd69138a3988e91" => :mojave
+    sha256 "8a759cb940cabd8f547da4eb0d408b466c2afcea6e2ecf76691616885583cca9" => :high_sierra
   end
 
   depends_on "gmp"
 
   # The corresponding upstream binary release used to bootstrap.
   resource "bootstrap" do
-    if OS.mac?
+    on_macos do
       url "https://downloads.sourceforge.net/project/mlton/mlton/20180207/mlton-20180207-1.amd64-darwin.gmp-static.tgz"
       sha256 "bb2d982ef97d6ef4efe078d23a09baf3e52f6fd6c8f1a60016e1624438f487b3"
-    elsif OS.linux?
+    end
+
+    on_linux do
       url "https://downloads.sourceforge.net/project/mlton/mlton/20180207/mlton-20180207-1.amd64-linux.tgz"
       sha256 "8e4abdb9f3ef81c01b989a66734dca2a7f4189c55673a1c8bbad54e7cb299838"
     end
@@ -33,7 +34,7 @@ class Mlton < Formula
     bootstrap = buildpath/"bootstrap"
     resource("bootstrap").stage do
       args = %W[
-        WITH_GMP=#{Formula["gmp"].opt_prefix}
+        WITH_GMP_DIR=#{Formula["gmp"].opt_prefix}
         PREFIX=#{bootstrap}
         MAN_PREFIX_EXTRA=/share
       ]
@@ -44,7 +45,7 @@ class Mlton < Formula
     # Support parallel builds (https://github.com/MLton/mlton/issues/132)
     ENV.deparallelize
     args = %W[
-      WITH_GMP=#{Formula["gmp"].opt_prefix}
+      WITH_GMP_DIR=#{Formula["gmp"].opt_prefix}
       DESTDIR=
       PREFIX=#{prefix}
       MAN_PREFIX_EXTRA=/share

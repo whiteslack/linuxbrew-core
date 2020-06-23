@@ -3,15 +3,14 @@ require "language/node"
 class Eslint < Formula
   desc "AST-based pattern checker for JavaScript"
   homepage "https://eslint.org"
-  url "https://registry.npmjs.org/eslint/-/eslint-7.3.0.tgz"
-  sha256 "e042bdd489134e260e65a5a454cdb69fd4a0a422692f1ab188d52f3f9c494f4f"
+  url "https://registry.npmjs.org/eslint/-/eslint-7.3.1.tgz"
+  sha256 "6e8b7d945b7378e444d983da4ff7b867f3f1eb849f46f0cdf632517db93758b7"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5fbd1403538425756c749e802c15fc1e0451a3cbaf6909d2dbe0a877eb09ff09" => :catalina
-    sha256 "9b3c4b0553e417832882e0e3714f39c655a650b999a977708885cd209cc33f30" => :mojave
-    sha256 "a539ceece09a404ccf42d2c4c435e5e57a94f75d9eb075ddb61fb62d389718f8" => :high_sierra
-    sha256 "c7feae27a5332f3fdc71b806d47e46c5e049d87c43da8ddc5165cb0c0f1d6786" => :x86_64_linux
+    sha256 "bfc5722e476c25133342dcf5dd32db3446f76abf2218b1ecfb9451aa81a130f2" => :catalina
+    sha256 "80ad8022413a2283c06d986ec73ba60c1b6fa8cc59735ea8b3a05226922a83e6" => :mojave
+    sha256 "f0d2132b186ab9255a67a47fc2c5f6ba116f680210313f5356aea6c3a91827aa" => :high_sierra
   end
 
   depends_on "node"
