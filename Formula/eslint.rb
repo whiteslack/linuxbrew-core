@@ -11,6 +11,7 @@ class Eslint < Formula
     sha256 "bfc5722e476c25133342dcf5dd32db3446f76abf2218b1ecfb9451aa81a130f2" => :catalina
     sha256 "80ad8022413a2283c06d986ec73ba60c1b6fa8cc59735ea8b3a05226922a83e6" => :mojave
     sha256 "f0d2132b186ab9255a67a47fc2c5f6ba116f680210313f5356aea6c3a91827aa" => :high_sierra
+    sha256 "addefe5d2d21bcc56d8a0ca49a5c250f2b7a9eb33724d5cd41509a2bff82333e" => :x86_64_linux
   end
 
   depends_on "node"
