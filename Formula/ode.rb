@@ -11,6 +11,7 @@ class Ode < Formula
     sha256 "4bddeed55b5f77a87a6719a804e18421ede97a40350038aef4496c1d8d95a77c" => :catalina
     sha256 "430c17a4551ea6c7d4473d5344dc7b0c3951cce4cf8ce099edcfb5c88424fd67" => :mojave
     sha256 "87666bd9ae5c66430a48c0d8fd805fc3b8aff01a5a2b82c984f63b5307cd8009" => :high_sierra
+    sha256 "4ffebbc96aafd3a7b124683f5dbb2688220fab733c3480196c089a1e92373924" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
