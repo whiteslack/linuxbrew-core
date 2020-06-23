@@ -11,6 +11,7 @@ class Cpr < Formula
     sha256 "74202966e61defa4ad315d34ebc29d8faad8585f90207b4a881beaf7c65de069" => :catalina
     sha256 "3c77beee80978eb95c7f56e8ad524b164559f81ca0a3b632f2aee8f90b02925d" => :mojave
     sha256 "a34a587114287f9cc031b31dc268301334ee145d3acd7adad077194c00576751" => :high_sierra
+    sha256 "11e74a24bbfb883216930d3239ca8917fe2e5905f8f5185b0344d107933d1da4" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
