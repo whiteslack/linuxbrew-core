@@ -9,6 +9,7 @@ class LibtorrentRasterbar < Formula
     sha256 "ebcf3c671f25bf16e9643b647e2dff1339458d7b6b4e28fbde07e0e54abe29fd" => :catalina
     sha256 "68bd2a4ed0dd30a61b4bf5667eb21a01e3bc617a6bcb55a5ea5cdbea8954b50e" => :mojave
     sha256 "1f25a63a7e555b4f4c9f0491e363aa2ba8d5eb134dc3f65a1df6c60cc926c187" => :high_sierra
+    sha256 "a0b0ed8190763fe9b2f5f31fe51a1d063c2a78d3a9d8827588f0b25392e7ca43" => :x86_64_linux
   end
 
   head do
