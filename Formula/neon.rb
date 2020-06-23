@@ -1,15 +1,15 @@
 class Neon < Formula
   desc "HTTP and WebDAV client library with a C interface"
   homepage "https://notroj.github.io/neon/"
-  url "https://notroj.github.io/neon/neon-0.31.1.tar.gz"
-  mirror "https://fossies.org/linux/www/neon-0.31.1.tar.gz"
-  sha256 "c9dfcee723050df37ce18ba449d7707b78e7ab8230f3a4c59d9112e17dc2718d"
+  url "https://notroj.github.io/neon/neon-0.31.2.tar.gz"
+  mirror "https://fossies.org/linux/www/neon-0.31.2.tar.gz"
+  sha256 "cf1ee3ac27a215814a9c80803fcee4f0ede8466ebead40267a9bd115e16a8678"
 
   bottle do
     cellar :any
-    sha256 "bcac044d4f80150fdad61b8fb79a50dc750918cb6d95bf28cdb97d3ee83b131d" => :catalina
-    sha256 "ed9208368b808c3e5bae4b4b754f71cc836b0814c8ff6ab0f2c508cb00d0564f" => :mojave
-    sha256 "b3920327bff10523afc83dc19a488da3519d78860623718ca0c0cc2611e611ee" => :high_sierra
+    sha256 "4cb9cac535f8d40ca71c0bb04fe2baa24f929685d06caf71311d285933ac0828" => :catalina
+    sha256 "3aef45d339688bda9dd7dc6682bebb97f8c0eb349a0ebb9a92d92e01635a5f75" => :mojave
+    sha256 "e1a66cf7af9daade4ce304c14b11b797610f448f194306e996ffacab04c2af5d" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

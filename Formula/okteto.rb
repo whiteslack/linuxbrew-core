@@ -1,15 +1,14 @@
 class Okteto < Formula
   desc "Build better apps by developing and testing code directly in Kubernetes"
   homepage "https://okteto.com"
-  url "https://github.com/okteto/okteto/archive/1.8.11.tar.gz"
-  sha256 "3831c56e7b029e1b33035b603747876dda610df8b9cf97c5f1576dd8e207f1e4"
+  url "https://github.com/okteto/okteto/archive/1.8.12.tar.gz"
+  sha256 "75b76b7519d263db1b3bc85f0114e24d5f0e29744b0aeb349ebdf24fce8306d6"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9b69eebf6f1c6265c3263cea3e78976deec86f414deb1dea376ab643e21c2448" => :catalina
-    sha256 "c15a8cec83100f58facaa33576a1591367d7969d95e02f044de3a3848adf7159" => :mojave
-    sha256 "1d1038f3dd9da34a346a2804849b4e4b963af38d56288286724947296471be94" => :high_sierra
-    sha256 "47f3c9e878937ce6de27c9c3395046de3c4f05e24474f63f557d2e690ccf2350" => :x86_64_linux
+    sha256 "63b8c7a3b0b22e077b3745af50b58869d4c99beaf2ab243122d4bfa812b4b04a" => :catalina
+    sha256 "dec2429d9db81f3b891a15a0168404c643177d248f8e548439b1340851d916cb" => :mojave
+    sha256 "5432f4349e4dee25f474ee3d691a4d3136c786d35131b74553c2c80e4010baf8" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -25,10 +24,8 @@ class Okteto < Formula
     system "echo | okteto init --overwrite --file test.yml"
     expected = <<~EOS
       name: #{Pathname.getwd.basename}
-      image: okteto/ruby:2
-      command:
-      - bash
-      workdir: /usr/src/app
+      forward:
+      - 1234:1234
     EOS
     got = File.read("test.yml")
     assert_equal expected, got

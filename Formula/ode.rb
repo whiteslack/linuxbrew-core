@@ -3,14 +3,14 @@ class Ode < Formula
   homepage "https://www.ode.org/"
   url "https://bitbucket.org/odedevs/ode/downloads/ode-0.16.1.tar.gz"
   sha256 "b228acad81f33781d53eaf313437cc5d6f66aec5a4e56c515fc1b2d51e6e8eba"
-  head "https://bitbucket.org/odedevs/ode/", :using => :hg
+  head "https://bitbucket.org/odedevs/ode.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "52166ed37f90857e9709d01acf6f3584583ea744572fc3e75edce902515e2575" => :catalina
-    sha256 "709bab4820a1c67a426e89e3fdc2839c04f57350260c783c6ceb05f2af6c23ea" => :mojave
-    sha256 "b5d9873c81f9c5ad4ebae396568dfb4476d688a94df04b7cb53b80646ed07357" => :high_sierra
-    sha256 "70eeb1538c7bce86079da52fd1b9992304fdd73e261815c212a864a974fdf94c" => :x86_64_linux
+    rebuild 1
+    sha256 "4bddeed55b5f77a87a6719a804e18421ede97a40350038aef4496c1d8d95a77c" => :catalina
+    sha256 "430c17a4551ea6c7d4473d5344dc7b0c3951cce4cf8ce099edcfb5c88424fd67" => :mojave
+    sha256 "87666bd9ae5c66430a48c0d8fd805fc3b8aff01a5a2b82c984f63b5307cd8009" => :high_sierra
   end
 
   depends_on "autoconf" => :build
