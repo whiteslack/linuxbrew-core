@@ -21,6 +21,8 @@ class Davix < Formula
     depends_on "util-linux" # for libuuid
   end
 
+  uses_from_macos "libxml2"
+
   on_linux do
     depends_on "util-linux"
   end

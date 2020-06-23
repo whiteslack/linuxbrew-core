@@ -16,10 +16,8 @@ class Coq < Formula
   depends_on "ocaml"
   depends_on "ocaml-num"
 
-  unless OS.mac?
-    depends_on "unzip" => :build
-    depends_on "m4"
-  end
+  uses_from_macos "m4" => :build
+  uses_from_macos "unzip" => :build
 
   def install
     system "./configure", "-prefix", prefix,
