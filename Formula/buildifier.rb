@@ -2,14 +2,14 @@ class Buildifier < Formula
   desc "Format bazel BUILD files with a standard convention"
   homepage "https://github.com/bazelbuild/buildtools"
   url "https://github.com/bazelbuild/buildtools.git",
-      :tag      => "3.2.1",
-      :revision => "a60df6e5d134ed103669f206ad74ec2154f1a562"
+      :tag      => "3.3.0",
+      :revision => "ce0cf814cb03dddf546ea92b3d6bafddb0b9eaf8"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2b49beb32628d1ecbbe85abe6b837533e12febfccffffd28b9a4c3cb2b35e960" => :catalina
-    sha256 "2b49beb32628d1ecbbe85abe6b837533e12febfccffffd28b9a4c3cb2b35e960" => :mojave
-    sha256 "2b49beb32628d1ecbbe85abe6b837533e12febfccffffd28b9a4c3cb2b35e960" => :high_sierra
+    sha256 "05b148b61585416549120d37cc24be33b4852af2baa7a60785ab2a6df62ceb0c" => :catalina
+    sha256 "05b148b61585416549120d37cc24be33b4852af2baa7a60785ab2a6df62ceb0c" => :mojave
+    sha256 "05b148b61585416549120d37cc24be33b4852af2baa7a60785ab2a6df62ceb0c" => :high_sierra
   end
 
   depends_on "bazelisk" => :build

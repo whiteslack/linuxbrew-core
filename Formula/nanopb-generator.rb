@@ -1,16 +1,14 @@
 class NanopbGenerator < Formula
   desc "C library for encoding and decoding Protocol Buffer messages"
   homepage "https://jpa.kapsi.fi/nanopb/docs/index.html"
-  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.1.tar.gz"
-  sha256 "bae4202983c39d7546a0a464ada00faf9263ac186d8426f0497fefab0abb5eea"
-  revision 1
+  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.2.tar.gz"
+  sha256 "3fae3a8efb61cf06124732fc775088389f259f0c8d85f1ca3330da295282f912"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "02d2278130af5411ae369f4ca9ce72ef052108d8e6cfebd3f83c53e90f12d57b" => :catalina
-    sha256 "02d2278130af5411ae369f4ca9ce72ef052108d8e6cfebd3f83c53e90f12d57b" => :mojave
-    sha256 "02d2278130af5411ae369f4ca9ce72ef052108d8e6cfebd3f83c53e90f12d57b" => :high_sierra
-    sha256 "ccec7fa1a5dc0f97c6426fcc7a5315490bafa52f6929ec74ba0e5025856b3525" => :x86_64_linux
+    sha256 "42459566535f189ab887bc2d8f2a2cb0bdc6b262b56ba9306434d410d2af8c38" => :catalina
+    sha256 "6bbf097a240a30f9a4560a036d46dc0f10c09f04ca05a45a67430dda911e3397" => :mojave
+    sha256 "6bbf097a240a30f9a4560a036d46dc0f10c09f04ca05a45a67430dda911e3397" => :high_sierra
   end
 
   depends_on "protobuf"
@@ -22,7 +20,7 @@ class NanopbGenerator < Formula
   def install
     cd "generator" do
       system "make", "-C", "proto"
-      inreplace "nanopb_generator.py", %r{^#!/usr/bin/env python$},
+      inreplace "nanopb_generator.py", %r{^#!/usr/bin/env python3$},
                                        "#!/usr/bin/env #{Formula["python@3.8"].opt_bin}/python3"
       libexec.install "nanopb_generator.py", "protoc-gen-nanopb", "proto"
       bin.install_symlink libexec/"protoc-gen-nanopb", libexec/"nanopb_generator.py"
