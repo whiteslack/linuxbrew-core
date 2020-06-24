@@ -7,38 +7,23 @@ class Terraform < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d23bfdde8a7d501cf12b9f5f5303a25ee386dea1e1dd66875642712c4aefebb9" => :catalina
-    sha256 "d25f185604471d18addeed875a10bb8abd3f2614818ac5fc6b7f705ca93ded93" => :mojave
-    sha256 "d1dbe3b1ac2f9492e0c545e87e43fae047020f147d25351141100fe1386bead1" => :high_sierra
-    sha256 "15a0d1c2fd4ceff9d01458e260e29588679ec000a14e7d3b4c3a48fa4e315894" => :x86_64_linux
+    rebuild 1
+    sha256 "be7faa7a2a3670e67f4bae317318b2cfe47fda55ce79537c33744d986acabd9f" => :catalina
+    sha256 "be7faa7a2a3670e67f4bae317318b2cfe47fda55ce79537c33744d986acabd9f" => :mojave
+    sha256 "be7faa7a2a3670e67f4bae317318b2cfe47fda55ce79537c33744d986acabd9f" => :high_sierra
   end
 
   depends_on "go@1.13" => :build
-  depends_on "gox" => :build
 
   conflicts_with "tfenv", :because => "tfenv symlinks terraform binaries"
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = "on" unless OS.mac?
-    ENV.prepend_create_path "PATH", buildpath/"bin"
+    # v0.6.12 - source contains tests which fail if these environment variables are set locally.
+    ENV.delete "AWS_ACCESS_KEY"
+    ENV.delete "AWS_SECRET_KEY"
 
-    dir = buildpath/"src/github.com/hashicorp/terraform"
-    dir.install buildpath.children - [buildpath/".brew_home"]
-
-    cd dir do
-      # v0.6.12 - source contains tests which fail if these environment variables are set locally.
-      ENV.delete "AWS_ACCESS_KEY"
-      ENV.delete "AWS_SECRET_KEY"
-
-      os = OS.mac? ? "darwin" : "linux"
-      ENV["XC_OS"] = os
-      ENV["XC_ARCH"] = "amd64"
-      system "make", "tools", "bin"
-
-      bin.install "pkg/#{os}_amd64/terraform"
-      prefix.install_metafiles
-    end
+    ENV["CGO_ENABLED"] = "0"
+    system "go", "build", *std_go_args, "-ldflags", "-s -w", "-mod=vendor"
   end
 
   test do

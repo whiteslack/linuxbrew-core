@@ -1,14 +1,13 @@
 class Gssdp < Formula
   desc "GUPnP library for resource discovery and announcement over SSDP"
   homepage "https://wiki.gnome.org/GUPnP/"
-  url "https://download.gnome.org/sources/gssdp/1.2/gssdp-1.2.2.tar.xz"
-  sha256 "cabb9e3b456b8354a55e23eb0207545d974643cda6d623523470ebbc4188b0a4"
+  url "https://download.gnome.org/sources/gssdp/1.2/gssdp-1.2.3.tar.xz"
+  sha256 "a263dcb6730e3b3dc4bbbff80cf3fab4cd364021981d419db6dd5a8e148aa7e8"
 
   bottle do
-    sha256 "a034241f5bf93797110bbad30222dcce724c7c93db341e2196bf21c89e941db9" => :catalina
-    sha256 "09d7829d9e394bc02fded8018460470750221d195d06b636f095e0474a33ec62" => :mojave
-    sha256 "578aa551636198f669c67902cc37ddee65bc1d295f477e95bf8a49f1413b5894" => :high_sierra
-    sha256 "c3e8dcd3df8fe131c93fa41d1ef03bb53bbf86ffc297196c82e92cecd2cc32af" => :x86_64_linux
+    sha256 "22865104f953a59e6fbf2d2159a18d4c0d59e9398ba490effb0988c919704229" => :catalina
+    sha256 "2ecafed662cc94896bd9a36c34024141a67d1773649e9841c595dbf938e3c837" => :mojave
+    sha256 "3591386e88d6df3df51173c64c9e86680e128e01d6876344f537b45df901ee8f" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build

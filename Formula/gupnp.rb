@@ -3,16 +3,16 @@ class Gupnp < Formula
 
   desc "Framework for creating UPnP devices and control points"
   homepage "https://wiki.gnome.org/Projects/GUPnP"
-  url "https://download.gnome.org/sources/gupnp/1.2/gupnp-1.2.2.tar.xz"
-  sha256 "9a80bd953e5c8772ad26b72f8da01cbe7241a113edd6084903f413ce751c9989"
-  revision 1
+  url "https://download.gnome.org/sources/gupnp/1.2/gupnp-1.2.3.tar.xz"
+  sha256 "d447e54d88e4a8fab84ad1766070e9208e21166fc7e2ce95df6e33e49e8d29b1"
 
   bottle do
-    sha256 "0a7248c3b761e36ec36188d4b730c69cfd9c7fb5ea247e994bbce44dd8bf6366" => :catalina
-    sha256 "efc4a54b6df3d4794c0a3e7ea6080839a5a29048af02201161ae7447f72c6a02" => :mojave
-    sha256 "01d9c2e45bbcd2c0c2fb1a1cc630020a87f95aee47226cff9859b561a8aabb57" => :high_sierra
+    sha256 "c3293403d47e51ae9ae4bec506dc3ca54209769165fd98c6807f0876825d8195" => :catalina
+    sha256 "c06a3a4c5ffe1b21b2c362e1dcb08d063e2bab5a54eaa3f78f72a0ef39c7b5a4" => :mojave
+    sha256 "db6c7a1a1f48689266050b0e8e71329fd9d5aaec68090c61c22b9475e6a75e24" => :high_sierra
   end
 
+  depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -25,6 +25,8 @@ class Gupnp < Formula
 
   def install
     mkdir "build" do
+      ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+
       system "meson", *std_meson_args, ".."
       system "ninja"
       system "ninja", "install"
