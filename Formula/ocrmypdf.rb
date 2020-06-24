@@ -3,15 +3,14 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://github.com/jbarlow83/OCRmyPDF"
-  url "https://files.pythonhosted.org/packages/b6/31/c82eef5845fe6259fcd29d44728fb3ed2ca612eb60db7d80bc71f2da0c1a/ocrmypdf-10.1.0.tar.gz"
-  sha256 "f4fa5def929adad21404c33be44f161c95131972b36d61e5c27960b291764c6d"
+  url "https://files.pythonhosted.org/packages/4e/bb/35a55dfaf1b5df31fccef7276362515e4eaea5ca1f37a853cfe46273196b/ocrmypdf-10.2.0.tar.gz"
+  sha256 "eb9defb761ff221e3cf724823772dc7495db9bb4bf1aca9b4312b1b4bc583cd7"
 
   bottle do
     cellar :any
-    sha256 "261da2e98b202dbf579f0bbfb7f1a8d0b1906fcf2068be0e2ef21e5fce3b6806" => :catalina
-    sha256 "fc0eb619a7ff24318abee19a876c1dca12f9d6dba0f4cff0d175ab7dd1b1276a" => :mojave
-    sha256 "220f929fb14d35b28e76c083bb5c1965446f03013b6eecbf544dec69fd5b53c9" => :high_sierra
-    sha256 "d2e951a94f53f0583468ccdb7c4b9f414a157fb241ac93cb77ba6cc43fc6d427" => :x86_64_linux
+    sha256 "517262a5bc1e7798ec806bef42fd76f798ca18ef42b9fa4b76dfbefc3e1585f3" => :catalina
+    sha256 "7d33c1954df20a093cf26ef72b480ddda4e98ca6139b208cc135d875f7e15e2c" => :mojave
+    sha256 "49f6e8246090a26c0ab52fe5221981bd04f937a156ad45c17c71387543fd2e50" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -68,14 +67,13 @@ class Ocrmypdf < Formula
   end
 
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/b3/02/44aeefd14ca24761680443c47ad6bd38f2493c0bbcd0fb1ce79c9aad9b6e/pikepdf-1.14.0.tar.gz"
-    sha256 "5b371c71b0da42d87371ed39973f07c7eb67d939ca5031f0c1637cfb3a2d79f5"
+    url "https://files.pythonhosted.org/packages/d2/22/6f77d3112ce7b1f25d4013e7a94fbb627938f5d297c7d4e9118a1e50792b/pikepdf-1.15.1.tar.gz"
+    sha256 "59c3ff9251752e740b8863d5bb327d4fb598afa336db9e2b6038e7beb0fd57a5"
   end
 
-  # leave at v7.0.0 to avoid "'xcb/xcb.h' file not found" errors
   resource "Pillow" do
-    url "https://files.pythonhosted.org/packages/39/47/f28067b187dd664d205f75b07dcc6e0e95703e134008a14814827eebcaab/Pillow-7.0.0.tar.gz"
-    sha256 "4d9ed9a64095e031435af120d3c910148067087541131e82b3e8db302f4c8946"
+    url "https://files.pythonhosted.org/packages/ce/ef/e793f6ffe245c960c42492d0bb50f8d14e2ba223f1922a5c3c81569cec44/Pillow-7.1.2.tar.gz"
+    sha256 "a0b49960110bc6ff5fead46013bcb8825d101026d466f3a4de3476defe0fb0dd"
   end
 
   resource "pluggy" do
@@ -116,6 +114,7 @@ class Ocrmypdf < Formula
         if OS.mac?
           sdkprefix = MacOS.sdk_path_if_needed ? MacOS.sdk_path : ""
           s.gsub! "openjpeg.h", "probably_not_a_header_called_this_eh.h"
+          s.gsub! "xcb.h", "probably_not_a_header_called_this_eh.h"
           s.gsub! "ZLIB_ROOT = None",
                   "ZLIB_ROOT = ('#{sdkprefix}/usr/lib', '#{sdkprefix}/usr/include')"
         else

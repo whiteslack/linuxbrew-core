@@ -1,15 +1,15 @@
 class Gluon < Formula
   desc "Static, type inferred and embeddable language written in Rust"
   homepage "https://gluon-lang.org"
-  url "https://github.com/gluon-lang/gluon/archive/v0.15.0.tar.gz"
-  sha256 "39d3615cb3109c1d6745199c078a8db17f9dcbe370297d6bb8fe71b6c65d80ee"
+  url "https://github.com/gluon-lang/gluon/archive/v0.15.1.tar.gz"
+  sha256 "9e05b157337804a4cf111ee8a1854250970c460e9a32d3b662fc90ebf5b91638"
   head "https://github.com/gluon-lang/gluon.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fee66ca58bc00cf86c28c7ca5e64308ea467e782ee1de93f41234303d09a23a5" => :catalina
-    sha256 "b368877402d60253ce153628d9f39e57793bf65cb41f6fcdbdcae00d5e0253af" => :mojave
-    sha256 "ee786f9331bd41e85d763d59b6a97ff8198919ced0e72fa0ebeaf951bccd3bbb" => :high_sierra
+    sha256 "c81ab3772a8ec0e0d0fcc6a0566f0a031ee949bd7703480b9981e8ace0f33028" => :catalina
+    sha256 "b601ddc20dc2e67702ff2fccd9750393c77a3d121d3e25366909ef30370136cd" => :mojave
+    sha256 "3e806c404ad175fe37f1ad13c7ce6e229a3654b61ccb70e0ff814e1fbe628222" => :high_sierra
   end
 
   depends_on "rust" => :build

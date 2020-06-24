@@ -1,15 +1,15 @@
 class Coredns < Formula
   desc "DNS server that chains plugins"
   homepage "https://coredns.io/"
-  url "https://github.com/coredns/coredns/archive/v1.6.9.tar.gz"
-  sha256 "e100a946d5d60d936cb313bdb04fd96162d5a7229e08887ad497660acee4b36f"
+  url "https://github.com/coredns/coredns/archive/v1.7.0.tar.gz"
+  sha256 "7e436e9d0c0b84af863685e05d701b84247bb0f12b6dbf05ea87e165c1398b2b"
   head "https://github.com/coredns/coredns.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6188d8ad364b14cc17d05a30fb968d4c0b3be0ef9392cabf5dbc17aea9259c70" => :catalina
-    sha256 "d7f788258a419aeed67238e92f4cc347481b48a8e60e8ff9e62049f981c09c71" => :mojave
-    sha256 "ba9c1e46cd22adae770ddf5fac0c4cc31fd0120db9b0b7a1f44e623dea6370d3" => :high_sierra
+    sha256 "717eb60a8e16116051725b2717cad72aa288038c08087981a4afdbf707bbec7f" => :catalina
+    sha256 "f9cea81b5c945bdf7201d9104236a71a624816093a5479fe695de727eff5682e" => :mojave
+    sha256 "9de8f7e481877045fdb18aad99723773a18f5a7de5c0aea1965ddece445e5092" => :high_sierra
   end
 
   depends_on "go" => :build

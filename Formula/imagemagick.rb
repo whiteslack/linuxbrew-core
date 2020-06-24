@@ -1,16 +1,15 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://www.imagemagick.org/"
-  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-20.tar.xz"
-  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-20.tar.xz"
-  sha256 "75eb1d459bd09e536a83c598861facb7dbcbc65ad3279b782e2f0157ba32a2ef"
+  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-21.tar.xz"
+  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-21.tar.xz"
+  sha256 "f904c18990fcad0b04540246ed5f2ea0e04de3892421c18d7e9b2342ad5dad9e"
   head "https://github.com/ImageMagick/ImageMagick.git"
 
   bottle do
-    sha256 "5dc9cb8437b29cb9007e987dbb53abfc269f1bf41e04e4cede68acf79db7f503" => :catalina
-    sha256 "6a641d1896acb91fb042884b52cf5bce313812a268867c04097e4b41cc08f6f5" => :mojave
-    sha256 "992fc2bfb205408f142399be9bf8cf798a64c7bbe8f2fdf6e2dcd312390261fe" => :high_sierra
-    sha256 "0b1e519b0e1679fd193fd3ac6bcb81bfb0e325a879e3ef5fd05f8b33b98f4b72" => :x86_64_linux
+    sha256 "3e05b551908ad23bda56ea325d22db369e2e4a68a0041f40782d353ac5377ad9" => :catalina
+    sha256 "0a4d5a28bbb32ed0500f0b6c0d1d9c7f82f7164dccf76104d38b94521daca763" => :mojave
+    sha256 "f77a805c5bd75103d8622bcf780dad5670d0ff13fda96218e632892a601bd91b" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

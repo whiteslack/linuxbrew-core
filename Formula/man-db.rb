@@ -1,15 +1,14 @@
 class ManDb < Formula
   desc "Unix documentation system"
   homepage "https://www.nongnu.org/man-db/"
-  url "https://download.savannah.gnu.org/releases/man-db/man-db-2.9.2.tar.xz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/man-db/man-db-2.9.2.tar.xz"
-  sha256 "7b383f26c67525205f96a4a3bfb27993396992794adda6fe05ad565f369f047c"
+  url "https://download.savannah.gnu.org/releases/man-db/man-db-2.9.3.tar.xz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/man-db/man-db-2.9.3.tar.xz"
+  sha256 "fa5aa11ab0692daf737e76947f45669225db310b2801a5911bceb7551c5597b8"
 
   bottle do
-    sha256 "7e639bfe3df8a33f8ad5cd087699c072a2bb844abca7553292a2d15591399185" => :catalina
-    sha256 "e583625d3afe9168d4d3c98be9ffa74324802db5748486eae84ccfdd0f5bc491" => :mojave
-    sha256 "c622c3c27cc77573875f787eab628e1dd50a8d0fafa60e09678c554e2951cde8" => :high_sierra
-    sha256 "db2dd2cbe040d313dd2e8e337c209d12bb539fab4ae75f101650a1aa00ac0b98" => :x86_64_linux
+    sha256 "1f203de0472712f459bee1b66dc93d4fa0c6fc190bdf467c018319add61a22ff" => :catalina
+    sha256 "3eb1e906db4927d45eaa4cd26d28bd69cf62eaa94316f32c3f29266d0070a978" => :mojave
+    sha256 "6827bc87f0ccf3b9e3f04adb8e0aba1d63497291704773bd9f6691d73cf4ee1d" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
