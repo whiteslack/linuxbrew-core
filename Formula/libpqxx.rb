@@ -1,15 +1,14 @@
 class Libpqxx < Formula
   desc "C++ connector for PostgreSQL"
   homepage "https://pqxx.org/development/libpqxx/"
-  url "https://github.com/jtv/libpqxx/archive/7.1.1.tar.gz"
-  sha256 "cdf1efdc77de20e65f3affa0d4d9f819891669feb159eff8893696bf7692c00d"
+  url "https://github.com/jtv/libpqxx/archive/7.1.2.tar.gz"
+  sha256 "3af7b4cfd572c67275ad24fea31bcf9d9f365ec16a1b7e90d4bde930936707f3"
 
   bottle do
     cellar :any
-    sha256 "b345cab517eb13cdd870059c16d48c61a10b5bae38c086a808a705120282ecd3" => :catalina
-    sha256 "bcdb2b1bbb468ff8f2cacc8e020e07f64da6a0669e981d5c397c2d2adc284b8a" => :mojave
-    sha256 "62a1a92df805584ff9ffd9321996767d814fd2a84167b1cb0130bc7c6d0bb4a6" => :high_sierra
-    sha256 "1a5debe7c44bd77fa0256f4c96bf78590d77baf140ce4cc8e147a5d46fae52d8" => :x86_64_linux
+    sha256 "4600e04403f227ce18b789e236dc78faf8fd9ba230c99ba71e1e011bf33d21d8" => :catalina
+    sha256 "7f99040c5cb0cb12dec832043fc3789b30e323ee3759cea291b8783caa48e43a" => :mojave
+    sha256 "4016b954fb4052fd8988cfbd569c32ae8700f1c5b3da60eaf576672545f18df2" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

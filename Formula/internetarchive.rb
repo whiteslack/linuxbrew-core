@@ -3,16 +3,14 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https://github.com/jjjake/internetarchive"
-  url "https://files.pythonhosted.org/packages/0c/b0/4026175cc310b35e15e1447ab8ca13742e98960f14bde087b069dc760e44/internetarchive-1.9.3.tar.gz"
-  sha256 "bad1c4152fb6286ce7c77737a853bb4e45bcefb89ca5834d75607419f08cb6fe"
-  revision 1 unless OS.mac?
+  url "https://files.pythonhosted.org/packages/35/de/16bc726cb5f328d1cab5d4abd7ea7537749346ea410ec8979bd1961ca162/internetarchive-1.9.4.tar.gz"
+  sha256 "db2322d71b13c557d387bdf080253f131662ae3dcebba703b328868808c9605b"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5257165feb9cacde3acc1100a118f1208474b4ce85100821644f29726c50fcd7" => :catalina
-    sha256 "1dd15e09892bcf1e56a46642c3f23b1fa9fdb95020097688c8c8fd98b4eb187c" => :mojave
-    sha256 "28d816f22b80c5578963a99338489f58ad658657c09b4203e3f095c9e0f18020" => :high_sierra
-    sha256 "f20adce2df1e10162db430e1f3082170450275316caa976c98b481718434bbc3" => :x86_64_linux
+    sha256 "29143e0646a76b758ab3c2237a2dff1cd3b3daec589fdffd78185b7d7a28ebb3" => :catalina
+    sha256 "39083e62f37c3b06fb397601ede192d8c60dbbb65f11398933594e131242ab9c" => :mojave
+    sha256 "32d59ff6566c18d997d4558aef73c9f6ae4ea076ec302fb8c8cfcd312b43d563" => :high_sierra
   end
 
   depends_on "python@3.8"

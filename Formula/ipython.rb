@@ -9,10 +9,10 @@ class Ipython < Formula
 
   bottle do
     cellar :any
-    sha256 "9bade12852c8381b552ca8ab22ac8679aa20475adf5900305a2970c58abcc2de" => :catalina
-    sha256 "deaf8854c2e1453b1d6e44a010d9635ca7049d39afc45b63ed6dfeee3948eb50" => :mojave
-    sha256 "7c8d3447e8f912dab6d58c84c3495a470ebcfe9d34a6528b02980831b58f5f67" => :high_sierra
-    sha256 "4689aa5cadfc85742710c4c4cafea4023874d4ee202a4a49a794eb70c1c03aa3" => :x86_64_linux
+    rebuild 1
+    sha256 "3e12e1f941eed205b363b5e2626e2ca881ecacd73876a7351a2a5cc637b09a51" => :catalina
+    sha256 "f5cbc55fb480496e53fbdbf998ea6ddaa45b1fdeff7ed5413ee89b6aa7c13d4a" => :mojave
+    sha256 "10590a404f23ac8772eb48f77ab40e4156303bd5fc9d9ac9fa2dc797bf42662b" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -136,7 +136,7 @@ class Ipython < Formula
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system Formula["python@3.8"].opt_bin/"python3", *Language::Python.setup_install_args(libexec)
     bin.install libexec/"bin/ipython"
-    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"] + "${PYTHONPATH:+:}$PYTHONPATH")
 
     # install IPython man page
     man1.install libexec/"share/man/man1/ipython.1"
