@@ -4,15 +4,15 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.live"
   url "https://github.com/returntocorp/semgrep.git",
-    :tag      => "v0.11.0",
-    :revision => "21d49ea1cdda2df9535067411075277822d2f63b"
+    :tag      => "v0.12.0",
+    :revision => "080eca69c9d03067dda2796af5acf52baefc1988"
   head "https://github.com/returntocorp/semgrep.git", :branch => "develop"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "7f2a2d5838240c14f8ab1d8910557eeaec87a48f890a27b0459557e8be07f92c" => :catalina
-    sha256 "700cf5ce6799de1613056fcbb22c4512ac2bd1efca98769f96a4f81b3f54eadc" => :mojave
-    sha256 "69863858a64baf7d8a75851096576df82f94da0cac828c87842fb0e331c568d4" => :high_sierra
+    sha256 "debbcdc08799d1f3e2f82e2ccb7f2513871ebafcafbc03cfb92097f21716fa30" => :catalina
+    sha256 "586fd611ebde3fcad997b50c541b7b50804a4692e786982dbbab4af28aa059cb" => :mojave
+    sha256 "0bbb196095c048f8830c8bc1dab3d0f6b463675f442a41b15e254ebf1c9baa0b" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -75,6 +75,21 @@ class Semgrep < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a9/03/df1d77e852dd697c0ff7b7b1b9888739517e5f97dfbd2cf7ebd13234084c/tqdm-4.46.1.tar.gz"
     sha256 "cd140979c2bebd2311dfb14781d8f19bd5a9debb92dcab9f6ef899c987fcf71f"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/55/fd/fc1aca9cf51ed2f2c11748fa797370027babd82f87829c7a8e6dbe720145/packaging-20.4.tar.gz"
+    sha256 "4357f74f47b9c12db93624a82154e9b120fa8293699949152b22065d556079f8"
+  end
+
+  resource "pyparsing" do
+    url "https://files.pythonhosted.org/packages/a2/56/0404c03c83cfcca229071d3c921d7d79ed385060bbe969fde3fd8f774ebd/pyparsing-2.4.6.tar.gz"
+    sha256 "4c830582a84fb022400b85429791bc551f1f4871c33f23e44f353119e92f969f"
+  end
+
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/21/9f/b251f7f8a76dec1d6651be194dfba8fb8d7781d10ab3987190de8391d08e/six-1.14.0.tar.gz"
+    sha256 "236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"
   end
 
   def install

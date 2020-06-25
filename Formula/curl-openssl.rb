@@ -1,14 +1,13 @@
 class CurlOpenssl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.70.0.tar.xz"
-  sha256 "032f43f2674008c761af19bf536374128c16241fb234699a55f9fb603fcfbae7"
+  url "https://curl.haxx.se/download/curl-7.71.0.tar.bz2"
+  sha256 "600f00ac2481a89548a4141ddf983fd9386165e1960bac91d0a1c81dca5dd341"
 
   bottle do
-    sha256 "734a899fd8b639b876c781e416a2f4ebdb45a02cf81e7f33f38993798831cf4d" => :catalina
-    sha256 "e5b1c91159e5a5a72a12e5d5cf3881871f5d610e780e21a4d43e1194c05a52af" => :mojave
-    sha256 "716b806b016469c364078fd25b8c0fef88873a01c2074fa24b54ba388b548ee2" => :high_sierra
-    sha256 "fe00212ccf897edb4a450fbbd097a1e8d3e78b1269b867ec0a8ae618c7625e56" => :x86_64_linux
+    sha256 "b852977a1d194b9de433c7344f3ab61f46004ee34c946e723cecd43d17571b85" => :catalina
+    sha256 "a3693f5f80943df9ff2c1147aaee1b5ef31c9fec09c6de7087f76ba0f7751149" => :mojave
+    sha256 "c76fe95e8644d41c6fad096dfd528fbbea45e8b221ec0efa644d5c4d90e73dc3" => :high_sierra
   end
 
   head do

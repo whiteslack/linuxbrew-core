@@ -1,17 +1,15 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
-  url "https://root.cern.ch/download/root_v6.20.04.source.tar.gz"
-  version "6.20.04"
-  sha256 "1f8c76ccdb550e64e6ddb092b4a7e9d0a10655ef80044828cba12d5e7c874472"
-  revision 2
+  url "https://root.cern.ch/download/root_v6.22.00.source.tar.gz"
+  version "6.22.00"
+  sha256 "efd961211c0f9cd76cf4a486e4f89badbcf1d08e7535bba556862b3c1a80beed"
   head "https://github.com/root-project/root.git"
 
   bottle do
-    sha256 "dce89a31a8c994c04dc8d69def13c07a4cc7ba42bd082d6906bb7e6549514359" => :catalina
-    sha256 "bc7e065853c36bba96625dd49e97739aa3a5f58cf804c65e5d31601c01e64161" => :mojave
-    sha256 "24ff2cdc7881b36c7b3d4653b6ce6da6c4b2747d2b3a4adc32493b4ccc5fef8e" => :high_sierra
-    sha256 "6b2091d72ab94c5c4098fef5ffe53f97c1c929870c5b8ba0f4fd755161a007ae" => :x86_64_linux
+    sha256 "89875687bce5d216d8e76104702150031d7b71339513966e359f2961cd18721a" => :catalina
+    sha256 "2774ff7cdba2727959afb169c22e9a55bd42640a31c5ebf222a3a25d8f47a6d9" => :mojave
+    sha256 "b34628d0657c3378870cedc065f72d9243249ec68c581ccae9eed7560adab795" => :high_sierra
   end
 
   if OS.mac?
@@ -86,7 +84,7 @@ class Root < Formula
       -Dminuit2=ON
       -Dmysql=OFF
       -Dpgsql=OFF
-      -Dpython=ON
+      -Dpyroot=ON
       -Droofit=ON
       -Dssl=ON
       -Dtmva=ON
@@ -98,29 +96,26 @@ class Root < Formula
     cxx_version = (MacOS.version < :mojave) ? 14 : 17
     args << "-DCMAKE_CXX_STANDARD=#{cxx_version}"
 
+    # Workaround the shim directory being embedded into the output
+    inreplace "build/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
+
     mkdir "builddir" do
       system "cmake", "..", *args
 
-      # Work around superenv stripping out isysroot leading to errors with
-      # libsystem_symptoms.dylib (only available on >= 10.12) and
-      # libsystem_darwin.dylib (only available on >= 10.13)
-      if OS.mac? && MacOS.version < :high_sierra
-        system "xcrun", "make", "install"
-      else
-        system "make", "install"
-      end
+      system "make", "install"
 
       chmod 0755, Dir[bin/"*.*sh"]
+
+      version = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
+      pth_contents = "import site; site.addsitedir('#{lib}/root')\n"
+      (prefix/"lib/python#{version}/site-packages/homebrew-root.pth").write pth_contents
     end
   end
 
   def caveats
     <<~EOS
-      Because ROOT depends on several installation-dependent
-      environment variables to function properly, you should
-      add the following commands to your shell initialization
-      script (.bashrc/.profile/etc.), or call them directly
-      before using ROOT.
+      As of ROOT 6.22, you should not need the thisroot scripts; but if you
+      depend on the custom variables set by them, you can still run them:
 
       For bash users:
         . #{HOMEBREW_PREFIX}/bin/thisroot.sh
@@ -146,13 +141,10 @@ class Root < Formula
     system "#{bin}/root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"
 
     # Test ROOT executable
-    (testpath/"test_root.bash").write <<~EOS
-      . #{bin}/thisroot.sh
-      root -l -b -n -q test.C
-    EOS
     assert_equal "\nProcessing test.C...\nHello, world!\n",
-                 shell_output("/bin/bash test_root.bash")
+                 shell_output("root -l -b -n -q test.C")
 
+    # Test linking
     (testpath/"test.cpp").write <<~EOS
       #include <iostream>
       #include <TString.h>
@@ -161,10 +153,7 @@ class Root < Formula
         return 0;
       }
     EOS
-
-    # Test linking
     (testpath/"test_compile.bash").write <<~EOS
-      . #{bin}/thisroot.sh
       $(root-config --cxx) $(root-config --cflags) $(root-config --libs) $(root-config --ldflags) test.cpp
       ./a.out
     EOS
@@ -172,7 +161,6 @@ class Root < Formula
                  shell_output("/bin/bash test_compile.bash")
 
     # Test Python module
-    ENV["PYTHONPATH"] = lib/"root"
     system Formula["python@3.8"].opt_bin/"python3", "-c", "import ROOT; ROOT.gSystem.LoadAllLibraries()"
   end
 end
