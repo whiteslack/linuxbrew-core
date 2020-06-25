@@ -1,15 +1,14 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/r-darwish/topgrade"
-  url "https://github.com/r-darwish/topgrade/archive/v4.8.0.tar.gz"
-  sha256 "c0658a78cdc69d9c2684a500bc53080804f7da1600a74ff06c7116b03946ee02"
+  url "https://github.com/r-darwish/topgrade/archive/v4.9.0.tar.gz"
+  sha256 "0466843e340e7614c1824ad97beab504dfab0d4392620cf269a7c13c3c4351be"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a26ce1e183aab8c7a1d2c4e18810827d5ab3732bca7eed138e998685b291ed23" => :catalina
-    sha256 "4cfea55e6d84600d1dad5612ab85a6325c01dce534e6446169e6bab56d4e25ca" => :mojave
-    sha256 "ff0ca11f4059575d2ae762b324321190fdb5ca15446678b13dd9ee52f655ff52" => :high_sierra
-    sha256 "39d002bc44c1733e96d51d1fd3c06c99e691db5cab871e9792959580a6a66687" => :x86_64_linux
+    sha256 "890d5539d01dfbb613f4d90c9da91568752a3da0a3f666c3168f2978ca647714" => :catalina
+    sha256 "3633ddc2bd8a972bac3b5edb3bea9b422eaa0985a8757a0d2d682606039557fb" => :mojave
+    sha256 "59ac1dc96bfc7d92200307f4a547fbce85baffeb429f2af90782f30c766ccec6" => :high_sierra
   end
 
   depends_on "rust" => :build
@@ -20,8 +19,8 @@ class Topgrade < Formula
   end
 
   test do
-    # Configuraton path details: https://github.com/r-darwish/topgrade/blob/master/README.md#configuration-path
-    # Sample config file: https://github.com/r-darwish/topgrade/blob/master/config.example.toml
+    # Configuraton path details: https://github.com/r-darwish/topgrade/blob/HEAD/README.md#configuration-path
+    # Sample config file: https://github.com/r-darwish/topgrade/blob/HEAD/config.example.toml
     (testpath/"Library/Preferences/topgrade.toml").write <<~EOS
       # Additional git repositories to pull
       #git_repos = [

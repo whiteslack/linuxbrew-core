@@ -1,17 +1,15 @@
 class AnycableGo < Formula
   desc "Anycable Go WebSocket Server"
   homepage "https://github.com/anycable/anycable-go"
-  url "https://github.com/anycable/anycable-go/archive/v0.6.5.tar.gz"
-  sha256 "3112a04db1984151b9e4111a0131b711f6a0a79ccf789fbaf6da1ea9e28608dc"
+  url "https://github.com/anycable/anycable-go/archive/v1.0.0.tar.gz"
+  sha256 "66c6039ad96433cb0a4851f30c917050a1062d269594259bb1665ee03c23e7e9"
   head "https://github.com/anycable/anycable-go.git"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "4bd9d4f3702cb24aa1d4d3e771e9646eb9afb6579d3a0392b5d96193636e06ac" => :catalina
-    sha256 "c682c175323bf559a06aefe02c0382f8b2ba8efdede367ccc876cd4287b42fee" => :mojave
-    sha256 "8221be54a2ae4a1ca0d3b5bb6821d7dc3217e6f41bf25ee8716b93f2d5e002ce" => :high_sierra
-    sha256 "8a5e86174f13fc3d37fd4a366e1068e93ad9334485a1c1d195487fef4fa308dc" => :x86_64_linux
+    sha256 "158a7e9917bcdc099b664996e081dd2b020d2036a22e92f351bc9df43a33995d" => :catalina
+    sha256 "698707ba2032a713055be8a35b6c8ea2baa3df3d90502ac2458996150940716f" => :mojave
+    sha256 "d16176f21d70123a5c709b1a69214acdeb2825dfd50d038e8db815afe62d6a11" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -23,7 +21,7 @@ class AnycableGo < Formula
     ldflags << if build.head?
       "-X github.com/anycable/anycable-go/utils.sha=#{version.commit}"
     else
-      "-X main.version=#{version}"
+      "-X github.com/anycable/anycable-go/utils.version=#{version}"
     end
 
     system "go", "build", "-mod=vendor", "-ldflags", ldflags.join(" "), *std_go_args,
