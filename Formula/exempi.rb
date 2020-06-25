@@ -9,6 +9,7 @@ class Exempi < Formula
     sha256 "3ef58fd5cbd177ac785cfab9b58f813ce24320a507243d9d7b6c940fd463564f" => :catalina
     sha256 "189bb3c57e78845c33678353cb877ad7cdedd665087c0a4525397f32088abc39" => :mojave
     sha256 "0843f9bc589fd3c9ed0f5dfd724ba60eea4832410a0b6ff831bdb22c6563eafd" => :high_sierra
+    sha256 "178e85b9647be2f5a484c03075c98982a0a3695fab4486f0d1f08750cd406c8c" => :x86_64_linux
   end
 
   depends_on "boost"
