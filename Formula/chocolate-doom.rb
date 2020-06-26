@@ -9,6 +9,7 @@ class ChocolateDoom < Formula
     sha256 "91f8a622d0299afd99d6eb4768184100addb0d1a804683aa6486548ed5a14d8d" => :catalina
     sha256 "9090cd83e434977b523647ea125b5de78ca8c2b434f1933a606200999e137a30" => :mojave
     sha256 "c4799300dc6c4b10d68e0764cb57eec612fbe3d07a2ce7eeb0cf6bc60905a687" => :high_sierra
+    sha256 "83a3b28127e0b310a0bcd36bdba4a61c34cef25b6771dc7385e12ebbb209fde6" => :x86_64_linux
   end
 
   head do
