@@ -11,6 +11,7 @@ class Unyaffs < Formula
     sha256 "4bcff00c990f1376a4a14084a7e4c5c47a9abd1411140071a8f32820b24bc0c3" => :catalina
     sha256 "9ffaad154e3119644c754d02544e386f9d5b6f7d06aceba76e972cb321608deb" => :mojave
     sha256 "c215b5e405c842ca4a82dc120b8a3c9b9a1868303ab740d4d8973b1cd0160eb9" => :high_sierra
+    sha256 "fc0caba0c1fea96f2bc95e1a0472a5a483b84ff47ea7d7e1e216fbef32ca03d4" => :x86_64_linux
   end
 
   def install
