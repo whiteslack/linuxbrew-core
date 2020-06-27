@@ -11,6 +11,7 @@ class CharmTools < Formula
     sha256 "dddb172886d1220f9973ec549d167d1f0ba86b8eaf1f02399be820e7086c8ed5" => :catalina
     sha256 "b90b92410de61d3af7cfce211d45d38943f9d991a254a699e4b9321831c122e9" => :mojave
     sha256 "93bf33040e5829839cebebd39bcab01a5e4fdf678730fecdca3a93502d333777" => :high_sierra
+    sha256 "e0eda69da6315a4239708a2a0c67c2f79c977fe51f240564a6094f9835174ac6" => :x86_64_linux
   end
 
   depends_on "charm"
