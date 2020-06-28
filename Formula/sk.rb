@@ -10,6 +10,7 @@ class Sk < Formula
     sha256 "5292b952619fdff305f8124e8ff7342487c2b8904582d21d7d36ee70552e55cb" => :catalina
     sha256 "88cd830c34f998238c0bc89e435fa114fd89081bada5e6c04baed79d5f97f2c9" => :mojave
     sha256 "cdf01b18bb6d20bbe3063246520e09caf0591490212e1ced07e996027a87dc32" => :high_sierra
+    sha256 "06666c0cf5b91a7ed556cf756b5af02c3a3f50f5e5cb7b575da6bb3ca9179f3e" => :x86_64_linux
   end
 
   depends_on "rust" => :build
