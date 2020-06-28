@@ -1,17 +1,15 @@
 class Libmatroska < Formula
   desc "Extensible, open standard container format for audio/video"
   homepage "https://www.matroska.org/"
-  url "https://dl.matroska.org/downloads/libmatroska/libmatroska-1.5.2.tar.xz"
-  sha256 "0ac6debfbf781d47f001b830aaf9be9dfbcefd13bcfb80ca5efc1c04b4a3c962"
+  url "https://dl.matroska.org/downloads/libmatroska/libmatroska-1.6.0.tar.xz"
+  sha256 "fec89cebd500807f7fd14b56c14733f11045fa2a21398ff6f6c5c0e3e01b4033"
   head "https://github.com/Matroska-Org/libmatroska.git"
 
   bottle do
     cellar :any
-    sha256 "52d5d700ad22e0486fc93dc0115609425e2e6874bf6259946c7c441b1ef03612" => :catalina
-    sha256 "ed8d3ac8b50484c2db4dafc46a7bab0d59751ac4bb99d1f5c11d8e18f71024d5" => :mojave
-    sha256 "4645660af5cf1737a3bc91815e6e82a466fbf82dd4f8f7cf483139871aa1f513" => :high_sierra
-    sha256 "90faa3f9bbab4b0bba4777c5dfb89b00000dd49b8da104631a4eb2b76b9e45e9" => :sierra
-    sha256 "9f84c491e8cee6aa169db27e52df10ffcc0d6f439a5dbd0a66e8b3a105505706" => :x86_64_linux
+    sha256 "6e0fcb6eaab382b943734853dc74b58abc88d1a6b58623aed85c2d3d62676a06" => :catalina
+    sha256 "d6ccd27705a5ec5b414f1373fde91ed7e4b27b1a98ddadf92ce14dd879e7f2fb" => :mojave
+    sha256 "d55b378401f82f39c47af6cc4568c7ddf4d1a18534515b58927112539bd3dce2" => :high_sierra
   end
 
   depends_on "cmake" => :build

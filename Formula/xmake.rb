@@ -1,16 +1,15 @@
 class Xmake < Formula
   desc "Cross-platform build utility based on Lua"
   homepage "https://xmake.io/"
-  url "https://github.com/xmake-io/xmake/releases/download/v2.3.4/xmake-v2.3.4.tar.gz"
-  sha256 "a03d52236bbe34e83a5f4a2182ffa3247a6c1d0c888c0c36271b3b378aad8541"
+  url "https://github.com/xmake-io/xmake/releases/download/v2.3.5/xmake-v2.3.5.tar.gz"
+  sha256 "5be491fd023333225ab347dc209f18f453e61d52988ae84f485e1b2552a440d6"
   head "https://github.com/xmake-io/xmake.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ccc804b90a7de65ee57b3d110dc94c45895aa70a82f4583b200e447290b73e66" => :catalina
-    sha256 "cf59b6c1af7c40ed1f8b3db13cf1c90eb748df41a88fa3240cea8e30813f92f4" => :mojave
-    sha256 "71d6cb1de6da0071819d0e6054305d319e16accdf45d1d35c917ef1811896001" => :high_sierra
-    sha256 "a5afb30bd86daf7d2cfd4d2fd3071b416374803671c73a2ffb555ddafd2b8217" => :x86_64_linux
+    sha256 "ecfef90dabbaa9a507b4bd17eba62a2f622f2e4e53324251db699e4c4cc3fb85" => :catalina
+    sha256 "7009ae9ee758bc803ffa46267a1595f639fd350a819af79a237575d692bdb06d" => :mojave
+    sha256 "7cd0cb7c5727d885904809c64859515f5d83a7e20a82232377a56333af37d9aa" => :high_sierra
   end
 
   on_linux do

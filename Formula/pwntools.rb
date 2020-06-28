@@ -3,14 +3,14 @@ class Pwntools < Formula
 
   desc "CTF framework used by Gallopsled in every CTF"
   homepage "https://github.com/Gallopsled/pwntools"
-  url "https://files.pythonhosted.org/packages/9a/4c/bb8f7efe284035f976c0e10303166e3260a67895ddd80b2e46e001ee3d09/pwntools-4.1.4.tar.gz"
-  sha256 "3ad66af9c2a646b3db18c4e313fc30e5713a6cc27d2bf66d93784dd49f810e9c"
+  url "https://files.pythonhosted.org/packages/39/d2/37c5cdb9f19b346bfd22daf5c1c49106c7277ac3f317853093bf71e3ae6a/pwntools-4.1.5.tar.gz"
+  sha256 "c0d48b468ab505eefce2d3fc1ee3479d0d42e1fbb792b87d4af1167ee2ef910c"
 
   bottle do
     cellar :any
-    sha256 "e52dc7887ec284126f83c3eb6d6d280e4c2702d7c5d12f45e77a401ed2c35392" => :catalina
-    sha256 "4136ebed6e4e68ab6528f6b82646a61086ea283e5b364c3011a98e76d532e5fc" => :mojave
-    sha256 "7bb3fbef363bb22506cc304937bba70b2ca097cca0602100d24e022d0358f875" => :high_sierra
+    sha256 "816782aff25f3ae858104ab5fb45db10f1a52957f1142a4da8ce009e7142b809" => :catalina
+    sha256 "2aed0e44fd564068fc5c46a59685c6245b7886529296bb1cf7980d817bc91848" => :mojave
+    sha256 "f006deb61fe6b14d0cc6d672f7a3feda98c56fce4013f5a6f802706b6a012bda" => :high_sierra
   end
 
   depends_on "openssl@1.1"
@@ -55,8 +55,8 @@ class Pwntools < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cb/19/57503b5de719ee45e83472f339f617b0c01ad75cba44aba1e4c97c2b0abd/idna-2.9.tar.gz"
-    sha256 "7588d1c14ae4c77d74036e8c22ff447b26d0fde8f007354fd48a7814db15b7cb"
+    url "https://files.pythonhosted.org/packages/ea/b7/e0e3c1c467636186c39925827be42f16fee389dc404ac29e930e9136be70/idna-2.10.tar.gz"
+    sha256 "b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6"
   end
 
   resource "intervaltree" do
