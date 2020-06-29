@@ -10,6 +10,7 @@ class Muparser < Formula
     sha256 "20da2f5a649d58f95eedc5a7aed844a818993efcf2fa9d54d46b2dc8e3822c12" => :catalina
     sha256 "a6f9fa4ce3f683cc0799887200f1e38db042541a6efe45eaf991ba8b38d8b90e" => :mojave
     sha256 "bdbf31b17693b892f6be038d84e0b06707d517562d9eac62158612162555aa4e" => :high_sierra
+    sha256 "0ecd9b0cdae74f2cf8f5e4ca066539e7a2898325d5652d180b459bd01d1e700f" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
