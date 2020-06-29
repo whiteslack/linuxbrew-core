@@ -9,6 +9,7 @@ class Putty < Formula
     sha256 "d5e454c08c5d06394527aa7141a332eb721097068f25deff3b4affa847837178" => :catalina
     sha256 "5f9844fc7464fefd987780b3579a33b2ca37673be56c2a8249c312a19e20faea" => :mojave
     sha256 "6621f31a41a8eedbbb2fda99a0548deed80d432216469105bac8084df66dbcbf" => :high_sierra
+    sha256 "a653c9c394ab341c3b9fa7434a21b56adf9e651c7eb49f9b01cf4e248b9f91cb" => :x86_64_linux
   end
 
   head do
