@@ -45,7 +45,7 @@ class Deno < Formula
     system "core/libdeno/build/linux/sysroot_scripts/install-sysroot.py", "--arch=amd64" unless OS.mac?
 
     cd "cli" do
-      system "cargo", "install", "-vv", "--locked", "--root", prefix, "--path", "."
+      system "cargo", "install", "-vv", *std_cargo_args
     end
 
     # Install bash and zsh completion

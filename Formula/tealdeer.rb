@@ -28,7 +28,7 @@ class Tealdeer < Formula
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix unless OS.mac?
-    system "cargo", "install", "--locked", "--root", prefix, "--path", "."
+    system "cargo", "install", *std_cargo_args
     bash_completion.install "bash_tealdeer" => "tldr"
     zsh_completion.install "zsh_tealdeer" => "_tldr"
     fish_completion.install "fish_tealdeer" => "tldr.fish"

@@ -16,7 +16,7 @@ class Topgrade < Formula
   depends_on :xcode => :build if OS.mac? && MacOS::CLT.version >= "11.4" # libxml2 module bug
 
   def install
-    system "cargo", "install", "--locked", "--root", prefix, "--path", "."
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

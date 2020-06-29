@@ -18,7 +18,7 @@ class RipgrepAll < Formula
   depends_on "zip" => :test unless OS.mac?
 
   def install
-    system "cargo", "install", "--locked", "--root", prefix, "--path", "."
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
