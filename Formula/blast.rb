@@ -9,6 +9,7 @@ class Blast < Formula
     sha256 "652c133a61840c1a1f69de4f5827bd358434f3d7caa7886c273b3bab034e0721" => :catalina
     sha256 "b544b1e6e510c0c72b82b581a17eb8704ad53e46e9574d4dfd24bef8f5044148" => :mojave
     sha256 "9dd8d68f78e3825fc33064bc3b79d6474d56593e7260d39ab5f6408ad2e1e939" => :high_sierra
+    sha256 "938bc954cc11d2820575a6de50e6da2cdca768630aa445fcd00aabd79985964a" => :x86_64_linux
   end
 
   depends_on "lmdb"
