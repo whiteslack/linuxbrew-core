@@ -13,6 +13,7 @@ class Netpbm < Formula
     sha256 "37a97b0de551ec64acca8e1c9506e332fa6d89c9e1aabf0a17da0f6eda8209bf" => :catalina
     sha256 "c41c2506bf6902e2c20ca671b146b7f61b7280f70e592a1c577dc6e6258af8bf" => :mojave
     sha256 "cd6bde5ae0be1518e7413f5304433635ab6cc30179565b6ed58182081408cf94" => :high_sierra
+    sha256 "b680aa34d95d893f4a8139603fc1170b42b7ec1a525946020fe6379ccc7fdb4b" => :x86_64_linux
   end
 
   depends_on "subversion" => :build, :since => :catalina
