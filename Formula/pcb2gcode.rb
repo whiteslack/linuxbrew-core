@@ -1,17 +1,15 @@
 class Pcb2gcode < Formula
   desc "Command-line tool for isolation, routing and drilling of PCBs"
   homepage "https://github.com/pcb2gcode/pcb2gcode"
-  url "https://github.com/pcb2gcode/pcb2gcode/archive/v2.0.0.tar.gz"
-  sha256 "3b7e8cdc58852294d95b0ed705933f528a9e56428863490f5a27f22153cd713e"
-  revision 1
+  url "https://github.com/pcb2gcode/pcb2gcode/archive/v2.1.0.tar.gz"
+  sha256 "ee546f0e002e83434862c7a5a2171a2276038d239909a09adb36e148e7d7319a"
   head "https://github.com/pcb2gcode/pcb2gcode.git"
 
   bottle do
     cellar :any
-    sha256 "cb5117bb2a37a8bec3353d77f02d9992b07ecc5a8b4d5394cf83b640a02145c1" => :catalina
-    sha256 "e22d8eba9bdecf87719ee96fe8f7c4d2f02dc9d92f73304da07fe126f3ef05dc" => :mojave
-    sha256 "aa37eb099526a7acee7efd4f6e62a7522d162c1ef1c5abc2cb7e3afe25f2cd47" => :high_sierra
-    sha256 "434bd10eebb50332d8d20181285165c0aee158738de660549c32e3a0c4820086" => :sierra
+    sha256 "f061b44896db47c40e3ff5d58434aa701c7ba974b22a82f82b0206338181a200" => :catalina
+    sha256 "dae5016ae6634dda64d1ddc9ead1cd1dba55d8ef23f74dd2b9e848248bfdfee6" => :mojave
+    sha256 "bc556eccf6a7eb74ffaf14ce4396c5d311f8961cc035638692193009dda195f5" => :high_sierra
   end
 
   # Release 2.0.0 doesn't include an autoreconfed tarball
@@ -132,7 +130,6 @@ class Pcb2gcode < Formula
       M30
     EOS
     (testpath/"millproject").write <<~EOS
-      dpi=500
       metric=true
       zchange=10
       zsafe=5
@@ -150,7 +147,6 @@ class Pcb2gcode < Formula
       cut-speed=10000
       cutter-diameter=3
       fill-outline=true
-      outline-width=0.15
       zbridges=-0.6
       zcut=-2.5
       al-front=true

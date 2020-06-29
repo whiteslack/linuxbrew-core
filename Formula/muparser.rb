@@ -1,25 +1,28 @@
 class Muparser < Formula
   desc "C++ math expression parser library"
-  homepage "https://beltoforion.de/article.php?a=muparser"
-  url "https://github.com/beltoforion/muparser/archive/v2.2.6.1.tar.gz"
-  sha256 "d2562853d972b6ddb07af47ce8a1cdeeb8bb3fa9e8da308746de391db67897b3"
+  homepage "https://beltoforion.de/en/muparser/"
+  url "https://github.com/beltoforion/muparser/archive/v2.3.2.tar.gz"
+  sha256 "b35fc84e3667d432e3414c8667d5764dfa450ed24a99eeef7ee3f6647d44f301"
   head "https://github.com/beltoforion/muparser.git"
 
   bottle do
     cellar :any
-    sha256 "2a87b69702d3acb7f1e97cb090c891189465c8dc3692714361057dd8e586c4de" => :catalina
-    sha256 "c0feb51e0b10602b323d46f49d898ebb4cb36e00dcee42963d61b6c7ca27c23a" => :mojave
-    sha256 "611da2016012d77dbe1e5a9c85872cc8f8de23967b019ec039177b49fad2a0d1" => :high_sierra
-    sha256 "d5d3fd87e54d300578836ed61e066ef08b665050d7986e46ed6995eeee819088" => :sierra
-    sha256 "3b18faba41e1b2c9bf3e4ef4cc78c2f1920a62e3046805c1d840776dc4169013" => :x86_64_linux
+    sha256 "20da2f5a649d58f95eedc5a7aed844a818993efcf2fa9d54d46b2dc8e3822c12" => :catalina
+    sha256 "a6f9fa4ce3f683cc0799887200f1e38db042541a6efe45eaf991ba8b38d8b90e" => :mojave
+    sha256 "bdbf31b17693b892f6be038d84e0b06707d517562d9eac62158612162555aa4e" => :high_sierra
   end
+
+  depends_on "cmake" => :build
+  depends_on "gcc"
+
+  fails_with :clang # no OpenMP support
 
   def install
     ENV.cxx11 unless OS.mac?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args
+      system "make", "install"
+    end
   end
 
   test do

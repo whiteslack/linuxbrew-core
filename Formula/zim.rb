@@ -1,17 +1,15 @@
 class Zim < Formula
   desc "Graphical text editor used to maintain a collection of wiki pages"
   homepage "https://zim-wiki.org/"
-  url "https://github.com/jaap-karssenberg/zim-desktop-wiki/archive/0.72.1.tar.gz"
-  sha256 "ba02e418b4fb1d7847f96b49ada8c917c881a28bb5fb55dcdca54be7b3fd196a"
-  revision 1
+  url "https://github.com/jaap-karssenberg/zim-desktop-wiki/archive/0.73.1.tar.gz"
+  sha256 "63ab38b3d4477ce29a66ec0094331eca1fc40def63a3fb256d613dc7fdb3a59e"
   head "https://github.com/jaap-karssenberg/zim-desktop-wiki.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0fe8bbcf6c161c62dad791f42dea75495d9cf0b9e21822d8c6a7b5bbe6e0ab92" => :catalina
-    sha256 "0fe8bbcf6c161c62dad791f42dea75495d9cf0b9e21822d8c6a7b5bbe6e0ab92" => :mojave
-    sha256 "0fe8bbcf6c161c62dad791f42dea75495d9cf0b9e21822d8c6a7b5bbe6e0ab92" => :high_sierra
-    sha256 "4df25116dfff7eda1e930d2a7c9c8c2a2a3e926b87f2bb3a2db98b495aba8aae" => :x86_64_linux
+    sha256 "10b5ee2401d6771811831f96576b631ccdf62a147c9d1fd2538a5a44800653b5" => :catalina
+    sha256 "10b5ee2401d6771811831f96576b631ccdf62a147c9d1fd2538a5a44800653b5" => :mojave
+    sha256 "10b5ee2401d6771811831f96576b631ccdf62a147c9d1fd2538a5a44800653b5" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

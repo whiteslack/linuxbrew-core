@@ -19,6 +19,10 @@ class LSmash < Formula
     sha256 "00b5b08edf3405261e5b6777a2ca57c15b51d504e4369d27c811acd925cd694a" => :x86_64_linux
   end
 
+  # failed to upgrade since 02-11-2018
+  # upstream patch never got merged, https://github.com/l-smash/l-smash/issues/80
+  disable!
+
   def install
     system "./configure", "--prefix=#{prefix}", "--enable-shared"
     system "make", "install"

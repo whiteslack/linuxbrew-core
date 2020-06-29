@@ -8,10 +8,10 @@ class Breezy < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "be4d6a419337a7bdecd038f2a7bab9d339bf2382075d297775093bdcd5600eb6" => :catalina
-    sha256 "96453e37097279e25b8ffb3bab54a65d6d89b9eda7dbf8907e628925eccea5e9" => :mojave
-    sha256 "b888aa310c7e937cdfae4fe45c5ace6b6521649215841a332a962b061d1e07e4" => :high_sierra
-    sha256 "c7438be4ae720f977a91a7521775a4c6a750dd42446fc2e8878673080dc7a4ca" => :x86_64_linux
+    rebuild 1
+    sha256 "62d9eebeddd2d53cc2fd55a8279ef68569432e9efafd808c80b32960221d4591" => :catalina
+    sha256 "351b1dd293f3be714605174c0f1cd4d2baade3679a6f57b00c97b4f085d2291d" => :mojave
+    sha256 "3e8d6bc11b32867e0243b9459981358cdf3628314e89e3927b3cfb9fb1f767f8" => :high_sierra
   end
 
   depends_on "cython" => :build
@@ -20,8 +20,8 @@ class Breezy < Formula
   depends_on "python@3.8"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/b4/19/53433f37a31543364c8676f30b291d128cdf4cd5b31b755b7890f8e89ac8/certifi-2020.4.5.2.tar.gz"
-    sha256 "5ad7e9a056d25ffa5082862e36f119f7f7cec6457fa07ee2f8c339814b80c9b1"
+    url "https://files.pythonhosted.org/packages/40/a7/ded59fa294b85ca206082306bba75469a38ea1c7d44ea7e1d64f5443d67a/certifi-2020.6.20.tar.gz"
+    sha256 "5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3"
   end
 
   resource "configobj" do
@@ -30,8 +30,8 @@ class Breezy < Formula
   end
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/16/8e/b43e8e612cfe0e03410cd23da18094cbb78296fd56a8275f8213ac9a7699/dulwich-0.20.2.tar.gz"
-    sha256 "273fa401e11c215ed81a4a0c8474ed06aeae31900974fdd4a87af5df0e458115"
+    url "https://files.pythonhosted.org/packages/b3/34/adcd6646c5ed59a1206216d4a418121be57df3406f7a46570112db57ba6c/dulwich-0.20.5.tar.gz"
+    sha256 "98484ede022da663c96b54bc8dcdb4407072cb50efd5d20d58ca4e7779931305"
   end
 
   resource "fastimport" do
