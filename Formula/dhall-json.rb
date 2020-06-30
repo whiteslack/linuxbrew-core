@@ -3,8 +3,8 @@ class DhallJson < Formula
   homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-json"
   url "https://hackage.haskell.org/package/dhall-json-1.6.4/dhall-json-1.6.4.tar.gz"
   sha256 "3f0162949d53e10c23ee11ddfe92a808dc5b18c5a40289015c65baec0450266f"
-  head "https://github.com/dhall-lang/dhall-haskell.git"
   revision 1
+  head "https://github.com/dhall-lang/dhall-haskell.git"
 
   bottle do
     sha256 "30e4dd29ec472fb53ba842fe792e0ed75d82530750621aeddd9ec9e642f12351" => :catalina
