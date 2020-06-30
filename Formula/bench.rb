@@ -1,8 +1,19 @@
 class Bench < Formula
   desc "Command-line benchmark tool"
   homepage "https://github.com/Gabriel439/bench"
-  head "https://github.com/Gabriel439/bench.git"
   revision 1
+  head "https://github.com/Gabriel439/bench.git"
+
+  stable do
+    url "https://hackage.haskell.org/package/bench-1.0.12/bench-1.0.12.tar.gz"
+    sha256 "a6376f4741588201ab6e5195efb1e9921bc0a899f77a5d9ac84a5db32f3ec9eb"
+
+    # Compatibility with GHC 8.8. Remove with the next release.
+    patch do
+      url "https://github.com/Gabriel439/bench/commit/846dea7caeb0aee81870898b80345b9d71484f86.patch?full_index=1"
+      sha256 "fac63cd1ddb0af3bda78900df3ac5a4e6b6d2bb8a3d4d94c2f55d3f21dc681d1"
+    end
+  end
 
   bottle do
     sha256 "b1eccbf77a04e4de1a59a0eed5c0f6e2d8b6b191736ee9ad4fdea9a173010651" => :catalina
@@ -15,17 +26,6 @@ class Bench < Formula
   depends_on "ghc@8.8" => :build
 
   uses_from_macos "zlib"
-
-  stable do
-    url "https://hackage.haskell.org/package/bench-1.0.12/bench-1.0.12.tar.gz"
-    sha256 "a6376f4741588201ab6e5195efb1e9921bc0a899f77a5d9ac84a5db32f3ec9eb"
-
-    # Compatibility with GHC 8.8. Remove with the next release.
-    patch do
-      url "https://github.com/Gabriel439/bench/commit/846dea7caeb0aee81870898b80345b9d71484f86.patch?full_index=1"
-      sha256 "fac63cd1ddb0af3bda78900df3ac5a4e6b6d2bb8a3d4d94c2f55d3f21dc681d1"
-    end
-  end
 
   def install
     system "cabal", "v2-update"
