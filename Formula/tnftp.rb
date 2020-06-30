@@ -12,10 +12,10 @@ class Tnftp < Formula
     sha256 "925083cf63f151a7f217b39e8e1f182c59c809f28ed393cc1adbdd326a5245e5" => :x86_64_linux
   end
 
-  conflicts_with "inetutils", :because => "both install `ftp' binaries"
-
   uses_from_macos "bison" => :build
   uses_from_macos "ncurses"
+
+  conflicts_with "inetutils", :because => "both install `ftp' binaries"
 
   def install
     system "./configure", "--prefix=#{prefix}"
