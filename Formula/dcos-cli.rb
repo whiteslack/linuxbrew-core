@@ -1,16 +1,14 @@
 class DcosCli < Formula
   desc "The DC/OS command-line interface"
   homepage "https://docs.d2iq.com/mesosphere/dcos/latest/cli"
-  url "https://github.com/dcos/dcos-cli/archive/1.1.2.tar.gz"
-  sha256 "8d7097b8cf22d8ad384286f3aacf10bbe643a2484b5cf60a494a8233ae78c539"
+  url "https://github.com/dcos/dcos-cli/archive/1.1.3.tar.gz"
+  sha256 "cc423272e08a15d30e13c60b2245350c0b7d027649a6a01d44a58596a5ed8b20"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "885608448ee10b76a0605100eeda5b1597998b9f81597813bba4e7b32115d6f5" => :catalina
-    sha256 "f7116290594e24bac141f8e8689832197804373a6558c55159eeea79ce56a15c" => :mojave
-    sha256 "1255e7628a35b8afac17b55f34fa5e0d24cbcb14c155648bc39c7c579c91ef9f" => :high_sierra
-    sha256 "61ad2ff4a97b5678802ff6c3b2c3303891996aa9ef1032d9bf6fa8cbc93b273c" => :x86_64_linux
+    sha256 "1f98490af0a9ce9a22e7de6f764d887342e11bbd25ca70131e2987a93131170f" => :catalina
+    sha256 "d38aab9ff56007a19cc5a6e16546ac852b10a08d9b951c32dc36fd10642a15c0" => :mojave
+    sha256 "a44dadc1335fa9f20ef25f10cd6a6ef826b7d34cf20de7261b3e67d5c86f3474" => :high_sierra
   end
 
   depends_on "go" => :build

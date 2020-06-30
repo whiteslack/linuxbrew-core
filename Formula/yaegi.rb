@@ -1,16 +1,15 @@
 class Yaegi < Formula
   desc "Yet another elegant Go interpreter"
   homepage "https://github.com/containous/yaegi"
-  url "https://github.com/containous/yaegi/archive/v0.8.8.tar.gz"
-  sha256 "5f74283fc7edaeb4316c0f1449998085d1be8a30cd59cc3d865082e2d14eb1c1"
+  url "https://github.com/containous/yaegi/archive/v0.8.9.tar.gz"
+  sha256 "6eb782621e12896b9715d368848fc735a3745c46f79638bac9e95eafa11f0f27"
   head "https://github.com/containous/yaegi.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "89db7f444ec54b05e4d8fbbd0c466bdf61bece9a24912b1914e9aa8b5d0a6b52" => :catalina
-    sha256 "3257fa04545bf7062cd2a2e0253b81ecda483bedc1700d0d2cf47a073a3e74ec" => :mojave
-    sha256 "cb07199825d7ab1248e39c6faf182b5dbbad545d8d06fd590c1aeda76119d1ab" => :high_sierra
-    sha256 "e9aeaa8d13bf8b931ad4a2ed2cdd8b1322162ae190c65043c360878d3243b3bc" => :x86_64_linux
+    sha256 "3658d0a57064a7337623c6aba74e06413c2f8b586b3cabafca39a7353fbfb297" => :catalina
+    sha256 "3a12722a82af54893ca3e79ac713a53649cfa692e86293719e8e174574c1759a" => :mojave
+    sha256 "ed60eaa1ae16be71d2052ad8a24a708a1bb9b7d9fae9b819745ed99ef1a4f112" => :high_sierra
   end
 
   depends_on "go" => :build

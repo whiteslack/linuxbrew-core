@@ -1,16 +1,14 @@
 class Monit < Formula
   desc "Manage and monitor processes, files, directories, and devices"
   homepage "https://mmonit.com/monit/"
-  url "https://mmonit.com/monit/dist/monit-5.26.0.tar.gz"
-  sha256 "87fc4568a3af9a2be89040efb169e3a2e47b262f99e78d5ddde99dd89f02f3c2"
-  revision 1
+  url "https://mmonit.com/monit/dist/monit-5.27.0.tar.gz"
+  sha256 "d8c0deef624f193a952502fe9baabfa66e3d8d057df5738da43f9a37792afca4"
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "2469520cd629319f5ca58f4791d1f830be411643199658e5c249b401d143f8b2" => :catalina
-    sha256 "6bad371cf6ef0737965a8bc0af08838e4272a1fd12462123878185e0e477c50b" => :mojave
-    sha256 "049b5bc40d764cd3b4e27d651e4c28c58d3438d07714bb566ba1af6cfcbd8011" => :high_sierra
+    sha256 "244bbb87c88f90a08e157cf9fb50e501d15369a1c79cf66badb766bdd8de6fbb" => :catalina
+    sha256 "dfe692f5f8a4320956f237dd920d59a06801c8e89dfcca6aba01a2e2f9a0bbab" => :mojave
+    sha256 "7548c14639efa1102971eaf6f1d61dd32e4a6384afe2cfb70e20333979aa7338" => :high_sierra
   end
 
   depends_on "openssl@1.1"
