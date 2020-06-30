@@ -1,15 +1,14 @@
 class Pdfcpu < Formula
   desc "PDF processor written in Go"
   homepage "https://pdfcpu.io"
-  url "https://github.com/pdfcpu/pdfcpu/archive/v0.3.3.tar.gz"
-  sha256 "5e283dfd38f362039284f7258d59e55dbf6eedf0eec0cef901af7852e5534e7b"
+  url "https://github.com/pdfcpu/pdfcpu/archive/v0.3.4.tar.gz"
+  sha256 "e4a088b008e29ef037665811abc027266fca1f5c5866d96d67c69de59ba87b15"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "32e265a39213f4a66dca57e39c50c3955fdf4415755da1df17750f497d837150" => :catalina
-    sha256 "c4ca3f28755872682930a0ba326a2c82f9f3d0058285fcfa0da01432b42eec66" => :mojave
-    sha256 "c4ca3f28755872682930a0ba326a2c82f9f3d0058285fcfa0da01432b42eec66" => :high_sierra
-    sha256 "a8fadf636a26ab92c09a1efc497021b83ec260e7058d27c051275a9bd9e9d9f5" => :x86_64_linux
+    sha256 "6678b5940ae2cc31abc7d551390d8b3d36b40990ec66dfea9ddf4f495eb3af6b" => :catalina
+    sha256 "6678b5940ae2cc31abc7d551390d8b3d36b40990ec66dfea9ddf4f495eb3af6b" => :mojave
+    sha256 "6678b5940ae2cc31abc7d551390d8b3d36b40990ec66dfea9ddf4f495eb3af6b" => :high_sierra
   end
 
   depends_on "go" => :build

@@ -3,23 +3,22 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://github.com/witten/borgmatic/archive/1.5.6.tar.gz"
-  sha256 "ecef1e6206986914db69b2f4b63dc108a307ec993d3a4784d32f5435cc089378"
+  url "https://files.pythonhosted.org/packages/aa/ac/fbd3d6ed1ea5e34c2e53cde5659c4f122af2d921a1ed3a63baff0742a801/borgmatic-1.5.7.tar.gz"
+  sha256 "838c3a63c8d092219ebbc07fca2ba4f62122eab1c52d0ebe29c75a256f8b1d1a"
 
   bottle do
     cellar :any
-    sha256 "7af2c307e2c7e11866de1591adf8bc39f9cc8bdacea10a270da4cd08e4471895" => :catalina
-    sha256 "7e6382b567543ade976ba146bb853c19f7cedadb46bbc107cf175d53c73d8d7f" => :mojave
-    sha256 "8137fc301da41ddbe508163e77a9a12baa52338aa420507b332f946a49b58eb3" => :high_sierra
-    sha256 "5b0c16d8fbf2b60695345777946d4b8b79e57d8724f5f88f929181ef0a62482e" => :x86_64_linux
+    sha256 "7719c427e76b7782b88aeb911769f7166868648968da6cc06a10b8f4403957ee" => :catalina
+    sha256 "15926fc11401673dbd3c4be00d85a4d745648a1bdd0a5fb39a75f57c294d44d3" => :mojave
+    sha256 "6e098d4767583834825aa6039bf01f7e1dfb135be8f5a6794c22963c61eb8418" => :high_sierra
   end
 
   depends_on "libyaml"
   depends_on "python@3.8"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/b4/19/53433f37a31543364c8676f30b291d128cdf4cd5b31b755b7890f8e89ac8/certifi-2020.4.5.2.tar.gz"
-    sha256 "5ad7e9a056d25ffa5082862e36f119f7f7cec6457fa07ee2f8c339814b80c9b1"
+    url "https://files.pythonhosted.org/packages/40/a7/ded59fa294b85ca206082306bba75469a38ea1c7d44ea7e1d64f5443d67a/certifi-2020.6.20.tar.gz"
+    sha256 "5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3"
   end
 
   resource "chardet" do
@@ -58,8 +57,8 @@ class Borgmatic < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/f5/4f/280162d4bd4d8aad241a21aecff7a6e46891b905a4341e7ab549ebaf7915/requests-2.23.0.tar.gz"
-    sha256 "b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"
+    url "https://files.pythonhosted.org/packages/da/67/672b422d9daf07365259958912ba533a0ecab839d4084c487a5fe9a5405f/requests-2.24.0.tar.gz"
+    sha256 "b3559a131db72c33ee969480840fff4bb6dd111de7dd27c8ee1f820f4f00231b"
   end
 
   resource "ruamel.yaml" do
@@ -111,6 +110,7 @@ class Borgmatic < Formula
     config_content = File.read(config_path)
                          .gsub(/# ?local_path: borg1/, "local_path: #{borg}")
                          .gsub(/user@backupserver:sourcehostname.borg/, repo_path)
+                         .gsub("- /var/log/syslog*", "")
     File.open(config_path, "w") { |file| file.puts config_content }
 
     # Initialize Repo
@@ -130,7 +130,7 @@ class Borgmatic < Formula
       info --debug #{repo_path}
       init --encryption repokey --debug #{repo_path}
       prune --keep-daily 7 --prefix {hostname}- #{repo_path}
-      create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home /var/log/syslog*
+      create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home
       check --prefix {hostname}- #{repo_path}
       list --json #{repo_path}
     EOS

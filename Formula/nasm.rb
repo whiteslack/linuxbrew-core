@@ -1,16 +1,14 @@
 class Nasm < Formula
   desc "Netwide Assembler (NASM) is an 80x86 assembler"
   homepage "https://www.nasm.us/"
-  url "https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.xz"
-  sha256 "e24ade3e928f7253aa8c14aa44726d1edf3f98643f87c9d72ec1df44b26be8f5"
+  url "https://www.nasm.us/pub/nasm/releasebuilds/2.15.01/nasm-2.15.01.tar.xz"
+  sha256 "28a50f80d2f4023e444b113e9ddc57fcec2b2f295a07ce158cf3f18740375831"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2c07dbee044266696866676d76d446a07099505294271c12f342b241067eb604" => :catalina
-    sha256 "77a183895137e0f95d897d33399235a58f1f23c99bac7f041d58baeb6f32e3b9" => :mojave
-    sha256 "b8d720e9008f58bbeddee14a8fa4841a8913c3d61d46872b37f7736d03a06218" => :high_sierra
-    sha256 "1d5283c366d958a1b7efdc22983fe313e0bd2a26268e585ced9f284f50ed270b" => :sierra
-    sha256 "d949cc51f0c82807bc936552d6433c4f26819e3d9e543bddf107dc168836d3f7" => :x86_64_linux
+    sha256 "78a5c441bb57c5cb0a70a54183fa5685b1f31800f0fa13f97d36b01029f0f243" => :catalina
+    sha256 "f9cfc8ad4a4a6e671da2ab8fd12ea19faac331bc427b54b16f5ece9e29a50843" => :mojave
+    sha256 "269f9428ff92c073e4d9d7313d76bbfb11b4d971819d6c807cc09b75c2e2748e" => :high_sierra
   end
 
   head do
