@@ -11,6 +11,7 @@ class Ppsspp < Formula
     sha256 "2d105f4dee7ae29b1974fa2ebb4ce20958eba5d745205366a1c0358632990f22" => :catalina
     sha256 "8b2f9c147ad1253c0f78162b52b21d1566d88389ea8f8ae36f09f85a43c555ec" => :mojave
     sha256 "f467b15733290f1af196837f23bb8d6440ff1d79d8c178eee35fe476ec445d3e" => :high_sierra
+    sha256 "ead60f2b6a565c4d464167e5ee074427edd8634c7124503963ea91dabe673622" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
