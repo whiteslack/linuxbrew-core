@@ -34,12 +34,12 @@ class Rust < Formula
   depends_on "openssl@1.1"
   depends_on "pkg-config"
 
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "binutils"
   end
-
-  uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   resource "cargobootstrap" do
     if OS.mac?
