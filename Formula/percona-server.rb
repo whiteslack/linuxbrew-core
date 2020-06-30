@@ -19,13 +19,13 @@ class PerconaServer < Formula
   depends_on "cmake" => :build
   depends_on "openssl@1.1"
 
+  uses_from_macos "curl"
+
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "libedit"
     depends_on "readline"
   end
-
-  uses_from_macos "curl"
 
   conflicts_with "mariadb", "mysql",
     :because => "percona, mariadb, and mysql install the same binaries."
