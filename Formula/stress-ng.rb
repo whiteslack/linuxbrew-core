@@ -12,11 +12,11 @@ class StressNg < Formula
     sha256 "34c9f6a035401e02f307e126ef4fc8d0a0585baf201821adbdcd315051799ac6" => :x86_64_linux
   end
 
+  uses_from_macos "zlib"
+
   on_macos do
     depends_on :macos => :sierra
   end
-
-  uses_from_macos "zlib"
 
   def install
     inreplace "Makefile", "/usr", prefix
