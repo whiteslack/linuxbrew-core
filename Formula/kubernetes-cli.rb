@@ -16,11 +16,11 @@ class KubernetesCli < Formula
 
   depends_on "go" => :build
 
+  uses_from_macos "rsync" => :build
+
   on_linux do
     depends_on "rsync" => :build
   end
-
-  uses_from_macos "rsync" => :build
 
   def install
     ENV["GOPATH"] = buildpath
