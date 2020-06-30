@@ -22,13 +22,13 @@ class Mycli < Formula
     depends_on "libffi"
   end
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   resource "asn1crypto" do
     url "https://files.pythonhosted.org/packages/fc/f1/8db7daa71f414ddabfa056c4ef792e1461ff655c2ae2928a2b675bfed6b4/asn1crypto-0.24.0.tar.gz"
     sha256 "9d5c20441baf0cb60a4ac34cc447c6c189024b6b4c6cd7877034f4965c464e49"
-  end
-
-  on_linux do
-    depends_on "pkg-config" => :build
   end
 
   resource "cffi" do
