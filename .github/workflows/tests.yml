@@ -93,6 +93,7 @@ jobs:
 
       - name: Run brew test-bot --only-formulae
         run: |
+          rm -rf ~/bottles
           mkdir ~/bottles
           cd ~/bottles
           brew test-bot --only-formulae --keep-old
