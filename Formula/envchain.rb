@@ -5,12 +5,6 @@ class Envchain < Formula
   sha256 "09af1fe1cfba3719418f90d59c29c081e1f22b38249f0110305b657bd306e9ae"
   head "https://github.com/sorah/envchain.git"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "libsecret"
-    depends_on "readline"
-  end
-
   bottle do
     cellar :any_skip_relocation
     sha256 "a8658954176e96b463565ea6b5c891b3635622c550ca32efb8ee2e3baec30062" => :catalina
@@ -21,6 +15,12 @@ class Envchain < Formula
     sha256 "1de7c8c17e489b1f832078d3e5c403133accd187f2e666b44bb4da5d1d74f9f7" => :yosemite
     sha256 "97f5160a1a9ec028afbaf25416de61f976ef7d74031a55c0f265d158627d4afd" => :mavericks
     sha256 "f24f674a86e50307c6b42796f5850925c193fe8e7aaaa1219061f747397ed7a6" => :x86_64_linux
+  end
+
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "libsecret"
+    depends_on "readline"
   end
 
   def install
