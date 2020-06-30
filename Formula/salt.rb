@@ -22,13 +22,13 @@ class Salt < Formula
   depends_on "python@3.8"
   depends_on "zeromq"
 
+  uses_from_macos "libffi"
+
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "gmp"
     depends_on "pcre"
   end
-
-  uses_from_macos "libffi"
 
   # Saltstack's Git filesystem backend depends on pygit2 which depends on libgit2
   # pygit2 must be the same version as libgit2 - mismatched versions are incompatible
