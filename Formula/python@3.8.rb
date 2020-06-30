@@ -13,6 +13,8 @@ class PythonAT38 < Formula
     sha256 "4517039f539ca486cd95e1186fee57c424918230dd8a701887f7e5754e8f3cd0" => :x86_64_linux
   end
 
+  # setuptools remembers the build flags python is built with and uses them to
+  # build packages later. Xcode-only systems need different flags.
   pour_bottle? do
     reason <<~EOS
       The bottle needs the Apple Command Line Tools to be installed.
@@ -61,9 +63,6 @@ class PythonAT38 < Formula
     url "https://github.com/python/cpython/commit/8ea6353.patch?full_index=1"
     sha256 "c47680c85f201f5830bf71741f09ece031b99386040f3c70b20190b4c47fb81d"
   end
-
-  # setuptools remembers the build flags python is built with and uses them to
-  # build packages later. Xcode-only systems need different flags.
 
   def lib_cellar
     prefix / (OS.mac? ? "Frameworks/Python.framework/Versions/#{xy}" : "") /
