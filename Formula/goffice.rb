@@ -9,6 +9,7 @@ class Goffice < Formula
     sha256 "983c0ffa880b04fff6e29283a5d02fa089a08c86f0e203abff977e1dae1d9468" => :catalina
     sha256 "c33d7ef544bec3d218f80d43998e6e5b80583699f9f6066b78c39fd21c87b5f6" => :mojave
     sha256 "25961ad399e8d8e0bdde62ad3cfbed0ec2926ae39f8eb4facc6f9ad303a1487e" => :high_sierra
+    sha256 "9a2aa69b9750b749e05b39896f65395bff60e09f976e5ba0c90b31ec212e0054" => :x86_64_linux
   end
 
   head do
