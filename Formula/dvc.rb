@@ -11,6 +11,7 @@ class Dvc < Formula
     sha256 "e2b50d19496f94cb108104bb7aa45e23773f6ba262af55c4d1773eb546416f46" => :catalina
     sha256 "1b080eb57eb576ad7b247e5b8b2e272a4c459a42b3ed8d5002bbea682548de41" => :mojave
     sha256 "f42c065cd2cb833e573256c9c0d90d7808c2c1321de793eda0924895ed2e75dc" => :high_sierra
+    sha256 "9dbbe76d5fb3a2341ea699050dd8a1d54b05bff580dad97a39eb06216f2fe331" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
