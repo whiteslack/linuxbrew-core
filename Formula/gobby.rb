@@ -10,6 +10,7 @@ class Gobby < Formula
     sha256 "5e2914adc88813352b11d1db5e69d2aa9b4612b7fb4ae05443a18b9426a0f26d" => :catalina
     sha256 "d55e74b24f3d03968afa85eff7473316e8c0816a137d82e26e24e089b42cc3b4" => :mojave
     sha256 "76ec450b768f0d27bb032cfb34e337002ee9f45a547a07c01e03b73e03413ad0" => :high_sierra
+    sha256 "269f0eb42f5996fbbb5a0ca8c5e46c3abc63167f044811951e33e38e589346be" => :x86_64_linux
   end
 
   depends_on "intltool" => :build
