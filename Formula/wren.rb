@@ -10,6 +10,7 @@ class Wren < Formula
     sha256 "21bb30d077f3de93293d6e6f3c41e8f923e6de7d8d04df2f48c7378f76b3d16f" => :catalina
     sha256 "d3837f28ed556d33753beb658f22b197f0afdb2aac3b30de26b2859397123d51" => :mojave
     sha256 "529a384d6d1665dd269ef7b6e8ea61f1edccddd5478ce82ec30839346af3d3b5" => :high_sierra
+    sha256 "2d58d90b330638b33cf9dff80befe9708eb537ce6b951173050700850151071e" => :x86_64_linux
   end
 
   def install
