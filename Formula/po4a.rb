@@ -19,6 +19,7 @@ class Po4a < Formula
   depends_on "docbook-xsl" => :build
   depends_on "gettext"
 
+  uses_from_macos "libxslt"
   uses_from_macos "perl"
 
   resource "Locale::gettext" do
@@ -75,6 +76,8 @@ class Po4a < Formula
     end
 
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+
+    inreplace "Po4aBuilder.pm", "PERL5LIB=lib", "PERL5LIB=lib:#{ENV["PERL5LIB"]}" unless OS.mac?
 
     system "perl", "Build.PL", "--install_base", libexec
     system "./Build"
