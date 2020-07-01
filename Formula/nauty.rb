@@ -10,6 +10,7 @@ class Nauty < Formula
     sha256 "5d118260b6fdabceb476c1421e4b4dd41d3027943b623ff7a4dc81baf6e284b9" => :catalina
     sha256 "2fa3783663f6e67d9a6e42c492c68412fdeeff7201d81e557b75927ff50b78f1" => :mojave
     sha256 "a5333c52eecb023c23be9638ebd916606db43f8f7ef1d7ada4877ca00355d65a" => :high_sierra
+    sha256 "a1b43c456103ecf2c1200ede8adbc6ab728527ceb711148edd848950a3917440" => :x86_64_linux
   end
 
   def install
