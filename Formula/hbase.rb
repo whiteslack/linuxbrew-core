@@ -9,6 +9,7 @@ class Hbase < Formula
     sha256 "a9ec56fc8c2a4629decb24c71c940f6fe455f5805d8935d5bc5f735cc1598711" => :catalina
     sha256 "1c7e1f742b67d5309ff781c8956e6626a618218f340df3a829c43179b2b2c11b" => :mojave
     sha256 "188b5091ec942c61b789b823aa3537a0cb0ffc808d7c20a37262c18899c5e394" => :high_sierra
+    sha256 "7293adc065a939e3bd83c77dadb0ded6dcb2fb9f0681a11f60fcfee7f45cd890" => :x86_64_linux
   end
 
   depends_on "ant" => :build
