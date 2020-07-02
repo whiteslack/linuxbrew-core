@@ -9,6 +9,7 @@ class Gleam < Formula
     sha256 "d6cc30c84004f50f76c4d7501814e5311482619c96b56e7e51f9b706e3490c25" => :catalina
     sha256 "724d94e8bf2556d9485423de6ed21efbc53326114f245d9ac24d96e20f57a96d" => :mojave
     sha256 "4735f65ab3a0ae5614feaf1433cd103edc1ea6ee2de59c2383e051047834ff55" => :high_sierra
+    sha256 "77526dbb7068228f537cbd8784e084eee2709cd150fbc48fb98671e5d6ea18a8" => :x86_64_linux
   end
 
   depends_on "rust" => :build
