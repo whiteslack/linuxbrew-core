@@ -10,6 +10,7 @@ class Fdupes < Formula
     sha256 "a8923209aeca2d2d84a059138479ce569122408995484f415aa5d7fe4d89f9b8" => :catalina
     sha256 "cd0f54fb053da84b7039a11a29830e1129bc76a5b3d8a35ac2b4e0e2738d27f9" => :mojave
     sha256 "e4ea45cc84b1935038af9717f8d3efa158f3ec3ac2e04586134764d180365eeb" => :high_sierra
+    sha256 "6c794f1bfa9fdbbcc51a0ac1d0f5664d60d398c23bb0479ed8dd334e5abdbe3d" => :x86_64_linux
   end
 
   depends_on "pcre2"
