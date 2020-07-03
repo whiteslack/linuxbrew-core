@@ -3,16 +3,15 @@ class DockerCompose < Formula
 
   desc "Isolated development environments using Docker"
   homepage "https://docs.docker.com/compose/"
-  url "https://github.com/docker/compose/archive/1.26.1.tar.gz"
-  sha256 "90d274fbe25e95831edb3642491b6dda731492e440155494e0d7361fb7847aa4"
+  url "https://github.com/docker/compose/archive/1.26.2.tar.gz"
+  sha256 "7c33f2a949b8ef15f36a03574a05c55246615db23134fd1377324681bbbca095"
   head "https://github.com/docker/compose.git"
 
   bottle do
     cellar :any
-    sha256 "2fad16dc653ab154af4ab9107bd8222df6370b3fe5ffa64ae31a5b6abb47cefa" => :catalina
-    sha256 "bddf16f5594ee5172d3a1afe22ef4d372fb4dc0d7f3fc8112bcaff041015cbec" => :mojave
-    sha256 "5a69754a7f778e02ea6b7a4ca6ee0fa97682f2b019e80e43833faba4654bfd13" => :high_sierra
-    sha256 "2ddbae1b152bb31875f7c0f31b5964c4d297bd399c91edb9755e82640314e15a" => :x86_64_linux
+    sha256 "aada6f245dc719b3d62d4e46ba80698247584bf7022a2aa3329d7abbb845b870" => :catalina
+    sha256 "f90d1d546d3e45448398fd8e3b7f45173d45c2989436b9263c6eb6976060a45e" => :mojave
+    sha256 "9cf6945b76dbd379d018ff49c53460201e0fc564b75fa6ce20ef71e2e19869d4" => :high_sierra
   end
 
   depends_on "libyaml"
