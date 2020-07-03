@@ -9,6 +9,7 @@ class Libvmaf < Formula
     sha256 "ebea199beb3b71bd3ed5310c4bcb93a42039085f0ebcc9209b94845f61bd3f5c" => :catalina
     sha256 "ac339674e17c5facf37dcb6d2c39c612b4a05c023558958cb4de58b7affc3ad6" => :mojave
     sha256 "dac4209abe54273cd033960401ee6392219c3bb972c4185499c970a64edcf084" => :high_sierra
+    sha256 "3f11fd86708d4f986b0677527198eb99dcb20eaf66958cb0c21b64b71622797c" => :x86_64_linux
   end
 
   depends_on "meson" => :build
