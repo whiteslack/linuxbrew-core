@@ -9,6 +9,7 @@ class GoogleJavaFormat < Formula
     sha256 "40458975314ee330d5563f305c08538a3774b3f816d43075e9509fe16dc121a5" => :catalina
     sha256 "264c72a1955375d7aecb428be58dd60c1710a1d9ef3ba242bc9a17bd185547c9" => :mojave
     sha256 "83fc6d1ca07eb27c3c9124020aa6e366815585c1e6e2d0daf90076a11844e179" => :high_sierra
+    sha256 "2990b4bd095d442309f77bfe2bb5bd3e1eb6473baa377d8052290d136ffab341" => :x86_64_linux
   end
 
   depends_on "maven" => :build
