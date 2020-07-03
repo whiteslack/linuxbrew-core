@@ -10,6 +10,7 @@ class Istioctl < Formula
     sha256 "c4ee60917aa4016dcf01df38ac018bd86634a0c3a5986c14808dbc4091c65529" => :catalina
     sha256 "c4ee60917aa4016dcf01df38ac018bd86634a0c3a5986c14808dbc4091c65529" => :mojave
     sha256 "c4ee60917aa4016dcf01df38ac018bd86634a0c3a5986c14808dbc4091c65529" => :high_sierra
+    sha256 "90d3b262b9e55019867d7975044205ba7643c833457b15dc0f86e95b1f5c631d" => :x86_64_linux
   end
 
   depends_on "go" => :build
