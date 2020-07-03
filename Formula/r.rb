@@ -120,7 +120,7 @@ class R < Formula
     assert_equal "[1] 2", shell_output("#{bin}/Rscript -e 'print(1+1)'").chomp
     assert_equal dylib_ext, shell_output("#{bin}/R CMD config DYLIB_EXT").chomp
 
-    system bin/"Rscript -e \'install.packages(\"gss\", \".\", \"https://cloud.r-project.org\")\'"
+    system bin/"Rscript", "-e", "install.packages('gss', '.', 'https://cloud.r-project.org')"
     assert_predicate testpath/"gss/libs/gss.so", :exist?,
                      "Failed to install gss package"
   end
