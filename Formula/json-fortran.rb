@@ -11,6 +11,7 @@ class JsonFortran < Formula
     sha256 "6a0de94db085feec3b791b9b154e0608be45dcee56bdebed1a40f1d2b01f6db1" => :catalina
     sha256 "0eba6baf8fc61081bef4fe113cab288c48b15db82b3bf6046123078092d94d60" => :mojave
     sha256 "0bfa26c79959e2963fb3a60a95c13e4199c914c5390d438aac1f0e9e1b8e7359" => :high_sierra
+    sha256 "fb8853b13861fbfb2156631c2983735b34349fc6b8304bfb909a6c45fa80624c" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
