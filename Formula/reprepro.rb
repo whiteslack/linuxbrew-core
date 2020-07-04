@@ -10,6 +10,7 @@ class Reprepro < Formula
     sha256 "b4588ca9f8be12fdf56fe66d846ef9dc0c0508fd436fbb3065c0009b7bcd6939" => :catalina
     sha256 "70363262c41a09895d4d43a2bd25302ed76e9e9d187edde3512ec917e5a96b48" => :mojave
     sha256 "86a0418ad19243949f1dbfb621970022fab9eb409c5690e4bca2d12f441644dd" => :high_sierra
+    sha256 "fc349f394bba35153604be958a45229a3de0756794716f010499c95156be1ee3" => :x86_64_linux
   end
 
   depends_on "berkeley-db@4"
