@@ -10,6 +10,7 @@ class Scipy < Formula
     sha256 "532b86d24f1fcda818e47c21320eb9462229af84335c6f4a9b63152d85c63894" => :catalina
     sha256 "fa292747d92047e8e74f661839b46e25d564845196f079a52bc0031ff81aae07" => :mojave
     sha256 "50dc3f7527dffe8023ee883158ce64493ebbe00c6231db3f7f91a1eb2b087bd7" => :high_sierra
+    sha256 "0a827f98d9080892072fd6381c13d7412cf40473c937716e3b2131f76bd92a09" => :x86_64_linux
   end
 
   depends_on "swig" => :build
