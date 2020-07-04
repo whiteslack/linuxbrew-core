@@ -10,6 +10,7 @@ class Kahip < Formula
     sha256 "a05c9bfbd38225e3730e10756f1515d833f09f61eccd7745c55dd8b78690b790" => :catalina
     sha256 "57e35f0a81e0d22f9d8d4438994efcc30295e54865525ba89236f58647f66174" => :mojave
     sha256 "78fda0b177b22dc65d0d9b5116dc842aa023cb027afccd4c2f968f42ac55fada" => :high_sierra
+    sha256 "05033633bb34c3798b8b284177152f6adc35746031f34390ea600d88d5d41045" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
