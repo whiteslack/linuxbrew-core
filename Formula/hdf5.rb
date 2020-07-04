@@ -10,6 +10,7 @@ class Hdf5 < Formula
     sha256 "e0990f7a52f3f66fd8d546ff1e1d26d4a0cec5ebc9a45ec21fb5335359d6878a" => :catalina
     sha256 "3b681a12f21a576b4c80d84d52dbe8ff9380ecc517f9b742dbe26faf5ffc289a" => :mojave
     sha256 "331f9a49fb5abb3344a6dc7ff626e37d799418d8de507487c30aff91e2b22265" => :high_sierra
+    sha256 "42d53ea00773e82bfd8766eac00aaef3886ed21a99668bc22d4fae5a71283847" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
