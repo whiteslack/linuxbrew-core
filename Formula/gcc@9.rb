@@ -3,15 +3,16 @@ require "os/linux/glibc"
 class GccAT9 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-9.2.0/gcc-9.2.0.tar.xz"
-  sha256 "ea6ef08f121239da5695f76c9b33637a118dcf63e24164422231917fa61fb206"
-  revision 1
+  url "https://ftp.gnu.org/gnu/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
+  sha256 "71e197867611f6054aa1119b13a0c0abac12834765fe2d81f35ac57f84f742d1"
 
   # gcc is designed to be portable.
   bottle do
     cellar :any
-    sha256 "fe3b621da4b37c5b3982789f6dc24e7b535ccf3885e89e0e3233d8de3ef9fa52" => :x86_64_linux
+    sha256 "68aa5249f09a70b9c46bd403a46ae42b64f6ea6b3a2af00603852ecaf77c72ce" => :catalina
+    sha256 "445cf4a6a4f8f3da61c7e1e6aceaf6fe919a08c475126b2b1e159eae829617a4" => :mojave
+    sha256 "682244d252f68de9513ed43f45e3e9f80bcd582e58df1d4aaa16197f3fc88742" => :high_sierra
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -24,13 +25,11 @@ class GccAT9 < Formula
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
-  depends_on :linux
   depends_on "mpfr"
 
-  unless OS.mac?
-    depends_on "zlib"
-    depends_on "binutils"
-  end
+  uses_from_macos "zlib"
+
+  depends_on "binutils" unless OS.mac?
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
@@ -46,6 +45,11 @@ class GccAT9 < Formula
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
+
+    # Even when suffixes are appended, the info pages conflict when
+    # install-info is run so pretend we have an outdated makeinfo
+    # to prevent their build.
+    ENV["gcc_cv_prog_makeinfo_modern"] = "no"
 
     # We avoiding building:
     #  - Ada, which requires a pre-existing GCC Ada compiler to bootstrap
@@ -121,7 +125,7 @@ class GccAT9 < Formula
     # Handle conflicts between GCC formulae and avoid interfering
     # with system compilers.
     # Rename man7.
-    Dir.glob(man7/"*.7") { |file| add_suffix file, version_suffix }
+    Dir.glob(man7/"*.7") { |file| add_suffix file, "9" }
     # Even when we disable building info pages some are still installed.
     info.rmtree
   end
@@ -217,7 +221,7 @@ class GccAT9 < Formula
         return 0;
       }
     EOS
-    system "#{bin}/gcc-#{version_suffix}", "-o", "hello-c", "hello-c.c"
+    system "#{bin}/gcc-9", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", `./hello-c`
 
     (testpath/"hello-cc.cc").write <<~EOS
@@ -228,7 +232,7 @@ class GccAT9 < Formula
         return 0;
       }
     EOS
-    system "#{bin}/g++-#{version_suffix}", "-o", "hello-cc", "hello-cc.cc"
+    system "#{bin}/g++-9", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", `./hello-cc`
 
     (testpath/"test.f90").write <<~EOS
@@ -242,7 +246,7 @@ class GccAT9 < Formula
       write(*,"(A)") "Done"
       end
     EOS
-    system "#{bin}/gfortran-#{version_suffix}", "-o", "test", "test.f90"
+    system "#{bin}/gfortran-9", "-o", "test", "test.f90"
     assert_equal "Done\n", `./test`
   end
 end

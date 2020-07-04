@@ -3,13 +3,13 @@ class Scipy < Formula
   homepage "https://www.scipy.org"
   url "https://files.pythonhosted.org/packages/fd/bd/86b03ed778e0428db4fec584ee43846d1017c46425679b45869a7c5fc021/scipy-1.5.0.tar.gz"
   sha256 "4ff72877d19b295ee7f7727615ea8238f2d59159df0bdd98f91754be4a2767f0"
+  revision 1
   head "https://github.com/scipy/scipy.git"
 
   bottle do
-    sha256 "0f0120345fc26234606b9c4ad4a82f57853b8c1b0bcdcb5f2a1acadd32868bf3" => :catalina
-    sha256 "579071f49a51dd26c9d9ae7ff1eefe8932277747642accccf84bd286b5504c28" => :mojave
-    sha256 "77e44c7c1ae45d22a66fe6298be9dd8b9ed1ad51e0e401c71fd95d9ed44690ac" => :high_sierra
-    sha256 "65ffefefc2065f6d34da544cd0c4df291bbdb2c223187571e2ef1305689749f3" => :x86_64_linux
+    sha256 "532b86d24f1fcda818e47c21320eb9462229af84335c6f4a9b63152d85c63894" => :catalina
+    sha256 "fa292747d92047e8e74f661839b46e25d564845196f079a52bc0031ff81aae07" => :mojave
+    sha256 "50dc3f7527dffe8023ee883158ce64493ebbe00c6231db3f7f91a1eb2b087bd7" => :high_sierra
   end
 
   depends_on "swig" => :build
