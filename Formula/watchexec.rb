@@ -9,6 +9,7 @@ class Watchexec < Formula
     sha256 "d9fde64c4686cb698694de2a08b007248859d7bd80b20ce539dfaf9d5d403acf" => :catalina
     sha256 "e16c18b5a3f0b853b5e966aa29e274c6da83b528c76843fbff558dd216974b94" => :mojave
     sha256 "69a4a23a68b64e2bc1b5796b4a30f8a6cd1abcff70209d87cf3165c99b7438bc" => :high_sierra
+    sha256 "0c6a03bc329f030036f37b427be02858f14d6da8ab37e84408d77d1c31ad9840" => :x86_64_linux
   end
 
   depends_on "rust" => :build
