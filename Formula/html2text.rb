@@ -10,6 +10,7 @@ class Html2text < Formula
     sha256 "567d2c7e25a24c445ad54074e9ff3ee6edfce3fe7fe960966dcd49a488b2affb" => :catalina
     sha256 "55a8fe864bc8e05e7e2fa0085e22adb251fdeeee3fd463e326224a3dff78c773" => :mojave
     sha256 "b0c913f98f9169669395d57c28c45d7d6c1dc68c13fdb82ba52a04fefdb00bc5" => :high_sierra
+    sha256 "22528fa5cb383f88fe7ffcd7dc1fe2c763420e6aa50b23cd8d9f19a9d32728cc" => :x86_64_linux
   end
 
   def install
