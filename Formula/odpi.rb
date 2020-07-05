@@ -9,6 +9,7 @@ class Odpi < Formula
     sha256 "e5694f2aaf70a12bd5c4706baf2a245f9a263b8c397bf2d072d1d3a8a487787b" => :catalina
     sha256 "7290f588c312521a1468696d8f6d463fdc804655c385292fbde07808c5929343" => :mojave
     sha256 "64a67b0695f49cebf4d21495278752babdc34ab44639fec64c645cf08fdfd112" => :high_sierra
+    sha256 "43d34f7ef54ab66fe09f7303fe6300094fb652119366d8153b601cab55270e69" => :x86_64_linux
   end
 
   def install
