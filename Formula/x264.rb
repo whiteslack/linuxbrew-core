@@ -1,22 +1,20 @@
 class X264 < Formula
   desc "H.264/AVC encoder"
   homepage "https://www.videolan.org/developers/x264.html"
-  revision 1
   head "https://code.videolan.org/videolan/x264.git"
 
   stable do
     # the latest commit on the stable branch
     url "https://code.videolan.org/videolan/x264.git",
-        :revision => "296494a4011f58f32adc54304a2654627558c59a"
-    version "r2999"
+        :revision => "cde9a93319bea766a92e306d69059c76de970190"
+    version "r3011"
   end
 
   bottle do
     cellar :any
-    sha256 "d3920895314d81fee66e88c945eab141be275ad3e42fc3aaac8fefa6d956df73" => :catalina
-    sha256 "9f836c748fb02ab8e318f56b9b57e773177875b3a41a9bac04a8bac41b989b1a" => :mojave
-    sha256 "ae608ff3910063f0ed5ed5eaaf3f60f58a3502ea6bdfa002937a2d4284f585db" => :high_sierra
-    sha256 "79d5146d84e138b9073dbe5e8f3979277c4556cd7a6f8ce8f0186e776d227c69" => :x86_64_linux
+    sha256 "0f3e8fbc5399231cc48770114071190d8fc7c598aedde207ee11eabce5e32b19" => :catalina
+    sha256 "5d1392936e7a8ca6008e918d876eb0851c0357d1b7f40b9417c147448dcb9fc2" => :mojave
+    sha256 "fa6457de45c2d97b1b258a11bfb5c1b2b36427ecc82ddb76c50db685b620adb3" => :high_sierra
   end
 
   depends_on "nasm" => :build

@@ -3,13 +3,13 @@ class Gnunet < Formula
   homepage "https://gnunet.org/"
   url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.12.2.tar.gz"
   sha256 "ac288b047d1156fc5e739062b11242bad0487993631e79781aede620ddf18cd7"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "31a8219cf9008c4f14b9bbbf962bcc9ab1ae2a3225b83257a3a2534d993e0d4c" => :catalina
-    sha256 "4bc0298e1059a8da833a8cc73b01fd3705fef61931b1be30f7132180f9083fbc" => :mojave
-    sha256 "113d1a55a25b57615189749651a3d69b6573d587baf06000beb0d8733f9d62fa" => :high_sierra
-    sha256 "5befa27563830875d746ea79c96defca0f11bb9dad7c37d256090ddac0730ab1" => :x86_64_linux
+    sha256 "fb9832b774098bf5d586c16e474ff9be1660f752534587c977ca83bbc0fdcd82" => :catalina
+    sha256 "4ae15b65746317b11c64ab5aa1566c8988c7a0f4f99b8266d89757137defaf3d" => :mojave
+    sha256 "91262185e2d1eef7dd824bcf937c1be40dd234ed2eed6d763d63735cd5dfb125" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
