@@ -8,6 +8,7 @@ class Coturn < Formula
     sha256 "027e54c623df2dca0cb5b281123a01b5ab4625d277d7a1f7ac2bd998df790b01" => :catalina
     sha256 "f5d4351c3ae9d4b8949012379f6b7cb680f4f0fdb6b01c55ff84bd735bd3a490" => :mojave
     sha256 "4bfb3e74a8d467f7935ccb316097a70b3b14018b31316bccf7c758e65f2479e8" => :high_sierra
+    sha256 "ca4817bef85bbd8fdd8848933ccf546cae829ffb2fc7913cbb93e251ffb8158f" => :x86_64_linux
   end
 
   depends_on "hiredis"
