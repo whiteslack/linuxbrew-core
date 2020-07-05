@@ -10,6 +10,7 @@ class Sqlite < Formula
     sha256 "98f798c4a62c9db46cc6ac82c499a0a1b8016dfebdfaa54eb4bf5c95a90117b0" => :catalina
     sha256 "b89dc46dace451b2adc7f7e1c7456788cb3b74b3250d6183b0b7396bc00d7ccb" => :mojave
     sha256 "9e117bfa603411bd552142da715ed9db8bd951e524e3d4ee7987cfeffcdf7b9d" => :high_sierra
+    sha256 "cd363d856f554be2e2fc3b48d1299d86b1ef9448e15b94849f5628769d42b228" => :x86_64_linux
   end
 
   keg_only :provided_by_macos
