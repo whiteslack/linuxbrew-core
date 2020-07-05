@@ -1,32 +1,22 @@
 class VirustotalCli < Formula
   desc "Command-line interface for VirusTotal"
   homepage "https://github.com/VirusTotal/vt-cli"
-  url "https://github.com/VirusTotal/vt-cli/archive/0.7.0.tar.gz"
-  sha256 "39a566be0e2ee1102c0bd9d3ddefa4a0e423c9ffe02962d4a48897a875312c95"
+  url "https://github.com/VirusTotal/vt-cli/archive/0.8.0.tar.gz"
+  sha256 "48de52aaafa5790e36d6522086c49c73bac3aff9a814164aa1b0c5f6487f1669"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "36fcf039fa5264b8841ba3ba954816031cb1b6ac42aacd26b1e5791b643fae30" => :catalina
-    sha256 "be3fd19af1b5004ccf95ef0996fa387b88e7bfa30ca651dd69b94700fb92dcec" => :mojave
-    sha256 "118eaafec3d20e709091266c786d5121b27e0d1c8d8ded2f5c21c77046b571d5" => :high_sierra
-    sha256 "02960c7ed31733109d7650880d563b9b9b610ac6ec68d3fb5859e6ba911d32b3" => :x86_64_linux
+    sha256 "03f966e98db8f8a8e9e5ec2b9543b89304f1254905bcfff3cfb813d2e163f9e5" => :catalina
+    sha256 "88f6080a2d05a7445479b171a65e971755b621eb7d315c598c52eba9ce08f8b5" => :mojave
+    sha256 "d00ceb90ed87b57e15c8b4bed8c8d2dcbb2e2e987be68f06abc2e8bee7702536" => :high_sierra
   end
 
-  depends_on "dep" => :build
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    repo = "github.com/VirusTotal/vt-cli"
-    (buildpath/"src/#{repo}").install buildpath.children
-
-    cd "src/#{repo}" do
-      system "dep", "ensure", "-vendor-only"
-      system "go", "build", "-ldflags",
-             "-X #{repo}/cmd.Version=#{version}",
-             "-o", bin/"vt", "./vt/main.go"
-      prefix.install_metafiles
-    end
+    system "go", "build", "-ldflags",
+            "-X cmd.Version=#{version}",
+            "-o", bin/"vt", "./vt/main.go"
 
     output = Utils.safe_popen_read("#{bin}/vt completion bash")
     (bash_completion/"vt").write output
