@@ -11,6 +11,7 @@ class Certigo < Formula
     sha256 "9cb3d249c87ed65409a4e4a0e7841bbb8ab9192dea06df8f78f28f0fcbec4550" => :catalina
     sha256 "85d39ea2806bbd5ea750486132343d2dc36d5cc37ac0048d4561c40d20826fde" => :mojave
     sha256 "0ec7c22fe619af5e5178f4387f2731909ff02d4379ec62784f3625d2a63c358c" => :high_sierra
+    sha256 "8a00806121efd19b0bbbdf0e697108b61fdddaaf0df8476b75f5975f155bdda0" => :x86_64_linux
   end
 
   depends_on "go" => :build
