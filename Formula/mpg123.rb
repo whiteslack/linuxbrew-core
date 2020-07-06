@@ -8,6 +8,7 @@ class Mpg123 < Formula
     sha256 "29e4e2b5e306f94d2ce0e900f8413b4751f5df28488a476558527119b09bf015" => :catalina
     sha256 "9e80680b18a8b2e000d32aee02c5b5b03e95d617119d1a922a1ac48da4df66f6" => :mojave
     sha256 "6a9d7414515325f52473be05e484faa1c314ffb65582588d9c312400d3e9d6bd" => :high_sierra
+    sha256 "a8eb277e23ef13085964964b28ef59da105b29268a224ab220696bc1cb1da530" => :x86_64_linux
   end
 
   def install
