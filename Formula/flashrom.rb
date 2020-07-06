@@ -11,6 +11,7 @@ class Flashrom < Formula
     sha256 "301d0aafe8b31a53e6ee77217ce2280d1e998ceb7c8bc1a54a85c88afa940a33" => :catalina
     sha256 "69131a69023cd0336b8c9c9f1a56cafb28509f1e8eb5ada0bd45ff48357df38c" => :mojave
     sha256 "08d74d59cb4a56347de27465cc289b6494199951e2d251fafc328b4dc2f3e1e3" => :high_sierra
+    sha256 "95e1292dc5a8bbda903dfdaf06b1ff3b4cf299d40186a00112688599080bcd24" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
