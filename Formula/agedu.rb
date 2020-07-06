@@ -11,6 +11,7 @@ class Agedu < Formula
     sha256 "d5b1ceb8b45632543c913d12641cb820335b0e99fd823c9404222f0e087edef4" => :catalina
     sha256 "bb054128df68140a5cf8b7359a7d7c6357b13c08aa393b9481ff89124e614544" => :mojave
     sha256 "64a0584a579b71db75866548df7fef3eb7eb460023f3959aaf5e1c4d9e23bca8" => :high_sierra
+    sha256 "b01514f30e6ba91a4708763d2e34ed096abae7a3d4200fbe2839dba98e966a5a" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
