@@ -9,6 +9,7 @@ class Libvorbis < Formula
     sha256 "432eb21045d9dfac3ef879648d845d894cc828862f5498448fe98c0141ef5cd0" => :catalina
     sha256 "59509a351e88352f01512b54cc5cb849c2551623f7d6dcd6679d38b5e96032ed" => :mojave
     sha256 "3e6609520d0ffd7179f721c23c1291f2735b70384d56d1c1dd10185ae355c4b2" => :high_sierra
+    sha256 "b61fe377d1be6d7edd86f6c1e47fa655b2c0f960455cfd85f41f1a99c6e5ffee" => :x86_64_linux
   end
 
   head do
