@@ -12,6 +12,7 @@ class Buildkit < Formula
     sha256 "58adec179c6d2f4467ecf67d5d3766e2bbce610b0ce69a2a36459fa5c067c183" => :catalina
     sha256 "8ccea54a8f06cf3048da19403c362b5a9965e76728aa23ce4666f1846e7bd745" => :mojave
     sha256 "86255f3dd127dd0cafdfeb46d777f7c1faa2864ae1162ba79261ddee0a142f9b" => :high_sierra
+    sha256 "3e4817ae1f35af72fc13468e66f014cb9c02b849322885c0910dc1665e77c3c9" => :x86_64_linux
   end
 
   depends_on "go" => :build
