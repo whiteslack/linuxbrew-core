@@ -9,6 +9,7 @@ class GitTown < Formula
     sha256 "e6d6fbabc41bbef0488161ac1ab71d486dd0439eb8ee3072b1a812cc0d573bee" => :catalina
     sha256 "2d39b261dfa7208c257416d61115c22bf242b16e7d696eb810252c192981a052" => :mojave
     sha256 "40debf4a33e518102e579e8e8dbdefa2676c4bf057cbcb994bb86f05df17dd16" => :high_sierra
+    sha256 "9579ef253dfcabe7425aa8a17dd2b97bba86a134787d69cc98fcd932e60a1dff" => :x86_64_linux
   end
 
   depends_on "go" => :build
