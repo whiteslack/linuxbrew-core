@@ -9,6 +9,7 @@ class Mdcat < Formula
     sha256 "db4b660b7c98bbfad7e97bc49e0202df69dac3af72e3b1186f8e6a715860a1ad" => :catalina
     sha256 "70c41663a9c9f77a156eb0b7324d32be397ceef0343c5e42a01bd30e8947e88e" => :mojave
     sha256 "ef9bf2c8c6313e379215f70151e5dea9d58ac4837e09fb527162abda85807a07" => :high_sierra
+    sha256 "5fc20b8c6f9882cc7fa7a78e44f7feab0a3f591c75bbc6202b7e233827d059e3" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
