@@ -1,16 +1,15 @@
 class Fdupes < Formula
   desc "Identify or delete duplicate files"
   homepage "https://github.com/adrianlopezroche/fdupes"
-  url "https://github.com/adrianlopezroche/fdupes/releases/download/v2.1.0/fdupes-2.1.0.tar.gz"
-  sha256 "e5b9fb62e1d71779a64711384e3ab8de876b73fabcf3eabba8608022af92129e"
+  url "https://github.com/adrianlopezroche/fdupes/releases/download/v2.1.1/fdupes-2.1.1.tar.gz"
+  sha256 "5ab60e6c0b10438f3e323c6d14f34d2f3eec33cc4cd95159f220a1722613b1b2"
   version_scheme 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a8923209aeca2d2d84a059138479ce569122408995484f415aa5d7fe4d89f9b8" => :catalina
-    sha256 "cd0f54fb053da84b7039a11a29830e1129bc76a5b3d8a35ac2b4e0e2738d27f9" => :mojave
-    sha256 "e4ea45cc84b1935038af9717f8d3efa158f3ec3ac2e04586134764d180365eeb" => :high_sierra
-    sha256 "6c794f1bfa9fdbbcc51a0ac1d0f5664d60d398c23bb0479ed8dd334e5abdbe3d" => :x86_64_linux
+    sha256 "13686b900c1c95aaa6904e4f007ef79185a46626722228ddcd273e8bd265c2f5" => :catalina
+    sha256 "95ddd9ad27d0805991a64e7454b3a9abbd332aea0f893e1337dc3d2b14a06324" => :mojave
+    sha256 "ad80afb06ccbdc78c055560549341b10d19fd7e1ccf6f832630bba1aef78cd6b" => :high_sierra
   end
 
   depends_on "pcre2"
