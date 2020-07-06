@@ -9,6 +9,7 @@ class FluentBit < Formula
     cellar :any
     sha256 "d2ed76145fb4b004eadb4a57007238e48faa97e81f2bd37a62b26f7cab2ea8b5" => :catalina
     sha256 "2573b4dd23cf4b578eb02eaa5509a2b2a9d87325e7c87cb4eeb34eb78c672224" => :mojave
+    sha256 "4588a0fb9ea77b998f3e36d23b6c2ce293e8015d6b5b51204e53b84ee0550983" => :x86_64_linux
   end
 
   depends_on "bison" => :build
