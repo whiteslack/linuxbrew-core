@@ -11,6 +11,7 @@ class Neatvi < Formula
     sha256 "c2c83bfb47a438d99fb7086a756292a4442dfb1d7eebd0314132814201cd944e" => :catalina
     sha256 "240fb8ec097a95ed3bb86f02f6f3fbd074b671529055009835eb95c6f2dccc6d" => :mojave
     sha256 "4244c126297140059a43449c435407de2d041486bc56ea44bd2d324649304818" => :high_sierra
+    sha256 "2124bf7fa8434352eb981163fc664e7d9950dfd95d8bbea96a5a986c1ae84a0c" => :x86_64_linux
   end
 
   def install
