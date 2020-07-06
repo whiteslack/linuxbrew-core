@@ -9,6 +9,7 @@ class Zoxide < Formula
     sha256 "40e1d6f7e805a4627a0c9c8c2f743db1f86ff4d20ffe8ee8986d536d9d937728" => :catalina
     sha256 "ed59dfdf07cd7c9581b0d5f57be454a99b480a5bd916b7b67254a7a3197efa34" => :mojave
     sha256 "8a64fa405d29a1981c71994138fe00b2af2c344c15fd40ceabafa8cd996ff6f5" => :high_sierra
+    sha256 "cfa2dc5d55b896750b056bbd04a02470cbf5172ecb9884475e2a93810a01d1d4" => :x86_64_linux
   end
 
   depends_on "rust" => :build
