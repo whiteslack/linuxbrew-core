@@ -14,6 +14,9 @@ class Spdylay < Formula
     sha256 "25602239d3bbc9ff4bafe432e3f287379f4348270d460a2da32d4fc5a063cc56" => :x86_64_linux
   end
 
+  # The SPDY protocol itself is deprecated and most websites no longer support it
+  deprecate!
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
