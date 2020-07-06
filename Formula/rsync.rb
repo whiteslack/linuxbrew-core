@@ -11,6 +11,7 @@ class Rsync < Formula
     sha256 "59d1aa1da62690c00e1aef7d608fcbecc814e875692c8ed0196f43aa58317510" => :catalina
     sha256 "5d06d2f36dfee165d1f5487a6bfb1bc0522214cb36b05c1f5fe79570b03973fc" => :mojave
     sha256 "daf1a3c8d3ecf743f605f1c0a4066b6e71910493b161504260b1d0841c00adfb" => :high_sierra
+    sha256 "4334604c04d86bb488a6278e32ba03fe7db122bdaf516a9a1f55d28515adbafc" => :x86_64_linux
   end
 
   depends_on "lz4"
