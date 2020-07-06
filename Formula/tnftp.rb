@@ -9,6 +9,7 @@ class Tnftp < Formula
     sha256 "1411f5fe465b0952891ff141431a5d09140c7d53bb3cf689054a2580bd1031fc" => :catalina
     sha256 "ae4beaa65c5f258152fefeeaa196c9e2d70cf3bda2af4e387ddcf807476c7401" => :mojave
     sha256 "900f2ece9b7a6a9edd0d96dc6c061ef6380c0fc99177119e73db65e5d8c012e0" => :high_sierra
+    sha256 "5e8cdb89a54a199c0ad192f5064f668c350e4d5291796343f5119c5f50520812" => :x86_64_linux
   end
 
   uses_from_macos "bison" => :build
