@@ -1,16 +1,14 @@
 class Python < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tar.xz"
-  sha256 "06a0a9f1bf0d8cd1e4121194d666c4e28ddae4dd54346de6c343206599f02136"
-  revision 1 unless OS.mac?
+  url "https://www.python.org/ftp/python/3.7.8/Python-3.7.8.tar.xz"
+  sha256 "43a543404b363f0037f89df8478f19db2dbc0d6f3ffee310bc2997fa71854a63"
   head "https://github.com/python/cpython.git"
 
   bottle do
-    sha256 "acd595852aecc2bfa46c57d86db716e64d57bb2753c45ff7f745b46c7655dd65" => :catalina
-    sha256 "cc8177d823b39d099e1f1a6f2e0fccb16e531508b59580f1fd44f659b54eeb84" => :mojave
-    sha256 "079ace2d46b98d9931f14fbb6e02d883fedf0333faabcbaf552b12553325f4b6" => :high_sierra
-    sha256 "9ffe49b04a0035181663e41fd8b773a51220af7a6b23e1cab71a4654620df6dd" => :x86_64_linux
+    sha256 "f7fb660ba03f202d739f38ded3ac5952569103855d8a8e9aa1a7bfff764bdfc2" => :catalina
+    sha256 "41f002aafc187556d0f247590d4b554ca9b361a66c7b14341cf63a21eaee1b0f" => :mojave
+    sha256 "d2315dbe4f3266b7c6efe8bfda3ae0bedc60792cfff00f4bcdf87e5923274ef3" => :high_sierra
   end
 
   # setuptools remembers the build flags python is built with and uses them to
