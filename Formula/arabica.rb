@@ -11,6 +11,7 @@ class Arabica < Formula
     sha256 "4fbf676c46941de213b095ab74f0b4973e5984c2bbaa7679757b0db4b369480a" => :catalina
     sha256 "acc299016dbd644658880e9fa29af6d3f0b9f8e226b16ccd3fcaea8dae23febf" => :mojave
     sha256 "62920d4f26c2da71c6abf60c90c1322457e340df8142d7133a9ee1f7c2b46745" => :high_sierra
+    sha256 "ee7c3c47abb05ccab2cf0160f2962c1d179e27a9c8301cb537a8a077a2f2cba5" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
