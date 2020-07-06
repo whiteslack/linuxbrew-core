@@ -12,6 +12,7 @@ class Befunge93 < Formula
     sha256 "190fa82b0fef31f096a102f3b33205112cb206f578813f7ac78f78617c7d73d3" => :catalina
     sha256 "23dd470caf59b04ffb652e46061760701269a8a79ce93c3afd71318da000112d" => :mojave
     sha256 "c8a1e2085413dd0da3036462eeffed2f01198da92f128f4951c0885bf69a0149" => :high_sierra
+    sha256 "7a6452ee652b0f438e517fded68364458bc22118562d48734e1e6b85e4a294c4" => :x86_64_linux
   end
 
   def install
