@@ -7,10 +7,10 @@ class Subversion < Formula
   revision 2
 
   bottle do
-    sha256 "430434e1c09f259eb8b6f1537385e3a193f577458e48e105dab4522f0e696493" => :catalina
-    sha256 "da552e48ed24e71c789a5019419a768273e90cd853e94e916ac8652409387350" => :mojave
-    sha256 "b7f55e0fe6bc94010c2587756d2e7208ec680a225c70de344cecb1f0f01f36af" => :high_sierra
-    sha256 "b1b411d35b11dd23d6aafe443fdb01f83ca822beec5d4840dc77bd83f83dc358" => :x86_64_linux
+    rebuild 1
+    sha256 "84dfd162eaa16691be6605ae5b2aa30ede25483c2a3da54bf05ff0f6b5767864" => :catalina
+    sha256 "0f84bf07d4a1949129d1be29e3e2d991f4fbec4c38acfd4757918fe9eafbcf6c" => :mojave
+    sha256 "cc20920a8095c8ba91f722f6d3fc5dc392fa075afdcc2d5055df677e8260312a" => :high_sierra
   end
 
   head do
@@ -153,7 +153,7 @@ class Subversion < Formula
     system "make", "javahl"
     system "make", "install-javahl"
 
-    archlib = Utils.safe_popen_read("perl -MConfig -e 'print $Config{archlib}'")
+    archlib = Utils.safe_popen_read("perl", "-MConfig", "-e", "print $Config{archlib}")
     perl_core = Pathname.new(archlib)/"CORE"
     onoe "'#{perl_core}' does not exist" unless perl_core.exist?
 

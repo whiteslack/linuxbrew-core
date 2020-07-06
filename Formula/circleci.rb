@@ -8,10 +8,10 @@ class Circleci < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "3a26df6b9686727e98418ffc3eb28c83689e202d9360d56eaebe358586be074e" => :catalina
-    sha256 "df2b01078f81928ebff0a17b9580a0105ab1ac5606513db5661fd56539c584af" => :mojave
-    sha256 "8aba332a6953247117def80ddd864c7c04d72876cf8389ac8f5436604beb44a4" => :high_sierra
-    sha256 "e93ba1fa6c7bd4f5d099bbb8d8000131c141859e5585258917235e075bf743d4" => :x86_64_linux
+    rebuild 1
+    sha256 "b5e4fde6730de4b58a8d3246ba9ee7eab7f1f8ef548af7f1396081925824aa8c" => :catalina
+    sha256 "900623318d8f9fda662feb96e790e26efc99aafccefa4117b1d849f887c957b7" => :mojave
+    sha256 "feb8f16711a9798ae6aab4f7c48706ba866aff44effb4ea8abc8c2b266ae066c" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -23,7 +23,7 @@ class Circleci < Formula
     dir.install buildpath.children
 
     cd dir do
-      commit = Utils.safe_popen_read("git rev-parse --short HEAD").chomp
+      commit = Utils.safe_popen_read("git", "rev-parse", "--short", "HEAD").chomp
       ldflags = %W[
         -s -w
         -X github.com/CircleCI-Public/circleci-cli/version.packageManager=homebrew

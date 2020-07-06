@@ -6,10 +6,10 @@ class Velero < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c1af83293cc86379b0e1b636b60471a5526903ba0d39f95926025b31d88d3f88" => :catalina
-    sha256 "0f6029061d476cf08155316302720e67c2314db9308af9224b5008b9a11e91bd" => :mojave
-    sha256 "97aaf6c788952789041bf1745870eeffd1050f5af21079fd76917616281714a3" => :high_sierra
-    sha256 "644fc2e7d4896f04d557869f7e886d09d087999de59ef298e21393faa4247807" => :x86_64_linux
+    rebuild 1
+    sha256 "a2da65129f5938807fab21cee5022e931d3f6f2bc790d50409bf33d1b782e518" => :catalina
+    sha256 "54dec0c112160c3cec5373d962c9efd21daff7ccb8b77aa887f135c380d079f2" => :mojave
+    sha256 "ea9e954f562e89521ccc19e2adc53f028d86eb8f2257044cfed5967b85c24274" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -26,11 +26,11 @@ class Velero < Formula
                    "./cmd/velero"
 
       # Install bash completion
-      output = Utils.safe_popen_read("#{bin}/velero completion bash")
+      output = Utils.safe_popen_read("#{bin}/velero", "completion", "bash")
       (bash_completion/"velero").write output
 
       # Install zsh completion
-      output = Utils.safe_popen_read("#{bin}/velero completion zsh")
+      output = Utils.safe_popen_read("#{bin}/velero", "completion", "zsh")
       (zsh_completion/"_velero").write output
 
       prefix.install_metafiles
