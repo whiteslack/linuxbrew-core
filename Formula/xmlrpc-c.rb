@@ -9,6 +9,7 @@ class XmlrpcC < Formula
     sha256 "f7d6a12c5e57d9ceb97b88dba518a6bae79e41e95343395a3f3c94bc168c92ab" => :catalina
     sha256 "638d1d6484717f57228174db4b9e875798b3ee1558ac6bcab59c96d80fcdab56" => :mojave
     sha256 "88a9ab0c2baea0aac627427628b00bce6828e5fc436533c0de8cfb0a99c21a24" => :high_sierra
+    sha256 "3428d3d766869935670dff6ad352ff94b132da92d89f856529a95f19442eeb44" => :x86_64_linux
   end
 
   uses_from_macos "curl"
