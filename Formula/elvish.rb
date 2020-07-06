@@ -10,6 +10,7 @@ class Elvish < Formula
     sha256 "2248775555e32f6c93c30851f8ad6cc268b3c0b8365625b90bcb116cdc7fd251" => :catalina
     sha256 "d5d4b767f9ed8a5fbf1e27ca857d5afae6bde95b178c00430fdedab7c1cfbe72" => :mojave
     sha256 "2e341bc1fa4614a3d807771f74d9034aabbe9bc14ba7487697a62ea38d3ddf6e" => :high_sierra
+    sha256 "5b469d4eaeeca79e2979bf41e1c200002e8e877542d55a2289af16358411f625" => :x86_64_linux
   end
 
   depends_on "go" => :build
