@@ -3,6 +3,7 @@ class Comby < Formula
   homepage "https://comby.dev"
   url "https://github.com/comby-tools/comby/archive/0.15.0.tar.gz"
   sha256 "6f7304c1644f6212c3b86542f8325e6f76cd268b787fbfbbe3cc0de61ddec14a"
+  license "Apache-2.0"
 
   bottle do
     sha256 "64591a0ced2e6ecd71e43e773ec1ae8dd8f0a1fe3507ecb121e665db02a8f21c" => :catalina

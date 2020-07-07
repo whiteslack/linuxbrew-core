@@ -3,6 +3,7 @@ class CucumberRuby < Formula
   homepage "https://cucumber.io"
   url "https://github.com/cucumber/cucumber-ruby/archive/v4.1.0.tar.gz"
   sha256 "56c52316fc91b8a9f284adb86e145b9314d5c417e73f0f8e32b91228f3f8c1f6"
+  license "MIT"
 
   bottle do
     cellar :any_skip_relocation
