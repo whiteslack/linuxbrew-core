@@ -11,6 +11,7 @@ class GitDelta < Formula
     sha256 "a684e673f61fdf4e6e5c45b55e5157c8767c524171bc77fa58e6c6a36354ef4c" => :catalina
     sha256 "57c269e6376350be8c706bdd2dcb497c63786ecbef75edcda944d4f7728223f2" => :mojave
     sha256 "9de66aecca7e14b8f74d22d9778559006c1a7d8d1dcb39cbd456060d95d32d20" => :high_sierra
+    sha256 "c9e74be98427f972f0e842a19e4e65c4e9b6c689e3c164be0fd68d7f2a2e7b0b" => :x86_64_linux
   end
 
   depends_on "rust" => :build
