@@ -11,6 +11,7 @@ class Ykpers < Formula
     sha256 "f5615ed1ad958e10d5908c16feb53bc706fd42f7721d0e8cfd3ea8dd4658a221" => :catalina
     sha256 "1cd502d61459515ab043d2cd8d2d8df3d97f605578766934312fa53343a619ec" => :mojave
     sha256 "215538176c67853276fe86e6894d6a19be95323d236175c5e4a84b4ce73b39d6" => :high_sierra
+    sha256 "e8b0538f5fbe7e5b2e9ecd070f35ee6bb99743b3a1f80764d062b6c8ff81ed8d" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
