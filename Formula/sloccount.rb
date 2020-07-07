@@ -11,6 +11,7 @@ class Sloccount < Formula
     sha256 "11a3ecc7f2a5bbc0f2bb4836e03c799049b3bada8438220dcd827ca37fd2a200" => :catalina
     sha256 "b9a52de5de2a1be5fd606412ab8db8a55279da49d79f9812d59294a587aaa7c4" => :mojave
     sha256 "04a4c12a83cb655a8f2f69178905af19e2786927ef7a4e9d0020e870ce35fcbd" => :high_sierra
+    sha256 "5ad046f31a0f556f37d5a94486f55c3107e8e62ea75bb72cd420bd40e6c44826" => :x86_64_linux
   end
 
   uses_from_macos "flex" => :build
