@@ -10,6 +10,7 @@ class Gcsfuse < Formula
     sha256 "f17d670c7a662c8d16aa651b822b754507e22a2d6e4594aea1b0310d3aefb6f6" => :catalina
     sha256 "4088dc349ce2baba035e901b93a5347a8cbe38600a28845a9883abc35d534d6f" => :mojave
     sha256 "3935cf67d77796530c79ae81d493c9b82477ddc891f07b92e3553df8be833a61" => :high_sierra
+    sha256 "2357a5faa5a2c8ff538da2dc5499c0f75f1275d83bfbf5c1878ecdad4017fd84" => :x86_64_linux
   end
 
   depends_on "go" => :build
