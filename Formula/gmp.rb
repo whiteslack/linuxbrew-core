@@ -15,6 +15,20 @@ class Gmp < Formula
 
   uses_from_macos "m4" => :build
 
+  patch do
+    # Remove when upstream fix is released
+    # https://gmplib.org/list-archives/gmp-bugs/2020-July/004837.html
+    # arm64-darwin patch
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/c53834b4/gmp/6.2.0-arm.patch"
+    sha256 "4c5b926f47c78f9cc6f900130d020e7f3aa6f31a6e84246e8886f6da04f7424c"
+  end
+
+  if Hardware::CPU.arm?
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   def install
     # Work around macOS Catalina / Xcode 11 code generation bug
     # (test failure t-toom53, due to wrong code in mpn/toom53_mul.o)
@@ -24,7 +38,12 @@ class Gmp < Formula
     args = %W[--prefix=#{prefix} --enable-cxx --with-pic]
 
     if OS.mac?
-      args << "--build=#{Hardware.oldest_cpu}-apple-darwin#{`uname -r`.to_i}"
+      if Hardware::CPU.arm?
+        args << "--build=aarch64-apple-darwin#{`uname -r`.to_i}"
+        system "autoreconf", "-fiv"
+      else
+        args << "--build=#{Hardware.oldest_cpu}-apple-darwin#{`uname -r`.to_i}"
+      end
     elsif !OS.mac? && Hardware::CPU.intel?
       args << "--build=core2-linux-gnu"
       args << "ABI=32" if Hardware::CPU.is_32_bit?

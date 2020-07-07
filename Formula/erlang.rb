@@ -82,7 +82,7 @@ class Erlang < Formula
   test do
     system "#{bin}/erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
     (testpath/"factorial").write <<~EOS
-      #!/usr/bin/env escript
+      #!#{bin}/escript
       %% -*- erlang -*-
       %%! -smp enable -sname factorial -mnesia debug verbose
       main([String]) ->

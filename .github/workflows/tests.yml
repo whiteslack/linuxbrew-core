@@ -5,6 +5,7 @@ on:
   pull_request: []
 jobs:
   tap_syntax:
+    if: github.repository == 'Homebrew/linuxbrew-core'
     runs-on: ubuntu-latest
     steps:
       - name: Set up Homebrew
