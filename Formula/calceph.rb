@@ -9,6 +9,7 @@ class Calceph < Formula
     sha256 "d05d76368447fbaef129c9ffa993fb9e8ba948884c6b9409e2282953f887dbfe" => :catalina
     sha256 "4147bd6caffd7f2f03731420d9d2bf4db2123f9ce605a920630dca26ac711afe" => :mojave
     sha256 "ce583c86b55ca06a9c05b13e81fb096502e261513427c100f46d2c298a8bf98e" => :high_sierra
+    sha256 "a8184329481112311b6414d972c517e6a5d2389772c42fa79e718134d723ed61" => :x86_64_linux
   end
 
   depends_on "gcc" # for gfortran
