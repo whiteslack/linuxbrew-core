@@ -21,6 +21,7 @@ class Gperftools < Formula
     sha256 "61a7c4f6c446b4ade0be332854baa8320a9cc193b00d89e39a0d3c18183aa8e3" => :catalina
     sha256 "efcfaff363bbb0508a50d2987f04cbe8dfa21bfb75e8d6388516ffefc0a74bff" => :mojave
     sha256 "55470b74d7c7567ca44429a1c1621cc2077dcadd2c6a8b4067f3812c3124f82c" => :high_sierra
+    sha256 "76f0899fcb364658995928626e3fedc296a7ca05a4f3328253e6bf7c44e7f6d8" => :x86_64_linux
   end
 
   head do
