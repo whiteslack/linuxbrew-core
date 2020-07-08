@@ -10,6 +10,7 @@ class Hdf5Mpi < Formula
     sha256 "ba61a9e5993f15c7b339a17afa405422abf89a908f890cd60aead67d2114f310" => :catalina
     sha256 "f39b0f908ba1cb1c74aff7a36cb54cf04bc417defd5641752dffb2902866bd0c" => :mojave
     sha256 "7be5d7e51464129cd531f124efec310affc716d2e810a224d238bba1659aea53" => :high_sierra
+    sha256 "aa123d32e7ac35ecbf4d735c1a97c25576e4b41647e59d917fa1d6453f7a7500" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
