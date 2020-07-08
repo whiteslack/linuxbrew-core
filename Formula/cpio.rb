@@ -10,6 +10,7 @@ class Cpio < Formula
     sha256 "1e2e8f240d9455593a653d4cc0759ee1a0596fe88641ad6a79d652f6596bb21b" => :catalina
     sha256 "566b73ec056c1441e84e5be4d8f22ae0e9eec609e340d56d9ba22ebefaa273c6" => :mojave
     sha256 "35cc00b8c97558822cc49cca1f40ba7a3a65af06be17317721ff471414c6f430" => :high_sierra
+    sha256 "d04db2587fd04a8027654ac0464785f96cc008f64c14fc53aacc861ffea4d274" => :x86_64_linux
   end
 
   keg_only :shadowed_by_macos, "macOS provides cpio"
