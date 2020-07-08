@@ -32,7 +32,11 @@ class Hdf5Mpi < Formula
               "settingsdir=$(libdir)",
               "settingsdir=#{pkgshare}"
 
-    system "autoreconf", "-fiv"
+    if OS.mac?
+      system "autoreconf", "-fiv"
+    else
+      system "./autogen.sh"
+    end
 
     args = %W[
       --disable-dependency-tracking
@@ -48,6 +52,7 @@ class Hdf5Mpi < Formula
       F77=mpif77
       F90=mpif90
     ]
+    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" unless OS.mac?
 
     system "./configure", *args
     system "make", "install"
