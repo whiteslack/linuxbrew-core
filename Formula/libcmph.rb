@@ -9,6 +9,7 @@ class Libcmph < Formula
     sha256 "c38019c153c728a28acbfe340cc86764285ec24edbdba5234b0593f83d355c22" => :catalina
     sha256 "d02c761bd6b52424528bfdcd56b8d469d7cdd2e55f625c719229edb7f011889c" => :mojave
     sha256 "abffeaf075db6387e636d43eb8fda9b76f02091bdb5533368306f899a46406c1" => :high_sierra
+    sha256 "58582477d7bffbac7bb95bbeca11408055c171a8e528af41f847501528c090d4" => :x86_64_linux
   end
 
   def install
