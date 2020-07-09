@@ -14,6 +14,9 @@ class ErlangAT20 < Formula
     sha256 "97ecb6ce73d469360e859be66f428b9aacba41403fb8e3214bf6a031d694f96e" => :x86_64_linux
   end
 
+  # Deprecated with OTP-23 release (https://erlang.org/pipermail/erlang-questions/2020-July/099747.html)
+  deprecate! :date => "2020-05-13"
+
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build

@@ -1,14 +1,14 @@
 class Orientdb < Formula
   desc "Graph database"
   homepage "https://orientdb.com/"
-  url "https://s3.us-east-2.amazonaws.com/orientdb3/releases/3.1.0/orientdb-3.1.0.zip"
-  sha256 "011170759ad3afb61a0a4a3f1ca3e44e095b42d64500b005208e402d8cb4fddb"
+  url "https://s3.us-east-2.amazonaws.com/orientdb3/releases/3.1.1/orientdb-3.1.1.zip"
+  sha256 "1538bfcc5d1a83e8a686be37950a69a2466d19eb824f754367a7b254c56b748f"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9855e1f9406b889701a242cbf7a5fc9dcc6d93e1fe7d5d043af591661997d037" => :catalina
-    sha256 "9855e1f9406b889701a242cbf7a5fc9dcc6d93e1fe7d5d043af591661997d037" => :mojave
-    sha256 "9855e1f9406b889701a242cbf7a5fc9dcc6d93e1fe7d5d043af591661997d037" => :high_sierra
+    sha256 "4dd8ac529ac0d88ebe0924e4c67ab6ec12e516286a503997061586e1c4a19164" => :catalina
+    sha256 "4dd8ac529ac0d88ebe0924e4c67ab6ec12e516286a503997061586e1c4a19164" => :mojave
+    sha256 "4dd8ac529ac0d88ebe0924e4c67ab6ec12e516286a503997061586e1c4a19164" => :high_sierra
   end
 
   depends_on "maven" => :build

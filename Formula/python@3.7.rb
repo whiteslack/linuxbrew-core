@@ -1,15 +1,14 @@
-class Python < Formula
+class PythonAT37 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/3.7.8/Python-3.7.8.tar.xz"
   sha256 "43a543404b363f0037f89df8478f19db2dbc0d6f3ffee310bc2997fa71854a63"
-  head "https://github.com/python/cpython.git"
+  revision 1
 
   bottle do
-    sha256 "f7fb660ba03f202d739f38ded3ac5952569103855d8a8e9aa1a7bfff764bdfc2" => :catalina
-    sha256 "41f002aafc187556d0f247590d4b554ca9b361a66c7b14341cf63a21eaee1b0f" => :mojave
-    sha256 "d2315dbe4f3266b7c6efe8bfda3ae0bedc60792cfff00f4bcdf87e5923274ef3" => :high_sierra
-    sha256 "97896caf1cf85019c92910c6d2150158f923c5970036c046f97284125d0d605e" => :x86_64_linux
+    sha256 "820f16256e3e36b6ef99538edb4b825b223ca0a8a906dc6512a1e268b39c7b0a" => :catalina
+    sha256 "e87ae74ceefe52ba923a3a604354bd6662ffa1a5e5f89461f1194c601e8dde4d" => :mojave
+    sha256 "e765c73c931d40ed8145507415ad6e511c18a615827e087d3e9c8b7a47700324" => :high_sierra
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -22,6 +21,8 @@ class Python < Formula
     EOS
     satisfy { !OS.mac? || MacOS::CLT.installed? }
   end
+
+  keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
   depends_on "gdbm"
@@ -269,11 +270,6 @@ class Python < Formula
       (libexec/"bin").install_symlink (bin/versioned_name).realpath => unversioned_name
     end
 
-    # post_install happens after link
-    %W[pip3 pip#{xy} easy_install-#{xy} wheel3].each do |e|
-      (HOMEBREW_PREFIX/"bin").install_symlink bin/e
-    end
-
     # Help distutils find brewed stuff when building extensions
     include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.1"].opt_include,
                     Formula["sqlite"].opt_include]
@@ -339,14 +335,14 @@ class Python < Formula
   def caveats
     <<~EOS
       Python has been installed as
-        #{HOMEBREW_PREFIX}/bin/python3
+        #{opt_bin}/python3
 
       Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
       `python3`, `python3-config`, `pip3` etc., respectively, have been installed into
         #{opt_libexec}/bin
 
       You can install Python packages with
-        pip3 install <package>
+        #{opt_bin}/pip3 install <package>
       They will install into the site-package directory
         #{HOMEBREW_PREFIX/"lib/python3.7/site-packages"}
 

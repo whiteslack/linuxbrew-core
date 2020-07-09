@@ -1,17 +1,16 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://github.com/fastlane/fastlane/archive/2.151.0.tar.gz"
-  sha256 "6c908c7596b2aa7921796cb7c5d429825603cf277e8a34cb85538de5d589c4a0"
+  url "https://github.com/fastlane/fastlane/archive/2.151.2.tar.gz"
+  sha256 "476b03ba4245c8ab2b2589fdc2ac92d8437b9fe8fa4f70f42a549063035eae8c"
   license "MIT"
   head "https://github.com/fastlane/fastlane.git"
 
   bottle do
     cellar :any
-    sha256 "170afe2a2f1842b3cffd0e34318d4bf926c431b8f2040be271c3942f026dba36" => :catalina
-    sha256 "0be7a99493ad9a18444906a7985f46274f9f1b165c3f95a6e8ab08a74c80f414" => :mojave
-    sha256 "198dfc5d2b7dd6df150d50dc94b0be8d7120e303e63a6221cbdeec1efba0ac7a" => :high_sierra
-    sha256 "c04977b6c5f251fbded3714db0264e5ec10f3a83e8ada4a5b676c563ef54443c" => :x86_64_linux
+    sha256 "fab151ea0f22501e428653cdac142c974aa491d248ca3f03d4b30c4895b5745b" => :catalina
+    sha256 "6994e03e29c8297d9732b6ab46ecac7360b8768bf125f45cd995083468baabdf" => :mojave
+    sha256 "2ccec1500993cd6c72a4c6c2628e08dfa6b6b42b89ff7613a0e285a0dd250f95" => :high_sierra
   end
 
   depends_on "ruby"
