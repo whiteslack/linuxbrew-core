@@ -10,6 +10,7 @@ class Websocat < Formula
     sha256 "b9ec3480735006f0603df6a0f4ba123f3bf807f8b2c731070975263088b6cc8f" => :catalina
     sha256 "cfb99f76c48c5ef48ee89118012a75a8b78c1f3602db084407e3fd4e7f0922eb" => :mojave
     sha256 "c865fed700599d7619e91ecb815b2672b9a1d9da6b4289383cd5455d82d79743" => :high_sierra
+    sha256 "fd139a44306f031566918cfd62ff5c0b5a9599bb12a0a8c07bc2d9a9ccf0cce2" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
