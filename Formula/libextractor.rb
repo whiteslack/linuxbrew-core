@@ -10,6 +10,7 @@ class Libextractor < Formula
     sha256 "1f9781fe4c690eca0d719016cd4f23bd94890ae69cc30c4c1caa47d919286483" => :catalina
     sha256 "0929de2de549d871c775fb2b3aaf22dc52377b504b8ed3d01ca9350a52704e39" => :mojave
     sha256 "5a30c428cb327ef0bfd2458feeeb638200df28acf63b688d598a79591cb1c812" => :high_sierra
+    sha256 "6f4490df4931f5c77224a9b1fa892d788d3698a3984a75a4929facc014b74a76" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
