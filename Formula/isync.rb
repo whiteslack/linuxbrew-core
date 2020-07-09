@@ -10,6 +10,7 @@ class Isync < Formula
     sha256 "a962b44d6115447a76213e3671710a087c962301c5e238ef9ed942fa9b1ebb59" => :catalina
     sha256 "c29fd93d72cd3edc638949433305b3298ebdd125ad1a87a4cb7d8fb6344e10e8" => :mojave
     sha256 "469834994c352a202afd451688c5475328910dfce811c88c6e0f0dadbf3e8e09" => :high_sierra
+    sha256 "88d4304ca01204ba22640734224a07f16e3106e8f8c557a026c0d85fefd50746" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
