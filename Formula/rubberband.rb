@@ -12,6 +12,7 @@ class Rubberband < Formula
     sha256 "dcfa2c05cc251d0c5e810040646fb5f9511fda2d1cad20ccadce96544a1ad7e3" => :catalina
     sha256 "629837bd83bfcef1003bfb29759d15c29bb7c22740a70f6143bd4c16a5bd3362" => :mojave
     sha256 "f592baa6b5e82c542a92df87789a51b6603e7e8070dfa7f910349a388135b6da" => :high_sierra
+    sha256 "73bda45a93508aed54df6986563f97cc8974fb0ea9e17cae9c2385b57cc5f3a5" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
