@@ -10,6 +10,7 @@ class Spdlog < Formula
     sha256 "71af7c09d04504baf8c310e32ebacb45262bc78beaebd80deaf44bfda3d2d807" => :catalina
     sha256 "414bbd020a107884d56adc42e89d6e43d14e9b42c32fe4c845022d0dee886b85" => :mojave
     sha256 "da30ba8690195fd103a10b53838dc67ed253893b2d1e6503d964739b0029dc1c" => :high_sierra
+    sha256 "9aab8724dac0f3d8d340527e3ad330bb973609c280d681d5f8be0b3b60df6a8c" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
