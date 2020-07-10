@@ -1,16 +1,16 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https://github.com/apple/swift-protobuf"
-  url "https://github.com/apple/swift-protobuf/archive/1.10.0.tar.gz"
-  sha256 "2314c624b42f2d6d4afc1c178d3151d462b6dfea96967bb3a31ea2a761c97d1d"
+  url "https://github.com/apple/swift-protobuf/archive/1.10.1.tar.gz"
+  sha256 "e0b8084ad5d21fd93b34bd2df15e5e39955c57fbfe863738bbb31322e922d17f"
   license "Apache-2.0"
   head "https://github.com/apple/swift-protobuf.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "44873aa3ab6e67604d301c0646b4d017b0c1a0ca9c8f4c6b62c04a77f8a47fb7" => :catalina
-    sha256 "c73606c1f38daa770b5a62ce5ebf3c205ca4df474f3e0943849a7cf1dd2c8041" => :mojave
-    sha256 "44f48d168540d3928208bbff73b55fbee3efa13f17e5b3a3e18eb21c40026433" => :high_sierra
+    sha256 "fd5ca2f8800c42f092cfc9330b6a234f0afbb52f7043bd8c16f9685ed9e6dcac" => :catalina
+    sha256 "3cb7245001419bcc10af467f3f69c40beceff5064165769eba8b17457c514e73" => :mojave
+    sha256 "c9f6bc66f804ab2c36d03c2b1ed06527abbba6c88912bc5e3992abf94bfce40f" => :high_sierra
   end
 
   depends_on :xcode => ["8.3", :build] if OS.mac?
