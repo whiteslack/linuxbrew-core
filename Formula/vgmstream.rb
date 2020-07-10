@@ -11,6 +11,7 @@ class Vgmstream < Formula
     sha256 "06b1a2c17d2b02de2d9e3580700245141b8bf8e5501e01a5f943d755fbdd9be3" => :catalina
     sha256 "c47f6241f20aa7d9d89e7058a3fc56c844f8b0b622312c4c281393dfa86b9da4" => :mojave
     sha256 "44200141865ea303d35c293028aafb528135e27374a116a63a6b506fa5b60ede" => :high_sierra
+    sha256 "6869f9d9f553ffcc4e3476dcfc493d5b42c79b77c40d8355bfdf62c3c65cdfcc" => :x86_64_linux
   end
 
   depends_on "libao"
