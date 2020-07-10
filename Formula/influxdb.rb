@@ -12,6 +12,7 @@ class Influxdb < Formula
     sha256 "d50e7041e46022550eba06f94b7e74cbe4e3588b949fdd2c6f5176031fa48ad5" => :catalina
     sha256 "587e60b562d2c0a259819b6f1e6a34a6f81a8f309dede1342c76c974b7d68437" => :mojave
     sha256 "dde76db5fcdf733eb7ad2359b49d6db631e2d8d543d688f676e781d0478ca7f2" => :high_sierra
+    sha256 "b8fc8c36e865f34a1c5f51b1835f17c3e8d802d510d20f7e6313520be84f5775" => :x86_64_linux
   end
 
   depends_on "go" => :build
