@@ -11,6 +11,7 @@ class Ethereum < Formula
     sha256 "0fd7d994e7dc5c93feab9c21761878e0900669523b2a1ee24876cf12ce9c0c08" => :catalina
     sha256 "d61d49c110a82eae8b153cb9dc3577de605ed016a4a2dc7b26bd490bcc0c4461" => :mojave
     sha256 "2a26fa4bbb7a0244256d65f68ae0ff2ff787a73bd068d18493bcac94888bd492" => :high_sierra
+    sha256 "fda5cc44a7ab30fbb0fe509dad346213e514628dc1b807cdd82bec37e447df17" => :x86_64_linux
   end
 
   depends_on "go" => :build
