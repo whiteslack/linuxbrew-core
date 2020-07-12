@@ -10,6 +10,7 @@ class Ultralist < Formula
     sha256 "348ace8825a9b4c9ec9e170f3d7b2bd692fa1dc2505a2d377245195274e65a3b" => :catalina
     sha256 "1496e25ed7e4c74ca5b122913b944378f1c4b7413b482ff4e46d7c61dd1739c6" => :mojave
     sha256 "f741a37598348257902d05909b9751518e2b0c786ad0cdb135139deda2b035f6" => :high_sierra
+    sha256 "2f5c12b78f8601f768eea4e1017462e56abfcc4d30dab0ee6e4d304430ba0712" => :x86_64_linux
   end
 
   depends_on "go" => :build
