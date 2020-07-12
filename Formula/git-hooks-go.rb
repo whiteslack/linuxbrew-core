@@ -11,6 +11,7 @@ class GitHooksGo < Formula
     sha256 "367a0e8d166a30749447132c88d5bf1c43fc8ab7c4316c91a990c13d4e887c32" => :catalina
     sha256 "b61330cf67d4b8a572bb2f7a22434a00bb74d85bb93254ff6a60e8d3c8f12877" => :mojave
     sha256 "95786772c28deeaaa6c979f93174e1f49bd6dd8370e8927861f6b950dd5b3910" => :high_sierra
+    sha256 "65b928768032bcc6085a23ed94d528dd586290da9f710746597d896af70123f9" => :x86_64_linux
   end
 
   depends_on "go" => :build
