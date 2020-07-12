@@ -10,6 +10,7 @@ class Osi < Formula
     sha256 "448319c96791abd303e976711176d74260d575b528c5c1229e1439fb85c295b9" => :catalina
     sha256 "a21200a175b4d0a2208be0e34fb2dd64965133be04b30db7150cf55fe46093e4" => :mojave
     sha256 "4fb8d7a49968da18a979df560dde2c8cae711c37ad722af8a0c20c3a7980134d" => :high_sierra
+    sha256 "1bc82031fe3a5b5a7d63e0396f4016d2b5299b7ee38e50b0c20d929dd5f6b170" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
