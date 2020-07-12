@@ -46,6 +46,7 @@ class Bash < Formula
     sha256 "c6e7b7a521a1cfb21f2872bde253bfd40150bd4ba36ada62c05fcdb73ae094c6" => :catalina
     sha256 "ba0617f6d3f4e691f9863e2f73596da94671f4c0ca21a95b99f19eced315f2d4" => :mojave
     sha256 "46023d0bafe68b838ada45ff6a66e63f7eac814eeb84e15a09d4b84a790ef49d" => :high_sierra
+    sha256 "ca07ed480b79dd94e2c24f7a6ddc7ed9ff0ddf1591b8feeed9f38e1a54f2e78b" => :x86_64_linux
   end
 
   def install
