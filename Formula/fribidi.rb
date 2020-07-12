@@ -10,6 +10,7 @@ class Fribidi < Formula
     sha256 "c3799c193fb513a5c66a6e9fa950c1bdd15c12f931b9421dbf8e1c8e994f41e3" => :catalina
     sha256 "a53aef8adec171a839a2ea0f7d90655f385215d4a6c45c0ffc2a97c75a297fb5" => :mojave
     sha256 "83253b57bd1621e9340bfdb86ba147ff0a095e006ef53ad0c5421107557475a0" => :high_sierra
+    sha256 "9dea1a38695f3c8d4d6f4253c656efaee445822b5ceec273acea13637af0e6e0" => :x86_64_linux
   end
 
   def install
