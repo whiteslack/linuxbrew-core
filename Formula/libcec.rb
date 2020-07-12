@@ -9,6 +9,7 @@ class Libcec < Formula
     sha256 "d792e0747f1da7211c4b1f03eff3c94aa1b38576ccd209505e083d486128d12f" => :catalina
     sha256 "2693e3283048108f07731cbdf273443dc9d56bf8daa70813476a03101204faff" => :mojave
     sha256 "6af5045b2489ca9b4f133c96f4da224666e82b64781d3b7bd2ada087e33a1b4f" => :high_sierra
+    sha256 "ec05a9c3ba6fe6d8356890f6590a34aecec2ae80395b339da6232496303e7757" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
