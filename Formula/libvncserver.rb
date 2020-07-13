@@ -21,7 +21,7 @@ class Libvncserver < Formula
   def install
     args = std_cmake_args + %W[
       -DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}
-      -DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib}/libjpeg.dylib
+      -DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib}/libjpeg#{OS.mac? ? ".dylib": ".so"}
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}
     ]
 
@@ -44,8 +44,13 @@ class Libvncserver < Formula
       }
     EOS
 
-    system ENV.cc, "server.cpp", "-I#{include}", "-L#{lib}",
-                   "-lvncserver", "-lc++", "-o", "server"
+    if OS.mac?
+      system ENV.cc, "server.cpp", "-I#{include}", "-L#{lib}",
+                     "-lvncserver", "-lc++", "-o", "server"
+    else
+      system ENV.cc, "server.cpp", "-I#{include}", "-L#{lib}",
+                     "-lvncserver", "-o", "server"
+    end
     system "./server"
   end
 end
