@@ -10,6 +10,7 @@ class Libvncserver < Formula
     sha256 "c667ff09ee40d2ab0e8db25a51697ae62edd14496c1075f07015bf0ed372695e" => :catalina
     sha256 "7e5799814cd2077d39c8d4c95806fa23c408d8a26c92140ba64f852b6a53567f" => :mojave
     sha256 "f331a9fc3ba043f0febe78df7551630a5a28f9adb362a58384901192476dff89" => :high_sierra
+    sha256 "ec72f150b91403c6af641f3a815a5fc3a7d8a1ae08124d83ba9c82e6bb1839a9" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
