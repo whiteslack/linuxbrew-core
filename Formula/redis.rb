@@ -12,6 +12,7 @@ class Redis < Formula
     sha256 "7f0633ca26dce126e3dddc8cc296bc32d58326fed74cc5396b35fb1e23f738f4" => :catalina
     sha256 "b20a36bcfef6c929eec0f166143330ca54cc08d4581a8fe69a616b89d6c7f2f5" => :mojave
     sha256 "749adb93b5e42cbfbdd14f1ae1567d73e1ecbf7e0f264f04dc86c1b10a192308" => :high_sierra
+    sha256 "0c4ada876b110fdc18ac041ebd50378a7378069aaae6b68f13ce64786a4a8593" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
