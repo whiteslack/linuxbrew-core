@@ -9,6 +9,7 @@ class MysqlConnectorCxx < Formula
     sha256 "de70755aba3f996f670ebfb1a87a0c8e6664e7b43f498b3a6ef142ff96e1f64f" => :catalina
     sha256 "d674541be036abf14122f6df709ec1cd4aac4e87bcb4265f68f1433ef56eeb46" => :mojave
     sha256 "4989e5985a9c5c26f9d7878cc4aa683a791c889dc7a4d6e5b9ef323d0a84defd" => :high_sierra
+    sha256 "b0505f74611357602514e54840aff5e68369377dd39b2ef14e91dafc74f0b76d" => :x86_64_linux
   end
 
   depends_on "boost" => :build
