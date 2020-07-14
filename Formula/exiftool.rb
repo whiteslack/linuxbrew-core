@@ -11,6 +11,7 @@ class Exiftool < Formula
     sha256 "94e6bea5ede141fec762e7c7e06e1434d84b90695388cf269787ae77ece01cda" => :catalina
     sha256 "94e6bea5ede141fec762e7c7e06e1434d84b90695388cf269787ae77ece01cda" => :mojave
     sha256 "b7aa0c2aa1d2e0e1d2eab87c16c180153f62715e780f31a83f2f081d8f91b620" => :high_sierra
+    sha256 "3300fc72a42101920d9ccef59fb6e70f9298db3141ecd211cfdeb14cd7801c4b" => :x86_64_linux
   end
 
   def install
