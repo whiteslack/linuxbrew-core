@@ -10,6 +10,7 @@ class Annie < Formula
     sha256 "8c608e9147c4f83c6ba931d16967d688e71afb82aaa1a1ba9807e7a23fde0437" => :catalina
     sha256 "5da3e7ca14e3f6305f4b104490656e6d0edc94ec6e73d8d3eb5a6cf237819680" => :mojave
     sha256 "2187f28963dc9493cf35d9014eead0919e27ef77072f705787b6bd7d446ce03f" => :high_sierra
+    sha256 "01869411d9e33e8fc6bc92e9e8265a9c7cd25ab96f1e69ee4fb3c062d05e2daa" => :x86_64_linux
   end
 
   depends_on "go" => :build
