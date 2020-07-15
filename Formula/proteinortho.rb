@@ -10,6 +10,7 @@ class Proteinortho < Formula
     sha256 "31b037291952a48f55b7529e150db714507023a485a639da644c817946116c20" => :catalina
     sha256 "3fdaffaeb7800c10549fc171bcc49bbc3914b1bf26548c5e571ee834609444a2" => :mojave
     sha256 "e19a93b85f6f3b5cd2a793b5bc18b1624bbc4b8591b2e266d667459d7a951fbb" => :high_sierra
+    sha256 "a3608a3183a76cce236813a3e96bea1eeac4118d5336d2c6efc44a0f8e2d8a09" => :x86_64_linux
   end
 
   depends_on "diamond"
