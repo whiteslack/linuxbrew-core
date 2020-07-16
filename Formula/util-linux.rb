@@ -7,7 +7,6 @@ class UtilLinux < Formula
   revision OS.mac? ? 1 : 2
 
   bottle do
-    cellar :any
     sha256 "415a5e3671b1f64bbd23a056ec338c539d54d7f6010f28498bede2af6c039df4" => :catalina
     sha256 "32bd744a8adbfbaa6d7c3bd2eef1b8ee752e74f2e53b4f3d7dd355ce59a7719c" => :mojave
     sha256 "8bcf4fbc8f58f8e0d7ecb77bfec6686ee2150b3c2509fa5006417f395803f467" => :high_sierra
