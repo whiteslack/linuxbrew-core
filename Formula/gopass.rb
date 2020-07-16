@@ -17,7 +17,7 @@ class Gopass < Formula
 
   depends_on "go" => :build
   depends_on "gnupg"
-  depends_on "terminal-notifier"
+  depends_on "terminal-notifier" if OS.mac?
 
   def install
     ENV["GOPATH"] = buildpath
