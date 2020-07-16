@@ -11,6 +11,7 @@ class Overmind < Formula
     sha256 "dd22cafb2c5437c5e33ea1d7354b6477f743adb23393b9f0c8794cd2ae8ff213" => :catalina
     sha256 "cdb7478361214b56df089ea7038c4747a2430defc6af864c66fe95796a3b5ce6" => :mojave
     sha256 "5304546181f4a8da0604296b277000c16143862a11def6b48cab969e2a34ee62" => :high_sierra
+    sha256 "4b20cbd2a4a20f91340424f69c685e225901605f4267e44439052329cf3e495d" => :x86_64_linux
   end
 
   depends_on "go" => :build
