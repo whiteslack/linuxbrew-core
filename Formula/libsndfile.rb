@@ -13,6 +13,7 @@ class Libsndfile < Formula
     sha256 "8e192a4b76ad637395dfce818e2eec62e3a90722b33759fefcd4af389498bb9c" => :catalina
     sha256 "1784457959d0c8ca513223f12e6f884f0dafe74ea0e9511e8c7d1b2557cfbb91" => :mojave
     sha256 "3ae061cb03f627870e9fe98cd65f538547f109f472d20d235103ab4625d22b94" => :high_sierra
+    sha256 "d4fa8d6ac15d2efd496533f64eea1f7555cef87a5cbe2812ed445c06d5a09e8d" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
