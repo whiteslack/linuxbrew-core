@@ -11,6 +11,7 @@ class Wabt < Formula
     sha256 "9892df1b5c166364531062122dcf57d4c8c5ee0d5c4de7a14491cf6381bf25d4" => :catalina
     sha256 "90fc2045132ac96eb990f035e58be165122c1f12b72a2ba29aee06ff2e163775" => :mojave
     sha256 "865036f061c67f92c8ab2b1dd20827e3e21f41b982ec05e960627eb39c221eda" => :high_sierra
+    sha256 "c44150602e9521dce4643213fc10cf39347b27ce16568fdde8f94c31d5e195c1" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
