@@ -12,6 +12,7 @@ class ConjureUp < Formula
     sha256 "cf5da249d3e6045fd8e170399cb5486a566f3673c112c1f37454cfda1d383094" => :catalina
     sha256 "a86f3cfe45e1e04e83a17fba28edaa64c17b490fe278c54220c46b0063618406" => :mojave
     sha256 "0ad79673bcf095a1b7923f252eeca5a9d72e0482b88fa4d8803e0de5006428b8" => :high_sierra
+    sha256 "5dd336da7c4994dd62946ce5dcab545e121a2cfe72193d47c11f3b85c3d3b724" => :x86_64_linux
   end
 
   depends_on "awscli"
