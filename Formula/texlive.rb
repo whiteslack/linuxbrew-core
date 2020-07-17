@@ -8,6 +8,7 @@ class Texlive < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "53d58aaace0a687dee16f6ab6966299514e1d30c3a79e7470dcab169a96d59b7" => :x86_64_linux
   end
 
   depends_on "wget" => :build
