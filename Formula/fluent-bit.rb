@@ -1,34 +1,26 @@
 class FluentBit < Formula
   desc "Data Collector for IoT"
   homepage "https://github.com/fluent/fluent-bit"
-  url "https://github.com/fluent/fluent-bit/archive/v1.4.6.tar.gz"
-  sha256 "3ff32b163eb57c6f82fa4a8e3d2797f1896a43a65667c6fffaf7b7f8f8f1e8ee"
+  url "https://github.com/fluent/fluent-bit/archive/v1.5.0.tar.gz"
+  sha256 "b67a1963ddef82c9fa3cc57867840813f1b261051fed5dbb3734267bc0b05cf9"
   license "Apache-2.0"
   head "https://github.com/fluent/fluent-bit.git"
 
   bottle do
     cellar :any
-    sha256 "d2ed76145fb4b004eadb4a57007238e48faa97e81f2bd37a62b26f7cab2ea8b5" => :catalina
-    sha256 "2573b4dd23cf4b578eb02eaa5509a2b2a9d87325e7c87cb4eeb34eb78c672224" => :mojave
-    sha256 "4588a0fb9ea77b998f3e36d23b6c2ce293e8015d6b5b51204e53b84ee0550983" => :x86_64_linux
+    sha256 "b173bfe688e0fb2d3fc17346e484b1498a11880fb168a2cb69fa3061fc7b923c" => :catalina
+    sha256 "98a8197dd2fa07771bf2d475efc418b55df0e7ee81d30c03ab103dc0cf6459cd" => :mojave
+    sha256 "c370216e949481b1a825b8a16e8bee1cabdf1e3fa264aaf29aa81b4e4765a192" => :high_sierra
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
-  # bug report, https://github.com/fluent/fluent-bit/issues/2332
-  depends_on :macos => :mojave
-
-  conflicts_with "mbedtls", :because => "fluent-bit includes mbedtls libraries"
-  conflicts_with "msgpack", :because => "fluent-bit includes msgpack libraries"
 
   # Don't install service files
   patch :DATA unless OS.mac?
 
   def install
-    # Work around Xcode 11 clang bug
-    ENV.append_to_cflags "-fno-stack-check -fno-common" if DevelopmentTools.clang_build_version >= 1010
-
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
     # fluent-bit builds against a vendored Luajit.

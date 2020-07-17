@@ -3,17 +3,15 @@ class ConjureUp < Formula
 
   desc "Big software deployments so easy it's almost magical"
   homepage "https://conjure-up.io/"
-  url "https://github.com/conjure-up/conjure-up/archive/2.6.9.tar.gz"
-  sha256 "b5ebba187d27b3474b36acd715df015b198c0e5df8aefb32200ba4f3f3de17f4"
+  url "https://github.com/conjure-up/conjure-up/archive/2.6.14.tar.gz"
+  sha256 "c9f115229a305ff40eae051f40db2ca18a3dc2bd377397e22786bba032feb79a"
   license "MIT"
-  revision OS.mac? ? 2 : 4
 
   bottle do
     cellar :any
-    sha256 "e9e7df0108dd3be03a9391a95befbbfa66950bbbb48ae8fd28f4855ae6c69932" => :catalina
-    sha256 "dc221c6071b5a37760a530da1981a96a1f404fa461d44fee7a217897e9a01077" => :mojave
-    sha256 "b20ebbe1aa0c30c713e58c03ac167196f7c3b5635f95c1ce8687e6bfad9a0294" => :high_sierra
-    sha256 "abcb88b800c672924ce6f4666e3f3261480a4b373076f55e228b7e1be63e5bc9" => :x86_64_linux
+    sha256 "cf5da249d3e6045fd8e170399cb5486a566f3673c112c1f37454cfda1d383094" => :catalina
+    sha256 "a86f3cfe45e1e04e83a17fba28edaa64c17b490fe278c54220c46b0063618406" => :mojave
+    sha256 "0ad79673bcf095a1b7923f252eeca5a9d72e0482b88fa4d8803e0de5006428b8" => :high_sierra
   end
 
   depends_on "awscli"
