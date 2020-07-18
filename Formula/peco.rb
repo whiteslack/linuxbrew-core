@@ -11,6 +11,7 @@ class Peco < Formula
     sha256 "02aee47d2d6e04c17c5a8a0c0d4391004175b00d2c01550b37bec09be865953a" => :catalina
     sha256 "f2c6e54d44a476bdfcab73c53789fceceeda94101e1b537525af870b1995a5aa" => :mojave
     sha256 "fb083704e02c7b00b740039da5a93c505ac4448b3e568fc04756902c28d68202" => :high_sierra
+    sha256 "2df49d245725cfdbb536e8852edf81b394201490c843e7e189a2a445204b0ba1" => :x86_64_linux
   end
 
   depends_on "go" => :build
