@@ -1,14 +1,15 @@
 class Carton < Formula
-  desc "Bundler or pip freeze for Perl"
-  homepage "https://github.com/perl-carton/carton"
-  url "https://github.com/perl-carton/carton/archive/v1.0.34.tar.gz"
-  sha256 "c55d9e25b39fe7cfa5d9c5fac4b75572b4965b1ea1588ba97a37f1ade3a0c517"
+  desc "Perl module dependency manager (aka Bundler for Perl)"
+  homepage "https://metacpan.org/pod/Carton"
+  url "https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/Carton-v1.0.34.tar.gz"
+  sha256 "77d42b92732bcfc18a59d341e56ce476205b1c4d380eab3a07224f5745c23e45"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d8b5829c89ed7530695a96fa3bdd0b555513bf3a83bc7e63370c53d39d69e083" => :catalina
-    sha256 "51128a93ea1037f16e65d4444354a6e643fe43ad13b921a7b108275280a472e6" => :mojave
-    sha256 "920440d30498e6af034f2cc62b9de1183a013c91a16ce2ea8cbd8b68da4eb68f" => :high_sierra
+    sha256 "6b297651d53363d8e300cfa3f1dd30b3a3b26bc12d42d869cf3ae994edca0daa" => :catalina
+    sha256 "dad7e5f481b721f027a956e13d4c0845e3d9dfd40c823296d206ed0b0a0e9f15" => :mojave
+    sha256 "08a660d4f27f1159886a6fddbebe7b082d1b755fdcaa2c4bc31b50dfadc15e43" => :high_sierra
   end
 
   depends_on "perl"
@@ -152,8 +153,8 @@ class Carton < Formula
     system "make", "install"
 
     (bin/"carton").write_env_script("#{libexec}/bin/carton", :PERL5LIB => ENV["PERL5LIB"])
-    man1.install libexec/"man/man1/carton.1"
-    man3.install Dir[libexec/"man/man3/Carton*"]
+    man1.install_symlink libexec/"man/man1/carton.1"
+    man3.install_symlink Dir[libexec/"man/man3/Carton*"]
   end
 
   test do

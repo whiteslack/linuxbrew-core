@@ -1,17 +1,16 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
   homepage "https://imgproxy.net"
-  url "https://github.com/imgproxy/imgproxy/archive/v2.13.1.tar.gz"
-  sha256 "1a65fd8579e9a9f6a393d4d768f517e48e090707a11cc02bb46153e26ac0c833"
+  url "https://github.com/imgproxy/imgproxy/archive/v2.14.0.tar.gz"
+  sha256 "740e7071803308b5c5359223a31ad869d1ee82c859b4c8c187c600449abb8ddc"
   license "MIT"
-  revision 1
   head "https://github.com/imgproxy/imgproxy.git"
 
   bottle do
     cellar :any
-    sha256 "1d689272611de42065d737bc031d2bad4b1b0218e753e1291a194f476ebd4323" => :catalina
-    sha256 "a250050aa34ac48c89246349cee3321f3e6bdfa2ee89d6f03a21997df33cb394" => :mojave
-    sha256 "b817b2307645cb4148b64575fe99630f7a5b197ca4b28ac217a855fc79aa5ebf" => :high_sierra
+    sha256 "d88b0bc9aad0a48faa87645fbb82cf06a5d30266e640ac4e0f92db648c633797" => :catalina
+    sha256 "d90d9149fc9cdfc5d4f5ae884ebd3f5d3655bd29a2b795ffa2d1db77cb72e339" => :mojave
+    sha256 "a1dcf45aa078d1659f216dba2c1b13db4afcb4f61026114aae924554ce98c592" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Imgproxy < Formula
     ENV["CGO_LDFLAGS_ALLOW"]="-s|-w"
     ENV["CGO_CFLAGS_ALLOW"]="-Xpreprocessor"
 
-    system "go", "build", "-o", "#{bin}/#{name}"
+    system "go", "build", *std_go_args
   end
 
   test do

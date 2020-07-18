@@ -1,15 +1,14 @@
 class Pdnsrec < Formula
   desc "Non-authoritative/recursing DNS server"
   homepage "https://www.powerdns.com/recursor.html"
-  url "https://downloads.powerdns.com/releases/pdns-recursor-4.3.2.tar.bz2"
-  sha256 "fcaeba94d5005ec3b973c1800d22eee686f785d3e635ad495d6f44067a4561e1"
+  url "https://downloads.powerdns.com/releases/pdns-recursor-4.3.3.tar.bz2"
+  sha256 "0bbc481d10806233579712a1e4d5f5ee27ca9860e10aa6e1ec317f032bea1508"
   license "GPL-2.0"
 
   bottle do
-    sha256 "e10f8080dc0217d7b070d0fb2b55484834dce4a6816d192a4300997233424851" => :catalina
-    sha256 "16ff5c044d1c7c412f5ec0542e9aff7cf5ea72c9f79809ce4b82d21004b0ed9d" => :mojave
-    sha256 "c844e730c0615a742e7b83c1ff0579149dddef844e8d1552eae080924414d691" => :high_sierra
-    sha256 "66ae52c47ddce9b3f2e725d896e0582dba2228588e503167af7eb50ba2c12f02" => :x86_64_linux
+    sha256 "7959929b5bc6059799909b9af6d222c2aba4744a8f78e344697dceb26fc3c485" => :catalina
+    sha256 "24fe989bb5960ce4bb0900d3e29d4ebcaa68475e5953ca8173c55ebc8c2ce92e" => :mojave
+    sha256 "4c197184d1d5ea6ca9d42994c971dca3f0d6e691811695c787c8794c659c6cb8" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
