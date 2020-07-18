@@ -9,6 +9,7 @@ class Tth < Formula
     sha256 "795276a9b4c2cdf1373585d536d7df254966ecc16463b0f5579465cf76a052c8" => :catalina
     sha256 "9a6621aa12fee28e032ed5c73d5e385ac20249d9ef6714581a7cb3608f4490c5" => :mojave
     sha256 "c73b8efe4532752cb6ae1c524c3988e3d105e60456b7aa0ba0b77dc1da06b669" => :high_sierra
+    sha256 "7f9bc152af7f0a720b0d906d06832eae85522480bb5a2108d3d64bbc1081c8d1" => :x86_64_linux
   end
 
   def install
