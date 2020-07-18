@@ -2,17 +2,16 @@ class Octant < Formula
   desc "Kubernetes introspection tool for developers"
   homepage "https://octant.dev"
   url "https://github.com/vmware-tanzu/octant.git",
-      :tag      => "v0.13.1",
-      :revision => "72c5ea94283ab48cc6c2b7e91d7c901af031ecb3"
+      :tag      => "v0.14.0",
+      :revision => "d64d961046a653b58083cff5753166011dc6b5f3"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/octant.git"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "eb2db3382c70bfc6decf386bfe901b9e9f2e0319768da4a31cfecebf3bb523b0" => :catalina
-    sha256 "6715f3635314af566c04869c3e36369a895754f6022f0f06eaf6c4d79a4b7346" => :mojave
-    sha256 "f448aee1de3d242ea718a605dcecd55f6fdc01af2dc233dca8c3278c8bbf1fbb" => :high_sierra
+    sha256 "b154776910a741c19c20adebc5e4580b3c9c9a9fca032587fdfbb8ae3ae69f0e" => :catalina
+    sha256 "fab43c391f9844bb1243680b27d24530e56be8f65c1cd5a0168f254d3fb16ae5" => :mojave
+    sha256 "e69dc89615e2b9b8f835dc28f237d0291365427fd7800cc8e511843d695906ed" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -31,7 +30,7 @@ class Octant < Formula
       system "go", "run", "build.go", "go-install"
       ENV.prepend_path "PATH", buildpath/"bin"
 
-      system "go", "generate", "./pkg/icon"
+      system "go", "generate", "./pkg/plugin/plugin.go"
       system "go", "run", "build.go", "web-build"
 
       commit = Utils.safe_popen_read("git", "rev-parse", "HEAD").chomp
@@ -46,10 +45,13 @@ class Octant < Formula
   end
 
   test do
-    kubeconfig = testpath/"config"
-    output = shell_output("#{bin}/octant --kubeconfig #{kubeconfig} 2>&1", 1)
-    assert_match "failed to init cluster client", output
+    fork do
+      exec bin/"octant", "--kubeconfig", testpath/"config", "--disable-open-browser"
+    end
+    sleep 2
 
+    output = shell_output("curl -s http://localhost:7777")
+    assert_match "<title>Octant</title>", output, "Octant did not start"
     assert_match version.to_s, shell_output("#{bin}/octant version")
   end
 end
