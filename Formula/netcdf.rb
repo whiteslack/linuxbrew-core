@@ -13,6 +13,7 @@ class Netcdf < Formula
     sha256 "0ae7c27bd0ac68071faecbd09f67fb2ce91d86b030b92488dca64851e6d40de0" => :catalina
     sha256 "db149e5597eab59a0a908c48efc35df09735ddc8bac006c94b6a02a644822814" => :mojave
     sha256 "c1704dcf4cd4d59e48b5e71e752c44220cc098810e67d49aaa8985cc09b5724b" => :high_sierra
+    sha256 "ef7447da174c9c075918156da5701de2b9ec828182fbe1494645b33c8166dd8f" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
