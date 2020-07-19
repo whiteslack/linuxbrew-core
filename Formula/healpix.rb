@@ -4,13 +4,14 @@ class Healpix < Formula
   url "https://downloads.sourceforge.net/project/healpix/Healpix_3.60/Healpix_3.60_2019Dec18.tar.gz"
   version "3.60"
   sha256 "bf1797022fb57b5b8381290955e8c4161e3ca9b9d88e3e32d55b092a4a04b500"
-  revision 1
+  license "GPL-2.0-or-later"
+  revision 2
 
   bottle do
     cellar :any
-    sha256 "06f325d3c2ca5ea3ba59102406b9db993df33db6eb3767375f30e6dbd736c068" => :catalina
-    sha256 "9b32669974a4ad5c1daba24a0841eddb092416c902e6b83d61f34d240e872a7d" => :mojave
-    sha256 "9e809e0585035821b9e35cdb2c4bcecba7f6f44528f3470f8b3d73d43312d46b" => :high_sierra
+    sha256 "1d9b19c5fc8240ab950fcdc24fc04fcca6111fc649436a4eb46379c7fde2ab33" => :catalina
+    sha256 "9d12958cb9bc7cb46739f511a7d99aaf61dc4dda29f3db3db349c40ce005e7ec" => :mojave
+    sha256 "3dc30c638e5b12de86ffc99860cb444d10f42cca7786ead6ded1d4b061a45a69" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -32,13 +33,13 @@ class Healpix < Formula
     end
 
     cd "src/common_libraries/libsharp" do
-      system "./configure", "--prefix=#{buildpath}/libsharp", *configure_args
+      system "./configure", "--prefix=#{prefix}", *configure_args
       system "make", "install"
     end
 
     cd "src/cxx" do
-      ENV["SHARP_CFLAGS"] = "-I#{buildpath}/libsharp/include"
-      ENV["SHARP_LIBS"] = "-L#{buildpath}/libsharp/lib"
+      ENV["SHARP_CFLAGS"] = "-I#{include}"
+      ENV["SHARP_LIBS"] = "-L#{lib} -lsharp"
       system "./configure", "--prefix=#{prefix}", *configure_args
       system "make", "install"
     end

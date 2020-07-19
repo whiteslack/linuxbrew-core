@@ -1,16 +1,16 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
   homepage "https://github.com/projectdiscovery/subfinder"
-  url "https://github.com/projectdiscovery/subfinder/archive/v2.3.6.tar.gz"
-  sha256 "c8ccc886cf1d0759a03c9e6c53e2b470839579f31bfaf6bbe820b80df1e66ec6"
+  url "https://github.com/projectdiscovery/subfinder/archive/v2.3.7.tar.gz"
+  sha256 "4e87bdcdd1560557aa5cf6b1e2ef7a71c62fae218a8c81c2fa8849c476becfe5"
   license "MIT"
   head "https://github.com/projectdiscovery/subfinder.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "09dc0347f7b7cc454903abcea0e962289d4dd11c5a4bb067c8c454855d9db25d" => :catalina
-    sha256 "0820be0f2658e42671c63d223c780c61eb49bbf246455d382d89de7c615b0bea" => :mojave
-    sha256 "b18f4004c01b54e5c0f0c07ec5efbfe581cdef10e8fe72ffe8968284579e5052" => :high_sierra
+    sha256 "22bef7e58bc97d8bbe86e327636d5e0758e80fc679e7714e6fe1229549d97403" => :catalina
+    sha256 "1ef2345879a75ad84de7cd92fc83a0f7d88638b4b8bd2f02325f7c57f2825b3b" => :mojave
+    sha256 "094900a9b6855f8c4345fe4a5b507b775f54253303189ba4168be18361bc7751" => :high_sierra
   end
 
   depends_on "go" => :build

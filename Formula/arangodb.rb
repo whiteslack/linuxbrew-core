@@ -1,14 +1,14 @@
 class Arangodb < Formula
   desc "The Multi-Model NoSQL Database"
   homepage "https://www.arangodb.com/"
-  url "https://download.arangodb.com/Source/ArangoDB-3.6.4.tar.gz"
-  sha256 "e2755fc3576edc0531ca2dd43c6edb690494bc7b44426c9236b1edb575be8aa9"
+  url "https://download.arangodb.com/Source/ArangoDB-3.6.5.tar.gz"
+  sha256 "e5edc1af5f186dda485f06aeeaba0e621a479f145eaa9d1b411be0bba9c3b547"
   license "Apache-2.0"
   head "https://github.com/arangodb/arangodb.git", :branch => "devel"
 
   bottle do
-    sha256 "4bf7f43c396ee8273591232f880a7c33f2207c521efe591aaa9ace900ca03696" => :catalina
-    sha256 "251c7b9442a8da3a4d62f487a159ebc3089ef5398c399aec5c47c4deb9ea5729" => :mojave
+    sha256 "5286e70078293e13d40c35ee31aa936a2aea80aa0ea0262fc86fea71ca47b00a" => :catalina
+    sha256 "dc40b9f2cb3eaea5cb8cc47b243d5816b808e934159a02abcd8f364340b448ac" => :mojave
   end
 
   depends_on "ccache" => :build
@@ -22,19 +22,19 @@ class Arangodb < Formula
   # with a unified CLI
   resource "starter" do
     url "https://github.com/arangodb-helper/arangodb.git",
-      :revision => "598e7d7794ad4a98024548dd9061e03782542ecd"
+      :revision => "e32307e9ae5a0046214cb066355a8577e6fc4148"
   end
 
   def install
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version if OS.mac?
 
     resource("starter").stage do
-      ENV.append "GOPATH", Dir.pwd + "/.gobuild"
-      ENV.append "DOCKERCLI", ""
-      system "make", "deps"
+      ENV["GOPATH"] = Dir.pwd + "/.gobuild"
+      ENV["DOCKERCLI"] = ""
       # use commit-id as projectBuild
       commit = `git rev-parse HEAD`.chomp
-      system "go", "build", "-ldflags", "-X main.projectVersion=0.14.14 -X main.projectBuild=#{commit}",
+      system "make", "deps"
+      system "go", "build", "-ldflags", "-X main.projectVersion=0.14.15 -X main.projectBuild=#{commit}",
                             "-o", "arangodb",
                             "github.com/arangodb-helper/arangodb"
       bin.install "arangodb"
@@ -57,9 +57,7 @@ class Arangodb < Formula
         -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
       ]
 
-      args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
-
-      ENV.append "V8_CXXFLAGS", "-O3 -g -fno-delete-null-pointer-checks" if ENV.compiler == "gcc-6"
+      ENV["V8_CXXFLAGS"] = "-O3 -g -fno-delete-null-pointer-checks" if ENV.compiler == "gcc-6"
 
       system "cmake", "..", *args
       system "make", "install"
