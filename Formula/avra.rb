@@ -10,6 +10,7 @@ class Avra < Formula
     sha256 "752edb7e9140387d4b763229ff05cdf973056a70c5a4799b63cce83c2ff18be5" => :catalina
     sha256 "cedf5547712134c47d3659e1cddde7d506643448eca98fb428734165fbb5afc7" => :mojave
     sha256 "f380ed5ddc18ece7b83f4c32290f56dfcc8a27065cc1a39423debfc482d369d2" => :high_sierra
+    sha256 "890cfef31d511f8fc163505af866e664315e26cf2b5bbcd6c806ab8daa0359b5" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
