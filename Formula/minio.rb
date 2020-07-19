@@ -2,38 +2,36 @@ class Minio < Formula
   desc "High Performance, Kubernetes Native Object Storage"
   homepage "https://min.io"
   url "https://github.com/minio/minio.git",
-      :tag      => "RELEASE.2020-07-11T06-07-16Z",
-      :revision => "2d17c16d93826800af9fd0e6642334737c35295a"
-  version "20200711060716"
+      :tag      => "RELEASE.2020-07-18T18-48-16Z",
+      :revision => "17747db93f9e2ef2450945feb082d0988dbd0a2f"
+  version "20200718184816"
   license "Apache-2.0"
+  head "https://github.com/minio/minio.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a65b9e71515d680eebe247cf2b4abe440ca41b9ecb5370fb572f4a9f6e514a63" => :catalina
-    sha256 "2d6651301b6f204ac1dbc476f351b67671deee7238585479f3967ff70fa3c21a" => :mojave
-    sha256 "6fdc2319a55eeee211a05d46d403159e1f0e08fa0c40d2e3201d35da7f69f949" => :high_sierra
-    sha256 "76c388a9eedee905b6eeff914835fbb720f48e4aa8f78d7f43c160e81c6d71a0" => :x86_64_linux
+    sha256 "bbfcf24f73bff413fe80ed967a38e62840cc5c2a5eccfb672fb1ad98c5dfda80" => :catalina
+    sha256 "61ad6716815ed8c00c4a406213a3455853d7ed108b03e2f4d6ca2dcaa5b64c4b" => :mojave
+    sha256 "5f82822e918fa18f89ed9b53950d5710333453d15f03871c0dfe81c203f86a76" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
     if build.head?
-      system "go", "build", "-trimpath", "-o", bin/"minio"
+      system "go", "build", *std_go_args
     else
       release = `git tag --points-at HEAD`.chomp
       version = release.gsub(/RELEASE\./, "").chomp.gsub(/T(\d+)-(\d+)-(\d+)Z/, 'T\1:\2:\3Z')
       commit = `git rev-parse HEAD`.chomp
       proj = "github.com/minio/minio"
 
-      system "go", "build", "-trimpath", "-o", bin/"minio", "-ldflags", <<~EOS
+      system "go", "build", *std_go_args, "-ldflags", <<~EOS
         -X #{proj}/cmd.Version=#{version}
         -X #{proj}/cmd.ReleaseTag=#{release}
         -X #{proj}/cmd.CommitID=#{commit}
       EOS
     end
-
-    prefix.install_metafiles
   end
 
   def post_install

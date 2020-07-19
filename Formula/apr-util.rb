@@ -4,6 +4,7 @@ class AprUtil < Formula
   url "https://www.apache.org/dyn/closer.lua?path=apr/apr-util-1.6.1.tar.bz2"
   mirror "https://archive.apache.org/dist/apr/apr-util-1.6.1.tar.bz2"
   sha256 "d3e12f7b6ad12687572a3a39475545a072608f4ba03a6ce8a3778f607dd0035b"
+  license "Apache-2.0"
   revision OS.mac? ? 3 : 5
 
   bottle do
@@ -18,12 +19,6 @@ class AprUtil < Formula
 
   depends_on "apr"
   depends_on "openssl@1.1"
-  unless OS.mac?
-    depends_on "expat"
-    depends_on "mawk"
-    depends_on "sqlite"
-    depends_on "unixodbc"
-  end
 
   uses_from_macos "expat"
   uses_from_macos "sqlite"
