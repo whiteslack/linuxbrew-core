@@ -12,6 +12,7 @@ class Mage < Formula
     sha256 "515be0f1647600a652fb18c7ca2eae45683e9e22f22ef7a8cfa0257e05ef6024" => :catalina
     sha256 "d785e2a6fb3cb2a03db1a83ea1f5f2105b6dd0b254d868b7b8950ceb8910c97a" => :mojave
     sha256 "743f8a5be5aa6dc79dbbd7f44b5cfe1726862c865042d22183d522c863994e7f" => :high_sierra
+    sha256 "dbdf797f76b4f7c920ceabce307e39da7c7407ff7a8ef378a7e3ae0820da0630" => :x86_64_linux
   end
 
   depends_on "go"
