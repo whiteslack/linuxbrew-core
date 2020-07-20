@@ -15,6 +15,8 @@ class Gcc < Formula
     mirror "https://ftpmirror.gnu.org/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz"
     sha256 "530cea139d82fe542b358961130c69cfde8b3d14556370b65823d2f91f0ced87"
   end
+  license "GPL-3.0"
+  head "https://gcc.gnu.org/git/gcc.git"
 
   # gcc is designed to be portable.
   # reminder: always add 'cellar :any'
