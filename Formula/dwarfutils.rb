@@ -9,6 +9,7 @@ class Dwarfutils < Formula
     sha256 "fc36e7fc39f73723520c29f823c11c62a45c0412db6cd5360291c4f0f8e4018c" => :catalina
     sha256 "68c897651d6a0c7e1d08459e4361c8d22ff465bd83d0be6bf0e4864ab30e1133" => :mojave
     sha256 "7d99f3f2173938d512b5268fc0d94f36a0915dc040fdaa9a08ae0448166ab8fc" => :high_sierra
+    sha256 "8aa54dbf119e2a358c0b19edaf0f329d6029ea085bd9f94568764887ac5f6b8f" => :x86_64_linux
   end
 
   if OS.mac?
