@@ -9,6 +9,7 @@ class Just < Formula
     sha256 "d83309b390fe2d2d1acd16e86ccd749294f01c97ea36222173699f67dc31b43f" => :catalina
     sha256 "879780f167d022a78c3eda09921f90cb6a69fe81900bcc72266afc1de2a4570b" => :mojave
     sha256 "b94c01db3ac8a7020fa5ac368c3fb72f4c00a420efe6a36669b640dc3268dc7f" => :high_sierra
+    sha256 "2e1b257412c90929de911050554590035e0c94dfc9798b0b3db6a530daaf6697" => :x86_64_linux
   end
 
   depends_on "rust" => :build
