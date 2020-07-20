@@ -12,6 +12,7 @@ class Instalooter < Formula
     sha256 "0dd79c703d6348809dd3d2ad5af9cc78c73793df7a79659902499bd097d4053c" => :catalina
     sha256 "6306aaebc9b021e81c5311247e5611f1936b187e3393a18fc4105ab9b64ea206" => :mojave
     sha256 "085db0739c583a65fbdf72da04ad31e4187450b1cd51a44b4524d1c06524eb9d" => :high_sierra
+    sha256 "242fd6872143c347235b63f4fbcf84433f48e0caec918d44d2bafec0b8dc3511" => :x86_64_linux
   end
 
   depends_on "python@3.8"
