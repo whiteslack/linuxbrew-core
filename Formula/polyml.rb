@@ -10,6 +10,7 @@ class Polyml < Formula
     sha256 "22f583ec73be6a469af9adff8eb3e3bc7b7ad7b40db56c16a91569f3d2097dbc" => :catalina
     sha256 "65a6a917d00e9bfb09705833ac96584f3e503edb3342c7203b083f17c8103d97" => :mojave
     sha256 "1f0d015938e838043ab26bffb144a2abe0cf5ad5944514c1a8497d79f02dbede" => :high_sierra
+    sha256 "2e52e2b44c0a32d97003a5732493e1754ca545458dbe1e5bb3ddf1d0c802eee3" => :x86_64_linux
   end
 
   def install
