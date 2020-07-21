@@ -18,6 +18,8 @@ class Nss < Formula
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
+  conflicts_with "resty", :because => "both install `pp` binaries"
+
   def install
     ENV.deparallelize
     cd "nss"

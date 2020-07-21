@@ -16,6 +16,8 @@ class Resty < Formula
     sha256 "1c6a12ebf97852447f6f16628fdf0acd3f9d156404ab3ca9aa680c2275f40538" => :x86_64_linux
   end
 
+  conflicts_with "nss", :because => "both install `pp` binaries"
+
   resource "JSON" do
     url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-2.94.tar.gz"
     sha256 "12271b5cee49943bbdde430eef58f1fe64ba6561980b22c69585e08fc977dc6d"

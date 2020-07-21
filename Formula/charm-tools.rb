@@ -3,16 +3,15 @@ class CharmTools < Formula
 
   desc "Tools for authoring and maintaining juju charms"
   homepage "https://github.com/juju/charm-tools"
-  url "https://files.pythonhosted.org/packages/b9/1b/11c18424fc374f158a0f1a68ccd62f9484dbe3d1d656bd6df945b1751ecc/charm-tools-2.7.6.tar.gz"
-  sha256 "ed53f561a7e1352f5c6f3b8636b68f6ea7c1ffd3e3fd7016e424a886c2b4526b"
+  url "https://files.pythonhosted.org/packages/0e/70/490a5052b0cd4db74daaa60a5c52cbeead53aa2d47575a46197e7f4a00f1/charm-tools-2.7.7.tar.gz"
+  sha256 "2dc026e9e000b5c5a09074d49544adc1f10359232a967297325f30568ef1c8cc"
   license "GPL-3.0"
 
   bottle do
     cellar :any
-    sha256 "44ad5cb20ddce1b0f332f25395fa0bbde08b233e2b0e99b8d77f90d9260889f4" => :catalina
-    sha256 "4f44699513dcd66a9b2a7162f3a934a312d3d99023a0fb6b8a9f674d18f4235b" => :mojave
-    sha256 "51eaff42aaa953e516d9419d2485632cf6c42b0f2cc35e9a4c301de53b4d169b" => :high_sierra
-    sha256 "5187475d196a4ff56f4e0fd56e9af6fec22d7b17dde013ca915d07faacd4eb4e" => :x86_64_linux
+    sha256 "fa888eac2d66caf71b44ede58666027c5ba64990427bad1d1e9469b5b13f73d4" => :catalina
+    sha256 "b27d6ba31f5f9ffde870493498014d5c07f6e694be79e3d056407d49e3c8ad6a" => :mojave
+    sha256 "d989e3aa2ad127bb6bc5ce3280efcd9439be29ebfe7cc15af22c7818ae820037" => :high_sierra
   end
 
   depends_on "charm"

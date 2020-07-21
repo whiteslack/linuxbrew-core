@@ -3,17 +3,16 @@ require "language/node"
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-1.17.1.tgz"
-  sha256 "967aac00940015e17807d227a37fbee62c569a7b770b408a558944a2bbe27c5f"
+  url "https://registry.npmjs.org/appium/-/appium-1.18.0.tgz"
+  sha256 "7c2ace86435147fe3d961199d5bac542ed159aefa8ab1d5b58c7b88cd273ed3c"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git"
 
   bottle do
     cellar :any
-    sha256 "f0e2cae44d7c89c105ff256f34786ecc53d133fbbc74f21a93dca51ae28dc811" => :catalina
-    sha256 "d45524677747716facf1fc8ff483b34051300fe9ee3ec37797cee98ca91bf810" => :mojave
-    sha256 "086ddbbdae4a0b17e4dec8197f1efd53d5f80b011ffde0d3389260f599238223" => :high_sierra
-    sha256 "22f35488063d65ad4b3b9ba7db82d211c212e62c18814f67a1dfd1fb0ee63e8b" => :x86_64_linux
+    sha256 "d6d0adf1f5b4380cf09ad9571e708f51e7d3f5c99307eafd5411dc7318ee03b9" => :catalina
+    sha256 "6e1fc2e7528234ec093d77933030e796accdd927e58fed2869e9b91f9951590f" => :mojave
+    sha256 "cc6f096c1464b401f52b6808eb8fe3d71975bb9c83594fcc7a0dc67551abb5e8" => :high_sierra
   end
 
   depends_on "node"
