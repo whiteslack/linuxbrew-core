@@ -40,11 +40,6 @@ class Freeswitch < Formula
     depends_on "util-linux"
   end
 
-  unless OS.mac?
-    depends_on "libedit"
-    depends_on "zlib"
-  end
-
   # https://github.com/Homebrew/homebrew/issues/42865
 
   #----------------------- Begin sound file resources -------------------------
