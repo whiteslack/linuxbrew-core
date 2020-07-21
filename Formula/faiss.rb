@@ -14,7 +14,6 @@ class Faiss < Formula
   end
 
   depends_on "libomp"
-  depends_on "openblas" unless OS.mac?
 
   on_linux do
     depends_on "openblas"
