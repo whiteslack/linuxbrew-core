@@ -12,6 +12,7 @@ class AskCli < Formula
     sha256 "c74882fe57efe90ee5b5e18a2a711a4ed81df9ee6a4678938c8a074439e85c59" => :catalina
     sha256 "38b763b249973864f58e6cde7eda0d3a46de6657ff8e6ce95308a08db8990412" => :mojave
     sha256 "91abb2c956b0603ec53e06b42f25c889fd0b83fe2cbb13233ebb2ab54aa9bba7" => :high_sierra
+    sha256 "e5978280b365df2d8f3f828e8cc8d38650e63ff1b5e0cc702de0e0d9fbed7bec" => :x86_64_linux
   end
 
   depends_on "node"
