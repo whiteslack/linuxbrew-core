@@ -18,7 +18,6 @@ class GlibNetworking < Formula
   depends_on "glib"
   depends_on "gnutls"
   depends_on "gsettings-desktop-schemas"
-  depends_on "libidn" unless OS.mac?
 
   on_linux do
     depends_on "libidn"
