@@ -10,6 +10,7 @@ class Jlog < Formula
     sha256 "28a606466256bf030942104c0e7b5618b442ecee7bcd7498cfac9f2cbb098ebc" => :catalina
     sha256 "e45a56ff580b67b3a17407996d72768b57f06b6f7878ca8320dc8befe8f2793f" => :mojave
     sha256 "583bdc22413565285d5f3551be33c17d12e18a25b665e57076332147cfb283d9" => :high_sierra
+    sha256 "74c705c7fca82997ad4371df1d8971f644fc437f359a29a4ce7458b34e13bcd4" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
