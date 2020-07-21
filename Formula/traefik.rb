@@ -12,6 +12,7 @@ class Traefik < Formula
     sha256 "64b4dba7b4247d81109077c39f1b12786dbd2fd74cf35b08b0b79039e3c47d35" => :catalina
     sha256 "cc0b34ab691f1f8be132ee385f1fe5522a667615a0ab8e79ddf47ee93719c03a" => :mojave
     sha256 "1cdc92f9a3aab076d012d3b03473525a8f1205197950aba58e0f5ac05ec60e4a" => :high_sierra
+    sha256 "13e04ce9bb66d9620375c8704b68efba60c6c03457fb896170492ea93ba0f18b" => :x86_64_linux
   end
 
   depends_on "go" => :build
