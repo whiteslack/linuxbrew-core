@@ -16,13 +16,14 @@ class Flow < Formula
 
   depends_on "ocaml" => :build
   depends_on "opam" => :build
-  unless OS.mac?
-    depends_on "rsync" => :build
-    depends_on "elfutils"
-  end
 
   uses_from_macos "m4" => :build
+  uses_from_macos "rsync" => :build
   uses_from_macos "unzip" => :build
+
+  on_linux do
+    depends_on "elfutils"
+  end
 
   def install
     system "make", "all-homebrew"

@@ -21,6 +21,8 @@ class Goad < Formula
   depends_on "go-bindata" => :build
   depends_on "zip" => :build unless OS.mac?
 
+  uses_from_macos "zip" => :build
+
   def install
     ENV["GOPATH"] = buildpath
     dir = buildpath/"src/github.com/goadapp/goad"

@@ -25,9 +25,9 @@ class Ghostscript < Formula
   depends_on "pkg-config" => :build
   depends_on "libtiff"
 
-  unless OS.mac?
-    depends_on "libidn"
+  on_linux do
     depends_on "fontconfig"
+    depends_on "libidn"
   end
 
   # https://sourceforge.net/projects/gs-fonts/
