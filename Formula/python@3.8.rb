@@ -1,15 +1,14 @@
 class PythonAT38 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.8.4/Python-3.8.4.tar.xz"
-  sha256 "5f41968a95afe9bc12192d7e6861aab31e80a46c46fa59d3d837def6a4cd4d37"
+  url "https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tar.xz"
+  sha256 "e3003ed57db17e617acb382b0cade29a248c6026b1bd8aad1f976e9af66a83b0"
   license "Python-2.0"
 
   bottle do
-    sha256 "19e0c22f99fcd17aa7bcbe81eca8662bc2b105024a9c7ac50a54e5dc4ea2170d" => :catalina
-    sha256 "4cc0fc162f6fdc7f1443e32df67a6570401697e4c56498825a5f14d887be5b1f" => :mojave
-    sha256 "cd34d3767105e436c00c8ad16ccc83c7bf7f3a4573ade6a336d5d67a0a6eb1ce" => :high_sierra
-    sha256 "856221a8ec9767447c273b3d9c2f236654fa4e5e88d83fd2896fc9819e979e27" => :x86_64_linux
+    sha256 "3f0592dfdf6bf38c25870b57ba3e71b5b47e6c5a5ddb76aaafcbffe67eff8354" => :catalina
+    sha256 "c663ffeac543b83aeae1ca13700fcb039edd57b3f0579b78fed1c2c4836ae54f" => :mojave
+    sha256 "089e6eb9f410d2b8c975734df1633b847e6738f193a999f2d1f6cce82aa260b6" => :high_sierra
   end
 
   # setuptools remembers the build flags python is built with and uses them to

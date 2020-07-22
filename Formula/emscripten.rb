@@ -8,25 +8,25 @@ class Emscripten < Formula
   license "MIT"
 
   stable do
-    url "https://github.com/emscripten-core/emscripten/archive/1.39.19.tar.gz"
-    sha256 "79b08df6d067eb2e00c2e228c3c965a3ae82cd395b50c3c68fa4dfc8ec977f0b"
+    url "https://github.com/emscripten-core/emscripten/archive/1.39.20.tar.gz"
+    sha256 "379138716c8b8858a13f9bd993e51f8ef20c182a9fa3320072d783da5bf5f80c"
 
     resource "fastcomp" do
-      url "https://github.com/emscripten-core/emscripten-fastcomp/archive/1.39.19.tar.gz"
-      sha256 "392c946b87c1a9c8c1566c3a10a704af3ec17f38fbada8400867774cf8c962c7"
+      url "https://github.com/emscripten-core/emscripten-fastcomp/archive/1.39.20.tar.gz"
+      sha256 "ded36b5fbac863a48c15161157ef4481ea767b43cf2d6791f502223f016e96eb"
     end
 
     resource "fastcomp-clang" do
-      url "https://github.com/emscripten-core/emscripten-fastcomp-clang/archive/1.39.19.tar.gz"
-      sha256 "e1944b483c9cc402b65b8cf5542b81dfb8e1c40867040e9ea146b590c84cd9f9"
+      url "https://github.com/emscripten-core/emscripten-fastcomp-clang/archive/1.39.20.tar.gz"
+      sha256 "26a07d8b5e7ec6cbfd77cdee3d8fc8a644d0166244a0beb68e104fd7dd8d1ede"
     end
   end
 
   bottle do
     cellar :any
-    sha256 "21f478110ddb7dbfac27e9e073a99cd087e6e0b33675e9e2f4dcd2abe6f83161" => :catalina
-    sha256 "dd3a2eb8f689756d207c8816c9cfeac093592008dfe177418a38e65438ddd660" => :mojave
-    sha256 "ccc10cbdc88311369923b9fd1362a27087a90c3dae54112a55e88d545cfbfcb1" => :high_sierra
+    sha256 "1c4d040a8bf64d3c8ba9694e63508c1a01c44d83bbae37d7fd8a166cd1638a68" => :catalina
+    sha256 "3e8c66def035c7e7eea99d11f0c37ae6b18c1c88fe5ce070bc7660762f2e6727" => :mojave
+    sha256 "5932fbf012e72a11c25ffac6d9850fb20b12a266bee96f3f54bff2be5554d96f" => :high_sierra
   end
 
   head do
