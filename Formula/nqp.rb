@@ -1,13 +1,13 @@
 class Nqp < Formula
   desc "Lightweight Perl 6-like environment for virtual machines"
   homepage "https://github.com/perl6/nqp"
-  url "https://github.com/perl6/nqp/releases/download/2020.06/nqp-2020.06.tar.gz"
-  sha256 "a49e3374cf628d845043b50d192d36131adf0ab91e7e0795a1dc20dd7b83938f"
+  url "https://github.com/perl6/nqp/releases/download/2020.07/nqp-2020.07.tar.gz"
+  sha256 "1bf941f10fc4eeef511ef0b6366f8c87a6327062c8400b44a8a148af3bb22a4e"
 
   bottle do
-    sha256 "e5fed6211e4c2923526d88fd83a6e49ccf5eb6994c6b6cc465aa2762750c0239" => :catalina
-    sha256 "e50bef373949fbc54f82d6ab8a24f83fff9dc9f8faaa1dc5c33113c1a31277eb" => :mojave
-    sha256 "2584ab57c5fd7f37cfee93e4f37da2ecd0b24adae41b1e77da1fbc0d43d56348" => :high_sierra
+    sha256 "282148386404a0eb1de8748d4f1cfc860159d43deefbd9d3b88dbe029b63fe0f" => :catalina
+    sha256 "939d2184962c136540863db15733209cfeec4299ac24191903a4209f222bae8b" => :mojave
+    sha256 "c8505229a909e9bc16855141b2350f99cfd67f0564e1816eebe0a55a50774c39" => :high_sierra
   end
 
   depends_on "moarvm"

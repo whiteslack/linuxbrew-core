@@ -1,28 +1,19 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "http://download.redis.io/releases/redis-6.0.5.tar.gz"
-  sha256 "42cf86a114d2a451b898fcda96acd4d01062a7dbaaad2801d9164a36f898f596"
+  url "http://download.redis.io/releases/redis-6.0.6.tar.gz"
+  sha256 "12ad49b163af5ef39466e8d2f7d212a58172116e5b441eebecb4e6ca22363d94"
   license "BSD-3-Clause"
   head "https://github.com/redis/redis.git", :branch => "unstable"
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "7f0633ca26dce126e3dddc8cc296bc32d58326fed74cc5396b35fb1e23f738f4" => :catalina
-    sha256 "b20a36bcfef6c929eec0f166143330ca54cc08d4581a8fe69a616b89d6c7f2f5" => :mojave
-    sha256 "749adb93b5e42cbfbdd14f1ae1567d73e1ecbf7e0f264f04dc86c1b10a192308" => :high_sierra
-    sha256 "0c4ada876b110fdc18ac041ebd50378a7378069aaae6b68f13ce64786a4a8593" => :x86_64_linux
+    sha256 "0559d97459fddbcbf882d30e3c73a00f4b77f7f75544a7cd9c5954ec9ffa1ff8" => :catalina
+    sha256 "1c82be1e9b5c5fcd3c5716347552e972ee547a40c45ab88620ddd871e96e6f59" => :mojave
+    sha256 "963de099575ccda056e785ba344de5fcb8ddbfe45dec5bc57d2a6d42b48198fd" => :high_sierra
   end
 
   depends_on "openssl@1.1"
-
-  patch do
-    # Remove when upstream fix is released
-    # https://github.com/redis/redis/pull/7453
-    url "https://github.com/redis/redis/pull/7453.diff?full_index=1"
-    sha256 "e1df0543442b75fea67a43eeddade50097d655fe3fef948840bf9d99bb63c157"
-  end
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
