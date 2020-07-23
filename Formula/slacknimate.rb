@@ -11,6 +11,7 @@ class Slacknimate < Formula
     sha256 "52bd6b01115cb8e84d3479ff6dea669a98b17b60cc6090b3384ac44fdcbdd93a" => :catalina
     sha256 "28f1871e38987c5b06e0666f172d0eefb9e6895ea8207a0ad171d467a2df7f7a" => :mojave
     sha256 "6849d5acbe802d8fb69007f144bba62a9c259a9093ccc920fb9a200edc9368fa" => :high_sierra
+    sha256 "b49bd7127b239f51b2ce97cf4eb42979555f3251e0218fd1e9234128ed9b9e9c" => :x86_64_linux
   end
 
   depends_on "go" => :build
