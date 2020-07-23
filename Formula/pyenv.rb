@@ -6,7 +6,6 @@ class Pyenv < Formula
   license "MIT"
   version_scheme 1
   head "https://github.com/pyenv/pyenv.git"
-  revision 2 unless OS.mac?
 
   bottle do
     cellar :any
