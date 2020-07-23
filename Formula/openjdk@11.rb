@@ -1,17 +1,15 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://hg.openjdk.java.net/jdk-updates/jdk11u/archive/jdk-11.0.7+10.tar.bz2"
-  version "11.0.7+10"
-  sha256 "e86d27cc3119be2178fc20c0115f8863fa86ac3ffd0c825fef7d16683f78b852"
+  url "https://hg.openjdk.java.net/jdk-updates/jdk11u/archive/jdk-11.0.8-ga.tar.bz2"
+  sha256 "0c10838f708a5987d2980aee56c5c50c02637e21387215f3e13358b93d107192"
   license "GPL-2.0"
 
   bottle do
     cellar :any
-    sha256 "1cef37f5566ca7c60c03bad337c81516525459a7c4892519bc9badf90633a935" => :catalina
-    sha256 "5bb229b65beda25d23ffee46f02bc8a921ad21c9312716e20ea4eba2cfb27901" => :mojave
-    sha256 "2ee32dada456c7c8560ebda3d6b182a80a83b015cd91a30e82602ae0b5e4ce0a" => :high_sierra
-    sha256 "2fb2601acfe01331d503df321c6ea237f18326595115238dc44c36a3f498aff4" => :x86_64_linux
+    sha256 "5cf17a69c7f88b8f721959391d89eafcf1dc6ebcbe5f1496b99448ac9fce0c1d" => :catalina
+    sha256 "a575ebd198211a770bf0fce657c2393c19064d13621dfc88fc6104cadb205250" => :mojave
+    sha256 "ebbda44a7ef9c6d4af36185b8fbdbc16f403c9705696b49b2bd477110d7900ad" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -52,7 +50,7 @@ class OpenjdkAT11 < Formula
     boot_jdk = OS.mac? ? boot_jdk_dir/"Contents/Home" : boot_jdk_dir
     java_options = ENV.delete("_JAVA_OPTIONS")
 
-    short_version, _, build = version.to_s.rpartition("+")
+    _, _, build = version.to_s.rpartition("+")
 
     chmod 0755, "configure"
     system "./configure", "--without-version-pre",
@@ -73,13 +71,14 @@ class OpenjdkAT11 < Formula
     ENV["MAKEFLAGS"] = "JOBS=#{ENV.make_jobs}"
     system "make", "images"
 
+    jdk = Dir["build/*/images/jdk-bundle/*"].first
+    libexec.install jdk => "openjdk.jdk"
+
     if OS.mac?
-      libexec.install "build/macosx-x86_64-server-release/images/jdk-bundle/jdk-#{short_version}.jdk" => "openjdk.jdk"
       bin.install_symlink Dir["#{libexec}/openjdk.jdk/Contents/Home/bin/*"]
       include.install_symlink Dir["#{libexec}/openjdk.jdk/Contents/Home/include/*.h"]
       include.install_symlink Dir["#{libexec}/openjdk.jdk/Contents/Home/include/darwin/*.h"]
     else
-      libexec.install Dir["build/linux-x86_64-normal-server-release/images/jdk/*"]
       bin.install_symlink Dir["#{libexec}/bin/*"]
       include.install_symlink Dir["#{libexec}/include/*.h"]
       include.install_symlink Dir["#{libexec}/include/linux/*.h"]

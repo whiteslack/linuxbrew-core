@@ -3,20 +3,25 @@ class Libfabric < Formula
   homepage "https://ofiwg.github.io/libfabric/"
   url "https://github.com/ofiwg/libfabric/releases/download/v1.10.1/libfabric-1.10.1.tar.bz2"
   sha256 "889fa8c99eed1ff2a5fd6faf6d5222f2cf38476b24f3b764f2cbb5900fee8284"
-  revision 1
+  revision 2
   head "https://github.com/ofiwg/libfabric.git"
 
   bottle do
     cellar :any
-    sha256 "74dc473f0008cde1d89de5f652712b45423ddf1fde9dbbc04fad370c682934ba" => :catalina
-    sha256 "bd2f233361852bf42193a9af476aaa516b52060d2710553a198b1402b929bea9" => :mojave
-    sha256 "c2e506d659ff3682a99e2cf4949e073ea531d0207220f863649ecf41d079a35a" => :high_sierra
-    sha256 "624140011df59e8eff9fdb5d46c7a3afe683b7ea882d1a61194b21d590ec6add" => :x86_64_linux
+    sha256 "b51064b2aaeaa0a29ecea4847c4e3c9bb0728b3689d36f9ce28380245473b15a" => :catalina
+    sha256 "c430f0b1809ab1b674d686649d484969c1da5fe10ef5c1e51ecb603290e2a800" => :mojave
+    sha256 "926207089e78be7ae450684b1152979d549fda911fbbe660603f3690c8f37315" => :high_sierra
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool"  => :build
+
+  # https://github.com/ofiwg/libfabric/pull/6109 is merged upstream, remove this with next release
+  patch do
+    url "https://github.com/ofiwg/libfabric/commit/85c9732fd95f9970f5bcf793ca580d45ed7418f2.diff?full_index=1"
+    sha256 "d5beec5d57be89e0ab53aad44912af98172a85fd894d38a16330cd01dd92ae5b"
+  end
 
   def install
     system "autoreconf", "-fiv"

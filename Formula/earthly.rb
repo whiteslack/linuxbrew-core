@@ -1,16 +1,16 @@
 class Earthly < Formula
-  desc "Build automation tool for the container era"
-  homepage "https://docs.earthly.dev/"
-  url "https://github.com/earthly/earthly/archive/v0.1.3.tar.gz"
-  sha256 "bfbfddc52eb39dd6ea389dc5c8a86386e72005ea17d04af6b36ca5400492e328"
+  desc "Build automation tool for the post-container era"
+  homepage "https://earthly.dev/"
+  url "https://github.com/earthly/earthly/archive/v0.2.0.tar.gz"
+  sha256 "2c20e117d91caa5ee68349d9509fca89bec15e05b7173eded3d9bf8eac6a41d2"
   license "MPL-2.0"
   head "https://github.com/earthly/earthly.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e9d081a7be9262da6dc7bfe6ae12aa5fc205c561ac7f0100ee4e755d825cb0cd" => :catalina
-    sha256 "5691c82dda25a670ed259f5c62fba0e80f487e30c70bd5e16c05849c059cd714" => :mojave
-    sha256 "b64b1bc3b5bd01cc2c95c6993afda7bd3077733437ee9c9376c18686090c65f3" => :high_sierra
+    sha256 "c371ff89ccf8140b47bc84e766862c367da681862de108dbd1b348f225d5b3ff" => :catalina
+    sha256 "16b5702d20a00ebc23fd295fe6037e8fac991cfff567ed9e939c86bea0d85c3e" => :mojave
+    sha256 "b73029dfe295bed6c1925d6ccef879211d5107d5faff41a953a05a937906db12" => :high_sierra
   end
 
   depends_on "go" => :build

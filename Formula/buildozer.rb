@@ -2,16 +2,16 @@ class Buildozer < Formula
   desc "Rewrite bazel BUILD files using standard commands"
   homepage "https://github.com/bazelbuild/buildtools"
   url "https://github.com/bazelbuild/buildtools.git",
-    :tag      => "3.3.0",
-    :revision => "ce0cf814cb03dddf546ea92b3d6bafddb0b9eaf8"
+    :tag      => "3.4.0",
+    :revision => "b1667ff58f714d13c2bba6823d6c52214705508f"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "394ee9a737ae1961fc4a9b64077b34ebbf62ed61466b0445a859e3277b9d3b43" => :catalina
-    sha256 "394ee9a737ae1961fc4a9b64077b34ebbf62ed61466b0445a859e3277b9d3b43" => :mojave
-    sha256 "394ee9a737ae1961fc4a9b64077b34ebbf62ed61466b0445a859e3277b9d3b43" => :high_sierra
+    sha256 "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70" => :catalina
+    sha256 "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70" => :mojave
+    sha256 "7d37c5fbccc7386681f297931fac56e086d90cfa17d7d66100005d83c790ba70" => :high_sierra
   end
 
   depends_on "bazelisk" => :build
