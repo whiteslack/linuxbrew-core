@@ -11,6 +11,7 @@ class RubyInstall < Formula
     sha256 "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a" => :catalina
     sha256 "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a" => :mojave
     sha256 "2c60a37228f97ef76c4f40c36b1a63d046a5d80acf5dc20d93183b81ccf1317a" => :high_sierra
+    sha256 "34a78042a7e8c9d65d32db5bc7fe6692188f81f1c8e4972ce1bd809908c9225e" => :x86_64_linux
   end
 
   def install
