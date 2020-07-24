@@ -31,7 +31,7 @@ class OpenjdkAT11 < Formula
     depends_on "linuxbrew/xorg/libxtst"
   end
 
-  ignore_missing_libraries "libjvm.so"
+  ignore_missing_libraries "libjvm.so" if OS.linux?
 
   on_linux do
     depends_on "pkg-config" => :build
