@@ -11,6 +11,7 @@ class Patchutils < Formula
     sha256 "3ee4d0c62b3f2b26e28fbf476c37eaeb8ccca9000c4f8f2766cd2c662de855bc" => :catalina
     sha256 "12cd388801c5c628db409cb043d6a2fc436f44ae8f01a754f430763380043af4" => :mojave
     sha256 "84b5013e7c6647e1cda9faa1ab9b31834ed6e2ef6c1a48d21ab7c459dc4462b3" => :high_sierra
+    sha256 "d0a114819b0971bab6726f15c1de5098425df8618bf6ae9105c32f87767f1599" => :x86_64_linux
   end
 
   head do
