@@ -31,7 +31,6 @@ class Scrcpy < Formula
 
     mkdir "build" do
       system "meson", *std_meson_args,
-                      "--buildtype=release",
                       "-Dprebuilt_server=#{buildpath}/prebuilt-server.jar",
                       ".."
 
