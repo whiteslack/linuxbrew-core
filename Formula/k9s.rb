@@ -2,16 +2,15 @@ class K9s < Formula
   desc "Kubernetes CLI To Manage Your Clusters In Style!"
   homepage "https://k9scli.io/"
   url "https://github.com/derailed/k9s.git",
-      :tag      => "v0.21.2",
-      :revision => "977791627860a0febb3c217a5322702da109ecbb"
+      :tag      => "v0.21.3",
+      :revision => "251221c19b182089c61f8562dc5a024a38e440ee"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "713ce4d49670c5ee47425bed9b9437d3d5fa47ad84691a38e9cdc5f73364aa7b" => :catalina
-    sha256 "71dc6a54bf42b169d4f1001a30fd07008ccd82907101b906af9c9c74eb8b64c1" => :mojave
-    sha256 "d6f54aab8f27a08e4d640e7180e42aa070816b15e82a51e13e6e4d6942fdeab2" => :high_sierra
-    sha256 "6f7f51efaeecf24a9e7b96b85705bee2ffdf413111dce6a482ccbe35b02ff1c3" => :x86_64_linux
+    sha256 "67f5b73d2dd1e0f6da2ea2932ce76ac788945306255f478aa5ae68b9f77d6464" => :catalina
+    sha256 "bd903d59fc332fad40f43858112b70b0976b1eba9fa2bb1325555b63d7ca93e9" => :mojave
+    sha256 "2818eb4946a9acf54d9cdcf31a15d429d6b031d0349e8e7657201d4ff61b846f" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -24,11 +23,7 @@ class K9s < Formula
   end
 
   test do
-    # k9s consumes the Kubernetes configuration which per default is located at ~/.kube/config
-    # Its location can also be set with the KUBECONFIG environment variable
-    # Setting it to a non-existing location makes sure the test always fails as expected
-    ENV["KUBECONFIG"] = "testpath"
-    assert_equal "\e[31mBoom!! \e[0m\e[37mInvalid kubeconfig context detected.\e[0m",
-                  shell_output("#{bin}/k9s").split("\n").pop
+    assert_match "K9s is a CLI to view and manage your Kubernetes clusters.",
+                 shell_output("#{bin}/k9s --help")
   end
 end

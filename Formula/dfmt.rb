@@ -2,17 +2,16 @@ class Dfmt < Formula
   desc "Formatter for D source code"
   homepage "https://github.com/dlang-community/dfmt"
   url "https://github.com/dlang-community/dfmt.git",
-      :tag      => "v0.12.0",
-      :revision => "09caf255e537ea832a87c9aeb7ec4ed38d751300"
+      :tag      => "v0.13.0",
+      :revision => "b5dbb0e031d411bb94c8784f52eebbe474583755"
   license "BSL-1.0"
   head "https://github.com/dlang-community/dfmt.git", :branch => "v0.x.x", :shallow => false
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8a3b74f50717d236b6ef445de2608ab31e4c43ae10af01e71d9b95d590c4c8e7" => :catalina
-    sha256 "db3e4c50f54d7dd31c9b2768d7b0539d8dea62ae0d7c3ccef7c8ce955721a595" => :mojave
-    sha256 "2fa9649c94a8f624d772d76a1cd43ecc3e8b016a29711d4ea0b6e92906646f09" => :high_sierra
-    sha256 "de41bc11011336ab17570c6ea22fcab33e0b4a30dc0afca4d58a90c83f69979d" => :x86_64_linux
+    sha256 "70a01e51339a8bbc3d72c4927a3016227b8aea5fbe9238e1f8c9240b7c3effbf" => :catalina
+    sha256 "97a07085db537c652c1b3afe994eae61e3df931a184a72e1515feae1ea2988b7" => :mojave
+    sha256 "3e5fb65962d1e76dc734123b14de06001498b416f8dfb1c765994d18d68da285" => :high_sierra
   end
 
   depends_on "dmd" => :build
