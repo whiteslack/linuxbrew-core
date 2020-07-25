@@ -1,15 +1,15 @@
 class OryHydra < Formula
   desc "OpenID Certified OAuth 2.0 Server and OpenID Connect Provider"
   homepage "https://www.ory.sh/hydra/"
-  url "https://github.com/ory/hydra/archive/v1.5.2.tar.gz"
-  sha256 "50f7c09b1d6186ff35eed717c75f77884d038120f8096f5f0456526e49976a94"
+  url "https://github.com/ory/hydra/archive/v1.6.0.tar.gz"
+  sha256 "d7deda97dc869aa0ae406614ff2776b79504c47cee282bd02fe002f7cf02cc41"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5bc6be9f9dbd75db15304fc8e6e2eda6c398d75831285afe42986022781c9ab7" => :catalina
-    sha256 "1dd0d349b402e1051ed828e1be9051af5e6cd816517c891d429d21bb576c1675" => :mojave
-    sha256 "aae2b39200e3a5debd9840e6d0845f8268df4ab867ce2f6396620c5c4272b70d" => :high_sierra
+    sha256 "f9e1c364d45b83b7013ae48efb6d785c44a7286b755443926a4de3d16132d1a4" => :catalina
+    sha256 "a96797c6f94d2ae341d23866b76c7e09b390dcaf61aa8064806e193b7645aeac" => :mojave
+    sha256 "04bf760fdd26360a93226340bb9a681534924a9d84b46e9298f601793ac44a21" => :high_sierra
   end
 
   depends_on "go" => :build
