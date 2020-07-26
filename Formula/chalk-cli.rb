@@ -12,6 +12,7 @@ class ChalkCli < Formula
     sha256 "3761c3a51544b65bfc8868207049ef0af1bf6d4c80f8fec674884c52f783007e" => :catalina
     sha256 "f3ddf504d4a6d55285398c1fda8c5b9b7d8ff0c7e7594afcd0288fa8adf3ab81" => :mojave
     sha256 "a0966f5c0489b4edd61e8f733bd1571de8c80deec7c715cca6084f3fc72d2abf" => :high_sierra
+    sha256 "3500c90d58fae887e83b3ab6248b991ba8baa9b90031799709975297483e3bf0" => :x86_64_linux
   end
 
   depends_on "node"
