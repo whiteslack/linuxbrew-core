@@ -11,6 +11,7 @@ class Duckscript < Formula
     sha256 "5a9913515b46fa5450545e6ee310dbf8eb1bc9eb0192806f3035df54da288733" => :catalina
     sha256 "06d8c3e2e6bd97e6e37f08a268124e45363877964eb77af29d4ce392bbdce9a5" => :mojave
     sha256 "e6884ffb81b869777754e7737e2db7bbfa033a6c8c5c35afec6a739611651a1e" => :high_sierra
+    sha256 "ca5db67be7f327065a2f068de4ae4f4859321fbcb13c686f275697dedd478020" => :x86_64_linux
   end
 
   depends_on "rust" => :build
