@@ -12,6 +12,7 @@ class Functionalplus < Formula
     sha256 "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6" => :catalina
     sha256 "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6" => :mojave
     sha256 "5db198059a4d3219e1195d179b0b595bd8fc483965ecd6f438fbd3b8c127cec6" => :high_sierra
+    sha256 "9169f9f4fc0a8ede99ce3baed08d7e59a3f7947aedc841c5dd495623df5c896a" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
