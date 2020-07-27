@@ -11,6 +11,7 @@ class Argo < Formula
     sha256 "bd3ec57664e6a9febeb2b46ed1819538f074219d9f91956a74617dc4326c7e4c" => :catalina
     sha256 "14526db90cf7076b4c365279e1f1ec31804bd7a18122008836f4ddf1fb72941c" => :mojave
     sha256 "a5d57bb86d96062ff009e4b179b253bd79f83fc79b4d64e93fe95d99b1f49ca9" => :high_sierra
+    sha256 "0860553254fd844ed436a1e3409bedcfc19e0fb19b2ecd40cac5532793f4a823" => :x86_64_linux
   end
 
   depends_on "go" => :build
