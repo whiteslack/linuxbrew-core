@@ -14,13 +14,13 @@ class Gssh < Formula
     sha256 "52a16a70c5c6fdc4dbcb6e94d65006a172ce699971fc5bff3f6ae4563278730c" => :x86_64_linux
   end
 
-  depends_on :java => "1.8"
+  depends_on java: "1.8"
 
   def install
     ENV["CIRCLE_TAG"] = version
     system "./gradlew", "shadowJar"
     libexec.install "cli/build/libs/gssh.jar"
-    bin.write_jar_script libexec/"gssh.jar", "gssh", :java_version => "1.8"
+    bin.write_jar_script libexec/"gssh.jar", "gssh", java_version: "1.8"
   end
 
   test do
