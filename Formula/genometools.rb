@@ -22,7 +22,7 @@ class Genometools < Formula
   depends_on "python@3.8"
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build unless OS.mac?
 
-  conflicts_with "libslax", :because => "both install `bin/gt`"
+  conflicts_with "libslax", because: "both install `bin/gt`"
 
   def install
     system "make", "prefix=#{prefix}"
