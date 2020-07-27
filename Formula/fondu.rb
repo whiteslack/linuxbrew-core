@@ -17,7 +17,7 @@ class Fondu < Formula
     sha256 "85493aec06ad2eefcb7ea6bd71425034258e345db7a05329876bf4bbc2793347" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "cspice", :because => "both install `tobin` binaries"
+  conflicts_with "cspice", because: "both install `tobin` binaries"
 
   resource "cminch.ttf" do
     url "http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cminch.ttf"
