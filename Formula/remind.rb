@@ -12,7 +12,7 @@ class Remind < Formula
     sha256 "ad31f15edae645fe6bffe6e3bd69ff2ddcf213c2ab23e5501484f8599f596400" => :x86_64_linux
   end
 
-  conflicts_with "rem", :because => "both install `rem` binaries"
+  conflicts_with "rem", because: "both install `rem` binaries"
 
   def install
     # Remove unnecessary sleeps when running on Apple
