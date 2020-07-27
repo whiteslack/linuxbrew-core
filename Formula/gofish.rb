@@ -11,6 +11,7 @@ class Gofish < Formula
     sha256 "db76c4f80f2bcc9de811fb78d24ef3352a18072720edd3ba8fd0c985fdc1a41a" => :catalina
     sha256 "c2571af53fe2460268ad217cfb20fdcf187d29a5106393949ca22b64cfc69c49" => :mojave
     sha256 "97f68fea6cc4d9e3f7fe5cb6256f7fe7d3558df6067106d17adc274728464635" => :high_sierra
+    sha256 "33264306548e009ba3b1a4c277b856ae8d83f0f7f548e06222a55426d091fc18" => :x86_64_linux
   end
 
   depends_on "go" => :build
