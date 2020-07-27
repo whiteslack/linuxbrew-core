@@ -13,6 +13,7 @@ class Kamel < Formula
     sha256 "6569f6598d32c5a0de2174002877cc4c6793bfe63d900195521c6e6239bc51a3" => :catalina
     sha256 "603c0366a0d29dd0f82735431b74d8c70337a5b295c0afa5aac3b9f3fb7d28c1" => :mojave
     sha256 "a2540b8fc6d4ff734590af511c84119c5fb9f7dbd4392c193c46ce11561a25bd" => :high_sierra
+    sha256 "5f752a11528b982ce852405b78c4bf73d36c0f94ecac586d89e0b73cd5e33f88" => :x86_64_linux
   end
 
   depends_on "go" => :build
