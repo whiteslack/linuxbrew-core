@@ -18,7 +18,7 @@ class GitExtras < Formula
   depends_on "bsdmainutils" => :build unless OS.mac?
 
   conflicts_with "git-utils",
-    :because => "both install a `git-pull-request` script"
+    because: "both install a `git-pull-request` script"
 
   def install
     system "make", "PREFIX=#{prefix}", "INSTALL_VIA=brew", "install"
