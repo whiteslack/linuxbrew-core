@@ -12,7 +12,7 @@ class Xcodegen < Formula
     sha256 "a8eea29cb064ef817a1aae173b102eb689a263fc4039987a4592e9f15c4b1d85" => :mojave
   end
 
-  depends_on :xcode => ["10.2", :build] if OS.mac?
+  depends_on xcode: ["10.2", :build] if OS.mac?
   depends_on :macos
 
   def install
