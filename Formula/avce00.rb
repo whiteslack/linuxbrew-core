@@ -16,7 +16,7 @@ class Avce00 < Formula
     sha256 "00d468662055c9c9ab55d2860e8b812505e0e5aafac1a94aec57b6e9e8f8287e" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "gdal", :because => "both install a cpl_conv.h header"
+  conflicts_with "gdal", because: "both install a cpl_conv.h header"
 
   def install
     system "make", "CC=#{ENV.cc}"
