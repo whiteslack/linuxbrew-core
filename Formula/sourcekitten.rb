@@ -2,8 +2,8 @@ class Sourcekitten < Formula
   desc "Framework and command-line tool for interacting with SourceKit"
   homepage "https://github.com/jpsim/SourceKitten"
   url "https://github.com/jpsim/SourceKitten.git",
-      :tag      => "0.29.0",
-      :revision => "77a4dbbb477a8110eb8765e3c44c70fb4929098f"
+      tag:      "0.29.0",
+      revision: "77a4dbbb477a8110eb8765e3c44c70fb4929098f"
   license "MIT"
   head "https://github.com/jpsim/SourceKitten.git"
 
@@ -15,8 +15,8 @@ class Sourcekitten < Formula
 
   depends_on :macos
   if OS.mac?
-    depends_on :xcode => ["10.2", :build]
-    depends_on :xcode => "6.0"
+    depends_on xcode: ["10.2", :build]
+    depends_on xcode: "6.0"
   end
 
   def install
