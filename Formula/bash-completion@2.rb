@@ -24,7 +24,7 @@ class BashCompletionAT2 < Formula
   depends_on "bash"
 
   conflicts_with "bash-completion",
-    :because => "each are different versions of the same formula"
+    because: "each are different versions of the same formula"
 
   def install
     inreplace "bash_completion" do |s|
