@@ -1,18 +1,17 @@
 class JsonC < Formula
   desc "JSON parser for C"
   homepage "https://github.com/json-c/json-c/wiki"
-  url "https://github.com/json-c/json-c/archive/json-c-0.14-20200419.tar.gz"
-  version "0.14"
-  sha256 "ec4eb70e0f6c0d707b9b1ec646cf7c860f4abb3562a90ea6e4d78d177fd95303"
+  url "https://github.com/json-c/json-c/archive/json-c-0.15-20200726.tar.gz"
+  version "0.15"
+  sha256 "4ba9a090a42cf1e12b84c64e4464bb6fb893666841d5843cc5bef90774028882"
   license "MIT"
   head "https://github.com/json-c/json-c.git"
 
   bottle do
     cellar :any
-    sha256 "50a8093fa52bf5a78391eaaede3565bd94769739bcb638ead50ef8ce5f36bd03" => :catalina
-    sha256 "8555eff999bab67ad77f403902e2a4410fa5d55f53d808218d677d08f7fcc9a1" => :mojave
-    sha256 "0d34251aac5183c121629d4a2506697d91cb56aac3ca247002594b6ac4054d96" => :high_sierra
-    sha256 "e526912522a2bf6527f22f8d043c1ee253156e1d710c6629dfd2ed3cab45aef8" => :x86_64_linux
+    sha256 "60d15ece3fb1fdc8722785de8243c2261222f674e998509375522a1de75497ea" => :catalina
+    sha256 "6ab7f776315184769ed74115f614996401eae4577c36144ba4cdd1d41427d0cf" => :mojave
+    sha256 "a211a34a52b452386cf6e23f8f27cc9d088e64d2793bae7a4b3a7a069d31a88a" => :high_sierra
   end
 
   depends_on "cmake" => :build

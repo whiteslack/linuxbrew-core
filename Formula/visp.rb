@@ -3,12 +3,12 @@ class Visp < Formula
   homepage "https://visp.inria.fr/"
   url "https://gforge.inria.fr/frs/download.php/latestfile/475/visp-3.3.0.tar.gz"
   sha256 "f2ed11f8fee52c89487e6e24ba6a31fa604b326e08fb0f561a22c877ebdb640d"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 "29ba40f83638ecb4787d9ada356a75397511c7e4dd7c48b21bd0e52e082a244e" => :catalina
-    sha256 "9be8d5ee91606420f909967cb22143a03030f1f56e460c3a9c710c90e49d0d02" => :mojave
-    sha256 "e50ce7d7ebb651ef5c71336d4c18d87754088f0c0dbbd8c50c9fc30803b742c9" => :high_sierra
+    sha256 "2a55095a34c32590a766b11f47a750671cf1c058cdf8bd6e04b8b28a21bc8af5" => :catalina
+    sha256 "9a699785f7953b29c7d194f1516db2150ba038463c6bd934a1dee9834ef7353d" => :mojave
+    sha256 "75fc159fded2e0613dbaa134efae40e167289493a3b1025ac4efcd19b56ac897" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -21,6 +21,10 @@ class Visp < Formula
   depends_on "opencv"
   depends_on "pcl"
   depends_on "zbar"
+
+  # Fixes build on OpenCV >= 4.4.0
+  # Extracted from https://github.com/lagadic/visp/pull/795
+  patch :DATA
 
   def install
     ENV.cxx11
@@ -96,3 +100,26 @@ class Visp < Formula
     assert_equal version.to_s, shell_output("./test").chomp
   end
 end
+__END__
+diff --git a/modules/vision/src/key-point/vpKeyPoint.cpp b/modules/vision/src/key-point/vpKeyPoint.cpp
+index dd5cabf..23ed382 100644
+--- a/modules/vision/src/key-point/vpKeyPoint.cpp
++++ b/modules/vision/src/key-point/vpKeyPoint.cpp
+@@ -2269,7 +2269,7 @@ void vpKeyPoint::initDetector(const std::string &detectorName)
+ 
+   if (detectorNameTmp == "SIFT") {
+ #ifdef VISP_HAVE_OPENCV_XFEATURES2D
+-    cv::Ptr<cv::FeatureDetector> siftDetector = cv::xfeatures2d::SIFT::create();
++    cv::Ptr<cv::FeatureDetector> siftDetector = cv::SIFT::create();
+     if (!usePyramid) {
+       m_detectors[detectorNameTmp] = siftDetector;
+     } else {
+@@ -2447,7 +2447,7 @@ void vpKeyPoint::initExtractor(const std::string &extractorName)
+ #else
+   if (extractorName == "SIFT") {
+ #ifdef VISP_HAVE_OPENCV_XFEATURES2D
+-    m_extractors[extractorName] = cv::xfeatures2d::SIFT::create();
++    m_extractors[extractorName] = cv::SIFT::create();
+ #else
+     std::stringstream ss_msg;
+     ss_msg << "Fail to initialize the extractor: SIFT. OpenCV version  " << std::hex << VISP_HAVE_OPENCV_VERSION

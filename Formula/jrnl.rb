@@ -3,16 +3,14 @@ class Jrnl < Formula
 
   desc "Command-line note taker"
   homepage "https://jrnl.sh/"
-  url "https://files.pythonhosted.org/packages/d9/69/5b296efcdd95214f3377de40b5d7fdcf1a6a8e00646e94f703f37c0db16f/jrnl-2.4.3.tar.gz"
-  sha256 "2e4b08973f4205e5d66cb1e0aac6f550c6aad2046cfe92be911d8699d4861652"
+  url "https://files.pythonhosted.org/packages/f5/e9/286e27e7d1f1136f7487ef42345b8841320442c031f535a2f224f49200df/jrnl-2.4.4.tar.gz"
+  sha256 "ec0d15cbfe3f003bfdf6e0829cf04006a23c830da3a304506b727e880f81cd62"
   license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "b3f7dd1f487839f2273a0712ac0a9d657f7b48d3df3d738758cf0687553e02fa" => :catalina
-    sha256 "ac70ed6ad6dce9b1a6b50e31044c1e61122c92ddf17ee94d79b3ddcb8615a426" => :mojave
-    sha256 "510441890267a12380241808df81fd063ebda4d9328d01cc33e17b60b16d9b7c" => :high_sierra
-    sha256 "a21c202f18e2ad8815a7ee63fdc2ae0683564764ad2ed8e951a4d4e934a4bfd8" => :x86_64_linux
+    sha256 "e1ad8309f6e5a7d6efaf5ac4acd8f319910d3c7dd788e13719526e0177dff7d5" => :catalina
+    sha256 "b288379f31e5ebf4868a82702d73f4a5fbc8df0a2a280088db4d9be75276a960" => :mojave
+    sha256 "71e27f6d7488d3a1c237fc9056b776685cf019cc1d274a0f6fc3b2fee9edfbd1" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -51,6 +49,11 @@ class Jrnl < Formula
   resource "keyring" do
     url "https://files.pythonhosted.org/packages/a6/52/eb8a0e13b54ec9240c7dd68fcd0951c52f62033d438af372831af770f7cc/keyring-21.2.1.tar.gz"
     sha256 "c53e0e5ccde3ad34284a40ce7976b5b3a3d6de70344c3f8ee44364cc340976ec"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/65/37/83e3f492eb52d771e2820e88105f605335553fe10422cba9d256faeb1702/packaging-20.3.tar.gz"
+    sha256 "3c292b474fda1671ec57d46d739d072bfd495a4f51ad01a055121d81e952b7a3"
   end
 
   resource "parsedatetime" do

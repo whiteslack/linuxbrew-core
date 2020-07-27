@@ -1,15 +1,13 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  url "https://github.com/opencv/opencv/archive/4.3.0.tar.gz"
-  sha256 "68bc40cbf47fdb8ee73dfaf0d9c6494cd095cf6294d99de445ab64cf853d278a"
-  revision 5
+  url "https://github.com/opencv/opencv/archive/4.4.0.tar.gz"
+  sha256 "bb95acd849e458be7f7024d17968568d1ccd2f0681d47fd60d34ffb4b8c52563"
 
   bottle do
-    rebuild 1
-    sha256 "68e0a7c1b6c324e93be5069827a01a141f11b2865bf537b54c66bc8dbec07b71" => :catalina
-    sha256 "b00adb4113ef6b56c387aca23c9440d743a767a2c75417075bc5868c6d5f73d1" => :mojave
-    sha256 "dbf7552df78b3dea66b17829f4d54a9582fd0ced322b06835797f869661bdb47" => :high_sierra
+    sha256 "7524401992a83c2a5ad655a27a153b027b9fc1a72bdc564842a4b9e32eb27201" => :catalina
+    sha256 "f229e1f1cfdd547b38addb5ceed3e43277a823dd06860116a1059a1209623407" => :mojave
+    sha256 "7353af965d428d1e2a22f3c641b3a2bd25740d5f6476e88ba8fc9564029926b0" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -33,8 +31,8 @@ class Opencv < Formula
   depends_on "openblas" unless OS.mac?
 
   resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/4.3.0.tar.gz"
-    sha256 "acb8e89c9e7d1174e63e40532125b60d248b00e517255a98a419d415228c6a55"
+    url "https://github.com/opencv/opencv_contrib/archive/4.4.0.tar.gz"
+    sha256 "a69772f553b32427e09ffbfd0c8d5e5e47f7dab8b3ffc02851ffd7f912b76840"
   end
 
   def install
