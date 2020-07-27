@@ -13,7 +13,7 @@ class Nim < Formula
   end
 
   head do
-    url "https://github.com/nim-lang/Nim.git", :branch => "devel"
+    url "https://github.com/nim-lang/Nim.git", branch: "devel"
     resource "csources" do
       url "https://github.com/nim-lang/csources.git"
     end
