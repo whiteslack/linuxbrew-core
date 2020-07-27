@@ -4,7 +4,7 @@ class Perl < Formula
   url "https://www.cpan.org/src/5.0/perl-5.32.0.tar.xz"
   sha256 "6f436b447cf56d22464f980fac1916e707a040e96d52172984c5d184c09b859b"
   license "Artistic-1.0-Perl"
-  head "https://github.com/perl/perl5.git", :branch => "blead"
+  head "https://github.com/perl/perl5.git", branch: "blead"
 
   bottle do
     sha256 "bc6c97521b6edf723c8ee0742aebb1954b5c8fec81bf2d96861c3f8bcc4e404d" => :catalina
@@ -63,7 +63,7 @@ class Perl < Formula
       # Patch the perl.h file to be able to use perl on newer versions.
       # locale.h includes xlocale.h if the latter one exists
       perl_core = Pathname.new(`#{bin/"perl"} -MConfig -e 'print $Config{archlib}'`)+"CORE"
-      inreplace "#{perl_core}/perl.h", "include <xlocale.h>", "include <locale.h>", :audit_result => false
+      inreplace "#{perl_core}/perl.h", "include <xlocale.h>", "include <locale.h>", audit_result: false
 
       # CPAN modules installed via the system package manager will not be visible to
       # brewed Perl. As a temporary measure, install critical CPAN modules to ensure
