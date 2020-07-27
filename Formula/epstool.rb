@@ -15,7 +15,7 @@ class Epstool < Formula
   end
 
   depends_on "ghostscript"
-  fails_with :gcc => "4.8"
+  fails_with gcc: "4.8"
 
   def install
     ENV.deparallelize
