@@ -55,7 +55,7 @@ class Stunnel < Formula
     EOS
   end
 
-  plist_options :manual => "stunnel"
+  plist_options manual: "stunnel"
 
   def plist
     <<~EOS
