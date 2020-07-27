@@ -16,8 +16,8 @@ class Libebml < Formula
 
   depends_on "cmake" => :build
   unless OS.mac?
-    fails_with :gcc => "5"
-    fails_with :gcc => "6"
+    fails_with gcc: "5"
+    fails_with gcc: "6"
     depends_on "gcc@7"
   end
 
