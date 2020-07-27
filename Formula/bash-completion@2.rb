@@ -10,6 +10,7 @@ class BashCompletionAT2 < Formula
     sha256 "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192" => :catalina
     sha256 "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192" => :mojave
     sha256 "3fe7e4021769be9a92eac055496e6189996c3527270db1dfdd4b0eb8cd7b4192" => :high_sierra
+    sha256 "c782153690c494c7cbd82fdbec5d7579dae5b9b7453f6670644ebba7df83377f" => :x86_64_linux
   end
 
   head do
