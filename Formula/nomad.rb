@@ -26,7 +26,7 @@ class Nomad < Formula
     end
   end
 
-  plist_options :manual => "nomad agent -dev"
+  plist_options manual: "nomad agent -dev"
 
   def plist
     <<~EOS
