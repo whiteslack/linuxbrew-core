@@ -15,7 +15,7 @@ class Libmxml < Formula
     sha256 "b2e6b1fb7f1eaa4dd4b48bff18eb8a72486cb4d478694eb8ed9ef06927652fee" => :x86_64_linux
   end
 
-  depends_on :xcode => :build if OS.mac? # for docsetutil
+  depends_on xcode: :build if OS.mac? # for docsetutil
 
   def install
     system "./configure", "--disable-debug",
