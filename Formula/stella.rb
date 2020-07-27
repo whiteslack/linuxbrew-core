@@ -13,15 +13,15 @@ class Stella < Formula
     sha256 "5f698811afd8686eaa81b17158676e424682331fb0deedef0faff6a229a41dfe" => :x86_64_linux
   end
 
-  depends_on :xcode => :build if OS.mac?
+  depends_on xcode: :build if OS.mac?
   depends_on "libpng"
   depends_on "sdl2"
 
   # Stella is using c++14
   unless OS.mac?
-    fails_with :gcc => "5"
-    fails_with :gcc => "6"
-    fails_with :gcc => "7"
+    fails_with gcc: "5"
+    fails_with gcc: "6"
+    fails_with gcc: "7"
     depends_on "gcc@8"
   end
 
