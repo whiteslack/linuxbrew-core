@@ -14,7 +14,7 @@ class Elfutils < Formula
   depends_on "xz"
   depends_on "zlib"
 
-  conflicts_with "libelf", :because => "both install `libelf.a` library"
+  conflicts_with "libelf", because: "both install `libelf.a` library"
 
   fails_with :clang do
     build 700
@@ -57,7 +57,7 @@ class Elfutils < Formula
     skip_tests.each do |test|
       file = "tests/run-#{test}.sh"
       rm_f file
-      Pathname(file).write("exit 77", :perm => 0755)
+      Pathname(file).write("exit 77", perm: 0755)
     end
 
     system "make", "check"
