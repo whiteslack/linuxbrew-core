@@ -22,7 +22,7 @@ class Ncmpc < Formula
   if OS.mac?
     depends_on "gcc" if DevelopmentTools.clang_build_version <= 800
   else
-    fails_with :gcc => "5"
+    fails_with gcc: "5"
     depends_on "gcc@6" => :build
   end
 
