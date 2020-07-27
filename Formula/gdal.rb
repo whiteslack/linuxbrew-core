@@ -53,7 +53,7 @@ class Gdal < Formula
     depends_on "bash-completion"
   end
 
-  conflicts_with "cpl", :because => "both install cpl_error.h"
+  conflicts_with "cpl", because: "both install cpl_error.h"
 
   def install
     # Fixes: error: inlining failed in call to always_inline __m128i _mm_shuffle_epi8
