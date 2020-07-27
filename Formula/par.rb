@@ -12,7 +12,7 @@ class Par < Formula
     sha256 "3aff9c01b6ab56de73cb61b164ce7c350dc4cdb75b0de2676599d47dfdb358b5" => :x86_64_linux
   end
 
-  conflicts_with "rancid", :because => "both install `par` binaries"
+  conflicts_with "rancid", because: "both install `par` binaries"
 
   def install
     system "make", "-f", "protoMakefile"
