@@ -27,7 +27,7 @@ class Nsq < Formula
     (var/"nsq").mkpath
   end
 
-  plist_options :manual => "nsqd -data-path=#{HOMEBREW_PREFIX}/var/nsq"
+  plist_options manual: "nsqd -data-path=#{HOMEBREW_PREFIX}/var/nsq"
 
   def plist
     <<~EOS
