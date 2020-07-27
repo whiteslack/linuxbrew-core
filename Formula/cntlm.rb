@@ -27,7 +27,7 @@ class Cntlm < Formula
     "Edit #{etc}/cntlm.conf to configure Cntlm"
   end
 
-  plist_options :startup => true
+  plist_options startup: true
 
   def plist
     <<~EOS
