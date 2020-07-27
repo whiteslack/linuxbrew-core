@@ -13,7 +13,7 @@ class Ssed < Formula
     sha256 "f0529bc27f6ff9e94107401286bdc933cd9d1024314cfc0689028afc25d8a953" => :x86_64_linux
   end
 
-  conflicts_with "gnu-sed", :because => "both install share/info/sed.info"
+  conflicts_with "gnu-sed", because: "both install share/info/sed.info"
 
   def install
     system "./configure", "--disable-dependency-tracking",
