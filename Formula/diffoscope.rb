@@ -12,6 +12,7 @@ class Diffoscope < Formula
     sha256 "7d5d938b7790c970170adb655b368053fe8161397d2bc390901712c3b533bb28" => :catalina
     sha256 "116223786fa8076957a1b73a374b639a232ec39289cbc1f08d76afb4fad9b99c" => :mojave
     sha256 "b4ab25a669fc239749d2fbc3ae186fc893c9f95d8b6c3e3b174185d7fa591307" => :high_sierra
+    sha256 "c5374b008588f3bc5a1b73fb628cd434992fe4ad265479d7160e6f964f5b842e" => :x86_64_linux
   end
 
   depends_on "gnu-tar"
