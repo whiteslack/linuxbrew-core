@@ -78,7 +78,7 @@ class Creduce < Formula
     system "make"
     system "make", "install"
 
-    (bin/"creduce").write_env_script("#{libexec}/creduce", :PERL5LIB => ENV["PERL5LIB"])
+    (bin/"creduce").write_env_script("#{libexec}/creduce", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
