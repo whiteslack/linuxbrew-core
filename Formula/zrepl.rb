@@ -50,7 +50,7 @@ class Zrepl < Formula
     (etc/"zrepl").mkpath
   end
 
-  plist_options :startup => true, :manual => "sudo zrepl daemon"
+  plist_options startup: true, manual: "sudo zrepl daemon"
 
   def plist
     <<~EOS
