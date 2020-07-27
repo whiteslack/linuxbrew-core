@@ -12,7 +12,7 @@ class Mysql < Formula
 
   depends_on "cmake" => :build
   # GCC is not supported either, so exclude for El Capitan.
-  depends_on :macos => :sierra if OS.mac? && DevelopmentTools.clang_build_version == 800
+  depends_on macos: :sierra if OS.mac? && DevelopmentTools.clang_build_version == 800
   depends_on "openssl@1.1"
   depends_on "protobuf"
 
@@ -20,7 +20,7 @@ class Mysql < Formula
   uses_from_macos "libedit"
 
   conflicts_with "mariadb", "percona-server",
-    :because => "mysql, mariadb, and percona install the same binaries"
+    because: "mysql, mariadb, and percona install the same binaries"
 
   # https://bugs.mysql.com/bug.php?id=86711
   # https://github.com/Homebrew/homebrew-core/pull/20538
@@ -35,8 +35,8 @@ class Mysql < Formula
       sha256 "0dcfcca3bb3e7eb7ccd3ae02d4eb4fb07877970359611f081b03eab77bd4d6c9"
     end
     depends_on "pkg-config" => :build
-    fails_with :gcc => "5"
-    fails_with :gcc => "6"
+    fails_with gcc: "5"
+    fails_with gcc: "6"
     depends_on "gcc@7"
   end
 
@@ -141,7 +141,7 @@ class Mysql < Formula
     s
   end
 
-  plist_options :manual => "mysql.server start"
+  plist_options manual: "mysql.server start"
 
   def plist
     <<~EOS
