@@ -13,14 +13,14 @@ class Libsigcxx < Formula
     sha256 "ac0c799922daffa86ca5b5c3ca069764a9c1d36199bc96d0c9f2f0055eb9cd86" => :x86_64_linux
   end
 
-  depends_on :macos => :high_sierra if OS.mac? # needs C++17
+  depends_on macos: :high_sierra if OS.mac? # needs C++17
   unless OS.mac?
     depends_on "m4" => :build
     depends_on "gcc@7"
 
-    fails_with :gcc => "4"
-    fails_with :gcc => "5"
-    fails_with :gcc => "6"
+    fails_with gcc: "4"
+    fails_with gcc: "5"
+    fails_with gcc: "6"
   end
 
   def install
