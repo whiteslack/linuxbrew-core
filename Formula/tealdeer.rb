@@ -24,7 +24,7 @@ class Tealdeer < Formula
     depends_on "openssl@1.1"
   end
 
-  conflicts_with "tldr", :because => "both install `tldr` binaries"
+  conflicts_with "tldr", because: "both install `tldr` binaries"
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix unless OS.mac?
