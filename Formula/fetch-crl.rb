@@ -54,8 +54,8 @@ class FetchCrl < Formula
 
     system "make", "install", "PREFIX=#{prefix}", "ETC=#{etc}", "CACHE=#{var}/cache"
 
-    bin.env_script_all_files libexec/"bin", :PERL5LIB => ENV["PERL5LIB"] unless OS.mac?
-    sbin.env_script_all_files libexec/"sbin", :PERL5LIB => ENV["PERL5LIB"] unless OS.mac?
+    bin.env_script_all_files libexec/"bin", PERL5LIB: ENV["PERL5LIB"] unless OS.mac?
+    sbin.env_script_all_files libexec/"sbin", PERL5LIB: ENV["PERL5LIB"] unless OS.mac?
   end
 
   test do
