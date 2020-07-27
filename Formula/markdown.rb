@@ -16,8 +16,8 @@ class Markdown < Formula
     sha256 "582191e93f3661c33baf4f0a5daf4a1673aa38bb31fadb19c7631e8e1394c95e" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "discount", :because => "both install `markdown` binaries"
-  conflicts_with "multimarkdown", :because => "both install `markdown` binaries"
+  conflicts_with "discount", because: "both install `markdown` binaries"
+  conflicts_with "multimarkdown", because: "both install `markdown` binaries"
 
   def install
     bin.install "Markdown.pl" => "markdown"
