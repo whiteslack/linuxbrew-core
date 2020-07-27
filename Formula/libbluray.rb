@@ -23,7 +23,7 @@ class Libbluray < Formula
 
   depends_on "ant" => :build
   if OS.mac?
-    depends_on :java => ["1.8", :build]
+    depends_on java: ["1.8", :build]
   else
     depends_on :java
   end
