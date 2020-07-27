@@ -16,7 +16,7 @@ class Resty < Formula
     sha256 "1c6a12ebf97852447f6f16628fdf0acd3f9d156404ab3ca9aa680c2275f40538" => :x86_64_linux
   end
 
-  conflicts_with "nss", :because => "both install `pp` binaries"
+  conflicts_with "nss", because: "both install `pp` binaries"
 
   resource "JSON" do
     url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-2.94.tar.gz"
@@ -35,7 +35,7 @@ class Resty < Formula
     end
 
     bin.install "pp"
-    bin.env_script_all_files(libexec/"bin", :PERL5LIB => ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
 
     bin.install "pypp"
   end
