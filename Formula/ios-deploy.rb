@@ -15,7 +15,7 @@ class IosDeploy < Formula
   end
 
   on_macos do
-    depends_on :xcode => :build
+    depends_on xcode: :build
   end
 
   def install
