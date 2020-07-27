@@ -17,9 +17,9 @@ class Seal < Formula
   # #pragma GCC error "SEAL requires __GNUC__ >= 6"
   # In reality gcc@6 does not work because of some missing C++17 features.
   unless OS.mac?
-    fails_with :gcc => "5"
-    fails_with :gcc => "6"
-    fails_with :gcc => "7"
+    fails_with gcc: "5"
+    fails_with gcc: "6"
+    fails_with gcc: "7"
     depends_on "gcc@8" => [:build, :test]
   end
 
