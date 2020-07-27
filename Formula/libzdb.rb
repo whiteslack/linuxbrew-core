@@ -13,7 +13,7 @@ class Libzdb < Formula
     sha256 "11571183ea966c810f1dae1d777b4599cc3a0e3d2a3ccb08d68d1f39d433a468" => :x86_64_linux
   end
 
-  depends_on :macos => :high_sierra # C++ 17 is required
+  depends_on macos: :high_sierra # C++ 17 is required
   depends_on "mysql-client"
   depends_on "openssl@1.1"
   depends_on "postgresql"
@@ -22,9 +22,9 @@ class Libzdb < Formula
   unless OS.mac?
     depends_on "gcc@7" # C++ 17 is required
 
-    fails_with :gcc => "4"
-    fails_with :gcc => "5"
-    fails_with :gcc => "6"
+    fails_with gcc: "4"
+    fails_with gcc: "5"
+    fails_with gcc: "6"
   end
 
   def install
