@@ -15,7 +15,7 @@ class BoostBuild < Formula
     sha256 "abb19abac7fd041e69c4a97e3722b3c85d6f50f4812ca7741a17b8e82518ddb3" => :x86_64_linux
   end
 
-  conflicts_with "b2-tools", :because => "both install `b2` binaries"
+  conflicts_with "b2-tools", because: "both install `b2` binaries"
 
   # Fix Xcode 11.4 compatibility.
   # Remove with the next release.
