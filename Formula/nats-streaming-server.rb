@@ -21,7 +21,7 @@ class NatsStreamingServer < Formula
     prefix.install_metafiles
   end
 
-  plist_options :manual => "nats-streaming-server"
+  plist_options manual: "nats-streaming-server"
 
   def plist
     <<~EOS
