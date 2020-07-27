@@ -107,7 +107,7 @@ class Llvm < Formula
   # See: Homebrew/homebrew-core/issues/35513
   depends_on "cmake" => :build
   depends_on "python@3.8" => :build
-  depends_on :xcode => :build if OS.mac?
+  depends_on xcode: :build if OS.mac?
   depends_on "libffi"
 
   uses_from_macos "libedit"
@@ -124,7 +124,7 @@ class Llvm < Formula
     depends_on "binutils" # needed for gold and strip
     depends_on "libelf" # openmp requires <gelf.h>
 
-    conflicts_with "clang-format", :because => "both install `clang-format` binaries"
+    conflicts_with "clang-format", because: "both install `clang-format` binaries"
   end
 
   def install
