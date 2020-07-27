@@ -30,7 +30,7 @@ class Beansdb < Formula
     (var/"log").mkpath
   end
 
-  plist_options :manual => "beansdb"
+  plist_options manual: "beansdb"
 
   def plist
     <<~EOS
