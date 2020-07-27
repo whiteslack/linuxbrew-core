@@ -15,12 +15,12 @@ class Bento4 < Formula
   end
 
   depends_on "cmake" => :build unless OS.mac?
-  depends_on :xcode => :build if OS.mac?
+  depends_on xcode: :build if OS.mac?
   depends_on "python@3.8"
 
-  conflicts_with "gpac", :because => "both install `mp42ts` binaries"
+  conflicts_with "gpac", because: "both install `mp42ts` binaries"
   conflicts_with "mp4v2",
-    :because => "both install `mp4extract` and `mp4info` binaries"
+    because: "both install `mp4extract` and `mp4info` binaries"
 
   def install
     if OS.mac?
