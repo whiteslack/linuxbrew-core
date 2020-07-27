@@ -17,7 +17,7 @@ class Cpl < Formula
   depends_on "fftw"
   depends_on "wcslib"
 
-  conflicts_with "gdal", :because => "both install cpl_error.h"
+  conflicts_with "gdal", because: "both install cpl_error.h"
 
   def install
     system "./configure", "--disable-debug",
