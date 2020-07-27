@@ -17,8 +17,8 @@ class AardvarkShellUtils < Formula
     sha256 "5af12d5436a5da770ebdde479342ccce2794d20519122f8f2a61e2f096b94c4e" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "coreutils", :because => "both install `realpath` binaries"
-  conflicts_with "uutils-coreutils", :because => "both install `realpath` binaries"
+  conflicts_with "coreutils", because: "both install `realpath` binaries"
+  conflicts_with "uutils-coreutils", because: "both install `realpath` binaries"
 
   def install
     system "./configure", "--disable-debug",
