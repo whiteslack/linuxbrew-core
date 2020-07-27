@@ -30,7 +30,7 @@ class Uptimed < Formula
     system "make", "install"
   end
 
-  plist_options :manual => "uptimed"
+  plist_options manual: "uptimed"
 
   def plist
     <<~EOS
