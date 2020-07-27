@@ -23,7 +23,7 @@ class Uftp < Formula
     (prefix/"usr").unlink
   end
 
-  plist_options :manual => "uftpd"
+  plist_options manual: "uftpd"
 
   def plist
     <<~EOS
