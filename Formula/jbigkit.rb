@@ -6,7 +6,7 @@ class Jbigkit < Formula
   sha256 "de7106b6bfaf495d6865c7dd7ac6ca1381bd12e0d81405ea81e7f2167263d932"
   license "GPL-2.0"
   head "https://www.cl.cam.ac.uk/~mgk25/git/jbigkit",
-       :using => :git
+       using: :git
 
   bottle do
     cellar :any_skip_relocation
@@ -20,7 +20,7 @@ class Jbigkit < Formula
     sha256 "d7b87245e8682383dc10c4730d5248fabfab9c7ae5b76662da50a24785c0a710" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "netpbm", :because => "both install `pbm.5` and `pgm.5` files"
+  conflicts_with "netpbm", because: "both install `pbm.5` and `pgm.5` files"
 
   def install
     # Fix fatal error: jbig.h: No such file or directory
