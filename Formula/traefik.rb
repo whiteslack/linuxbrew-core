@@ -26,7 +26,7 @@ class Traefik < Formula
     prefix.install_metafiles
   end
 
-  plist_options :manual => "traefik"
+  plist_options manual: "traefik"
 
   def plist
     <<~EOS
