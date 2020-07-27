@@ -26,7 +26,7 @@ class Beast < Formula
     libexec.install Dir["release/Linux/BEASTv*/*"]
     pkgshare.install_symlink libexec/"examples"
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files libexec/"bin", :JAVA_HOME => ENV["JAVA_HOME"], :PATH => ENV["PATH"]
+    bin.env_script_all_files libexec/"bin", JAVA_HOME: ENV["JAVA_HOME"], PATH: ENV["PATH"]
     inreplace libexec/"bin/beast", "/usr/local/lib:$LD_LIBRARY_PATH", Formula["beagle"].lib unless OS.mac?
   end
 
