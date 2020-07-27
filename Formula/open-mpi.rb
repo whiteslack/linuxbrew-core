@@ -23,7 +23,7 @@ class OpenMpi < Formula
   depends_on "hwloc"
   depends_on "libevent"
 
-  conflicts_with "mpich", :because => "both install MPI compiler wrappers"
+  conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
   def install
     # Fix libopen-pal.so: undefined reference to `__atomic_compare_exchange_16'
