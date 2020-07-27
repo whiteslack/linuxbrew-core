@@ -2,8 +2,8 @@ class DeviceMapper < Formula
   desc "Device mapper userspace library and tools"
   homepage "https://sourceware.org/dm"
   url "https://sourceware.org/git/lvm2.git",
-    :tag      => "v2_02_186",
-    :revision => "4e5761487efcb33a47f8913f5302e36307604832"
+    tag:      "v2_02_186",
+    revision: "4e5761487efcb33a47f8913f5302e36307604832"
   version "2.02.186"
 
   bottle do
