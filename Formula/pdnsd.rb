@@ -46,7 +46,7 @@ class Pdnsd < Formula
     EOS
   end
 
-  plist_options :startup => true, :manual => "sudo pdnsd"
+  plist_options startup: true, manual: "sudo pdnsd"
 
   def plist
     <<~EOS
