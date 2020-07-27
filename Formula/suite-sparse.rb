@@ -18,7 +18,7 @@ class SuiteSparse < Formula
 
   uses_from_macos "m4"
 
-  conflicts_with "mongoose", :because => "suite-sparse vendors libmongoose.dylib"
+  conflicts_with "mongoose", because: "suite-sparse vendors libmongoose.dylib"
 
   def install
     mkdir "GraphBLAS/build" do
