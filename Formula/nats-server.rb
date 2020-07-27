@@ -21,7 +21,7 @@ class NatsServer < Formula
     prefix.install_metafiles
   end
 
-  plist_options :manual => "nats-server"
+  plist_options manual: "nats-server"
 
   def plist
     <<~EOS
