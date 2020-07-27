@@ -17,7 +17,7 @@ class Align < Formula
     sha256 "b9eb7dd92c0d92a1baff4714c8f4c7b8b14d4d7cf6102e40af88a9a0d96d3348" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "speech-tools", :because => "both install `align` binaries"
+  conflicts_with "speech-tools", because: "both install `align` binaries"
 
   def install
     system "make", "install", "BINDIR=#{bin}"
