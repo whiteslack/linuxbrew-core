@@ -22,7 +22,7 @@ class LibtorrentRakshasa < Formula
   uses_from_macos "zlib"
 
   conflicts_with "libtorrent-rasterbar",
-    :because => "they both use the same libname"
+    because: "they both use the same libname"
 
   def install
     args = ["--prefix=#{prefix}", "--disable-debug",
