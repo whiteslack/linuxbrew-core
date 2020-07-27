@@ -34,7 +34,7 @@ class Logrotate < Formula
     (etc/"logrotate.d").mkpath
   end
 
-  plist_options :manual => "logrotate"
+  plist_options manual: "logrotate"
 
   def plist
     <<~EOS
