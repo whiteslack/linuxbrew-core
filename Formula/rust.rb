@@ -49,7 +49,7 @@ class Rust < Formula
     unless OS.mac?
       # From: https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
       url "https://static.rust-lang.org/dist/2020-06-04/cargo-0.45.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "36c7172b03189bd5406a86fbab181fcc941928945d7982d11b970bade2ab9d09"
+      sha256 "f9dec7c4f5af57e400cc90bb791e7dcf4dd8d11c65336ffe27a6e2516c6f371f"
     end
   end
 
