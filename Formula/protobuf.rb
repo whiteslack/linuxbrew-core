@@ -20,8 +20,8 @@ class Protobuf < Formula
   end
 
   unless OS.mac?
-    fails_with :gcc => "4"
-    fails_with :gcc => "5"
+    fails_with gcc: "4"
+    fails_with gcc: "5"
     depends_on "gcc@6"
   end
 
