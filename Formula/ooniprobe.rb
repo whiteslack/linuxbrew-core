@@ -230,7 +230,7 @@ class Ooniprobe < Formula
     EOS
   end
 
-  plist_options :startup => "true", :manual => "ooniprobe -i #{HOMEBREW_PREFIX}/share/ooniprobe/current.deck"
+  plist_options startup: "true", manual: "ooniprobe -i #{HOMEBREW_PREFIX}/share/ooniprobe/current.deck"
 
   def plist
     <<~EOS
