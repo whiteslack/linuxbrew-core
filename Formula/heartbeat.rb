@@ -2,8 +2,8 @@ class Heartbeat < Formula
   desc "Lightweight Shipper for Uptime Monitoring"
   homepage "https://www.elastic.co/products/beats/heartbeat"
   url "https://github.com/elastic/beats.git",
-      :tag      => "v7.8.0",
-      :revision => "f79387d32717d79f689d94fda1ec80b2cf285d30"
+      tag:      "v7.8.0",
+      revision: "f79387d32717d79f689d94fda1ec80b2cf285d30"
   head "https://github.com/elastic/beats.git"
 
   bottle do
@@ -69,7 +69,7 @@ class Heartbeat < Formula
     (var/"log/heartbeat").mkpath
   end
 
-  plist_options :manual => "heartbeat"
+  plist_options manual: "heartbeat"
 
   def plist
     <<~EOS
