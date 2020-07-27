@@ -5,11 +5,12 @@ class Gupnp < Formula
   homepage "https://wiki.gnome.org/Projects/GUPnP"
   url "https://download.gnome.org/sources/gupnp/1.2/gupnp-1.2.3.tar.xz"
   sha256 "d447e54d88e4a8fab84ad1766070e9208e21166fc7e2ce95df6e33e49e8d29b1"
+  revision 1
 
   bottle do
-    sha256 "c3293403d47e51ae9ae4bec506dc3ca54209769165fd98c6807f0876825d8195" => :catalina
-    sha256 "c06a3a4c5ffe1b21b2c362e1dcb08d063e2bab5a54eaa3f78f72a0ef39c7b5a4" => :mojave
-    sha256 "db6c7a1a1f48689266050b0e8e71329fd9d5aaec68090c61c22b9475e6a75e24" => :high_sierra
+    sha256 "da351b27a2193be5d836bd5fbd31aab7706f1426b1b6ba9da8c90d2022f4d01c" => :catalina
+    sha256 "3b1e7a276f6f54f95bcfc0931fe44b33ffbf2d5b9b7c3209262c52e9dede0c4d" => :mojave
+    sha256 "f5bb73541890d0571feb5ebef958bfb9dff3fc0ff800dce0ac7caa3f1b6a7714" => :high_sierra
   end
 
   depends_on "docbook-xsl" => :build

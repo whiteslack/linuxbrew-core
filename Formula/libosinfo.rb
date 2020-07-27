@@ -4,12 +4,12 @@ class Libosinfo < Formula
   url "https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz"
   sha256 "49ff32be0d209f6c99480e28b94340ac3dd0158322ae4303adfbdfe973a108a5"
   license "GPL-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 "ecb9064bcee4ad713f956c39c6cd2143988746bcdd74858ca3c71de5ac3de518" => :catalina
-    sha256 "c843c046dcf1107a5e125dfb04a3feeacc4648869148025d2bc77eca16f3628f" => :mojave
-    sha256 "ed6bc74f0b1a0e657769df47b3b193946bcf9f59c027fa835d8f83c0ec013908" => :high_sierra
+    sha256 "1f37bf2e3ff5b94f183416806b0cd5ea8c21cf1de87d28bf1e84ae9d4d298d04" => :catalina
+    sha256 "1dc3cbb1db1d2f93eaef7d152098f59d4d77fb00d75630b20d19d2f987d466e0" => :mojave
+    sha256 "03834a6421253463aa1b47d6b39d1bef80e489490939904ff74b4ddc50012fdf" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build
