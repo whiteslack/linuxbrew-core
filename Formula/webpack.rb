@@ -13,6 +13,7 @@ class Webpack < Formula
     sha256 "1631af75c86867cbfb97d2b6e703a87582a2e93983300970f8fbc791948511b9" => :catalina
     sha256 "16381df12722dc30fc393fa170b89b022accbc2d16c7e94cbdcd4f08dd631499" => :mojave
     sha256 "20c38097a47f49d5d61f4007711e9680438b4e09d07e22e94defd041cf5f96cb" => :high_sierra
+    sha256 "147ca17bfe7747689838845c18079e870ab767faa561337512584680f670c329" => :x86_64_linux
   end
 
   depends_on "node"
