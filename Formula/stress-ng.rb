@@ -16,7 +16,7 @@ class StressNg < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on :macos => :sierra
+    depends_on macos: :sierra
   end
 
   def install
