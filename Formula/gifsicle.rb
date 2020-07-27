@@ -24,7 +24,7 @@ class Gifsicle < Formula
   depends_on "linuxbrew/xorg/xorg" unless OS.mac?
 
   conflicts_with "giflossy",
-    :because => "both install an `gifsicle` binary"
+    because: "both install an `gifsicle` binary"
 
   def install
     args = %W[
