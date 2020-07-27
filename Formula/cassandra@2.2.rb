@@ -16,7 +16,7 @@ class CassandraAT22 < Formula
   keg_only :versioned_formula
 
   depends_on "cython" => :build
-  depends_on :java => ["1.8+", :test] unless OS.mac?
+  depends_on java: ["1.8+", :test] unless OS.mac?
   depends_on :macos # Due to Python 2 (does not support Python 3)
 
   # Only >=Yosemite has new enough setuptools for successful compile of the below deps.
@@ -104,10 +104,10 @@ class CassandraAT22 < Formula
 
     bin.write_exec_script Dir["#{libexec}/bin/*"]
     rm bin/"cqlsh" # Remove existing exec script
-    (bin/"cqlsh").write_env_script libexec/"bin/cqlsh", :PYTHONPATH => pypath
+    (bin/"cqlsh").write_env_script libexec/"bin/cqlsh", PYTHONPATH: pypath
   end
 
-  plist_options :manual => "#{HOMEBREW_PREFIX}/opt/cassandra@2.2/bin/cassandra -f"
+  plist_options manual: "#{HOMEBREW_PREFIX}/opt/cassandra@2.2/bin/cassandra -f"
 
   def plist
     <<~EOS
