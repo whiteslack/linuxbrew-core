@@ -19,7 +19,7 @@ class Zimg < Formula
   depends_on "libtool" => :build
 
   # Upstream has decided not to fix https://github.com/sekrit-twc/zimg/issues/52
-  depends_on :macos => :el_capitan
+  depends_on macos: :el_capitan
 
   def install
     system "./autogen.sh"
