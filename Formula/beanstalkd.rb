@@ -17,7 +17,7 @@ class Beanstalkd < Formula
     system "make", "install", "PREFIX=#{prefix}"
   end
 
-  plist_options :manual => "beanstalkd"
+  plist_options manual: "beanstalkd"
 
   def plist
     <<~EOS
