@@ -16,7 +16,7 @@ class Lci < Formula
     sha256 "b96e9d72694c390a8a8947d2324a2e4bd32da0ed57c80ef0b63460abab047a94" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "lolcode", :because => "both install `lci` binaries"
+  conflicts_with "lolcode", because: "both install `lci` binaries"
 
   def install
     system "./configure", "--prefix=#{prefix}"
