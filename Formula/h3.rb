@@ -6,18 +6,18 @@ class H3 < Formula
   license "Apache-2.0"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "17f1a0f774f7b5a25f1b02fcd19d9edd6fbe2a994aba9ad8bd3e6c964f84ddda" => :catalina
-    sha256 "a100aa0c3fc2a23d01aa4b9524d89a3a457b098563df19ae7b8499b43e2eddca" => :mojave
-    sha256 "67f1d3f546bbea83339951e7b4428a14852453d2049d9d5c24acf894abdd5ad0" => :high_sierra
+    rebuild 1
+    sha256 "09a6545834974c43aec33b061abf50fac5cc58c0dc115f7aaacb5c787d5de541" => :catalina
+    sha256 "ca32e11077bf894aa153fb0a89bb1f6b34f6a4964224d29cf422c4ad0bd817d8" => :mojave
+    sha256 "b8bc7c33678f9cc98c2abd765d410c1805bc449c4d8c66559be18eed97f270da" => :high_sierra
   end
 
   depends_on "cmake" => :build
 
   # remove in next release
   patch do
-    url "https://github.com/uber/h3/pull/362.patch?full_index=1"
-    sha256 "a86d8dc0296fcf5fafd3ce071c85725e768886e350905bc88d13a01d98601a94"
+    url "https://github.com/uber/h3/commit/de1a7cb27891ed8b9934288ee645a4b307553c76.patch?full_index=1"
+    sha256 "1c31a9b6136190c8f8097cc3112de0a2a4d3074c3170ad4af21673cdf565162b"
   end
 
   def install
