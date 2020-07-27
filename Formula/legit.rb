@@ -7,7 +7,7 @@ class Legit < Formula
   version "1.2.0.post0"
   sha256 "949396b68029a8af405ab20c901902341ef6bd55c7fec6dab71141d63d406b11"
   revision 1 unless OS.mac?
-  head "https://github.com/frostming/legit.git", :branch => "master"
+  head "https://github.com/frostming/legit.git", branch: "master"
 
   bottle do
     cellar :any_skip_relocation
