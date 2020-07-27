@@ -15,7 +15,7 @@ class Pjproject < Formula
     sha256 "f1e7a9a2cf19457b9193d901536402a7d4bfe422124f8a6b171ed020589dca35" => :x86_64_linux
   end
 
-  depends_on :macos => :high_sierra # Uses Security framework API enum cases introduced in 10.13.4
+  depends_on macos: :high_sierra # Uses Security framework API enum cases introduced in 10.13.4
   depends_on "openssl@1.1"
 
   def install
