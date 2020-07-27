@@ -14,11 +14,11 @@ class ChooseGui < Formula
   end
 
   on_macos do
-    depends_on :xcode => :build
+    depends_on xcode: :build
   end
 
-  conflicts_with "choose", :because => "both install a `choose` binary"
-  conflicts_with "choose-rust", :because => "both install a `choose` binary"
+  conflicts_with "choose", because: "both install a `choose` binary"
+  conflicts_with "choose-rust", because: "both install a `choose` binary"
 
   def install
     xcodebuild "SDKROOT=", "SYMROOT=build"
