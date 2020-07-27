@@ -13,8 +13,8 @@ class Wallpaper < Formula
   end
 
   if OS.mac?
-    depends_on :xcode => ["11.4", :build]
-    depends_on :macos => :sierra
+    depends_on xcode: ["11.4", :build]
+    depends_on macos: :sierra
   end
 
   def install
