@@ -37,7 +37,7 @@ class IrcdIrc2 < Formula
     EOS
   end
 
-  conflicts_with "ircd-hybrid", :because => "both install `ircd` binaries"
+  conflicts_with "ircd-hybrid", because: "both install `ircd` binaries"
 
   def install
     system "./configure", "--prefix=#{prefix}",
@@ -61,7 +61,7 @@ class IrcdIrc2 < Formula
     (etc/"ircd.conf").write default_ircd_conf
   end
 
-  plist_options :manual => "ircd"
+  plist_options manual: "ircd"
 
   def plist
     <<~EOS
