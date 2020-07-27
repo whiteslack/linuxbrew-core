@@ -15,7 +15,7 @@ class Mecab < Formula
     sha256 "4cff10addb8895df884fca8d81cd4d4c7530efdac45896299d85ab707a80cf4f" => :x86_64_linux
   end
 
-  conflicts_with "mecab-ko", :because => "both install mecab binaries"
+  conflicts_with "mecab-ko", because: "both install mecab binaries"
 
   def install
     system "./configure", "--disable-dependency-tracking",
