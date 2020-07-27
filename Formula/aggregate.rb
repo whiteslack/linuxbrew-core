@@ -17,7 +17,7 @@ class Aggregate < Formula
     sha256 "5192eb54fd05b00b6ad4c7f342eadedc166c88117e5dd22c8ffb6128e513bf62" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "crush-tools", :because => "both install an `aggregate` binary"
+  conflicts_with "crush-tools", because: "both install an `aggregate` binary"
 
   def install
     bin.mkpath
