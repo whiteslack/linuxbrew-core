@@ -144,7 +144,7 @@ class Sratoolkit < Formula
         end
       end
 
-      bin.env_script_all_files(libexec/"bin", :PERL5LIB => ENV["PERL5LIB"])
+      bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
     end
   end
 
