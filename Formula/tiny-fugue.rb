@@ -19,7 +19,7 @@ class TinyFugue < Formula
 
   uses_from_macos "ncurses"
 
-  conflicts_with "tee-clc", :because => "both install a `tf` binary"
+  conflicts_with "tee-clc", because: "both install a `tf` binary"
 
   # pcre deprecated pcre_info. Switch to HB pcre-8.31 and pcre_fullinfo.
   # Not reported upstream; project is in stasis since 2007.
