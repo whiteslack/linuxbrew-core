@@ -25,8 +25,8 @@ class Apt < Formula
   depends_on "lz4"
   depends_on "zlib"
 
-  fails_with :gcc => "4"
-  fails_with :gcc => "5"
+  fails_with gcc: "4"
+  fails_with gcc: "5"
 
   resource "gtest" do
     url "https://github.com/google/googletest/archive/release-1.8.1.tar.gz"
