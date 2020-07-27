@@ -26,7 +26,7 @@ class Pilosa < Formula
     end
   end
 
-  plist_options :manual => "pilosa server"
+  plist_options manual: "pilosa server"
 
   def plist
     <<~EOS
