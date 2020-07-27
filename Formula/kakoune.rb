@@ -15,12 +15,12 @@ class Kakoune < Formula
     sha256 "963f14db69ad3a7cae0288770decbac28a9ec7e90f02dbc7f501a433bd2392c5" => :x86_64_linux
   end
 
-  depends_on :macos => :high_sierra # needs C++17
+  depends_on macos: :high_sierra # needs C++17
   depends_on "ncurses"
 
   unless OS.mac?
-    fails_with :gcc => "5"
-    fails_with :gcc => "6"
+    fails_with gcc: "5"
+    fails_with gcc: "6"
     depends_on "binutils" => :build
     depends_on "linux-headers" => :build
     depends_on "pkg-config" => :build
