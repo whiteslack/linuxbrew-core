@@ -10,6 +10,7 @@ class Lf < Formula
     sha256 "18284a4548720bcc4664a9b07b51d37b7c755c013a290be501ea8127cb96fb56" => :catalina
     sha256 "7bf885e9a0e6fece97da83c2162ec8afab70716c41bd39de92e6ef71f9309bed" => :mojave
     sha256 "6b33c66595717bd0401004d8dc2ffdb4f98a9bd5a818743e7e3ad5c853e77941" => :high_sierra
+    sha256 "17ba9477303d9607a03b0ac640b7f32d97fd3cbeef2e5730221dfb55c5ff7c09" => :x86_64_linux
   end
 
   depends_on "go" => :build
