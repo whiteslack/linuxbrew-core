@@ -26,7 +26,7 @@ class Znapzend < Formula
     (var/"run/znapzend").mkpath
   end
 
-  plist_options :startup => true, :manual => "sudo znapzend --daemonize"
+  plist_options startup: true, manual: "sudo znapzend --daemonize"
 
   def plist
     <<~EOS
