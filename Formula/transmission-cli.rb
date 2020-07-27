@@ -48,7 +48,7 @@ class TransmissionCli < Formula
     EOS
   end
 
-  plist_options :manual => "transmission-daemon --foreground"
+  plist_options manual: "transmission-daemon --foreground"
 
   def plist
     <<~EOS
