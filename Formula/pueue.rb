@@ -26,7 +26,7 @@ class Pueue < Formula
     prefix.install_metafiles
   end
 
-  plist_options :manual => "pueued"
+  plist_options manual: "pueued"
 
   def plist
     <<~EOS
