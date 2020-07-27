@@ -24,7 +24,7 @@ class GccAT49 < Formula
     satisfy { !OS.mac? || MacOS::CLT.installed? }
   end
 
-  depends_on :maximum_macos => [:high_sierra, :build]
+  depends_on maximum_macos: [:high_sierra, :build]
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
