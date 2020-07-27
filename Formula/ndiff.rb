@@ -17,7 +17,7 @@ class Ndiff < Formula
     sha256 "530c8cfa5d98ee1a8369af1cac5e83a70a1ff0c488de83a34fbbc648f4ead91b" => :x86_64_linux
   end
 
-  conflicts_with "nmap", :because => "both install `ndiff` binaries"
+  conflicts_with "nmap", because: "both install `ndiff` binaries"
 
   def install
     ENV.deparallelize
