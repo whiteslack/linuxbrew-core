@@ -12,7 +12,7 @@ class Htpdate < Formula
     sha256 "78dcbfa60dd8e130a501b828bfa1409352b453031613bd1ec28c1d03eb3ba901" => :x86_64_linux
   end
 
-  depends_on :macos => :high_sierra # needs <sys/timex.h>
+  depends_on macos: :high_sierra # needs <sys/timex.h>
 
   def install
     system "make", "prefix=#{prefix}",
