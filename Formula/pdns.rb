@@ -47,7 +47,7 @@ class Pdns < Formula
     system "make", "install"
   end
 
-  plist_options :manual => "pdns_server start"
+  plist_options manual: "pdns_server start"
 
   def plist
     <<~EOS
