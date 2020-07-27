@@ -18,7 +18,7 @@ class Flvstreamer < Formula
     sha256 "23dcc8826feee8b48a0161f1d8a88a18c3f8312effb91cf8459cd0aa4bcd2ad6" => :x86_64_linux
   end
 
-  conflicts_with "rtmpdump", :because => "both install 'rtmpsrv', 'rtmpsuck' and 'streams' binary"
+  conflicts_with "rtmpdump", because: "both install 'rtmpsrv', 'rtmpsuck' and 'streams' binary"
 
   def install
     system "make", "posix"
