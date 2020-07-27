@@ -18,7 +18,7 @@ class GitDelta < Formula
   depends_on "llvm" => :build unless OS.mac?
   uses_from_macos "zlib"
 
-  conflicts_with "delta", :because => "both install a `delta` binary"
+  conflicts_with "delta", because: "both install a `delta` binary"
 
   def install
     ENV.append_to_cflags "-fno-stack-check" if DevelopmentTools.clang_build_version >= 1010
