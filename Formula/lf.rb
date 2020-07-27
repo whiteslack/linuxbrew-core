@@ -1,32 +1,24 @@
 class Lf < Formula
   desc "Terminal file manager"
   homepage "https://godoc.org/github.com/gokcehan/lf"
-  url "https://github.com/gokcehan/lf/archive/r14.tar.gz"
-  sha256 "5266afa808f4612733af65289024c9eb182864f6a224fdfdf58f405a30c79644"
+  url "https://github.com/gokcehan/lf/archive/r15.tar.gz"
+  sha256 "e389a3853ce02ffcab9de635cbe456e6fdc5c1696c9585614d80bb0fae88b27d"
   license "MIT"
-  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d53611f5c7f78e947eeed932abd4cd64591b416815043e62c971257f1d300cd7" => :catalina
-    sha256 "9d08c5d7c877993c3a47108fa36f27290c16fd92e198aaff4ab8494a92337f8a" => :mojave
-    sha256 "6d4f60d4005731fa3c0851caed566add13a11899271523c6815f88b0907e8c1c" => :high_sierra
-    sha256 "c988752f309750589a1ab7348992253b2797f223376c15a387cfe6879948262d" => :x86_64_linux
+    sha256 "18284a4548720bcc4664a9b07b51d37b7c755c013a290be501ea8127cb96fb56" => :catalina
+    sha256 "7bf885e9a0e6fece97da83c2162ec8afab70716c41bd39de92e6ef71f9309bed" => :mojave
+    sha256 "6b33c66595717bd0401004d8dc2ffdb4f98a9bd5a818743e7e3ad5c853e77941" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["version"] = version
-    (buildpath/"src/github.com/gokcehan/lf").install buildpath.children
-    cd "src/github.com/gokcehan/lf" do
-      system "./gen/build.sh", "-o", bin/"lf"
-      prefix.install_metafiles
-      man1.install "lf.1"
-      zsh_completion.install "etc/lf.zsh" => "_lf"
-      fish_completion.install "etc/lf.fish"
-    end
+    system "go", "build", *std_go_args, "-ldflags", "-X main.gVersion=#{version}"
+    man1.install "lf.1"
+    zsh_completion.install "etc/lf.zsh" => "_lf"
+    fish_completion.install "etc/lf.fish"
   end
 
   test do

@@ -4,15 +4,15 @@ class Snapcraft < Formula
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https://snapcraft.io/"
   url "https://github.com/snapcore/snapcraft.git",
-      tag:      "4.0.7",
-      revision: "7d1f7fb24e7f832ad2ccb82d6178dc4a69b6502e"
+      tag:      "4.1.2",
+      revision: "e4e08797fb4e2d5110504d46bed39ee00382a653"
   license "GPL-3.0"
 
   bottle do
     cellar :any
-    sha256 "83a8e4d83308c7dbad54322b45a6a6cf688e72739add603442a981730aa6d6bb" => :catalina
-    sha256 "c4b12018c1077c2c1dbc999f5acd6eb54e896576ab6539cb4806401605b90ac3" => :mojave
-    sha256 "5a8d564262da1d6538e205b7ec53a6fe2cf6f174a3163c7164e3f9052465b4b7" => :high_sierra
+    sha256 "ebbe44bd4f0ec4315118a004bea1bba5af82fb5ccece3ac080bb5fd7fa7154c8" => :catalina
+    sha256 "a1d80e78457d57dd0439c2c669852126658996ab25fb75d5504adacfd12bf4a4" => :mojave
+    sha256 "7e12c282a312072be1e2f18fd44eb8b7ab9771572e5c7fadf4a06451860334c5" => :high_sierra
   end
 
   depends_on "libsodium"
@@ -219,8 +219,8 @@ class Snapcraft < Formula
   end
 
   resource "simplejson" do
-    url "https://files.pythonhosted.org/packages/98/87/a7b98aa9256c8843f92878966dc3d8d914c14aad97e2c5ce4798d5743e07/simplejson-3.17.0.tar.gz"
-    sha256 "2b4b2b738b3b99819a17feaf118265d0753d5536049ea570b3c43b51c4701e81"
+    url "https://files.pythonhosted.org/packages/f0/07/26b519e6ebb03c2a74989f7571e6ae6b82e9d7d81b8de6fcdbfc643c7b58/simplejson-3.8.2.tar.gz"
+    sha256 "d58439c548433adcda98e695be53e526ba940a4b9c44fb9a05d92cd495cdd47f"
   end
 
   resource "six" do
@@ -239,8 +239,8 @@ class Snapcraft < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/05/8c/40cd6949373e23081b3ea20d5594ae523e681b6f472e600fbc95ed046a36/urllib3-1.25.9.tar.gz"
-    sha256 "3018294ebefce6572a474f0604c2021e33b3fd8006ecd11d62107a5d2a963527"
+    url "https://files.pythonhosted.org/packages/81/f4/87467aeb3afc4a6056e1fe86626d259ab97e1213b1dfec14c7cb5f538bf0/urllib3-1.25.10.tar.gz"
+    sha256 "91056c15fa70756691db97756772bb1eb9678fa585d9184f24534b100dc60f4a"
   end
 
   resource "wadllib" do
