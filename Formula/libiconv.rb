@@ -1,6 +1,6 @@
 class MacOSRequirement < Requirement
   fatal true
-  satisfy(:build_env => false) { OS.mac? }
+  satisfy(build_env: false) { OS.mac? }
   def message
     "is not needed on Linux, where iconv.h is provided by glibc"
   end
