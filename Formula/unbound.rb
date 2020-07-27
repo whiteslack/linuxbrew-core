@@ -50,7 +50,7 @@ class Unbound < Formula
                     "username: \"#{ENV["USER"]}\""
   end
 
-  plist_options :startup => true
+  plist_options startup: true
 
   def plist
     <<~EOS
