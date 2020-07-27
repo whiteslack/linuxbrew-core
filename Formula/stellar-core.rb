@@ -2,8 +2,8 @@ class StellarCore < Formula
   desc "The backbone of the Stellar (XLM) network"
   homepage "https://www.stellar.org/"
   url "https://github.com/stellar/stellar-core.git",
-      :tag      => "v13.2.0",
-      :revision => "e45018ea97695592bc9e7a61cfdbfb6b5411b84a"
+      tag:      "v13.2.0",
+      revision: "e45018ea97695592bc9e7a61cfdbfb6b5411b84a"
   head "https://github.com/stellar/stellar-core.git"
 
   bottle do
@@ -27,7 +27,7 @@ class StellarCore < Formula
     # Needs libraries at runtime:
     # /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.22' not found
     depends_on "gcc@6"
-    fails_with :gcc => "5"
+    fails_with gcc: "5"
   end
 
   uses_from_macos "bison" => :build
