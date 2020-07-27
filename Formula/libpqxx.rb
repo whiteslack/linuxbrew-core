@@ -23,10 +23,10 @@ class Libpqxx < Formula
     depends_on "doxygen" => :build
     depends_on "xmlto" => :build
     depends_on "gcc@9"
-    fails_with :gcc => "5"
-    fails_with :gcc => "6"
-    fails_with :gcc => "7"
-    fails_with :gcc => "8"
+    fails_with gcc: "5"
+    fails_with gcc: "6"
+    fails_with gcc: "7"
+    fails_with gcc: "8"
   end
 
   def install
