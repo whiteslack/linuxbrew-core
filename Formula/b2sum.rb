@@ -13,7 +13,7 @@ class B2sum < Formula
     sha256 "772728967c21dbd98cb2afac3042a3ddacc88afd88e75de2e91d35ae90271bcb" => :x86_64_linux
   end
 
-  conflicts_with "coreutils", :because => "both install `b2sum` binaries"
+  conflicts_with "coreutils", because: "both install `b2sum` binaries"
 
   def install
     cd "b2sum" do
