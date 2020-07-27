@@ -37,7 +37,7 @@ class TraefikAT1 < Formula
     end
   end
 
-  plist_options :manual => "traefik"
+  plist_options manual: "traefik"
 
   def plist
     <<~EOS
