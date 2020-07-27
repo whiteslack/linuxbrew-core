@@ -95,7 +95,7 @@ class Pulseaudio < Formula
     rm "#{share}/glib-2.0/schemas/gschemas.compiled" unless OS.mac?
   end
 
-  plist_options :manual => "pulseaudio"
+  plist_options manual: "pulseaudio"
 
   def plist
     <<~EOS
