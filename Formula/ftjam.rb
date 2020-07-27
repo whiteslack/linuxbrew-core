@@ -16,7 +16,7 @@ class Ftjam < Formula
     sha256 "08838169b289f6867243ec61ee4aa954abc316317c2c6b2a7ae2fdc243b614cc" => :x86_64_linux # glibc 2.19
   end
 
-  conflicts_with "jam", :because => "both install a `jam` binary"
+  conflicts_with "jam", because: "both install a `jam` binary"
 
   def install
     system "./configure", "--prefix=#{prefix}"
