@@ -3,7 +3,7 @@ require "os/linux/glibc"
 class BrewedGlibcNotOlderRequirement < Requirement
   fatal true
 
-  satisfy(:build_env => false) do
+  satisfy(build_env: false) do
     Glibc.version >= OS::Linux::Glibc.system_version
   end
 
@@ -18,7 +18,7 @@ end
 class GawkRequirement < Requirement
   fatal true
 
-  satisfy(:build_env => false) do
+  satisfy(build_env: false) do
     # Returning which("gawk") causes a cyclic dependency.
     !which("gawk").nil?
   end
@@ -42,7 +42,7 @@ class LinuxKernelRequirement < Requirement
     @linux_kernel_version ||= Version.new Utils.safe_popen_read("uname -r")
   end
 
-  satisfy(:build_env => false) do
+  satisfy(build_env: false) do
     linux_kernel_version >= MINIMUM_LINUX_KERNEL_VERSION
   end
 
@@ -72,10 +72,10 @@ class Glibc < Formula
   depends_on LinuxKernelRequirement
 
   # GCC 4.7 or later is required.
-  fails_with :gcc => "4.3"
-  fails_with :gcc => "4.4"
-  fails_with :gcc => "4.5"
-  fails_with :gcc => "4.6"
+  fails_with gcc: "4.3"
+  fails_with gcc: "4.4"
+  fails_with gcc: "4.5"
+  fails_with gcc: "4.6"
 
   def install
     # Fix Error: `loc1@GLIBC_2.2.5' can't be versioned to common symbol 'loc1'
