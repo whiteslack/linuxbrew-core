@@ -11,6 +11,7 @@ class Pgbadger < Formula
     sha256 "ff048cb1c48cef7b760583ccf2e1aa4edf2f2d6df5545d094baf20c6a84122a4" => :catalina
     sha256 "ff048cb1c48cef7b760583ccf2e1aa4edf2f2d6df5545d094baf20c6a84122a4" => :mojave
     sha256 "a9350663298d12192751ea780e97581a2d715a0ee90295f12a8abf3e8ba84995" => :high_sierra
+    sha256 "e340c83d68a26a3f51b440fb3036324ed4504e0b59c4c0cc0654c4b09beb0400" => :x86_64_linux
   end
 
   def install
