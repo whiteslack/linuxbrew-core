@@ -12,6 +12,7 @@ class JsonC < Formula
     sha256 "60d15ece3fb1fdc8722785de8243c2261222f674e998509375522a1de75497ea" => :catalina
     sha256 "6ab7f776315184769ed74115f614996401eae4577c36144ba4cdd1d41427d0cf" => :mojave
     sha256 "a211a34a52b452386cf6e23f8f27cc9d088e64d2793bae7a4b3a7a069d31a88a" => :high_sierra
+    sha256 "a758d616079a3ef989fccb1f595a930b9fb849f0fcc6a6d235f951233487d637" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
