@@ -14,7 +14,7 @@ class Ccrypt < Formula
     sha256 "bbafdb89f6dcdae6562aab322471f931d15daae8bd47744d417aa45f79fae7ec" => :x86_64_linux
   end
 
-  conflicts_with "ccat", :because => "both install `ccat` binaries"
+  conflicts_with "ccat", because: "both install `ccat` binaries"
 
   def install
     system "./configure", "--disable-dependency-tracking",
