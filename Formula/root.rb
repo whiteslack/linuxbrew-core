@@ -54,7 +54,7 @@ class Root < Formula
     depends_on "linuxbrew/xorg/libxpm"
   end
 
-  conflicts_with "glew", :because => "root ships its own copy of glew"
+  conflicts_with "glew", because: "root ships its own copy of glew"
 
   skip_clean "bin"
 
