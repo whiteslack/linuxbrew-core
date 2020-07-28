@@ -13,6 +13,7 @@ class AwsGoogleAuth < Formula
     sha256 "1d6890e0d3fd5e514d91db206c47b798ee5c5411a25cf2cd2eda8cf4abfc4806" => :catalina
     sha256 "a1da781b800a1a533e2b6afd3443f77b04a952da872320732c16b1bab858a4a5" => :mojave
     sha256 "371f6acaf6ce534b1a7d6569ea5fb02d05a0da5818b6f0e7097edb91ebdc5a66" => :high_sierra
+    sha256 "ceccad5a2f4d6ad456236578d73629cca84f45eca4e5ebb6ceb015e9d7f2d66b" => :x86_64_linux
   end
 
   depends_on "freetype"
