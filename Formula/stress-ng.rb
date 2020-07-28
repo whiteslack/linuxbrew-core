@@ -13,6 +13,8 @@ class StressNg < Formula
     sha256 "63db366d084d7145945b0a7b25cf246be852f8d001261bcbdaefd2f9453df61a" => :x86_64_linux
   end
 
+  depends_on macos: :sierra
+
   uses_from_macos "zlib"
 
   on_macos do

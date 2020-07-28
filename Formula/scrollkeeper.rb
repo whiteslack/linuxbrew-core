@@ -21,9 +21,11 @@ class Scrollkeeper < Formula
   conflicts_with "rarian",
     because: "scrollkeeper and rarian install the same binaries"
 
-  resource "XML::Parser" do
-    url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.44.tar.gz"
-    sha256 "1ae9d07ee9c35326b3d9aad56eae71a6730a73a116b9fe9e8a4758b7cc033216"
+  unless OS.mac?
+    resource "XML::Parser" do
+      url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.44.tar.gz"
+      sha256 "1ae9d07ee9c35326b3d9aad56eae71a6730a73a116b9fe9e8a4758b7cc033216"
+    end
   end
 
   def install
