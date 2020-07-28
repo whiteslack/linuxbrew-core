@@ -1,14 +1,14 @@
 class Abcmidi < Formula
   desc "Converts abc music notation files to MIDI files"
   homepage "https://ifdo.ca/~seymour/runabc/top.html"
-  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2020.07.14.zip"
-  sha256 "09f2839f9ec171e5c8253998d510dbd16959e68f98b74fa8a18f22f4ffeab837"
+  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2020.07.26.zip"
+  sha256 "d21a9bce598231f98c092e360170ca21dd0c8dd08cb30e07b796e7ba9b5b1f28"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "038a5de5b8a58b280a88d00e3af6a55daf9373a3708226ce6cd1f2f2a00d9d10" => :catalina
-    sha256 "b7f1c37bf1b9be09af91b3b061271e654f53261c1b204bfb2c795820bd4c26c7" => :mojave
-    sha256 "693aaafa5b0d24c2594911bfb4993abbe0ba65fc9ad6c59450e5eb9e33f24b4b" => :high_sierra
+    sha256 "7dfe44238532ee096580afddf4042a154ac8bd1db040934fb435c00059b000a2" => :catalina
+    sha256 "932fde1e8eeeb9cc2ccaf5a71c9b40ba039bd445ec5c0bd6ca0f614968069502" => :mojave
+    sha256 "392d8bd89f51f57757589453c46d2b939a4abb6c07b82e029bf8b661a55121df" => :high_sierra
   end
 
   def install
@@ -16,9 +16,6 @@ class Abcmidi < Formula
     # the tarball. On case-sensitive file-systems, the "makefile" file won't
     # be overridden and will be chosen over the "Makefile" file.
     rm_f "makefile"
-
-    # Fix "Failed to execute: ./configure" issue
-    chmod 0755, "./configure"
 
     system "./configure", "--disable-debug",
                           "--prefix=#{prefix}",
