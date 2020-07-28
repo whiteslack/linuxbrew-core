@@ -16,7 +16,6 @@ class Mpv < Formula
   depends_on "pkg-config" => :build
   depends_on "python@3.8" => :build
   depends_on xcode: :build if OS.mac?
-
   depends_on "ffmpeg"
   depends_on "jpeg"
   depends_on "libarchive"

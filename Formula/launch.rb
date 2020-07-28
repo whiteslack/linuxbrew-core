@@ -16,7 +16,6 @@ class Launch < Formula
   end
 
   depends_on xcode: :build if OS.mac?
-
   # hard dependency on macOS API's
   depends_on :macos
 
