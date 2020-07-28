@@ -13,9 +13,7 @@ class IosDeploy < Formula
     sha256 "19485d858ef8be95dff22feeb01e8367792caa8919cc8289d0893bd49640b3aa" => :high_sierra
   end
 
-  on_macos do
-    depends_on xcode: :build
-  end
+  depends_on xcode: :build
 
   def install
     xcodebuild "-configuration", "Release", "SYMROOT=build"
