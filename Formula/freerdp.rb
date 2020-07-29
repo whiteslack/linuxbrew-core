@@ -31,6 +31,12 @@ class Freerdp < Formula
     depends_on "linuxbrew/xorg/wayland"
   end
 
+  on_linux do
+    depends_on "ffmpeg"
+    depends_on "glib"
+    depends_on "systemd"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DWITH_X11=ON" << "-DBUILD_SHARED_LIBS=ON"

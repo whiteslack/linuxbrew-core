@@ -48,8 +48,7 @@ class Gdal < Formula
   depends_on "xz" # get liblzma compression algorithm library from XZutils
   depends_on "zstd"
 
-  unless OS.mac?
-    depends_on "pkg-config" => :build
+  on_linux do
     depends_on "bash-completion"
   end
 

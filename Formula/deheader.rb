@@ -21,6 +21,10 @@ class Deheader < Formula
   depends_on "xmlto" => :build
   depends_on "libarchive" => :build unless OS.mac?
 
+  on_linux do
+    depends_on "libarchive" => :build
+  end
+
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 

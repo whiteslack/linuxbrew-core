@@ -318,13 +318,15 @@ class AppscaleTools < Formula
     sha256 "91ee3949a3a613cac037ddde0b16b17062e248376b11491436e49d5ddc75ff9b"
   end
 
-  unless OS.mac?
-    resource "secretstorage" do
+  resource "secretstorage" do
+    on_linux do
       url "https://files.pythonhosted.org/packages/a5/a5/0830cfe34a4cfd0d1c3c8b614ede1edb2aaf999091ac8548dd19cb352e79/SecretStorage-2.3.1.tar.gz"
       sha256 "3af65c87765323e6f64c83575b05393f9e003431959c9395d1791d51497f29b6"
     end
+  end
 
-    resource "pyparsing" do
+  resource "pyparsing" do
+    on_linux do
       url "https://files.pythonhosted.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz"
       sha256 "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"
     end
