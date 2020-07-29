@@ -11,6 +11,7 @@ class TraefikAT1 < Formula
     sha256 "dc50cb5af800c8f062e330e3b103bce1a2d0a78c6fdbd73d742c7197252c151b" => :catalina
     sha256 "3ac187701cefeba894c3440bb9353e4e85cf716ef38cacfe35f3b5e474c52362" => :mojave
     sha256 "89c846b73437bef8360f1acd1cdd5aceb9f8bc160d6400ac77331ac8452169b7" => :high_sierra
+    sha256 "f64e14117fa9384d884397f8c37e344fc7eb46e4bb8fa19f337becccc58661ec" => :x86_64_linux
   end
 
   keg_only :versioned_formula
