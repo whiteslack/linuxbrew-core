@@ -10,6 +10,7 @@ class Widelands < Formula
     sha256 "f41944d59a82424ef8242035d60db6ad270bc101f628b299e7d27a345b9a9c33" => :catalina
     sha256 "2ad3c807fe568617432f7f0e542553c23d8ee49db6da9ec5a494bf7ce1f7e04a" => :mojave
     sha256 "cdb65ce693e938a996a94a69e0a78f26afb2bc2a6af1bba36800a095cbdcc8ae" => :high_sierra
+    sha256 "2aaf9b552b4fd563b4b329ad82bc919e3c961095716916bbe2fa038151792e2f" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
