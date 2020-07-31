@@ -2,44 +2,30 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://coreos.com/operators/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v0.19.0",
-      revision: "8e28aca60994c5cb1aec0251b85f0116cc4c9427"
+      tag:      "v0.19.1",
+      revision: "24395e17b0f2601320227b7ca32b5f54db000e42"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git"
 
   bottle do
-    sha256 "e2ed290dd01c18068bf0bb44ae4eb442bea434131d8674d2fb60273e795e0252" => :catalina
-    sha256 "3ac96997fd98ba180d0da26c06cfd26a4b3bb7163043eb50a8c74f0e1affed93" => :mojave
-    sha256 "e457bcb3b637b66c0e7ffbd07f232775faa58bdc50a6a7cfd6f099799b8745e0" => :high_sierra
-    sha256 "8dae1325b2676efae81be8ac20f85901a0de4aaba7154dc1f9f5033c0e42dce6" => :x86_64_linux
+    sha256 "dcc829e86973ba053b4cf52c1dbe1f5b86b5d3ae85052b8a7ccebf241a61e7c8" => :catalina
+    sha256 "d220ae570b6ad5c4aef9ed357a2a384cf93bdcaa5c5f6657dec8853ae6e509f9" => :mojave
+    sha256 "3a0e077dc1b815f17e7ee31104f1400148408c0b328c00f7d526b39ac90b779d" => :high_sierra
   end
 
   depends_on "go"
 
   def install
-    # TODO: Do not set GOROOT. This is a fix for failing tests when compiled with Go 1.13.
-    # See https://github.com/Homebrew/homebrew-core/pull/43820.
-    ENV["GOROOT"] = Formula["go"].opt_libexec
+    ENV["GOBIN"] = bin
+    system "make", "install"
 
-    ENV["GOPATH"] = buildpath
+    # Install bash completion
+    output = Utils.safe_popen_read("#{bin}/operator-sdk", "completion", "bash")
+    (bash_completion/"operator-sdk").write output
 
-    dir = buildpath/"src/github.com/operator-framework/operator-sdk"
-    dir.install buildpath.children - [buildpath/".brew_home"]
-    dir.cd do
-      # Make binary
-      system "make", "install"
-      bin.install buildpath/"bin/operator-sdk"
-
-      # Install bash completion
-      output = Utils.safe_popen_read("#{bin}/operator-sdk", "completion", "bash")
-      (bash_completion/"operator-sdk").write output
-
-      # Install zsh completion
-      output = Utils.safe_popen_read("#{bin}/operator-sdk", "completion", "zsh")
-      (zsh_completion/"_operator-sdk").write output
-
-      prefix.install_metafiles
-    end
+    # Install zsh completion
+    output = Utils.safe_popen_read("#{bin}/operator-sdk", "completion", "zsh")
+    (zsh_completion/"_operator-sdk").write output
   end
 
   test do

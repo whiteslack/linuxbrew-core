@@ -3,17 +3,17 @@ class Hashcat < Formula
   # MacOS curl complains about https://hashcat.net SSL cert
   # See https://github.com/Homebrew/homebrew-core/pull/56503#issuecomment-660728358
   homepage "https://hashcat.net/hashcat/"
-  url "https://hashcat.net/files/hashcat-6.0.0.tar.gz"
-  mirror "https://github.com/hashcat/hashcat/archive/v6.0.0.tar.gz"
-  sha256 "e8e70f2a5a608a4e224ccf847ad2b8e4d68286900296afe00eb514d8c9ec1285"
+  url "https://hashcat.net/files/hashcat-6.1.0.tar.gz"
+  mirror "https://github.com/hashcat/hashcat/archive/v6.1.0.tar.gz"
+  sha256 "916f92434e3b36a126be1d1247a95cd3b32b4d814604960a2ca325d4cc0542d1"
   license "MIT"
   version_scheme 1
   head "https://github.com/hashcat/hashcat.git"
 
   bottle do
-    sha256 "38c468de882c83d37b151f8b7c3dd84c482b6470d72feebaed8e25543bfac032" => :catalina
-    sha256 "570a58e4f14c4da88b79624e62b27494e827245fe6ac052ca6a6277a8a87c0f1" => :mojave
-    sha256 "d0c23b1e6d0de61088aeb3655d069683bfe2bc586f0d38090ac477d05bff6980" => :high_sierra
+    sha256 "b5b947aafb8017003c92af290221e8257d47c9bb44f597cce5187f222159dcf7" => :catalina
+    sha256 "5833a5a5d66131bc76a3fa0c8b86ec664e5fe5733c3323da7c8cca022b6b5882" => :mojave
+    sha256 "545e53c03a95552fcfaa905dc5f5770a6bd1f05867a95e17e5a5655ab9a4d58b" => :high_sierra
   end
 
   depends_on "gnu-sed" => :build
