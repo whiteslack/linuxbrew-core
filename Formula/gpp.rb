@@ -10,6 +10,7 @@ class Gpp < Formula
     sha256 "f6dcf32a23b4dfab4c9fa231757f87a9eb8f4ea2fcd4e8146a02e8afe22b38cc" => :catalina
     sha256 "54f5f9b098335023273291b6ec95615148ab3fa02039a0d7c1645cd59d0eb134" => :mojave
     sha256 "d56879d518d9924d17327594b31501c8ea4eaa58295e12ae41fc74156cffc179" => :high_sierra
+    sha256 "a221934ad1fe7c52828a312ef93f35ebab30c19aa02eae5c93420ed291c6bdc7" => :x86_64_linux
   end
 
   def install
