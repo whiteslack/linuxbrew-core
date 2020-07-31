@@ -31,6 +31,12 @@ class Lua < Formula
     end
   end
 
+  uses_from_macos "unzip" => :build
+
+  on_linux do
+    depends_on "readline"
+  end
+
   # Be sure to build a dylib, or else runtime modules will pull in another static copy of liblua = crashy
   # See: https://github.com/Homebrew/legacy-homebrew/pull/5043
   # ***Update me with each version bump!***

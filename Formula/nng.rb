@@ -1,15 +1,14 @@
 class Nng < Formula
   desc "Nanomsg-next-generation -- light-weight brokerless messaging"
   homepage "https://nanomsg.github.io/nng/"
-  url "https://github.com/nanomsg/nng/archive/v1.3.0.tar.gz"
-  sha256 "e8fe50d0f79ec3243733f8b4c25099c88b2597ed1bb0d94a27c4385a2a24ecac"
+  url "https://github.com/nanomsg/nng/archive/v1.3.1.tar.gz"
+  sha256 "3f258514b6aed931485ce1a6e5745e07416d32e6c4315ae771ff358e9fd18e55"
   license "MIT"
 
   bottle do
-    sha256 "feea9c352fd19ca9d625a4b64458a7b7cedd3d027e2c1065dfdede3f4cdd81e7" => :catalina
-    sha256 "832c27a3418c241ec128f93ccb395c21a53de85942bacf91eb110456500c9294" => :mojave
-    sha256 "79f4d2e9a49be6044dde80c90b7ebb0cb781b86ece50bfb2cdab11c401b70244" => :high_sierra
-    sha256 "9f2b0aa65fc28cbc65e78eb5718974ecfabd0003c6aeda1d254b38eb56f0cd53" => :x86_64_linux
+    sha256 "89bba37c334ca7a130d598fb976f9c5f6c94d5a446ab665774cda9ae9224c9f9" => :catalina
+    sha256 "5ead1d0ad461e09c9b72b0465d704a4b05186b698f9d7698f6e320e6bb6c9b1c" => :mojave
+    sha256 "a636719676a386935f3d7006aedcd42183c84e139bc2edc5fa7cff6d735ab7a3" => :high_sierra
   end
 
   depends_on "asciidoctor" => :build

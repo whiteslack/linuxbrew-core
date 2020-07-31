@@ -20,6 +20,10 @@ class Libnice < Formula
   depends_on "gstreamer"
   depends_on "intltool" => :build unless OS.mac?
 
+  on_linux do
+    depends_on "intltool" => :build
+  end
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

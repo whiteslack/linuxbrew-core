@@ -7,6 +7,7 @@ class PscPackage < Formula
   homepage "https://psc-package.readthedocs.io"
   url "https://github.com/purescript/psc-package/archive/v0.6.2.tar.gz"
   sha256 "96c3bf2c65d381c61eff3d16d600eadd71ac821bbe7db02acec1d8b3b6dbecfc"
+  license "BSD-3-Clause"
 
   bottle do
     sha256 "6cb82e86e3345b771e1cefa7ddc19f0a2cdad2708b9c313c0d6939d6935f68ee" => :catalina
