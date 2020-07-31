@@ -11,6 +11,7 @@ class Libcerf < Formula
     sha256 "d1be9525402c49ed718ae3192d0990be1964428f740dd76812db78cbc7225037" => :catalina
     sha256 "9027ca30f7747171aba44efcd83cfbe65f5db46441077b143a6c2cdc23bcffa8" => :mojave
     sha256 "2551e26f4b79121e409a411901585d8aff3348921ba42e75e9947824962ac8d0" => :high_sierra
+    sha256 "5d1e91af8b3bb0f0042994740989a4e50d45622acb35dbf598069303660fe01e" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
