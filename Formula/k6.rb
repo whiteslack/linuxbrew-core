@@ -11,6 +11,7 @@ class K6 < Formula
     sha256 "afa071cb66ffb37e6718ee52be4b58b707b935765f6527415da7dc15c2297658" => :catalina
     sha256 "78bad35beeaa7d16a8f55aa2f9980b74c07fdec191c7ca52085ff0a2f8aa476c" => :mojave
     sha256 "8f66f1625d3e95c011ead1d2fdfc3aed6102d9f9a475f9ec093cb50fa40503c4" => :high_sierra
+    sha256 "8cfa9828ef0b238d8e60a5b764fe1e5039a19f823a05709cda4efab03ea641d6" => :x86_64_linux
   end
 
   depends_on "dep" => :build
