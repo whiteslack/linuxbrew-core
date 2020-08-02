@@ -24,7 +24,7 @@ jobs:
           echo name=${{github.event.client_payload.name}}
           echo ignore-errors=${{github.event.client_payload.ignore_errors}}
           echo issue=${{github.event.client_payload.issue}}
-          echo "::set-output repo=$(brew --repo ${{github.repository}})"
+          echo "::set-output name=repo::$(brew --repo ${{github.repository}})"
       - name: Build bottles
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
