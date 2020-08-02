@@ -26,6 +26,9 @@ jobs:
           echo issue=${{github.event.client_payload.issue}}
           echo "::set-output name=repo::$(brew --repo ${{github.repository}})"
 
+      - name: Setup git
+        uses: Homebrew/actions/git-user-config@master
+
       - name: Build bottles
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}

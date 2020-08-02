@@ -20,6 +20,9 @@ jobs:
         run: |
           echo "::set-output name=repo::$(brew --repo ${{github.repository}})"
 
+      - name: Setup git
+        uses: Homebrew/actions/git-user-config@master
+
       - name: Determine associated pull request
         uses: actions/github-script@master
         id: pr
