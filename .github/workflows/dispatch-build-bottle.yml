@@ -19,6 +19,7 @@ jobs:
           echo name=${{github.event.client_payload.name}}
           echo ignore-errors=${{github.event.client_payload.ignore_errors}}
           echo issue=${{github.event.client_payload.issue}}
+        echo "::set-output repo=$(brew --repo ${{github.repository}})":
       - name: Build bottles
         run: |
           mkdir ~/bottles
@@ -57,6 +58,7 @@ jobs:
         uses: Homebrew/actions/git-try-push@master
         if: success() || github.event.client_payload.ignore_errors
         with:
+          directory: ${{ steps.print_details.outputs.repo }}
           token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
 
       - name: Post comment on failure
