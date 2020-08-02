@@ -74,7 +74,7 @@ jobs:
         uses: Homebrew/actions/post-comment@master
         with:
           token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          issue: ${{setps.pr.outputs.number}}
+          issue: ${{steps.pr.outputs.number}}
           body: ':warning: @${{github.actor}} bottle publish [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot_body: ':warning: Bottle publish [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
