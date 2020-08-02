@@ -10,6 +10,7 @@ class ChibiScheme < Formula
     sha256 "2e1e4fefe7672d6814cc1902884d817e1d54e9916bff13621fbdb1d36ae05ef2" => :catalina
     sha256 "cffd5499340844f3c4c4c105f66a173ac5cd782ae9266fda32ece1edd07e3f2e" => :mojave
     sha256 "2331acc8a6aedd1ec78aa07e38bfc5f9fc6e97bf41b077c25ccee0a5cb4b3175" => :high_sierra
+    sha256 "0857946e212d078b32b389cc9d3943b15a5833b7b1f2b2f4852eb9e087474e2b" => :x86_64_linux
   end
 
   def install
