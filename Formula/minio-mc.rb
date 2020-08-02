@@ -12,6 +12,7 @@ class MinioMc < Formula
     sha256 "29153445cca4006f2fe238253c764833eaf77b4222828cb1e92c76603f3096c5" => :catalina
     sha256 "e8e7fba9bf173cd49add1b069e8e80b01c8bef6b934300d0fafe1fed83420eb3" => :mojave
     sha256 "d350167601db0eee4286b5bef855da2814b1385847fd44097a39d2e0116f868e" => :high_sierra
+    sha256 "a297aa42a38841d0c51f3945e0937c349b4212bd39d751227d5375f230e1c616" => :x86_64_linux
   end
 
   depends_on "go" => :build
