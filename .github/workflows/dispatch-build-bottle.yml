@@ -55,7 +55,7 @@ jobs:
         run: |
           cd ~/bottles
           brew update-reset $(brew --repo ${{github.repository}})
-          brew pr-upload
+          brew pr-upload \
             --bintray-org=linuxbrew \
             --keep-old \
             --verbose \
