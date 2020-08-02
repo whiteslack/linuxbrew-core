@@ -9,6 +9,11 @@ jobs:
       image: homebrew/ubuntu16.04:master
     env:
       HOMEBREW_PATCHELF_RB: 1
+      HOMEBREW_GIT_NAME: BrewTestBot
+      HOMEBREW_GIT_EMAIL: 'homebrew-test-bot@lists.sfconservancy.org'
+      HOMEBREW_DEVELOPER: 1
+      HOMEBREW_NO_ANALYTICS: 1
+      HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
         # Printing these details should always be the first step listed.
       - name: ${{github.event.client_payload.formula}}
@@ -21,6 +26,8 @@ jobs:
           echo issue=${{github.event.client_payload.issue}}
           echo "::set-output repo=$(brew --repo ${{github.repository}})"
       - name: Build bottles
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           mkdir ~/bottles
           cd ~/bottles
