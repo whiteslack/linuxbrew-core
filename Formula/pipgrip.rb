@@ -13,6 +13,7 @@ class Pipgrip < Formula
     sha256 "8033801b62099eabda87b53160cdf0fa2aa9c0b688cb630cd3e135174f74ed9e" => :catalina
     sha256 "3a1982b0830d683ad0b45a0af6b16e4acd622da580b39e5a4c47a77203646d52" => :mojave
     sha256 "c07552ec4e5fe99e09b355d6e0714487afe752c6c4fe8e620d63f12b3977558d" => :high_sierra
+    sha256 "4ec1cf2ddb0a03242da447819220d6afed30c57000bc1b18b5ca3b8ad24a0c09" => :x86_64_linux
   end
 
   depends_on "gcc"
