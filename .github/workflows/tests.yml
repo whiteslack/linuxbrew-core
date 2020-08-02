@@ -109,7 +109,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v2
         with:
-          name: logs (${{ matrix.version }})
+          name: logs (Linux)
           path: bottles/logs
 
       - name: Delete logs and home

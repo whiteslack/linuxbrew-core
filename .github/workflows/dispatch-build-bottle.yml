@@ -25,6 +25,7 @@ jobs:
           echo ignore-errors=${{github.event.client_payload.ignore_errors}}
           echo issue=${{github.event.client_payload.issue}}
           echo "::set-output name=repo::$(brew --repo ${{github.repository}})"
+
       - name: Build bottles
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -36,10 +37,12 @@ jobs:
             --only-formulae \
             --keep-old \
             ${{github.event.client_payload.formula}}
+
       - name: Copy bottles
         if: always()
         run: |
           cp -a ~/bottles $GITHUB_WORKSPACE
+
       - name: Upload bottles
         if: always()
         uses: actions/upload-artifact@v2
@@ -49,7 +52,7 @@ jobs:
 
       - name: Upload bottles to Bintray
         env:
-          HOMEBREW_BINTRAY_USER: linuxbrewtestbot
+          HOMEBREW_BINTRAY_USER: LinuxbrewTestBot
           HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
         if: success() || github.event.client_payload.ignore_errors
         run: |

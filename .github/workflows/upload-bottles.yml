@@ -14,8 +14,14 @@ jobs:
     steps:
       - name: Update Homebrew
         run: brew update-reset
+
+      - name: Set up variables
+        id: print_details
+        run: |
+          echo "::set-output name=repo::$(brew --repo ${{github.repository}})"
+
       - name: Determine associated pull request
-        uses: actions/github-script@0.9.0
+        uses: actions/github-script@master
         id: pr
         with:
           script: |
@@ -29,6 +35,7 @@ jobs:
             }
             core.setOutput("number", prs.data[0].number.toString())
             core.setOutput("head_sha", prs.data[0].head.sha)
+
       - name: Download workflow artifacts
         uses: Homebrew/actions/download-artifact@master
         with:
@@ -37,6 +44,7 @@ jobs:
           commit: ${{steps.pr.outputs.head_sha}}
           name: bottles
           path: bottles
+
       - name: Upload and publish bottles
         env:
           HOMEBREW_BINTRAY_USER: LinuxbrewTestBot
@@ -45,16 +53,17 @@ jobs:
         if: steps.pr.outputs.number != 0
         run: |
           cd bottles
-          brew test-bot \
-            --tap=homebrew/core \
+          brew update-reset $(brew --repo ${{github.repository}})
+          brew pr-upload \
             --bintray-org=linuxbrew \
-            --ci-upload \
-            --publish \
-            --keep-old
+            --keep-old \
+            --verbose \
+            --debug
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
+          directory: ${{ steps.print_details.outputs.repo }}
           token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
 
       - name: Post comment on failure
