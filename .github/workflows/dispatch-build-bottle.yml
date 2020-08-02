@@ -34,7 +34,7 @@ jobs:
           cp -a ~/bottles $GITHUB_WORKSPACE
       - name: Upload bottles
         if: always()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: bottles
           path: bottles
@@ -52,57 +52,19 @@ jobs:
             --publish \
             --keep-old \
             ${{github.event.client_payload.formula}}
-      - name: Push bottles
-        env:
-          GIT_COMMITTER_NAME: ${{github.event.client_payload.name}}
-          GIT_COMMITTER_EMAIL: ${{github.event.client_payload.email}}
+
+      - name: Push commits
+        uses: Homebrew/actions/git-try-push@master
         if: success() || github.event.client_payload.ignore_errors
-        run: |
-          export PATH=/usr/bin:$PATH
-          cd $(brew --repo ${{github.repository}})
-          git commit --amend --no-edit
-          git show --pretty=fuller
-          for try in $(seq 20); do
-            git fetch
-            git rebase origin/master
-            if git push https://x-access-token:${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@github.com/${{github.repository}} master; then
-              exit 0
-            else
-              max=$(( $try + 10 ))
-              sleep $(shuf -i 3-$max -n 1)
-            fi
-          done
-          exit 1
-      - name: Post comment on failure
-        if: failure() && github.event.client_payload.issue > 0
-        uses: actions/github-script@0.8.0
-        env:
-          ISSUE_NUMBER: ${{github.event.client_payload.issue}}
-          FORMULA: ${{github.event.client_payload.formula}}
         with:
-          github-token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          script: |
-            const run_id = process.env.GITHUB_RUN_ID
-            const actor = process.env.GITHUB_ACTOR
-            const issue_number = process.env.ISSUE_NUMBER
-            const formula = process.env.FORMULA
-            console.log("run_id=" + run_id)
-            console.log("actor=" + actor)
-            console.log("issue=" + issue_number)
-            console.log("formula=" + formula)
+          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
 
-            const issue = await github.issues.get({
-              ...context.repo,
-              issue_number: issue_number
-            })
-
-            const ping = (actor == "BrewTestBot") ? issue.data.user.login : actor
-
-            const repository = context.repo.owner + '/' + context.repo.repo
-            const url = 'https://github.com/' + repository + '/actions/runs/' + run_id
-
-            await github.issues.createComment({
-              ...context.repo,
-              issue_number: issue_number,
-              body: '@' + ping + ' bottle request for ' + formula + ' failed: ' + url
-            })
+      - name: Post comment on failure
+        if: ${{!success() && github.event.client_payload.issue > 0}}
+        uses: Homebrew/actions/post-comment@master
+        with:
+          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+          issue: ${{github.event.inputs.pull_request}}
+          body: ':warning: @${{github.actor}} bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
+          bot_body: ':warning: Bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
+          bot: BrewTestBot
