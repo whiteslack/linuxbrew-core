@@ -12,6 +12,7 @@ class Skaffold < Formula
     sha256 "a069687bc6f37c4b1944c2458b26ddc686e39ec7a27e085eb5a5daff685ff210" => :catalina
     sha256 "ce8c22bc3aebd92f68b4989aa0e15d56751636251e703887b89d256f68ac3717" => :mojave
     sha256 "1f37c945aef5ef42522affd6b9ca52da97bd25e5b8dd81ea80dc573cca4fd9cc" => :high_sierra
+    sha256 "0909d3c684970e1a1b0d3cc8f675ddca611bfbaa46d6c6f9b9e9af4e00493eb2" => :x86_64_linux
   end
 
   depends_on "go" => :build
