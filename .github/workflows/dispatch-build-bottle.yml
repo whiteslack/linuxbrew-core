@@ -19,7 +19,7 @@ jobs:
           echo name=${{github.event.client_payload.name}}
           echo ignore-errors=${{github.event.client_payload.ignore_errors}}
           echo issue=${{github.event.client_payload.issue}}
-        echo "::set-output repo=$(brew --repo ${{github.repository}})":
+        echo "::set-output repo=$(brew --repo ${{github.repository}})"
       - name: Build bottles
         run: |
           mkdir ~/bottles
@@ -47,12 +47,11 @@ jobs:
         run: |
           cd ~/bottles
           brew update-reset $(brew --repo ${{github.repository}})
-          brew test-bot \
+          brew pr-upload
             --bintray-org=linuxbrew \
-            --ci-upload \
-            --publish \
             --keep-old \
-            ${{github.event.client_payload.formula}}
+            --verbose \
+            --debug
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
