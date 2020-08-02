@@ -12,6 +12,7 @@ class Php < Formula
     sha256 "ec3af8e7bcfda01b5b0370cd33e97b12ce0988c2743e2437be4efc7d15a15f74" => :catalina
     sha256 "fb211d4a9cf8fddb20c0c40b0934c09db7c0d5514bd5cb4d7692b115fec4b9e2" => :mojave
     sha256 "d3c4639e3b5d8ba7e33c73a5e52cf3e3825fd0c7e3a647af6364e8ddeb25d90d" => :high_sierra
+    sha256 "b3fae67e4faba2b05ef5d143bb9abfa93df5d3380212fbe9721fe4abbc86563b" => :x86_64_linux
   end
 
   head do
