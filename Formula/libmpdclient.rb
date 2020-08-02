@@ -12,6 +12,7 @@ class Libmpdclient < Formula
     sha256 "866e94308617552de97ecb04f824408fa4f849d1ef79ff9bf5467170c80e3a23" => :catalina
     sha256 "0db8f7c9e7cd6eb5082397e9270989864042e36c187cba2fa61ae43ca996e32f" => :mojave
     sha256 "71c37d5af98688decfe4440ce87e267064a4a71e0b1a4e11455068b5127edae4" => :high_sierra
+    sha256 "046b7c5dba55132baeb04b8a0e10bfc9054206388207da1ec6a9d8e31f6f20bc" => :x86_64_linux
   end
 
   depends_on "doxygen" => :build
