@@ -10,6 +10,7 @@ class Sd < Formula
     sha256 "649c660b6e8a4a77e5fc9dd12b1aa28a59212f676d2394f7e3ea682a9d3cc533" => :catalina
     sha256 "1b451f55b69988e53a7699005f5aac1e50ed30e466ea0bbf1b30d382887360b1" => :mojave
     sha256 "971451d1dd8fb3340c9c5a74ea20769e114362e84b0f9bb9a0ead52881c71196" => :high_sierra
+    sha256 "39a2bda9c6a3cc7f98c1b6d6425b7121a2aaac83540d3682f2257395fcd44de1" => :x86_64_linux
   end
 
   depends_on "rust" => :build
