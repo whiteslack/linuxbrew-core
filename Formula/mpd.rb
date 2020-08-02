@@ -11,6 +11,7 @@ class Mpd < Formula
     sha256 "e0f7ce87e92b540230d05c111f5571a568d6b75562b2d4b5abcc2975dde45a7a" => :catalina
     sha256 "f21a70a4d1c8ebcc7c72caa6d7284c1a549c6c630290a9b4c7cc1b5ced1415ea" => :mojave
     sha256 "b2ac7ec06cd9dd81f63f1bd1ce0bd6eff8171d2c5b0f79e385a05d01ddad2db2" => :high_sierra
+    sha256 "d1044541df444b4cc7756312fe0f220fb6f2d9e0110f63aa293cd12af244dade" => :x86_64_linux
   end
 
   depends_on "boost" => :build
