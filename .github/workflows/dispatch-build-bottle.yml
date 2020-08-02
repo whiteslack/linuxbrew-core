@@ -65,7 +65,7 @@ jobs:
         uses: Homebrew/actions/post-comment@master
         with:
           token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          issue: ${{github.event.inputs.pull_request}}
+          issue: ${{github.event.client_payload.issue}}
           body: ':warning: @${{github.actor}} bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot_body: ':warning: Bottle request for ${{github.event.client_payload.formula}} [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
