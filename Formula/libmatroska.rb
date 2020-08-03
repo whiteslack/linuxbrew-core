@@ -11,6 +11,7 @@ class Libmatroska < Formula
     sha256 "78373c5516fdadee736e360c5e94a80ca3e3092ab9ca44fd88f31c2a08f8fc5a" => :catalina
     sha256 "a1c46ddc10694208aae53738cd9927674e076b805180149a1104b4a04bdc19b0" => :mojave
     sha256 "74faf2d3e6539e847538cfbd9f7a86abacb7272d83cfa1d36094f9295f66727f" => :high_sierra
+    sha256 "d2b730cd77cdae07af182718d05cb92cbefa77f93a59deb6057383dc3b3139be" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
