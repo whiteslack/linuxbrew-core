@@ -11,6 +11,7 @@ class Mpfr < Formula
     sha256 "5fcf57834f58c18761c6c7b0eb961eb7f9fc54325b5361bf3a17c4dee6ebc08a" => :catalina
     sha256 "93c0d2ca093819f125300002cd34c1d1b4dfb7a1403729205861bec21388ff12" => :mojave
     sha256 "77581a1df66fb1ef55ffb19777d08b0b60fbc3d2d7ad491a8aceb3a6a4bf7ffd" => :high_sierra
+    sha256 "5fa04c762dd682c46b3c15d2c28e89a36353717c533e7aaa12298b5202aeeba8" => :x86_64_linux
   end
 
   depends_on "gmp"
