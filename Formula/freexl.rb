@@ -9,6 +9,7 @@ class Freexl < Formula
     sha256 "4bac859e3460476137f1596a36015e9c0d3e1d2b46a9aa47171cabf7af5f5d71" => :catalina
     sha256 "68d9f5926df0ca43cfda25423a405b837de81575eec025944f6ec67611422742" => :mojave
     sha256 "959ce4d49a7419b01acf9e66c9d0f77a213c067f723b87d08ac6aaa21d054fe9" => :high_sierra
+    sha256 "54cc925c2d21793f5e39435d1153ac763b82a1969394eaf7a7ca35a78cb098a0" => :x86_64_linux
   end
 
   depends_on "doxygen" => :build
