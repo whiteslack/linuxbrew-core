@@ -10,6 +10,7 @@ class Hebcal < Formula
     sha256 "d9a509892c033c03341ea04daa4c763818653ebb4e0d921cd67784c9d6aeae74" => :catalina
     sha256 "ff1b1f27fcaeb762bbff51f7dce52d874d439680eb11de2ab867fb3f08682322" => :mojave
     sha256 "219e4100f05a5c856781d0d85e091327453fffd69140ecaa318ef27eb904ec4a" => :high_sierra
+    sha256 "9bca7c80b3c61dd4a95d844f00b90fcacccba8a0a30479d9dc9ac15d85a02270" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
