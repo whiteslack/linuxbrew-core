@@ -9,6 +9,7 @@ class Findent < Formula
     sha256 "24a8f26724d9e49ca1fcd4b87bccb4bc1f120205e54fbc8806a654683020ba3a" => :catalina
     sha256 "d3a515ec3d972eb63943d112ce9cb3cdd7a0835394205d971fa7fdf488dce210" => :mojave
     sha256 "bec64c83b6ad2769e8fa36245796ed743a6a1f6c20b6c17e49b495b3e7bab7dc" => :high_sierra
+    sha256 "5e1876749445848bda4a2c6b08c7568d3df389f42df469c701d358cf84af57a4" => :x86_64_linux
   end
 
   def install
