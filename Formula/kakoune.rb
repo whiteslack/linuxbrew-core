@@ -11,6 +11,7 @@ class Kakoune < Formula
     sha256 "6d8ec70c697c45eddc871ded6f6b3a2dd2414e71f68927ee7ecd7b3fc7b61d65" => :catalina
     sha256 "da609221aa96abae411b14308db149787c057f3500c52a84cc1e110e07628386" => :mojave
     sha256 "a7019f4cb116eeaa0a6f20f497374722947da86144bf2aa22afbadfc384a409a" => :high_sierra
+    sha256 "a608370b72713803fcc7bdb9f4d165fd7513c7411b9e8eb6ade8a2d23450dbda" => :x86_64_linux
   end
 
   depends_on macos: :high_sierra # needs C++17
