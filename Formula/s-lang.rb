@@ -17,6 +17,10 @@ class SLang < Formula
   depends_on "libpng"
   depends_on "pcre" unless OS.mac?
 
+  on_linux do
+    depends_on "pcre"
+  end
+
   def install
     png = Formula["libpng"]
     system "./configure", "--prefix=#{prefix}",

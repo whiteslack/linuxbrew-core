@@ -120,6 +120,7 @@ class Subversion < Formula
       --with-py3c=#{py3c_prefix}
       --with-serf=#{serf_prefix}
       --with-sqlite=#{Formula["sqlite"].opt_prefix}
+      --with-swig=#{Formula["swig"].opt_prefix}
       --with-zlib=#{zlib}
       --without-apache-libexecdir
       --without-berkeley-db

@@ -20,6 +20,8 @@ class Serf < Formula
   depends_on "gox" => :build
   depends_on "zip" => :build unless OS.mac?
 
+  uses_from_macos "zip" => :build
+
   def install
     ldflags = %W[
       -X github.com/hashicorp/serf/version.Version=#{version}

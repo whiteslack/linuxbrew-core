@@ -18,7 +18,9 @@ class Stdman < Formula
     sha256 "896792691a9723846f4e01d5fb1e5d882650bcde6a0842f499a509cd954a5922" => :x86_64_linux
   end
 
-  depends_on "man-db" => :test unless OS.mac?
+  on_linux do
+    depends_on "man-db" => :test
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}"

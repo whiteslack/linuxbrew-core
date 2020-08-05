@@ -18,18 +18,20 @@ class Spades < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "libomp" if OS.mac?
   depends_on "python@3.8"
-
-  # Fix cmake error:
-  # Performing Test HAVE_CPU_SPINWAIT
-  # Performing Test HAVE_CPU_SPINWAIT - Failed
-  depends_on "jemalloc" unless OS.mac?
-  depends_on "readline" unless OS.mac?
 
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "jemalloc"
+    depends_on "readline"
+  end
 
   def install
     mkdir "src/build" do

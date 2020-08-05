@@ -1,14 +1,14 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https://solidity.readthedocs.io"
-  url "https://github.com/ethereum/solidity/releases/download/v0.6.12/solidity_0.6.12.tar.gz"
-  sha256 "214bd37867d59c0f2f22dbaf10fd8eea2a58c9055c853c5016d26ad7091d5776"
+  url "https://github.com/ethereum/solidity/releases/download/v0.7.0/solidity_0.7.0.tar.gz"
+  sha256 "86e782a88eaaf4aa98f4e1e915f46b5bc5f596ea86c784fb911dc6e4c04309bf"
   license "GPL-3.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fdc25fe91c43bdfe39cf0c49f7729bf5968bcf8bda5613fed5c0c7a49d3019d7" => :catalina
-    sha256 "feec8ba23058fe088ac1cfcebadc0151a519382921d5b65514193e8421bef61b" => :mojave
+    sha256 "5209699ab951053a13d543f5dd89ab13e2a7497d7a08f08cacc0b7569b78a030" => :catalina
+    sha256 "a63c97433d7f12952833bf8738922e6745b10d2e7ca22dfe35a1054e6ca30158" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -25,7 +25,7 @@ class Solidity < Formula
   test do
     (testpath/"hello.sol").write <<~EOS
       // SPDX-License-Identifier: GPL-3.0
-      pragma solidity ^0.6.0;
+      pragma solidity ^0.7.0;
       contract HelloWorld {
         function helloWorld() external pure returns (string memory) {
           return "Hello, World!";
