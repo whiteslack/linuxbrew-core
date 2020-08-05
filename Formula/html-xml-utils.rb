@@ -10,6 +10,7 @@ class HtmlXmlUtils < Formula
     sha256 "ef675b85f70efc449e2f64e28dae04434ea984214a1c3c4e92d78c8d21975878" => :catalina
     sha256 "b35399870d1a81ee93bfa03fcf191148ddd8775280b038ee3c0fc55b71a9fcb4" => :mojave
     sha256 "4ec7374987c3ab57fdc4b33596e934e62b37c437c6114b190fdf026029f6329c" => :high_sierra
+    sha256 "5b173ee2f9234a3cf57efb5c543e6821140b3a47ac0c557e1f1951f2f6004710" => :x86_64_linux
   end
 
   def install
