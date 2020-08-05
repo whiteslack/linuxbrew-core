@@ -5,8 +5,8 @@ class Rust < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.45.1-src.tar.gz"
-    sha256 "ea53e6424e3d1fe56c6d77a00e72c5d594b509ec920c5a779a7b8e1dbd74219b"
+    url "https://static.rust-lang.org/dist/rustc-1.45.2-src.tar.gz"
+    sha256 "b7a3fc1e3ee367260ef945da867da0957f8983705f011ba2a73715375e50e308"
 
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git",
@@ -16,10 +16,9 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 "825ab73358b796efc7be4f47fe1c62009cd43b05b2631acfaac343baedf737b8" => :catalina
-    sha256 "f641fd3fb4902b66e5334aa8b9c26c1c80e81e378a0c013facc2a83dc546a827" => :mojave
-    sha256 "20041687555f8de92b5209ee898104ed9ff29a5a8810f74a239a4214c41f39a5" => :high_sierra
-    sha256 "aca65595d2c3109aabf8b041942f9469bdb0471e4285f4f41082c3160820db4f" => :x86_64_linux
+    sha256 "5c7983be67e13ea795d651c5268109cac23fd05c54e30bf0f6581ea124fcc6a8" => :catalina
+    sha256 "f7e9f667d371dff2adf49e5d2a7faf4a7509d1672e6523d01ad0645231e8bfee" => :mojave
+    sha256 "b6c65cebb30e0370cff74ef0d4bd1556ce7843db0e969cb9bb130d3fe50ee065" => :high_sierra
   end
 
   head do
