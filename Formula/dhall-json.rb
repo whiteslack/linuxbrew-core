@@ -7,6 +7,7 @@ class DhallJson < Formula
   head "https://github.com/dhall-lang/dhall-haskell.git"
 
   bottle do
+    cellar :any_skip_relocation
     sha256 "f2f991304d825504e92d5fd7b55416f6ec1189ab7e5a28c389cad9f0e12e1655" => :catalina
     sha256 "eea78eac300ae29de3546034c57a61ca70add32fcb27c2814bab7cc3f44bd4f1" => :mojave
     sha256 "5278e209697b20d484a47dd4fe691328a486ddabf0db531972114c2415192cfc" => :high_sierra
