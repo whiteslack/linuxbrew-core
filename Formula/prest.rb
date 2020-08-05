@@ -11,6 +11,7 @@ class Prest < Formula
     sha256 "194d431f1723c23f8a074753447159e6cfda53e7312a554e28952b7742dd6895" => :catalina
     sha256 "b9278e8a7863a8e63e2f9bbdbf50aa7d97f354d54c421bf6442c6c7ffaec8522" => :mojave
     sha256 "d2ad5f27bac070fb8a4113c67accb6cf1f4280c03623577aa87e28bfed139f17" => :high_sierra
+    sha256 "ffbc66c0f9a6da0cca88bbceece89b49c4c366e13f68cf6beb4c4f5972ab0770" => :x86_64_linux
   end
 
   depends_on "go" => :build
