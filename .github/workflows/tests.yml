@@ -3,6 +3,10 @@ on:
   push:
     branches: master
   pull_request: []
+env:
+  HOMEBREW_DEVELOPER: 1
+  HOMEBREW_GITHUB_ACTIONS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
 jobs:
   tap_syntax:
     if: github.repository == 'Homebrew/linuxbrew-core'
@@ -85,14 +89,10 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Run brew test-bot --only-cleanup-before
-        run:  |
-          pwd
-          brew test-bot --only-cleanup-before
+        run: brew test-bot --only-cleanup-before
 
       - name: Run brew test-bot --only-setup
-        run: |
-          pwd
-          brew test-bot --only-setup
+        run: brew test-bot --only-setup
 
       - name: Run brew test-bot --only-formulae
         run: |
@@ -109,7 +109,7 @@ jobs:
 
       - name: Upload logs
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: logs (Linux)
           path: bottles/logs
@@ -135,7 +135,7 @@ jobs:
 
       - name: Upload bottles
         if: always() && steps.bottles.outputs.count > 0
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: bottles
           path: bottles
