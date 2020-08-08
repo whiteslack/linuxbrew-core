@@ -80,20 +80,19 @@ jobs:
     env:
       HOMEBREW_PATCHELF_RB: 1
     steps:
-      - name: Update Homebrew
-        run: brew update-reset
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Set up Git repository
-        run: |
-          cd $(brew --repo ${{github.repository}})
-          git clean -ffdx
-          git fetch --prune --force origin master
-          git fetch --prune --force origin ${{github.sha}}
-          git checkout --force ${{github.sha}}
-          git log -1
+      - name: Run brew test-bot --only-cleanup-before
+        run:  |
+          pwd
+          brew test-bot --only-cleanup-before
 
       - name: Run brew test-bot --only-setup
-        run: brew test-bot --only-setup
+        run: |
+          pwd
+          brew test-bot --only-setup
 
       - name: Run brew test-bot --only-formulae
         run: |
@@ -118,8 +117,8 @@ jobs:
       - name: Delete logs and home
         if: always()
         run: |
-          rm -rf bottles/logs
-          rm -rf bottles/home
+          rm -rvf bottles/logs
+          rm -rvf bottles/home
 
       - name: Count bottles
         id: bottles
@@ -140,3 +139,11 @@ jobs:
         with:
           name: bottles
           path: bottles
+
+      - name: Run brew test-bot --only-cleanup-after
+        if: always()
+        run: brew test-bot --only-cleanup-after
+
+      - name: Post Cleanup
+        if: always()
+        run: rm -rvf bottles
