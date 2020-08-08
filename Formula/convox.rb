@@ -1,17 +1,16 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https://convox.com/"
-  url "https://github.com/convox/convox/archive/3.0.37.tar.gz"
-  sha256 "93540ce275e54208aa4dfa68e13f5905fbb011e2d2b0468c6bc18653c31fa376"
+  url "https://github.com/convox/convox/archive/3.0.38.tar.gz"
+  sha256 "5ab341efe1b0277e8c911132d69275f0c16cbd8f0662c3f78c596ec9d7a5d73c"
   license "Apache-2.0"
   version_scheme 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "34e4b16f3073470d2355a512c8e32290b7aa3d008ed8a3812fbf596eb2ffd840" => :catalina
-    sha256 "86ee7d68ca0957a877923501931e0edf23fb8b3c7a7947e147be6bbfc6a9f78c" => :mojave
-    sha256 "e47cff8d65624dfd19ae8dfee72166bc6096d62dbd97985b7fcb6dae2841a4b5" => :high_sierra
-    sha256 "96d2f65733bedb0051df09a74014cf2e0d58db11cdb77d7746775fc51589db66" => :x86_64_linux
+    sha256 "ac3a83694bc173fda6a606dfea636e81502fbd7c157b86caad08832089ce1476" => :catalina
+    sha256 "820a0875da7eb54163538565619afbd685580c7b8a55c956b6deebb9c5dbcbae" => :mojave
+    sha256 "df658e99deb12cd108d4ec2bfdae0418c3f224554bcf0b5913fa6c04104e803e" => :high_sierra
   end
 
   depends_on "go" => :build

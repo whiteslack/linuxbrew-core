@@ -1,16 +1,15 @@
 class GoAT113 < Formula
   desc "Go programming environment (1.13)"
   homepage "https://golang.org"
-  url "https://dl.google.com/go/go1.13.14.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.13.14.src.tar.gz"
-  sha256 "197333e97290e9ea8796f738d61019dcba1c377c2f3961fd6a114918ecc7ab06"
+  url "https://golang.org/dl/go1.13.15.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.13.15.src.tar.gz"
+  sha256 "5fb43171046cf8784325e67913d55f88a683435071eef8e9da1aa8a1588fcf5d"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 "1b95cff8f94bcf3926511d4bac481e6593eaff5a47b2547e70cad7f6c733b794" => :catalina
-    sha256 "c36ef71328bab2c9229d91bbc9b7477ad56fa010aad022a197675cdda4c65486" => :mojave
-    sha256 "00f0a722e2dee59002d6adc91571505e047361dff60e2f466ab1e230edd0b042" => :high_sierra
-    sha256 "a87853172ddba92337ae684e569b2b446ed76e668e7dc9de7c0d4eb06ca9aada" => :x86_64_linux
+    sha256 "49a97032a5641ebbfffba0e8deeb76124edf05e1be75345a4599d07b9f4c857c" => :catalina
+    sha256 "c2c1b700fc0600b32c13911505065681842fc952472a4b4e9a79f8f3c7a365c0" => :mojave
+    sha256 "8ad6f03c6ff53c474fc486f14f184b960dab184d3228dd43146d20803f67831f" => :high_sierra
   end
 
   keg_only :versioned_formula
