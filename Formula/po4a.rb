@@ -15,6 +15,7 @@ class Po4a < Formula
     sha256 "8caa5beaaa149a61cc1e491e2d38311dfaf4d5079bb059e407a97338780d6674" => :catalina
     sha256 "d6fab13fda127a91eeadbb7e4d031cc7e9d0f7292fef8579539db76228b908f9" => :mojave
     sha256 "31ef1111f0d6d4a1ff0f50d37dbacaef5e0d017fa0f95c621d4d395bcda9b616" => :high_sierra
+    sha256 "4ee90867593711b561779612502057d655016398a22cb09a1d600968c10838b5" => :x86_64_linux
   end
 
   depends_on "docbook-xsl" => :build
