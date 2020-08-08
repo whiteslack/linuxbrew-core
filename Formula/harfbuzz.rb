@@ -11,6 +11,7 @@ class Harfbuzz < Formula
     sha256 "298feb4c557de8daca542b5cf41c12256c594c09d5de0d68624bd6b1f7f3c8f1" => :catalina
     sha256 "f8b9aed2377e3861e670c6da69c62f974f1f1550b0fb873a213f429aef10806b" => :mojave
     sha256 "ae608cdcfccd5be5d27f105daecdbce3fdb9c4d93f046a5783a96f2c74ba011c" => :high_sierra
+    sha256 "0fceff4d6205900e499cde14c21836b0a4cc46e18a306b3f2a114dac2ab0b60d" => :x86_64_linux
   end
 
   depends_on "meson" => :build
