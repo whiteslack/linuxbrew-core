@@ -12,6 +12,7 @@ class Lbzip2 < Formula
     sha256 "6643ba1c0f17a13e742383c69112df62c1d6bce80e6833d717df4e112922deb5" => :catalina
     sha256 "5f7f053aac95586cdcacb2528fe4540bd16522707e9d7bbbf8e6d38012378e06" => :mojave
     sha256 "3d4e0de242b81f83ba2addd163688647288fb17f3a3ae3ccd37a2e62f20871d4" => :high_sierra
+    sha256 "5af0781c6e8d4c6b55f712b1404078ae3806fb483e26ba2a5ec24d051f4df0fe" => :x86_64_linux
   end
 
   # Fix crash on macOS >= 10.13.
