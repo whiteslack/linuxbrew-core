@@ -11,6 +11,7 @@ class PhpAT72 < Formula
     sha256 "b86f79fa92eee0dba80c2a5fdc958613a013db6e9d4f9a902e41afe3f3a10561" => :catalina
     sha256 "2c9d66ca8e40ccfd9f58eed7775a248d061b539551c9cdc105c4e80df5be48d0" => :mojave
     sha256 "88bdd9f91682b8cd1cd47214976cf443a7e22485e361f8036e54c6d2b63ed37d" => :high_sierra
+    sha256 "732e94722a01a745ac768fd3a9466a263313e553607ef42cb62df0da2e84d04f" => :x86_64_linux
   end
 
   keg_only :versioned_formula
