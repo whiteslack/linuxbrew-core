@@ -1,17 +1,17 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0222.tar.gz"
-  version "0.222"
-  sha256 "3380b86d1bc5bc09f5bb4099f3833b6fba924a8bd189aac4dab149afba799ce7"
+  url "https://github.com/mamedev/mame/archive/mame0223.tar.gz"
+  version "0.223"
+  sha256 "d94685aabe28e9bb2374162e3ca070949b67e3e97cc50eb25558baed5b8d3591"
   license "GPL-2.0"
   head "https://github.com/mamedev/mame.git"
 
   bottle do
     cellar :any
-    sha256 "e0c8c80f0844a58de81334a8ce0d65bb92134d9941a21a07137c99dfcc348236" => :catalina
-    sha256 "180c4629cee72f5ff6ecd6dbf03c96d161129e74b348f0ccb99300a786f17226" => :mojave
-    sha256 "0965eb18c1272ae4ebbbe7113c184d18243f899b22b9b986ea9091c7eec99b44" => :high_sierra
+    sha256 "4b20514f03365966c723bafcb33ea11e4b6f65fb41e31abd9de09113b26d9dd0" => :catalina
+    sha256 "9bc473e2d0fd9b047d8136277f03bb20f750d87c13463342ba561029c9379277" => :mojave
+    sha256 "11c3c02304835a62add02f11484c7c392905f16c5460d641550757fbaec79745" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -23,13 +23,18 @@ class RomTools < Formula
   depends_on "sdl2"
   depends_on "utf8proc"
 
+  uses_from_macos "expat"
+  uses_from_macos "zlib"
+
   def install
+    # Cut sdl2-config's invalid option.
     inreplace "scripts/src/osd/sdl.lua", "--static", ""
+
     system "make", "TOOLS=1",
                    "USE_LIBSDL=1",
                    "USE_SYSTEM_LIB_EXPAT=1",
                    "USE_SYSTEM_LIB_ZLIB=1",
-                   "USE_SYSTEM_LIB_ASIO=0",
+                   "USE_SYSTEM_LIB_ASIO=",
                    "USE_SYSTEM_LIB_FLAC=1",
                    "USE_SYSTEM_LIB_UTF8PROC=1"
     bin.install %w[

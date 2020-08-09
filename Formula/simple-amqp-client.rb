@@ -1,17 +1,16 @@
 class SimpleAmqpClient < Formula
   desc "C++ interface to rabbitmq-c"
   homepage "https://github.com/alanxz/SimpleAmqpClient"
-  url "https://github.com/alanxz/SimpleAmqpClient/archive/v2.5.0.tar.gz"
-  sha256 "ba7d6bfb2ac0fc31d5c98bf103f180e3ed3dd9a5902de533fd94417e15c577a6"
+  url "https://github.com/alanxz/SimpleAmqpClient/archive/v2.5.1.tar.gz"
+  sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
   head "https://github.com/alanxz/SimpleAmqpClient.git"
 
   bottle do
     cellar :any
-    sha256 "b828d93b62004e7433395e301b49c34684fbc1c04be449b644fac2c48383059d" => :catalina
-    sha256 "e1db52f944e4ef3ae5dea668bab5d867998b2a6ef12b0c23efdf6b436a18e293" => :mojave
-    sha256 "38a2c4ce935b19f60a81a1e396b8a00b034612ad76f35b1de0d327afe12cc07e" => :high_sierra
-    sha256 "849d485dce8befe0263f80482d0c7f6ebba4ff26d13cdb6dcb0b590aa2ece2d2" => :x86_64_linux
+    sha256 "97ceed4ae134cb5f01dc3c5efdafaccf3374aee7c748217eba9bb8624edb74dc" => :catalina
+    sha256 "42bf1dcae157dc5e3ad6c274cfff63e0599d1c1fa2ed634696a26ec499e6b18f" => :mojave
+    sha256 "0df2d53228ce5b30d670a67b36b8440158d4773c55c206456fc2762c7e820cec" => :high_sierra
   end
 
   depends_on "cmake" => :build
