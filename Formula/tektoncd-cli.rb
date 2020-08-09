@@ -2,14 +2,15 @@ class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
   homepage "https://github.com/tektoncd/cli"
   url "https://github.com/tektoncd/cli/archive/v0.11.0.tar.gz"
-  sha256 "3573fd6908d2c36b112ae0ee9c82d31ff7a325779c7779f0611518c6742fed07"
+  sha256 "cce12b9674e9e4891b870be24fd46d0877fb15ce23a790c90d68a5d7817e151b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6d86bb4f643c1fd7d7391a1d96b77bad7c1d87a2ce3e29c86ae09449f2a43f1d" => :catalina
-    sha256 "1653d2cb638af1112ddfd74f16f05f00cbfb6271c783a9a6b83c4e620e9252c3" => :mojave
-    sha256 "a0532c74eaaf19639af4ba9fb7da499b5cf59b96436a15ed1b6ae869e17cac95" => :high_sierra
+    sha256 "74a9712359456c14b1cc738a12a15272b0ceee75810c7a6cf6318b9246c04e4f" => :catalina
+    sha256 "1f82ba118242a987d09c5bf0c9a0f21bbdb9de07d72ccbb33ca9d3cf5ab6e464" => :mojave
+    sha256 "0af75cfd0ce62d3de8d667b8e4e45967397b388ade7aff13a6d3053209ff2be0" => :high_sierra
   end
 
   depends_on "go" => :build

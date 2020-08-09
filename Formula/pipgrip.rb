@@ -3,16 +3,15 @@ class Pipgrip < Formula
 
   desc "Lightweight pip dependency resolver"
   homepage "https://github.com/ddelange/pipgrip"
-  url "https://files.pythonhosted.org/packages/8a/fd/308a624ebeba713523b52402e492238cfb09200b1818b06be18a16cdbd77/pipgrip-0.6.0.tar.gz"
-  sha256 "f7d31f63708a9f6403d315324c43b80904e864028578d34e2b6351907212266e"
+  url "https://files.pythonhosted.org/packages/23/ae/2fd700b44b86f4bfbb0943be60043e92a35c73e96f3b075ba295cf687d34/pipgrip-0.6.1.tar.gz"
+  sha256 "b2dcd453e509185fba95ba36c14955ed27c81f5ab8f620818a21b8d7c5909737"
   license "BSD-3-Clause"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0a5dbaff192f2dab80d62b99510df7f67156a72fa6ab2097fa904410c53f9566" => :catalina
-    sha256 "34eda1c5b41ae45fd81e8b86ac551eb4a0e465cd05b370885e0bdba1b2371a04" => :mojave
-    sha256 "945c6ae070f7781192d00b5cedb84b2e36b1f7fd85e9074278fd80936bc565bf" => :high_sierra
-    sha256 "b5b021846b4c5ae21691d36747e2a5b087bca6e60b394160f5d667421977a4d1" => :x86_64_linux
+    sha256 "f1900bb48ed969bb4b9b104eba2fdb244c29c03d5c39d14c1633c0690198e985" => :catalina
+    sha256 "26604789c5d2f0be7130703381ca973076fc6668c47e7bdcb43df26cc6c984cb" => :mojave
+    sha256 "c8d6b195dc3b5d9370b91adbbfe6807d24adfbd33eb14f4cc290ac9e948f2118" => :high_sierra
   end
 
   depends_on "gcc"

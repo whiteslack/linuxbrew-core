@@ -1,16 +1,15 @@
 class Httpd < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.43.tar.bz2"
-  mirror "https://archive.apache.org/dist/httpd/httpd-2.4.43.tar.bz2"
-  sha256 "a497652ab3fc81318cdc2a203090a999150d86461acff97c1065dc910fe10f43"
+  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.46.tar.bz2"
+  mirror "https://archive.apache.org/dist/httpd/httpd-2.4.46.tar.bz2"
+  sha256 "740eddf6e1c641992b22359cabc66e6325868c3c5e2e3f98faf349b61ecf41ea"
   license "Apache-2.0"
 
   bottle do
-    sha256 "016ec294067375e0a0080d1c06812e4323b9d834452e937057e3c84387c44f02" => :catalina
-    sha256 "628617d2cc60534dc6cb78cc971de32b9724757498f194dc900ad5e5d1e6f56a" => :mojave
-    sha256 "71ab239430eb1709ff16ecc0a991e6e10f8bdd320889515f5ba88cf018f91255" => :high_sierra
-    sha256 "c536aaa2b1b0396f6c80d22b4923ae03dbd182c500028dfc61ba8f92162f2a44" => :x86_64_linux
+    sha256 "8c6b348427bd5c43d784dd5ae6261304e4218607cace3f264e016819c3118527" => :catalina
+    sha256 "e561f825dc044083a10d85d0faa4f785d95466e827d20264702078c58fd900ac" => :mojave
+    sha256 "aede7239a3d25119c493644cac072fc953f3b1d5a4c490558781ad9ac5000504" => :high_sierra
   end
 
   depends_on "apr"
