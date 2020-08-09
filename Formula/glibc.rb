@@ -15,22 +15,38 @@ class BrewedGlibcNotOlderRequirement < Requirement
   end
 end
 
-class GawkRequirement < Requirement
-  fatal true
-
-  satisfy(build_env: false) do
-    # Returning which("gawk") causes a cyclic dependency.
-    !which("gawk").nil?
-  end
-
+class GlibcBaseRequirement < Requirement
   def message
+    tool = self.class::TOOL
+    version = self.class::VERSION
     <<~EOS
-      gawk is required to build glibc.
-      Install gawk with your host package manager if you have sudo access.
-        sudo apt-get install gawk
-        sudo yum install gawk
+      #{[tool, version].compact.join(" ")} is required to build glibc.
+      Install #{tool} with your host package manager if you have sudo access:
+        sudo apt-get install #{tool}
+        sudo yum install #{tool}
     EOS
   end
+end
+
+class GawkRequirement < GlibcBaseRequirement
+  fatal true
+  satisfy(build_env: false) { which(TOOL).present? }
+  TOOL = "gawk".freeze
+  VERSION = "3.1.2 (or later)".freeze
+end
+
+class MakeRequirement < GlibcBaseRequirement
+  fatal true
+  satisfy(build_env: false) { which(TOOL).present? }
+  TOOL = "make".freeze
+  VERSION = "3.79 (or later)".freeze
+end
+
+class SedRequirement < GlibcBaseRequirement
+  fatal true
+  satisfy(build_env: false) { which(TOOL).present? }
+  TOOL = "sed".freeze
+  VERSION = nil
 end
 
 class LinuxKernelRequirement < Requirement
@@ -48,7 +64,7 @@ class LinuxKernelRequirement < Requirement
 
   def message
     <<~EOS
-      Linux kernel version #{MINIMUM_LINUX_KERNEL_VERSION} or greater is required by glibc.
+      Linux kernel version #{MINIMUM_LINUX_KERNEL_VERSION} or later is required by glibc.
       Your system has Linux kernel version #{linux_kernel_version}.
     EOS
   end
@@ -64,9 +80,11 @@ class Glibc < Formula
     sha256 "654794e9e18c2401f1101a3fcf0a85eda448b4b969e9a99782a3f4f4659feda4" => :x86_64_linux
   end
 
-  depends_on "binutils" => :build # binutils 2.20 or later is required
+  depends_on "binutils" => :build
   depends_on GawkRequirement => :build
-  depends_on "linux-headers" => :build # Linux kernel headers 2.6.19 or later are required
+  depends_on "linux-headers" => :build
+  depends_on MakeRequirement => :build
+  depends_on SedRequirement => :build
   depends_on BrewedGlibcNotOlderRequirement
   depends_on :linux
   depends_on LinuxKernelRequirement
@@ -149,7 +167,7 @@ class Glibc < Formula
     ohai "Installing locale data for #{locales.join(" ")}"
     locales.each do |locale|
       lang, charmap = locale.split(".", 2)
-      if !charmap.nil?
+      if charmap.present?
         system bin/"localedef", "-i", lang, "-f", charmap, locale
       else
         system bin/"localedef", "-i", lang, locale
