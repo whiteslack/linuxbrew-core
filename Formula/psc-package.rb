@@ -10,6 +10,7 @@ class PscPackage < Formula
     sha256 "f5baac6c49a67991b2ed0f2a2ba34898317e9cfd6864e8b446fb159f80ae04ec" => :catalina
     sha256 "e6cd795e5eade3414e2149f4fe4d529468293b122659ed5bd8b2b4df716c77cf" => :mojave
     sha256 "0b0411dfd516bac15b2e99cba163dbc3c77742eae9e09038ac85ef1793ce767c" => :high_sierra
+    sha256 "639ef15d05947764b5e513ec8390ce27d680389050ba8b039323d9759ecec2f9" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
