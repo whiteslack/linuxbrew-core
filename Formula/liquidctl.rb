@@ -3,16 +3,16 @@ class Liquidctl < Formula
 
   desc "Cross-platform tool and drivers for liquid coolers and other devices"
   homepage "https://github.com/jonasmalacofilho/liquidctl"
-  url "https://files.pythonhosted.org/packages/43/37/7d30f2ba5eade8715c8981d552bcc6b67a039426fc32aa2722b5af321e67/liquidctl-1.4.0.tar.gz"
-  sha256 "b35e6f297e67f9e145794bb57b88c626ef2bfd97e7fbb5b098f3dbf9ae11213e"
+  url "https://files.pythonhosted.org/packages/7d/92/5f6eb3f70e4de0241301927593a12e4622e89a9445f5e87bdbb19ddd5a62/liquidctl-1.4.1.tar.gz"
+  sha256 "59a3bc65b3f3e71a5714224401fe6e95dfdee591a1d6f4392bc4e6d6ad72ff8d"
   license "GPL-3.0"
   head "https://github.com/jonasmalacofilho/liquidctl.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cb1825861905de403f759203b015a7e3fca7ba814e0a364b93426f21ff28553b" => :catalina
-    sha256 "89f6b2caa75d40bb321783eea887c1298a6467cdd517cbe2f9ad14c4b6acfd15" => :mojave
-    sha256 "af6b3aa6900598d9524a42dc572ad0c28bc6a05f10e67b5459ec67c560c42d88" => :high_sierra
+    sha256 "2ac17a2c76c3e9573fa25446b3163d6d12971717a5fffe398a0bfed1b96cc0cb" => :catalina
+    sha256 "751f952fd1716a93878e4260706f9b704bb7131cd187426caa66092e6ea442de" => :mojave
+    sha256 "a792d9ed36334e5b7a3d56b84445a630dd5cfc1124cf1da1271399368d0e7214" => :high_sierra
   end
 
   depends_on "libusb"

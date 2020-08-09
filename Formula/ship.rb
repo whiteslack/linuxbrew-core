@@ -1,15 +1,15 @@
 class Ship < Formula
   desc "Reducing the overhead of maintaining 3rd-party applications in Kubernetes"
   homepage "https://www.replicated.com/ship"
-  url "https://github.com/replicatedhq/ship/archive/v0.54.0.tar.gz"
-  sha256 "5bff93a970e7f22639fd37ca191ff934861bf8467b458c51006136075e459224"
+  url "https://github.com/replicatedhq/ship/archive/v0.54.1.tar.gz"
+  sha256 "b5448af60bc278984fddeec5f069ec9a48e64f2100d656c9c18e3b39707218f2"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4fe2c014d97b6d08c2710e0f11f120a562f31e1dd3e147a74b41c360d1c832c5" => :catalina
-    sha256 "08e63b59f92f5ed0661d9a06a0b96112376ea99d561ce5934008e88fce21ac6c" => :mojave
-    sha256 "6cb5f8cff9bc46dac11e7042db51aad959b21398764434ac44e5b9d836ccbc86" => :high_sierra
+    sha256 "4dd63ad1bc12b9e1d359d763ea4e4e51ef93a0b3a0c711fd897e7c53ec6642b3" => :catalina
+    sha256 "883a7b5236bfafaf23b748218b09ae75ac9d1420c0c5e0cd2ba9ffb6a3c2cef0" => :mojave
+    sha256 "f6069bab80cc5dde1e19b353ed41faf449f299a5cf97f61aac8ea3a76cc4b22f" => :high_sierra
   end
 
   depends_on "go" => :build

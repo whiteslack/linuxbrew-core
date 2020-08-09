@@ -1,13 +1,13 @@
 class Swift < Formula
   desc "High-performance system programming language"
   homepage "https://swift.org"
-  url "https://github.com/apple/swift/archive/swift-5.2.4-RELEASE.tar.gz"
-  sha256 "94c44101c3dd6774887029110269bbaf9aff68cce5ea0783588157cc08d82ed8"
+  url "https://github.com/apple/swift/archive/swift-5.2.5-RELEASE.tar.gz"
+  sha256 "2353bb00dada11160945729a33af94150b7cf0a6a38fbe975774a6e244dbc548"
   license "Apache-2.0"
 
   bottle do
-    sha256 "3ab59265cd42fb656737cddfa4a31012d50762526623a7ccb6655846e9609398" => :catalina
-    sha256 "62f5bf3be8b993ce5647d768b232edfec4bb908cbc87d01002caeff14757d32d" => :mojave
+    sha256 "46a8fe5334749039cca2b04a20e1f0e94977ada7490cacbe50c92c355d7f4164" => :catalina
+    sha256 "0c89bf717243451df78d8e74c789b64b12d8320ca5eb13ee324e86371c77beb0" => :mojave
   end
 
   keg_only :provided_by_macos
