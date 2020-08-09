@@ -1,14 +1,14 @@
 class KdeKarchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/frameworks/karchive/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.72/karchive-5.72.0.tar.xz"
-  sha256 "d1857451305bbc06c2391f1be2aa59836291910391f4f26f243e8f038a47ef5a"
+  url "https://download.kde.org/stable/frameworks/5.73/karchive-5.73.0.tar.xz"
+  sha256 "25481ebbba8f58d9ab45bde804ab0d873c45550b482e27e7856b362cd9aa434f"
   head "https://invent.kde.org/frameworks/karchive.git"
 
   bottle do
-    sha256 "54e816adb054461eb004a484baf6ab29d201e1dec85309b7c2ed4dbe04cd6863" => :catalina
-    sha256 "4a4773abfbe0af53b760cdc5f6f459a47652c5b1d87bac81c6ae5f1232bb09ec" => :mojave
-    sha256 "98b2171ec9bfd30ef828e95b63b2ce737f7b04aaefb6fa0c0ed837de167f06e3" => :high_sierra
+    sha256 "5d5993edc094152be0659cf0c8f6bec828aa8f0ceb187644958bd80936af3c67" => :catalina
+    sha256 "cd68910063856432b3f983a0d9ee7eb8faff9d0328221dded1c89daef11d8bdb" => :mojave
+    sha256 "79f0a91cc9dcaf24a033b23c4b46269244a4f4642ec6c68756e29b735aa9e2aa" => :high_sierra
   end
 
   depends_on "cmake" => [:build, :test]

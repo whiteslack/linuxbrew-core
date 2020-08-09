@@ -1,28 +1,24 @@
-require "language/haskell"
-
 class Shelltestrunner < Formula
-  include Language::Haskell::Cabal
-
   desc "Portable command-line tool for testing command-line programs"
   homepage "https://github.com/simonmichael/shelltestrunner"
   url "https://hackage.haskell.org/package/shelltestrunner-1.9/shelltestrunner-1.9.tar.gz"
   sha256 "cbc4358d447e32babe4572cda0d530c648cc4c67805f9f88002999c717feb3a8"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "330c8aeff49dc1901a460586c90ce7540ad33451a4fa94ec4917ad2959780adc" => :catalina
-    sha256 "f1f921cc6c8fd64b1b99f483e47f1f06c4b8a39f74a823ac96df22cef9d5cf34" => :mojave
-    sha256 "f494b35cab29e3a942562230b461c44a8274f7564e8863400fdf68176f3b292d" => :high_sierra
-    sha256 "2b45d7754293903b1b61b93f367f30ffcf518c926081a25c7a67a24d938cc0be" => :x86_64_linux
+    sha256 "f4b8567777ed9313c913b29a45874c02cc517d5cf379a67e22797993e6b264c2" => :catalina
+    sha256 "4e47bf2909e2092bfcb53f03314ee83fd4011c703fddbca74451546aed6a09f0" => :mojave
+    sha256 "8f5b11e3b03a9e1b10623aad6aa7783f3b51975bc516fbe93df44867e34b3371" => :high_sierra
   end
 
   depends_on "cabal-install" => :build
   depends_on "ghc@8.8" => :build
 
   def install
-    install_cabal_package using: ["happy"]
+    system "cabal", "v2-update"
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do

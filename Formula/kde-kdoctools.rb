@@ -1,14 +1,14 @@
 class KdeKdoctools < Formula
   desc "Create documentation from DocBook"
   homepage "https://api.kde.org/frameworks/kdoctools/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.72/kdoctools-5.72.0.tar.xz"
-  sha256 "28836a88fd7107386b3a4c1037458d330d42dea7fa8213d06e9912dc5e19253b"
+  url "https://download.kde.org/stable/frameworks/5.73/kdoctools-5.73.0.tar.xz"
+  sha256 "d8dd74776d47e009d4a204d69a78428603ca99317095d7b7edca49c3d93b1b5d"
   head "https://invent.kde.org/frameworks/kdoctools.git"
 
   bottle do
-    sha256 "2c6b89009cad1bd129abedd5f3eb01c216c2c9b53fa712a68f2552ed7c779122" => :catalina
-    sha256 "98afe3eeefc5af7fa8f52bf128dc93ec25198ac60c5fc590d35409fc09b1ecc0" => :mojave
-    sha256 "6b1fec3f94d540be8903da06086686478dbc258a73ea6945b73a1b5eae137284" => :high_sierra
+    sha256 "e652121fcb077c55b3b3ab2c2770c1641e1fc4fdb66c1c7b79f6dffd69d944bc" => :catalina
+    sha256 "a5a8e1774f647543ed0c589fe66dc1e1b5269012f0296238b28014605e6c9c7d" => :mojave
+    sha256 "98938ebf9005887f434410c1db617eb5f6bd18006f28589be18714ae988f631c" => :high_sierra
   end
 
   depends_on "cmake" => [:build, :test]
@@ -78,7 +78,7 @@ class KdeKdoctools < Formula
 
       remove_definitions(-DQT_NO_CAST_FROM_ASCII)
       add_definitions(-DQT_NO_FOREACH)
-      
+
       add_subdirectory(autotests)
       add_subdirectory(tests/create-from-current-dir-test)
       add_subdirectory(tests/kdoctools_install-test)
