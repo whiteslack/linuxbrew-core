@@ -12,6 +12,7 @@ class Tox < Formula
     sha256 "8a5bc297a82da0e925f4361cb87fc8c6008ae25d60c82a1ef9723065e3846d09" => :catalina
     sha256 "603eeee3b943a444ca746ad8186f2b948900b33ad870fb802f23ca076b680eb2" => :mojave
     sha256 "095eac039fadbd02d9ee26c228b31ede6a5339334844e6c5386502eec15158c2" => :high_sierra
+    sha256 "d11e839d4accb27149fb84d623043f1598ac0429e9a5c899058a48b72a923e6c" => :x86_64_linux
   end
 
   depends_on "python@3.8"
