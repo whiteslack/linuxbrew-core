@@ -55,12 +55,6 @@ jobs:
           cd bottles
           brew test-bot --only-formulae --keep-old
 
-      - name: Output brew test-bot --only-formulae failures
-        if: always()
-        run: |
-          cat ~/bottles/steps_output.txt
-          rm ~/bottles/steps_output.txt
-
       - name: Upload logs
         if: failure()
         uses: actions/upload-artifact@main
