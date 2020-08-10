@@ -45,6 +45,8 @@ jobs:
 
       - run: brew test-bot --only-cleanup-before
 
+      - run: rm steps_output.txt
+
       - run: brew test-bot --only-setup
 
       - name: Run brew test-bot --only-formulae
