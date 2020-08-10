@@ -51,8 +51,8 @@ jobs:
 
       - name: Run brew test-bot --only-formulae
         run: |
-          mkdir bottles
-          cd bottles
+          mkdir ~/bottles
+          cd ~/bottles
           brew test-bot --only-formulae --keep-old
 
       - name: Upload logs
@@ -60,19 +60,19 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: logs (Linux)
-          path: bottles/logs
+          path: ~/bottles/logs
 
       - name: Delete logs and home
         if: always()
         run: |
-          rm -rvf bottles/logs
-          rm -rvf bottles/home
+          rm -rvf ~/bottles/logs
+          rm -rvf ~/bottles/home
 
       - name: Count bottles
         id: bottles
         if: always()
         run: |
-          cd bottles
+          cd ~/bottles
           count=$(ls *.json | wc -l | xargs echo -n)
           echo "$count bottles"
           echo "::set-output name=count::$count"
@@ -82,11 +82,11 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: bottles
-          path: bottles
+          path: ~/bottles
 
       - run: brew test-bot --only-cleanup-after
         if: always()
 
       - name: Post Cleanup
         if: always()
-        run: rm -rvf bottles
+        run: rm -rvf ~/bottles
