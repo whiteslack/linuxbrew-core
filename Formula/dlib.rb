@@ -1,17 +1,16 @@
 class Dlib < Formula
   desc "C++ library for machine learning"
   homepage "http://dlib.net/"
-  url "http://dlib.net/files/dlib-19.20.tar.bz2"
-  sha256 "df9aa456ed5e190597fa8dafc1471670ced0128d0f115f2be7677c9c42f4328d"
+  url "http://dlib.net/files/dlib-19.21.tar.bz2"
+  sha256 "be728a03ae8c4dc8b48408d90392a3c28bc6642a6eb22f3885895b434d7df53c"
   license "BSL-1.0"
-  revision 1
   head "https://github.com/davisking/dlib.git"
 
   bottle do
     cellar :any
-    sha256 "72c4cead9806e3416452ec0acb918f36428b97368189a85f3074864dec0f7229" => :catalina
-    sha256 "7f41f22f65075ff180b306d6e34156d3197a3201cbe862d2fa2ad01d0a70db1d" => :mojave
-    sha256 "f7b967654cd3a85d235ca6406f94fa0ee03be8bd8f4e7a77ab306e77c7864ecf" => :high_sierra
+    sha256 "e2d4bb20a24df712a73fc74c162851dbfededf25391e4ae002858d705cbfb112" => :catalina
+    sha256 "58ad454876f4a987a8fff1df2fc5f7e04693a19cb0ece79eaa7ffb2dcdf18c36" => :mojave
+    sha256 "c34bb491a71eb49ab4eb9af3dd18d2c8557f9f06b14b55b08aa8ed7d3cf6945e" => :high_sierra
   end
 
   depends_on "cmake" => :build

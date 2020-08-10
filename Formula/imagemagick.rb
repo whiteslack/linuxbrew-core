@@ -1,17 +1,16 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://www.imagemagick.org/"
-  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-25.tar.xz"
-  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-25.tar.xz"
-  sha256 "0a125992e63b2a7f13fb966718304fe5f8142192c275d55b497a3bfe1f554ae6"
+  url "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.10-26.tar.xz"
+  mirror "https://www.imagemagick.org/download/releases/ImageMagick-7.0.10-26.tar.xz"
+  sha256 "7bd6c9e9f18093630ff2cb5992b3f4e190f105f73eabf3de1093542f0da8f32b"
   license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git"
 
   bottle do
-    sha256 "d61106e1611c7c285d8b562d69e84fe55293d3104ca578a60e9f8293c96325fd" => :catalina
-    sha256 "eea1d413c394d708e8b649336c1591fa7647f16fc9a45809a714fa9fcced41a8" => :mojave
-    sha256 "fc24076d091df606e3be1faaf85cd2ba0959558ffeb30391e36454287ed23244" => :high_sierra
-    sha256 "d7f5c36febb04caa8708787c78469d4834baf690272ed21fa39815477e571909" => :x86_64_linux
+    sha256 "2705c64b0356f89ba6c25ba0dc8794754c871a17fa8df84943bfe8687ab3ecb0" => :catalina
+    sha256 "41c6450dc293f09f61e0497d3ba697301d50ca138964727e75684cbe9800e0d7" => :mojave
+    sha256 "263b75db2c755191220ecf5f89becfca5fb2e3d903ba45fcc9433eb6bee65cd9" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -32,6 +31,7 @@ class Imagemagick < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
+  uses_from_macos "zlib"
 
   depends_on "linuxbrew/xorg/xorg" unless OS.mac?
 
@@ -65,7 +65,7 @@ class Imagemagick < Formula
       --enable-openmp
       ac_cv_prog_c_openmp=-Xpreprocessor\ -fopenmp
       ac_cv_prog_cxx_openmp=-Xpreprocessor\ -fopenmp
-      LDFLAGS=-lomp
+      LDFLAGS=-lomp\ -lz
     ]
 
     # versioned stuff in main tree is pointless for us
