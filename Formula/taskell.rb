@@ -14,6 +14,7 @@ class Taskell < Formula
     sha256 "d5590cb08683d0df90ae9e13dc2059d1b4fb25adc6641d2a11518ae7f2b1798f" => :catalina
     sha256 "6e5d96a506ed0708e03de2c8addf294059c09c63790f93020d0ea4a5c8f06358" => :mojave
     sha256 "8f2534b0801b19657a2351bd5e36cf4f747f807431f61acad94fb02c310eda95" => :high_sierra
+    sha256 "1ab7cf6c12bae906c3a0fedf9ec60eb06bfbb6f7c7b4fdb365c7fb40378ce7df" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
