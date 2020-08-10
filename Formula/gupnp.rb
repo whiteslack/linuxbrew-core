@@ -3,14 +3,14 @@ class Gupnp < Formula
 
   desc "Framework for creating UPnP devices and control points"
   homepage "https://wiki.gnome.org/Projects/GUPnP"
-  url "https://download.gnome.org/sources/gupnp/1.2/gupnp-1.2.3.tar.xz"
-  sha256 "d447e54d88e4a8fab84ad1766070e9208e21166fc7e2ce95df6e33e49e8d29b1"
-  revision 1
+  url "https://download.gnome.org/sources/gupnp/1.2/gupnp-1.2.4.tar.xz"
+  sha256 "f7a0307ea51f5e44d1b832f493dd9045444a3a4e211ef85dfd9aa5dd6eaea7d1"
+  license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 "da351b27a2193be5d836bd5fbd31aab7706f1426b1b6ba9da8c90d2022f4d01c" => :catalina
-    sha256 "3b1e7a276f6f54f95bcfc0931fe44b33ffbf2d5b9b7c3209262c52e9dede0c4d" => :mojave
-    sha256 "f5bb73541890d0571feb5ebef958bfb9dff3fc0ff800dce0ac7caa3f1b6a7714" => :high_sierra
+    sha256 "054503ec95766bbf5ef2fa8b15415898b2386d0659417cade2d615cf635235b3" => :catalina
+    sha256 "7cb92f536e1c498df40267f173322451c4afa631ed364c0d99d7eade7bc73756" => :mojave
+    sha256 "a691fa65b88e39d8b09b87f68890436d0848fbf6f0ab2423fc417b9e46a0fff8" => :high_sierra
   end
 
   depends_on "docbook-xsl" => :build
