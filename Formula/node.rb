@@ -8,10 +8,10 @@ class Node < Formula
 
   bottle do
     cellar :any
-    sha256 "9145dbfc69cfb951ca8f8cada7fa3afb230617dafd1cbbb22593d0153297ca15" => :catalina
-    sha256 "8df9c2f42eb862914664cbf5a84b69b8597dcec3547c8b051dcc09437f558e97" => :mojave
-    sha256 "4a489345741e08ac4cf6ec9f72d27c2f40aa87d2321345aa5c1b93b038f1bd9e" => :high_sierra
-    sha256 "4c1750f4783a63d6e3ed1edb4c3640ff9a03fd22223574cd50ffa084eb198ff8" => :x86_64_linux
+    rebuild 1
+    sha256 "6d868ee87e23188467d1907cd3e49bff6a3565bb5e7c9c938e82885801006435" => :catalina
+    sha256 "d0ec9ee7a99348fbdee460f36768c8cf697eb82e467f88092fd10fd41ca1031e" => :mojave
+    sha256 "fe9030ce4fdb54befdb5b10e893ddf5d65623e79c8351f0265cae12241306a81" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -32,6 +32,9 @@ class Node < Formula
     # Never install the bundled "npm", always prefer our
     # installation from tarball for better packaging control.
     args = %W[--prefix=#{prefix} --without-npm --with-intl=system-icu]
+    # Remove `--openssl-no-asm` workaround when upstream releases a fix
+    # See also: https://github.com/nodejs/node/issues/34043
+    args << "--openssl-no-asm" if Hardware::CPU.arm?
     args << "--tag=head" if build.head?
 
     system "./configure", *args
