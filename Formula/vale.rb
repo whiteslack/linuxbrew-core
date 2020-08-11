@@ -1,16 +1,15 @@
 class Vale < Formula
   desc "Syntax-aware linter for prose"
   homepage "https://errata-ai.github.io/vale/"
-  url "https://github.com/errata-ai/vale/archive/v2.2.2.tar.gz"
-  sha256 "bf90648b364c36eecbf2c7b510439507e27d8107016f23cf4f26b32550cf1674"
+  url "https://github.com/errata-ai/vale/archive/v2.3.1.tar.gz"
+  sha256 "edc2aac40ae67b325cbcea887dcb8d4fa16993e16da319b23f96d7108093c366"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9adcdb7c49fec71387a0cd4a4beb8c81e0bb5467eb2e16db27a02ab94c0d4b2f" => :catalina
-    sha256 "fcf77f5465bef0f72403fe09154e591cecc03637d85bd0bad767fd66c6ce9a3c" => :mojave
-    sha256 "2294ed7b45cfd56714e540a89f408345e925cba457b64f5dd177b64257a218fb" => :high_sierra
-    sha256 "0b4fcdf40814fd88224d32e934af1eaf87ab15f595a4310d94c718785b121702" => :x86_64_linux
+    sha256 "d1ca90d460bd47d58e8d67994deecc5373a93f9776c5d6fd5c1d223dc61f18d8" => :catalina
+    sha256 "187b43bfeb41e424959fc9fca5f73c27e8345f13c72171daa33edf5394484ce6" => :mojave
+    sha256 "b8a1656c5ca94356e12ef0cffda11f5e76dbc448b400b04fdb234b39902e8915" => :high_sierra
   end
 
   depends_on "go" => :build

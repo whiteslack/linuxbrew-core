@@ -1,15 +1,14 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https://github.com/Genymobile/scrcpy"
-  url "https://github.com/Genymobile/scrcpy/archive/v1.15.1.tar.gz"
-  sha256 "1d66dccf14f77e085853453d91a06fad40d1ab5cf2997f00079502edeac9d575"
+  url "https://github.com/Genymobile/scrcpy/archive/v1.16.tar.gz"
+  sha256 "94cbd59e26faa08ca25d5126d6c8d45e831b6a9e716ce05cd57bc4bcc751f742"
   license "Apache-2.0"
 
   bottle do
-    sha256 "d090ecbaca721c11336af0b94426cc9a4cbc8a2e1ea90f4e05a22e640475e84e" => :catalina
-    sha256 "f8f4997d5b4727bcd8af5b8deb9a4c2c1234f89b68239144ecf7f97493f10006" => :mojave
-    sha256 "3602289570f6017c1fb32a4dfcb7bc5d4f014a94862821e2e5f7c4ba884b8c82" => :high_sierra
-    sha256 "c0b7ef83d9fdbdfe3bd414c7ea4a0f983c4cd0d76bca9b785ad34bb288fb2bde" => :x86_64_linux
+    sha256 "ba6b589a05badb63cddb4d6624980d525c6b71e01509e9661f04de457d971803" => :catalina
+    sha256 "5390385c2d1813d566fd6657183188b162856010db9d767a8cdbae12b6a11e44" => :mojave
+    sha256 "74e4d0a9ad2d6b105822b8d716bd88093317d12a234c58a5c4691b61c2c35796" => :high_sierra
   end
 
   depends_on "meson" => :build
@@ -19,8 +18,8 @@ class Scrcpy < Formula
   depends_on "sdl2"
 
   resource "prebuilt-server" do
-    url "https://github.com/Genymobile/scrcpy/releases/download/v1.15.1/scrcpy-server-v1.15.1"
-    sha256 "fe06bd6a30da8c89860bf5e16eecce2b5054d4644c84289670ce00ca5d1637c3"
+    url "https://github.com/Genymobile/scrcpy/releases/download/v1.16/scrcpy-server-v1.16"
+    sha256 "94a79e05b4498d0460ab7bd9d12cbf05156e3a47bf0c5d1420cee1d4493b3832"
   end
 
   def install

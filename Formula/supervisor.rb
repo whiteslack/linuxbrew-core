@@ -8,10 +8,10 @@ class Supervisor < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2e3d14abf6e8b63001bfe0b128da3853db20bec5e99073eeac7b5e6b63b8bd1e" => :catalina
-    sha256 "2d860cc6e534901d1c9c9d330955aa5b7e3c5e4bb9d460180eca222742545957" => :mojave
-    sha256 "cf5c9fe0c5d1af7d39000624b00b96d5b945da9a79b3273bc245237f477ac105" => :high_sierra
-    sha256 "7bd3b6269ea96eec8e85474434f365930f385269600df0248aa9c57a76fb6bef" => :x86_64_linux
+    rebuild 1
+    sha256 "baf24c9b9b0ce2463148d676f1f985d090edde2b5393417cce8e4d9df93d3523" => :catalina
+    sha256 "8987e771d53dea6bee2955f83a1fd4255af39cca86bb02ae518bc1a7daca2f6b" => :mojave
+    sha256 "7a13e792368a2fbba5c426860206f7acf18b5625312f33a97d1cc97e9c5f71c4" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -27,15 +27,22 @@ class Supervisor < Formula
 
     virtualenv_install_with_resources
 
-    etc.install buildpath/"supervisor/skel/sample.conf" => "supervisord.ini"
+    etc.install buildpath/"supervisor/skel/sample.conf" => "supervisord.conf"
   end
 
   def post_install
     (var/"run").mkpath
     (var/"log").mkpath
+    conf_warn = <<~EOS
+      The default location for supervisor's config file is now:
+        #{etc}/supervisord.conf
+      Please move your config file to this location and restart supervisor.
+    EOS
+    old_conf = etc/"supervisord.ini"
+    opoo conf_warn if old_conf.exist?
   end
 
-  plist_options manual: "supervisord -c #{HOMEBREW_PREFIX}/etc/supervisord.ini"
+  plist_options manual: "supervisord"
 
   def plist
     <<~EOS
@@ -54,7 +61,7 @@ class Supervisor < Formula
           <array>
             <string>#{opt_bin}/supervisord</string>
             <string>-c</string>
-            <string>#{etc}/supervisord.ini</string>
+            <string>#{etc}/supervisord.conf</string>
             <string>--nodaemon</string>
           </array>
         </dict>

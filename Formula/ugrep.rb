@@ -1,14 +1,14 @@
 class Ugrep < Formula
   desc "Ultra fast grep with query UI, fuzzy search, archive search, and more"
   homepage "https://github.com/Genivia/ugrep"
-  url "https://github.com/Genivia/ugrep/archive/v2.5.0.tar.gz"
-  sha256 "98cc23f27ec4ebba14d36f21b5625e0def4aab3e65afecc609e676938002b110"
+  url "https://github.com/Genivia/ugrep/archive/v2.5.1.tar.gz"
+  sha256 "220b33b4d7f9814f8de4e61cd8abc3c26270dc42b923b697af1fe186e5173dd8"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 "fe7ed295538c51459e4dd89bdf47cf5bef13d8707f1ba74c5b563134c48e6811" => :catalina
-    sha256 "5188397bf07fc26fabb0cb417cc4f017b08693164c81d4345f5830a3a814767a" => :mojave
-    sha256 "d701f4a1b01d3eafd8d44f2a468c975d47cf6ede9c0afb82f5303b55187453eb" => :high_sierra
+    sha256 "24bb809190ce247d71b18664849a347aa63ecbffbd420e847d0d000f993936b8" => :catalina
+    sha256 "40a5d54d8fb333a4f4c8ca6201feaabc541b0ae1237488016f48e3065396fc4b" => :mojave
+    sha256 "da473d5e05da82e5da7b151b59ca9bf4cc38ae2c3c3bc4e075fca2bb4f3b97d8" => :high_sierra
   end
 
   depends_on "pcre2"
