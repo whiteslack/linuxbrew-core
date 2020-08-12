@@ -4,13 +4,13 @@ class K3d < Formula
   url "https://github.com/rancher/k3d/archive/v3.0.0.tar.gz"
   sha256 "939fae09600ae7edb5e92ecab5c25ac2adec5be432c8a7ee34a14e01a0245b11"
   license "MIT"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1363893ef0fefaa579ea21f1dd546d2d88b44316e2df7746e31a0732aa1beb81" => :catalina
-    sha256 "51e0a32d8d8ddba6386c5243e3a3a22a730020769d30962e2778c586da8088da" => :mojave
-    sha256 "2958a2c668ebe0d064610e680898e895ede437775b2f7fa225a30ee5c9aa3ae5" => :high_sierra
-    sha256 "963ca67e71eaab941dc34640454bf864e4b2068ebd27f85c2f2389f8edf68468" => :x86_64_linux
+    sha256 "03c91c6c398edbc38868f9814ed7040b9f947627ce208eba7c79051d13773712" => :catalina
+    sha256 "155b9526ddc84b8ad21e745c08c73a37b4c47050d137122a52976ddf880c1cf2" => :mojave
+    sha256 "a46edd0c310e5daeff2daa5a84fe07a45ea49189e20b1e9856ebf4377f7dcc10" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -21,6 +21,15 @@ class K3d < Formula
            "-ldflags", "-s -w -X github.com/rancher/k3d/v3/version.Version=v#{version}"\
            " -X github.com/rancher/k3d/v3/version.K3sVersion=latest",
            "-trimpath", "-o", bin/"k3d"
+
+    # Install bash completion
+    output = Utils.safe_popen_read("#{bin}/k3d", "completion", "bash")
+    (bash_completion/"k3d").write output
+
+    # Install zsh completion
+    output = Utils.safe_popen_read("#{bin}/k3d", "completion", "zsh")
+    (zsh_completion/"_k3d").write output
+
     prefix.install_metafiles
   end
 

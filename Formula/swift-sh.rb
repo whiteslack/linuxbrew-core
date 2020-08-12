@@ -1,19 +1,18 @@
 class SwiftSh < Formula
   desc "Scripting with easy zero-conf dependency imports"
   homepage "https://github.com/mxcl/swift-sh"
-  url "https://github.com/mxcl/swift-sh/archive/1.18.0.tar.gz"
-  sha256 "e65b43609d43cc9163ef11d4a2b46e9f5f9387a6fd1645ed6ede5aac24333066"
+  url "https://github.com/mxcl/swift-sh/archive/2.0.1.tar.gz"
+  sha256 "e31ae29f524c0d8423f34434fda967e36f5f91de1e54e2f4a256f23b94f5a9d9"
   license "Unlicense"
   head "https://github.com/mxcl/swift-sh.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1859dc05bf66a8849a6722b084d8f226de2db2fcc857f5022f0b03c7d02b8adf" => :catalina
-    sha256 "34feeb88ecf77cf68463609411745c465b2338f7d7d7e9f33a988a20f2dcf23e" => :mojave
-    sha256 "0339afad23f24918a45036a440dd833c91a0b6ce97d5b6641337d7a851d02c69" => :high_sierra
+    sha256 "aeab9b696171e5a0e10896be70317618f096ef5024c2ab73b286a9a958466251" => :catalina
+    sha256 "7568e6bb0d39e6ec5582f5e135507fce1cecc3b0ea0706aaa94a8e866a992367" => :mojave
   end
 
-  depends_on xcode: ["10.0", :build]
+  depends_on xcode: ["11.0", :build]
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"

@@ -1,17 +1,16 @@
 class RustAnalyzer < Formula
   desc "Experimental Rust compiler front-end for IDEs"
   homepage "https://rust-analyzer.github.io/"
-  url "https://github.com/rust-analyzer/rust-analyzer/archive/2020-08-04.tar.gz"
-  version "2020-08-04"
-  sha256 "2c197b02dc03055c8dbcb0070dea5e1b053542bfea05991755d1ce302bc7fb1d"
+  url "https://github.com/rust-analyzer/rust-analyzer/archive/2020-08-10.tar.gz"
+  version "2020-08-10"
+  sha256 "5aa91ced95650ccf7430db4ed314c9fe37553049ada05b28fa9ec20999328a79"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d0f82c1c55ae7f4cd27d3d79c5e402fa62a6e12b49308e9aff31ea1d796463c6" => :catalina
-    sha256 "407fe4a2b44e4ea5e63b1d8e238ffb62a1ca3039b478a99aba47c0764152ec35" => :mojave
-    sha256 "aa1617d6db720dbb01cf4666e836e92aa2d82c7a02600c3de76729d6ecccc901" => :high_sierra
-    sha256 "e8ad20586a46c94017581e39585021cd53ed456ae3cf8ddb1fea1129eddb2280" => :x86_64_linux
+    sha256 "fbb9298383cb3507a8ac158cecb5aa206e45088a2757d535d16f04a74c514cea" => :catalina
+    sha256 "bf00b173eb903b8ee8434aabc64d965ccb1ccf8a67cda1ec6dd2e8edc6891fcf" => :mojave
+    sha256 "b7c27ab01d74b63ddfb674b5a00b733f9a20c12b69809aaafa9f05e7ce6c2cdc" => :high_sierra
   end
 
   depends_on "rust" => :build
