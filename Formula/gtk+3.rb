@@ -9,6 +9,7 @@ class Gtkx3 < Formula
     sha256 "8be1bc471681688387c1bae5b48522e02c924e4b65badc89dda6ac8a32613dc2" => :catalina
     sha256 "a6e75a26e12b929abcde2055d38f6a75be9fdc602da31dfaa3a01f8618e99aad" => :mojave
     sha256 "32b35af03f9f90fa05c667afbdc6c15c71d1f1ef3753bd46737c441f7deb0b7c" => :high_sierra
+    sha256 "e9e42db507fbd6de4a062643315d500abbd67e6decfc1b742c4f94bea71d8c88" => :x86_64_linux
   end
 
   depends_on "docbook" => :build
