@@ -10,6 +10,7 @@ class Podiff < Formula
     sha256 "cdda50f296e87f84f828d09777f90217c98ca4578a00b09307df9dcd830424c2" => :catalina
     sha256 "20e29ef344ca1da47dff379a12290150de1540338d49d00043a2093f3a22a6fa" => :mojave
     sha256 "71b8f6e4b7935a26b50e32805036593d4fd20e24d4de73023a423a6889e72752" => :high_sierra
+    sha256 "9ca510db38cc8be5f68f3f93ba431c8da1f8b3fa5465b7b28e154e597ec31978" => :x86_64_linux
   end
 
   def install
