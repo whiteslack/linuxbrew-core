@@ -2,15 +2,15 @@ class CartridgeCli < Formula
   desc "Tarantool Cartridge command-line utility"
   homepage "https://tarantool.org/"
   url "https://github.com/tarantool/cartridge-cli.git",
-      tag:      "2.1.0",
-      revision: "52f3f6837ea4896d9b476169813aa48de8e1e659"
+      tag:      "2.2.0",
+      revision: "f7bef3cc404c57ccac95a5d0c6f07dfde88b13c6"
   license "BSD-2-Clause"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4c8b2341f80eb3a9c66e84cfa74892e489627663d63cb79db2a147aeac8e6718" => :catalina
-    sha256 "9c5ec77dff83e767202cd587f985d62f1562242e62b26ce6e6db6625e0d57b3d" => :mojave
-    sha256 "c4d1b6f7ef9560bca26cf6880f9cc531bbe4188994cd82716ea8b74431d7fd32" => :high_sierra
+    sha256 "20d72c607d26bc646a42257941cbb8651c3a3ac59917d185d1f6e76e1cb02662" => :catalina
+    sha256 "fbdc048f572c59b6b1d3d57690cd53e1fd5391931a6519a090f9850870573f6f" => :mojave
+    sha256 "449eea1518208b3f8adc8970240180c3303d3496d5e14fcc11417b8c3f422f06" => :high_sierra
   end
 
   depends_on "go" => :build

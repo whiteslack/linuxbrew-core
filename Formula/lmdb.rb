@@ -1,17 +1,16 @@
 class Lmdb < Formula
   desc "Lightning memory-mapped database: key-value data store"
   homepage "https://symas.com/lmdb/"
-  url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.25/openldap-LMDB_0.9.25.tar.bz2"
-  sha256 "45269ebbf13fe1b6a3aa3fa77b3109c1764bd17a95264cd56506eac832b91b6f"
+  url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.26/openldap-LMDB_0.9.26.tar.bz2"
+  sha256 "cda7a06f615dbd7d35987e83df689190d3e9f263190f2f1e36b70357786351f7"
   version_scheme 1
   head "https://git.openldap.org/openldap/openldap.git", branch: "mdb.master"
 
   bottle do
     cellar :any
-    sha256 "22dcd49d0d1027f6acef65aeb8f08422f9482daecf4c75b1add02f5368bfd96e" => :catalina
-    sha256 "2e9006940427302ed31c4972d47a998be797c669e2d75056107fcf28974f43e7" => :mojave
-    sha256 "445091428bfb6ca3712290c3484dcba219a6e4ab935829050e0c4caf0bc7b1b3" => :high_sierra
-    sha256 "3452460075121e2d4225d4583821ade40225f85f518922df5b78d0feb3d95f89" => :x86_64_linux
+    sha256 "83f3500e1b1d6b1526149c0a71bd85c46467544ad9810e13e1056fd259ff72af" => :catalina
+    sha256 "136b38523a78e369219c564aabc58246a658e7a6de772d2933d2f714184bac44" => :mojave
+    sha256 "1246ede7c51091638b608546507337230ae428f58f83be3c45ab04b261a201c1" => :high_sierra
   end
 
   def install

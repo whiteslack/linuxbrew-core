@@ -3,15 +3,15 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://github.com/jbarlow83/OCRmyPDF"
-  url "https://files.pythonhosted.org/packages/24/e5/5f534c784afdcec76f8828aff1ad2e908929a85973188d0e833138f0f335/ocrmypdf-10.3.3.tar.gz"
-  sha256 "440c24b909f12991b7b8fb2ab56c82d200d8d93ece1010412296e8788bb4a624"
-  license "GPL-3.0"
+  url "https://files.pythonhosted.org/packages/be/94/a304ae959e4c7a4a2de381217ba983365ef475e82c6a9b7831bd5fdb4ebb/ocrmypdf-11.0.0.tar.gz"
+  sha256 "2b3bee805e139185f24d18a159c4040fb74eea01913a9af137e15747e438fa1a"
+  license "MPL-2.0"
 
   bottle do
     cellar :any
-    sha256 "821b2ecf01967f1e506784ea0c0adef13947c08357cdf5d754528d7c8ccf5584" => :catalina
-    sha256 "0126660312df4e0f6ae2ef5265fd053c7e9677531463ef0e5591cb602af215fd" => :mojave
-    sha256 "e7b9f2fca0b389abf2d3dcf741b92acb3e69c166249c8a452df7e0b1f495588c" => :high_sierra
+    sha256 "cef08e850fff5665898ebd594b903053322d48bb9102a534c25fac6e62475c39" => :catalina
+    sha256 "2d79a5fae3695963503c85256459491b628b05325e2b0242093ac5aa980ae779" => :mojave
+    sha256 "954835af8c1863b53eb11f0ce1914a4f3efa5efda98fc69c43a8d099dfeaca9d" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -73,8 +73,8 @@ class Ocrmypdf < Formula
   end
 
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/23/a8/4df6b1dfaabd8cef718cd112cb8d81d9788ecfe838f911546a3ae0dd5529/pikepdf-1.17.3.tar.gz"
-    sha256 "8413c31b0adf95efcad1222fd4d0a50b11d961ad26dbeb84e2abbc860ef8bc8d"
+    url "https://files.pythonhosted.org/packages/6a/10/db6a2f3a1725ea66afc4e46eaac02e377bb11c1d2bfd2cc3dcd631707767/pikepdf-1.18.0.tar.gz"
+    sha256 "4d0840a5c16b535f9b6e56fb4421a43f88760e6cabcf7fd44bdd0436107b61dc"
   end
 
   resource "Pillow" do
