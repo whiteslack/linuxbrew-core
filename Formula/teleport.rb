@@ -11,6 +11,7 @@ class Teleport < Formula
     sha256 "250e9b9545949862e4f65b959bd01cc89462316139859c696c51fca02e072cca" => :catalina
     sha256 "0a7076b15a526fbe16781c0afb003c92d492cbfb3f9913d9ffc3bfcd9fabf74a" => :mojave
     sha256 "af5fd4e07c630ac4269df43bc6c9ed56f16105f28eb61092586359939bec8e80" => :high_sierra
+    sha256 "bb83765d5a19bb30ab1ea6373b03a353105602ae4dbc4b83dee0189ec3c9327e" => :x86_64_linux
   end
 
   depends_on "go" => :build
