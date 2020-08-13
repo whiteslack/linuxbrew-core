@@ -11,6 +11,7 @@ class Lmdb < Formula
     sha256 "83f3500e1b1d6b1526149c0a71bd85c46467544ad9810e13e1056fd259ff72af" => :catalina
     sha256 "136b38523a78e369219c564aabc58246a658e7a6de772d2933d2f714184bac44" => :mojave
     sha256 "1246ede7c51091638b608546507337230ae428f58f83be3c45ab04b261a201c1" => :high_sierra
+    sha256 "9285be3fbea6c89854bcba57f45620c4a1dbb8b183d6e8409eec8aba9ede28c2" => :x86_64_linux
   end
 
   def install
