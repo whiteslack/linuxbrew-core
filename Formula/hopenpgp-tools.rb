@@ -1,20 +1,16 @@
-require "language/haskell"
-
 class HopenpgpTools < Formula
-  include Language::Haskell::Cabal
-
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https://hackage.haskell.org/package/hopenpgp-tools"
   url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.1/hopenpgp-tools-0.23.1.tar.gz"
   sha256 "b28ac66343a0bf78b3bfb22cc87f85355909fcd49d9ba5ad43e5a0c38e8b014b"
-  revision 1
+  revision 2
   head "https://salsa.debian.org/clint/hOpenPGP.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9d03ebe24464c62fae11b856eb20f9b1ea4d67470ac65b8f770b20cf5f319913" => :catalina
-    sha256 "4e4744a3d82755df2e2d03c775f99414faa5d13cdc1efa2462b16d65db1561e1" => :mojave
-    sha256 "a2184881695b6d7209c40467a5c57c5ce32b1604fa909df13c84b3ed1aab3408" => :high_sierra
+    sha256 "399bf10f33cdbcefaee7a2afb513778b81f50b6620abdcd0901a9ad161a9f3cb" => :catalina
+    sha256 "cf9bb6c229ac34360ea5d5f94776815615138f665c2eae730174065c721f0a6c" => :mojave
+    sha256 "5d0056622d3843f49632d0ccb459cad19304b8fa2ed2c6328df1e14e0dec840c" => :high_sierra
   end
 
   depends_on "cabal-install" => :build
@@ -28,7 +24,8 @@ class HopenpgpTools < Formula
   end
 
   def install
-    install_cabal_package using: ["alex", "happy", "c2hs"]
+    system "cabal", "v2-update"
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do

@@ -1,15 +1,14 @@
 class Nano < Formula
   desc "Free (GNU) replacement for the Pico text editor"
   homepage "https://www.nano-editor.org/"
-  url "https://www.nano-editor.org/dist/v5/nano-5.0.tar.xz"
-  sha256 "7c0d94be69cd066f20df2868a2da02f7b1d416ce8d47c0850a8bd270897caa36"
+  url "https://www.nano-editor.org/dist/v5/nano-5.1.tar.xz"
+  sha256 "9efc46f341404d60095d16fc4f0419fc84b6e4eaeaf6ebce605d0465d92a6ee6"
   license "GPL-3.0"
 
   bottle do
-    sha256 "364da878cbe90e6e09be7cfd252f01e55cdf787bf013530cba2d94e437eaffb1" => :catalina
-    sha256 "7f7103bf8eb1d02d370f574a030a84a231356688314d182b63cc21a72999dfcc" => :mojave
-    sha256 "6684387d3aed8f58a0205a04db2162c6d2b95ff1d09e7438df4299eefabbadf0" => :high_sierra
-    sha256 "501d0204f53939366a503ab995642a48d8141247da88fb1e04210849351edcc2" => :x86_64_linux
+    sha256 "7ec2ac2d56019cbc9c41db0e2bb30db192d2c286545b3e6ae6257a6c07e491e7" => :catalina
+    sha256 "e67eb4b70a17baa9430b3811c0a69d6246a652553d83e2c80b37bda154d6cdfb" => :mojave
+    sha256 "6f70b0d956076fff6bc2daff41dfde0b843f1932b289a457303adf7b2362107b" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

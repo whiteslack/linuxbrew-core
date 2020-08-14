@@ -1,16 +1,16 @@
 class Kafka < Formula
   desc "Publish-subscribe messaging rethought as a distributed commit log"
   homepage "https://kafka.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=kafka/2.5.0/kafka_2.12-2.5.0.tgz"
-  mirror "https://archive.apache.org/dist/kafka/2.5.0/kafka_2.12-2.5.0.tgz"
-  sha256 "4a857fe348e39d1cefa71bc4f61da9ffa59efbb1ff79d41709dc3dbca5f04baf"
+  url "https://www.apache.org/dyn/closer.lua?path=kafka/2.6.0/kafka_2.13-2.6.0.tgz"
+  mirror "https://archive.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz"
+  sha256 "7c789adaa89654d935a5558d0dacff7466e2cfec9620cb8177cec141e7b0fb92"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "73988ab14de02fa338846206583dacadeea66585d23efbebbaf9180b8542cc29" => :catalina
-    sha256 "73988ab14de02fa338846206583dacadeea66585d23efbebbaf9180b8542cc29" => :mojave
-    sha256 "73988ab14de02fa338846206583dacadeea66585d23efbebbaf9180b8542cc29" => :high_sierra
+    sha256 "a00316528e00fe0a5ff2771d1883f25f186481d77de8a79dfaf491be076de3ee" => :catalina
+    sha256 "027a1d06325c8b98cca97cc2922fdbf7d980fb52917d1791861032cd501e5428" => :mojave
+    sha256 "027a1d06325c8b98cca97cc2922fdbf7d980fb52917d1791861032cd501e5428" => :high_sierra
   end
 
   # Related to https://issues.apache.org/jira/browse/KAFKA-2034
