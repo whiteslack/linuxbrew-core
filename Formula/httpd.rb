@@ -5,12 +5,12 @@ class Httpd < Formula
   mirror "https://archive.apache.org/dist/httpd/httpd-2.4.46.tar.bz2"
   sha256 "740eddf6e1c641992b22359cabc66e6325868c3c5e2e3f98faf349b61ecf41ea"
   license "Apache-2.0"
+  revision 1 unless OS.mac?
 
   bottle do
     sha256 "8c6b348427bd5c43d784dd5ae6261304e4218607cace3f264e016819c3118527" => :catalina
     sha256 "e561f825dc044083a10d85d0faa4f785d95466e827d20264702078c58fd900ac" => :mojave
     sha256 "aede7239a3d25119c493644cac072fc953f3b1d5a4c490558781ad9ac5000504" => :high_sierra
-    sha256 "ef942cdad790da41299041a08ae8a292256d0d65ce716ec9767d98494cbe3721" => :x86_64_linux
   end
 
   depends_on "apr"
@@ -20,6 +20,7 @@ class Httpd < Formula
   depends_on "openssl@1.1"
   depends_on "pcre"
 
+  uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   def install
