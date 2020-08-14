@@ -1,9 +1,7 @@
 name: GitHub Actions CI
 on:
   push:
-    paths-ignore:
-      - "Formula/patchelf.rb"
-      - "Formula/binutils.rb"
+    branches: master
   pull_request:
     paths-ignore:
       - "Formula/patchelf.rb"
