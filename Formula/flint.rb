@@ -4,21 +4,29 @@ class Flint < Formula
   url "http://flintlib.org/flint-2.6.3.tar.gz"
   sha256 "ce1a750a01fa53715cad934856d4b2ed76f1d1520bac0527ace7d5b53e342ee3"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/wbhart/flint2.git", branch: "trunk"
 
   bottle do
     cellar :any
-    sha256 "9b8d1495a83baee84f260abfae043cadc60b5f88fd5234996d386f6a07e8c42f" => :catalina
-    sha256 "8335ac9e0c42ac2ebb2272694a5e2a273bf82bb0895a0ba6ffaef7322ca94c73" => :mojave
-    sha256 "74b721ccd5dca704b9e884190e15b4068587d5438a4e1e0a70e23bff2de5d77e" => :high_sierra
-    sha256 "673849b06a04c3c9d0a227085d8c1b5b0bee54637acdeedf143711f2c67dfb7e" => :x86_64_linux
+    sha256 "8f03bf2f3e4054c196b5d7a593b5d3e18b85a0482a9b919ec3939db9a0712ef1" => :catalina
+    sha256 "af9627560e4128bf27fd088400890595d886dcc52cb6f752ecfe44738ab893bc" => :mojave
+    sha256 "072f386f8b52bf213fb7782c562ee92b179ceb304b83e18a208e762fcbc8dd1f" => :high_sierra
   end
 
   depends_on "gmp"
   depends_on "mpfr"
+  depends_on "ntl"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    ENV.cxx11
+    args = %W[
+      --with-gmp=#{Formula["gmp"].prefix}
+      --with-mpfr=#{Formula["mpfr"].prefix}
+      --with-ntl=#{Formula["ntl"].prefix}
+      --prefix=#{prefix}
+    ]
+    system "./configure", *args
     system "make"
     system "make", "install"
   end

@@ -2,18 +2,17 @@ class Minio < Formula
   desc "High Performance, Kubernetes Native Object Storage"
   homepage "https://min.io"
   url "https://github.com/minio/minio.git",
-      tag:      "RELEASE.2020-08-04T23-10-51Z",
-      revision: "0b8255529a6f74df81f975869b6f2b93ff4b4dda"
-  version "20200804231051"
+      tag:      "RELEASE.2020-08-13T02-39-50Z",
+      revision: "b32d0a5b600ddc0f7eef22789475f6d215587443"
+  version "20200813023950"
   license "Apache-2.0"
   head "https://github.com/minio/minio.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9a0d24a53cbeba9c61f042e9f5584f04c191209e719ce96b925c7bb08980cc5c" => :catalina
-    sha256 "d7959d2405070f25c22c08e946367490db17ae414206334e588a9368b7d5dde3" => :mojave
-    sha256 "344bc6c6f3f970f0b11ce1a104cdf947055f6de5b9ba54a392dd238d12f6c3b2" => :high_sierra
-    sha256 "baa05041ad4157d2ea4c8151e10565d84b99ae802c7e4dcbd4cfa111245797a5" => :x86_64_linux
+    sha256 "0eef84f89da05d67fa5b135bc13efef99b5cae76b499ab4094d79cc6cbbb3eb0" => :catalina
+    sha256 "56d06d7a234775459a30530d9fa466a05653aec64f5b68ad1259319b926f44f1" => :mojave
+    sha256 "212e29c54da39c6f1999f0e0dfc5a7d8c9891c47810c2120b7c19acab5e5d0fe" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -78,6 +77,12 @@ class Minio < Formula
   end
 
   test do
-    system "#{bin}/minio", "--version"
+    assert_match "minio server - start object storage server",
+      shell_output("#{bin}/minio server --help 2>&1")
+
+    assert_match "minio gateway - start object storage gateway",
+      shell_output("#{bin}/minio gateway 2>&1")
+    assert_match "ERROR Unable to validate credentials",
+      shell_output("#{bin}/minio gateway s3 2>&1", 1)
   end
 end

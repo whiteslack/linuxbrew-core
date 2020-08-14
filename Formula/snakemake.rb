@@ -3,17 +3,16 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/e2/72/6b357904918e2d5e8655e4099317069abab995d44240bca8d871358a6279/snakemake-5.21.0.tar.gz"
-  sha256 "590c88d4f9ca22e9494f65c4b531a1e54f67ead8c1cb404adc9571b3a1b8dcb4"
+  url "https://files.pythonhosted.org/packages/5a/ae/f8830ddb036f6e89b380f9ea1910213d20393da549f8f05c142551bc811e/snakemake-5.22.0.tar.gz"
+  sha256 "a1ad1eec1834380f0162514df18178ae7553d424be5983a2f140c2b67f8924df"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9f461c8c8170e30bd94fee78a2cd014dbdb94c91ab476574f5ebbb496d798ad8" => :catalina
-    sha256 "977bf2f4b93804b3226b59150a170fdbb0ff083c86bc1acc4706573229b9e71f" => :mojave
-    sha256 "8338f13f931b79af570a7220e5c4d4ecba442181312748a7226e84ac9a0002a5" => :high_sierra
-    sha256 "b3308b0dfb3ac88ed6d98c6fbb36e39590a097855a4792d6e6e5843f90116272" => :x86_64_linux
+    sha256 "feceac43fcb1b9c89596f674b40b7f072415299d18784bbae843dcfab7b5fab9" => :catalina
+    sha256 "9ee93b76bb3056871a31569dfbd9823cc638dc71cfa3fc0ee3fcc7dbdea0db05" => :mojave
+    sha256 "19b1ccbd2de1caa650fb947382aad7144b5cd3b865383817b7fe4156ebdcd252" => :high_sierra
   end
 
   depends_on "python@3.8"

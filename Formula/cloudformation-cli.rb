@@ -3,15 +3,15 @@ class CloudformationCli < Formula
 
   desc "CloudFormation Provider Development Toolkit"
   homepage "https://github.com/aws-cloudformation/cloudformation-cli/"
-  url "https://files.pythonhosted.org/packages/ed/62/b155164aceaad93c78360ac4f3b4671f92a0ffefda48dd3f0859fad9523e/cloudformation-cli-0.1.6.tar.gz"
-  sha256 "f26b28c132a7ff6b2beace592075c3cd7084d50d1b663296fde62da2e9ea26d6"
+  url "https://files.pythonhosted.org/packages/58/37/5314894aa8d90df60c0e6ac066045b071f0b0643ab8c79b19b424ab7c4b2/cloudformation-cli-0.1.7.tar.gz"
+  sha256 "b683ac89ac70368a48875405755278e3852c827aeeaf5c948d281e5b13e569ca"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "96229bd3a2ef1cc0e17d802a8d93a8f1929762eca56bc1a420523193c79b39fb" => :catalina
-    sha256 "1c1ac804103eed7b146a97a2fca1a1433d2cd8be4088880093f8fe6eeaba93d7" => :mojave
-    sha256 "d3995cca47603e6fda9d322f412eff89830839ea1b5fc9e0a3b70cd952074fc1" => :high_sierra
+    sha256 "ed16d529ca9590ca3931809e30004c0b4258d5e102371deb565edf8eba4223cb" => :catalina
+    sha256 "ab5ef1f9e4a5aa092fa9c4d38403ee46e3fd291e4ebe0d3e5032484d2a00c66b" => :mojave
+    sha256 "844f848cf8915b8652479dc97983cca36a8b1309417c2b887cf25dfcd8d1047e" => :high_sierra
   end
 
   depends_on "go" => :test

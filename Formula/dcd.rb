@@ -2,17 +2,16 @@ class Dcd < Formula
   desc "Auto-complete program for the D programming language"
   homepage "https://github.com/dlang-community/DCD"
   url "https://github.com/dlang-community/DCD.git",
-      tag:      "v0.13.0",
-      revision: "808460a678d9c993d393c36e7eb06601a157efcf"
-  license "GPL-3.0"
+      tag:      "v0.13.1",
+      revision: "92db0486968f8ee59c16099c21b133dc4e9d91cb"
+  license "GPL-3.0-or-later"
   head "https://github.com/dlang-community/dcd.git", shallow: false
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0bc934ba115fe511af6c7d8f5cdfc1856ddbb7c65951d16b3ac6ba3dbef2c535" => :catalina
-    sha256 "0347c9bb620ae6cf490a5cc449cfd4cd7f3fe6842835a4b5b1b45acb84385a62" => :mojave
-    sha256 "a7ab66d97edfb4118c7764101020029f2ece6f245d363dcc9b4cd1e1da2125bc" => :high_sierra
-    sha256 "dc6662fa60ed707462920ca7b019fe3601aab6351941da3e99e1d82b2f7fbd15" => :x86_64_linux
+    sha256 "cb5a1d6c16b9e7a63583f65ef8eea364291b847897e53c7bf2b5533f1965477b" => :catalina
+    sha256 "13afc1eaa6e87e1a37eb80d9eef2febdc9a91b7cb7b68a4ba438a48c29e66776" => :mojave
+    sha256 "b72aa14601e382ab8ea67593dc0b365f7006a7d447291a8314af0bd47906e1ff" => :high_sierra
   end
 
   depends_on "dmd" => :build
