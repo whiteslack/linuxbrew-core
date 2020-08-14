@@ -1,16 +1,12 @@
 name: Wheezy CI
 on:
-  push:
-    paths:
-      - "Formula/patchelf.rb"
-      - "Formula/binutils.rb"
   pull_request:
     paths:
       - "Formula/patchelf.rb"
       - "Formula/binutils.rb"
 jobs:
   wheezy_tests:
-    if: github.event_name == 'pull_request' && startsWith(github.event.pull_request.title, 'Merge') == false
+    if: startsWith(github.event.pull_request.title, 'Merge') == false
     runs-on: ubuntu-latest
     steps:
       - name: Set up Homebrew
