@@ -10,6 +10,7 @@ class Cglm < Formula
     sha256 "0d34e1e16795ee82e32ffd6cfd049a99b6f47023830ca652678413c9624af843" => :catalina
     sha256 "e91b55ad88e12eec50cf3f605b6ff64d8609bfda9562c65bb0b4224ad2b6c5c4" => :mojave
     sha256 "7ef296d5928ff6aa279c3f959c64553d63967a2dea3077a30def78783e21f5a0" => :high_sierra
+    sha256 "6de93d11874e87f58e9193abc665b90c2efcd562ce94fbbfe801d7beefbb6de2" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
