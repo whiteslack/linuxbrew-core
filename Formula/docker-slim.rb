@@ -10,6 +10,7 @@ class DockerSlim < Formula
     sha256 "1cac22eb1edd2f532d7778c8dbe61e0f77f0d86c80454aafeb9a36d8898bd564" => :catalina
     sha256 "1cac22eb1edd2f532d7778c8dbe61e0f77f0d86c80454aafeb9a36d8898bd564" => :mojave
     sha256 "1cac22eb1edd2f532d7778c8dbe61e0f77f0d86c80454aafeb9a36d8898bd564" => :high_sierra
+    sha256 "68baa2154015a5a5b9bc9d0025a278b0d0a17f91340e57c273e91f6c47eedf2b" => :x86_64_linux
   end
 
   depends_on "go" => :build
