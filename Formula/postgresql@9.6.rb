@@ -1,17 +1,14 @@
 class PostgresqlAT96 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v9.6.18/postgresql-9.6.18.tar.bz2"
-  sha256 "517ec282b785e6d22f360c30ba0c5e2a506fca5ca07dcc545427511d94c89999"
+  url "https://ftp.postgresql.org/pub/source/v9.6.19/postgresql-9.6.19.tar.bz2"
+  sha256 "61f93a94ccddbe0b2d1afaf03f04ba605d8af5b774ff9b830e5adeb50ab55cb0"
   license "PostgreSQL"
-  revision OS.mac? ? 2 : 3
 
   bottle do
-    rebuild 1
-    sha256 "f9165d916aaf9021fbaf74b42f5678a7cd9058776157d7b01cad8647d149e84f" => :catalina
-    sha256 "5628c5aba843e2fd2cee4042371939542d6c675795a733007a8049d7564950c0" => :mojave
-    sha256 "868fb2c77b0dc6617fcabdf09e3277e1f0e305e1aaaa8e1a952bb916b12c0117" => :high_sierra
-    sha256 "88240e260033eb856f7026d9182342a6adf814574c0a2d62ff7bc7168cb577ec" => :x86_64_linux
+    sha256 "81b3a3ac4e549641e48fe4f291b32266603858cff2ceb6242f2725deb20bdd9a" => :catalina
+    sha256 "b515085fd803628a5979a34402fa7296e95c437bc5805ec08acd69b43ac11c6a" => :mojave
+    sha256 "59593120c3bce07fa0c130eda3f1b0aef1cc2ed254b822fd9ed416d7469a8da2" => :high_sierra
   end
 
   keg_only :versioned_formula

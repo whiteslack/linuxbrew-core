@@ -1,15 +1,15 @@
 class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-5.0.0.tar.xz"
-  sha256 "2f13a92a0fa5c8b69ff0796b59b86b080bbb92ebad5d301a7724dd06b5e78cb6"
-  revision 2
+  url "https://download.qemu.org/qemu-5.1.0.tar.xz"
+  sha256 "c9174eb5933d9eb5e61f541cd6d1184cd3118dfe4c5c4955bc1bdc4d390fa4e5"
+  license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git"
 
   bottle do
-    sha256 "d502a1077e1adf1653a5f6a704a902885bf1db2b2dc8f8f26610d48ca6b1ba16" => :catalina
-    sha256 "880d9ad2657c4db9f12871591028604a106fce0138093ec9d1cbb96038e73da6" => :mojave
-    sha256 "7660efa3ec8a21441ac781229728aa364d3c63160fabd0c147a31c2b9667e448" => :high_sierra
+    sha256 "9659d7d483d014be6366a0480de364cc983e1f9e24e9c42e09f0fa19e216d5d1" => :catalina
+    sha256 "dc0d52fc6839c7800ec0dc38c78c8ccb862357149141aee669ec29449cb3b810" => :mojave
+    sha256 "9a30c423617ebd3dbfc8e67afada9a17f7534a7bba16b3c13189301f53458f36" => :high_sierra
   end
 
   depends_on "libtool" => :build

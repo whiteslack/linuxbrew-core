@@ -1,17 +1,14 @@
 class PostgresqlAT95 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v9.5.22/postgresql-9.5.22.tar.bz2"
-  sha256 "48555470a17248cb204d25ab1ad4231ef16295db55161922f006b9942d69640f"
+  url "https://ftp.postgresql.org/pub/source/v9.5.23/postgresql-9.5.23.tar.bz2"
+  sha256 "e314fa7e3355c4b8a35e94eeb8e58a6cf46adf49a2f9afa0c15cbc39980c8366"
   license "PostgreSQL"
-  revision OS.mac? ? 2 : 3
 
   bottle do
-    rebuild 1
-    sha256 "b0e137c35488a6856984f422331866ecc6a89b2f37c13b23d7bab3fc0e5bdd03" => :catalina
-    sha256 "c7b4da25d7e9645ea1c67836e6e7c6605e9a33027aee5bf97c22fa5ec354c28e" => :mojave
-    sha256 "5cc0624afcdd8a84af0b11dcdd10d659e886cb1e82c2596f62ac77e1dd32dc8e" => :high_sierra
-    sha256 "4fed724c3b7be2fe6c7283e265cfcda733eee15f29a9c8efe4990042b659c255" => :x86_64_linux
+    sha256 "69659c35cc5a4d662cca1737f04bea2c64e55aaa91e660f4dd9abfe0d0545a64" => :catalina
+    sha256 "f8cf1f4bf66f44d7e4939e5885c02dc5c01f07036ef8d86c3be33d9f35eba26f" => :mojave
+    sha256 "7b0ade2c3d1e0a690dcfa83e897b39f73d032aab2526708606f255d6983ff8f3" => :high_sierra
   end
 
   keg_only :versioned_formula
