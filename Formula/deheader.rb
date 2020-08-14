@@ -13,6 +13,7 @@ class Deheader < Formula
     sha256 "65e4de02caeb5b8028c1c0f6edcfcc149d375da261fc2f7b811b97249b09264d" => :catalina
     sha256 "65e4de02caeb5b8028c1c0f6edcfcc149d375da261fc2f7b811b97249b09264d" => :mojave
     sha256 "65e4de02caeb5b8028c1c0f6edcfcc149d375da261fc2f7b811b97249b09264d" => :high_sierra
+    sha256 "494f68c8b95c11b6ef79ea9813531e73227de56f6a094517d876e84fe99e301d" => :x86_64_linux
   end
 
   depends_on "xmlto" => :build
