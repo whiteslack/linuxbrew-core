@@ -55,7 +55,7 @@ jobs:
 
       - name: Upload bottles to Bintray
         env:
-          HOMEBREW_BINTRAY_USER: LinuxbrewTestBot
+          HOMEBREW_BINTRAY_USER: linuxbrewtestbot
           HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
         if: success() || github.event.client_payload.ignore_errors
         run: |
