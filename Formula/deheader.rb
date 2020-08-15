@@ -6,14 +6,14 @@ class Deheader < Formula
   url "http://www.catb.org/~esr/deheader/deheader-1.7.tar.gz"
   sha256 "6856e4fa3efa664a0444b81c2e1f0209103be3b058455625c79abe65cf8db70d"
   license "BSD-2-Clause"
+  revision 1
   head "https://gitlab.com/esr/deheader.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "65e4de02caeb5b8028c1c0f6edcfcc149d375da261fc2f7b811b97249b09264d" => :catalina
-    sha256 "65e4de02caeb5b8028c1c0f6edcfcc149d375da261fc2f7b811b97249b09264d" => :mojave
-    sha256 "65e4de02caeb5b8028c1c0f6edcfcc149d375da261fc2f7b811b97249b09264d" => :high_sierra
-    sha256 "494f68c8b95c11b6ef79ea9813531e73227de56f6a094517d876e84fe99e301d" => :x86_64_linux
+    sha256 "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d" => :catalina
+    sha256 "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d" => :mojave
+    sha256 "03645d8b8d1c27fb6b957fc1cf153f4d458e9377a3ce81b448adf07551b5338d" => :high_sierra
   end
 
   depends_on "xmlto" => :build
