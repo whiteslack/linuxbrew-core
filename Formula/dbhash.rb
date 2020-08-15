@@ -11,6 +11,7 @@ class Dbhash < Formula
     sha256 "286b4a753cd443251a2b9b27d2ff813faf384a3c78940c2bded450d391ba7a66" => :catalina
     sha256 "f9f1001a4e2a887070762636737a144d13e53f00dfa39278c9535cc448b6f91c" => :mojave
     sha256 "7e973140b25ac83fb8d8dd77a2b7b4ee5cf13f4b10d1a27b92c1ad4180cf71e8" => :high_sierra
+    sha256 "00ff75bb1c025641e1c7c42c9cf0b7cd2ae0cb24920b9980309c7c0894dbb54a" => :x86_64_linux
   end
 
   uses_from_macos "tcl-tk" => :build
