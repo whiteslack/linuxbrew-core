@@ -12,6 +12,7 @@ class Apidoc < Formula
     sha256 "c61fa821d8fff7c5a1dc82b9a7e8f1256299cd042054148b69cbbb88e646c7aa" => :catalina
     sha256 "5af452f07506102633a26f2407e56f5f190d8fc0579d2df468c433a0e8e2d5c6" => :mojave
     sha256 "def407d3837157a7cace0286b075f0f3e4df1b069ba4d53e67b769f497385d6a" => :high_sierra
+    sha256 "5ebd3a3a9acc59d62e8d1f6316c0392732e6283af51642fb20554b1433f896cf" => :x86_64_linux
   end
 
   depends_on "node"
