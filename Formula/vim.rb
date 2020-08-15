@@ -11,6 +11,7 @@ class Vim < Formula
     sha256 "6f9077037cd60262e1b92301d39d276a2cfbb22f757cf1659f4398b9b46da342" => :catalina
     sha256 "950f835f3c6bd825d4d2604660a9dd4c6fb54ed01daa73a687f2afbb63b4cca8" => :mojave
     sha256 "306a56c61abda3d854e5e830b9a66bcc85f1619a026539f445425befa284289e" => :high_sierra
+    sha256 "21967cb928a5ae3fd3b8e12df98630bc3a5209a34f94179b22de580a7f7c4d8c" => :x86_64_linux
   end
 
   depends_on "gettext"
