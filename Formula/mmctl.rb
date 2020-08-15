@@ -3,16 +3,16 @@ class Mmctl < Formula
   homepage "https://github.com/mattermost/mmctl"
   url "https://github.com/mattermost/mmctl.git",
       tag:      "v5.26.0",
-      revision: "a8957423bc2b38519b49e8ee54f729fb8c3f1965"
+      revision: "1dc9cda2e80757ff8fc694f32efc7ea76e327635"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/mattermost/mmctl.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0b86181ad149592248dd16f51da69bbe74fc0bb8263365cd798d1d7b21076bf6" => :catalina
-    sha256 "18d2ad64c2ab756895bfdad129cebbced7876bedf4c6ec691cad2f6c8716fb38" => :mojave
-    sha256 "c162d54c5dd9065f2b2f0efa42c52b47407992fcb49d41c575aab8ae2958627e" => :high_sierra
-    sha256 "cfe82eaf063cb6637cc11a789d6cefc9f370c4d5d7ccdd23b42da16536ec8281" => :x86_64_linux
+    sha256 "a246ec416a9acfc82bc61608b6ae24a459cd97c2f63e37cca9da0a98db086a0f" => :catalina
+    sha256 "27706d9dfc8b7c322a111c2840042189fb8e16865e56a7166c782fad8539ad31" => :mojave
+    sha256 "750170ce270d63a398a718082f88a0fda4920a271280025623421288484e621a" => :high_sierra
   end
 
   depends_on "go" => :build
