@@ -9,6 +9,7 @@ class Lftp < Formula
     sha256 "a388da5bb2e5beee32d122f71ae93a0d000af5d00b6ff40428d7e113ce123471" => :catalina
     sha256 "db1429c68ffecc6a300d1adbcb980425c95a3d92112d1f4b69a148fe09bad066" => :mojave
     sha256 "d92a86e574d3660a49de510815a7780708606fef9f498d5376ee91d2d61956f8" => :high_sierra
+    sha256 "38a61a6187605c610f65a963d72c0d107b82c547615b2bb21eb921d988e4128a" => :x86_64_linux
   end
 
   depends_on "libidn"
