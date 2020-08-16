@@ -4,17 +4,17 @@ class Syncthing < Formula
   url "https://github.com/syncthing/syncthing/archive/v1.8.0.tar.gz"
   sha256 "915a3ac5faf40aea3e5f17c20b7287b7f4108e22157961cf0ca3133fd1dbef9a"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/syncthing/syncthing.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6b72c6eae782325c7a81e6cd00c1b2218316aec5ced5cf9c48ea219167e21623" => :catalina
-    sha256 "8fba96548b9217f52fd422e8ea0492292ce67a77f33de1b281291093d001d47e" => :mojave
-    sha256 "c283826a65b061d3636177def458b784c63457a099f511fba9de25a41eeb967e" => :high_sierra
-    sha256 "ef1f0b0d2206bc345591860d2415f9a38502d2a573812d99518ba1e8e2941c72" => :x86_64_linux
+    sha256 "0876723f808790afd0a87292483a62ac07498ab75ffbadd628ad4f2f8affa3da" => :catalina
+    sha256 "80c543d88c241baff1587eabfccad009099ccec3037995a9826a3b9a85100de2" => :mojave
+    sha256 "f9277420596daaeaac43c06297673775ca2ec1d92e174106a88953054d0c35bf" => :high_sierra
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.14" => :build
 
   def install
     system "go", "run", "build.go", "--no-upgrade", "tar"

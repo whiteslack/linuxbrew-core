@@ -6,17 +6,17 @@ class Ipfs < Formula
       revision: "d6e036a888ba95c15ce243a45c0cacb4a5bb8ee4"
   # license ["Apache-2.0", "MIT"] - pending https://github.com/Homebrew/brew/pull/7953
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ipfs/go-ipfs.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e5c9d5a386a83e4e6a9893be6729625902c7eea07ec109fce83b6864a0512bbf" => :catalina
-    sha256 "cbe22d6554e50f65e202e8b65d3bd41b1a18793cc6d33316397c062dd3ddcd79" => :mojave
-    sha256 "7efd7e625d8eeb59c6d8ac3c4a582b77024c7f64f46809996404bb7fd9f2be5a" => :high_sierra
-    sha256 "34c1f000346740d8c021b5a7dd405fa9cab77453f7da3f19fb69ae790413e5fe" => :x86_64_linux
+    sha256 "0a54783b7614037349b7c378897bd9da2212db9bf43db160a94a5e463dd1ee33" => :catalina
+    sha256 "aff43c71a166c388cb8e6ca5a46d8282dd54f8111632f6d8f8f7cd9a910577c5" => :mojave
+    sha256 "d7bea0bd153859687ad5f6375a6a6bb95ce8968366342aec0e005500bc2d159e" => :high_sierra
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.14" => :build
 
   def install
     ENV["GOPATH"] = buildpath

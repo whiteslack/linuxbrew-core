@@ -5,12 +5,13 @@ class Csound < Formula
     tag:      "6.15.0",
     revision: "18c2c7897425f462b9a7743cee157cb410c88198"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/csound/csound.git", branch: "develop"
 
   bottle do
-    sha256 "8ec239cb4bbd02409b3b92416b5ef24308638ce039179b391036f33dffe2e10b" => :catalina
-    sha256 "f39575f937f3836a476eecdfe1cf6515d9f6084c003bede59e214b59a803de3b" => :mojave
-    sha256 "9d3c423257d2792b57c37d8252874c02660a3b61d2fb97fef5363c71f60f9043" => :high_sierra
+    sha256 "d0d9f99b5afdecb3df96968a547b907862c721c6ef903d4681df0036d1f5ac07" => :catalina
+    sha256 "b78a4d843e44cb5fa29122647abf2fa544e944b22e3b6637dc8e665e17db14d5" => :mojave
+    sha256 "9393b139b0ca4bcef998414750066c8539bc37aa299d962407f5e5cf5c712511" => :high_sierra
   end
 
   depends_on "asio" => :build
@@ -56,7 +57,6 @@ class Csound < Formula
 
   def install
     ENV["JAVA_HOME"] = Formula["openjdk"].libexec/"openjdk.jdk/Contents/Home"
-    ENV.prepend "CFLAGS", "-DH5_USE_110_API -DH5Oget_info_vers=1"
 
     resource("ableton-link").stage { cp_r "include/ableton", buildpath }
     resource("getfem").stage { cp_r "src/gmm", buildpath }
@@ -117,6 +117,7 @@ class Csound < Formula
       instr 1
           a_, a_, a_ chuap 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
           a_signal STKPlucked 440, 1
+          a_, a_ hrtfstat a_signal, 0, 0, sprintf("hrtf-%d-left.dat", sr), sprintf("hrtf-%d-right.dat", sr), 9, sr
           hdf5write "test.h5", a_signal
           out a_signal
       endin
@@ -129,6 +130,7 @@ class Csound < Formula
 
     ENV["OPCODE6DIR64"] = frameworks/"CsoundLib64.framework/Resources/Opcodes64"
     ENV["RAWWAVE_PATH"] = Formula["stk"].pkgshare/"rawwaves"
+    ENV["SADIR"] = frameworks/"CsoundLib64.framework/Versions/Current/samples"
 
     output = shell_output "#{bin}/csound test.orc test.sco 2>&1"
     assert_match /^hello, world$/, output

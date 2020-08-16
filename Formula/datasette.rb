@@ -2,15 +2,15 @@ class Datasette < Formula
   include Language::Python::Virtualenv
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://datasette.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/6c/e2/20ee31a48d96aee609b35a9d2617a71d46203864cc4c4b01b975b64432e6/datasette-0.47.2.tar.gz"
-  sha256 "969b26a54a66114b407968d1b9f264fdd331eab923825464176ff8a4f61c0e61"
+  url "https://files.pythonhosted.org/packages/e1/50/e5cf41330b9f4fa0e45bdade920309d5beaba5b91aca1082669d8dcdf60a/datasette-0.47.3.tar.gz"
+  sha256 "4de5a76a607b85413f0ad64d8a6a6e73def00258f62579d877cca7264089ce7f"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "868d8395dae2f66d68105e5a5db4d56913dce12d0b46f26e1c3d25c8457896d7" => :catalina
-    sha256 "69507c5579670a32a57969064f1d8aa9bf212f2b77e952ebf88d9d514143fed4" => :mojave
-    sha256 "7e27904582b9e415cc4bfb01bd09dadeabb803e9cdef8496e7db0fb7e3e67cb5" => :high_sierra
+    sha256 "379fe96c6c0d9aa175cf2f1d3978c3b1d3a91ce60334222cc26213759152b971" => :catalina
+    sha256 "92caaa30c5e16acd26dd86b347c6cb450b8f137dfb3a847aa5bb7811d24bfb48" => :mojave
+    sha256 "7ffbfecc5e0ea2465bec58d7efc5499a131de044a4cb318179d050c2cb971327" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -21,8 +21,8 @@ class Datasette < Formula
   end
 
   resource "asgi-csrf" do
-    url "https://files.pythonhosted.org/packages/20/19/60188a9d88e5af17cfb91dac465f898d8eccf69bc215ac731d64c49fea5c/asgi-csrf-0.6.1.tar.gz"
-    sha256 "4045b8b45c330e068b8b96f914e585ea69228efbfe574ab4a4be2d8c6009a19f"
+    url "https://files.pythonhosted.org/packages/e1/64/7ed484baad9fa6139260fe27ece6905e4746b59e9d2b70c7e2c48a4f1cf9/asgi-csrf-0.7.tar.gz"
+    sha256 "6cccf20390bb0990691f6a796c782cfb00d0d04485bd39fc988d14e8e6aea9d0"
   end
 
   resource "asgiref" do
@@ -103,6 +103,11 @@ class Datasette < Formula
   resource "python-baseconv" do
     url "https://files.pythonhosted.org/packages/33/d0/9297d7d8dd74767b4d5560d834b30b2fff17d39987c23ed8656f476e0d9b/python-baseconv-1.2.2.tar.gz"
     sha256 "0539f8bd0464013b05ad62e0a1673f0ac9086c76b43ebf9f833053527cd9931b"
+  end
+
+  resource "python-multipart" do
+    url "https://files.pythonhosted.org/packages/46/40/a933ac570bf7aad12a298fc53458115cc74053474a72fbb8201d7dc06d3d/python-multipart-0.0.5.tar.gz"
+    sha256 "f7bb5f611fc600d15fa47b3974c8aa16e93724513b49b5f95c81e6624c83fa43"
   end
 
   resource "PyYAML" do
