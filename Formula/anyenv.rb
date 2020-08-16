@@ -10,6 +10,7 @@ class Anyenv < Formula
     sha256 "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b" => :catalina
     sha256 "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b" => :mojave
     sha256 "d07da85e43b8fca089c90ca923593f4d96732f5b05f6a20026f0d219d68bba3b" => :high_sierra
+    sha256 "9cb5d96d04a08bf1e0bd5914763be42018e2e36d1a1bfae1ab8a5033eee7bcdc" => :x86_64_linux
   end
 
   def install
