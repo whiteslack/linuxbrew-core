@@ -1,36 +1,19 @@
-class Go < Formula
-  desc "Open source programming language to build simple/reliable/efficient software"
+class GoAT114 < Formula
+  desc "Go programming environment (1.14)"
   homepage "https://golang.org"
+  url "https://golang.org/dl/go1.14.7.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.14.7.src.tar.gz"
+  sha256 "064392433563660c73186991c0a315787688e7c38a561e26647686f89b6c30e3"
   license "BSD-3-Clause"
 
-  stable do
-    url "https://golang.org/dl/go1.15.src.tar.gz"
-    mirror "https://fossies.org/linux/misc/go1.15.src.tar.gz"
-    sha256 "69438f7ed4f532154ffaf878f3dfd83747e7a00b70b3556eddabf7aaee28ac3a"
+  keg_only :versioned_formula
 
-    go_version = version.to_s.split(".")[0..1].join(".")
-    resource "gotools" do
-      url "https://go.googlesource.com/tools.git",
-          branch: "release-branch.go#{go_version}"
-    end
+  depends_on macos: :el_capitan
+
+  resource "gotools" do
+    url "https://go.googlesource.com/tools.git",
+        branch: "release-branch.go1.14"
   end
-
-  bottle do
-    sha256 "b31ffd280a8227a139f35d17fb720db33d8855c935932be37593beb76ca18847" => :catalina
-    sha256 "8aec42a42c26beeadeb45b0a19b3ee94560118886f59313ac4bc58c1913545c5" => :mojave
-    sha256 "d2889b2c2a0257f5cb267843e20de580bf8349bfe43990813e596b9aaf898001" => :high_sierra
-    sha256 "489f7e316019e69bce37139179a41120980f5ed824cbeb60252b40337870c94b" => :x86_64_linux
-  end
-
-  head do
-    url "https://go.googlesource.com/go.git"
-
-    resource "gotools" do
-      url "https://go.googlesource.com/tools.git"
-    end
-  end
-
-  depends_on macos: :sierra
 
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do
@@ -46,18 +29,12 @@ class Go < Formula
   end
 
   def install
-    # Fixes: Error: Failure while executing: ../bin/ldd ../line-clang.elf: Permission denied
-    unless OS.mac?
-      chmod "+x", Dir.glob("src/debug/dwarf/testdata/*.elf")
-      chmod "+x", Dir.glob("src/debug/elf/testdata/*-exec")
-    end
-
     (buildpath/"gobootstrap").install resource("gobootstrap")
     ENV["GOROOT_BOOTSTRAP"] = buildpath/"gobootstrap"
 
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec
-      ENV["GOOS"]         = OS.mac? ? "darwin" : "linux"
+      ENV["GOOS"] = "darwin"
       system "./make.bash", "--no-clean"
     end
 
@@ -86,7 +63,7 @@ class Go < Formula
       import "fmt"
 
       func main() {
-          fmt.Println("Hello World")
+        fmt.Println("Hello World")
       }
     EOS
     # Run go fmt check for no errors then run the program.

@@ -2,16 +2,15 @@ class Csound < Formula
   desc "Sound and music computing system"
   homepage "https://csound.com"
   url "https://github.com/csound/csound.git",
-    tag:      "6.14.0",
-    revision: "1073b4d1bc2304a1e06defd266781a9c441a5be0"
-  license "LGPL-2.1"
-  revision 5
+    tag:      "6.15.0",
+    revision: "18c2c7897425f462b9a7743cee157cb410c88198"
+  license "LGPL-2.1-or-later"
   head "https://github.com/csound/csound.git", branch: "develop"
 
   bottle do
-    sha256 "e6927a4fd4a1acc821bb5820318d2a0bca389d504271115a46b16f36c1cee642" => :catalina
-    sha256 "eaf9b0c29d23473d6f6f1c854e0c7ab95accbdd177d0377dc67294bd41ec6dde" => :mojave
-    sha256 "785dacc76af2fbedfb3e8f6cb83850735b2efdb505e7464972af3ae0312e4a5d" => :high_sierra
+    sha256 "8ec239cb4bbd02409b3b92416b5ef24308638ce039179b391036f33dffe2e10b" => :catalina
+    sha256 "f39575f937f3836a476eecdfe1cf6515d9f6084c003bede59e214b59a803de3b" => :mojave
+    sha256 "9d3c423257d2792b57c37d8252874c02660a3b61d2fb97fef5363c71f60f9043" => :high_sierra
   end
 
   depends_on "asio" => :build
