@@ -6,10 +6,9 @@ on:
       pull_request:
         description: Pull request number
         required: true
+
 env:
   HOMEBREW_COLOR: 1
-  HOMEBREW_DEVELOPER: 1
-  HOMEBREW_NO_AUTO_UPDATE: 1
 
 jobs:
   upload:
