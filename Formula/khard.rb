@@ -6,7 +6,6 @@ class Khard < Formula
   url "https://files.pythonhosted.org/packages/a3/4e/e9cbcb281d371c355f251e5d9ca58b7e0d02dffd2bf4938888068fbc2def/khard-0.17.0.tar.gz"
   sha256 "164e1aee9264735ec0473a74a38842e6272bbb814d949a66084c6a373bd95618"
   license "GPL-3.0"
-  revision 1 unless OS.mac?
 
   bottle do
     cellar :any_skip_relocation
