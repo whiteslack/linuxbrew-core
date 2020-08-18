@@ -12,6 +12,7 @@ class Serf < Formula
     sha256 "7b232e24a80e1c0199e2b1b368f7c55e1f51ff840b450eb826b2688a2c6fab03" => :catalina
     sha256 "04d4ea4e4c299ac0899a59f96381a7f382b91b16d6cc4b7eb69d97c446e66343" => :mojave
     sha256 "22a8592c825ec0adb0e790be20dd0e24a8d5afb2b326d17df22a5266197a4148" => :high_sierra
+    sha256 "200161970f2050a06647f4bcfa5bedbc731547e698f36b3f6122485956665b8b" => :x86_64_linux
   end
 
   depends_on "go" => :build
