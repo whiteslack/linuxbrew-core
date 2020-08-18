@@ -11,6 +11,7 @@ class Vultr < Formula
     sha256 "a73bd34611c56aefe57e5491191ae90109f779f49ecacee332c0e55745e84c89" => :catalina
     sha256 "bce926c779ee605e3f36d9135dfd08bb898f62440cf04e5bcd991afd517931f2" => :mojave
     sha256 "5f6278c15bd1487cbdee6b871057074b1a548a9dfba7a98b202d3ccbc12966c2" => :high_sierra
+    sha256 "fd6baf2bf250657939c16bb331ec5fa7a5f999579bf03b3f9ac25e6a9853ac09" => :x86_64_linux
   end
 
   depends_on "go" => :build
