@@ -1,15 +1,15 @@
 class Bond < Formula
   desc "Cross-platform framework for working with schematized data"
   homepage "https://github.com/microsoft/bond"
-  url "https://github.com/microsoft/bond/archive/9.0.2.tar.gz"
-  sha256 "1745d9d1fc5abf804d0d2b37ab722e1ba318dc0f89a6f2f158437d142710c0f4"
+  url "https://github.com/microsoft/bond/archive/9.0.3.tar.gz"
+  sha256 "46adb4be6a3f718f6e33dababa16450ef44f6713be5362b0e2218373050755b0"
   license "MIT"
 
   bottle do
     cellar :any
-    sha256 "5535b65ad5e7ba72b0e671e43c915f051603ad58f3f876892ceb655ac610fba2" => :catalina
-    sha256 "f0b6dbc5afaf0b4a49dd240cdcafb08254632b1894737d2d2ad6faef8c13054d" => :mojave
-    sha256 "6bd7cd9569089318223d6897fb3232aca500988a351aa674bb4e71de87b0b662" => :high_sierra
+    sha256 "8edd8ebca89f6c4c01460341d122a842bdf698276e766de47888163703b31450" => :catalina
+    sha256 "6702e41433031e30ee9a585f49ff31af21a613f3a6cae449b71fc346fa9c84c8" => :mojave
+    sha256 "e151c6702d0428672d70a29388bc2ff56746eebd4e14661eb9bc09a8e36c4720" => :high_sierra
   end
 
   depends_on "cmake" => :build

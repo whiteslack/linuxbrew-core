@@ -3,15 +3,15 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https://jupyter.org/"
-  url "https://files.pythonhosted.org/packages/b6/6a/d4ad207b17c0861a8c0e829a2284e97ecc182649b408fc7ece05181e64bb/jupyterlab-2.2.4.tar.gz"
-  sha256 "e9d26c4c1cf4f7760dfa9ccd3fd5ea5027ae2767f22c7766dbb2fbb5e5dfcd4b"
+  url "https://files.pythonhosted.org/packages/9c/a3/146fb067d43ecd54117770014346866d017cd54011e0b4f79d9ad3b8f9f8/jupyterlab-2.2.5.tar.gz"
+  sha256 "f7d669b33192e89c499b884994a9194175981d586631ced2a0793950238eef81"
   license "BSD-3-Clause"
 
   bottle do
     cellar :any
-    sha256 "c824c0b34105446e5f8a81443e4c2b76e0e5dc1c3f218c379c7d7d3d6ec5ac2a" => :catalina
-    sha256 "db69678bd250f45d39f1e04cfd1c2d5ebc0f984fca1f6a6fd07347d069bcaf96" => :mojave
-    sha256 "80eeac1a9c0921c38c3c477b1d0a504e5117042c6fbfa21f1ffa62eadaeb7dce" => :high_sierra
+    sha256 "65bc32a86e662c92535385564fc7bc3921d29c3f0bbc8f2e2762c7ccbb9caa05" => :catalina
+    sha256 "ebbb74a96fd588c41af3e4a4cda332124018e945fbb5c09c1c6e889de92a7ccb" => :mojave
+    sha256 "d2429e393167ae889919440a51ed179d75ca61b81ca761e92aec35ff6f3ecde3" => :high_sierra
   end
 
   depends_on "ipython"
@@ -55,8 +55,8 @@ class Jupyterlab < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/54/1d/15eae71ab444bd88a1d69f19592dcf32b9e3166ecf427dd9243ef0d3b7bc/cffi-1.14.1.tar.gz"
-    sha256 "b2a2b0d276a136146e012154baefaea2758ef1f56ae9f4e01c612b0831e0bd2f"
+    url "https://files.pythonhosted.org/packages/f7/09/88bbe20b76ca76be052c366fe77aa5e3cd6e5f932766e5597fecdd95b2a8/cffi-1.14.2.tar.gz"
+    sha256 "ae8f34d50af2c2154035984b8b5fc5d9ed63f32fe615646ab435b05b132ca91b"
   end
 
   resource "chardet" do
@@ -155,8 +155,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/7a/e3/dd06a6e0abd7bf017025dd0bc0877750ed0057167b5e2574efb651a99672/notebook-6.1.1.tar.gz"
-    sha256 "42391d8f3b88676e774316527599e49c11f3a7e51c41035e9e44c1b58e1398d5"
+    url "https://files.pythonhosted.org/packages/a9/86/7313fa3a401c9e0c068b2992ec50b7ec56abf3731f4ce3af17ed80f6c4b6/notebook-6.1.3.tar.gz"
+    sha256 "9990d51b9931a31e681635899aeb198b4c4b41586a9e87fbfaaed1a71d0a05b6"
   end
 
   resource "packaging" do

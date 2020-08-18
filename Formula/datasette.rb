@@ -2,15 +2,15 @@ class Datasette < Formula
   include Language::Python::Virtualenv
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://datasette.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/e1/50/e5cf41330b9f4fa0e45bdade920309d5beaba5b91aca1082669d8dcdf60a/datasette-0.47.3.tar.gz"
-  sha256 "4de5a76a607b85413f0ad64d8a6a6e73def00258f62579d877cca7264089ce7f"
+  url "https://files.pythonhosted.org/packages/01/70/11734b4cb005a556f20e65e7f04df1c22a85f5ef731d86c9a63c2476ada3/datasette-0.48.tar.gz"
+  sha256 "40f9b8b29d9b0962d33f657177484f6d3d5b51cc58588c508b57ce24e78d5e3b"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "379fe96c6c0d9aa175cf2f1d3978c3b1d3a91ce60334222cc26213759152b971" => :catalina
-    sha256 "92caaa30c5e16acd26dd86b347c6cb450b8f137dfb3a847aa5bb7811d24bfb48" => :mojave
-    sha256 "7ffbfecc5e0ea2465bec58d7efc5499a131de044a4cb318179d050c2cb971327" => :high_sierra
+    sha256 "cee3c858dc117818bd4a42e8ce8bd16ac3936a89042c813a3b37bab95f4986cf" => :catalina
+    sha256 "10348d0aeeb7440d9d4b0bee2e9fc9fa9e2fe11607e132d46f719ac3e568630d" => :mojave
+    sha256 "ed707180ff9941e48a74175118f5fed013d72b52a800cf67a20bf8feaa4d3474" => :high_sierra
   end
 
   depends_on "python@3.8"

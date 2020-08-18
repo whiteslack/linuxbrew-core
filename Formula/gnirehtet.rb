@@ -1,25 +1,25 @@
 class Gnirehtet < Formula
   desc "Reverse tethering tool for Android"
   homepage "https://github.com/Genymobile/gnirehtet"
-  url "https://github.com/Genymobile/gnirehtet/archive/v2.4.tar.gz"
-  sha256 "5ff179fca58e85473e737680a72aeb84c710082283bfe9cce4b044b3c2436c4d"
+  url "https://github.com/Genymobile/gnirehtet/archive/v2.5.tar.gz"
+  sha256 "2b55b56e1b21d1b609a0899fe85d1f311120bb12b04761ec586187338daf6ec5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/Genymobile/gnirehtet.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8f2c4797209bc261df8b2b9ba75d2719070c1c3e587c392d941aac7b18e9da8e" => :catalina
-    sha256 "879106aecceb430220e20e3224e906cb2cbe1fdf92febed03c6f319fb668592d" => :mojave
-    sha256 "86843aab81fac7df1b3fe9c92c47ea6be7367fecefa90398dd2a9d322160455a" => :high_sierra
-    sha256 "769cd736a3ed9be440b8022917617099e4eec03c082242d53348efdb9da7f26f" => :x86_64_linux
+    sha256 "6f65def77cc1708e7a1ae8e85dfe2cbede4717225e8a5c2f7a9f09c8271282f3" => :catalina
+    sha256 "7ebc9b16c6d6856be8604388d4ca2bfc9cc2c4ec02e255f1a462be681283c6e8" => :mojave
+    sha256 "a57d5039af819db991968751511a63874cd0c20d1d10fe106ef92e83b216eb38" => :high_sierra
   end
 
   depends_on "rust" => :build
   depends_on "socat" => :test
 
   resource "java_bundle" do
-    url "https://github.com/Genymobile/gnirehtet/releases/download/v2.4/gnirehtet-java-v2.4.zip"
-    sha256 "10b6cca49a76231fbf8ac3428cf95e9f1c193c4f47abe2b8e2aa16746eb8cc21"
+    url "https://github.com/Genymobile/gnirehtet/releases/download/v2.5/gnirehtet-java-v2.5.zip"
+    sha256 "c65fc1a35e6b169ab6aa45e695c043e933f6fd650363aea7c2add0ecb0db27ca"
   end
 
   def install
@@ -28,16 +28,7 @@ class Gnirehtet < Formula
     system "cargo", "install", "--locked", "--root", libexec, "--path", "relay-rust"
     mv "#{libexec}/bin/gnirehtet", "#{libexec}/gnirehtet"
 
-    (bin/"gnirehtet").write <<~EOS
-      #!/bin/bash
-      if [[ "$1" == "install" ]]; then
-        shift
-        echo "Installing #{libexec}/gnirehtet.apk"
-        adb install -r #{libexec}/gnirehtet.apk
-      else
-        #{libexec}/gnirehtet $*
-      fi
-    EOS
+    (bin/"gnirehtet").write_env_script("#{libexec}/gnirehtet", GNIREHTET_APK: "#{libexec}/gnirehtet.apk")
   end
 
   def caveats

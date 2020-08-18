@@ -3,16 +3,16 @@ class Xonsh < Formula
 
   desc "Python-ish, BASHwards-compatible shell language and command prompt"
   homepage "https://xon.sh/"
-  url "https://github.com/xonsh/xonsh/archive/0.9.18.tar.gz"
-  sha256 "fbbcb62334a2f1fd94af79c6d4bcf183c0308aab16221a9aa752a3660cc73f09"
+  url "https://github.com/xonsh/xonsh/archive/0.9.19.tar.gz"
+  sha256 "35c278c848829d5484f7456aeb6a86abd647e06c6e2bf09389ef0a306ef28e07"
+  license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4070263bdcb133592aa553a066e14508f9d80baad17dbb197ed1a66fa415642d" => :catalina
-    sha256 "27f235259b2deddbc6dd0177e341e652a519b516cf4131124d55b320210acf88" => :mojave
-    sha256 "e6160b47a159b7a1ed67dabb58a131ec8aea10d7f80a1a62404b72725ccd403d" => :high_sierra
-    sha256 "7b9b7b0ef3531f1f24e606332fe470e88945b8a34c0204a45bc264c3e9d9483c" => :x86_64_linux
+    sha256 "48a3d2dca5b62dfc32baebf37d52b9a8184f3dd9c429a8cab3f3b38e9e959db7" => :catalina
+    sha256 "34794134dbbe9161d8ee5f9522c83dbbca0ff2d923050a253459df2b86770efb" => :mojave
+    sha256 "15ea85c454a49425e48ced86edc88e21e30c08e38a7e8baee854092a9fb360bb" => :high_sierra
   end
 
   depends_on "python@3.8"

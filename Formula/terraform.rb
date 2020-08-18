@@ -4,17 +4,17 @@ class Terraform < Formula
   url "https://github.com/hashicorp/terraform/archive/v0.13.0.tar.gz"
   sha256 "b531255bd4e1dbbc7fc5e01729b77f8781cc0f369833d01211048f0667e56cee"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/hashicorp/terraform.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4ff5b12ae74bad7014c5b3d516535d12f34af1a9af000b0a2353fb9ed6b7cb23" => :catalina
-    sha256 "4ff5b12ae74bad7014c5b3d516535d12f34af1a9af000b0a2353fb9ed6b7cb23" => :mojave
-    sha256 "4ff5b12ae74bad7014c5b3d516535d12f34af1a9af000b0a2353fb9ed6b7cb23" => :high_sierra
-    sha256 "cd00c0d2a1a0f84d02bdf445eb27703b026a8978cb38d0594b2d6bcb7f479b1d" => :x86_64_linux
+    sha256 "42c43a72642e4ffc22443f3521cf396b745ee1c15435799f844bc0eaed0f0531" => :catalina
+    sha256 "42c43a72642e4ffc22443f3521cf396b745ee1c15435799f844bc0eaed0f0531" => :mojave
+    sha256 "42c43a72642e4ffc22443f3521cf396b745ee1c15435799f844bc0eaed0f0531" => :high_sierra
   end
 
-  depends_on "go@1.13" => :build
+  depends_on "go@1.14" => :build
 
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
 

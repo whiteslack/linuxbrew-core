@@ -1,16 +1,15 @@
 class VulkanHeaders < Formula
   desc "Vulkan Header files and API registry"
   homepage "https://github.com/KhronosGroup/Vulkan-Headers"
-  url "https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.2.150.tar.gz"
-  sha256 "dc6477b06ed04f4df72cb46915131c1a844980c6f4993954672893b69c2ffb57"
+  url "https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.2.151.tar.gz"
+  sha256 "9a3bb3077c9bb71347d6b9942fa5b728053b67dbd5c1eb9d75a774bccefa18d8"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "7154de12899e81bbb3b3da962b5bdafdc7e450fa457e4c1df45b20b31629365f" => :catalina
-    sha256 "7154de12899e81bbb3b3da962b5bdafdc7e450fa457e4c1df45b20b31629365f" => :mojave
-    sha256 "7154de12899e81bbb3b3da962b5bdafdc7e450fa457e4c1df45b20b31629365f" => :high_sierra
-    sha256 "cc2c1696cdb43e4d334e061a46750b7d19e3046cb125f47faeb3003c6ffe1b82" => :x86_64_linux
+    sha256 "33b963f2fe043f8913b869ce5862343ddf7cc3df0b142d043e907e7571d31c92" => :catalina
+    sha256 "33b963f2fe043f8913b869ce5862343ddf7cc3df0b142d043e907e7571d31c92" => :mojave
+    sha256 "33b963f2fe043f8913b869ce5862343ddf7cc3df0b142d043e907e7571d31c92" => :high_sierra
   end
 
   depends_on "cmake" => :build
