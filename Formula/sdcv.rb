@@ -11,6 +11,7 @@ class Sdcv < Formula
     sha256 "4831ddd61d8b9e9b7024cfc898d4e7e4c89207276ac2a4bc5b22911294d3e8b6" => :catalina
     sha256 "98f5f41515dc5b1dbf8ca9bb7f47990c9c5852a8f5e56a93da303fcb024ef411" => :mojave
     sha256 "9e95490034c0b964cf617e05361ac7128a5e5e886ea38dcc4f14b64468c328ac" => :high_sierra
+    sha256 "6fae2e1393b446f8df600ac8c0f863d381d49222c83b355e8c9001865311cd1f" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
