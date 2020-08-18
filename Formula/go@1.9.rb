@@ -63,7 +63,6 @@ class GoAT19 < Formula
 
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec
-      ENV["GOOS"] = OS.mac? ? "darwin" : "linux"
       system "./make.bash", "--no-clean"
     end
 

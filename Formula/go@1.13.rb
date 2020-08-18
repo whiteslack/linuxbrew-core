@@ -18,8 +18,6 @@ class GoAT113 < Formula
 
   deprecate! date: "2020-08-11"
 
-  depends_on macos: :el_capitan
-
   resource "gotools" do
     url "https://go.googlesource.com/tools.git",
         branch: "release-branch.go1.13"
@@ -44,7 +42,6 @@ class GoAT113 < Formula
 
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec
-      ENV["GOOS"]         = OS.mac? ? "darwin" : "linux"
       system "./make.bash", "--no-clean"
     end
 

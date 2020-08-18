@@ -15,8 +15,6 @@ class GoAT114 < Formula
 
   keg_only :versioned_formula
 
-  depends_on macos: :el_capitan
-
   resource "gotools" do
     url "https://go.googlesource.com/tools.git",
         branch: "release-branch.go1.14"
