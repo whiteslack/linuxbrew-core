@@ -10,6 +10,7 @@ class Navi < Formula
     sha256 "b4ceecbdfd55639a759d240db593b24af918c460fdcdf062e1bcacdb68c29dd6" => :catalina
     sha256 "5ea206ef9c7d10c00a0a60ed26ab941aec0fb516bf9d3146a95ef836e095b0f5" => :mojave
     sha256 "062d323e514c0c1688f6fcbf8d4708409e713db60b217343a8aeb8424998c6cb" => :high_sierra
+    sha256 "c1a3262f65148b508c4d8b2079185137674d0e73cf528e5091d1af8589a5cc2d" => :x86_64_linux
   end
 
   depends_on "rust" => :build
