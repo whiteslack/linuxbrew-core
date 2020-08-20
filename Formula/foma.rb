@@ -12,6 +12,7 @@ class Foma < Formula
     sha256 "dc0a238f67280d9e15e50bc7064669f1715170c9a59d608537ed195801db0c9e" => :catalina
     sha256 "a3b11300d427959a0ca8aa908d6c43369a8c17889a63f56d7772c6c4fdaeee04" => :mojave
     sha256 "d223eaa3a2f821d24b5f3b5486494a1a029f96e1640d4fe6f3633e6ad53e14a9" => :high_sierra
+    sha256 "1f30a342aeb7b5e51d1238a36ee9021f3264ac502b2544a2e1a5b259c1cbc68f" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
