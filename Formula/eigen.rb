@@ -12,6 +12,7 @@ class Eigen < Formula
     sha256 "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8" => :catalina
     sha256 "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8" => :mojave
     sha256 "7770e95151199c72350c1f3990bfa153026fbe2f8e73ffc1d0cdbaf9774215e8" => :high_sierra
+    sha256 "be362dfa7f14b865269be57a660510b3742dac9abb543c13d32aac845824e558" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
