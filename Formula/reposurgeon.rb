@@ -12,6 +12,7 @@ class Reposurgeon < Formula
     sha256 "f2e2edf15cf9b71ee26df6b878d5178a8b9d748f3d0c07e10c574074baf9267e" => :catalina
     sha256 "dd26bcd8e10850bd9f55db41bc5d5d98757eb1a857d87be3c81737755a480a8c" => :mojave
     sha256 "9d534aae13973bbe43fcf5464da33ff32cc6a211e12ec635ad175884e552009c" => :high_sierra
+    sha256 "dfc0eaf6dbc8d805a705a6835f8efd002a6ca8e3d75465b346b26eb9554e43a4" => :x86_64_linux
   end
 
   depends_on "asciidoctor" => :build
