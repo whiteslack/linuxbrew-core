@@ -13,6 +13,7 @@ class Ipython < Formula
     sha256 "303dc04db728b1a3ef0a29831e1772ba9b16127f0ebd58e8aac6f57125a9bd30" => :catalina
     sha256 "bce9b9a3ce9f71eb632deae4fed6a5be25ea0aef297e76e557be0bb58fac31c1" => :mojave
     sha256 "e86aa195fc51789b920b94e62f32d485806b32928bb325517a03c2fa9d69d5b4" => :high_sierra
+    sha256 "2535bb865ec4ad9dbe59898ac75c192c3b4061fb837c0cda0a05ca564f583d2f" => :x86_64_linux
   end
 
   depends_on "python@3.8"
