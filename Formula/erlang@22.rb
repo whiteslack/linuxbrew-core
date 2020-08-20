@@ -2,15 +2,15 @@ class ErlangAT22 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/archive/OTP-22.3.4.7.tar.gz"
-  sha256 "9bafa7a6040ecd18a0b0b05ed014bd186722ef4bf8925b70e9661d3eb5886e66"
+  url "https://github.com/erlang/otp/archive/OTP-22.3.4.8.tar.gz"
+  sha256 "e3a3611220ddf931029f64c3fcca0d197101b2e35adbadd0272ff96e037a4874"
   license "Apache-2.0"
 
   bottle do
     cellar :any
-    sha256 "f4a2a4975705ed5369f8207ea78d1d676d8e9051c4edd4a043fad8ca9e7550f2" => :catalina
-    sha256 "9dcfcc0ff8b3478d1327698105eb005848a94adda5a1f77e0a2338cc9d2386b8" => :mojave
-    sha256 "db8599b36d72b2ceee14206ed132cfdea5e1fd40154c77b911a08d1eaadc74d4" => :high_sierra
+    sha256 "7608ec2f34e944112755b2c6a66d8103a41c33540959b1333fa9760bf467f4ea" => :catalina
+    sha256 "3a117b8d061740faad0dd0a4b3419e4e50bf8e7d1d8e4e29f166d181db7d8629" => :mojave
+    sha256 "8286255eec55b2b8840e87f659071d39a6aced50605826b9d01744a6d5f91393" => :high_sierra
   end
 
   keg_only :versioned_formula

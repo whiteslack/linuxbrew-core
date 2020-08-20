@@ -3,17 +3,17 @@ class ClojureLsp < Formula
   homepage "https://github.com/snoe/clojure-lsp"
   # Switch to use git tag/revision as needed by `lein-git-version`
   url "https://github.com/snoe/clojure-lsp.git",
-    tag:      "release-20200817T204951",
-    revision: "0e5385f42ab2fd5043b49b4b792ba03d6c78128e"
-  version "20200817T204951"
+    tag:      "release-20200819T134828",
+    revision: "090d60cbacc7b7f996fac10c06985ae35a5f7de6"
+  version "20200819T134828"
   license "MIT"
   head "https://github.com/snoe/clojure-lsp.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d31b96e04f4f99cefae210ba49a138970df59904167fb446e67afbc8d6c709bc" => :catalina
-    sha256 "518c99f86fcfdaf405dd6964f68ba788f6f3134b812be89d63258701154b099e" => :mojave
-    sha256 "5057d42467d2ed53e8647dc51986d46d9317fd8417fd6bc404c352348d045150" => :high_sierra
+    sha256 "645cdec11f11d3d5260a32f60e80c218486de08c1898cd827ec9b87642c2f982" => :catalina
+    sha256 "5a74b33a223ef90e2ad92e9e48b57e9c46df175556f993989a928a9c41500066" => :mojave
+    sha256 "2433b623a368302d736e528dad89ce63c1fb6535f6b36630a3aa96b59fc97e89" => :high_sierra
   end
 
   depends_on "leiningen" => :build

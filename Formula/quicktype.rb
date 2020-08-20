@@ -4,17 +4,16 @@ class Quicktype < Formula
   desc "Generate types and converters from JSON, Schema, and GraphQL"
   homepage "https://github.com/quicktype/quicktype"
   # quicktype should only be updated every 10 releases on multiples of 10
-  url "https://registry.npmjs.org/quicktype/-/quicktype-15.0.240.tgz"
-  sha256 "8d33ab80b03db7996d226eab38935505bd073c6d9ed75ca3db77fef0eabd6298"
+  url "https://registry.npmjs.org/quicktype/-/quicktype-15.0.250.tgz"
+  sha256 "fcb83430f3d539a9fec35adb2e884672e65997c8f0c45e245993378bca2cb362"
   license "Apache-2.0"
   head "https://github.com/quicktype/quicktype.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c6dcb4ca8f02a79d042691aa9780ff118421cbb00d6dd1dff170c0f5880e1e3e" => :catalina
-    sha256 "b9a4a53503d75d0a6e31b67d52688aa484819abd5e539621cb0ddffd0892eeb2" => :mojave
-    sha256 "840ae4619f54bb0f2e70e1b1580be76a1361c0fb15deb559d3897f2381bdd52c" => :high_sierra
-    sha256 "48c1b3ec64b953c24276bcf5b35ce005cec4a073c36304abf66ff64b2f81cf71" => :x86_64_linux
+    sha256 "0e8a066590d3379759d8d5edde1a572f1c0af2bdbd8b0794e18f574db4c3a567" => :catalina
+    sha256 "2905e11643e1f66851b8fda1ff00788b624297726ece95f5a6992a9da1a94766" => :mojave
+    sha256 "af0fc0f564639712090a95dcb8876710851b56c1af32d6121eac0fdb978b5996" => :high_sierra
   end
 
   depends_on "node"

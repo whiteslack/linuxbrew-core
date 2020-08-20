@@ -1,17 +1,16 @@
 class Miller < Formula
   desc "Like sed, awk, cut, join & sort for name-indexed data such as CSV"
   homepage "https://github.com/johnkerl/miller"
-  url "https://github.com/johnkerl/miller/releases/download/v5.8.0/mlr-5.8.0.tar.gz"
-  sha256 "7e476caf9c1ce45e36dd826f3ab3a73b036a60cb30bbded34edacfb435ffff83"
+  url "https://github.com/johnkerl/miller/releases/download/v5.9.0/mlr-5.9.0.tar.gz"
+  sha256 "06d995667f48a59818979c1ca6d4192f784796f8612550e1a2b24d63a0802856"
   license "BSD-2-Clause"
   head "https://github.com/johnkerl/miller.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "059dafccaf44c5ec084a9a9660433c9c6157df1e4dbb25e9f29d3d057a451b4f" => :catalina
-    sha256 "09454642fc0344298fffa89f13c2a0544537f524450fa3b2f8c7039001d41f77" => :mojave
-    sha256 "fbeab224dd44fa0dc23d1e3424183262546f6f0bae15c3a33e186774f223f845" => :high_sierra
-    sha256 "c0f8d8367353cb65d7e7dab1fe92eaaa431b3560ba5cd9a26d23d58e6c91a4c2" => :x86_64_linux
+    sha256 "262035972c936468b4ae38126c7cb92282c8eee992b5e1edbdf81e0a3cf26d83" => :catalina
+    sha256 "019b18a5ebb5c5214ea920d214990ed686d26bfcc331293f5d936b6f1b26249f" => :mojave
+    sha256 "abd84eef3044f3c7ec52ae14a3df5e2456abcd40fc4d211fa23f87460d0c60a7" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -29,7 +28,7 @@ class Miller < Formula
                           "--disable-dependency-tracking"
     system "make"
     # Time zone related tests fail. Reported upstream https://github.com/johnkerl/miller/issues/237
-    system "make", "check" unless OS.linux? && ENV["CI"]
+    system "make", "check" if !OS.mac? && ENV["CI"]
     system "make", "install"
   end
 

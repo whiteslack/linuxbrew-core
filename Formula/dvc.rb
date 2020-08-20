@@ -3,15 +3,15 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://github.com/iterative/dvc/archive/1.5.0.tar.gz"
-  sha256 "73de46d8cf1eaaa9c431e5f18ea102a669e375f5bd67d813bca950b16c1400e8"
+  url "https://github.com/iterative/dvc/archive/1.5.1.tar.gz"
+  sha256 "4e270ffd5b6180a8f17f9c9de43f1e3c9156e7e98def902b9149ffc5ebce6cd5"
   license "Apache-2.0"
 
   bottle do
     cellar :any
-    sha256 "c2ef538ded14ba0eb6420de43ef906d762ded9bc336659fa46bcf0b65e5c36ef" => :catalina
-    sha256 "c117f62ccfec4b7dce8bbe0384fce814f1ade7dee1796fbf277a589a135168cd" => :mojave
-    sha256 "5381618520415b328ff36c08fa4e2c2b737845018aadf386b7a72ea7a8be1ade" => :high_sierra
+    sha256 "af17237029d0fb394431aa030f22392fc5767c86a86cc40ae50ed77809be94f3" => :catalina
+    sha256 "fc44cf0d2b8f082068fe680b3415139eeb99d9757a4c6fff7c11f2b3b0c5b78b" => :mojave
+    sha256 "48fb8a71648ee5d1d378e0f3f9ffaad1c26c764e103d88b92302869e55aa4176" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -175,8 +175,8 @@ class Dvc < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/6a/57/2a4c28e5b364865156d80bdebe82f7c97107a18dedaa3266a42437fcfb78/rich-5.1.2.tar.gz"
-    sha256 "f93b4380ac6f37367b36bcf515c770e10ed2c6e54513a0f0151f80c54f4133d3"
+    url "https://files.pythonhosted.org/packages/0f/29/09e9653a651fd898d9fc7f9f11f380cf4d08210b3dffb007fda17fb19fb3/rich-5.2.0.tar.gz"
+    sha256 "b81a05326735c7611678f67d2350845ab2f0fd6f1f235089adddfc770e60f40a"
   end
 
   resource "ruamel.yaml" do
@@ -195,8 +195,8 @@ class Dvc < Formula
   end
 
   resource "shtab" do
-    url "https://files.pythonhosted.org/packages/18/3e/c22281dff2c9e65e18610c1014cd0f943d5604d878b04b6907a8bcbb1360/shtab-1.3.0.tar.gz"
-    sha256 "d4e4679b942f907500cfb91b7506c43998ad2e4773cfa1757f28cff28ff968c7"
+    url "https://files.pythonhosted.org/packages/29/d2/9e57be722dc8d1e42001e958e92285d3139c66ec8a246e7096b9e783f05f/shtab-1.3.1.tar.gz"
+    sha256 "a6f8eacf6ade37331e157498d1b21b6e47f132204becff5920c1886ac65faf64"
   end
 
   resource "six" do

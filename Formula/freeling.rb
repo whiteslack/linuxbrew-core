@@ -3,18 +3,22 @@ class Freeling < Formula
   homepage "http://nlp.lsi.upc.edu/freeling/"
   url "https://github.com/TALP-UPC/FreeLing/releases/download/4.2/FreeLing-src-4.2.tar.gz"
   sha256 "ef0eac3c82b1d1eb6b87094043c744f6517b3bd639415040eaa6e1e6b298d425"
-  license "AGPL-3.0"
+  license "AGPL-3.0-only"
 
   bottle do
-    sha256 "22ee0da143b9d7f402e36992a215891898c9cd9dc0caef7671126b841eca0402" => :catalina
-    sha256 "fdbea1f56535241d510d41c2e388045b402c8385528910a4f1b5f60aa12d364f" => :mojave
-    sha256 "e8bc020fb721b127999afa30985aa80de79baf62d70a838217730f6c89ddaed3" => :high_sierra
+    rebuild 1
+    sha256 "680ce0ad080cd5e9b0415650464c198b9206ed1833791895322e5f0df4b781d5" => :catalina
+    sha256 "120ce824973a4dec44ca66988d80b067dd47bee0ec4ee8bd052d8a5ed45840aa" => :mojave
+    sha256 "11db1280b733420f74d65c273bb06884f93da15f91b954c5bb38bcca2ac45869" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "icu4c"
 
+  conflicts_with "dynet", because: "freeling ships its own copy of dynet"
+  conflicts_with "eigen", because: "freeling ships its own copy of eigen"
+  conflicts_with "foma", because: "freeling ships its own copy of foma"
   conflicts_with "hunspell", because: "both install 'analyze' binary"
 
   def install

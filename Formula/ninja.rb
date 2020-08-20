@@ -1,21 +1,21 @@
 class Ninja < Formula
   desc "Small build system for use with gyp or CMake"
   homepage "https://ninja-build.org/"
-  url "https://github.com/ninja-build/ninja/archive/v1.10.0.tar.gz"
-  sha256 "3810318b08489435f8efc19c05525e80a993af5a55baa0dfeae0465a9d45f99f"
+  url "https://github.com/ninja-build/ninja/archive/v1.10.1.tar.gz"
+  sha256 "a6b6f7ac360d4aabd54e299cc1d8fa7b234cd81b9401693da21221c62569a23e"
   license "Apache-2.0"
-  revision 1 unless OS.mac?
   head "https://github.com/ninja-build/ninja.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b536415ef20ab14e808ef3fe558bbcd4c86de048d7e47cc86906fed4e1507fdc" => :catalina
-    sha256 "07c7d5eab06643969950a168b7a4ce34a39d236869e909942294eb136dfe3063" => :mojave
-    sha256 "e413c88eed509424d118a0b61b7b3c63535fc7c8c92cd336322db7a8af9cf6e0" => :high_sierra
-    sha256 "ddec6959492b9366a5f53660885844e66465338563a79c5e1d386459be44e92e" => :x86_64_linux
+    sha256 "d43c3811eef40b2ed82f7629a3cb8acab313f8459778e506de39d95b3cd0e5e3" => :catalina
+    sha256 "b8a22ed5d7a0138d04e29d616e11c55d85733b7062911a8f0d9e1c4405cc4f61" => :mojave
+    sha256 "8070023444b46cc29d7e52b71cdda279c4734d96d29c7785302ae0ffe27b1245" => :high_sierra
   end
 
-  depends_on "python@3.8" => :build unless OS.mac?
+  on_linux do
+    depends_on "python@3.8" => :build
+  end
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin" unless OS.mac?
