@@ -11,6 +11,7 @@ class Miller < Formula
     sha256 "262035972c936468b4ae38126c7cb92282c8eee992b5e1edbdf81e0a3cf26d83" => :catalina
     sha256 "019b18a5ebb5c5214ea920d214990ed686d26bfcc331293f5d936b6f1b26249f" => :mojave
     sha256 "abd84eef3044f3c7ec52ae14a3df5e2456abcd40fc4d211fa23f87460d0c60a7" => :high_sierra
+    sha256 "4ce289a442ac567bb13f0da9819deafa6d5d82077d80e598fe923288dad55038" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
