@@ -10,6 +10,7 @@ class UsbIds < Formula
     sha256 "86ee1383749511bfa93b03e04b34e99f405abfbe791df50be85f992a303965c1" => :catalina
     sha256 "9acaeabecc451f483976baeee5967a6123d4945b3227942b15ecec8bb390e44f" => :mojave
     sha256 "cb6f7ce696f58356e9ab5679ac4dba62f66d597dd62eacdb64e94e94c10e5be8" => :high_sierra
+    sha256 "19b05d337e1df9d798be020c0fe0970b78b0b54c98a8de476d2559c57c657c0f" => :x86_64_linux
   end
 
   def install
