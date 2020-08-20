@@ -10,6 +10,7 @@ class Libmpc < Formula
     sha256 "94f1002674d74f582bf3d87079c2b3ddbb4b6add13d4bd7b522acd7bda419bba" => :catalina
     sha256 "5896218dabc22de4582cde53ce464263a6675eece309f52c6a262b02e5b6dc60" => :mojave
     sha256 "b48ea39caa145b937b7158c73218e2d98f045bbb6186b48eb1873f45e6a51dea" => :high_sierra
+    sha256 "ed89d45030be9799f73568d7f442f9d967de12ac30a2d85df222a6aa5b6de319" => :x86_64_linux
   end
 
   depends_on "gmp"
