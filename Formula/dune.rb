@@ -11,6 +11,7 @@ class Dune < Formula
     sha256 "637ff9902fcd06fc9f048c5bf1a9214d0bd8b3a8a883a8b312650f1972985dcf" => :catalina
     sha256 "b1825a28dd391ffa2b3d4eadcf5495523b37e0fa63dfd92eaa067e51fa7f6f27" => :mojave
     sha256 "4d70f58146199488cb87c607b691b962cdfd0ccbbf13852af2e835323ce554a7" => :high_sierra
+    sha256 "4e4ab4b71b66ca7ce30fb5354ebc7274fb7fbd6c393f3aa22d32b9c18c883bd0" => :x86_64_linux
   end
 
   depends_on "ocaml" => [:build, :test]
