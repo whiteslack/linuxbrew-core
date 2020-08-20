@@ -11,6 +11,7 @@ class Cxxopts < Formula
     sha256 "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2" => :catalina
     sha256 "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2" => :mojave
     sha256 "d4a289fb314e5efdb8c889c560340c259c04b19b9d1e7087b58d0d24aafd5ed2" => :high_sierra
+    sha256 "20f4558a54dc1402513153ab42f6619963ec8fd98bd640b7d9d7340d4cd951e4" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
