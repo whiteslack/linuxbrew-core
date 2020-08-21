@@ -1,16 +1,15 @@
 class Pango < Formula
   desc "Framework for layout and rendering of i18n text"
   homepage "https://www.pango.org/"
-  url "https://download.gnome.org/sources/pango/1.46/pango-1.46.0.tar.xz"
-  sha256 "9a81572ebb946187fbdd69d5ffc57e2f7a1f768cd8d2fd89dbb03fb9002a99b5"
+  url "https://download.gnome.org/sources/pango/1.46/pango-1.46.1.tar.xz"
+  sha256 "fe516b10711bbb6fd75011d66dd08fabfce18f7931aed7415136d53c4aadf1c5"
   license "LGPL-2.0-or-later"
   head "https://gitlab.gnome.org/GNOME/pango.git"
 
   bottle do
-    sha256 "56e6c57459d6c984905aa61a7d585b6e48c52e787a365bfb52e962337a96e1f0" => :catalina
-    sha256 "ba5b72bea65bbf6b81aa010b7090c644c9a0ecf4e76720829bd1adf510de3d26" => :mojave
-    sha256 "b32c45c7c62c11153070ff91c226430a4b3341fced4d8b1ef4db687366ce4bc4" => :high_sierra
-    sha256 "5987725d9ef43754332da86d4a8c6687deac9e22ac3da9cffa1d71b521ac6c67" => :x86_64_linux
+    sha256 "ddf6c6e74e58909336517fdad64ff0f32212627b1fae8d9bb53439953d29279a" => :catalina
+    sha256 "cbf05eae84754034359bfed76853667eaf1b53bfaa92f2da67c416299e17e6c7" => :mojave
+    sha256 "de0f7b7a6c735a240feb38c00c66afc99316e1d82432b677f4de3fef076cbb89" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build
