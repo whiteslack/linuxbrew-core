@@ -10,6 +10,7 @@ class Nspr < Formula
     sha256 "2ffd322e6891ff5f1dd608f0f71af699bffed06a6fa6f2a098bd64b2964e7e51" => :catalina
     sha256 "c429d78187edc727796ed385cd1f48b8aa4f8b297b22fcb4c5a9600f9eac988d" => :mojave
     sha256 "22b4c5397d3d8edcdf98f9bc8954345bf94421dbc0fa3dba8a23c15bf212dd2c" => :high_sierra
+    sha256 "3359726a5d6659b8b0b3774115da5f14d54f5bb8afc83d1da7208f293dd56f2a" => :x86_64_linux
   end
 
   def install
