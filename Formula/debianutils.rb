@@ -10,6 +10,7 @@ class Debianutils < Formula
     sha256 "9467ace428a54b279c5c69472a1d83f4c2f62ba7adcf04222546a3f763e396b7" => :catalina
     sha256 "22633540f57bd7b0757b086a5bb150703959941aae875b23875904f5ac3f2eb9" => :mojave
     sha256 "c440b2a9b14c7f4b8b7315af4528ad7bd09b83890b7c40d67109a3a62031d5b5" => :high_sierra
+    sha256 "719757a479b7b7a9d140516d6baeeb513829658e9d30fb1e9ca2a7d676851403" => :x86_64_linux
   end
 
   def install
