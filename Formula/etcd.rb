@@ -2,17 +2,16 @@ class Etcd < Formula
   desc "Key value store for shared configuration and service discovery"
   homepage "https://github.com/etcd-io/etcd"
   url "https://github.com/etcd-io/etcd.git",
-    tag:      "v3.4.11",
-    revision: "e71e0c5c8813d5d071e27514b411d9687bd776ee"
+    tag:      "v3.4.12",
+    revision: "17cef6e3e9d57c8c9d6a6afadcc3ff12c9279217"
   license "Apache-2.0"
   head "https://github.com/etcd-io/etcd.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cdf13855d24f23daaaa6d9c225ee26dd4f4e2451aa31b96afb268e30c7457535" => :catalina
-    sha256 "84fec46f2533e5321e40f6d79fd3c272a6b378c5dc7121daeb7adc6da6cf1a23" => :mojave
-    sha256 "f7f0bed6f9d35c13b7bbf87d767824c207ce99b938523ca7d7ad145c30f52d8e" => :high_sierra
-    sha256 "8ee3e86673c4407e4326727e93a526b78b38dd252b9ba4625ff3c3c01ebe3a27" => :x86_64_linux
+    sha256 "e64dd2aa6a4f8a3b4476b16a74fd0187a675470e3386c84041374368be8d796f" => :catalina
+    sha256 "ba7f5fb7daa1e20b167983ecf293c611c5bdb3a5acb0cf1cb1cfd60e19471213" => :mojave
+    sha256 "05f9f749866691321ca6d31ceed84daabc740defe2997314e6829e832f5e1f1f" => :high_sierra
   end
 
   depends_on "go" => :build
