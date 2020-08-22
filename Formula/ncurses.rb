@@ -36,7 +36,7 @@ class Ncurses < Formula
   end
 
   def make_libncurses_symlinks
-    major = version.to_s.split(".")[0]
+    major = version.major
 
     %w[form menu ncurses panel].each do |name|
       if OS.mac?

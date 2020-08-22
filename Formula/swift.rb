@@ -18,10 +18,12 @@ class Swift < Formula
   depends_on "ninja" => :build
 
   # Has strict requirements on the minimum version of Xcode
-  # https://github.com/apple/swift#system-requirements
-  depends_on xcode: ["11.2", :build] if OS.mac?
-
+  # https://github.com/apple/swift/tree/swift-#{version}-RELEASE#system-requirements
   uses_from_macos "icu4c"
+
+  on_macos do
+    depends_on xcode: ["11.2", :build]
+  end
 
   resource "llvm-project" do
     url "https://github.com/apple/llvm-project/archive/swift-5.2.5-RELEASE.tar.gz"

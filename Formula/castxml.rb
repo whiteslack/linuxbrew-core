@@ -1,17 +1,16 @@
 class Castxml < Formula
   desc "C-family Abstract Syntax Tree XML Output"
   homepage "https://github.com/CastXML/CastXML"
-  url "https://github.com/CastXML/CastXML/archive/v0.3.4.tar.gz"
-  sha256 "a597ef37fe2b43fe3cf2c0c4e2ed0069d5aba2714016c319ac47787760859df4"
+  url "https://github.com/CastXML/CastXML/archive/v0.3.6.tar.gz"
+  sha256 "e51a26704864c89036a0a69d9f29c2a522a9fa09c1009e8b8169a26480bb2993"
   license "Apache-2.0"
   head "https://github.com/CastXML/castxml.git"
 
   bottle do
     cellar :any
-    sha256 "2cca1b4b5c7298f2e385a5d24f0c507fde75691d70bb45fdc4e52092c02356da" => :catalina
-    sha256 "5eab772fc46e134783b1339b365c894bae9d2a15d714579206fb9a92a6c63964" => :mojave
-    sha256 "65232354608516831cd91b5e705e12551b09a6df773fbce9475fa609d3cefc32" => :high_sierra
-    sha256 "686db10ef8c776e557f388958f2bfdd3c1291d0aac7be53ae8d1a15a9d68178a" => :x86_64_linux
+    sha256 "94306cb188a0ddd74b5bdae5f7b573f5f89223b564f82baf35399028316addda" => :catalina
+    sha256 "a46d5dfe088b523f7000c436381223712ee806ec0bfbf3365f20dc4b3ac1d1ae" => :mojave
+    sha256 "0d468f10b51a618c41e7aa6a637c574b28682108eb7ed87dfb3abd7e80430c70" => :high_sierra
   end
 
   depends_on "cmake" => :build

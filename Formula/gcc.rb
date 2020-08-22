@@ -53,7 +53,7 @@ class Gcc < Formula
     if build.head?
       "HEAD"
     else
-      version.to_s.slice(/\d+/)
+      version.major.to_s
     end
   end
 

@@ -3,16 +3,15 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  url "https://files.pythonhosted.org/packages/4e/68/dfc45d075984b2bbbf647c9ec22b3d6dc6b22b0a59f1d986d1619562abbd/diffoscope-156.tar.gz"
-  sha256 "428f5d75197c3d9449ffbac52f8d79dd782a7ed67aba759e0452515b2d8e1441"
+  url "https://files.pythonhosted.org/packages/20/2e/5226674337eab19ff32a59903c63aa55efd5cdc6a2de8d16e4ea9838a5a8/diffoscope-157.tar.gz"
+  sha256 "5085d19bb9cc86f5aaed437c67e700202760198ff42f7379132513ff432987ef"
   license "GPL-3.0-or-later"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ac641d6af1f47f80e5275098eff85b0b065de3e1ef2f31cc7088ec75ad8c55a0" => :catalina
-    sha256 "14919240b09ddc9a98e28df76f4cbf39dbf9cfd1678401ac38c4babd44039c73" => :mojave
-    sha256 "3458996285040d5cf0e02c9b04eed62fc670e7eb0b41e83727982d6910c20e8a" => :high_sierra
-    sha256 "de8bad90337c4388a7115bdf7660d07dc2d902d8ec045bad33689b3f29037e78" => :x86_64_linux
+    sha256 "aa59ec859a1665d7f03614e58626e565695c23f37f6c0bcb4723b28d1c8dd368" => :catalina
+    sha256 "3aab020209dc1fcbe684c537b83fdd2b1ba1841bc3540ff15cf58d13b174fc6d" => :mojave
+    sha256 "14d5f7fd3ae2b371885abd0ce0be0f5c4ca3828c7faa0c77774e14f6f318f36c" => :high_sierra
   end
 
   depends_on "gnu-tar"

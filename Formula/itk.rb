@@ -20,7 +20,8 @@ class Itk < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "vtk"
-  unless OS.mac?
+
+  on_linux do
     depends_on "alsa-lib"
     depends_on "glibc"
     depends_on "unixodbc"
@@ -91,7 +92,7 @@ class Itk < Formula
       }
     EOS
 
-    v = version.to_s.split(".")[0..1].join(".")
+    v = version.major_minor
     suffix = OS.mac? ? "#{v}.1.dylib" : "#{v}.so.1"
     # Build step
     system ENV.cxx, "-std=c++11", "-isystem", "#{include}/ITK-#{v}", "-o", "test.cxx.o", "-c", "test.cxx"

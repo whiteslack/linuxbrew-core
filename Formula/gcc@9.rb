@@ -40,7 +40,7 @@ class GccAT9 < Formula
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
 
-    version_suffix = version.to_s.slice(/\d/)
+    version_suffix = version.major.to_s
 
     # Even when suffixes are appended, the info pages conflict when
     # install-info is run so pretend we have an outdated makeinfo
@@ -126,7 +126,7 @@ class GccAT9 < Formula
     # Handle conflicts between GCC formulae and avoid interfering
     # with system compilers.
     # Rename man7.
-    Dir.glob(man7/"*.7") { |file| add_suffix file, "9" }
+    Dir.glob(man7/"*.7") { |file| add_suffix file, version_suffix }
     # Even when we disable building info pages some are still installed.
     info.rmtree
   end
@@ -222,7 +222,7 @@ class GccAT9 < Formula
         return 0;
       }
     EOS
-    system "#{bin}/gcc-9", "-o", "hello-c", "hello-c.c"
+    system "#{bin}/gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", `./hello-c`
 
     (testpath/"hello-cc.cc").write <<~EOS
@@ -233,7 +233,7 @@ class GccAT9 < Formula
         return 0;
       }
     EOS
-    system "#{bin}/g++-9", "-o", "hello-cc", "hello-cc.cc"
+    system "#{bin}/g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", `./hello-cc`
 
     (testpath/"test.f90").write <<~EOS
@@ -247,7 +247,7 @@ class GccAT9 < Formula
       write(*,"(A)") "Done"
       end
     EOS
-    system "#{bin}/gfortran-9", "-o", "test", "test.f90"
+    system "#{bin}/gfortran-#{version.major}", "-o", "test", "test.f90"
     assert_equal "Done\n", `./test`
   end
 end
