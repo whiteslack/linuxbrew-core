@@ -11,6 +11,7 @@ class ParallelHashmap < Formula
     sha256 "932e18bb079269506931abfe4722a1eab66bb83f850bb5952c982b21864679a3" => :catalina
     sha256 "d020435a32c4fe59e1bbc0f0e744726b81cade9f89fd871fd49487c5c8a3958f" => :mojave
     sha256 "c3e7184629352580841f4e14d032eb09653e2dcc4d36f107113e8784ac45060c" => :high_sierra
+    sha256 "c68976263a9c11807b6c7b1c536f246a0dddb892cb5b8b4d90efeabb303aadde" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
