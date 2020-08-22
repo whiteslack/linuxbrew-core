@@ -26,6 +26,7 @@ class Dash < Formula
     sha256 "17db29bb810402ff59bcd6d0f2ef1075b5d2d40e3ecf5667922c366d82797163" => :catalina
     sha256 "166f69be4147a52713aaf636d1a90057bc0e4ef7764c478dfdf062ae249f8d70" => :mojave
     sha256 "b8b2b9636d2cbc920180dae89e32b37b48cf915ef53136cc0be8d7d8b5764a38" => :high_sierra
+    sha256 "8d96503c11a947a0deaae1c3de0e725eb004f6d42e6e901acac9a75c48b76e3e" => :x86_64_linux
   end
 
   head do
