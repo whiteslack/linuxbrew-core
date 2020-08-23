@@ -18,7 +18,14 @@ class Imlib2 < Formula
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on :x11
+
+  on_macos do
+    depends_on :x11
+  end
+
+  on_linux do
+    depends_on "linuxbrew/xorg/xorg"
+  end
 
   def install
     args = %W[
