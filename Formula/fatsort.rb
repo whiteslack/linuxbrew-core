@@ -11,6 +11,7 @@ class Fatsort < Formula
     sha256 "c3e2a36f45f08826087b89279cb36c9156024d4ecc0e02a1218dd28d27c6d8b7" => :catalina
     sha256 "3f70bababd3108670a3752056ed24b76187df9d82beae1581645b91945cdde2d" => :mojave
     sha256 "fdecaa643274a1e780ff530801c88cb92a66a49639ced214b29c4703389e0dd7" => :high_sierra
+    sha256 "41c6196ad862c2cd1c94d5a45ff884a984bec2a4d426bffa50145d56b806cc84" => :x86_64_linux
   end
 
   depends_on "help2man"
