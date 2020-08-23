@@ -2,12 +2,11 @@ class DeviceMapper < Formula
   desc "Device mapper userspace library and tools"
   homepage "https://sourceware.org/dm"
   url "https://sourceware.org/git/lvm2.git",
-    tag:      "v2_02_186",
-    revision: "4e5761487efcb33a47f8913f5302e36307604832"
+    tag:      "v2_03_10",
+    revision: "4d9f0606beb0acb329794909560433c08b50875d"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b9a0ecca9c06b7f9ac4483406452aa241f1429667a1ee41948426b8a5347eb74" => :x86_64_linux
   end
 
   depends_on "libaio"
