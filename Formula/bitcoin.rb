@@ -22,7 +22,10 @@ class Bitcoin < Formula
   depends_on "libevent"
   depends_on "miniupnpc"
   depends_on "zeromq"
-  depends_on "bsdmainutils" => :build unless OS.mac? # `hexdump` from bsdmainutils required to compile tests
+
+  on_linux do
+    depends_on "util-linux" => :build # for `hexdump`
+  end
 
   def install
     ENV.delete("SDKROOT") if MacOS.version == :el_capitan && MacOS::Xcode.version >= "8.0"
