@@ -11,6 +11,7 @@ class Cli11 < Formula
     sha256 "bd03843ddff7cee05b6734cca05ecf1452d5c67c1df67c88f0415aee4b0dc270" => :catalina
     sha256 "9960ada2b8c3f40fb2993c12a7b0a14cebecac6157844252ad5cdea8b7e6c59b" => :mojave
     sha256 "76c6f767bbcbcf11a05f9579447d94d2d86c0c9dbb2502f63dd05b4b54102fac" => :high_sierra
+    sha256 "4ce5fc07eb7589cc12e8066a368972e6f79d3e23583a2c838680fcdc6d16b9de" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
