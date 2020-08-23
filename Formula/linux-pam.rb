@@ -1,13 +1,11 @@
 class LinuxPam < Formula
   desc "Pluggable Authentication Modules for Linux"
   homepage "http://www.linux-pam.org"
-  url "https://github.com/linux-pam/linux-pam/releases/download/v1.3.1/Linux-PAM-1.3.1.tar.xz"
-  sha256 "eff47a4ecd833fbf18de9686632a70ee8d0794b79aecb217ebd0ce11db4cd0db"
-  revision 1
+  url "https://github.com/linux-pam/linux-pam/releases/download/v1.4.0/Linux-PAM-1.4.0.tar.xz"
+  sha256 "cd6d928c51e64139be3bdb38692c68183a509b83d4f2c221024ccd4bcddfd034"
   head "https://github.com/linux-pam/linux-pam.git"
 
   bottle do
-    sha256 "cfd3e88fa210f22cdd7ea27dc997aed320f5c338717cf490cd76cbbfb3c312f1" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
@@ -33,7 +31,6 @@ class LinuxPam < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check"
     system "make", "install"
   end
 
