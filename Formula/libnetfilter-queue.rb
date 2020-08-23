@@ -2,12 +2,11 @@ class LibnetfilterQueue < Formula
   desc "Userspace API to packets queued by the kernel packet filter"
   homepage "https://www.netfilter.org/projects/libnetfilter_queue"
   url "git://git.netfilter.org/libnetfilter_queue",
-    tag:      "libnetfilter_queue-1.0.3",
-    revision: "601abd1c71ccdf90753cf294c120ad43fb25dc54"
+    tag:      "libnetfilter_queue-1.0.5",
+    revision: "2ff321690b8dafeca99ee8e9cafac71e36f292b9"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4d200baefd48b50001521721704ba2970bfba3aed152620e4baea747be5bc967" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
