@@ -11,6 +11,7 @@ class Sleef < Formula
     sha256 "d8ae909caeaf4b8341254b458931ac8b4264d9acbfc7232ffa4dcd2bfaa93248" => :catalina
     sha256 "0b16c2e2daa5b3521e195d183daa70ea8f7cc4a5dd4924610c82945846ba0c81" => :mojave
     sha256 "fd59d2dc9fc8c757054a16f2dfb19d8b0a2eebb48e34de8ce67f585bb8b7e586" => :high_sierra
+    sha256 "2b4bcfaff39a7dda83252d8eb6c641ece7f0ff8cc67dccbdaadf34bec7e4527e" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
