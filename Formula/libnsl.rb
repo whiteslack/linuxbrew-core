@@ -1,13 +1,11 @@
 class Libnsl < Formula
   desc "Public client interface for NIS(YP) and NIS+"
   homepage "https://github.com/thkukuk/libnsl"
-  url "https://github.com/thkukuk/libnsl/archive/v1.2.0.tar.gz"
-  sha256 "a5a28ef17c4ca23a005a729257c959620b09f8c7f99d0edbfe2eb6b06bafd3f8"
-  revision 1
+  url "https://github.com/thkukuk/libnsl/archive/v1.3.0.tar.gz"
+  sha256 "8e88017f01dd428f50386186b0cd82ad06c9b2a47f9c5ea6b3023fc6e08a6b0f"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4595f4ad9116022fef72721d411251d667a4ad906bb6d6459125cf36455234ac" => :x86_64_linux
   end
 
   keg_only "it conflicts with glibc"
