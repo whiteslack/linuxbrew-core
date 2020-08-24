@@ -11,6 +11,7 @@ class PerlBuild < Formula
     sha256 "21afa110a4b5fa7ed53d3e79fcf9f602fb8143902a6a0b0ba22be0aeadd9b98c" => :catalina
     sha256 "47c139b2b6d68fdc08742dbda4ebdde55ae23cae474818d7f15fcfa156554fe5" => :mojave
     sha256 "3bb5910f082f8936165523306b1762f18277f3aac1cdd4abdfb84dfd5d240e45" => :high_sierra
+    sha256 "c4b83369e99bb0d1f5b97ed67b4679c93828522880a69f90a8386bcd4ba7ffd8" => :x86_64_linux
   end
 
   uses_from_macos "perl"
