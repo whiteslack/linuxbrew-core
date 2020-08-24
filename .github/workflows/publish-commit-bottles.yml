@@ -7,9 +7,6 @@ on:
         description: Pull request number
         required: true
 
-env:
-  HOMEBREW_COLOR: 1
-
 jobs:
   upload:
     runs-on: ubuntu-latest
