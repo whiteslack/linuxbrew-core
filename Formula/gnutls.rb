@@ -27,7 +27,7 @@ class Gnutls < Formula
   depends_on "unbound"
 
   on_linux do
-    depends_on "autogen" => :build
+    depends_on "autogen"
   end
 
   def install
