@@ -29,7 +29,7 @@ class PerconaToolkit < Formula
   end
 
   # In Mojave, this is not part of the system Perl anymore
-  if MacOS.version >= :mojave
+  if !OS.mac? || MacOS.version >= :mojave
     resource "DBI" do
       url "https://cpan.metacpan.org/authors/id/T/TI/TIMB/DBI-1.643.tar.gz"
       sha256 "8a2b993db560a2c373c174ee976a51027dd780ec766ae17620c20393d2e836fa"
@@ -44,14 +44,6 @@ class PerconaToolkit < Formula
   resource "JSON" do
     url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.02.tar.gz"
     sha256 "444a88755a89ffa2a5424ab4ed1d11dca61808ebef57e81243424619a9e8627c"
-  end
-
-  resource "DBI::DBD" do
-    on_linux do
-      url "https://cpan.metacpan.org/authors/id/T/TI/TIMB/DBI-1.639.tar.gz"
-      mirror "http://search.cpan.org/CPAN/authors/id/T/TI/TIMB/DBI-1.639.tar.gz"
-      sha256 "8e2cb3d6a8425bd68702aebbeee01e754ee11ad00e7f4f9a61b75483de104e8c"
-    end
   end
 
   def install
