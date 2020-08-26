@@ -1,26 +1,15 @@
 class SaneBackends < Formula
   desc "Backends for scanner access"
   homepage "http://www.sane-project.org/"
-  revision 1
+  url "https://gitlab.com/sane-project/backends/uploads/8bf1cae2e1803aefab9e5331550e5d5d/sane-backends-1.0.31.tar.gz"
+  sha256 "4a3b10fcb398ed854777d979498645edfe66fcac2f2fd2b9117a79ff45e2a5aa"
+  license "GPL-2.0-or-later"
   head "https://gitlab.com/sane-project/backends.git"
 
-  stable do
-    url "https://gitlab.com/sane-project/backends/uploads/c3dd60c9e054b5dee1e7b01a7edc98b0/sane-backends-1.0.30.tar.gz"
-    sha256 "3f5d96a9c47f6124a46bb577c776bbc4896dd17b9203d8bfbc7fe8cbbcf279a3"
-
-    # Fixes build error "error: use of undeclared identifier 'HOST_NAME_MAX'"
-    # Commit is already included upstream in versions > 1.0.30
-    patch do
-      url "https://gitlab.com/sane-project/backends/-/commit/011d0f9bacab126fb2ae09d29abdd6eb88f1333d.diff"
-      sha256 "2fb2366d8e53397237f4beda1f51000b0ae5beb2683387fb2a779d3a43ef1c9d"
-    end
-  end
-
   bottle do
-    sha256 "7dfb3ca74bc32f87a8126bcdb29950d7781882caa2e3175a777e892db69bbd38" => :catalina
-    sha256 "c5751d3247be66a5b2019ab23fb3eca1bb4bca86ef051e830bb7fbc27647e9da" => :mojave
-    sha256 "b80391595e2dd773f1bf0a093befbf3727801c7110bedfed68f295772399e2b7" => :high_sierra
-    sha256 "f493b2bfb9d13af1173491450c50227f475889a0255b68884880b4ce8807f401" => :x86_64_linux
+    sha256 "7b263e24809b81b27db7d43c4ce92e6c09c003055e3da0874b7d7282fb3a35c8" => :catalina
+    sha256 "2bd03a03d1807d5d0e56695d567b1598696dc0e8e29ada67517665043854865b" => :mojave
+    sha256 "3b54db3fec1723a2cbd5705cd1d9344791ff4942cb2a51d62e5c166f8cca9a9a" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

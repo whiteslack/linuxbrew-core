@@ -1,24 +1,25 @@
 class Dwarfutils < Formula
   desc "Dump and produce DWARF debug information in ELF objects"
   homepage "https://www.prevanders.net/dwarf.html"
-  url "https://www.prevanders.net/libdwarf-20200719.tar.gz"
-  sha256 "307d02b8f972de82c4b690a6e9852b66b6df0a23aa8d407430b6ee3d9ecbaccd"
+  url "https://www.prevanders.net/libdwarf-20200825.tar.gz"
+  sha256 "c42786a085bf244c8a1b0238b57f42f6cfc582baebe5e174ea62eb1a81f32103"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fc36e7fc39f73723520c29f823c11c62a45c0412db6cd5360291c4f0f8e4018c" => :catalina
-    sha256 "68c897651d6a0c7e1d08459e4361c8d22ff465bd83d0be6bf0e4864ab30e1133" => :mojave
-    sha256 "7d99f3f2173938d512b5268fc0d94f36a0915dc040fdaa9a08ae0448166ab8fc" => :high_sierra
-    sha256 "8aa54dbf119e2a358c0b19edaf0f329d6029ea085bd9f94568764887ac5f6b8f" => :x86_64_linux
-  end
-
-  if OS.mac?
-    depends_on "libelf" => :build
-  else
-    depends_on "libelf"
+    sha256 "e0327be931c95af4ec48f26ea7074b845a22519fb5b77d85a4d998f5eb41a9b8" => :catalina
+    sha256 "137d8e78ad93146c117ac0d54b400f482e5e7f77715da38f9dd706fe13f1a911" => :mojave
+    sha256 "a1a67921310eee29917097960b09f75d12043544c460ad678f3f0febe66c0ecb" => :high_sierra
   end
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libelf" => :build
+  end
+
+  on_linux do
+    depends_on "libelf"
+  end
 
   def install
     system "./configure"

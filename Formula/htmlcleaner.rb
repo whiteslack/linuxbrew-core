@@ -3,29 +3,31 @@ class Htmlcleaner < Formula
   homepage "https://htmlcleaner.sourceforge.io"
   url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.24/htmlcleaner-2.24-src.zip"
   sha256 "ee476c1f31eabcbd56c174ec482910e1b19907ad3e57dff9a4d0a2f456c9cd42"
+  license "BSD-3-Clause"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5a7e7c9daa84d81c700790660a2d43400bfab987aae3aa95eb244d36e500961b" => :catalina
-    sha256 "32204eab6692433aa9901a20781d15b99a494a25d99dd22357944f4297e77ef0" => :mojave
-    sha256 "70e509e98f352819e0dc4bdbe125f74ffcc4e80f660515f4cb59e3cdbaa3f273" => :high_sierra
+    sha256 "d32d3ccb0c576385b2fcbd5111f0e896097e2053be0a3abf4b76a2b5abbec890" => :catalina
+    sha256 "7162a51e9f957229cc7a8bb0e2248167dedb252047c11e5790183738b4d1e694" => :mojave
+    sha256 "a7274303c16fa42855699269a96e6fc3466371b68a8198c218d689a0ca39c1b8" => :high_sierra
   end
 
   depends_on "maven" => :build
-  depends_on java: "1.8"
+  depends_on "openjdk"
 
   def install
-    cmd = Language::Java.java_home_cmd("1.8")
-    ENV["JAVA_HOME"] = Utils.safe_popen_read(cmd).chomp
+    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
 
-    system "mvn", "--log-file", "build-output.log", "clean", "package"
+    # Homebrew's OpenJDK no longer accepts Java 5 source
+    inreplace "pom.xml" do |s|
+      s.gsub! "<source>1.5</source>", "<source>1.7</source>"
+      s.gsub! "<target>1.5</target>", "<target>1.7</target>"
+    end
+
+    system "mvn", "clean", "package", "-DskipTests=true", "-Dmaven.javadoc.skip=true"
     libexec.install Dir["target/htmlcleaner-*.jar"]
-
-    (bin/"htmlcleaner").write <<~EOS
-      #!/bin/bash
-      export JAVA_HOME=$(#{cmd})
-      exec java  -jar #{libexec}/htmlcleaner-#{version}.jar "$@"
-    EOS
+    bin.write_jar_script libexec/"htmlcleaner-#{version}.jar", "htmlcleaner"
   end
 
   test do

@@ -9,10 +9,10 @@ class Jsvc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d394dda87f296a36c2e39b8954db0f8496285dfdf94cd07bf236fec7df1edf3d" => :catalina
-    sha256 "bea286d1d134d91bc5e7a8596cbf015f29c09e6ba4bef9f356e51dfa8777fb9d" => :mojave
-    sha256 "73b144be1f0b0dabfabb254515d250ce310405ca8c975e072109c75e5f6debd5" => :high_sierra
-    sha256 "03b0358e4160d06669d1951e2857079811e5317c3f741414bc5359576885556b" => :x86_64_linux
+    rebuild 1
+    sha256 "688f9f436c8756240df9877d1e7af2d3830d1d41ccd774808649ee18ad18dfad" => :catalina
+    sha256 "f31981563a96e74b21ce270bd84b063246fbbd9586e70b35ca6c9400733322ab" => :mojave
+    sha256 "c819329bd3ab04fad7fafc13e7deecab8c704864ff967825c3c552e21782a714" => :high_sierra
   end
 
   depends_on "openjdk"
@@ -25,7 +25,7 @@ class Jsvc < Formula
       system "make"
 
       libexec.install "jsvc"
-      (bin/"jsvc").write_env_script libexec/"jsvc", JAVA_HOME: "${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
+      (bin/"jsvc").write_env_script libexec/"jsvc", Language::Java.overridable_java_home_env
     end
   end
 

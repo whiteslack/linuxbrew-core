@@ -2,22 +2,21 @@ class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
   url "https://github.com/openfaas/faas-cli.git",
-      tag:      "0.12.8",
-      revision: "16f6eb9522cff9622b78cbe6450d60f8b3cd7ead"
+      tag:      "0.12.9",
+      revision: "40555282492b1f7cfdb10d801fcdce251360ec25"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "07922b22fcde92c1c228f81a963afd31f21a6186085cecc4b62f95d7e446f98c" => :catalina
-    sha256 "f85f2ee245a69fe8b5d625a7b2971e4a055ceff23e39b919f3cbcd4d11b3becc" => :mojave
-    sha256 "ccf05f987fd3c8aad9890fbac2a6d6205c79805f58d269d5a0f172f5b3a127fa" => :high_sierra
-    sha256 "2791b9eccbe3b4e882230da576d616d1417e6fdedc63992fa99382b292391416" => :x86_64_linux
+    sha256 "74e0979caa804d1e2771cc7bb8ca334f3e45a5e8b2f33abc63b21d7fccd6bab3" => :catalina
+    sha256 "e8ac72ff95820dd19650bf8c2f3257d22e11b3dd10a28721f4a4bf328258a5e9" => :mojave
+    sha256 "7c81a7145f3a9acd9c348abcc5229cea7a8afcb1b6469a189d0e74a5b3650fdd" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["XC_OS"] = "darwin"
+    ENV["XC_OS"] = OS.mac? ? "darwin" : "linux"
     ENV["XC_ARCH"] = "amd64"
     ENV["GOPATH"] = buildpath
     (buildpath/"src/github.com/openfaas/faas-cli").install buildpath.children

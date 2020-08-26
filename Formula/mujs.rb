@@ -3,21 +3,21 @@ class Mujs < Formula
   homepage "https://www.mujs.com/"
   # use tag not tarball so the version in the pkg-config file isn't blank
   url "https://github.com/ccxvii/mujs.git",
-      tag:      "1.0.7",
-      revision: "90aca80865e28a1b9be9bc5ef1118438f62e4f8f"
+      tag:      "1.0.8",
+      revision: "6a9eedea88d4194407f8c0a578e4458f73b7364d"
   license "ISC"
   head "https://github.com/ccxvii/mujs.git"
-  revision 1 unless OS.mac?
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "876610c369e104a1245828afa6578d717b3214ff472ccf4d29e03b38a1adf98e" => :catalina
-    sha256 "8c52be2a15fc45f4cbf0aba09c672e12afb9e6d6ae676b97fa7ae17454fb9c10" => :mojave
-    sha256 "c72f3e89f750198a8e3432043dbb67a40895126e248536babeff9ecd8628e843" => :high_sierra
-    sha256 "0d43dd6a9358ca63bf428d13322389d1f9a322ec3409b046163fabe73d7f24a6" => :x86_64_linux
+    sha256 "3b78a1dd9611f016c24fd19bcd764031cbd7a514e156ff04b9a5b0c75d2bfe44" => :catalina
+    sha256 "94cfe788bc39fb1f5042ab6ce565fbaa98568362698d6fc2441487a3a79f27e5" => :mojave
+    sha256 "b074364d9806ef46e750c685f27368882185592c5cb3f825da345c05340845ed" => :high_sierra
   end
 
-  depends_on "readline" unless OS.mac?
+  on_linux do
+    depends_on "readline"
+  end
 
   def install
     system "make", "release"

@@ -1,16 +1,15 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
-  url "https://root.cern.ch/download/root_v6.22.00.source.tar.gz"
-  sha256 "efd961211c0f9cd76cf4a486e4f89badbcf1d08e7535bba556862b3c1a80beed"
-  license "LGPL-2.1"
-  revision 1
+  url "https://root.cern.ch/download/root_v6.22.02.source.tar.gz"
+  sha256 "89784afa9c9047e9da25afa72a724f32fa8aa646df267b7731e4527cc8a0c340"
+  license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git"
 
   bottle do
-    sha256 "22f63d109ebc3d2a831df49744a404a8794aa8f55c55f2f2ecfe63f8f081b1c0" => :catalina
-    sha256 "572b4654f5514d888c97609c36c4409f5c0a82ad9a9d8046b99abd05759b04da" => :mojave
-    sha256 "e77cccf4df06bb140b3b7ec38832b0edd6097a6f8fd24cd025b5b7178f077d1a" => :high_sierra
+    sha256 "09c96ef6d340593421eea5f24b424b8fa4e72d4589220b15a4e20394acd0d814" => :catalina
+    sha256 "b349ebf73a9b10fee9d7860c1a7cba429e21b61983ee51cebe70eebf586dad41" => :mojave
+    sha256 "618f0802bb730843443f6cba04ad83a3d606f19b54ef08182f411b0cb88c75b1" => :high_sierra
   end
 
   if OS.mac?
