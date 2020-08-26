@@ -6,6 +6,7 @@ class Libnsl < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "dbc0fd25dcaecd66edb6f9befdd5499bc557e7b887a23f9f04f2caab8004fe15" => :x86_64_linux
   end
 
   keg_only "it conflicts with glibc"
