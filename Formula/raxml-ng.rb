@@ -11,6 +11,7 @@ class RaxmlNg < Formula
     sha256 "0902dc74193390a5769d57e566c686a0dfbe0336d44273be76cc38103551b5aa" => :catalina
     sha256 "08286840feb5b0ef4a8f13717df0d62980e10fcf07c102ffd2722433087ed5b9" => :mojave
     sha256 "358ce270c0607ad2985a02ab4a26a0d87439bf134611e0e6ed82251a50bef1d8" => :high_sierra
+    sha256 "8f3267931265c93da4ca1e582aa08196b7400771f81ba222c563f6e69d087433" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
