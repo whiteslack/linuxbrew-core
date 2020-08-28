@@ -1,17 +1,16 @@
 class Xapian < Formula
   desc "C++ search engine library"
   homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.16/xapian-core-1.4.16.tar.xz"
-  sha256 "4937f2f49ff27e39a42150e928c8b45877b0bf456510f0785f50159a5cb6bf70"
+  url "https://oligarchy.co.uk/xapian/1.4.17/xapian-core-1.4.17.tar.xz"
+  sha256 "b5eb8556dea1b0cad4167a66223522e66d670ec1eba16c7fdc844ed6b652572e"
   license "GPL-2.0"
   version_scheme 1
 
   bottle do
     cellar :any
-    sha256 "d40ce12010e79a967378d80c2583400447c45b4a1ee48643b46a9775c5bc72ef" => :catalina
-    sha256 "aa6b6dfdc248b246bae4526a7c4bfb50a1b1e43a9ab9afb2ef37b3b335fd88cd" => :mojave
-    sha256 "927e056162df124b23a9a0e492368ca5047f25b6d1b0eb887fc84d723a71ba2d" => :high_sierra
-    sha256 "167d272a68e2196c55671813db4fa502fc63afbd88b0f8ac862275950a7e2fe1" => :x86_64_linux
+    sha256 "4712dbe3959cf4bb599d5c28a63b752de362d8201a68d4c2b73cce4e61d575e0" => :catalina
+    sha256 "fd46c140fdbd39fc34a201f51414239112edacedf85486496eeee9d62b8f29cf" => :mojave
+    sha256 "62231301f3ee14feb596caa691aef3b3ae95068cb7636eb5abbcefeb056571bc" => :high_sierra
   end
 
   depends_on "sphinx-doc" => :build
@@ -26,8 +25,8 @@ class Xapian < Formula
   skip_clean :la
 
   resource "bindings" do
-    url "https://oligarchy.co.uk/xapian/1.4.16/xapian-bindings-1.4.16.tar.xz"
-    sha256 "8791ec6d15cdd2fa065e414033d0b1cd5cf61916fdb47ae5d36c3dfe69be621b"
+    url "https://oligarchy.co.uk/xapian/1.4.17/xapian-bindings-1.4.17.tar.xz"
+    sha256 "48a65d91e0c3a4a8f4a1ca05dc39225912088aca2c47c0048cc93b09d338ebd3"
   end
 
   def install
