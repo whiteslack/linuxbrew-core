@@ -10,6 +10,7 @@ class Wolfmqtt < Formula
     sha256 "073807b984df8fb86ffde192cb3c0ace7c7f139d81da937e71874fcaa02e820b" => :catalina
     sha256 "32e32e9f2d87974550fdc18e054f639d0a138e74aace8a2ceb639b992cdd54f1" => :mojave
     sha256 "3e2a29fd675291511f203d094e235461483a7a0d8135b286c94900dd9e25f963" => :high_sierra
+    sha256 "584b74e8d457375fc123a445abf88e84e33b0fc1a486b64010e8a6149a804677" => :x86_64_linux
   end
 
   head do
