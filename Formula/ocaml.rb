@@ -28,6 +28,7 @@ class Ocaml < Formula
     sha256 "0870fc3042b3725fb2c6f131c4d6f78aec9f19d553e054ba4890773ef69e45a7" => :catalina
     sha256 "b43a7247e3d3848d5f20d2432d4996e41049e79c738762f1026f4376ec7e80d3" => :mojave
     sha256 "a534347814298cc8e66e321384f16eac85f2a59aaa2f536e542fb4870386bc2b" => :high_sierra
+    sha256 "2d53fc80dfed07b6f665b68a3e00337c2cb552039556ec15e670a11889b7e1ef" => :x86_64_linux
   end
 
   pour_bottle? do
