@@ -16,6 +16,7 @@ class Spigot < Formula
     sha256 "dbfdfe6cb12e1bcf76cbc774a48a074e2a0637ccebee39874dbbb5c783a779dd" => :catalina
     sha256 "8171f8aa18c8e1b6b9d3cb909235d7f201edd41461f87d6c4d0c58b0402c6115" => :mojave
     sha256 "c0071555bdfdf4b54d99b3fb392b0b109f710338b5685fc324b75fa82ff801c5" => :high_sierra
+    sha256 "530ee1541b7f99d934c88d7fcff456354a23a784991885fa246f60620b092880" => :x86_64_linux
   end
 
   on_linux do
