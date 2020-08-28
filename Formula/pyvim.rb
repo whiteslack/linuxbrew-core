@@ -8,6 +8,10 @@ class Pyvim < Formula
   license "BSD-3-Clause"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "00673aa2851bbd2112035bf5fcb7e4ee5a7a594f5b43c0cf14a27f3727058902" => :catalina

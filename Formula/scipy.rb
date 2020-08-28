@@ -6,6 +6,10 @@ class Scipy < Formula
   license "BSD-3-Clause"
   head "https://github.com/scipy/scipy.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "0d42cbfdf53a94f5f437f20a4d8789d0092ebd45da4cc399f822f78578b5cfcd" => :catalina
     sha256 "32666539824b3b8d23b5357eb8f19b1139c3d4bc16359b805271a3a1ea4f1e36" => :mojave

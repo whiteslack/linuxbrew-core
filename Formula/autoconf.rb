@@ -7,6 +7,10 @@ class Autoconf < Formula
   license "GPL-2.0"
   revision 2 unless OS.mac?
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     rebuild 4

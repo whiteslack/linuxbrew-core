@@ -7,6 +7,10 @@ class Glew < Formula
   revision OS.mac? ? 1 : 3
   head "https://github.com/nigels-com/glew.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
     rebuild 1

@@ -6,6 +6,11 @@ class Jed < Formula
   sha256 "5eed5fede7a95f18b33b7b32cb71be9d509c6babc1483dd5c58b1a169f2bdf52"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url "https://www.jedsoft.org/releases/jed/"
+    regex(/href=.*?jed.?v?(\d+(?:\.\d+)+(?:-\d+)?)\.t/i)
+  end
+
   bottle do
     rebuild 1
     sha256 "1b349ce808e1a1a0d2ce8327ef3a68f3ea7678af0bef98c499bbb8d0db9c9a7f" => :catalina

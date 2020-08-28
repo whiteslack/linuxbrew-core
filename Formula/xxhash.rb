@@ -6,6 +6,11 @@ class Xxhash < Formula
   revision 1 unless OS.mac?
   license "BSD-2-Clause"
 
+  livecheck do
+    url "https://github.com/Cyan4973/xxHash/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   bottle do
     cellar :any
     sha256 "06ea145c49451bf37f2a73139100f436b4bf9f275b77b9dadcb5d36a7b07fae1" => :catalina

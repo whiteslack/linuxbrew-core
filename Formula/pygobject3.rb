@@ -5,6 +5,10 @@ class Pygobject3 < Formula
   sha256 "d1bf42802d1cec113b5adaa0e7bf7f3745b44521dc2163588d276d5cd61d718f"
   license "LGPL-2.1"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "174079a381809080c02d5720bc2538929bf571d28710f7ab3cb646bfcd2a5bbf" => :catalina
     sha256 "c2b276445ce99b5094cd6b68b03fb6dc47a8c2eefbc743b40eacc373b822345c" => :mojave

@@ -6,6 +6,10 @@ class Hlint < Formula
   license "BSD-3-Clause"
   head "https://github.com/ndmitchell/hlint.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     rebuild 1
     sha256 "f276a6a6880e8bd6496f6390c337b9175acfcc16a1c4cee56655fa25858e5d20" => :catalina

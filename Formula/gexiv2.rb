@@ -5,6 +5,10 @@ class Gexiv2 < Formula
   sha256 "8aeafd59653ea88f6b78cb03780ee9fd61a2f993070c5f0d0976bed93ac2bd77"
   license "GPL-2.0"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "1f8d42d1bb3e9ca58311b3a08b0576993007cb0d580e8740663e7ad4a055fb52" => :catalina
     sha256 "7d97c40bab30a98f845560e0e6d12ea514ecceee3aab447f9a06664474d2ba10" => :mojave

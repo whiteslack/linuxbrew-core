@@ -5,6 +5,10 @@ class Ode < Formula
   sha256 "b26aebdcb015e2d89720ef48e0cb2e8a3ca77915f89d853893e7cc861f810f22"
   head "https://bitbucket.org/odedevs/ode.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "b033d3a8ddb92602728fbe921f5f421fed220c1d5293333d43801bf259a16cd5" => :catalina
     sha256 "0967cc5799fe66b3afff2c1fb9832e6d4ee7dde03f1388818de9d4b87581b4f8" => :mojave

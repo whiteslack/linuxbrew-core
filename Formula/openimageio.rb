@@ -5,13 +5,18 @@ class Openimageio < Formula
   version "2.1.18"
   sha256 "e2cf54f5b28e18fc88e76e1703f2e39bf144c88378334527e4a1246974659a85"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/OpenImageIO/oiio.git"
 
+  livecheck do
+    url "https://github.com/OpenImageIO/oiio/releases/latest"
+    regex(%r{href=.*?/tag/Release[._-]v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   bottle do
-    sha256 "d3467bc4fb634acd02576a8f43546ae2c898b85969a091751953b71e85f47d79" => :catalina
-    sha256 "d5ddb5faf23546680135f830ea2f170215cf1929df911a510555566db69fb243" => :mojave
-    sha256 "61aed9ec9cfc49177f67fbee3987630c50ed5eb4559bc22925458fffe84e9702" => :high_sierra
-    sha256 "3baffc1cdc14fdc50b4637cc6ba25e82244a8efaf3f7fb5fe124a08b66ed89ea" => :x86_64_linux
+    sha256 "38683156e032d0dd6314399ebcc1ad4b59135e6b221f39fef74fd027fc040990" => :catalina
+    sha256 "e2b1b3d5ca05a0a8cd87675a046e2b9ff25f3096b8c1fd736a1b5431dd6c1be8" => :mojave
+    sha256 "e709bacc08751c67528daab022bd76ba32fdb20a061e4a8d509bc75997af13f7" => :high_sierra
   end
 
   depends_on "cmake" => :build

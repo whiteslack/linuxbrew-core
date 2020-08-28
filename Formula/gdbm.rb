@@ -7,6 +7,10 @@ class Gdbm < Formula
   license "GPL-3.0"
   revision 1
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "f7b5ab7363961fa6defcb66b4ffdf5365264fcb97d35bc413e754f173a3b1912" => :catalina
     sha256 "0f65874bcd50d31aaf8b2e6c8ef414cb65a8d8b9eb6d1fa4ef179c6e0a94983c" => :mojave

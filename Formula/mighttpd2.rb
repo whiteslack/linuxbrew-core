@@ -6,6 +6,10 @@ class Mighttpd2 < Formula
   license "BSD-3-Clause"
   revision 1
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "bcea435a9feba47df19b64d9fac972a1df8f580647204b07a73b2ade2e14c479" => :catalina
     sha256 "68e563757fb405de41a4312c03f7b72da99586430ea8f0aff98fdab48213635f" => :mojave

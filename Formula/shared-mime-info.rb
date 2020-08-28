@@ -5,6 +5,11 @@ class SharedMimeInfo < Formula
   sha256 "23c1cb7919f31cf97aeb5225548f75705f706aa5cc7d1c4c503364bcc8681e06"
   license "GPL-2.0"
 
+  livecheck do
+    url "https://gitlab.freedesktop.org/api/v4/projects/1205/releases"
+    regex(/shared-mime-info v?(\d+(?:\.\d+)+)/i)
+  end
+
   bottle do
     sha256 "5aefdc7964e569188cb67a49f4a428c64130f7c048ffd55106c656eb0c6caa25" => :catalina
     sha256 "26629464888f464e3aacfec50d6b5c28ecd91c9c56ae74a418eac49b07abc3a3" => :mojave

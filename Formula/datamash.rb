@@ -6,6 +6,10 @@ class Datamash < Formula
   sha256 "574a592bb90c5ae702ffaed1b59498d5e3e7466a8abf8530c5f2f3f11fa4adb3"
   license "GPL-3.0"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "f592c4bda737ef924fb4c1642fb381db54c9ce246eb51d03a145dd28a8391406" => :catalina
     sha256 "6533f0decc607d6e3ce1ad1fdb7f5b30f99bbbcbacbba1bcd880486eef648189" => :mojave

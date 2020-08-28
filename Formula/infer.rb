@@ -7,6 +7,11 @@ class Infer < Formula
       revision: "99464c01da5809e7159ed1a75ef10f60d34506a4"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     rebuild 1
     sha256 "1dc9c75c759611c8fe0efa8f63d7e55bbaa35d8dc2863f7a527069b11759f244" => :catalina

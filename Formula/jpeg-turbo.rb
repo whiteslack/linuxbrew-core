@@ -6,6 +6,10 @@ class JpegTurbo < Formula
   license "IJG"
   head "https://github.com/libjpeg-turbo/libjpeg-turbo.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "8e5ea85c9b9e2c35badbae2ac326871779438d92d89caedf4a454ae31699c65f" => :catalina

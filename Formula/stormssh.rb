@@ -7,6 +7,10 @@ class Stormssh < Formula
   revision OS.mac? ? 3 : 4
   head "https://github.com/emre/storm.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "ea320fc79f2b33f81f123833bcd77212cca1a2fb93fd4094ddc4b175f31fdaed" => :catalina
     sha256 "0517af91bef9ee09a89d36105786eae1068aa66e81988636bae1c2e279660156" => :mojave

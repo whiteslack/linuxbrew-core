@@ -8,6 +8,10 @@ class MagicWormhole < Formula
   license "MIT"
   revision 2 unless OS.mac?
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
     sha256 "2a7df1e4f3f866733c53a8dc8c6656eeb4634d57386ba8f75d49656582891225" => :catalina

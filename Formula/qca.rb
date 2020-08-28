@@ -17,6 +17,11 @@ class Qca < Formula
     end
   end
 
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 "2a841d8b078e42054b374449de243111a63a150b90381bd080349952f8335599" => :catalina
     sha256 "c44e0329bf19868a6b06da56b370e411ee7d5dff8c0532e1a40a0720dc54f30e" => :mojave

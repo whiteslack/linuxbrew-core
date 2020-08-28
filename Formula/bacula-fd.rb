@@ -4,6 +4,10 @@ class BaculaFd < Formula
   url "https://downloads.sourceforge.net/project/bacula/bacula/9.6.5/bacula-9.6.5.tar.gz"
   sha256 "510f35b86138472abe6c559caded7bc773bf5eb1b9ee10905ee8f4f827c7c77a"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "9f60d58bc6f3709d3ed3fabb03a82d9197a76a4f8bea6f0b4d5cef24bec5e5ea" => :catalina

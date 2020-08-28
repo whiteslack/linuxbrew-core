@@ -7,6 +7,10 @@ class Sceptre < Formula
   sha256 "349e51e3bdc96f4f4aea214427f354f738c7658dc9eaa9dd1ffc5120a70a237d"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "ef4f2e26d77e3bd069878477a87c95f8985b7a736971f46ab7ca65e386df8fa9" => :catalina

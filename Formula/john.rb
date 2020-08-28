@@ -5,6 +5,11 @@ class John < Formula
   sha256 "0b266adcfef8c11eed690187e71494baea539efbd632fe221181063ba09508df"
   revision 1
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?john[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "bc61b94c66cd5e711cfb069f2f7dc8f448d717cd1179cbe2fed954f0786a0023" => :catalina

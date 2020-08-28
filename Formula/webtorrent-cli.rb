@@ -7,6 +7,10 @@ class WebtorrentCli < Formula
   sha256 "7c6da2d8c800b921af458c94d606dad53d01cdf013fc364bb041a713e886af92"
   license "MIT"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "524dc3212204b210358f2c6798820b17f2634919d60335db7a78a9172d64bac2" => :catalina

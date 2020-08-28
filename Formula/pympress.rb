@@ -9,6 +9,10 @@ class Pympress < Formula
   revision 1 unless OS.mac?
   head "https://github.com/Cimbali/pympress.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "0882199094438644ae2af8e60ea55f02272990cca88b4ae0cbcfbabc9a68465b" => :catalina

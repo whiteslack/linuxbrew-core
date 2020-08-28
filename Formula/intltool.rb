@@ -6,6 +6,10 @@ class Intltool < Formula
   license "GPL-2.0"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "853b0f355c1bb6bdfc41d2ad17026d75c93aecb7581e711d7db3edab4ca6b5d4" => :catalina

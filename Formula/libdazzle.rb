@@ -5,6 +5,10 @@ class Libdazzle < Formula
   sha256 "82b31bbf550fc62970c78bf7f9d55e5fae5b8ea13b24fe2d13c8c6039409d958"
   revision 2
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "c5ef0fe994d0c84792d0d6eb1e55152b0aab5de0f26b1fb1a264a78dcafcc7da" => :catalina
     sha256 "9ea4201e473688716ec21feb50eb76e6dc4fad93a5d93de78bb9b3978ab0998b" => :mojave

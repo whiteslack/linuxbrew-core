@@ -9,6 +9,10 @@ class Thefuck < Formula
   revision 1 unless OS.mac?
   head "https://github.com/nvbn/thefuck.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "9101f88f96d66615970b00405f06430176fb827922363530abb33f3d22341ff3" => :catalina

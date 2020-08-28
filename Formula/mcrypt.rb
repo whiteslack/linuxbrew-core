@@ -5,6 +5,10 @@ class Mcrypt < Formula
   sha256 "5145aa844e54cca89ddab6fb7dd9e5952811d8d787c4f4bf27eb261e6c182098"
   license "GPL-3.0"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     rebuild 2
     sha256 "c9d3313218375e8bca6e22b00fcb47f11550c386ae64422bb59869af161cf6eb" => :catalina

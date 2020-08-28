@@ -6,6 +6,10 @@ class Foma < Formula
   license "GPL-2.0-only"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
     rebuild 1

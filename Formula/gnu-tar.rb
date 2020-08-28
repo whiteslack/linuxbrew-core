@@ -6,6 +6,10 @@ class GnuTar < Formula
   sha256 "b59549594d91d84ee00c99cf2541a3330fed3a42c440503326dab767f2fbb96c"
   license "GPL-3.0"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     rebuild 1
     sha256 "158cb67ea9e02435d671013b4d0d7369822758d9f7ff400ce2512a03f2f7f4e4" => :catalina

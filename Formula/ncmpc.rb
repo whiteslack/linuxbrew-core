@@ -5,6 +5,11 @@ class Ncmpc < Formula
   sha256 "64ebe320c2fbe4dfbff4461ceae730001841d06d48c4882d69f320912a0f11a8"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://www.musicpd.org/download/ncmpc/0/"
+    regex(/href=.*?ncmpc[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 "9154c89589d332b2fb8060907fd0c6c6251ad1f91a59c0e8371ef99860f51005" => :catalina
     sha256 "5106f3ed9cc57ff174e25e47f60e30a83c290c44d4dc01789a4e1f7a9bc71a86" => :mojave

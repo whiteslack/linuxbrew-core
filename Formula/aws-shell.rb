@@ -8,6 +8,10 @@ class AwsShell < Formula
   license "Apache-2.0"
   revision OS.mac? ? 2 : 3
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "80649fd9dfb5ef9c0506db4f74e0a4ff275617a718249cbc12d2c62efb46657f" => :catalina

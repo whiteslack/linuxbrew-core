@@ -6,6 +6,11 @@ class Xmlto < Formula
   license "GPL-2.0"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url "https://releases.pagure.org/xmlto/?C=M&O=D"
+    regex(/href=.*?xmlto[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
     rebuild 1

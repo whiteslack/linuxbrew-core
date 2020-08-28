@@ -5,6 +5,10 @@ class Gssdp < Formula
   sha256 "a263dcb6730e3b3dc4bbbff80cf3fab4cd364021981d419db6dd5a8e148aa7e8"
   revision 1
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "9cda1333eede84e831da2553e50989bd5721460b0ab046c95414305c11e29adc" => :catalina
     sha256 "de497cd6d3225d91ce49ef33b23928bb8af0d5cdebea072e06c8cf022a7a5dda" => :mojave

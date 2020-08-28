@@ -8,6 +8,10 @@ class Pgcli < Formula
   license "BSD-3-Clause"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
     sha256 "33762e29fe9be52d07d9500b3bb497afca3494ba73b7729e82047f531fe347ca" => :catalina

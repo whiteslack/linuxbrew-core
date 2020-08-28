@@ -6,6 +6,11 @@ class Ripgrep < Formula
   license "Unlicense"
   head "https://github.com/BurntSushi/ripgrep.git"
 
+  livecheck do
+    url "https://github.com/BurntSushi/ripgrep/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   bottle do
     sha256 "60460d422253113af3ed60332104f309638942821c655332211a6bc2213c472c" => :catalina
     sha256 "de4b18789f5d9bc4aaa4d906501200ae4ece7a1971dd1b86e2b2d0a2c8e0d764" => :mojave

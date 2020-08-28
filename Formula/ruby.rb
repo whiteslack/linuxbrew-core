@@ -6,6 +6,11 @@ class Ruby < Formula
   license "Ruby"
   revision OS.mac? ? 2 : 3
 
+  livecheck do
+    url "https://www.ruby-lang.org/en/downloads/"
+    regex(/href=.*?ruby[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 "7f5ed2afb15b25f9616b617ecca2ee376eb67cf6c105790df22221b7be9c1ef9" => :catalina
     sha256 "cc995a06e761acc8a807b040d8e7fe301902a4fc63d2beaaae40e04c710e7338" => :mojave

@@ -6,6 +6,10 @@ class Pandoc < Formula
   license "GPL-2.0"
   head "https://github.com/jgm/pandoc.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     rebuild 1
     sha256 "720d055d2bdafbe818f50e186e710f7a8178719b56cfafa1d1948af16df7d7ea" => :catalina

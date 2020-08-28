@@ -10,6 +10,11 @@ class Legit < Formula
   revision 1 unless OS.mac?
   head "https://github.com/frostming/legit.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(%r{href=.*?/packages.*?/legit[._-]v?(\d+(?:\.\d+)*(?:[._-]?post\d+)?)\.t}i)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "f8e751f24ec29945d19282e2ba4ebbde289f29365c62e2083792bae79b1be7b9" => :catalina

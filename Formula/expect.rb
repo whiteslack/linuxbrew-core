@@ -5,6 +5,11 @@ class Expect < Formula
   sha256 "49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/expect-?v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     rebuild 1
     sha256 "f7c101cd2eec5832de103e3535e876de15b53a96a301d4848990ab8af992f3a6" => :catalina

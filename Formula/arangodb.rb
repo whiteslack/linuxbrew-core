@@ -1,22 +1,26 @@
 class Arangodb < Formula
   desc "The Multi-Model NoSQL Database"
   homepage "https://www.arangodb.com/"
-  url "https://download.arangodb.com/Source/ArangoDB-3.6.5.tar.gz"
-  sha256 "e5edc1af5f186dda485f06aeeaba0e621a479f145eaa9d1b411be0bba9c3b547"
+  url "https://download.arangodb.com/Source/ArangoDB-3.7.2.tar.gz"
+  sha256 "241800d5641da962806cdd0248f508bbf5cb6bcf97dfa51d0a2e7848879b9ddb"
   license "Apache-2.0"
   revision 1
   head "https://github.com/arangodb/arangodb.git", branch: "devel"
 
   bottle do
-    sha256 "ed9d2b1660c2139b851f1cd6c94d2262e29d9aafc61dbffdd5aec7513dfcf69c" => :catalina
-    sha256 "58d6e3f65971d7cf0204706463898645f5910c69d34c5b17c5db7306372db4d4" => :mojave
+    sha256 "6b9299f984eb8a25709c7178d52d3c1e19f39adf5d71f6406a2aed283b8ce406" => :catalina
+    sha256 "1eabd6b8b72d6375f00ce0570ccb0d76f383c285a8019e3426d0273876b0bd9c" => :mojave
   end
 
   depends_on "ccache" => :build
   depends_on "cmake" => :build
   depends_on "go@1.13" => :build
-  depends_on macos: :mojave if OS.mac?
+  depends_on "python@3.8" => :build
   depends_on "openssl@1.1"
+
+  on_macos do
+    depends_on macos: :mojave
+  end
 
   # the ArangoStarter is in a separate github repository;
   # it is used to easily start single server and clusters

@@ -8,6 +8,11 @@ class Rubberband < Formula
   head "https://bitbucket.org/breakfastquay/rubberband/", using: :hg
   head "https://hg.sr.ht/~breakfastquay/rubberband", using: :hg
 
+  livecheck do
+    url :homepage
+    regex(/Rubber Band Library v?(\d+(?:\.\d+)+) released/i)
+  end
+
   bottle do
     cellar :any
     rebuild 1

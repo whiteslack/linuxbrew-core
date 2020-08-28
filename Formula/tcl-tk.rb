@@ -7,6 +7,11 @@ class TclTk < Formula
   license "TCL"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
+  end
+
   bottle do
     rebuild 1
     sha256 "4740b30b97f0308ecc59c1308945c38ddca5d3da528d779f38199a2dad905fa1" => :catalina

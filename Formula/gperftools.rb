@@ -5,15 +5,9 @@ class Gperftools < Formula
   sha256 "240deacdd628b6459671b83eb0c4db8e97baadf659f25b92e9a078d536bd513e"
   license "BSD-3-Clause"
 
-  unless OS.mac?
-    # libunwind is strongly recommended for Linux x86_64
-    # https://github.com/gperftools/gperftools/blob/master/INSTALL
-    depends_on "xz"
-
-    resource "libunwind" do
-      url "https://download.savannah.gnu.org/releases/libunwind/libunwind-1.2.1.tar.gz"
-      sha256 "3f3ecb90e28cbe53fba7a4a27ccce7aad188d3210bb1964a923a731a27a75acb"
-    end
+  livecheck do
+    url "https://github.com/gperftools/gperftools/releases/latest"
+    regex(%r{href=.*?/tag/gperftools[._-]v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
   bottle do
@@ -30,6 +24,17 @@ class Gperftools < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
+  end
+
+  on_linux do
+    # libunwind is strongly recommended for Linux x86_64
+    # https://github.com/gperftools/gperftools/blob/master/INSTALL
+    depends_on "xz"
+
+    resource "libunwind" do
+      url "https://download.savannah.gnu.org/releases/libunwind/libunwind-1.2.1.tar.gz"
+      sha256 "3f3ecb90e28cbe53fba7a4a27ccce7aad188d3210bb1964a923a731a27a75acb"
+    end
   end
 
   def install

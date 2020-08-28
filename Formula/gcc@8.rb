@@ -8,6 +8,11 @@ class GccAT8 < Formula
   sha256 "e30a6e52d10e1f27ed55104ad233c30bd1e99cfb5ff98ab022dc941edd1b2dd4"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(%r{href=.*?gcc[._-]v?(8(?:\.\d+)+)(?:/?["' >]|\.t)}i)
+  end
+
   # gcc is designed to be portable.
   # reminder: always add 'cellar :any'
   bottle do

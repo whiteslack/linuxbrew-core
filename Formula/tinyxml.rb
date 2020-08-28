@@ -5,6 +5,10 @@ class Tinyxml < Formula
   sha256 "15bdfdcec58a7da30adc87ac2b078e4417dbe5392f3afb719f9ba6d062645593"
   revision 1 unless OS.mac?
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
     sha256 "7cc1ada5d273bec9f50a1809a9989306ec9601a037c06b362cee321fbdc5c0a7" => :catalina

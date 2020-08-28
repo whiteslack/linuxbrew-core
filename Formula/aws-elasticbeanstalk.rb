@@ -8,6 +8,10 @@ class AwsElasticbeanstalk < Formula
   revision 1 unless OS.mac?
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 "462a44e381a47a5726d384f2196317ac9ee55b062ba9baefbd6399cbdca728cb" => :catalina
     sha256 "fb7fd3985498aad3f583dfbac8de442472ded847a9c9af8a33c2f2ec9f199b0d" => :mojave

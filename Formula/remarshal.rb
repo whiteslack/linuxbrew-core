@@ -9,6 +9,10 @@ class Remarshal < Formula
   revision 1 unless OS.mac?
   head "https://github.com/dbohdan/remarshal.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
     sha256 "ff34ba0168dc79cb1d3c060817d8bd13be31061f3883a2ba5d4ea0098c5a9f76" => :catalina

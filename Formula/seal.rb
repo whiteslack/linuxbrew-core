@@ -1,15 +1,14 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https://github.com/microsoft/SEAL"
-  url "https://github.com/microsoft/SEAL/archive/v3.5.6.tar.gz"
-  sha256 "13674a39a48c0d1c6ff544521cf10ee539ce1af75c02bfbe093f7621869e3406"
+  url "https://github.com/microsoft/SEAL/archive/v3.5.7.tar.gz"
+  sha256 "e54d5499680851068e9bad4933a54663ab9bba3bcdce1bec5a8fcf251e4b5158"
   license "MIT"
 
   bottle do
-    sha256 "919b018f4e7f456ac98b8c579b6250a26c26a251fc418885deea34959304941e" => :catalina
-    sha256 "6e993ad72fa4cc95a3ee7717f3a5c48cd168e19091edf1416aedd6568d580c92" => :mojave
-    sha256 "fe01202335935f13c3264f08b6fe536da382624378f9e0943d01ae7a8fae33ed" => :high_sierra
-    sha256 "9d667a3c6b2b31aafae8c4088c2e00d82c2b9e12c8f8ffaac3a53143873ba391" => :x86_64_linux
+    sha256 "238e9b8f29e71d44093b32fe207236251d41647823cb20dc92729d4fc938a6f6" => :catalina
+    sha256 "15fdadd59ff8cd66129816efa4616b90c2cbe8aaba4c011edf2cb26207c85335" => :mojave
+    sha256 "1328dc70b3de969b8a7454464f01e43c488a81efdab9a22fb310f27c517f1b31" => :high_sierra
   end
 
   depends_on "cmake" => [:build, :test]
