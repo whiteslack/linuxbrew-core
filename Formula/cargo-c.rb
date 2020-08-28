@@ -9,6 +9,7 @@ class CargoC < Formula
     sha256 "af41919e5b362afb73c5cc3506ef08591cb1edd6a35832876d523208ddc9c51d" => :catalina
     sha256 "6ee6f29f098bdf4baa7f168b8e599b28458bc0de7892770067d5c82e1bdfc84b" => :mojave
     sha256 "efbca9b10f3978505b658bba9f23d2ce4f49479efa44d0e0fc3febf450e2987b" => :high_sierra
+    sha256 "7eb169091503bcd1cd76fa550457a44a95062066b6ba7d3585f7e1996c8af8b7" => :x86_64_linux
   end
 
   depends_on "rust" => :build
