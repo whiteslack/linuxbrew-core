@@ -15,6 +15,7 @@ class Cgns < Formula
     sha256 "4371c695cad1aa0bccbaaf0deccb9a8f5ddf7271dcbbddf6307b8d0bc254cec5" => :catalina
     sha256 "d9904ca7c839a5d0421b99ba784e98fec047971de47efa5d3cc00725cd892e26" => :mojave
     sha256 "8bfeb33c22f79c998b31fea6aafc60aecf2edf18ea754799c67c012d90555ec9" => :high_sierra
+    sha256 "3aca3463b3f007445d8d8f3d380b06e619fca591406f540ac56d8e08b20e2f54" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
