@@ -14,7 +14,7 @@ class GuileAT2 < Formula
 
   keg_only :versioned_formula
 
-  deprecate!
+  deprecate! because: "is a versioned formula"
 
   depends_on "gnu-sed" => :build
   depends_on "bdw-gc"
