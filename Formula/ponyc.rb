@@ -10,6 +10,7 @@ class Ponyc < Formula
     sha256 "98271b54f1ea1171b63e88d26e5093278553007d2c22d535a86499094b56f7e8" => :catalina
     sha256 "5167364b13e68c873d6141987e30a2a06e9d3d49da7c2b270aa2d8fba18fe959" => :mojave
     sha256 "0799b0a955962c33411b0261cadc2d4c556670b19a8094b5acabd21d61153db8" => :high_sierra
+    sha256 "dbb0ea8b34bdf94a1e1537a3e1f4f20f993fc0fca171e4d832dda062d26520fa" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
