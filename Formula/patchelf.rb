@@ -15,6 +15,7 @@ class Patchelf < Formula
     sha256 "91944c42c39963a6a4c39fa330062ed1d269b0a2be0b5010ae6bac61cff16e53" => :catalina
     sha256 "8a5e731cb4724804c386ffd3218b47a4adb06a86003929d03d24ae8d388c7722" => :mojave
     sha256 "7646ae37a16d2e63594a7ebefb482884f3e60fc7089acb72e0b2aea49659bdf0" => :high_sierra
+    sha256 "7396e6cf5dbe62fae0e7fcba57f88586359561824df9cfe1127b4d88dd6f2a5a" => :x86_64_linux
   end
 
   resource "helloworld" do
