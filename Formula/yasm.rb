@@ -55,6 +55,8 @@ class Yasm < Formula
       .len:   equ     $ - msg
     EOS
     system "#{bin}/yasm", "-f", "macho64", "test.asm"
+    return unless OS.mac?
+
     system "/usr/bin/ld", "-macosx_version_min", "10.8.0", "-static", "-o", "test", "test.o"
     system "./test"
   end
