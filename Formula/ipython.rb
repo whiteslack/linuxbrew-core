@@ -3,8 +3,8 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/c2/7c/84c98d55b13f64b5c6a167ca344e4d5ca2afd14211a729e800e3731db0f4/ipython-7.17.0.tar.gz"
-  sha256 "b70974aaa2674b05eb86a910c02ed09956a33f2dd6c71afc60f0b128a77e7f28"
+  url "https://files.pythonhosted.org/packages/ed/c6/2c40e1fc10690dfbe891a948aa1b0dd4890fd2bce9d2eb29c97a84bb0fcb/ipython-7.18.1.tar.gz"
+  sha256 "a331e78086001931de9424940699691ad49dfb457cea31f5471eae7b78222d5e"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git"
 
@@ -14,16 +14,15 @@ class Ipython < Formula
 
   bottle do
     cellar :any
-    sha256 "303dc04db728b1a3ef0a29831e1772ba9b16127f0ebd58e8aac6f57125a9bd30" => :catalina
-    sha256 "bce9b9a3ce9f71eb632deae4fed6a5be25ea0aef297e76e557be0bb58fac31c1" => :mojave
-    sha256 "e86aa195fc51789b920b94e62f32d485806b32928bb325517a03c2fa9d69d5b4" => :high_sierra
-    sha256 "2535bb865ec4ad9dbe59898ac75c192c3b4061fb837c0cda0a05ca564f583d2f" => :x86_64_linux
+    sha256 "02a8edee16108cef627e7c98cc73b021aa64f274df901c6518077d1fb930db32" => :catalina
+    sha256 "4e2b941df0b13d103bdbc047b69144e5ad373cd92ff434b2751ca300961685ce" => :mojave
+    sha256 "3912624b50eb2b825cbf1d5d03b5e3e18d51e209686f315790d2699b4022c5a4" => :high_sierra
   end
 
   depends_on "python@3.8"
   depends_on "zeromq"
 
-  # use resources from ipython, ipykernel
+  # use resources from ipykernel (which includes ipython)
   resource "appnope" do
     on_macos do
       url "https://files.pythonhosted.org/packages/26/34/0f3a5efac31f27fabce64645f8c609de9d925fe2915304d1a40f544cff0e/appnope-0.1.0.tar.gz"
@@ -57,8 +56,8 @@ class Ipython < Formula
   end
 
   resource "jupyter-client" do
-    url "https://files.pythonhosted.org/packages/19/aa/a4b27bb6cdfe870cf56bc5821e9fa54afd80164dc2344fd47194a987f0e9/jupyter_client-6.1.6.tar.gz"
-    sha256 "b360f8d4638bc577a4656e93f86298db755f915098dc763f6fc05da0c5d7a595"
+    url "https://files.pythonhosted.org/packages/c3/7a/53e652fb8cbca92ae5f325cbd8b2ba123b57fbc1cc5e8a47ad1c62d75e93/jupyter_client-6.1.7.tar.gz"
+    sha256 "49e390b36fe4b4226724704ea28d9fb903f1a3601b6882ce3105221cd09377a1"
   end
 
   resource "jupyter-core" do
@@ -82,8 +81,8 @@ class Ipython < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/c4/c6/03da4efaf73f0cb5a34957fdac12046eb8d8e81618bad6f60464215b829a/prompt_toolkit-3.0.6.tar.gz"
-    sha256 "7630ab85a23302839a0f26b31cc24f518e6155dea1ed395ea61b42c45941b6a6"
+    url "https://files.pythonhosted.org/packages/18/0f/ae4b350b969dc1d8ecfcbdc1060d59ff025336a23f153ece49aa662a1309/prompt_toolkit-3.0.7.tar.gz"
+    sha256 "822f4605f28f7d2ba6b0b09a31e25e140871e96364d1d377667b547bb3bf4489"
   end
 
   resource "ptyprocess" do

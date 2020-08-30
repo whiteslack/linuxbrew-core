@@ -2,15 +2,15 @@ class SqliteUtils < Formula
   include Language::Python::Virtualenv
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/73/16/10bb0d96f873daf596cc0d1058dc2bfe71033d03ac122d59e71f82e8d83a/sqlite-utils-2.16.tar.gz"
-  sha256 "8c9878371b76c82d789efc521cc77b15c229a7f281dd6a426da15af0ccccf375"
+  url "https://files.pythonhosted.org/packages/93/9a/5a175c8987955760b115c5fa17de2ce45dd5533f9caabff237ed8ec534e9/sqlite-utils-2.16.1.tar.gz"
+  sha256 "2c45175890d5f66ceaa1b37a56db7ef8d44f5d35bd2349814d2e46427e4519f7"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fba7ed14f801c4bed1a672b6d124e76b467b156e82b5085fac18a112069447cb" => :catalina
-    sha256 "b20643d2f23dbf55b30262983368d9a899625446395888569d6fd1b4309d7e2d" => :mojave
-    sha256 "1d44737e57faf7863cd10d51fcf09e30eaf2a140ae754965fe3dd6a81e0ffb2b" => :high_sierra
+    sha256 "e490a52af5f1d240e0fcc6aac9f9b47ba8b298c65064adc294d193f940f9fc6e" => :catalina
+    sha256 "dc0c7f8e6aa845c348a170f803c2db4e1b6f9998e5af691cf22ce41359d3eae0" => :mojave
+    sha256 "76bc8e334307ebd983fc032eaa53c7239bc904d83db83a825443ee2171f027d8" => :high_sierra
   end
 
   depends_on "python@3.8"
