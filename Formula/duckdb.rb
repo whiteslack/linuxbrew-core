@@ -1,15 +1,16 @@
 class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
-  url "https://github.com/cwida/duckdb/archive/v0.2.0.tar.gz"
-  sha256 "5ed30486f7f9877f5e5d2fd7047347b86fa9ca105e1ed41e53e1fcb4b3f7bc0c"
+  url "https://github.com/cwida/duckdb.git",
+      tag:      "v0.2.1",
+      revision: "d9bceddc7209a7e0b5c0402958d1191e19a491e7"
   license "MIT"
 
   bottle do
     cellar :any
-    sha256 "ac85f387cef72b578652256af88e96a959413e537f0b06ed21ea83cf04c62733" => :catalina
-    sha256 "038284bb668179934e71572118c0e06140418bf6cac2318ba0a9c5d7374c59ae" => :mojave
-    sha256 "1298a14fca854438e7e2c8882c986a8e7805dfd359ae021d2441e39b52e32a00" => :high_sierra
+    sha256 "a2bf08b307b78aa2ea059ac77093531debe2434922a2e1f0afbc7a820e989302" => :catalina
+    sha256 "dbbb8667bca6338b00b9d02f1b8eab5b900fc856a1c4ee1b68916790c0da4242" => :mojave
+    sha256 "320e691b9b23b3748c56f046eee12b648769a6e8563d1eebec2e330258a0a48b" => :high_sierra
   end
 
   depends_on "cmake" => :build
