@@ -11,6 +11,7 @@ class Editorconfig < Formula
     sha256 "efae02b7bab638b75b39abf29163349119b993697210e3dfeca5456f610241ec" => :catalina
     sha256 "523459616f8fdf7507c66c4c531e329e8bf37c08633e72401de47fdd010990a6" => :mojave
     sha256 "0f41e7e368a435f1680195d86b7eabbfd46f40a0905bd8dd8b52e199d92fc3f3" => :high_sierra
+    sha256 "288fc2b0f55a1f2c26428600e2da8bf1e1c095b3085456a5093129c880722c06" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
