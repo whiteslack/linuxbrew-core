@@ -13,6 +13,7 @@ class Gnupg < Formula
     sha256 "1b00809e7f0e197771c70a3d7ca6306b9ff236b2651aa1e92da1e09f6fd8c2a9" => :catalina
     sha256 "6b0855d5088f9921d2ae1a87b996214ffba8f9bf0bf467dfe2343dd390013cb5" => :mojave
     sha256 "9ef79b1ffc23456648d6714566fe5ac0cb2388b9f3dc10ee8f1811a74a475a75" => :high_sierra
+    sha256 "dbaf8a4dbc4e4e6c2a41ec53f42c7a4dbb1a1fe9ea98a3bdf14ae1626c3e3625" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
