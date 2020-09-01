@@ -1,24 +1,23 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0223.tar.gz"
-  version "0.223"
-  sha256 "d94685aabe28e9bb2374162e3ca070949b67e3e97cc50eb25558baed5b8d3591"
-  license "GPL-2.0"
+  url "https://github.com/mamedev/mame/archive/mame0224.tar.gz"
+  version "0.224"
+  sha256 "3518e71ec20fbeac8ebe93f8ec856078b8288e19f0d7cb38959d4bde30cd2810"
+  license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git"
 
   bottle do
     cellar :any
-    sha256 "4b20514f03365966c723bafcb33ea11e4b6f65fb41e31abd9de09113b26d9dd0" => :catalina
-    sha256 "9bc473e2d0fd9b047d8136277f03bb20f750d87c13463342ba561029c9379277" => :mojave
-    sha256 "11c3c02304835a62add02f11484c7c392905f16c5460d641550757fbaec79745" => :high_sierra
+    sha256 "842639d9a190b29c3153c20465913e6de77ddd7f6290e076467f39c75b77ca50" => :catalina
+    sha256 "59d98889b7d64215c3cd06b2b974cb66038234e7375aace6d8285f79c3f1924e" => :mojave
+    sha256 "2e6905541f0364563fec7c36bb3e80202d6dc33f12dff0ace0804027edb61e51" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python@3.8" => :build
   depends_on "flac"
-  # Need C++ compiler and standard library support C++14.
-  # Build failure on Sierra, see:
-  # https://github.com/Homebrew/homebrew-core/pull/39388
+  # Need C++ compiler and standard library support C++17.
   depends_on macos: :high_sierra
   depends_on "sdl2"
   depends_on "utf8proc"
@@ -30,7 +29,10 @@ class RomTools < Formula
     # Cut sdl2-config's invalid option.
     inreplace "scripts/src/osd/sdl.lua", "--static", ""
 
-    system "make", "TOOLS=1",
+    # Use bundled asio instead of latest version.
+    # See: <https://github.com/mamedev/mame/issues/5721>
+    system "make", "PYTHON_EXECUTABLE=#{Formula["python@3.8"].opt_bin}/python3",
+                   "TOOLS=1",
                    "USE_LIBSDL=1",
                    "USE_SYSTEM_LIB_EXPAT=1",
                    "USE_SYSTEM_LIB_ZLIB=1",

@@ -1,29 +1,28 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0223.tar.gz"
-  version "0.223"
-  sha256 "d94685aabe28e9bb2374162e3ca070949b67e3e97cc50eb25558baed5b8d3591"
-  license "GPL-2.0"
+  url "https://github.com/mamedev/mame/archive/mame0224.tar.gz"
+  version "0.224"
+  sha256 "3518e71ec20fbeac8ebe93f8ec856078b8288e19f0d7cb38959d4bde30cd2810"
+  license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git"
 
   bottle do
     cellar :any
-    sha256 "9291cfae5f26af75808ca77267d8b29fa4f06d5a14f8765401a5e2243bffb100" => :catalina
-    sha256 "e4ae17c3361497c7810d6f840103a2eed91342202348e158aa248874d4f527e8" => :mojave
-    sha256 "6125ffa2b849837180961319c4818972e14cd82c8c6281c702c373510582cbc7" => :high_sierra
+    sha256 "02234561654ce4acf965841a0392225186d1edf4200653d3a09ae0f94dcfbe33" => :catalina
+    sha256 "8258fdcf71c960ae6fadf019cbeecc68e2d91977c39c22b884295fa8eeacadac" => :mojave
+    sha256 "ab42ed0bce4a11ef242c0988b80de0e7f51a0168009ec0917e8b64d8b61fb830" => :high_sierra
   end
 
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "pugixml" => :build
+  depends_on "python@3.8" => :build
   depends_on "rapidjson" => :build
   depends_on "sphinx-doc" => :build
   depends_on "flac"
   depends_on "jpeg"
-  # Need C++ compiler and standard library support C++14.
-  # Build failure on Sierra, see:
-  # https://github.com/Homebrew/homebrew-core/pull/39388
+  # Need C++ compiler and standard library support C++17.
   depends_on macos: :high_sierra
   depends_on "portaudio"
   depends_on "portmidi"
@@ -38,7 +37,10 @@ class Mame < Formula
     # Cut sdl2-config's invalid option.
     inreplace "scripts/src/osd/sdl.lua", "--static", ""
 
-    system "make", "USE_LIBSDL=1",
+    # Use bundled asio and lua instead of latest version.
+    # See: <https://github.com/mamedev/mame/issues/5721>
+    system "make", "PYTHON_EXECUTABLE=#{Formula["python@3.8"].opt_bin}/python3",
+                   "USE_LIBSDL=1",
                    "USE_SYSTEM_LIB_EXPAT=1",
                    "USE_SYSTEM_LIB_ZLIB=1",
                    "USE_SYSTEM_LIB_ASIO=",
@@ -46,8 +48,8 @@ class Mame < Formula
                    "USE_SYSTEM_LIB_FLAC=1",
                    "USE_SYSTEM_LIB_GLM=1",
                    "USE_SYSTEM_LIB_JPEG=1",
-                   "USE_SYSTEM_LIB_PORTMIDI=1",
                    "USE_SYSTEM_LIB_PORTAUDIO=1",
+                   "USE_SYSTEM_LIB_PORTMIDI=1",
                    "USE_SYSTEM_LIB_PUGIXML=1",
                    "USE_SYSTEM_LIB_RAPIDJSON=1",
                    "USE_SYSTEM_LIB_SQLITE3=1",
@@ -61,7 +63,7 @@ class Mame < Formula
       system "make", "man"
       man1.install "build/man/MAME.1" => "mame.1"
     end
-    pkgshare.install %w[artwork bgfx hash ini language keymaps plugins samples uismall.bdf]
+    pkgshare.install %w[artwork bgfx hash ini keymaps language plugins samples uismall.bdf]
   end
 
   test do
