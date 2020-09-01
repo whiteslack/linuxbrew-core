@@ -17,7 +17,7 @@ class Rtv < Formula
     sha256 "eea319a24672413f210c97414e44e65000b04ce178c16a4624e65a976f54535c" => :x86_64_linux
   end
 
-  deprecate! date: "2019-06-02", because: "has an archived upstream repository"
+  deprecate! date: "2019-06-02", because: :repo_archived
 
   depends_on "python@3.8"
 

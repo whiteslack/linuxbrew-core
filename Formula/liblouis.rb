@@ -1,21 +1,20 @@
 class Liblouis < Formula
   desc "Open-source braille translator and back-translator"
   homepage "http://liblouis.org"
-  license "LGPL-2.1"
+  license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   stable do
-    url "https://github.com/liblouis/liblouis/releases/download/v3.14.0/liblouis-3.14.0.tar.gz"
-    sha256 "f5b25f8059dd76595aeb419b1522dda78f281a75a7c56dceaaa443f8c437306a"
+    url "https://github.com/liblouis/liblouis/releases/download/v3.15.0/liblouis-3.15.0.tar.gz"
+    sha256 "3a381b132b140747e5fcd47354da6cf43959da2167f8bc598430bbac51224467"
     depends_on "help2man" => :build
     depends_on "pkg-config" => :build
     depends_on "python@3.8"
   end
 
   bottle do
-    sha256 "d90fc8996fd09ba5154fb9cc597a8a588834b95511b50c589020a875ed0f4feb" => :catalina
-    sha256 "ce4feb9450cb8cbbaf70f885c04ca84d4136eed237bfaa7876ef5ae22491a272" => :mojave
-    sha256 "d3527a68640b4bf5f2c174299e472709e8b6c149b37882854e4aaa7efd0fc2b2" => :high_sierra
-    sha256 "ed2ddf9991d213f84211413b93eb6c1b09d5605cc5e72b8de9b080d0b6c5301b" => :x86_64_linux
+    sha256 "083090c449d677552a01c4de0700a4925a99a0b6f176c3bbb934943ca19d97eb" => :catalina
+    sha256 "ce90fe897fe1f42e83628f06f6d2bd2f492b29b82de02c7e7ee6f6cc69b22d72" => :mojave
+    sha256 "0a590166a59479efbe7419b04690a784f97f81ae983a91aea4cd983bd4ac9826" => :high_sierra
   end
 
   head do

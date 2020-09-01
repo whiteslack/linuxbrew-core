@@ -25,7 +25,7 @@ class Archey < Formula
 
   depends_on :macos
 
-  deprecate! date: "2017-04-28", because: "has an archived upstream repository"
+  deprecate! date: "2017-04-28", because: :repo_archived
 
   def install
     bin.install "bin/archey"
