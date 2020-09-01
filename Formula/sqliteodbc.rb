@@ -39,9 +39,7 @@ class Sqliteodbc < Formula
                "--with-libxml2=#{Formula["libxml2"].opt_prefix}"]
     end
 
-    if OS.mac?
-      ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
-    end
+    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
     system "./configure", *args
 
     system "make"
