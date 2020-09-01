@@ -25,7 +25,7 @@ class Emacs < Formula
     depends_on "texinfo" => :build
   end
 
-  disable! if ENV["CI"]
+  disable! because: "cannot currently build under GitHub Actions CI" if ENV["CI"]
 
   depends_on "pkg-config" => :build
   depends_on "gnutls"
