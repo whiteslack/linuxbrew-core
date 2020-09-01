@@ -10,6 +10,7 @@ class Gravity < Formula
     sha256 "543401f3a030a381022baf39aa857ab38d22be167347b5939b90d70df96f23d9" => :catalina
     sha256 "e56e2dbf6d0eb7d2be1b159caa2ae9073b7417904b91bfc1152d9dceb8c7683c" => :mojave
     sha256 "d34c1ba9ec0b997826e15114bfebed1aa22c425a39187bc5e8d9591d8a1fcc57" => :high_sierra
+    sha256 "3242d92714264f81a93d48e0a5ead3f5a6abc1914007f2e67abec3f8cb9ba0a2" => :x86_64_linux
   end
 
   def install
