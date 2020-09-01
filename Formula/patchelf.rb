@@ -31,7 +31,6 @@ class Patchelf < Formula
       ENV["HOMEBREW_RPATH_PATHS"] = nil
     end
 
-    system "./bootstrap.sh"
     system "./configure", "--prefix=#{prefix}",
       "CXXFLAGS=-static-libgcc -static-libstdc++",
       "--disable-debug",
