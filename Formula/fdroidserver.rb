@@ -363,9 +363,7 @@ class Fdroidserver < Formula
     end
 
     # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
-    if OS.mac?
-      ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
-    end
+    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
     venv.pip_install resource("lxml")
     ENV.delete "SDKROOT" # avoid matplotlib build failure on 10.12
 
