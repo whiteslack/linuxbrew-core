@@ -17,6 +17,7 @@ class Miniupnpc < Formula
     sha256 "fd72b75df14dc0a23f566031fbddef7110acf0e90b34092ef09ef62fa74a6117" => :catalina
     sha256 "78f72e56f2edb01fb2d7949836050cca173fe9c342b602c7b9c3a8dc31693849" => :mojave
     sha256 "ac7dcda27fedebab8e8c47ce08c74283626a0169b646a09b34de5bd91b673e1a" => :high_sierra
+    sha256 "f2d391250b62d74e748e9df4867b3a265456f3bb21c44b2fd287831882ea2b2f" => :x86_64_linux
   end
 
   conflicts_with "wownero", because: "wownero ships its own copy of miniupnpc"
