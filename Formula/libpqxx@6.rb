@@ -10,6 +10,7 @@ class LibpqxxAT6 < Formula
     sha256 "a6c097c77ca535f5714cb0fc2096a4ac382f241f9878a8253b37cb8bd3eb5188" => :catalina
     sha256 "a983077fe9a2cb76ed3189781724353d08861c27a51ebdd697df25a065aefe95" => :mojave
     sha256 "22b2fe737dd2546276ce7bc1679bc3bab7fb0070ef96a60e649af488d5ee7aab" => :high_sierra
+    sha256 "265431632f2abf4fa18a96dfd29b94d11857dd1e798986fabb936088ec79a04d" => :x86_64_linux
   end
 
   keg_only :versioned_formula
