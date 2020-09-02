@@ -11,6 +11,7 @@ class Numcpp < Formula
     sha256 "82c6072f7b1dbb789af12774a997888b4a50411b9979ee24dfba865bca13aa3b" => :catalina
     sha256 "eee4970f2b66665c17a67b93d84296af236861b466e2d7db154f6535a70a1182" => :mojave
     sha256 "27cdc95505568b37fde713717f95006e44b1450dca0fcf64089c35d484be3e17" => :high_sierra
+    sha256 "bf3cf1d5ec28c44cd8d47643e75800ea3b30561091b6eba13cc34c9302e230d3" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
