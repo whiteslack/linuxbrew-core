@@ -1,25 +1,23 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://github.com/smallstep/cli/releases/download/v0.15.0/step-cli_0.15.0.tar.gz"
-  sha256 "3b7d8ec9b8a32cf40d1cd859a56283295d4e3b0417c590b31fc7e1a0ab42f6ed"
+  url "https://github.com/smallstep/cli/releases/download/v0.15.2/step-cli_0.15.2.tar.gz"
+  sha256 "9c7a8bf4cf8af9778c8522241041f004a56fa983b229e1433b915d648b258e8a"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "18ec2fc111691562508a7b5015aa13e0321481b11489f944194e7506c62c036b" => :catalina
-    sha256 "eea7d0b3bfb096e504ddcd2b4016283eb6b9103931db78ff0581e28721a0865f" => :mojave
-    sha256 "37b7407320bb337a92aca5752d6ec9a0fd4bbd6b00a09f2626fd5d20daaeac8f" => :high_sierra
-    sha256 "f003fc85ee310ab1dfbeb066013d1c4762fb04b47ed5c6b8eb7d7c3acb867f0b" => :x86_64_linux
+    sha256 "4a9b10cf3a93c63b2eca0cfffb6b685e30c7948c561b14bb8708649d76140430" => :catalina
+    sha256 "a4e7769a71ab27ff43dd6740bc00d152085c7f5427dbd1f2b424bde8149f6c7a" => :mojave
+    sha256 "4c6cf6a7e374def112b771544f1543c1df4731272b9e47eed184a9cf67fb47cf" => :high_sierra
   end
 
   depends_on "dep" => :build
   depends_on "go" => :build
 
   resource "certificates" do
-    url "https://github.com/smallstep/certificates/releases/download/v0.15.0/step-certificates_0.15.0.tar.gz"
-    sha256 "dac1ade4f5970870c3478cb302aff2239d0f2eb3e87a4b0f11dd9d8d47639dde"
+    url "https://github.com/smallstep/certificates/releases/download/v0.15.2/step-certificates_0.15.2.tar.gz"
+    sha256 "f0fad442d207160c0b4a5de4923d09218dc2dc90cb94ee9b0d953e27235a9898"
   end
 
   def install

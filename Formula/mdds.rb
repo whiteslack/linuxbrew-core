@@ -1,8 +1,8 @@
 class Mdds < Formula
   desc "Multi-dimensional data structure and indexing algorithm"
   homepage "https://gitlab.com/mdds/mdds"
-  url "https://kohei.us/files/mdds/src/mdds-1.6.0.tar.bz2"
-  sha256 "f1585c9cbd12f83a6d43d395ac1ab6a9d9d5d77f062c7b5f704e24ed72dae07d"
+  url "https://kohei.us/files/mdds/src/mdds-1.7.0.tar.bz2"
+  sha256 "a66a2a8293a3abc6cd9baff7c236156e2666935cbfb69a15d64d38141638fecf"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,9 @@ class Mdds < Formula
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 2
-    sha256 "c7415479dc1b23ba867eef310cd265d6813ea9523591a2d30670f3ee20a99923" => :catalina
-    sha256 "ccfeb176c14e310b913302c74ba30d5973184662e62060ec8eea0f16c931f607" => :mojave
-    sha256 "ccfeb176c14e310b913302c74ba30d5973184662e62060ec8eea0f16c931f607" => :high_sierra
-    sha256 "c5ca155b9eac026cf0266c322dddd394d1072f032a9e5d71b67f1f7013b198f4" => :x86_64_linux
+    sha256 "a5e6a996bf112bca0d5c7e628fd15128977b9075938155a4185aaf5613d136bc" => :catalina
+    sha256 "5146b50529f63030c978dbdab3755ce7a7383d7c8049e03ae1186fa231f867c9" => :mojave
+    sha256 "67f497efa10f695da64e4769d3ef5de6fb0e9d3d0d62026c2105b7c5148b91a9" => :high_sierra
   end
 
   head do

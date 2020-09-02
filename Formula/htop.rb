@@ -1,10 +1,10 @@
 class Htop < Formula
   desc "Improved top (interactive process viewer)"
-  homepage "https://hisham.hm/htop/"
-  url "https://hisham.hm/htop/releases/2.2.0/htop-2.2.0.tar.gz"
-  sha256 "d9d6826f10ce3887950d709b53ee1d8c1849a70fa38e91d5896ad8cbc6ba3c57"
-  license "GPL-2.0"
-  revision OS.mac? ? 1 : 2
+  homepage "https://htop.dev/"
+  url "https://github.com/htop-dev/htop/archive/3.0.0.tar.gz"
+  sha256 "1c0661f0ae5f4e2874da250b60cd515e4ac4c041583221adfe95f10e18d1a4e6"
+  license "GPL-2.0-or-later"
+  head "https://github.com/htop-dev/htop.git"
 
   livecheck do
     url :head
@@ -13,21 +13,15 @@ class Htop < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c06ff60960f64f5c8395f53d7419cbcce2a22ee87f0cb0138352c8a88111d21c" => :catalina
-    sha256 "77aa302765353b4085dcad52356d3264183e06310dda8d5bac64642299ea2902" => :mojave
-    sha256 "0ebfb655b91566ba31f8effc94d642a43305ff95bdc9b30b46fadc132e2ced0c" => :high_sierra
-    sha256 "ed93b86f011de155c5d261b8c9cc9cb81fd0017667bf3ebe26ee090716bcd650" => :sierra
-    sha256 "ff4f21ca883cb69101331f0071b5c6e479d16b6bd53fdc04da398a9c41497fc0" => :x86_64_linux
+    cellar :any
+    sha256 "f53ae5c8d846b7f11ef6431f65b1a056a31d2703c1b2bc691330cd618dea5a3a" => :catalina
+    sha256 "7007e92a3c9b4f818c9caa53ac27b941b3b6079d5eff62f84837d5092d04ea83" => :mojave
+    sha256 "db64171160ccd3abce6be5fad7547aa254fa0b46b6447b37a08a3a31c5e1f66a" => :high_sierra
   end
 
-  head do
-    url "https://github.com/hishamhm/htop.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "ncurses" # enables mouse scroll
   depends_on "python@3.8" => :build unless OS.mac?
@@ -35,7 +29,7 @@ class Htop < Formula
   def install
     ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin" unless OS.mac?
 
-    system "./autogen.sh" if build.head?
+    system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end

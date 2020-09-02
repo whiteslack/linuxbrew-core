@@ -1,9 +1,9 @@
 class Cassandra < Formula
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/3.11.7/apache-cassandra-3.11.7-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/3.11.7/apache-cassandra-3.11.7-bin.tar.gz"
-  sha256 "b9c0d5b08ae2660810227b1881e8b7b5bc9ae0549cb8efb866b99884ad7346e2"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/3.11.8/apache-cassandra-3.11.8-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/3.11.8/apache-cassandra-3.11.8-bin.tar.gz"
+  sha256 "3d04e4b79c3f264cb491e1bc5127ec465102b55005a6c8f4af8548b32e74bf50"
   license "Apache-2.0"
 
   livecheck do
@@ -12,9 +12,9 @@ class Cassandra < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "faa06a0b2ef7f257a29c57f2e772256e8b4be0ddd9617f0f4d2b3edca4432281" => :catalina
-    sha256 "5decf89224693fd1dfe2c53f28220729c3b267bb68ada4385f7de7626b5bfab9" => :mojave
-    sha256 "abf2a9566e3895758320a195b266acd1241627eca15621142b58fee16e7c9ed9" => :high_sierra
+    sha256 "10ab8a8b38c1fa1cc534f2600dcac773588bb5d65d913fedc1012e46f4e952c7" => :catalina
+    sha256 "844b20c9363081279243d537f2b1f16dbc6d6d4c8aec9e0ff0d33a3f6a89bfa6" => :mojave
+    sha256 "fa549ffa600c249ae8ab011927afa45924e6fbd6dc2fe640667d260a55037375" => :high_sierra
   end
 
   depends_on "cython" => :build

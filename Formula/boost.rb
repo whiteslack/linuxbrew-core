@@ -14,10 +14,10 @@ class Boost < Formula
 
   bottle do
     cellar :any
-    sha256 "d2cbb9cee2af7c3f62513979030413e9fdb3a6b4cae69241fc36f33e36d3781d" => :catalina
-    sha256 "ff9e2f3587b878611b26b7bfb064b7c200e74c38d6553a0617510b6161361512" => :mojave
-    sha256 "ddbb7dcb02070127d9b7d897e8a3b66a51bf2a70fa4232c8bcf0f4001ae27eb1" => :high_sierra
-    sha256 "6461de7d3ef1e8dd780eac3e6eb00cde6710766335cf34267a32a9c6806fc95b" => :x86_64_linux
+    rebuild 1
+    sha256 "21b7a8b746e98a39c299b5db595f97ff24cb498fee5c3c38be690bcc2510137b" => :catalina
+    sha256 "72159a6229ced562aa26100ce1c72f2ec3070cd6fe6e894e912abd9acc1b76bb" => :mojave
+    sha256 "f7e7f920d91f6b47a99f342a1414b992f012c49441e62b5587502d53cb31af7b" => :high_sierra
   end
 
   depends_on "icu4c" if OS.mac?
@@ -29,6 +29,13 @@ class Boost < Formula
   patch do
     url "https://github.com/boostorg/build/commit/b3a59d265929a213f02a451bb63cea75d668a4d9.patch?full_index=1"
     sha256 "04a4df38ed9c5a4346fbb50ae4ccc948a1440328beac03cb3586c8e2e241be08"
+    directory "tools/build"
+  end
+
+  # Fix build on 64-bit arm
+  patch do
+    url "https://github.com/boostorg/build/commit/456be0b7ecca065fbccf380c2f51e0985e608ba0.patch?full_index=1"
+    sha256 "e7a78145452fc145ea5d6e5f61e72df7dcab3a6eebb2cade6b4cfae815687f3a"
     directory "tools/build"
   end
 
