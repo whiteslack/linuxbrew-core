@@ -11,6 +11,7 @@ class Owfs < Formula
     sha256 "659e132d059f5b07c1f53f7ebc8676edf732da7b36f4e85065a30fe616358f50" => :catalina
     sha256 "f67044700191dc6becb4b768d2c89f8e6714411ec4182c8297edcf3d3eac1318" => :mojave
     sha256 "1812f6546d6e6957fc34aefadb1ce83ab8c7995a4c9c67b85f0ff7ba4e7e381c" => :high_sierra
+    sha256 "4555ab999c3067bb3800ccee5ae29aeb4861e596cc931bb15c32b98a6b372b22" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
