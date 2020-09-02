@@ -11,6 +11,7 @@ class Logtalk < Formula
     sha256 "7890c6a4ccdd1dd02d00c95c3d19948b2d27daca33bb7af655225f97b835af63" => :catalina
     sha256 "e1bf996dbbfe993dbc4b601664a4b4922b8751f0fb45fdf0addf8d120328fac0" => :mojave
     sha256 "3a5fa86108e5c6476ed1f2a827563fcb0e9b4fefb64b27d70f1b2d8bc2ce7dab" => :high_sierra
+    sha256 "08a000c772c5dfd517bbeb83a00c891cd82d20fb5678a42f982d53d5a7e34dc6" => :x86_64_linux
   end
 
   depends_on "gnu-prolog"
