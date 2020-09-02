@@ -11,6 +11,7 @@ class Gomplate < Formula
     sha256 "52cc95df2ec8d4a0c4f09ceaf3145161e435fc85106f4265ba24a5159f9019e9" => :catalina
     sha256 "e90c04a70f742766bd71ec4fc74c3aa7f6d5fcaf1147032ec52787e5bb326445" => :mojave
     sha256 "2fad9d3647034db30eaee6f556ba9930f8d448e287bdac70ad0b0cfa7332cf47" => :high_sierra
+    sha256 "6524be08ed13a4bf371a0aea6b61c06d3ffd8cc9eb57e8de6e44e72f8c7f5c62" => :x86_64_linux
   end
 
   depends_on "go" => :build
