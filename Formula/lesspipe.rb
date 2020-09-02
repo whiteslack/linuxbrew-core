@@ -10,6 +10,7 @@ class Lesspipe < Formula
     sha256 "6078a8d92ebaee0b4decf8951f6ede33432f15a8e700bf5180257e38ae15a30c" => :catalina
     sha256 "509e6fbbdb6329be9b6405067a1c16e715c89a6d5dd0621a766e2e7b36157cdf" => :mojave
     sha256 "59920e52a34aaa64ff44c8d0cb4b157559ec767da77c86d827bd983030f42aa9" => :high_sierra
+    sha256 "7d9df891848960a6542b06d00a4ce7307787bc494a0f1ece69c783beb61c09af" => :x86_64_linux
   end
 
   def install
