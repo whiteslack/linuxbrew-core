@@ -12,6 +12,7 @@ class Cdktf < Formula
     sha256 "1137c985cd950432ce80b0e7b2477c145a683c7d70ce7be0080a49aa8c8299d0" => :catalina
     sha256 "4abaf139e7febc8f59e5300d7b88df395b0f08d0b6c67754c2d2d7c2b1e6464a" => :mojave
     sha256 "1bd41bbd22b239ae949a1aa409ef731a47c22b9e82a388e6c903de6eed327bc7" => :high_sierra
+    sha256 "0967d91f17e2f0c4d1cbfd2fedeeb17894d776e017156e0ae58bf1844a9b3e4b" => :x86_64_linux
   end
 
   depends_on "node"
