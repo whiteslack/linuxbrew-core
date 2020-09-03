@@ -11,6 +11,7 @@ class Nushell < Formula
     sha256 "49511da84622a111286b1e7b65df8d3294115783827424396cebe157f55a07ba" => :catalina
     sha256 "c37e14e2354f1c4179140739e00006a492d40c82b0fd7fd269ad3180382e7070" => :mojave
     sha256 "1987098d0bc2539d351471e080cfc9857b32b05b4598913b5328dc15ec038531" => :high_sierra
+    sha256 "935615269c40ce7da345dfc095ad6aad9f9f97be570159948b5dd4abde2c0d1f" => :x86_64_linux
   end
 
   depends_on "rust" => :build
