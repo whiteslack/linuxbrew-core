@@ -13,6 +13,7 @@ class Groonga < Formula
     sha256 "e510f6a6a9cb196be336620e5baa842a9ff3740d0ae960125fe94ba0b6224f25" => :catalina
     sha256 "42a242664ddb0678b6a54eb34bbadeff990953a386e553d54afcdd14a388fdec" => :mojave
     sha256 "41c61f1754890c483716d2539d66c86ca8b0a13fd483d74610f627eb1562d4e0" => :high_sierra
+    sha256 "6232e6ae80a0a0d77d04a367873c29ebada645de47c78870c344e8378355f1e0" => :x86_64_linux
   end
 
   head do
