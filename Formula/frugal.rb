@@ -10,6 +10,7 @@ class Frugal < Formula
     sha256 "da1d952cef624e978e666eb5274bc4dbf96aa0048ef9e18152cab44093327ba5" => :catalina
     sha256 "7f705a8da2de66cb9ab3eaec6984eeb7bf09ef631420d6eff59a1cf5c49092b5" => :mojave
     sha256 "5d60462a277965e5181b5350df91b4eb3eaf9c34f4d7b902e7328067adaf8034" => :high_sierra
+    sha256 "fa40b03f9b121636a1b3568195b2b5d940d293d3b08536990b8f5c9842791301" => :x86_64_linux
   end
 
   depends_on "glide" => :build
