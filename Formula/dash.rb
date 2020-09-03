@@ -12,6 +12,7 @@ class Dash < Formula
     sha256 "6ad6adcfbf936f51525175d28e70eb4a6f887b92fb58e3d3cfb2930f43626d9d" => :catalina
     sha256 "8c979cf6f3fb29d665bdcdf4fe27a1c58ac51e6265a9fbb2b4bf219ddd4df734" => :mojave
     sha256 "0c0314fabb0ab26bf21606789abe3355ec1a5d9856475301d8699266b1f4689e" => :high_sierra
+    sha256 "cfded9456d398da80c3fe3239eb623900ce30b29c67c52680fa21e153a4cc2d7" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
