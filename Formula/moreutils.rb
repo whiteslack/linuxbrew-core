@@ -15,6 +15,7 @@ class Moreutils < Formula
     sha256 "2acce86bfb602b3da4577cf429080a138b7a2e587e394b175889c4d190ef3bae" => :catalina
     sha256 "e4d2496b670b5f4c8fcac0baaaa41afeced3b04ac962ce4963752cc233d68273" => :mojave
     sha256 "80057e9363725a85da1200dfe87fe669a5dab3980375ad83330ce4b61cbac13c" => :high_sierra
+    sha256 "b45c1a5df01081985d4ff84130e301d9344f0142d304ef78c68b2bd77bb0666e" => :x86_64_linux
   end
 
   depends_on "docbook-xsl" => :build
