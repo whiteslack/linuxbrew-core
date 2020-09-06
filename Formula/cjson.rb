@@ -1,15 +1,15 @@
 class Cjson < Formula
   desc "Ultralightweight JSON parser in ANSI C"
   homepage "https://github.com/DaveGamble/cJSON"
-  url "https://github.com/DaveGamble/cJSON/archive/v1.7.13.tar.gz"
-  sha256 "d4e77a38f540f2c37f55758f2666655314f1f51c716fea5f279659940efdcf04"
+  url "https://github.com/DaveGamble/cJSON/archive/v1.7.14.tar.gz"
+  sha256 "fb50a663eefdc76bafa80c82bc045af13b1363e8f45cec8b442007aef6a41343"
   license "MIT"
 
   bottle do
     cellar :any
-    sha256 "082bbc54aa1bf574900bc7ee017435d01888fd854953c6de1a6d62124fcd5306" => :catalina
-    sha256 "71a46c6fb3f06ed82cbb3009b5daed3b1083c6e7240760230ba900cb80267912" => :mojave
-    sha256 "76bde53a90ac3e1d62ae20283170392948bfce48046c6204e1114c1624dfa4aa" => :high_sierra
+    sha256 "19da0211d4aabe7a2bf7cf489682d8a9ec57f7d5749cdd39f81491354017a9b9" => :catalina
+    sha256 "32192c80f7a8dea4988342342dd80aabba292e8200e52f9cd2a2a35fc202b671" => :mojave
+    sha256 "0dfc85831529da5d33e07b46c08fbca4ed673f3879c4025a982b7612a0a05b7c" => :high_sierra
   end
 
   depends_on "cmake" => :build

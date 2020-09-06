@@ -2,16 +2,15 @@ class Lego < Formula
   desc "Let's Encrypt client"
   homepage "https://go-acme.github.io/lego/"
   url "https://github.com/go-acme/lego.git",
-    tag:      "v4.0.0",
-    revision: "c65edde24586a331363b4b43d9baabfc4b7b8aed"
+    tag:      "v4.0.1",
+    revision: "99b2cd818167175c8933ff121e613f8b68690f0e"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8752def187b7dadb167a45282f6dce99e716bba5116ce795f52d1a442db7e07b" => :catalina
-    sha256 "0731aacff85f51f12d5626470430a3f75b1051b2c1dc1c955c60c17328310a88" => :mojave
-    sha256 "18d1f2c2fcf2d71d0f1b9a0f5364e695145c42c7617e9bb365b1fb405979a974" => :high_sierra
-    sha256 "cce1103ef6c2a1c98c224d5394acfa4c012555b0a7137f2dd274734e249c85c2" => :x86_64_linux
+    sha256 "f4811a1694e1bfe2dbb2fef4ea3a44cbb0d6cba4940b3c4f904f515d2c3d7469" => :catalina
+    sha256 "7dfbb0d990526cbd5f6db396cf16eada4f6675021f9917eab7db050f8bb21fc1" => :mojave
+    sha256 "7946ea0f32c17de5af07144533fb9982b0183bfa1973e3c0e1f48ce1d49cce3a" => :high_sierra
   end
 
   depends_on "go" => :build

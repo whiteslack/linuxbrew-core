@@ -1,23 +1,23 @@
 class Earthly < Formula
   desc "Build automation tool for the post-container era"
   homepage "https://earthly.dev/"
-  url "https://github.com/earthly/earthly/archive/v0.3.2.tar.gz"
-  sha256 "11ea5a1ca7f9f78197cb2ec374b030e9f6844081c37a81f1e3788814d0ba05c8"
+  url "https://github.com/earthly/earthly/archive/v0.3.5.tar.gz"
+  sha256 "254bb12e1300b879165e112b90294065988c5bc2253c662c0829ea0019d6116f"
   license "MPL-2.0"
   head "https://github.com/earthly/earthly.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "276ce792b11e3a7167a16b5ec5fe9817b52e774aec3f306fe0c677156f1b57fb" => :catalina
-    sha256 "4eeee0dead303506a9f4b415de4f4c4ac46cf190eb092219f0c89fc627b1d426" => :mojave
-    sha256 "a75b91d1675f527c13bb65ee3c0b2ff2bf88ecaa7c5d2ac18dc410edeb809a0f" => :high_sierra
+    sha256 "ca96e9fb32bfcc97e56209acc828215233c00f7b95b55f75b96a26b2ee695e75" => :catalina
+    sha256 "1c3f2406e102f84e51db882eb73ce318de4014d68dbac24b1f37ec0871aad01a" => :mojave
+    sha256 "49aca926afea28b90052d9a9fc67bc909439531d419ea6f642563a433f95d006" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-X main.DefaultBuildkitdImage=earthly/buildkitd:v0.3.2 " \
-              "-X main.Version=v0.3.2 -X main.GitSha=71a2f1746a3ffc15bb95260a6270edcdda7138eb"
+    ldflags = "-X main.DefaultBuildkitdImage=earthly/buildkitd:v0.3.5 -X main.Version=v0.3.5 -X" \
+              " main.GitSha=557634495eb6cf9d48d05bc25461f34b2f86f06f "
     tags = "dfrunmount dfrunsecurity dfsecrets dfssh dfrunnetwork"
     system "go", "build",
         "-tags", tags,
