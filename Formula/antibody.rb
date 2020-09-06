@@ -10,6 +10,7 @@ class Antibody < Formula
     sha256 "572351da6247daf6bf29afbdcc8ff10c4fe47e9e413c2ae0df0dd249e855599d" => :catalina
     sha256 "c33467a9d42a9c767bd2d3382937e9f1dcf9bce2cb45fe3de6adb736ae2d6e89" => :mojave
     sha256 "7af2bd8779f129597713ebd6155d493616f4ed4b2344cac9db84191b01f3110c" => :high_sierra
+    sha256 "bea38156477d7ea88262fd5b59b1be3c2718d248d7ff1e4686de76d1155563d1" => :x86_64_linux
   end
 
   depends_on "go" => :build
