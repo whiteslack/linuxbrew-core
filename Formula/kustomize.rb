@@ -14,20 +14,21 @@ class Kustomize < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e2c9e578e0b1ce00690744cf4ba055ab53e0351c9d841cd878e90c9f0f4e4c6d" => :catalina
-    sha256 "776e3696d9ae65d774812a4f65054205ae97662ab18c724ea9b2b70f9972b219" => :mojave
-    sha256 "c0f9b679bea00a011171bc8e8ac915eb9ed638be543bc51da2022c5ceee7ffc5" => :high_sierra
-    sha256 "ec4ab82d824c2205e76335c2bd2ae4699d9737ae69a6eff003299f774b8e04d4" => :x86_64_linux
+    rebuild 1
+    sha256 "601a07e4f64fd9cfaf6d5711affacf90021d6aff686211883b062bb2971a24e8" => :catalina
+    sha256 "cd22865db58698712c60458745895ef9e54ca77c115c8696299e93ee36fb7b84" => :mojave
+    sha256 "e165140a287fd347501dce99b3f3e873361063f1a3f70ed16e0e883388fbb6e3" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
     revision = Utils.safe_popen_read("git", "rev-parse", "HEAD").strip
+    tag = Utils.safe_popen_read("git", "tag", "--contains", "HEAD").strip
 
     cd "kustomize" do
       ldflags = %W[
-        -s -X sigs.k8s.io/kustomize/api/provenance.version=#{version}
+        -s -X sigs.k8s.io/kustomize/api/provenance.version=#{tag}
         -X sigs.k8s.io/kustomize/api/provenance.gitCommit=#{revision}
         -X sigs.k8s.io/kustomize/api/provenance.buildDate=#{Time.now.iso8601}
       ]
@@ -36,7 +37,7 @@ class Kustomize < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/kustomize version")
+    assert_match "kustomize/v#{version}", shell_output("#{bin}/kustomize version")
 
     (testpath/"kustomization.yaml").write <<~EOS
       resources:
