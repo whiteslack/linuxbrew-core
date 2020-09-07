@@ -12,6 +12,7 @@ class Godep < Formula
     sha256 "3918dcdb7672c88061a4950b88e472f522e81dd37544661d335e177df206fa1d" => :catalina
     sha256 "6a5dc004973bc094884c7eb2b29c78bc46e9281de1fac240363987132b46bc19" => :mojave
     sha256 "ea5f06370b21bb510b6419637e86827a24472adb1c755962357808ec222ba01f" => :high_sierra
+    sha256 "778d8c38c569358d09d68d0feb8856d9002a26b5e7f7023cbaa06b739127ee8c" => :x86_64_linux
   end
 
   deprecate! date: "2018-01-26", because: :repo_archived
