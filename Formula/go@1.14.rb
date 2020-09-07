@@ -15,6 +15,7 @@ class GoAT114 < Formula
     sha256 "c47e875943b343561bed411b99929814448b2d17d929c90931b304922be763ea" => :catalina
     sha256 "013f87c9bad7943b98ac799fc3a944c4614d032de1bf203bece0ed93bdd59b1f" => :mojave
     sha256 "6e0adc176387b31d8a4ca0d72bf2d20d4fac32db9728f92485f2a8a317fae20e" => :high_sierra
+    sha256 "e40f221c5d799f9fa6fa56bad46a23f902ba5d9e7db260744592dcef0c8348a9" => :x86_64_linux
   end
 
   keg_only :versioned_formula
