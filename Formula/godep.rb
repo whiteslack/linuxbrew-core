@@ -4,15 +4,14 @@ class Godep < Formula
   url "https://github.com/tools/godep/archive/v80.tar.gz"
   sha256 "029adc1a0ce5c63cd40b56660664e73456648e5c031ba6c214ba1e1e9fc86cf6"
   license "BSD-3-Clause"
-  revision 38
+  revision 39
   head "https://github.com/tools/godep.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "141260f7b4c5e0dbd5c2c7b4ec513ae1e5f8d5ab20661a0c872c95f6d5f459fe" => :catalina
-    sha256 "b07e664a25d5384e11c9f4623de7bb2b3921cb99485a66f86f1f711fa9d49624" => :mojave
-    sha256 "86892d7dd9770920ee08c761a722f85a9354f9813e0119e8fc2f67e8fff0b79b" => :high_sierra
-    sha256 "b70e7b7008a9afa2f78c94af9687347c9d5154d0c5b9fed36beeb870e2c84d3d" => :x86_64_linux
+    sha256 "3918dcdb7672c88061a4950b88e472f522e81dd37544661d335e177df206fa1d" => :catalina
+    sha256 "6a5dc004973bc094884c7eb2b29c78bc46e9281de1fac240363987132b46bc19" => :mojave
+    sha256 "ea5f06370b21bb510b6419637e86827a24472adb1c755962357808ec222ba01f" => :high_sierra
   end
 
   deprecate! date: "2018-01-26", because: :repo_archived

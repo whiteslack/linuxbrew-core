@@ -1,21 +1,21 @@
 class GitDelta < Formula
   desc "Syntax-highlighting pager for git and diff output"
   homepage "https://github.com/dandavison/delta"
-  url "https://github.com/dandavison/delta/archive/0.4.1.tar.gz"
-  sha256 "5c2e46e398702b13b2768043ba5dc6bea899fb34271120bad4608ff9a64b0434"
+  url "https://github.com/dandavison/delta/archive/0.4.3.tar.gz"
+  sha256 "78ee36ec30194fe261ccb585111b67adae5166e79170f9636e54cbf5427da54a"
   license "MIT"
   head "https://github.com/dandavison/delta.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d963089b08030f60e813d1d42ba505ee0874a40050d8ca9fc0dd3e1772b464cf" => :catalina
-    sha256 "c09ae0331cccd3007eb3b0420efbd78008a252b19048ea359c76a524c5207a3a" => :mojave
-    sha256 "9e3514f8c1203ab8119c3a670ada98b08f30139c2308e920cdb131c26e7e66fb" => :high_sierra
-    sha256 "8fa6da29eec6618d4ca4f0e80f84dc0f2fd03c798c216b42e67f6f2f57af3b7c" => :x86_64_linux
+    sha256 "ef07bc394646ce496f4df2187a190d9462911309484859eb673a898afe5cd245" => :catalina
+    sha256 "766eb46b081280cb6db0e7a18b0af23061de6bc36a17424b9389d044b9f395a9" => :mojave
+    sha256 "a21ba72f6937355d553b634caf3498edcd87c3329e134d1ceeaddb6490ba27ea" => :high_sierra
   end
 
   depends_on "rust" => :build
   depends_on "llvm" => :build unless OS.mac?
+
   uses_from_macos "zlib"
 
   conflicts_with "delta", because: "both install a `delta` binary"

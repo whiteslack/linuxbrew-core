@@ -1,18 +1,18 @@
 class Gspell < Formula
   desc "Flexible API to implement spellchecking in GTK+ applications"
   homepage "https://wiki.gnome.org/Projects/gspell"
-  url "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.3.tar.xz"
-  sha256 "5ae514dd0216be069176accf6d0049d6a01cfa6a50df4bc06be85f7080b62de8"
-  revision 2
+  url "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.4.tar.xz"
+  sha256 "cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "491b662bd382e322b2041a255551dcd1a3ba6dbaa5a2fc825dc239241ac7a64a" => :catalina
-    sha256 "d471894ee5c85f31be7a2a9c5a122382a3619852f4b9a36f1d2778e669ad4cb0" => :mojave
-    sha256 "3b167053c54d962f2eed54e7bff70b2ce4b0a21ccb22be19a1091318e85bcbfc" => :high_sierra
+    sha256 "b7165cc3def086000bc01e62724c5ae303200ca3eff64f681ead49f80313db20" => :catalina
+    sha256 "eb478bbf00c69404e64f21db962abdcd237d146a326d2779aaeae08f6414b8a2" => :mojave
+    sha256 "24dd633197c7ea490125a506db6379f7b134efdd1f7426bb6d9c0830c1b09f98" => :high_sierra
   end
 
   depends_on "autoconf" => :build
