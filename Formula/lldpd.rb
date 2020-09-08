@@ -12,6 +12,7 @@ class Lldpd < Formula
     sha256 "31d0013804445cc7b674ae9f7cabe736fbfab7a4d03ed88cbe205e97e76c1567" => :catalina
     sha256 "986c8754cbb606db48dcee2230a097ec40629d5353b3c7f811be0153669fd18c" => :mojave
     sha256 "ae25b1716c60ab6441d445af1c2053712bdc54358ae5f524cb6aff1c192b39bb" => :high_sierra
+    sha256 "7b626b5cc8486264aff55afa762b7a1f6e3ab1900b89ea36c566bc6656a4133a" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
