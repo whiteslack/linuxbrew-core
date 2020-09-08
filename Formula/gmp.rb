@@ -45,10 +45,10 @@ class Gmp < Formula
 
     if OS.mac?
       if Hardware::CPU.arm?
-        args << "--build=aarch64-apple-darwin#{`uname -r`.to_i}"
+        args << "--build=aarch64-apple-darwin#{OS.kernel_version.major}"
         system "autoreconf", "-fiv"
       else
-        args << "--build=#{Hardware.oldest_cpu}-apple-darwin#{`uname -r`.to_i}"
+        args << "--build=#{Hardware.oldest_cpu}-apple-darwin#{OS.kernel_version.major}"
       end
     elsif !OS.mac? && Hardware::CPU.intel?
       args << "--build=core2-linux-gnu"

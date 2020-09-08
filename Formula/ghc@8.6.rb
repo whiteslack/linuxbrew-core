@@ -69,7 +69,7 @@ class GhcAT86 < Formula
     # is mandatory or else you'll get "illegal text relocs" errors.
     resource("gmp").stage do
       args = if OS.mac?
-        "--build=#{Hardware.oldest_cpu}-apple-darwin#{`uname -r`.to_i}"
+        "--build=#{Hardware.oldest_cpu}-apple-darwin#{OS.kernel_version.major}"
       else
         "--build=core2-linux-gnu"
       end
