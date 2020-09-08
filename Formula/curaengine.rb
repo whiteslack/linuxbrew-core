@@ -1,8 +1,8 @@
 class Curaengine < Formula
   desc "C++ 3D printing GCode generator"
   homepage "https://github.com/Ultimaker/CuraEngine"
-  url "https://github.com/Ultimaker/CuraEngine/archive/4.7.0.tar.gz"
-  sha256 "97edb730f7fc625bccca0ca460c751fb388135c83e0e31e86f0ba21be1b1a713"
+  url "https://github.com/Ultimaker/CuraEngine/archive/4.7.1.tar.gz"
+  sha256 "7e1e408f269a604418f37575ba8ef5f69323bebc4dd7f3091c1c2e9b000ffcbf"
   license "AGPL-3.0-or-later"
   version_scheme 1
   head "https://github.com/Ultimaker/CuraEngine.git"
@@ -19,10 +19,9 @@ class Curaengine < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9228dc8d4d2882c9c9446b254f2662730a966bfdae889d21160ba6d8f22f0828" => :catalina
-    sha256 "f09a5563330546fcd4eea14e824df26f7bbca435e87330e11198742305d8a240" => :mojave
-    sha256 "610e9ee7b9e8a914dbf07139daad3d5360f810531e45bd02860ec1dd92929ee0" => :high_sierra
-    sha256 "3656c3b03455f8ebcad589aedf74f0ffca29efcf5c34bb18853d114225e8859f" => :x86_64_linux
+    sha256 "b1b33c714035d7400481caec6af52fe0cd9cceb2ca9f6d528bfd12393e16ff73" => :catalina
+    sha256 "7463c7161e156ae11f125994dc7eae5b95e2b6a2a7df3f3582e835cc2eddfaa2" => :mojave
+    sha256 "da76f6f441244dfd0543b07a07fa02a84f04a494a189148d3e3784789136f861" => :high_sierra
   end
 
   depends_on "cmake" => :build
