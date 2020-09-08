@@ -86,8 +86,8 @@ class Gcc < Formula
     ]
 
     if OS.mac?
-      osmajor = `uname -r`.split(".").first
       args += [
+        "--build=x86_64-apple-darwin#{OS.kernel_version.major}",
         "--build=x86_64-apple-darwin#{osmajor}",
         "--libdir=#{lib}/gcc/#{version_suffix}",
         "--with-isl=#{Formula["isl"].opt_prefix}",

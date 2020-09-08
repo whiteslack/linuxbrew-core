@@ -1,8 +1,4 @@
 class GccAT49 < Formula
-  def osmajor
-    `uname -r`.chomp
-  end
-
   desc "The GNU Compiler Collection"
   homepage "https://gcc.gnu.org/"
   url "https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.bz2"
@@ -140,7 +136,7 @@ class GccAT49 < Formula
     ]
 
     if OS.mac?
-      args << "--build=x86_64-apple-darwin#{osmajor}"
+      args << "--build=x86_64-apple-darwin#{OS.kernel_version}"
       args << "--enable-multilib"
 
       # System headers may not be in /usr/include
