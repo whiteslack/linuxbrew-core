@@ -1,17 +1,16 @@
 class Kubeaudit < Formula
   desc "Helps audit your Kubernetes clusters against common security controls"
   homepage "https://github.com/Shopify/kubeaudit"
-  url "https://github.com/Shopify/kubeaudit/archive/v0.11.0.tar.gz"
-  sha256 "0bba4b1bae6f6161f96049beed6452408195b393622290285569de740409e33a"
+  url "https://github.com/Shopify/kubeaudit/archive/v0.11.1.tar.gz"
+  sha256 "3ac030e07d4120a5a11398d763722997d5c59317e770a72c3f5c6ba69218a03f"
   license "MIT"
   head "https://github.com/Shopify/kubeaudit.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "35fc84415005e66c1a23211dd1355d5381a3b4bce88255e597c10007cff7a0e2" => :catalina
-    sha256 "7badbf49b0ea633508b9131aaf137a731504a77ba1b3df03c59e1fc0b5f228dc" => :mojave
-    sha256 "58c2e0a55227d7213b8dd5d47a0c01672c24256b0b631a256c9284b3accd7b1d" => :high_sierra
-    sha256 "dc7a52d7906fd1db449c7d86781cc85adf9e853564d42920e42858f0a4a01cd4" => :x86_64_linux
+    sha256 "1fa32081649a395cef2cbbcb7a8ae31efc3a62b4b14718d3edfa1d7a024a7d8d" => :catalina
+    sha256 "8e2312cddcb81a64953b8007e1d72ae95541822c78d84f0c79163e91bc641bde" => :mojave
+    sha256 "39fc802a440c2903ed1fbcaa8bc147eb5b277276a3243b5cf292668deb8ee337" => :high_sierra
   end
 
   depends_on "go" => :build

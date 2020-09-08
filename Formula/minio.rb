@@ -2,18 +2,17 @@ class Minio < Formula
   desc "High Performance, Kubernetes Native Object Storage"
   homepage "https://min.io"
   url "https://github.com/minio/minio.git",
-      tag:      "RELEASE.2020-09-02T18-19-50Z",
-      revision: "9a703befe69118594be6667970b7b7c13f0b58bf"
-  version "20200902181950"
+      tag:      "RELEASE.2020-09-05T07-14-49Z",
+      revision: "572b1721b278c3db62eade1e5f56f184ded1cee1"
+  version "20200905071449"
   license "Apache-2.0"
   head "https://github.com/minio/minio.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "beab601caf8c603feb9e9eb13d326cdc73e6976078058b3bf712314089205592" => :catalina
-    sha256 "50f8ecd5949fe237d1215f522dba03a550813cf7418d20de40ea05d6b595c883" => :mojave
-    sha256 "c85c6ff225626a97ab2b82f7ef8346ec1c9a476b60007d25b68f9575d589810f" => :high_sierra
-    sha256 "81ecefa3165a4ff780ab13db415a15d9d6615c6fa91194a63177899260a4ba9e" => :x86_64_linux
+    sha256 "6bad4c4f22abbf7b66fc760c18cfee93f706c2b6c7735aad2b2864383f7df9c3" => :catalina
+    sha256 "9a6ff155acefaee8d93d74534ab310633897a9224b2bae0f4311151922d50aa3" => :mojave
+    sha256 "af85c8b74dfd76be0f2f6661f2660a7d095d7b82cb9bda563a76a78b4cf632d0" => :high_sierra
   end
 
   depends_on "go" => :build
