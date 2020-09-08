@@ -7,6 +7,7 @@ class LibnetfilterQueue < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "3e3aa6338ec45a13632db538ae9e98dcfd521ac621f7556a197f070defd50da5" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
