@@ -1,16 +1,16 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/v2020.08.31.00.tar.gz"
-  sha256 "ff67bcfd539f2047e801836ac01c44976b185a63ee2e6dafadd3c4a88ba46909"
+  url "https://github.com/facebook/folly/archive/v2020.09.07.00.tar.gz"
+  sha256 "9ca4130f8dbe0632d95557f40afd3cc3389e48de563d29b9f885ba2006dc84b1"
   license "Apache-2.0"
   head "https://github.com/facebook/folly.git"
 
   bottle do
     cellar :any
-    sha256 "8cda33b9715257688b6705eb1b63fa7be14694b98ed11d59b3cacf772fd9efb6" => :catalina
-    sha256 "b8828e4a8c31068c67eb5074f9280e0a30105e80cece5322052490e1d1d41e25" => :mojave
-    sha256 "05469ec1889cf4f1643167daf2f51949952c1968ad17833e796829023fb16c6a" => :high_sierra
+    sha256 "353fb220422b3c03a79fe4c844d351f2ce7e1564db7ffdb82c68d3911f8a0e1f" => :catalina
+    sha256 "098318281ce8ae3b1565ce9d54bc9976d4a0dcb8f9ca2587833cd5750a24bff0" => :mojave
+    sha256 "e9fb26bb103b8bbc5aab331093c4f206731928e19376b363d3c3d1cdfd7bee70" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -31,6 +31,12 @@ class Folly < Formula
   unless OS.mac?
     depends_on "jemalloc"
     depends_on "python"
+  end
+
+  # https://github.com/facebook/folly/pull/1439
+  patch do
+    url "https://github.com/facebook/folly/commit/a8fef9cd797c97efc4884fc1bee9b4d990be9efc.diff?full_index=1"
+    sha256 "be6eb1b6c669ba367d53cbbc7d66d5954b77961a716da9fbba44a1ef6a5e0472"
   end
 
   def install

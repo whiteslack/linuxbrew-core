@@ -6,24 +6,28 @@ class Libgr < Formula
   license "MIT"
 
   bottle do
-    sha256 "530c9db2560c4b7f75e1ef6e3280d0246889d2707e9326406ad9d22d2e3dceb0" => :catalina
-    sha256 "26cfa2787105c17c79027c96acc39fd04a3716c65810edd72dc83cf19f81a155" => :mojave
-    sha256 "beaa733249692d24749156ad652ac3a3144cbd4e571e639c2088bb6331b1598b" => :high_sierra
+    rebuild 1
+    sha256 "9b7eb3abeae9b64dac36329d4325866576fb09b28e760089d64d6595ea7fa72b" => :catalina
+    sha256 "a5b504cab27e88aeca659b71ae5ae39aa43233d933ff835f5945021520389f15" => :mojave
+    sha256 "62ae4315df2b121f75a666d6dd3a45736e84d46c8e45f9fd8603385fe1bb9316" => :high_sierra
   end
 
+  depends_on "cmake" => :build
   depends_on xcode: :build
   depends_on "cairo"
   depends_on "glfw"
   depends_on "libtiff"
+  depends_on "qhull"
   depends_on "qt"
   depends_on "zeromq"
 
   def install
-    # TODO: Remove this when released archive includes
-    # the fix of https://github.com/sciapp/gr/pull/101 .
-    ENV.deparallelize
-    system "make", "GRDIR=#{prefix}"
-    system "make", "GRDIR=#{prefix}", "install"
+    mkdir "build"
+    cd "build" do
+      system "cmake", "..", *std_cmake_args
+      system "make"
+      system "make", "install"
+    end
   end
 
   test do
