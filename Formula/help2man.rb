@@ -16,6 +16,7 @@ class Help2man < Formula
     sha256 "0df51bfb13aae7a1cc8fefd2d5853d5659ef29bd676ae1b84de1c5775fd46475" => :catalina
     sha256 "0c6508b21593f464813e5d0f813801fb26af4792bb8cc4aaee0a4ad9b44350f9" => :mojave
     sha256 "46f3e7058af47162c5649eed42b2e573b27ac2187f0c397e83357e0ba0724e93" => :high_sierra
+    sha256 "55d4c42900aa41a658811a85b420ee2b9577c97d73bc25b3ec2662b0009ac1c1" => :x86_64_linux
   end
 
   depends_on "gettext"
