@@ -11,6 +11,7 @@ class Wellington < Formula
     sha256 "9aaeb3a098cbee88efc4e60d1edbfec242d6b2271f821b4d096fe6acb3d16987" => :catalina
     sha256 "a49538429713f2f7b979ab533d4231de84140d9e4e63b5658941552c1c99117a" => :mojave
     sha256 "53a61eeebc1e787fa7870437ce089276c5f1daad26430078e988d1b6aa50c7b8" => :high_sierra
+    sha256 "4475484cb2378a741c1cfdcdabc95b5ea175202c1b78ce2481d23aff35fb3da4" => :x86_64_linux
   end
 
   depends_on "go" => :build
