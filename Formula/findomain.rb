@@ -10,6 +10,7 @@ class Findomain < Formula
     sha256 "fce8bf924154a08c34e8626a304e56ceb23df488bcb8812ee5ef7469de004fe6" => :catalina
     sha256 "d07b7814b14c4a8df3d895b99f26b67afa635cadaf1f55ad883a852be9668633" => :mojave
     sha256 "d16debeeda53cb1d480eba54b60e3af9eb68bfe61a79db361cff6b937eb96edc" => :high_sierra
+    sha256 "65582b96ce3bcf4ca947ceeb58c27d845b4ab660777dbfd1643abb62bde1be9b" => :x86_64_linux
   end
 
   depends_on "rust" => :build
