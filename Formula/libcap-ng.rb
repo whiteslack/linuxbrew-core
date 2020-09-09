@@ -6,6 +6,7 @@ class LibcapNg < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "b80f865fba28f721976d784077aeef490582200130b2ae9ddaf5d5527c312911" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
