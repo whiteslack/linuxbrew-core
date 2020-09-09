@@ -6,6 +6,7 @@ class Singularity < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "d7addc5d9c86abf7dc6265529711eec33c24b13916e4e350bbe4ce4d689fba57" => :x86_64_linux
   end
 
   depends_on "go" => :build
