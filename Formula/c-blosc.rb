@@ -10,6 +10,7 @@ class CBlosc < Formula
     sha256 "64299f26d77e25470481bf817cb5a37589e30646a22b38c0d400d5bde10565a8" => :catalina
     sha256 "7772266cb93fb92f9815c14ef5a28c6a0c4ca777eb639f1b04a46d02cd19b5e5" => :mojave
     sha256 "8c91b7d9d3977f8e9d1d95a58b7f907f3091320ef6b52dcdacc3b53fa1575a0f" => :high_sierra
+    sha256 "a62245e45b72af8472249b4e2414f327058e3fc3c8037ed7d07b9952f09d951d" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
