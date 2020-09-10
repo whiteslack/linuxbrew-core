@@ -1,11 +1,10 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-8.20200810/git-annex-8.20200810.tar.gz"
-  sha256 "e631c9d52e440f80e9d305c95a078dcae71f200125bca91e49d5b8e2d864c6f3"
+  url "https://hackage.haskell.org/package/git-annex-8.20200908/git-annex-8.20200908.tar.gz"
+  sha256 "61719d57d9389716aac9e6e12931e41b3b8a157d5fa8959201953810a88d2384"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
-  revision 1
   head "git://git-annex.branchable.com/"
 
   livecheck do
@@ -14,10 +13,9 @@ class GitAnnex < Formula
 
   bottle do
     cellar :any
-    sha256 "e23dc99d39075c848c34b8e0583b6afe93441f32cd13afa07f6315c22b299beb" => :catalina
-    sha256 "8dc165ccec6d3f43577b609ffb0d10a4d12601345eff6fab5a99f6e3482f8047" => :mojave
-    sha256 "4f27733b74710acca484ee82a17afaec13561e32b32d386d2839f6ed4e5442d6" => :high_sierra
-    sha256 "2b3739e11295787ab12b86afc15d5cf3970a656edc2a029aa28f433d0c67bd81" => :x86_64_linux
+    sha256 "a224d9b376d6f79840c9a28381241a93a4f9119ba95d201124a621bc8a354cb1" => :catalina
+    sha256 "290ccf441f05d8216eaa27378022b19d70edd26ed4b7a919bb54e94291365e1f" => :mojave
+    sha256 "9d84fd3247b4aa83680d3523858f6a36196512e9b7b72ebac05954b0a725daa3" => :high_sierra
   end
 
   depends_on "cabal-install" => :build
@@ -76,7 +74,7 @@ class GitAnnex < Formula
     # make sure the various remotes were built
     assert_match shell_output("git annex version | grep 'remote types:'").chomp,
                  "remote types: git gcrypt p2p S3 bup directory rsync web bittorrent " \
-                 "webdav adb tahoe glacier ddar git-lfs hook external"
+                 "webdav adb tahoe glacier ddar git-lfs httpalso hook external"
 
     # The steps below are necessary to ensure the directory cleanly deletes.
     # git-annex guards files in a way that isn't entirely friendly of automatically

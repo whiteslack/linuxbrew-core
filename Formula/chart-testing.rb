@@ -8,9 +8,10 @@ class ChartTesting < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "df4d2c0adac9176896955b1d82b5b8351a4f4f9b1763c9809262dace250c0a66" => :catalina
-    sha256 "3f63d2b0db943e7ead94fb917c4ad99e8b97a445f8ded3676ec812a0895a9e9c" => :mojave
-    sha256 "d6438baad2e1ab132d22a42480254870532854eff59f57aa54c900c03e3bd33a" => :high_sierra
+    rebuild 1
+    sha256 "b94f0fab8f35f89ce25ec4c8610af7310639899b1534b0907a4f96fb13c0c016" => :catalina
+    sha256 "58bfd0469d42422dc48b74cda82effc8f1baec442201a77ec2b8753c9810d5ae" => :mojave
+    sha256 "97661974290727c2832803f74bcf0277d01192adc2b65432714b0c376e01bb99" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -20,9 +21,9 @@ class ChartTesting < Formula
   def install
     commit = Utils.safe_popen_read("git", "rev-parse", "HEAD").chomp
     ldflags = %W[
-      -X github.com/helm/chart-testing/v3/ct/cmd.Version=#{version}
-      -X github.com/helm/chart-testing/v3/ct/cmd.GitCommit=#{commit}
-      -X github.com/helm/chart-testing/v3/ct/cmd.BuildDate=#{Date.today}
+      -X github.com/helm/chart-testing/v#{version.major}/ct/cmd.Version=#{version}
+      -X github.com/helm/chart-testing/v#{version.major}/ct/cmd.GitCommit=#{commit}
+      -X github.com/helm/chart-testing/v#{version.major}/ct/cmd.BuildDate=#{Date.today}
     ].join(" ")
     system "go", "build", *std_go_args, "-ldflags", ldflags, "-o", bin/"ct", "./ct/main.go"
     etc.install "etc" => "ct"
@@ -30,6 +31,7 @@ class ChartTesting < Formula
 
   test do
     assert_match "Lint and test", shell_output("#{bin}/ct --help")
+    assert_match /Version:\s+#{version}/, shell_output("#{bin}/ct version")
 
     # Lint an empty Helm chart that we create with `helm create`
     system "helm", "create", "testchart"

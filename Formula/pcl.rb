@@ -4,12 +4,13 @@ class Pcl < Formula
   url "https://github.com/PointCloudLibrary/pcl/archive/pcl-1.11.1.tar.gz"
   sha256 "a61558e53abafbc909e0996f91cfd2d7a400fcadf6b8cfb0ea3172b78422c74e"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/PointCloudLibrary/pcl.git"
 
   bottle do
-    sha256 "b094f39a7ba771e08686baefa441950ef4100cd331c58bb1cf00072dcf23259a" => :catalina
-    sha256 "f26540692412438bf6ee08684dea520af51507ecbe107174ed6dde9b7baa9e9a" => :mojave
-    sha256 "7371af2fb929023b0b80d24404ca53ab1b108f72bf74ef6b472e45e0e438742f" => :high_sierra
+    sha256 "41396dedc7dbb67b2c687ade39f8eb3d283b4fc81abd79129ccb119868c7ea7b" => :catalina
+    sha256 "f1097aa073bcf1feb27e3e76a41232c5df74b8193cd459f2eaa29ec034fc49f5" => :mojave
+    sha256 "d540c09be3e414d05a7cc85b018201cee606d606c7e88b5e990b3ab91ff55f1b" => :high_sierra
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,7 +24,7 @@ class Pcl < Formula
   depends_on "libpcap"
   depends_on "libusb"
   depends_on "qhull"
-  depends_on "vtk"
+  depends_on "vtk@8.2"
 
   def install
     args = std_cmake_args + %w[

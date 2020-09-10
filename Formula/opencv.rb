@@ -3,8 +3,9 @@ class Opencv < Formula
   homepage "https://opencv.org/"
   url "https://github.com/opencv/opencv/archive/4.4.0.tar.gz"
   sha256 "bb95acd849e458be7f7024d17968568d1ccd2f0681d47fd60d34ffb4b8c52563"
+  # watch for license change to Apache-2.0 with next release
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,9 +13,9 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 "7e5f2e99bd7b733490015a38fdabce0aa4513cafa05c4efe6d2781dbbdbbb9f3" => :catalina
-    sha256 "6bb48854ad1afe61da1aa7db998bd974a0dd9436484564226977cb2f9ba38cc5" => :mojave
-    sha256 "7fc21acd712505c2a6b666d4c2bf717e067a8d6ca7b4088154c056c6af8a8c6f" => :high_sierra
+    sha256 "b9199ca20007959fff87ca117ca89588d19dcefb8f5166c53ef78217b3b0f886" => :catalina
+    sha256 "cdb1117c188d79f14197d1739fdf2d20aa4e873ba790a164f62c712afdd75f99" => :mojave
+    sha256 "86961a17c5defdf6c2c8311915ce4e9a374a81cd3f7968967ba60b7f76ab6b31" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -40,6 +41,13 @@ class Opencv < Formula
   resource "contrib" do
     url "https://github.com/opencv/opencv_contrib/archive/4.4.0.tar.gz"
     sha256 "a69772f553b32427e09ffbfd0c8d5e5e47f7dab8b3ffc02851ffd7f912b76840"
+
+    # additional vtk 9 support, remove after next release
+    # upstream PR https://github.com/opencv/opencv_contrib/pull/2659
+    patch do
+      url "https://github.com/opencv/opencv_contrib/commit/aace65cc1269629f32874389b33e85fdb7819b02.diff?full_index=1"
+      sha256 "af98e588626cb79e5064995e6cf22f55e40518649cf3eed0d5bd6963f2a19e20"
+    end
   end
 
   def install

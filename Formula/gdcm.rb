@@ -4,6 +4,7 @@ class Gdcm < Formula
   url "https://github.com/malaterre/GDCM/archive/v3.0.7.tar.gz"
   sha256 "e00881f0a93d2db4a686231d5f1092a4bc888705511fe5d90114f2226147a18d"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://github.com/malaterre/GDCM/releases/latest"
@@ -11,10 +12,9 @@ class Gdcm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "b4fcbfc9a2dd14f8d5b0cc1fd1f5900465b469a1f05fbae51f09bc209a578dac" => :catalina
-    sha256 "67a12632e5705ed9ce8b72061b88b16246114d89a9e0594c1dd60100869e7412" => :mojave
-    sha256 "6210fcdf8afd786ec2b49c74f1d5bd6d4e0f40e1404ffdbb0ee40c66ef53715d" => :high_sierra
+    sha256 "b2841a7f94489f2d534e6134c9898340310324338ad571ac58123af52dafbe4c" => :catalina
+    sha256 "1443c52dde4cb326af509de3912f6f8d107917d348b72ce7a0771affcaba0e82" => :mojave
+    sha256 "dfb4d452c0afe790ed5518a605a674454511a2e3b8364f7363b9f34875c3c237" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -24,7 +24,7 @@ class Gdcm < Formula
   depends_on "openjpeg"
   depends_on "openssl@1.1"
   depends_on "python@3.8"
-  depends_on "vtk"
+  depends_on "vtk@8.2"
 
   def install
     ENV.cxx11

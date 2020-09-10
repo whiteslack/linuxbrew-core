@@ -1,8 +1,8 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-6.0.7.tar.gz"
-  sha256 "c2aaa1a4c7e72c70adedf976fdd5e1d34d395989283dab9d7840e0a304bb2393"
+  url "https://download.redis.io/releases/redis-6.0.8.tar.gz"
+  sha256 "04fa1fddc39bd1aecb6739dd5dd73858a3515b427acd1e2947a66dadce868d68"
   license "BSD-3-Clause"
   head "https://github.com/redis/redis.git", branch: "unstable"
 
@@ -13,10 +13,9 @@ class Redis < Formula
 
   bottle do
     cellar :any
-    sha256 "4b229e8295883472f68218dbda526a85af91ac913a3fed04208fa3ea4ed95b5d" => :catalina
-    sha256 "67f18b3f04c672f4755d40b3056f012fb08f4330af9c472b706ba0b2bb05220d" => :mojave
-    sha256 "7918cf6a8d723e9b8fc9d71845015b62d78f6e1a1a5fbe5817b71b4628d70a6e" => :high_sierra
-    sha256 "650cf28852823a23396e56059767b4051c0c65b1eb56c87c90c95b357369ffb7" => :x86_64_linux
+    sha256 "d015cdb6b89904d6f81ffec5227363504a956d1ebb7c04e2993733a2677360ad" => :catalina
+    sha256 "dbaa57e090b18de53777434f31270666e1e8ba9c1a7ef97ef19d2e49456cb3c9" => :mojave
+    sha256 "458627bc0cd6dfa2d0c430cac842234ea3beb10725f2b0cc7ca246ec4ffe0017" => :high_sierra
   end
 
   depends_on "openssl@1.1"
