@@ -3,8 +3,8 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.4.0.tar.gz"
-  sha256 "f875fb72a827a2e088018f4b58fa1553e1e1325d9b57b9bbfb79e51ef13c31ec"
+  url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.6.0.tar.gz"
+  sha256 "0b4d68a92645ab86e56ee57079f3739c32a852ebaca23dd5e86e6b3fb33b3fe2"
   license "Apache-2.0"
 
   livecheck do
@@ -14,9 +14,9 @@ class C7n < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c48133a39b5fb930c9c9dc3bb9ee6700e70f6f962adde471404617a097b8c8a3" => :catalina
-    sha256 "739bf0cca1ca213f61610d3b33257c1b9b9f3da7eba8dc717eb814953bd81c7c" => :mojave
-    sha256 "a846f1c6d5de2e10be2d737b7dd9973860f59b37d88f20267a02412660a288ae" => :high_sierra
+    sha256 "1836faa86219202251ceb279bf3a13c4d0dd043c447f175f3d384d60668cde48" => :catalina
+    sha256 "5616103541e7f1383b4ff7749c74dc46a25850d129e56afc494e25b2e1ea492a" => :mojave
+    sha256 "46f21faaea2347228671a719bc9e2348f9f501a725eb80c73c9cf792d626d551" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -27,18 +27,18 @@ class C7n < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/98/c3/2c227e66b5e896e15ccdae2e00bbc69aa46e9a8ce8869cc5fa96310bf612/attrs-19.3.0.tar.gz"
-    sha256 "f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"
+    url "https://files.pythonhosted.org/packages/81/d0/641b698d05f0eaea4df4f9cebaff573d7a5276228ef6b7541240fe02f3ad/attrs-20.2.0.tar.gz"
+    sha256 "26b54ddbbb9ee1d34d5d3668dd37d6cf74990ab23c828c2888dccdceee395594"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/71/ae/98f3cadaa11566e4f81d702157913bffde32dead29d5bafcd6e14a0f2567/boto3-1.14.35.tar.gz"
-    sha256 "df19f35e2d73e77c72f756f98805785f45dd26c608b704b105e9f8fec6992c1e"
+    url "https://files.pythonhosted.org/packages/a6/83/fb318ec231329e18af24aec4c3107f93f3aabd1b116d94788c3375833c51/boto3-1.14.57.tar.gz"
+    sha256 "b45ac1d61c3abc6cf21c60be987b1563fdf223d97c9d0ce575d341155a4843b4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/41/f4/2e18f6346cbdc5bd0e0a7c49f8095d1c99559bb05b6fa9402a3eaa0585e6/botocore-1.17.35.tar.gz"
-    sha256 "0f69698a59e7829d34851ea5025338bddc4352300ba7df619842eac173bc4a4e"
+    url "https://files.pythonhosted.org/packages/85/34/7ffbcf2906f8a70dcf5ece20765d48b5a75a9694158182b5163de7466f5e/botocore-1.17.57.tar.gz"
+    sha256 "4b7865ac5f62b5abc40331ff696da839f4b3d746943db7dc90802703dbd7a68a"
   end
 
   resource "docutils" do
@@ -62,8 +62,8 @@ class C7n < Formula
   end
 
   resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/9f/0d/cbca4d0bbc5671822a59f270e4ce3f2195f8a899c97d0d5abb81b191efb5/pyrsistent-0.16.0.tar.gz"
-    sha256 "28669905fe725965daa16184933676547c5bb40a5153055a8dee2a4bd7933ad3"
+    url "https://files.pythonhosted.org/packages/7d/ae/90ddcf28fb8eee5d4990920586d2856342e42faa95f39223f0b9762ef264/pyrsistent-0.17.2.tar.gz"
+    sha256 "27515d2d5db0629c7dadf6fbe76973eb56f098c1b01d36de42eb69220d2c19e4"
   end
 
   resource "python-dateutil" do

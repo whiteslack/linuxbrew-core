@@ -1,8 +1,8 @@
 class IrcdHybrid < Formula
   desc "High-performance secure IRC server"
   homepage "http://www.ircd-hybrid.org/"
-  url "https://downloads.sourceforge.net/project/ircd-hybrid/ircd-hybrid/ircd-hybrid-8.2.32/ircd-hybrid-8.2.32.tgz"
-  sha256 "b27823ee359dcdeeaf1cce3b81fb959a156fd776ab599092dd52fd79fa276df2"
+  url "https://downloads.sourceforge.net/project/ircd-hybrid/ircd-hybrid/ircd-hybrid-8.2.33/ircd-hybrid-8.2.33.tgz"
+  sha256 "18470fa4b5361809f8643599facd31541c44b29c0e63b1b44640d6c808456a01"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,10 +11,9 @@ class IrcdHybrid < Formula
   end
 
   bottle do
-    sha256 "4141097277b2a5e1c28c4d6ac1bf0b01743c7e34fb371aca7267e480db8ec830" => :catalina
-    sha256 "0a4639339b71b7b385a5f7a5bf0755d1b055a093db29ace3421d768f1aa6c4d9" => :mojave
-    sha256 "9d334046c230f6df1c75a7e5313477bb79fe6cc35f53f9be441216c577ca3d22" => :high_sierra
-    sha256 "a679825f0959c957b70ff553b725d5d03dc6a969cafa6f6b655d3e98e62f197a" => :x86_64_linux
+    sha256 "d4957e6e7e46d89f0c0f55242a6fb567ab504276229d41ddf8939cd520caabf4" => :catalina
+    sha256 "0481dea871e6d698f4fb4147810c3ab7c98fcb70da5b0075a0b529dec360d6b9" => :mojave
+    sha256 "ee74ff104dd2449c4fead761da86ee244471cf6ff084da677380484fbd0bd0bb" => :high_sierra
   end
 
   depends_on "openssl@1.1"

@@ -1,9 +1,9 @@
 class Gnunet < Formula
   desc "Framework for distributed, secure and privacy-preserving applications"
   homepage "https://gnunet.org/"
-  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.13.2.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.13.2.tar.gz"
-  sha256 "b615702e701b4569663767a9da72f33c9778bc853b20d1c811b25ec8fb328a2c"
+  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.13.3.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.13.3.tar.gz"
+  sha256 "318e06c4134d1a8ce3b4385d82b11316eaaeb9a4dbc5d4b646453dfc53199296"
   license "AGPL-3.0-or-later"
 
   livecheck do
@@ -12,10 +12,9 @@ class Gnunet < Formula
 
   bottle do
     cellar :any
-    sha256 "3c504480a83dc1c28802cae7e964b3516df3b8b40676bdc124bdf7e45b950fbe" => :catalina
-    sha256 "70800264e8f098e64d4ff805adbf483a6f146414976ef2dc5492c44ba93d5cb8" => :mojave
-    sha256 "d2b897256e0e17e2d8e0c4c905787a72341939ffefe1c6d669437a1a44bd48ef" => :high_sierra
-    sha256 "8c39ff241290d152d6c95b6571c26760a24c936f349cbfe109c147368cbb65a4" => :x86_64_linux
+    sha256 "1e2b31e022792cc40dcd11061644808f761e378a2178b1bfdd9191a31363ad1e" => :catalina
+    sha256 "ef84c90eb8ea9783adbaaa8b7034cb0662d7b697d2e5b7953365bac1681d5277" => :mojave
+    sha256 "5470d0894a0ca01ca53d3376e4bbc7ad038621827e7ff1e075e1dd2c07c579f3" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
