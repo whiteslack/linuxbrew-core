@@ -4,14 +4,14 @@ class Networkit < Formula
   desc "Performance toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
   url "https://github.com/networkit/networkit.git",
-      tag:      "7.0",
-      revision: "d8e952f1e4d5e2758e4744e7c6ea7429a59c7cdf"
+      tag:      "7.1",
+      revision: "4c6dcc4367b51005a34221242048609c357ffbd6"
   license "MIT"
 
   bottle do
-    sha256 "6c31d49396ef373700c7c852fb9a0df5793fedb882b8b32fb5149bfc8c4bcffe" => :catalina
-    sha256 "53fcb186c2e3b629a6edbe33f9ceff4cb2fefed36f21c721f6273d75e7fb2af2" => :mojave
-    sha256 "fe03e0e1716b223d4a0319a36e39c7391477454203fcc3a0a65f5684fce5cf62" => :high_sierra
+    sha256 "9ad19c9b34c80145ae33780156942bb83a092d7bc7c91701c75ae38d849fd867" => :catalina
+    sha256 "623478b0de8335e4547ba153e1c897276928c491c9150af1725941e758218906" => :mojave
+    sha256 "478b25c8e7df43389a444ab4368ce457912001d38501f1f4d248b96a10d24552" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -26,6 +26,7 @@ class Networkit < Formula
     rpath_addons = Formula["libnetworkit"].opt_lib
 
     ENV.prepend_create_path "PYTHONPATH", libexec+"lib/python#{xy}/site-packages/"
+    ENV.append_path "PYTHONPATH", Formula["cython"].opt_libexec/"lib/python#{xy}/site-packages"
     system Formula["python@3.8"].opt_bin/"python3", "setup.py", "build_ext",
           "--networkit-external-core",
            "--rpath=@loader_path;#{rpath_addons}"

@@ -1,8 +1,8 @@
 class Haproxy < Formula
   desc "Reliable, high performance TCP/HTTP load balancer"
   homepage "https://www.haproxy.org/"
-  url "https://www.haproxy.org/download/2.2/src/haproxy-2.2.2.tar.gz"
-  sha256 "391c705a46c6208a63a67ea842c6600146ca24618531570c89c7915b0c6a54d6"
+  url "https://www.haproxy.org/download/2.2/src/haproxy-2.2.3.tar.gz"
+  sha256 "7209db363d4dbecb21133f37b01048df666aebc14ff543525dbea79be202064e"
 
   livecheck do
     url :homepage
@@ -11,10 +11,9 @@ class Haproxy < Formula
 
   bottle do
     cellar :any
-    sha256 "865f798fe6012ec2b9badf0446e264a14354cec95cbf9e0cb93dde58f3052d69" => :catalina
-    sha256 "03d016685f2b6af6693cb59a87aa7a912680cc77f6e70592c94ebb3570726f22" => :mojave
-    sha256 "a816df737155aada46f2199d91c0215abb6d193ed8b9d26a7db6fa2bcf7693b0" => :high_sierra
-    sha256 "72a6ecea4d1d84ecd319c2fcd263b8fa2957117056727a2a7bd87864db2635fa" => :x86_64_linux
+    sha256 "3d6b32b32bd0642d08b2d4536c2d9f121f52f7915c28d5d60a4cafab464c7539" => :catalina
+    sha256 "5fcb9d22e8a68d1e0247bbe610ebd081383aa5ee984583e73b397551de3d154e" => :mojave
+    sha256 "06704b809443228163ecff0231bc0afb5e8bde61f71cb8d13903f3ef41b1e183" => :high_sierra
   end
 
   depends_on "openssl@1.1"
