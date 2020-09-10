@@ -16,6 +16,7 @@ class GstLibav < Formula
     sha256 "6caaaefdbc19002a84ab270be444d611b8602df450eaf8e9e5e71081f2fd1c10" => :catalina
     sha256 "4b9b3cbff2fa2072fb6b4b9bc65328b5f096e201213e63cc9dc5f7406874d0d7" => :mojave
     sha256 "ba4f52d9065ac3371ee0f0ea11014dedc2cc16defd068847ca14372d348ee2b5" => :high_sierra
+    sha256 "4fe3b8c312873edbcf9f8be5e1f1d464499d123152e5408f58fd32b966f5a3f7" => :x86_64_linux
   end
 
   depends_on "meson" => :build
