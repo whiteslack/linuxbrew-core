@@ -3,18 +3,16 @@ class Bear < Formula
 
   desc "Generate compilation database for clang tooling"
   homepage "https://github.com/rizsotto/Bear"
-  url "https://github.com/rizsotto/Bear/archive/2.4.3.tar.gz"
-  sha256 "74057678642080d193a9f65a804612e1d5b87da5a1f82ee487bbc44eb34993f2"
-  license "GPL-3.0"
-  revision 1
+  url "https://github.com/rizsotto/Bear/archive/2.4.4.tar.gz"
+  sha256 "5e95c9fe24714bcb98b858f0f0437aff76ad96b1d998940c0684c3a9d3920e82"
+  license "GPL-3.0-or-later"
   head "https://github.com/rizsotto/Bear.git"
 
   bottle do
     cellar :any
-    sha256 "9eb44bc5187c1986a1e1650315df5e1632af4ea0333a39fa8c8a2a320c87b072" => :catalina
-    sha256 "07a6d7a49a420177a0b4abeffc91bdb578527a2c6e16e7807ef35dbb1cd8cc69" => :mojave
-    sha256 "d7c87944b1c2ada8378c85b7123f026524166bc8629332beb294c1ce83fc180a" => :high_sierra
-    sha256 "622dd50bf0714edabbae2f696bd41ff0af8d9a67cc965363452aaba46567fb83" => :x86_64_linux
+    sha256 "afa96da76034b3e1a89da1238efa1078f0a4d0ee508a7b2928a1917848223c29" => :catalina
+    sha256 "5371f81233e1805fede6e16414e14b51e2b95d86751be84b839838f860b66a9c" => :mojave
+    sha256 "34bef61a47160710ac0ff55896dd34f21476c86b01f18304337264f9dba3d798" => :high_sierra
   end
 
   depends_on "cmake" => :build

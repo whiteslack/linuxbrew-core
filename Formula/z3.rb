@@ -1,8 +1,9 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://github.com/Z3Prover/z3/archive/z3-4.8.8.tar.gz"
-  sha256 "6962facdcdea287c5eeb1583debe33ee23043144d0e5308344e6a8ee4503bcff"
+  url "https://github.com/Z3Prover/z3/archive/z3-4.8.9.tar.gz"
+  sha256 "c9fd04b9b33be74fffaac3ec2bc2c320d1a4cc32e395203c55126b12a14ff3f4"
+  license "MIT"
   head "https://github.com/Z3Prover/z3.git"
 
   livecheck do
@@ -12,10 +13,9 @@ class Z3 < Formula
 
   bottle do
     cellar :any
-    sha256 "06f1a289d9f846c31fd171ebcad05442eb03473b6aaf4bf1cbb1ca7c6e77d612" => :catalina
-    sha256 "3ac5deca9acb17a0a228766d6353048001747543ddcca607871cadaa6c736bbf" => :mojave
-    sha256 "e8c20ad5ef814ae9e8700f0e8f79590a11d46e8077be7204a9517a5a0af663a9" => :high_sierra
-    sha256 "c2be64c54aaf3a65dd5569d20d47c3450ab6552e48bd6b183eee70a792969b22" => :x86_64_linux
+    sha256 "ec93e6adf6c98ad275de3aa4c2b81dc28e73d3b5dabf09f00ad0331bc477c196" => :catalina
+    sha256 "6d8fe5edae3dbffef24fc3e65c5102a4d58a5ef62594a508f2042bec068b10a1" => :mojave
+    sha256 "1ef6ec089f5a3b42b9e9be906ddb99d7538984b58310051acc90e2a92af4146c" => :high_sierra
   end
 
   # Has Python bindings but are supplementary to the main library

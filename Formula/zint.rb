@@ -1,9 +1,9 @@
 class Zint < Formula
   desc "Barcode encoding library supporting over 50 symbologies"
   homepage "http://www.zint.org.uk/"
-  url "https://downloads.sourceforge.net/project/zint/zint/2.9.0/zint-2.9.0.tar.gz"
-  sha256 "fa02fa637f1cecb242bcc751f02710cda4026d41f8f60e0c60a8884525e56fea"
-  license "GPL-3.0"
+  url "https://downloads.sourceforge.net/project/zint/zint/2.9.1/zint-2.9.1-src.tar.gz"
+  sha256 "bd286d863bc60d65a805ec3e46329c5273a13719724803b0ac02e5b5804c596a"
+  license "GPL-3.0-or-later"
   head "https://git.code.sf.net/p/zint/code.git"
 
   livecheck do
@@ -13,10 +13,9 @@ class Zint < Formula
 
   bottle do
     cellar :any
-    sha256 "18c124be12f21675b75c0fffca89bc9b219ab275f95fcd50bf96ccd7ca55195e" => :catalina
-    sha256 "4860681d8e49db5793ffff5f54a5fd3c08b4a64ecea55683e9ed8d29f52e1a2f" => :mojave
-    sha256 "ff0ffd2099c20c6574ddab3bd2a89eff262eda7b884a9c4983177d05fc7769df" => :high_sierra
-    sha256 "f315bee8a283baa4b265d51ed5bac4b9807bf1978750777503f503ef67b70974" => :x86_64_linux
+    sha256 "27a13b9022616484c612860ec1ac80146f765de23c32a52cf7f6f7a516727672" => :catalina
+    sha256 "398f6493010f6b4778fe5ce80b559b745f53de2dcbd0c331f844431274a1d1ac" => :mojave
+    sha256 "7142283083b90b3d185672f98fc987292337b8cb50cfb4e76cb61394df05781a" => :high_sierra
   end
 
   depends_on "cmake" => :build
