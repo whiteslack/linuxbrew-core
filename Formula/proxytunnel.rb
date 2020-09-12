@@ -10,6 +10,7 @@ class Proxytunnel < Formula
     sha256 "18a5771a429cb73cc2f8de55c44ba2ba061238157458533302b5d609478039c7" => :catalina
     sha256 "257d06dda3279ca934dead8774ac3800bf97404af51d5fbfda7fba4ec99ce36c" => :mojave
     sha256 "46362f2b3cd8118b315e5eaae4c0fd5e391a2c741399f33c772cac3992221846" => :high_sierra
+    sha256 "7f1140b17774fa291f1296d1fb807cd09028de44e7cd6f5f54615aad1a193db3" => :x86_64_linux
   end
 
   depends_on "asciidoc" => :build
