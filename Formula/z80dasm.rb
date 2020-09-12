@@ -10,6 +10,7 @@ class Z80dasm < Formula
     sha256 "5012e33c0fc342ec32a22462f9a75897fd69d44cf2918c64a593d268fa365c86" => :catalina
     sha256 "0650fc5eadf8ee791201886bd39356af1365f9258c2222e27824fe63500b6eac" => :mojave
     sha256 "a6d8e1d4caa612567de07580a353c82040e5c8005a08117386633e9a11f0df2e" => :high_sierra
+    sha256 "8ed1b1e52601060c308c1aecc2d0a22f4fe14d6206ea56be256e193613ba6046" => :x86_64_linux
   end
 
   def install
