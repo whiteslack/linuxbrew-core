@@ -10,6 +10,7 @@ class GoJira < Formula
     sha256 "8362c93c0af122bacd0390a1240756b172977af20ad1165b59b95b9b4e0acfad" => :catalina
     sha256 "51724496ecbd240470d031fadb9b85986dff93fdb5ff028bff0524f1df17c83b" => :mojave
     sha256 "23fe226171b1385c9cc3ba3fa37e64c90770737d4bb40586b2130771b37141a0" => :high_sierra
+    sha256 "91fd2099176eeed5d2bd68c7d1527404d7f7cc026dd5ce9f692860bf862b7206" => :x86_64_linux
   end
 
   depends_on "go" => :build
