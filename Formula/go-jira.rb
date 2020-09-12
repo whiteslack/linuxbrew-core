@@ -1,16 +1,15 @@
 class GoJira < Formula
   desc "Simple jira command-line client in Go"
   homepage "https://github.com/go-jira/jira"
-  url "https://github.com/go-jira/jira/archive/v1.0.25.tar.gz"
-  sha256 "88fa9f5f9ec2cb7f1cbd5ca073eecd5c884abdbaed1444c1db378078ffaf71e5"
+  url "https://github.com/go-jira/jira/archive/v1.0.26.tar.gz"
+  sha256 "306e58e5affa231e84b35ff965b3c359adb4bc853054b3bde9f80b8f07cee80b"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "19d9cfa31f0f5de1484fab9fd3f2886395801a4e260a58511c2cce5619e422b9" => :catalina
-    sha256 "90274a3a760f9f7757c3b5bf58bf7f08fb43b91b134a4d6dc615c1910af18353" => :mojave
-    sha256 "a7e745cca1d91fd57a189223858c841bfa362eb557f63b8c892aa6e4c2b7e5d9" => :high_sierra
-    sha256 "8b9d4543ae1f3184cd4ec1aa8b268ef946af89da48de202520094ff6973cb005" => :x86_64_linux
+    sha256 "8362c93c0af122bacd0390a1240756b172977af20ad1165b59b95b9b4e0acfad" => :catalina
+    sha256 "51724496ecbd240470d031fadb9b85986dff93fdb5ff028bff0524f1df17c83b" => :mojave
+    sha256 "23fe226171b1385c9cc3ba3fa37e64c90770737d4bb40586b2130771b37141a0" => :high_sierra
   end
 
   depends_on "go" => :build
