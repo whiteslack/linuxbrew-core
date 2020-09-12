@@ -13,13 +13,15 @@ class ApacheArrow < Formula
 
   bottle do
     cellar :any
-    sha256 "02de039dba50f1d877fc1a1985556c6dc567e394c70b81792984b811056592f6" => :catalina
-    sha256 "3b182187486e7df8b750bac60c08b5a74f10394e2e82c2dce824a95d93f8e847" => :mojave
-    sha256 "006e8ade39d21f9da3cd4b52c83ad4458df52fe74d405d5d696c8075036cadc2" => :high_sierra
+    rebuild 1
+    sha256 "4ee0bde4bc71342b6dc68afb180cea27e231abbe50499f72bdff603ae7c3684f" => :catalina
+    sha256 "31e51d4a7466d045c3badea22a41223334710bec8d10a764ac99968dbff888c6" => :mojave
+    sha256 "7a78b3bb24fe9fe9c0935e1236db0ac5007d0b8e987c0b4d7e8f080b07e5be79" => :high_sierra
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
+  depends_on "llvm"  => :build
   depends_on "brotli"
   depends_on "glog"
   depends_on "grpc"
@@ -33,10 +35,20 @@ class ApacheArrow < Formula
   depends_on "thrift"
   depends_on "zstd"
 
+  # Fix to not install jemalloc in parallel
+  # https://github.com/apache/arrow/pull/7995
+  patch do
+    url "https://github.com/apache/arrow/commit/ae60bad1c2e28bd67cdaeaa05f35096ae193e43a.patch?full_index=1"
+    sha256 "7a793ca3c98a803c652757faa802667e6d19dbc436cedb942c76346771c9e16f"
+  end
+
   def install
     ENV.cxx11
+    # link against system libc++ instead of llvm provided libc++
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
     args = %W[
       -DARROW_FLIGHT=ON
+      -DARROW_GANDIVA=ON
       -DARROW_JEMALLOC=ON
       -DARROW_ORC=ON
       -DARROW_PARQUET=ON
