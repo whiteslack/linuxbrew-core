@@ -13,6 +13,7 @@ class JsonGlib < Formula
     sha256 "7a4f86a42a66360951fcbeac7ddcda95288fa3cd7fc5aee8d297fe31540e048f" => :catalina
     sha256 "8f0e9b27a61d547cb185eb2952fb81e2bcf2ad502e459a7ec2037e505281e060" => :mojave
     sha256 "6b72cc181e7ee816a8444adc59373b51033712dc8fc58b73531cc9fefbd0bd5e" => :high_sierra
+    sha256 "cf3e01adf3148d4af3b114f00f4e4ebc94f7e4cba7a9668c027096367c975fc5" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
