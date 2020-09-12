@@ -12,6 +12,7 @@ class Baobab < Formula
     sha256 "433a0bd533b88a32c6a860776c1979a9d4face3db73d7011cef2f444bcbc033b" => :catalina
     sha256 "b1043ff9f9bd7edb169a955fe4eaccc521dcf95a448d3a52aed4b79a8eb982f9" => :mojave
     sha256 "9768e9d8d1f4fdcc0a0fbb5936183c1f0bff547e34fc9814f38698e0e3da2f55" => :high_sierra
+    sha256 "857275e8107258a60436bcfaf265d3e7215cd20f9b0846def1daf5d7dfd4a58c" => :x86_64_linux
   end
 
   depends_on "itstool" => :build
