@@ -11,6 +11,7 @@ class Sn0int < Formula
     sha256 "5a6cc5bdf07a29ebf714aff83d338394d030780aaf69dda387499ca0db8138f2" => :catalina
     sha256 "75c89017e8f92cc2ef2a1701554a2047ec1a4a42806bc47081c7af42935a8043" => :mojave
     sha256 "0cf32130ed1155b959935202031f7d71c34f141a46c726233836e402c9bd8bc8" => :high_sierra
+    sha256 "128ad28a88784a1d30e7e7813ea9fdd559a59aa2ba3a80788ec67ce9c5100bac" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
