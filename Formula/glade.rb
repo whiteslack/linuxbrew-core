@@ -1,24 +1,26 @@
 class Glade < Formula
   desc "RAD tool for the GTK+ and GNOME environment"
   homepage "https://glade.gnome.org/"
-  url "https://download.gnome.org/sources/glade/3.36/glade-3.36.0.tar.xz"
-  sha256 "19b546b527cc46213ccfc8022d49ec57e618fe2caa9aa51db2d2862233ea6f08"
-  revision 1
+  url "https://download.gnome.org/sources/glade/3.38/glade-3.38.0.tar.xz"
+  sha256 "4a914c5c0b19c2e52fd4ad15077d406dbfd6ad0245e239d7390bf87f27d9103c"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "9131bb138ba8e7b7b2f3d593342846fdabebd28b33c755ae0feaba4f52a39ab9" => :catalina
-    sha256 "2c95e5cb5f386fbacf1fb4ca17b2dc9ad6c6b2d83b9d0891460905f87cb608c4" => :mojave
-    sha256 "89b48942bd5c136dae47bf534e6f99d425aebd9165432c07411ce341d210cda9" => :high_sierra
+    sha256 "6515685fbaeb74c04c1f4675cf17d9c54cce4af36e170c2f9aca1959621a65a4" => :catalina
+    sha256 "90865743d18a4b8d279188bbc43b0f33a96c1bdc0ee842e8e359ac8d73beec7c" => :mojave
+    sha256 "f848a368c7db196b03c15e59ca6b01b2c48aaed710c7adb81594a5e3aab4347a" => :high_sierra
   end
 
   depends_on "docbook-xsl" => :build
   depends_on "gobject-introspection" => :build
   depends_on "itstool" => :build
   depends_on "libxslt" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
   depends_on "gettext"
@@ -34,14 +36,11 @@ class Glade < Formula
     # Disable icon-cache update
     ENV["DESTDIR"] = "/"
 
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--enable-gladeui",
-                          "--enable-introspection"
-
-    system "make" # separate steps required
-    system "make", "install"
+    mkdir "build" do
+      system "meson", *std_meson_args, "-Dintrospection=true", "-Dgladeui=true", ".."
+      system "ninja"
+      system "ninja", "install"
+    end
   end
 
   def post_install

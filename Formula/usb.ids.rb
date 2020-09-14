@@ -1,16 +1,15 @@
 class UsbIds < Formula
   desc "Repository of vendor, device, subsystem and device class IDs used in USB devices"
   homepage "http://www.linux-usb.org/usb-ids.html"
-  url "https://deb.debian.org/debian/pool/main/u/usb.ids/usb.ids_2020.06.22.orig.tar.xz"
-  sha256 "d55befb3b8bdb5db799fb8894c4e27ef909b2975c062fa6437297902213456a7"
+  url "https://deb.debian.org/debian/pool/main/u/usb.ids/usb.ids_2020.08.26.orig.tar.xz"
+  sha256 "de972f2cde2b681f3350273c4cae9985364c1acd99d774bdd82ca7e7408574d6"
   license any_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "86ee1383749511bfa93b03e04b34e99f405abfbe791df50be85f992a303965c1" => :catalina
-    sha256 "9acaeabecc451f483976baeee5967a6123d4945b3227942b15ecec8bb390e44f" => :mojave
-    sha256 "cb6f7ce696f58356e9ab5679ac4dba62f66d597dd62eacdb64e94e94c10e5be8" => :high_sierra
-    sha256 "19b05d337e1df9d798be020c0fe0970b78b0b54c98a8de476d2559c57c657c0f" => :x86_64_linux
+    sha256 "2994769226c7815ef5eee9ba27f729005fd993341dfbca50f413139ef411ac5c" => :catalina
+    sha256 "8b29c5873a395b8bdff9219dcfafb13d05d7428c8f4d050cb776d332dd7aef1f" => :mojave
+    sha256 "18a048550eae20c48c7af4cc0b93f1da748cae52417e364b1aedc154c27613d5" => :high_sierra
   end
 
   def install

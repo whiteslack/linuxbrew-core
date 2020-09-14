@@ -1,15 +1,15 @@
 class OpenImageDenoise < Formula
   desc "High-performance denoising library for ray tracing"
   homepage "https://openimagedenoise.github.io"
-  url "https://github.com/OpenImageDenoise/oidn/releases/download/v1.2.2/oidn-1.2.2.src.tar.gz"
-  sha256 "da30dfb8daa21663525124d7e44804251ba578f8c13d2024cdb92bfdda7d8121"
+  url "https://github.com/OpenImageDenoise/oidn/releases/download/v1.2.3/oidn-1.2.3.src.tar.gz"
+  sha256 "469d20b093a73b18a54a2e559b0f18a6baac845ede864be62429737042ebe4f7"
   license "Apache-2.0"
 
   bottle do
     cellar :any
-    sha256 "406ce42f0c495827f99546bd757e4186c2d841805a3b9f88b3ce875fb968725f" => :catalina
-    sha256 "a288d6dd4ce6f0b5b80d181f00be19b83c1eae84d51dd5b6dcf35735f7b7d2ab" => :mojave
-    sha256 "437aba3f7b6da6bff5a81280dbe7ca5af45309992cbddee8df3f6b562b4fec48" => :high_sierra
+    sha256 "36e3eaab701c477b99a8dd45ee9280de718aeb561429d9583cb2a387b9eace13" => :catalina
+    sha256 "3fae1d44be63e61401450dc6c3f0afe8b56bbf138e8c764e915911677749ee05" => :mojave
+    sha256 "768e611cdf47486bcd8167cd2532b944f10f2fe0d7895d7f0403989529932e06" => :high_sierra
   end
 
   depends_on "cmake" => :build

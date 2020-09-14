@@ -1,19 +1,18 @@
 class Pygobject3 < Formula
   desc "GNOME Python bindings (based on GObject Introspection)"
   homepage "https://wiki.gnome.org/Projects/PyGObject"
-  url "https://download.gnome.org/sources/pygobject/3.36/pygobject-3.36.1.tar.xz"
-  sha256 "d1bf42802d1cec113b5adaa0e7bf7f3745b44521dc2163588d276d5cd61d718f"
-  license "LGPL-2.1"
+  url "https://download.gnome.org/sources/pygobject/3.38/pygobject-3.38.0.tar.xz"
+  sha256 "0372d1bb9122fc19f500a249b1f38c2bb67485000f5887497b4b205b3e7084d5"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "174079a381809080c02d5720bc2538929bf571d28710f7ab3cb646bfcd2a5bbf" => :catalina
-    sha256 "c2b276445ce99b5094cd6b68b03fb6dc47a8c2eefbc743b40eacc373b822345c" => :mojave
-    sha256 "f462700d1cd736cc800d410ef3e4d2509527ca98cb7dc437ac80adb9bc04b6d6" => :high_sierra
-    sha256 "bf35aeb31311a70b86754441dbd279de5e2a73b7c3fb16df1e9b1fc33ac674b5" => :x86_64_linux
+    sha256 "3b8a6b54d626f8fb57b28ac43f21b1ba7fc528701487ba7be9d1e7c3f7ed7ae6" => :catalina
+    sha256 "629f3c862dddd99522e79bd33fc0931c6c93cef41806c14a55d893de3b8469a7" => :mojave
+    sha256 "21348f74c4a9be8c3cf3ef74c25d2907aeb48b77459cdcbbdb086e4b1946cfb3" => :high_sierra
   end
 
   depends_on "meson" => :build
@@ -26,7 +25,7 @@ class Pygobject3 < Formula
   def install
     mkdir "buildpy3" do
       system "meson", *std_meson_args,
-                      "-Dpycairo=true",
+                      "-Dpycairo=enabled",
                       "-Dpython=#{Formula["python@3.8"].opt_bin}/python3",
                       ".."
       system "ninja", "-v"
