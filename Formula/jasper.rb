@@ -9,6 +9,7 @@ class Jasper < Formula
     sha256 "4b7e4326a5da0643c59c302cfd458444965771a769838607f78fc43ffa0791cc" => :catalina
     sha256 "ecf0e6e6ce1ffb58c103965639d35b7f24e1634ad34944e9570a223a1ce1590b" => :mojave
     sha256 "37cbb5fd71b38ca35fd60ba0523c7a1af80702bd7f04743d0a771661aee12d48" => :high_sierra
+    sha256 "e8883a5b4996d4d3eaa29673d5106e07c4e22b64f67a501d1b32f6556418611f" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
