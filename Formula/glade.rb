@@ -13,6 +13,7 @@ class Glade < Formula
     sha256 "6515685fbaeb74c04c1f4675cf17d9c54cce4af36e170c2f9aca1959621a65a4" => :catalina
     sha256 "90865743d18a4b8d279188bbc43b0f33a96c1bdc0ee842e8e359ac8d73beec7c" => :mojave
     sha256 "f848a368c7db196b03c15e59ca6b01b2c48aaed710c7adb81594a5e3aab4347a" => :high_sierra
+    sha256 "c6f9b8b373005ce6249b92aa9c16aeff6dc2e62dd3d9206bd4bbafdbcb2e9c7c" => :x86_64_linux
   end
 
   depends_on "docbook-xsl" => :build
