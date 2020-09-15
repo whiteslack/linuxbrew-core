@@ -5,6 +5,7 @@ class Llvm < Formula
   homepage "https://llvm.org/"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/llvm-10.0.1.src.tar.xz"
@@ -20,6 +21,11 @@ class Llvm < Formula
           sha256 "65cf0dd9fdce510e74648e5c230de3e253492b8f6793a89534becdb13e488d0c"
         end
       end
+
+      patch :p1 do
+        url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-clang.diff"
+        sha256 "44a605f614a26fb20d127b041e2a87e6adc9b8332e07cbbb6b457bc391cda660"
+      end
     end
 
     resource "clang-tools-extra" do
@@ -30,6 +36,11 @@ class Llvm < Formula
     resource "compiler-rt" do
       url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/compiler-rt-10.0.1.src.tar.xz"
       sha256 "d90dc8e121ca0271f0fd3d639d135bfaa4b6ed41e67bd6eb77808f72629658fa"
+
+      patch :p1 do
+        url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-compiiler-rt.diff"
+        sha256 "8ad0ce521b010dfb941c0979c1c072a2b40e4a69424374541d28122ba74ce4a0"
+      end
     end
 
     if OS.mac?
@@ -47,11 +58,21 @@ class Llvm < Formula
     resource "lld" do
       url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/lld-10.0.1.src.tar.xz"
       sha256 "591449e0aa623a6318d5ce2371860401653c48bb540982ccdd933992cb88df7a"
+
+      patch :p1 do
+        url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-lld.diff"
+        sha256 "734f87580e89d76507b8c41a5a75b5105c41a2d03a8dc2fad5c7ef027d771a3e"
+      end
     end
 
     resource "lldb" do
       url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/lldb-10.0.1.src.tar.xz"
       sha256 "07abe87c25876aa306e73127330f5f37d270b6b082d50cc679e31b4fc02a3714"
+
+      patch :p1 do
+        url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-lldb.diff"
+        sha256 "69c7d4c803a174dff6809d02255e7e4c19d80f25c73dd5fcf2657769db158e25"
+      end
     end
 
     resource "openmp" do
@@ -83,9 +104,9 @@ class Llvm < Formula
   bottle do
     cellar :any
     sha256 "e3ec9fda84756750ac0b5620ff34da04ba5035c8276af1bebfe76e012bb0b14a" => :catalina
-    sha256 "bb8ede510e2a5664761281f1e7e6f2c01758229bdc49e19a9557ced5e4cb7717" => :mojave
-    sha256 "d39ebc8d856f0b5ef3709625cfdd3dc02299d2648431852d50577d5d839fd6aa" => :high_sierra
-    sha256 "13ab6fed69933d1128f02a8695defef2f35a489ac204f6852699dde2354713b8" => :x86_64_linux
+    sha256 "8aef26f7e303ee40df830fa1ca7df5cd51c8ce1260a6b871277f6f0e8b80103b" => :catalina
+    sha256 "5ad96fe536c054535aa9fb1c80db7d4468b6959cd903a20a7d81e25e470c8af1" => :mojave
+    sha256 "bf6e80f0e3e31a13245aadaa76064b16d2f55e2ffed5decc551be50638218777" => :high_sierra
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -130,6 +151,11 @@ class Llvm < Formula
     depends_on "libelf" # openmp requires <gelf.h>
 
     conflicts_with "clang-format", because: "both install `clang-format` binaries"
+  end
+
+  patch :p1 do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-llvm.diff"
+    sha256 "86b4e2bf10dfb9a04153e3d4fc744c3f323f3e13fc7b3a7d22e6791d47eb2e2c"
   end
 
   def install

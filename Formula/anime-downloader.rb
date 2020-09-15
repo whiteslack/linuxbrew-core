@@ -3,8 +3,8 @@ class AnimeDownloader < Formula
 
   desc "Download your favourite anime"
   homepage "https://github.com/vn-ki/anime-downloader"
-  url "https://files.pythonhosted.org/packages/c2/65/55ff3c5c26f0e9af726301d2581d8972b70bc209560881ba8596ff00a36e/anime-downloader-4.6.4.tar.gz"
-  sha256 "62d3aab32b02bbb5e7025db630da1e3ee2a91c7d88bfae6b44f1f26e0c9b8533"
+  url "https://files.pythonhosted.org/packages/93/af/4b7bd9021632951e0e944ee0a9101b63a2207fdd976dd3fd7964c11dc4c6/anime-downloader-4.6.5.tar.gz"
+  sha256 "e011f53a4656f1b64f112d4c42e81e56e585a67ec63b035ae825344a0b00a434"
   license "Unlicense"
   head "https://github.com/vn-ki/anime-downloader.git"
 
@@ -14,10 +14,9 @@ class AnimeDownloader < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "3d0a8dab67b7a28863aae65b35e96eff23981192735785cc5577281e19b87716" => :catalina
-    sha256 "7182d5190eaa861f4f69789680c2b235ca7eb1b394e2631810c3a2c5154bf4a1" => :mojave
-    sha256 "22090d8217a5e7611f91ac1e84fa38ad4fa2b099d2382ba216dd6eaa3aca2f05" => :high_sierra
-    sha256 "8782758c3503b401cade98ee8910992173bba0487d4aa4d19442becb0a97e5e8" => :x86_64_linux
+    sha256 "82e2e95a0a283218b5ef39afb19adcb26d3cd7b4701674cca6b48819882f2c7c" => :catalina
+    sha256 "6611d22abdb3d698f116602559607c7d3bb7474fc0665a1b86cf14ca4a419b1c" => :mojave
+    sha256 "5a291ee482ef660032c3b33e64de7edf654b53cc8679d9d914ba4e95dccbc472" => :high_sierra
   end
 
   depends_on "aria2"
@@ -72,6 +71,11 @@ class AnimeDownloader < Formula
   resource "pycryptodome" do
     url "https://files.pythonhosted.org/packages/4c/2b/eddbfc56076fae8deccca274a5c70a9eb1e0b334da0a33f894a420d0fe93/pycryptodome-3.9.8.tar.gz"
     sha256 "0e24171cf01021bc5dc17d6a9d4f33a048f09d62cc3f62541e95ef104588bda4"
+  end
+
+  resource "pySmartDL" do
+    url "https://files.pythonhosted.org/packages/26/ce/c728a2b6f08ef07cc12c69769fa54f60936cd9b4ef1bbaea3c0d53750f67/pySmartDL-1.3.3.tar.gz"
+    sha256 "7cf106f8aae69c322aa99b8d9a8174e6bb4df0bd9f6425843cb077e8fe8348a3"
   end
 
   resource "requests" do

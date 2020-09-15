@@ -1,23 +1,22 @@
 class Xtensor < Formula
   desc "Multi-dimensional arrays with broadcasting and lazy computing"
   homepage "https://xtensor.readthedocs.io/en/latest/"
-  url "https://github.com/xtensor-stack/xtensor/archive/0.21.5.tar.gz"
-  sha256 "30cb896b6686683ddaefb12c98bf1109fdfe666136dd027aba1a1e9aa825c241"
+  url "https://github.com/xtensor-stack/xtensor/archive/0.21.6.tar.gz"
+  sha256 "7f634cc5d531992c96c310ea57ec5bca012391259e1b1d1da977e5a94783f09b"
   license "BSD-3-Clause"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "885a150c2923a6b90f592284e406b39b2b7fc736ea3ba83ac1d2486f48ef440e" => :catalina
-    sha256 "885a150c2923a6b90f592284e406b39b2b7fc736ea3ba83ac1d2486f48ef440e" => :mojave
-    sha256 "885a150c2923a6b90f592284e406b39b2b7fc736ea3ba83ac1d2486f48ef440e" => :high_sierra
-    sha256 "c82c6571e7a7da7015e0f36c5f480a616a85da8017a8697170f2481d0c744f63" => :x86_64_linux
+    sha256 "8568b35a4b75c51e28887a0f68e658e2a3257fda91070de601f2c2b77b576778" => :catalina
+    sha256 "2c7baddc17bdd3e0521a0c2244498e7c8f2860bf5b00426615095d46cfa88278" => :mojave
+    sha256 "869e75b04b0e9246b6e1a862af79b5c1ae2e2a1b1ad60c27150e292cf4754135" => :high_sierra
   end
 
   depends_on "cmake" => :build
 
   resource "xtl" do
-    url "https://github.com/xtensor-stack/xtl/archive/0.6.13.tar.gz"
-    sha256 "12bd628dee4a7a55db79bff5a47fb7d96b1a4dba780fbd5c81c3a15becfdd99c"
+    url "https://github.com/xtensor-stack/xtl/archive/0.6.18.tar.gz"
+    sha256 "4999013881cc1e1c12941fb9c9ed4a701d09ba83c72b8abac3011793a3a6fee3"
   end
 
   def install

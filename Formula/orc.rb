@@ -1,8 +1,8 @@
 class Orc < Formula
   desc "Oil Runtime Compiler (ORC)"
   homepage "https://cgit.freedesktop.org/gstreamer/orc/"
-  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.31.tar.xz"
-  sha256 "a0ab5f10a6a9ae7c3a6b4218246564c3bf00d657cbdf587e6d34ec3ef0616075"
+  url "https://gstreamer.freedesktop.org/src/orc/orc-0.4.32.tar.xz"
+  sha256 "a66e3d8f2b7e65178d786a01ef61f2a0a0b4d0b8370de7ce134ba73da4af18f0"
 
   livecheck do
     url "https://gstreamer.freedesktop.org/src/orc/"
@@ -11,10 +11,9 @@ class Orc < Formula
 
   bottle do
     cellar :any
-    sha256 "c4a11fbf1e2d645b0bbcbabc467c6f7fe604282833ece90264b063806a1e4909" => :catalina
-    sha256 "b9c58730d763ca611867504ff7005245e95ca435b027d85ff7f7471dc7431b59" => :mojave
-    sha256 "b732bc9e7fa9825222b0dda3dfdbe7f38cf45aeb46c239f432fc646d98079e76" => :high_sierra
-    sha256 "a69874c451d86fd31ada1aaf8ca5a961de6cfb42944b18da8eadbb371375de70" => :x86_64_linux
+    sha256 "df8ed6c8e2d13c9425174f38a6ff60d291cc3febababa670ebe74b21fe56ceab" => :catalina
+    sha256 "8b11d82f1c1e51fe41d4b7cf1a905f72bdb977ce2acc0eafcf2ba6b89f06d58c" => :mojave
+    sha256 "d347537787016fa19c7653a9912e0c11d134f10e96a75bc0f5bb28e221e012d8" => :high_sierra
   end
 
   depends_on "meson" => :build
