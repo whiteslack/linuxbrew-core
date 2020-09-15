@@ -10,6 +10,7 @@ class Dssim < Formula
     sha256 "a45bab9dbd7de721418a18394c0b70dc66fcd44050c14a04b87e97687aa316a1" => :catalina
     sha256 "2c7b025773e8f419bd0edab3815e243708b47f60ad62fa4595fa5726c1ab77d0" => :mojave
     sha256 "288735020c3dca238550306be4e1ca80636539c2b779211889f9f485e7b8b610" => :high_sierra
+    sha256 "e638a9864a1937e35ff9be0a1cef0b70edbbdbde915dc112d27aa135cbefa7af" => :x86_64_linux
   end
 
   depends_on "nasm" => :build
