@@ -16,6 +16,7 @@ class Ibex < Formula
     sha256 "6c0ab52bf081342e3467176f3f777ca5825df8fae28e10d70cdad41978728a8c" => :catalina
     sha256 "9ce827d5149844bcef31509aff4f4700865029ed6c21d941fc6d1301c1ab6a06" => :mojave
     sha256 "ae4bc25a0504f206517129a809afa42c26bba93f93573c4cba97cddd0726f63f" => :high_sierra
+    sha256 "7dec3243bc4307fe236da0997cfa48c8e39b3759f87adc52006ff1904a4a1cc3" => :x86_64_linux
   end
 
   depends_on "bison" => :build
