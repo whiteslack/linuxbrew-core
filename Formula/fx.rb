@@ -3,8 +3,8 @@ require "language/node"
 class Fx < Formula
   desc "Command-line JSON processing tool"
   homepage "https://github.com/antonmedv/fx"
-  url "https://registry.npmjs.org/fx/-/fx-20.0.0.tgz"
-  sha256 "dd5d765cac1828dd1c7466d51d8eccf19255dc6c978530b2b8c85d5bba6b0549"
+  url "https://registry.npmjs.org/fx/-/fx-20.0.1.tgz"
+  sha256 "0f70e9a833cb73e24cc01fced168dd1fa235472766221d60c1ff3fe8e9822d7f"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class Fx < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "accecb7e1d80c5fdde293f54cc7c5ff62bbfda653ca77d0e6b79e5d8cf15423e" => :catalina
-    sha256 "242662e5cac879761639076d0587db86ebafc7f90e94c825ad149e7dd4b2c2f9" => :mojave
-    sha256 "97c2744a7c63df0ccd5bf8f7d60fbe8e4a09fbcc8abda2a91c5cde259f93626e" => :high_sierra
-    sha256 "6ab882428671fced0315200232407dbec7b972cb21148a2a8ff84c8189a2af4a" => :x86_64_linux
+    sha256 "e80865398cc8cd9c22b14a6f5dc9262130597e44f378989a9c8529f51d2608ab" => :catalina
+    sha256 "f32846d5b0d2db87652d21e0e0889b2b8747ac9b8abaf6f806c90511431b6cfd" => :mojave
+    sha256 "9ad55ab44cc722f61aaabb348ba7d1c5112d60df420e24f059fde002ad0fc9aa" => :high_sierra
   end
 
   depends_on "node"

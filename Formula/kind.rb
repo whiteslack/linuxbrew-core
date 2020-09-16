@@ -1,18 +1,16 @@
 class Kind < Formula
   desc "Run local Kubernetes cluster in Docker"
   homepage "https://kind.sigs.k8s.io/"
-  url "https://github.com/kubernetes-sigs/kind/archive/v0.8.1.tar.gz"
-  sha256 "2a04a6427d45fa558fc4bfe90fde0b7ea2c7f2d6fcf3b7c581fc281ae49b5447"
+  url "https://github.com/kubernetes-sigs/kind/archive/v0.9.0.tar.gz"
+  sha256 "c154289659a7ef30b301a0787ecfa2e08edaada6059bf5acefe9f3be1e026381"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kind.git"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "b3df2d17b1e04549456c846b4e6821b9ba944cc9d960a4cd503281b1d180c6f4" => :catalina
-    sha256 "f91154348256db372a2dc67fde509072693993338acb34b89374df138e6c53b8" => :mojave
-    sha256 "50ea3dd46ea5e1965bd3cc94e95d30b855ddf64c0a103ee83980ba356a6b2625" => :high_sierra
-    sha256 "3b2c9093845a2d24bc06e6459f2e883ac1bc5532764b4e03152b514af4b660d1" => :x86_64_linux
+    sha256 "ae4b118e9c55007ee38e99a1a37f9b3693475a0c25e90670e63773b9304f44d2" => :catalina
+    sha256 "e32358095a62316019b620ffaa49bd94c1d78a6257ea6afa3e665ffb3fb6dc2c" => :mojave
+    sha256 "76c237b09ab616c4a1b30d5a3cb4a6a170a35b79863d704b86909f4044041c04" => :high_sierra
   end
 
   depends_on "go" => :build

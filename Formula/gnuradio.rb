@@ -6,18 +6,20 @@ class Gnuradio < Formula
   url "https://github.com/gnuradio/gnuradio/releases/download/v3.8.2.0/gnuradio-3.8.2.0.tar.gz"
   sha256 "3e293541a9ac8d78660762bae8b80c0f6195b3494e1c50c01a9fd79cc60bb624"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/gnuradio/gnuradio.git"
 
   bottle do
-    sha256 "98259eec9c9f48ad0ab56f4a7df7846e317e14c59b265602323a0d40537d7c2d" => :catalina
-    sha256 "42981d961cd48b0b4895bcf7d413117eaba87a26af936ada2f080ef39abfb496" => :mojave
-    sha256 "01562ab671d875971f0e18b77a4610e5e11edb5d9004331fb466c7aba86e2248" => :high_sierra
+    sha256 "fdec2c5a61b56fee650beaa40e7396e6b5ea123a543ca75833c7b5379800b7c9" => :catalina
+    sha256 "803d5743a4918399a299bd39bd455a4df0a8b7d43f35315bbe8b56a0eb5058f2" => :mojave
+    sha256 "a0864b286c035749f6c9d6e806e0513807456143fbd2014ba23718bac42cf073" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkg-config" => :build
   depends_on "swig" => :build
+  depends_on "adwaita-icon-theme"
   depends_on "boost"
   depends_on "fftw"
   depends_on "gmp"
