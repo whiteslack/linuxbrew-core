@@ -4,13 +4,13 @@ class ShadowsocksLibev < Formula
   url "https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.4/shadowsocks-libev-3.3.4.tar.gz"
   sha256 "fce47a956fad0c30def9c71821bcec450a40d3f881548e31e66cedf262b89eb1"
   license "GPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
     cellar :any
-    sha256 "44baecd861835c09a075c620a0599c9ad57042733f9771f1bf4bb4be67edf647" => :catalina
-    sha256 "406e0693ca78d4dbb323dd1b3e03ff2fb94370ea1cd6ef5535de43931441af2b" => :mojave
-    sha256 "03a52b226a287cf73f5c6e13d0da5aecc47212bbefe2506b7a96de1511916d61" => :high_sierra
+    sha256 "d70ae09d33831eb31bc356ddb36dd6fe358db0ba20e25a4a135931317cdfb4fc" => :catalina
+    sha256 "8b7e10f74f67a62d6e99880577ec01df806e3a32d2dd754f94892b80c7588219" => :mojave
+    sha256 "c967b3b3849c49fcc8f6a5ac68ac0530589c4c8dbaea2d9dbae20876b785845c" => :high_sierra
   end
 
   head do
