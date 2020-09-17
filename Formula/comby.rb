@@ -1,15 +1,14 @@
 class Comby < Formula
   desc "Tool for changing code across many languages"
   homepage "https://comby.dev"
-  url "https://github.com/comby-tools/comby/archive/0.18.3.tar.gz"
-  sha256 "554ec0fa7c8da8aa9ae74bdd6d3f7ba32e0f553ff9bb12c7add6541cd4ec27d8"
+  url "https://github.com/comby-tools/comby/archive/1.0.0.tar.gz"
+  sha256 "755075e71059b908779ce7078bd9514128107e9c6e90cb150c4346621a88cde2"
   license "Apache-2.0"
 
   bottle do
-    sha256 "959812e91094978e5373616ed3063ba60d3c931cb9aa01d25423f63afda70aa0" => :catalina
-    sha256 "f939a6986d210cdd1c670f22c43ea2cb0826e57efc3b62a192e2b4271a7505e8" => :mojave
-    sha256 "fcd39a3f32104e6fe6141ea87c93c334f2c30c57f44500070f8a8a0045e0e785" => :high_sierra
-    sha256 "5a1e926baaf54b6d33227c3f854651a4f3fb8678be33e5a25c5606578011c266" => :x86_64_linux
+    sha256 "8441273e383d1a79787cba483f9d27c78e03722596c4a80bd4bf636933226b69" => :catalina
+    sha256 "2630927aa177293db660deea99133bab70247c0f9c751c5e21d9a18c38f5a2c0" => :mojave
+    sha256 "b7c4c8bf2817ec659a33f1fa8af1e049bba199e2f08bf246a99cbda036eba523" => :high_sierra
   end
 
   depends_on "gmp" => :build
