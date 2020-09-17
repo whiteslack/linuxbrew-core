@@ -16,6 +16,7 @@ class Fx < Formula
     sha256 "e3af18a1b48a38407825a2d3ffe3bf60ecd9ac37b7762d3cdcb0ebbad29d7c9c" => :catalina
     sha256 "df7a7fd00f429e4db18d0efe676f9ed081efc4175dccb0f59c20e97b87e1bb0a" => :mojave
     sha256 "be1769bcf8dea3bd6db0237948e500334a6813fbfbab34c90eedbbe9518df838" => :high_sierra
+    sha256 "618a61044c2154fa5630cb7446e24b6584ecbd81af814f448db8edea6a2599a3" => :x86_64_linux
   end
 
   depends_on "node"
