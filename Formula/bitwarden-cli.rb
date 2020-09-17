@@ -16,6 +16,7 @@ class BitwardenCli < Formula
     sha256 "b4326ba5082b398b5fd6b11f8837f111756e02cfef54f6af587452dfbe5456f0" => :catalina
     sha256 "d606f871bf2ccfe4f749fbfc796603fb8973df47444443605ae0feba7c7482b3" => :mojave
     sha256 "175bb66acd1a979ba17c3d38f32edf995f5ed34a8c7f1188206ddfca0ed6c856" => :high_sierra
+    sha256 "70b64f5e452433bd9352b4ea8f58c8f37285491e1bce9da51388588cf0ad2830" => :x86_64_linux
   end
 
   depends_on "node"
