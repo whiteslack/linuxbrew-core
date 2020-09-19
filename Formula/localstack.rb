@@ -12,6 +12,7 @@ class Localstack < Formula
     sha256 "7e91884c1994740605b91ca899c6132f18ad3da3f0f5601445168f9c482b4a8f" => :catalina
     sha256 "7ce927d68a70de0bf7de7954d083af9ba65d9f18c092d2d24bd708f901838676" => :mojave
     sha256 "313c1d0ab1899d1a97135ed3d08905c49da5ffbd844e42f79ee3bcdb9c58ba07" => :high_sierra
+    sha256 "2990c844cfc4d99f2a7dd48b10ed8161251eeb6e5ff0149c0e1a89f0e870d88b" => :x86_64_linux
   end
 
   depends_on "docker" => :test
