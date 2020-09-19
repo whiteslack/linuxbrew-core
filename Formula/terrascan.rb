@@ -11,6 +11,7 @@ class Terrascan < Formula
     sha256 "58d110ee51c8c910cf09561aec034fd7bd8c149159fb91b9da9fc93506c0fc2c" => :catalina
     sha256 "88665e1348a8d54a64fb902718f055727d744127707eb0bda18ce699202e4206" => :mojave
     sha256 "2d94a5b1142130bd73c3b38e1989c0b5401f248d3876cf44fa86f20045adc27a" => :high_sierra
+    sha256 "3f4b64387e0a34daba98dd50b2203ff10676ad981b55a2920563a6dc11f676b6" => :x86_64_linux
   end
 
   depends_on "go" => :build
