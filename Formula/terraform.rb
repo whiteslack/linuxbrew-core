@@ -16,6 +16,7 @@ class Terraform < Formula
     sha256 "5f9339708d2c3c51cf4f1f6ee8391b21aed7c973a1ffeb6ff86af974351b8d00" => :catalina
     sha256 "b46ec78630a973af5b54e750bdc8c87d29b2e0202276093d39c1ea65228a0ae3" => :mojave
     sha256 "a57290b8006ff759d286aa610d91cc1faa9a71884b881b4666368359b2047adc" => :high_sierra
+    sha256 "5f15e1609c679954fecc5a6d51738da6cdfad62b8c1f3671378da22709bbfa08" => :x86_64_linux
   end
 
   depends_on "go@1.14" => :build
