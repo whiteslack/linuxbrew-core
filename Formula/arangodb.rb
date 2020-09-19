@@ -1,15 +1,14 @@
 class Arangodb < Formula
   desc "The Multi-Model NoSQL Database"
   homepage "https://www.arangodb.com/"
-  url "https://download.arangodb.com/Source/ArangoDB-3.7.2.tar.gz"
-  sha256 "241800d5641da962806cdd0248f508bbf5cb6bcf97dfa51d0a2e7848879b9ddb"
+  url "https://download.arangodb.com/Source/ArangoDB-3.7.2-1.tar.gz"
+  sha256 "de79c04b6b15d9b7a415f8cbfd6682e000414725be1c25966aeab19dfbb49195"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/arangodb/arangodb.git", branch: "devel"
 
   bottle do
-    sha256 "6b9299f984eb8a25709c7178d52d3c1e19f39adf5d71f6406a2aed283b8ce406" => :catalina
-    sha256 "1eabd6b8b72d6375f00ce0570ccb0d76f383c285a8019e3426d0273876b0bd9c" => :mojave
+    sha256 "f66b2c46e2c8201e8e7a9ff32b5bf22cebe948d6d5dc1cedb1cc09f9dae72bd2" => :catalina
+    sha256 "4c6b0c1ecf14fdb837c52b3205ce98c820768b57a50526e51cb93133d95123ef" => :mojave
   end
 
   depends_on "ccache" => :build
