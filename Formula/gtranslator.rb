@@ -1,18 +1,18 @@
 class Gtranslator < Formula
   desc "GNOME gettext PO file editor"
   homepage "https://wiki.gnome.org/Design/Apps/Translator"
-  url "https://download.gnome.org/sources/gtranslator/3.36/gtranslator-3.36.0.tar.xz"
-  sha256 "2daa1d3b59b4a35ef54df087345b03e1703e725081f9dac543539228a715add3"
-  revision 4
+  url "https://download.gnome.org/sources/gtranslator/3.38/gtranslator-3.38.0.tar.xz"
+  sha256 "dbcda9b81a22d9233be18e99fd5c448f6ab05759d1e94c10580bb831ca2d7635"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "4ccb72c556347cbfe159eddd9688eab723a632130ae82325b317544e7c87b381" => :catalina
-    sha256 "fc6c448bb1c7be26d4bce14995bb2946d65950445fdd44875790d223aed1d2e7" => :mojave
-    sha256 "06b05625ddbc8f1f610ecf319ef9bb9d896d83780f7cb48ff2c5ca9cdde7c47c" => :high_sierra
+    sha256 "ca6600f0f0d75cc1f9c2a063ac2ad6bdfe790fe89a72533307deda968903eb2b" => :catalina
+    sha256 "d46199ba9a6eb1a9cf068fe5a9ae34529ab60b70ebdaca2f29c82e4eef86d34b" => :mojave
+    sha256 "13cc15d49f5c39f4be9f28860b6e99d7186d7b985fa03308f3a185692f57ad3b" => :high_sierra
   end
 
   depends_on "meson" => :build
