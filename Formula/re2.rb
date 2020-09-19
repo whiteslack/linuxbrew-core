@@ -13,6 +13,7 @@ class Re2 < Formula
     sha256 "6ea685673f2cccce319d1c03da2fdc65796174f32d4c6acaa10774f48f52e6de" => :catalina
     sha256 "b565f33e82a0017a9c7933ce816f201087471920f8a2762e70346b41165ea02a" => :mojave
     sha256 "c2be399e6c6776cdc9e579a1c941756145059ace6f98d3adfd836e08cc4836d8" => :high_sierra
+    sha256 "a332ad4280b84f385491615d4a86af1cc3ea46233d4986d6c544661ef71879d5" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
