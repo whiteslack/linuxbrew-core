@@ -10,6 +10,7 @@ class CucumberRuby < Formula
     sha256 "6664287aeee18891e24d8f4191da1ee0af99912464e69ecf6d5d8d2ed972e9c5" => :catalina
     sha256 "fef11d374d55a4298dc1277b35d384565eb8bc1d5928da3b4995ac5deae8efd7" => :mojave
     sha256 "b18c9338b8d64c7b12ce9e5e6c264de23bd9235f49815825950bdc42868a8560" => :high_sierra
+    sha256 "8a216909b61b0fbb8fbd236a5823f19d884664154ddc1de3a1d9ac5621bf704e" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
