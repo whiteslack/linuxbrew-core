@@ -3,8 +3,8 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://github.com/conan-io/conan"
-  url "https://github.com/conan-io/conan/archive/1.29.0.tar.gz"
-  sha256 "431a6fe7362754a2ace41568bdcf326a858ac09fc9bef4c3e3d3abeaf3719b05"
+  url "https://github.com/conan-io/conan/archive/1.29.1.tar.gz"
+  sha256 "ba694680b484b99a9bdcea57adad6e2633f81144d0434486fdc960f69fd35ab5"
   license "MIT"
   head "https://github.com/conan-io/conan.git"
 
@@ -15,10 +15,9 @@ class Conan < Formula
 
   bottle do
     cellar :any
-    sha256 "b59864660144a7ca0213ce012a9ab17031c84fe8ffc9e7d215450f8a10689776" => :catalina
-    sha256 "60330358cde6a430ece2541db9faaf6b08541203d117ce4fcc7f167eab854cf9" => :mojave
-    sha256 "13e993ac34260d7aef694f1d8f9d1698cde6791b16dbf2ad644f7ea144d0e80d" => :high_sierra
-    sha256 "67352b31f773824e11a40975de9cc41fcb3066eab8f8338da3a5e11cb9f0f525" => :x86_64_linux
+    sha256 "b5adf21286254e4e70c53f2fc1bdd73acf48d7615f9228ae21e4aa751f865f99" => :catalina
+    sha256 "4b6afddaed1d872461543cbee8a087b7f5bb5699219fe098a2c934f41158fa92" => :mojave
+    sha256 "3418f9a963a3d8a416a278b69af919d0e58e1a5bc81624a17de55acb8c310e0d" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -42,8 +41,8 @@ class Conan < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/f7/09/88bbe20b76ca76be052c366fe77aa5e3cd6e5f932766e5597fecdd95b2a8/cffi-1.14.2.tar.gz"
-    sha256 "ae8f34d50af2c2154035984b8b5fc5d9ed63f32fe615646ab435b05b132ca91b"
+    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
+    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
   end
 
   resource "chardet" do
@@ -127,8 +126,8 @@ class Conan < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/6e/4d/4d2fe93a35dfba417311a4ff627489a947b01dc0cc377a3673c00cf7e4b2/Pygments-2.6.1.tar.gz"
-    sha256 "647344a061c249a3b74e230c739f434d7ea4d8b1d5f3721bc0f3558049b38f44"
+    url "https://files.pythonhosted.org/packages/e2/07/25bd93c9c0175adfa5fb1513a20b25e7dd6c9a67c155e19b11b5f3662104/Pygments-2.7.1.tar.gz"
+    sha256 "926c3f319eda178d1bd90851e4317e6d8cdb5e292a3386aac9bd75eca29cf9c7"
   end
 
   resource "PyJWT" do
@@ -167,8 +166,8 @@ class Conan < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/7c/a2/4cc95d7766a5d17ea2541d88da357d5905f75b6dbdfd17dfffd6c37647ae/tqdm-4.48.2.tar.gz"
-    sha256 "564d632ea2b9cb52979f7956e093e831c28d441c11751682f84c86fc46e4fd21"
+    url "https://files.pythonhosted.org/packages/bc/03/2bc607a15e201058cb6b19784b9c217d7ff37a686ce4a2d8a37a638f3ba5/tqdm-4.49.0.tar.gz"
+    sha256 "faf9c671bd3fad5ebaeee366949d969dca2b2be32c872a7092a1e1a9048d105b"
   end
 
   resource "urllib3" do

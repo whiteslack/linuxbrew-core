@@ -1,8 +1,8 @@
 class Dgraph < Formula
   desc "Fast, Distributed Graph DB"
   homepage "https://dgraph.io"
-  url "https://github.com/dgraph-io/dgraph/archive/v20.07.0.tar.gz"
-  sha256 "46b5deac70d09343644ce10fa69fc313589c7474d974ec720c24504883dd65c1"
+  url "https://github.com/dgraph-io/dgraph/archive/v20.07.1.tar.gz"
+  sha256 "8b2322f756e79bdc8663643166cbbee8e89a98aa3aa22680dc1400fc0e374060"
   # Source code in this repository is variously licensed under the Apache Public License 2.0 (APL)
   # and the Dgraph Community License (DCL). A copy of each license can be found in the licenses directory.
   license "Apache-2.0"
@@ -15,9 +15,9 @@ class Dgraph < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "eb57d3ff53372468f23d277e0bf0a39d147a2c7a1b0882d32f53c9200d8721f5" => :catalina
-    sha256 "0358f83ea5a545ef452ced5cb123c34d6880bc848ad2006e042801c19e2f0770" => :mojave
-    sha256 "290e72cb04f180ed4a11850d2aff0a42d5cde1c780191f0a920ae7578ef64e5a" => :high_sierra
+    sha256 "23a23ca492ee9cf3945bbfc6f1c96a55b01a4027bcde218027a9feafa1ea6606" => :catalina
+    sha256 "fe773938ee948bc21a3473c006e49e0672883d3842dff5439316b79bd868a28e" => :mojave
+    sha256 "535c7c36222cdf14cecd51b55963d1d46fee333a1ec3cb00cc7417e788f0f343" => :high_sierra
   end
 
   depends_on "go" => :build
