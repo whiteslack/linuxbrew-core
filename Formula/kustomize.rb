@@ -17,6 +17,7 @@ class Kustomize < Formula
     sha256 "c1294a68cfd74c87ff5fc763440642250b7f390c2973d9ed3dd69e8002e9aca0" => :catalina
     sha256 "24236a40f03e3b547c2d748195d73e6fe47c35e8e40053ebc8cead39bd02ffa3" => :mojave
     sha256 "84b9d17e60cf8449c707b6bba4bb30d836679591854ad950b71dfc659b1a4d6b" => :high_sierra
+    sha256 "d6a08f1e7b89d5fd891a49c105f70a1786b47def71f881c83e8b5808eae7837e" => :x86_64_linux
   end
 
   depends_on "go" => :build
