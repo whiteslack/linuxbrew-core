@@ -15,6 +15,7 @@ class StressNg < Formula
     sha256 "1a5fcbf438fbc92ac189247622e85a3adb66ab44b51f15604d058aec66834601" => :catalina
     sha256 "8be72e18cc21d8158f5f691072c5eada3447a32eb11d634f1e62bf8fa339b2b2" => :mojave
     sha256 "3a5daed865d2b499174fbb904d0181201386f71746df7df291af3919b5a19e5f" => :high_sierra
+    sha256 "6018623a4f8d3c4b436f17b30dc7039fa87770ee69977b7388ecd526958ba6a3" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
