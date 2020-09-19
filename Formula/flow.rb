@@ -11,6 +11,7 @@ class Flow < Formula
     sha256 "e177fd3b78aebf1dadcc7efd4fe3eadf9ab383dde41dfe3a8ba63803ffaf8dbc" => :catalina
     sha256 "db4b378cae2ab2bf5ecbade9dd9a1205829e74daefce922a7694c5e734dee892" => :mojave
     sha256 "58d04c305431a1448c18fc3d3954c2988849ce224cdc0e76e332d027369b8533" => :high_sierra
+    sha256 "0306a1d2913d8d4509ece7c4feeb10612e5eb808421c6349824d6c04cc1e5eeb" => :x86_64_linux
   end
 
   depends_on "ocaml" => :build
