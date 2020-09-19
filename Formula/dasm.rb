@@ -11,6 +11,7 @@ class Dasm < Formula
     sha256 "775182ffbc11709b19311978f7a7390cb550203cf6451275a2860601f66f2682" => :catalina
     sha256 "2dbc0dad5d33e6e51eed0bb58972eab4d15a517c8fe4890c78098b065a7bfdf8" => :mojave
     sha256 "1bc81a0ca38c8fe4615282acae9eca531374ce1271d4812532c33d88729166c3" => :high_sierra
+    sha256 "6140eb6420c2776494f5fb83b52651fd5fc1419d545bad07c4fa582d4333dfea" => :x86_64_linux
   end
 
   def install
