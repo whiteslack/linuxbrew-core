@@ -1,16 +1,15 @@
 class CucumberRuby < Formula
   desc "Cucumber for Ruby"
   homepage "https://cucumber.io"
-  url "https://github.com/cucumber/cucumber-ruby/archive/v5.1.1.tar.gz"
-  sha256 "a2dded4fe9e629a2925e74f00e1c7c24dd2f08ea17f4474c2332052d73788acd"
+  url "https://github.com/cucumber/cucumber-ruby/archive/v5.1.2.tar.gz"
+  sha256 "6e5295f79c919e5b1824c003fe6cab93a360c53b55938ecefa6aa2e71c8cf447"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d0d4ed2b0173d6c6486dc2644cbf9f07e08955bba983d6545e3386c22b8a5c70" => :catalina
-    sha256 "7de9f5b999e9aaee312dec0da786cc81595aa237952774f0bf5fdeb7e14160dd" => :mojave
-    sha256 "df11217ec56628eff8562cdf7d1fd0ae318e7fadcdef27605013e2b40aab4090" => :high_sierra
-    sha256 "7bad4a1051bbfdc160556fe0cfb0757cfe291bbaffdd5ca6443e7ead0fcc9f1b" => :x86_64_linux
+    sha256 "6664287aeee18891e24d8f4191da1ee0af99912464e69ecf6d5d8d2ed972e9c5" => :catalina
+    sha256 "fef11d374d55a4298dc1277b35d384565eb8bc1d5928da3b4995ac5deae8efd7" => :mojave
+    sha256 "b18c9338b8d64c7b12ce9e5e6c264de23bd9235f49815825950bdc42868a8560" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

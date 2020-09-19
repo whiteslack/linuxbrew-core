@@ -4,7 +4,7 @@ class Colordiff < Formula
   url "https://www.colordiff.org/colordiff-1.0.19.tar.gz"
   mirror "https://dl.bintray.com/homebrew/mirror/colordiff-1.0.19.tar.gz"
   sha256 "46e8c14d87f6c4b77a273cdd97020fda88d5b2be42cf015d5d84aca3dfff3b19"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage
@@ -13,15 +13,13 @@ class Colordiff < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f0433560a0417e350a57ad24a80d277cb3cc2665046a10d8db630ef432529603" => :catalina
-    sha256 "f0433560a0417e350a57ad24a80d277cb3cc2665046a10d8db630ef432529603" => :mojave
-    sha256 "f0433560a0417e350a57ad24a80d277cb3cc2665046a10d8db630ef432529603" => :high_sierra
-    sha256 "61474e3b705ddfcc3f3056f0fa017f7f53e3fa26c30c7c316bee544d6c589314" => :x86_64_linux
+    rebuild 1
+    sha256 "a591ec70f59b8f5ff3cde4c0a8cd58d920db324f9c3001e218bdcfc8966aca15" => :catalina
+    sha256 "f5b78a778860c7d37a370287c3821e17243a37e5e568cf58fd2aa3df3e3ce409" => :mojave
+    sha256 "305a7dfd6940d463d89473c1f2864c5f5b1bd7ed01f838929c3901ad94f4586d" => :high_sierra
   end
 
   depends_on "coreutils" => :build # GNU install
-
-  conflicts_with "cdiff", because: "both install `cdiff` binaries"
 
   def install
     man1.mkpath
