@@ -17,6 +17,7 @@ class Pygments < Formula
     sha256 "d2ce36688ac7270295bffffcc606c0f0068ac7bbc323e0b28f3fcf94d8125afd" => :catalina
     sha256 "1ad894a00625ed6b8eb1c9372fc08e3f33cbf22bb74daaa7340eaaa94056446e" => :mojave
     sha256 "538dd6dffdaf7327775f0b5df1dd08878338c225b58296f9164795df17b1960c" => :high_sierra
+    sha256 "87217c81dfd7c38931fdb2e7d25cb2dce09743da61a7a0b15dfb3b638db8974b" => :x86_64_linux
   end
 
   depends_on "python@3.8"
