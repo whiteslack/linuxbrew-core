@@ -4,6 +4,7 @@ class Syncthing < Formula
   url "https://github.com/syncthing/syncthing/archive/v1.9.0.tar.gz"
   sha256 "ca66e0929428db2ed9476ff8ef4d46b06c5221a5aa24db504cdb2cd1aebe5ac6"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/syncthing/syncthing.git"
 
   livecheck do
@@ -13,17 +14,15 @@ class Syncthing < Formula
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "f2e2419219683795d3b4ba955b909a7f9319b1b1e0229090744da52830d7c7f8" => :catalina
-    sha256 "3fcdaac2e0149df741f40b4f2c28644347aed20a3ce452238a731b9fab32109f" => :mojave
-    sha256 "1f698f4002c2cbe3e8ec7b51c3e141248f9a36f4eba27daa8e3b641fd0854ef4" => :high_sierra
-    sha256 "8c6e98e21501700a4de2db65432b2c3f1b8e4de535b62a184ce25683dda4f5fd" => :x86_64_linux
+    sha256 "66876dd60affae9317324b0092e84201beed36181695f475542c53ce00374460" => :catalina
+    sha256 "9766559fd12fa67cc245bbddeaa12886bc14f502572e4308c853c6c24a6e343c" => :mojave
+    sha256 "7fcce1b51391bf2c8c88d67c1b75d197d8546f822bfcc07ac1170bba20f830b3" => :high_sierra
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "run", "build.go", "--no-upgrade", "tar"
+    system "go", "run", "build.go", "--version", "v#{version}", "--no-upgrade", "tar"
     bin.install "syncthing"
 
     man1.install Dir["man/*.1"]
@@ -66,6 +65,7 @@ class Syncthing < Formula
   end
 
   test do
+    assert_match "syncthing v#{version} ", shell_output("#{bin}/syncthing --version")
     system bin/"syncthing", "-generate", "./"
   end
 end

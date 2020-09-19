@@ -1,17 +1,16 @@
 class Vgmstream < Formula
   desc "Library for playing streamed audio formats from video games"
   homepage "https://hcs64.com/vgmstream.html"
-  url "https://github.com/losnoco/vgmstream/archive/r1050-3086-gc9dc860c.tar.gz"
-  version "r1050-3086-gc9dc860c"
-  sha256 "dee8b6005db0ea4d1cd8940529bd2fe019fb753b67d1c19ac90df261f264b311"
+  url "https://github.com/losnoco/vgmstream/archive/r1050-3264-g86fbfffd.tar.gz"
+  version "r1050-3264-g86fbfffd"
+  sha256 "c7cb968c734b02dcfce46a3abf3486be494a599c238d77c1103c302e91763d11"
   head "https://github.com/kode54/vgmstream.git"
 
   bottle do
     cellar :any
-    sha256 "06b1a2c17d2b02de2d9e3580700245141b8bf8e5501e01a5f943d755fbdd9be3" => :catalina
-    sha256 "c47f6241f20aa7d9d89e7058a3fc56c844f8b0b622312c4c281393dfa86b9da4" => :mojave
-    sha256 "44200141865ea303d35c293028aafb528135e27374a116a63a6b506fa5b60ede" => :high_sierra
-    sha256 "6869f9d9f553ffcc4e3476dcfc493d5b42c79b77c40d8355bfdf62c3c65cdfcc" => :x86_64_linux
+    sha256 "235ded9d960b2a99ceb17630c5cc0aa352b2afbadc90a01439a7ff481f7062bd" => :catalina
+    sha256 "584faaf779e7adcd1b8d2243641b80f277314588372f9bd8a137e9c4110b3a9e" => :mojave
+    sha256 "c70ca3ae85b5138dbb8d97cadaf459e77633e0b022c2f8c210be05cd2881544b" => :high_sierra
   end
 
   depends_on "libao"

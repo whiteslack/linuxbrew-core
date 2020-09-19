@@ -1,9 +1,9 @@
 class Scummvm < Formula
   desc "Graphic adventure game interpreter"
   homepage "https://www.scummvm.org/"
-  url "https://www.scummvm.org/frs/scummvm/2.1.2/scummvm-2.1.2.tar.xz"
-  sha256 "c4c16c9b8650c3d512b7254551bbab0d47cd3ef4eac6983ab6d882e76cf88eb0"
-  license "GPL-2.0"
+  url "https://www.scummvm.org/frs/scummvm/2.2.0/scummvm-2.2.0.tar.xz"
+  sha256 "1469657e593bd8acbcfac0b839b086f640ebf120633e93f116cab652b5b27387"
+  license "GPL-2.0-or-later"
   head "https://github.com/scummvm/scummvm.git"
 
   livecheck do
@@ -12,11 +12,9 @@ class Scummvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "2d1de2f1efde7505ec7b06a2dfd90e287d6d816d5082f7a89ae2f44c6c25b9d8" => :catalina
-    sha256 "5b28e8e3d52ce3b1d9a0a172483090a8926c4f9244915b6af5a38b3c02c1eca8" => :mojave
-    sha256 "a31b470f92fa3f75ce56c01c45c4c6c09960b001e6b96e90149e58932e3c4bee" => :high_sierra
-    sha256 "906f89d1092b20ff2467f68ea5ab278ba3febf3f3c978b186e579ad2c32491e2" => :x86_64_linux
+    sha256 "b48fb222871740414480cb4a1789c1c1b379b30dafac2970656ec8802deb205b" => :catalina
+    sha256 "0e359a79ab9835cd3511d1aa7e617349b50fcb0a3241c2d700d2341f321a90b7" => :mojave
+    sha256 "dafe75e762c2ccee797055f3bf6dda13d08f3e1efcd2c7017dc734db41a1acef" => :high_sierra
   end
 
   depends_on "a52dec"
@@ -31,12 +29,6 @@ class Scummvm < Formula
   depends_on "mad"
   depends_on "sdl2"
   depends_on "theora"
-
-  # Support fluid-synth 2.1
-  patch do
-    url "https://sources.debian.org/data/main/s/scummvm/2.1.2+dfsg1-1/debian/patches/git_fluidsynth_update.patch"
-    sha256 "4e03d4b685bf38c2367bb669867175bd4b84039a678613bf6e32a34591b382c6"
-  end
 
   def install
     system "./configure", "--prefix=#{prefix}",

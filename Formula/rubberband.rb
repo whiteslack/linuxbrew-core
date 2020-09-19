@@ -1,11 +1,9 @@
 class Rubberband < Formula
   desc "Audio time stretcher tool and library"
   homepage "https://breakfastquay.com/rubberband/"
-  url "https://breakfastquay.com/files/releases/rubberband-1.8.2.tar.bz2"
-  sha256 "86bed06b7115b64441d32ae53634fcc0539a50b9b648ef87443f936782f6c3ca"
+  url "https://breakfastquay.com/files/releases/rubberband-1.9.0.tar.bz2"
+  sha256 "4f5b9509364ea876b4052fc390c079a3ad4ab63a2683aad09662fb905c2dc026"
   license "GPL-2.0"
-  revision OS.mac? ? 1 : 4
-  head "https://bitbucket.org/breakfastquay/rubberband/", using: :hg
   head "https://hg.sr.ht/~breakfastquay/rubberband", using: :hg
 
   livecheck do
@@ -15,11 +13,9 @@ class Rubberband < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "dcfa2c05cc251d0c5e810040646fb5f9511fda2d1cad20ccadce96544a1ad7e3" => :catalina
-    sha256 "629837bd83bfcef1003bfb29759d15c29bb7c22740a70f6143bd4c16a5bd3362" => :mojave
-    sha256 "f592baa6b5e82c542a92df87789a51b6603e7e8070dfa7f910349a388135b6da" => :high_sierra
-    sha256 "73bda45a93508aed54df6986563f97cc8974fb0ea9e17cae9c2385b57cc5f3a5" => :x86_64_linux
+    sha256 "4598d98fb8994cd6545f5858a38beae10b43968317b53ec0916542d95355f27c" => :catalina
+    sha256 "487182397781621580ecb07f51d301d84b46c6f2f8458880cb8213044f5181cb" => :mojave
+    sha256 "15082ba72d1f88258739752b4f4a8094d5f931fac1d69aa64d8bf25ecb21648d" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

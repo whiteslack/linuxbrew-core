@@ -3,8 +3,8 @@ class Kamel < Formula
   homepage "https://camel.apache.org/"
 
   url "https://github.com/apache/camel-k.git",
-    tag:      "v1.1.0",
-    revision: "29d581a49eacb4d191ff665a559fdd569c6deef7"
+    tag:      "v1.1.1",
+    revision: "b7b785db55faf33a95e4c3c337e248192510ce85"
   license "Apache-2.0"
   head "https://github.com/apache/camel-k.git"
 
@@ -15,10 +15,9 @@ class Kamel < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6569f6598d32c5a0de2174002877cc4c6793bfe63d900195521c6e6239bc51a3" => :catalina
-    sha256 "603c0366a0d29dd0f82735431b74d8c70337a5b295c0afa5aac3b9f3fb7d28c1" => :mojave
-    sha256 "a2540b8fc6d4ff734590af511c84119c5fb9f7dbd4392c193c46ce11561a25bd" => :high_sierra
-    sha256 "5f752a11528b982ce852405b78c4bf73d36c0f94ecac586d89e0b73cd5e33f88" => :x86_64_linux
+    sha256 "ecef41c7225c3d90ef54dd2b7dc4f4a51607e0e9771e14c4d95020b9f3abcc6a" => :catalina
+    sha256 "b044165c34a80de28b62ecefa1a83733322ea38ad2c17372ac68d611937eca37" => :mojave
+    sha256 "16ab114d09da2bf9154527ea5acae32ddfb157ae5831278d1310516f3b70287c" => :high_sierra
   end
 
   depends_on "go" => :build
