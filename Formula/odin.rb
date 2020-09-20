@@ -1,10 +1,9 @@
 class Odin < Formula
-  desc "The Odin Programming Language"
+  desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
-  url "https://github.com/odin-lang/Odin/archive/v0.12.0.tar.gz"
-  sha256 "8356124c8cc7e08ac39872e5bb10593a412e67f81df621124097facd9b2b26cc"
+  url "https://github.com/odin-lang/Odin/archive/v0.13.0.tar.gz"
+  sha256 "ae88c4dcbb8fdf37f51abc701d94fb4b2a8270f65be71063e0f85a321d54cdf0"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/odin-lang/Odin.git"
 
   livecheck do
@@ -14,9 +13,9 @@ class Odin < Formula
 
   bottle do
     cellar :any
-    sha256 "fa220553a803117a6da6b751710098c3bab7149548328d34fcc0e20d46a208ef" => :catalina
-    sha256 "55a364b6cf75db9dbb38a0f0bba169e26ccc291d9c1e7e61db943e1c43c3aa7a" => :mojave
-    sha256 "5db7f315b542a5c648a72a682a8f026dbfd37c9ebacf81cdb29cde972b023cbc" => :high_sierra
+    sha256 "772509e10bf0a73af78b51e4f85309eb6d25e0078d1f2fa02bfa2d252e0055ca" => :catalina
+    sha256 "8e86193674aeecfc0b103cd067c39f2ac3df41d72f3875676fc21e397c9748b1" => :mojave
+    sha256 "87d21cd84cc602f553a8b9533ad2fafcf8fb8d987bb5f8a25d27239a3d2d177d" => :high_sierra
   end
 
   depends_on "llvm"

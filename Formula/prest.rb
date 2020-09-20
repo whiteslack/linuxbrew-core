@@ -1,18 +1,16 @@
 class Prest < Formula
   desc "Serve a RESTful API from any PostgreSQL database"
   homepage "https://github.com/prest/prest"
-  url "https://github.com/prest/prest/archive/v1.0.3.tar.gz"
-  sha256 "3035e59926967f8f7e094b08c1287681a1e7e53b80c5fd6566a6a9fc9d90115e"
+  url "https://github.com/prest/prest/archive/v1.0.4.tar.gz"
+  sha256 "c1025c368c6276530416ef4027150439fe90dbe094199875605b6f9ecb5423c3"
   license "MIT"
-  revision 1
   head "https://github.com/prest/prest.git"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "ac343c6c877e71e720c54aa587b9ecaa523c2f519c27d38f3fcd0ec4ce27d610" => :catalina
-    sha256 "cefb4b1a4f50e5ed2b5a97cf1abded81fc7d814a75af4542cfd230af941bb898" => :mojave
-    sha256 "3bad786cdca119026b897588f5db24a6ddbe550f33ed58b7ff16c95400dfc25c" => :high_sierra
+    sha256 "f2e4cc803bb566b6cb6830a53f352be4c4e8c9c78dbb04f2435701dab0f99573" => :catalina
+    sha256 "14ef45283f8929b42c5e59bb839b61095cc3e4a24b2e84abfdc79f728aa6c4bb" => :mojave
+    sha256 "a13ddc33929a7f5c1b2951c199a36c2b87704e4b5b4fa0ddb1bfb45cdf3f9060" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -25,10 +23,9 @@ class Prest < Formula
   end
 
   test do
-    output_regex = /Version (?<migration>\d+) migration files created in .*:/
-    output = shell_output("prest migrate create test --path .")
-    migration = output.match(output_regex)[:migration]
-    assert_predicate testpath/"#{migration}_test.down.sql", :exist?
-    assert_predicate testpath/"#{migration}_test.up.sql", :exist?
+    output = shell_output("prest migrate up --path .", 255)
+    assert_match "connect: connection refused", output
+
+    assert_match version.to_s, shell_output("prest version")
   end
 end
