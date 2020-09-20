@@ -1,16 +1,15 @@
 class Ultralist < Formula
   desc "Simple GTD-style task management for the command-line"
   homepage "https://ultralist.io"
-  url "https://github.com/ultralist/ultralist/archive/1.2.tar.gz"
-  sha256 "6681e614f9accb9e49ff3bf5a868596e1a84a4f73ca3f33de5ce6a56e3165805"
+  url "https://github.com/ultralist/ultralist/archive/1.5.tar.gz"
+  sha256 "36046c764f0745c35baee6ff9e2f56e6daaade6b55eae88aad7be43a2f60f311"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4f61abba8aa23b0f0f19f0c83f587e1272cf460d64853f37ffacb88781456362" => :catalina
-    sha256 "bfaa61ef4c225b7b6f753aa7c25c2d4cda54c7e79aaad43cacf5e1b930951f88" => :mojave
-    sha256 "f86a874044ccbd3e33f4ee60786501f09c48c46f7c45a2e91ca22497b3dc981a" => :high_sierra
-    sha256 "6f6c6baede146cb14cfc5f7b4105e718fef772d082670e6a753c4f364f281dfb" => :x86_64_linux
+    sha256 "18c8a9e0c9b75a31d797f89953c064ab7853285d424bea88bc0df46454c080df" => :catalina
+    sha256 "8629115e0ea5a89613892e30c7cabfea7d68dd7a93d0f08360640cb72e91ef10" => :mojave
+    sha256 "780af9c7c8acd4957d12c666a430e4a47e77ed216567c339579b31098aec113d" => :high_sierra
   end
 
   depends_on "go" => :build

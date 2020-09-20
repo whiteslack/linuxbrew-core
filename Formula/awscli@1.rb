@@ -4,8 +4,8 @@ class AwscliAT1 < Formula
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
   # awscli should only be updated every 10 releases on multiples of 10
-  url "https://github.com/aws/aws-cli/archive/1.18.130.tar.gz"
-  sha256 "d020602ced85b24869aec5610e40b60f3ac8e541724483342751954147735c81"
+  url "https://github.com/aws/aws-cli/archive/1.18.140.tar.gz"
+  sha256 "3d9d93cee5f8de371c3476789030095088663cdf09e05d6f87fff067e85b86d6"
   license "Apache-2.0"
 
   livecheck do
@@ -15,10 +15,9 @@ class AwscliAT1 < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c95f8b01d144d6650c3ab6339748fa02219b5276825c4dc75ee25fec4bf2ac55" => :catalina
-    sha256 "4da32269d90a20a9b65b21508e014fc56963efa466b21ed555fbaa46e1386892" => :mojave
-    sha256 "a64fd6f4752090b603412e43c6a56b723a355e768760ce1eab5b5cf038641b39" => :high_sierra
-    sha256 "529203fcc7cad4cdb2acf2e88580124c97edc79e7b5841a680617413656e7e42" => :x86_64_linux
+    sha256 "85a98d4a8ec16107cc2459b95827bf397f568e8fd7ea203c8b18d72fd4aade7a" => :catalina
+    sha256 "279c60b2399bf67f4f2b091d80c9625cc233fc08e20df59273ca5767cc0b0f45" => :mojave
+    sha256 "8441193b4e13f6ae76d14815fdf6c6504fa3365eaaa74dd4dab1a19fcb0ecf01" => :high_sierra
   end
 
   keg_only :versioned_formula

@@ -5,8 +5,9 @@ class Kpcli < Formula
 
   desc "Command-line interface to KeePass database files"
   homepage "https://kpcli.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.4.pl"
-  sha256 "403e5d73cc4685722a5e4207c5fcbdad8e30475434cfba151c095e13a2658668"
+  url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.5.pl"
+  sha256 "bbe4fed616de87341100c903fad486dcf2640e4de4197c4e60bb41821d4a70c4"
+  license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
     url :stable
@@ -15,10 +16,9 @@ class Kpcli < Formula
 
   bottle do
     cellar :any
-    sha256 "efd9da40a0733bc1da58ab3ba12149743cc4bf034b1e91bb4cc00d09e8532552" => :catalina
-    sha256 "416401e644f180dc05d3da14486c1c281e860752d5e525888bfaa2ea34d83e5e" => :mojave
-    sha256 "40f4fe9bf01d09f432bb55c4d1f4c52d3a8466e2b62b0793b65c20ef4bd3ee4d" => :high_sierra
-    sha256 "5974648cdc28f1d2e8e0ad3b8eed3f1adcf410aef59856a17cd64f85df6c9b06" => :x86_64_linux
+    sha256 "55c17bfbb4818b397244fadf5a3f56ff6dc9ac8797e1c7bbdfb07cd0d1c9ac2f" => :catalina
+    sha256 "9b8ae59c165b6aa8c1d1a7850a9709913862a328e01bb6830f442216b166b8ab" => :mojave
+    sha256 "47620f4793a8bac1c4c5b21c66587e9750182aba9b0463d2a821bdf2b2c70211" => :high_sierra
   end
 
   depends_on "readline"
@@ -56,8 +56,8 @@ class Kpcli < Formula
   end
 
   resource "Clipboard" do
-    url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Clipboard-0.22.tar.gz"
-    sha256 "9fdb4dfc2e9bc2f3990b5b71649094dfe83aa12172c5a1809cf7e8b3be295ca7"
+    url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Clipboard-0.23.tar.gz"
+    sha256 "0ec64d9c443bb7f713dce841a00817be50758d43ad07154541b5be7053779264"
   end
 
   resource "Mac::Pasteboard" do

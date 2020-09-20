@@ -1,8 +1,8 @@
 class Tvnamer < Formula
   desc "Automatic TV episode file renamer that uses data from thetvdb.com"
   homepage "https://github.com/dbr/tvnamer"
-  url "https://files.pythonhosted.org/packages/46/3e/9cb20c0231b10cd87964e0efe03ce964f91ebe3ddca27d5953d8a702cf55/tvnamer-3.0.tar.gz"
-  sha256 "00ae7354dec9cca8e652139eba9cf6945371321cdf05ee903a6a59f6d31cef6b"
+  url "https://files.pythonhosted.org/packages/2a/93/72434da887a3f70f88593d4df4c1a596d95dda0da72c5198d321ca53b5a2/tvnamer-3.0.1.tar.gz"
+  sha256 "5512cebb1e49103a1e4ea9629398092b4bbabef35a91007ae0dbed961ebe17dd"
   license "Unlicense"
   head "https://github.com/dbr/tvnamer.git"
 
@@ -12,10 +12,9 @@ class Tvnamer < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ba762f3b04d2dfc8d534741e30b13eeeb4ac0b74740fb3be24b8aa9ec23e1ac5" => :catalina
-    sha256 "75d1c2f29687b8d7073b86a80c31ceed3d64a362c93b15b97cc8b0a48c7592b5" => :mojave
-    sha256 "ba762f3b04d2dfc8d534741e30b13eeeb4ac0b74740fb3be24b8aa9ec23e1ac5" => :high_sierra
-    sha256 "094f234834dd754e7bce7559f3c4ef99f353b991303926451a9821851dbaa555" => :x86_64_linux
+    sha256 "cc547dbaf67558d52fb0b035465e88addae5126994d5ab04cfbbe981bbfe809c" => :catalina
+    sha256 "171dfd4c9feb3cce17919243ca66a0f981530290e561d9356d8f8902e8e52204" => :mojave
+    sha256 "9debf12baae8344d58357f8be1a9e788e221ef3ecbfb95956d069456bb70bb1d" => :high_sierra
   end
 
   depends_on "python@3.8"

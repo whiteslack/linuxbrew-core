@@ -1,15 +1,15 @@
 class Libspng < Formula
   desc "C library for reading and writing PNG format files"
   homepage "https://libspng.org/"
-  url "https://github.com/randy408/libspng/archive/v0.6.0.tar.gz"
-  sha256 "81fea8d8a2e0c8aa51769605ad0e49a682e88697c6b5b60105f5c3806efaa3a3"
+  url "https://github.com/randy408/libspng/archive/v0.6.1.tar.gz"
+  sha256 "336856bea0216fe0ddc6cc584be5823cfd3a142e9d90d8e1635d2d2a5241f584"
   license "BSD-2-Clause"
 
   bottle do
     cellar :any
-    sha256 "ec4ab7110d00fffa808a99bdbbc3a2c6715de32b37f26c2815f1b5cfd2811f94" => :catalina
-    sha256 "f4f385dc73f061ffa6c90e1a6083c0c855ec3c6c91f844e241e52ce9cc016669" => :mojave
-    sha256 "825c72b4148b1d39003ba95a0b10bf7cf020c6b4144858eaaa97ce6dbdd6bace" => :high_sierra
+    sha256 "2ced17b347e593ca2de3533417ad5a898ac2e87c29e08a434657c236fd2111c2" => :catalina
+    sha256 "a600e76cd093e6f06e9f1ae621efc31614c086f03df0087842c0f70fa583623a" => :mojave
+    sha256 "5b49cd6443938d9d4423fa0b941c85da37f22f48a14c11c03c890588f14e40a3" => :high_sierra
   end
 
   depends_on "meson" => :build
@@ -30,10 +30,7 @@ class Libspng < Formula
     cp pkgshare/"example.c", testpath/"example.c"
     system ENV.cc, "example.c", "-L#{lib}", "-I#{include}", "-lspng", "-o", "example"
 
-    # example.c returns 73 ("no text chunk") for the test.png fixture
-    # this will probably be changed in v0.7,
-    # see: https://github.com/randy408/libspng/issues/109
-    output = shell_output("./example #{fixture}", 73)
+    output = shell_output("./example #{fixture}")
     assert_match "width: 8\nheight: 8\nbit depth: 1\ncolor type: 3 - indexed color\n" \
                  "compression method: 0\nfilter method: 0\ninterlace method: 0", output
   end
