@@ -15,6 +15,7 @@ class Libsoxr < Formula
     sha256 "6fc775411464312fe93dff80cf50497d7b412b36c8115eaa91fe65c321da755e" => :catalina
     sha256 "ddd19b9146079827cd9065afe6853961e8b0d0857f5a06888efc500a25f087e6" => :mojave
     sha256 "808ad13bdf13729d2f7e881c34b267bcd6598838d4f47d0dcf5ca5e38ba5db9c" => :high_sierra
+    sha256 "ffce39b36fea3a2196592132eae0845eb6754080709833ec6caadc4d93f0935a" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
