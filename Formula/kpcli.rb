@@ -19,6 +19,7 @@ class Kpcli < Formula
     sha256 "55c17bfbb4818b397244fadf5a3f56ff6dc9ac8797e1c7bbdfb07cd0d1c9ac2f" => :catalina
     sha256 "9b8ae59c165b6aa8c1d1a7850a9709913862a328e01bb6830f442216b166b8ab" => :mojave
     sha256 "47620f4793a8bac1c4c5b21c66587e9750182aba9b0463d2a821bdf2b2c70211" => :high_sierra
+    sha256 "c23a70f9ef1b71cb13fb45a6afed23821ddc475f0852f2fe7c62fc58497d43cd" => :x86_64_linux
   end
 
   depends_on "readline"
