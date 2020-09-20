@@ -71,7 +71,7 @@ class LinuxKernelRequirement < Requirement
 end
 
 class Glibc < Formula
-  desc "The GNU C Library"
+  desc "GNU C Library"
   homepage "https://www.gnu.org/software/libc/"
   url "https://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.gz"
   sha256 "2bd08abb24811cda62e17e61e9972f091f02a697df550e2e44ddcfb2255269d2"
