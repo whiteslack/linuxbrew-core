@@ -11,6 +11,7 @@ class Libstrophe < Formula
     sha256 "a9d230d388d880b06d5e17d14e0943499d7b2eaccb33cd7921e63f16891f1d3b" => :catalina
     sha256 "e29fab2eb0fda7024475d2ecd57476b33eee51c4123041b9e447b0a1f462fc34" => :mojave
     sha256 "a1739c44c90b762a2e94e7e97a48ba5d3e6c99bfd1d1fe3aacb4f0aee571a919" => :high_sierra
+    sha256 "797acb630269faaf74784085a7b3743d93e12e9ac6dbbe0ed8660613953f7b2c" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
