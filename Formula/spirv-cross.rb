@@ -11,6 +11,7 @@ class SpirvCross < Formula
     sha256 "6c7ebf3dcc65a7392247b7643f6f36461720ef8399c52bd05aaf79ed53af2123" => :catalina
     sha256 "4da93b781991248cd8af56b41b84dc09a18f587a41e5a52b1f65f75a0be78afb" => :mojave
     sha256 "971cd943944647d47c1a6def86faed5f011236915d4085a7b8b5317610f32be4" => :high_sierra
+    sha256 "af75a1b66b8e73a31b28559ecaec1d0686017c1b92e7a80de77459084aa822c6" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
