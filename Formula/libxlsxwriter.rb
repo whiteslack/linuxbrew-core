@@ -11,6 +11,7 @@ class Libxlsxwriter < Formula
     sha256 "193e7a0b38a21425d0c5a9cf72a13f9c6baafe09072056eb521ae46ffcff43ab" => :catalina
     sha256 "1674a7100e0ce0823b907ca07b3c5834dc9ff9f2b57b6da5cc71d5b09a07dd51" => :mojave
     sha256 "6ed35324d633aef69f2493c7bede7729cadadcce9c60149ee28f1326a1da8bd7" => :high_sierra
+    sha256 "096fa56dd8f373f52d5d0a0341f8c9adcb2908b4dbc6574862fcad905b629e3c" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
