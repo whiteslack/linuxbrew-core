@@ -16,6 +16,7 @@ class Jhipster < Formula
     sha256 "9ffb08f0b190da3ea8e7ca1855f45cc58eac230ef29957b9c6c4f108a1646be5" => :catalina
     sha256 "2d6eb5f9d15afe63dfdbea05ed2f9ae544718ef46ad22a6a394d42253948112e" => :mojave
     sha256 "71f172f6214a7b0218137bd85575dcaff1dfeb5ef39da013a7523889c71a4541" => :high_sierra
+    sha256 "dcbcc05cf150e6fb9cbc4b44e952fa82ee93162d447622d90eb68d46fd651f82" => :x86_64_linux
   end
 
   depends_on "node"
