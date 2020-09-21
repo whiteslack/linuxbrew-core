@@ -11,6 +11,7 @@ class Janet < Formula
     sha256 "1181c2738d9c4479f7d46f5d9518955369b19fad9814eabb3b1481ee0d2055a0" => :catalina
     sha256 "594711312d351ef2f2c97c9fa1d1212e23f20cb36b4f0b685ab2ba35a9a6fb83" => :mojave
     sha256 "53f6d8aba6d1b8a6804c497a34370172b4801cfa1bb76c403a3a9a5894e820cb" => :high_sierra
+    sha256 "3e99843d0e72cc99202bacac93cb08a5b4ca0864004edaf835847fe5be8a676b" => :x86_64_linux
   end
 
   depends_on "meson" => :build
