@@ -1,9 +1,9 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
   homepage "https://qmmp.ylsoftware.com/"
-  url "https://downloads.sourceforge.net/project/qmmp-dev/qmmp/qmmp-1.4.1.tar.bz2"
-  sha256 "2ad5e5ce790166a162b942fe64b734559c515ba06c1de5bef46b9713b3c8285c"
-  license "GPL-2.0"
+  url "https://downloads.sourceforge.net/project/qmmp-dev/qmmp/qmmp-1.4.2.tar.bz2"
+  sha256 "cac9518c1fa7abd4558efb78cb8a8a637db065c66420e45f1b2f33902ce07fcf"
+  license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-1.4/"
 
   livecheck do
@@ -12,9 +12,9 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 "6ccc06e859af7def4f7f3a1ebcdfb845a489b2877cd5ea689cc1f2cb56bf6d9b" => :catalina
-    sha256 "95257781b7f40d183b3df114d04bfb3a764c5c88c73d09527c749b56fad8d5cc" => :mojave
-    sha256 "00c93a0622ab4bd93553e16fc325563a5df3b0317163c3d939bc507e9dbeab48" => :high_sierra
+    sha256 "035e511cd658ed37d0ee1313b579689d2fee64dced1b76320337e3933efe86e5" => :catalina
+    sha256 "07cb54096a3ffd6c2d73485f5d7a49802f5c4d7f5c6546d9be50e3a36e0adaeb" => :mojave
+    sha256 "2bc4a8d7adc72acd0d25123e8c0b40130abe428c10c029cb0853afacca9e1209" => :high_sierra
   end
 
   depends_on "cmake" => :build

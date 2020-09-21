@@ -1,21 +1,19 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
-  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs952/ghostpdl-9.52.tar.gz"
-  sha256 "8f6e48325c106ae033bbae3e55e6c0b9ee5c6b57e54f7cd24fb80a716a93b06a"
-  revision 1 unless OS.mac?
-  license "AGPL-3.0"
+  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9531/ghostpdl-9.53.1.tar.gz"
+  sha256 "9ffb112a316a6834b35d10fe1bf530da49575e53a856483617d0034c6a2db140"
+  license "AGPL-3.0-or-later"
 
   livecheck do
     url :head
-    regex(/^ghostscript[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(/^ghostpdl[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 "8cd0efa1e5525f849be3ee1e50e1635b99667cb4d1eb6c3002a45378346882f4" => :catalina
-    sha256 "8906a4dbf2513963a4710f351e3426622c259bd888c760e4c08a9436860b4014" => :mojave
-    sha256 "cd5e55d0429d7e88ba2d580e79934c157d5bd2981d71a7f40db4573abe79af67" => :high_sierra
-    sha256 "f4d0834796b16e67a5565aa0ac5c7a682f2f8e6e3789f3da15479ceb8574a633" => :x86_64_linux
+    sha256 "c3945ee2723abad99b56f3ecc6aa8972384d8fb05bac1fb15c7a57b540a36f22" => :catalina
+    sha256 "8fecbb1ce9e3eae04147f05ea6c0105555e563566eab47167ca11c34a64458d2" => :mojave
+    sha256 "670ce3aada1fdb8b2670aeebc99dec0b0150843f4d2ab85aececc1772962a3fe" => :high_sierra
   end
 
   head do
@@ -54,7 +52,6 @@ class Ghostscript < Formula
       --disable-gtk
       --disable-fontconfig
       --without-libidn
-      --with-system-libtiff
       --without-x
     ]
 

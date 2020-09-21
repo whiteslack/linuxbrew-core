@@ -1,17 +1,15 @@
 class Spdlog < Formula
   desc "Super fast C++ logging library"
   homepage "https://github.com/gabime/spdlog"
-  url "https://github.com/gabime/spdlog/archive/v1.7.0.tar.gz"
-  sha256 "f0114a4d3c88be9e696762f37a7c379619443ce9d668546c61b21d41affe5b62"
+  url "https://github.com/gabime/spdlog/archive/v1.8.0.tar.gz"
+  sha256 "1e68e9b40cf63bb022a4b18cdc1c9d88eb5d97e4fd64fa981950a9cacf57a4bf"
   license "MIT"
-  revision 1
   head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
-    sha256 "04276c895db91e7bf90bae4aef73a39b7a8b018bf3c2a34dda50609723b96b47" => :catalina
-    sha256 "4c40c947691b56bbbc586b0a15d511f351d8980b8534229047558a801ddf33c9" => :mojave
-    sha256 "df958e08b8bfed9c6e4b9ce3e8148706e414634d27ca0ec6f50bda60caccd1f8" => :high_sierra
-    sha256 "252f542cd3ff5749d257725148bae1de1a18327de02b331a6ae836ac3dd7c3b7" => :x86_64_linux
+    sha256 "18e5e0d8170f15973dbf0135bed18b16e615e38c517da40cebc20f1fe2acbf5e" => :catalina
+    sha256 "a5c2bd875543f3fe3a5da3b80b16b56273fc99d0ff2bc31d98a617b42d740fe6" => :mojave
+    sha256 "0a5ba4561cabb72ff56038df3b6ee95c37d5c68f65d2c7acd5e5c540aa6e3713" => :high_sierra
   end
 
   depends_on "cmake" => :build
