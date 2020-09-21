@@ -11,6 +11,7 @@ class Micropython < Formula
     sha256 "a1d3fffd4edf9863ab61e1db6cf32919d9f8a862e3a99a26ec0585342d894090" => :catalina
     sha256 "3cec76e6155aea17f19d6861fbfd84e20e0f76aacd0ee8d4bcd04096f8b8c9fc" => :mojave
     sha256 "c1735b727c4f2fae37d233dd284e99d86b44f5dbfd75e0938a739b5ae1713d72" => :high_sierra
+    sha256 "6ab823af81ea69e8480c39d27253c4002b988b2382977b84a98ba5af21a4aad1" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
