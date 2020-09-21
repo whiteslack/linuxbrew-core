@@ -1,7 +1,8 @@
 class Sdl < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick and graphics"
   homepage "https://www.libsdl.org/"
-  revision 1
+  license "LGPL-2.1-only"
+  revision 2
 
   stable do
     url "https://www.libsdl.org/release/SDL-1.2.15.tar.gz"
@@ -26,6 +27,14 @@ class Sdl < Formula
         sha256 "954875a277d9246bcc444b4e067e75c29b7d3f3d2ace5318a6aab7d7a502f740"
       end
     end
+
+    # Fix display issues on 10.14+, https://bugzilla.libsdl.org/show_bug.cgi?id=4788
+    if MacOS.version >= :mojave
+      patch do
+        url "https://bugzilla-attachments.libsdl.org/attachment.cgi?id=4288"
+        sha256 "5a89ddce5deaf72348792d33e12b5f66d0dab4f9747718bb5021d3067bdab283"
+      end
+    end
   end
 
   livecheck do
@@ -35,11 +44,9 @@ class Sdl < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "98b91b216ee0a29425796e5ece1062b4d57535dd83c68d8ffd23dafd9ca102d3" => :catalina
-    sha256 "b19b93f980a305d7e18b3f3d59b0679e4f91c11dd51334725cc9244a74a2e177" => :mojave
-    sha256 "2580e605dc4d53ea5d321c8cf8451a16630199a01bdcb7c7e0b8f39bfd6ed068" => :high_sierra
-    sha256 "e951c13cf3a33cd50d77d5b9152d6ddaecbdc04f6e6a9537a926ed424971c8dd" => :x86_64_linux
+    sha256 "d3d792b866320f064fa3c399a8f89a905ef72a73237d73b8f2c0125db2cbf74a" => :catalina
+    sha256 "fc4018807cc7dcb4e3682a2e301b85e932cebd1ffff38117a466f46055a513d8" => :mojave
+    sha256 "7284c872248c61d8016c7e200a218bd9533f346b7b5c6f9c818eeb82c60841c3" => :high_sierra
   end
 
   head do

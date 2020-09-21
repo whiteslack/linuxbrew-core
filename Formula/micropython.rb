@@ -2,17 +2,15 @@ class Micropython < Formula
   desc "Python implementation for microcontrollers and constrained systems"
   homepage "https://www.micropython.org/"
   url "https://github.com/micropython/micropython.git",
-      tag:      "v1.12",
-      revision: "1f371947309c5ea6023b6d9065415697cbc75578"
+      tag:      "v1.13",
+      revision: "b0932fcf2e2f9a81abf7737ed4b2573bd9ad4a49"
   license "MIT"
-  revision 2
 
   bottle do
     cellar :any
-    sha256 "af98b434dd38d24a28541b3bdc168a689b914b425aa80a6bf384c18862ed3737" => :catalina
-    sha256 "dff6248820013f3f31408252de971418ac26f6eacd20791c6eaeb9527ea552f2" => :mojave
-    sha256 "19800fe474da81062c005732c1dd6c3e66e6a2a8e04f38a4a69ce8513808895c" => :high_sierra
-    sha256 "213b5ab20cf9c60d76dafb69bdabd698066712c06ce3b3b91e37de89c7483f2a" => :x86_64_linux
+    sha256 "a1d3fffd4edf9863ab61e1db6cf32919d9f8a862e3a99a26ec0585342d894090" => :catalina
+    sha256 "3cec76e6155aea17f19d6861fbfd84e20e0f76aacd0ee8d4bcd04096f8b8c9fc" => :mojave
+    sha256 "c1735b727c4f2fae37d233dd284e99d86b44f5dbfd75e0938a739b5ae1713d72" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
