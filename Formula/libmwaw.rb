@@ -14,6 +14,7 @@ class Libmwaw < Formula
     sha256 "807cff54beea1a3e68897da872ba18fcff59a6f617d46080beb95c769c97db2f" => :catalina
     sha256 "2c2d73c68fd3b5f0b3b1c028fda9900d9c75589e498b16bf275eafc3f414c8ab" => :mojave
     sha256 "7d29c815ecf0f72bc8623a1b13fc5d8e6786b54dd27609490ed75b720cdd5d90" => :high_sierra
+    sha256 "dcc3fc4f7545c3dc5ebce3531b7152f9cf16218a4652e50352c478722a51104c" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
