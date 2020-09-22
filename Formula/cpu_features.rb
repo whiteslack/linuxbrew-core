@@ -10,6 +10,7 @@ class CpuFeatures < Formula
     sha256 "d59ba9266e5071e5539fa644c3c3480f5fc4b1b1a2d535d8e82301c6de9a9e87" => :catalina
     sha256 "9a8b3073f6fee8c19d073bd828aa8e7289f6360bc077551a1401ca92a79ebb39" => :mojave
     sha256 "839ea1c38972d31f18e5a372972c6977398ffc6ab9872c0ed347a33f5a3e9c9c" => :high_sierra
+    sha256 "8e191352d09211c4f11f60965a9ae4eda77d75c46ca95446a6eafbb082f9bb6b" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
