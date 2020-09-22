@@ -2,16 +2,15 @@ class RaxmlNg < Formula
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/"
   url "https://github.com/amkozlov/raxml-ng.git",
-    tag:      "1.0.0",
-    revision: "308ff5cc88d0785fce1308d5953d7b6a644e8cf8"
+    tag:      "1.0.1",
+    revision: "abdd9caff709a73928a8fe06f7934cd442b7a50e"
   license "AGPL-3.0-or-later"
 
   bottle do
     cellar :any
-    sha256 "0902dc74193390a5769d57e566c686a0dfbe0336d44273be76cc38103551b5aa" => :catalina
-    sha256 "08286840feb5b0ef4a8f13717df0d62980e10fcf07c102ffd2722433087ed5b9" => :mojave
-    sha256 "358ce270c0607ad2985a02ab4a26a0d87439bf134611e0e6ed82251a50bef1d8" => :high_sierra
-    sha256 "8f3267931265c93da4ca1e582aa08196b7400771f81ba222c563f6e69d087433" => :x86_64_linux
+    sha256 "4d7397bf30c609cb53ca946d398d14fadb6e7ade0bfd4b427fb0fd0a6385df95" => :catalina
+    sha256 "2851487308922e7bad8c5c9364cdd81318d2982cd76458b55eeeee8c50e5f693" => :mojave
+    sha256 "0da342f7d906f920117cecdacd93368fcedc88ca6e8b362ebc34697e8d489f2a" => :high_sierra
   end
 
   depends_on "autoconf" => :build

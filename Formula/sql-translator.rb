@@ -5,17 +5,15 @@ class SqlTranslator < Formula
 
   desc "Manipulate structured data definitions (SQL and more)"
   homepage "https://github.com/dbsrgits/sql-translator/"
-  url "https://cpan.metacpan.org/authors/id/M/MS/MSTROUT/SQL-Translator-1.61.tar.gz"
-  sha256 "840e3c77cd48b47e1343c79ae8ef4fca46d036356d143d33528900740416dfe8"
-  # license ["Artistic-1.0", "GPL-1.0"] - pending https://github.com/Homebrew/brew/pull/7953
-  license "Artistic-1.0"
+  url "https://cpan.metacpan.org/authors/id/I/IL/ILMARI/SQL-Translator-1.62.tar.gz"
+  sha256 "0acd4ff9ac3a2f8d5d67199aac02cdc127e03888e479c51c7bbdc21b85c1ce24"
+  license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cf06c23d417650d888cf49edd10ae3697e92cb7c0dc33ef07c530d33493155aa" => :catalina
-    sha256 "d581943f0e91e5623b1ab053e212b6351513c81e04a77bc32b9626929f4e4667" => :mojave
-    sha256 "185ef1f4c9feb68f4b8f65a9cda078cdc8a9600163ba67caf60f91d3dc62ce76" => :high_sierra
-    sha256 "9d57ce2f3b593d5f147ab38eb9cecde4dac9e2650162358362d021c4bdc44395" => :x86_64_linux
+    sha256 "3d141958909ac51a8ba45a075db30100a447230d2a6e1bf08e44a8a677425afd" => :catalina
+    sha256 "9293157476e7ed616067b1c378c811c9e05c5ec17d9c0ad14d1d785428945d80" => :mojave
+    sha256 "d9247d5d149363071ceecea045453779ebb5c0df249e0ef3b679b6c684acb453" => :high_sierra
   end
 
   uses_from_macos "perl"

@@ -3,8 +3,8 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/23/fa/759db833ce1809edbe75f6b686ca89bde371f4b841be8bf8f506b9f613b8/dxpy-0.299.0.tar.gz"
-  sha256 "8ab974e2d7e53e4d791fd98c636cb563f30be2028d932863550a9ba77b650213"
+  url "https://files.pythonhosted.org/packages/e5/05/62a8a89874ef02e7185592dc9cc31b33efb9c5fb9c19948ea9f21dcc654e/dxpy-0.301.1.tar.gz"
+  sha256 "664c9f01dffa49986c2ef791ccba884b0fad38c10ff804be92823bbae205a37f"
   license "Apache-2.0"
 
   livecheck do
@@ -13,10 +13,9 @@ class Dxpy < Formula
 
   bottle do
     cellar :any
-    sha256 "73dcd73805b7d51845d6a39795b6db588cfa7d7780bc84248cab285ad4023804" => :catalina
-    sha256 "36e2c633997c3af4b3c16d0a8f02c232b1c11bb64196919e67ddd975a36cfd34" => :mojave
-    sha256 "d37e8916ebaad2753024a934d707822f23eb1a479d04d3e2fdd88fa368b56c30" => :high_sierra
-    sha256 "d3e2e9891775cef4615b37c3e377f3bb5515e1206a72e322197b8c6c30ec9762" => :x86_64_linux
+    sha256 "7fc7bbcf93b27934c789873e6c6ba7eb3e6378ae08d6d2ebfbd1c152487a4a2d" => :catalina
+    sha256 "94191cdb371dd6c7dadf6e11fc56c1ad788e7a58c2f1f4705e0ce7ba9801dbf3" => :mojave
+    sha256 "20d780a7c4c4c0a44a25a248beb3a0eb4033169af9fb95dbba9e55d8a0082274" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -46,8 +45,8 @@ class Dxpy < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/f7/09/88bbe20b76ca76be052c366fe77aa5e3cd6e5f932766e5597fecdd95b2a8/cffi-1.14.2.tar.gz"
-    sha256 "ae8f34d50af2c2154035984b8b5fc5d9ed63f32fe615646ab435b05b132ca91b"
+    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
+    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
   end
 
   resource "chardet" do

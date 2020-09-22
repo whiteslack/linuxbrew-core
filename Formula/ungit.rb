@@ -3,8 +3,8 @@ require "language/node"
 class Ungit < Formula
   desc "Easiest way to use Git. On any platform. Anywhere"
   homepage "https://github.com/FredrikNoren/ungit"
-  url "https://registry.npmjs.org/ungit/-/ungit-1.5.10.tgz"
-  sha256 "766824a8322b2220a42ad64e9bfae80bba2631de1a5b5ad031bea351f32400c7"
+  url "https://registry.npmjs.org/ungit/-/ungit-1.5.11.tgz"
+  sha256 "1f63fc4e6697396c61a01917474409c9a51c4ee120e4bb8bec2e4a177bc3f1e9"
   license "MIT"
 
   livecheck do
@@ -13,9 +13,9 @@ class Ungit < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "865ac7720ab246ab188b2ee8cde1002b05acff7433084fe1dc1fa82f3c9d9e08" => :catalina
-    sha256 "f19d14b20496b7ac52dc9970030acc945627e06bc3b7bd4902abefae3059191b" => :mojave
-    sha256 "48e2af2499f8e2aa6ee395caa28d69943f9aa41b36827728399fa8a2d76668ab" => :high_sierra
+    sha256 "5a0ae95c279780e34b8ed8d020b16a12bb2e36fa9025752106c73b4152eb95d2" => :catalina
+    sha256 "74b2dcbfa88409a1245d73714a28b3f3dc971ec9ff782a9c2b75fb6a1f6fb5a1" => :mojave
+    sha256 "1497767027bbd94fccd041598063141e721365d0f92fa171542b3936ea0d2fa1" => :high_sierra
   end
 
   depends_on "node"
