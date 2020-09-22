@@ -11,6 +11,7 @@ class Ejdb < Formula
     sha256 "9b9a2d611100d9ad1bcc9bda5453c214221452021b46178627d206329610c308" => :catalina
     sha256 "bb70ea9001c4ffb6a0a8eb49d0553c367e969186bf018d67728233d02c7b73a1" => :mojave
     sha256 "47c26fb1e665d8a8e127db608db2302887a125591284d545c65559001bd74568" => :high_sierra
+    sha256 "6a7a82cd6feb92de1670774e692baa7950a73db27b6ff341d73d21012e3b669d" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
