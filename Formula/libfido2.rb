@@ -11,6 +11,7 @@ class Libfido2 < Formula
     sha256 "3160d880a6c2175777523c26a82629500ea2cea52aabc54d31b868c15ad823c2" => :catalina
     sha256 "ff215921abe2965e55f66bab26eaa5cc6b6d822d0b9068f0a6e85b3e2a071586" => :mojave
     sha256 "018430b7f86e69a66fa01c1400054e5e05b7cbf44a95622909b9c010f313c736" => :high_sierra
+    sha256 "4db50f819cae0f3057caf324e0916568a53fc3aabebdded1c1245f53d9c1caba" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
