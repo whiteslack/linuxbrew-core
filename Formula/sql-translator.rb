@@ -14,6 +14,7 @@ class SqlTranslator < Formula
     sha256 "3d141958909ac51a8ba45a075db30100a447230d2a6e1bf08e44a8a677425afd" => :catalina
     sha256 "9293157476e7ed616067b1c378c811c9e05c5ec17d9c0ad14d1d785428945d80" => :mojave
     sha256 "d9247d5d149363071ceecea045453779ebb5c0df249e0ef3b679b6c684acb453" => :high_sierra
+    sha256 "66f051234096197bfe252c0839d7d54b0167693a3d5dcb4221f2a78f649bfb18" => :x86_64_linux
   end
 
   uses_from_macos "perl"
