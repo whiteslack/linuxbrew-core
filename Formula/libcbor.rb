@@ -10,6 +10,7 @@ class Libcbor < Formula
     sha256 "2860cc48fef2c42aaa50ae25aa90a683e22b81c3905a923e008871679aced20a" => :catalina
     sha256 "105d0a4b3b1a2556603e5e5619a3805183af2041ef06a85784660982c803b97e" => :mojave
     sha256 "5b20e9f902ca71c4f9a1c411c1e65eedb25f9c395d1e3ff691a0d3e7451cd6fd" => :high_sierra
+    sha256 "b2bd46058ea2c83063752b05c9193fcdc27fbe957c0b4727e616cc7d18bc0611" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
