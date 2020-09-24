@@ -1,16 +1,15 @@
 class ChooseGui < Formula
   desc "Fuzzy matcher that uses std{in,out} and a native GUI"
   homepage "https://github.com/chipsenkbeil/choose"
-  url "https://github.com/chipsenkbeil/choose/archive/1.1.tar.gz"
-  sha256 "cd921cfa6a7b7e976716c33dd8c800a06f41e88e12e385cd7b1ad5edc63578f2"
+  url "https://github.com/chipsenkbeil/choose/archive/1.2.1.tar.gz"
+  sha256 "cab6083be6429e9c67bd0026aedf8bd76675a2dea045d235a973fb61b106aeaf"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "397e6aaafb87524e0baa3f52376814a3d5e5dcf87e909719116742b57a513e4b" => :catalina
-    sha256 "b1f2b4a734d1cb3eca56eddac1a0a0c89a1bb1a57f4b3412843e971fd24a01ad" => :mojave
-    sha256 "7b5031da703f0297a387fc3f8220e28070b120c91ae4989327164955eedc56d6" => :high_sierra
+    sha256 "8df952db2e54267c80dadb67f0da6a249fb0e3d58c92e1d7ac9e791ab8157f76" => :catalina
+    sha256 "0f045585cc3cfb9308e79156e9fbdcea273f7a6ec14da690d3000b445cf82689" => :mojave
+    sha256 "327a21c741b66cc4484dfba8dcdf3cdd1c4d6f30b8f9e15cd4dbd59b87501e66" => :high_sierra
   end
 
   depends_on xcode: :build if OS.mac?
@@ -19,7 +18,8 @@ class ChooseGui < Formula
   conflicts_with "choose-rust", because: "both install a `choose` binary"
 
   def install
-    xcodebuild "SDKROOT=", "SYMROOT=build"
+    xcodebuild "SDKROOT=", "SYMROOT=build", "clean"
+    xcodebuild "SDKROOT=", "SYMROOT=build", "-configuration", "Release", "build"
     bin.install "build/Release/choose"
   end
 

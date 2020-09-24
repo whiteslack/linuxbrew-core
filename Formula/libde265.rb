@@ -1,16 +1,15 @@
 class Libde265 < Formula
   desc "Open h.265 video codec implementation"
   homepage "https://github.com/strukturag/libde265"
-  url "https://github.com/strukturag/libde265/releases/download/v1.0.6/libde265-1.0.6.tar.gz"
-  sha256 "e2a34ca3934a826d0893e966ee93bc2d207f505253be94ad38fb40ca98cceb5f"
+  url "https://github.com/strukturag/libde265/releases/download/v1.0.7/libde265-1.0.7.tar.gz"
+  sha256 "eac6b56fcda95b0fe0123849c96c8759d832ec9baded2c9c0a5b5faeffb59005"
   license "LGPL-3.0-or-later"
 
   bottle do
     cellar :any
-    sha256 "119771a3c4b3da418886e2142d27d93191e37ecdebb46d07060f8f7b85fbb1c4" => :catalina
-    sha256 "97450df80726024f5e1f099a4df07555caeead0a89b225ccf895aca0f033d98f" => :mojave
-    sha256 "b1961f6dc7dbba259edafcee3b57741177ba9c6c6b1ccf43337167ec4d0cb246" => :high_sierra
-    sha256 "90f4063cf1658ea3bc03072c24f7130c236f49199ede9a2d9f891806a7bd5ce3" => :x86_64_linux
+    sha256 "d8993d03ab225a6d98462afacb7afdcdefae09ec0ee8d1c949b3c227ee61c462" => :catalina
+    sha256 "04b06c8b262664a205332006d0779cf6c9b2808864343750e53a8b2f675332cf" => :mojave
+    sha256 "d243a5d8462cfcb0a960918628ff21be7166d73706227f430f1e4572ff31eb33" => :high_sierra
   end
 
   def install

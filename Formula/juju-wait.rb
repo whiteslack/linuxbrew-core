@@ -3,8 +3,8 @@ class JujuWait < Formula
 
   desc "Juju plugin for waiting for deployments to settle"
   homepage "https://launchpad.net/juju-wait"
-  url "https://files.pythonhosted.org/packages/38/3a/f78817ea1f36b53864cec95f4ede230ac611812c76532d882ef493cf6ad2/juju-wait-2.8.3.tar.gz"
-  sha256 "4a9fc3aaee9ae99f508d39b6ce5bba53eff8b409ed222f8920e02d0e80e94dc8"
+  url "https://files.pythonhosted.org/packages/0c/2b/f4bd0138f941e4ba321298663de3f1c8d9368b75671b17aa1b8d41a154dc/juju-wait-2.8.4.tar.gz"
+  sha256 "9e84739056e371ab41ee59086313bf357684bc97aae8308716c8fe3f19df99be"
   license "GPL-3.0-only"
 
   livecheck do
@@ -13,10 +13,9 @@ class JujuWait < Formula
 
   bottle do
     cellar :any
-    sha256 "63d455969326b24e9016938041b17d8bf92aea6b1c100e1f8962580e3b82e1fe" => :catalina
-    sha256 "f4a9b3fedc8177c234a239b3584985e64f472b5a1e4801454e4ee68351975205" => :mojave
-    sha256 "67a6293bdc2f335eb5312338e06c879822f73516084a92cb4169b78176f168bf" => :high_sierra
-    sha256 "5a4751133306f81c3d3f45cdf6a1c7e86c2794f35e457abf8893bad3980bbb4b" => :x86_64_linux
+    sha256 "23e16db727916534057523094c7f841d0f51a5854b8904ca43a94b0ab82282c7" => :catalina
+    sha256 "baa822973796ccf4b164e88722163276acc6b75d20e350fda003f06767dcf04f" => :mojave
+    sha256 "d7bb2a808196dd05783f7a97c2e9bdfe2f24882db024f009b7b1d13aee881d10" => :high_sierra
   end
 
   depends_on "juju"
