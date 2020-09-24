@@ -2,16 +2,15 @@ class Wownero < Formula
   desc "Official wallet and node software for the Wownero cryptocurrency"
   homepage "https://wownero.org"
   url "https://git.wownero.com/wownero/wownero.git",
-    tag:      "v0.8.0.2",
-    revision: "7d1693b1601cb4b3d56191953f403c92a1c51f64"
+    tag:      "v0.9.0.0",
+    revision: "b303931b23206236f335bca16b38df8312216668"
   license "BSD-3-Clause"
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "f68be29309c6d6fe1e9f4d3a96938d9884390e1cd5a94175513f8d6e9a882b8f" => :catalina
-    sha256 "7a828b16ea78869a1ab52d349b2f3a4821b56d28d6a4d726a397bd02cb648868" => :mojave
-    sha256 "544f680ced811219370bd6aa5dc7eb303fa7e90edb771192dbf9528afd09fd25" => :high_sierra
+    sha256 "d81109acc03e655cd23cf8d0395bd3af5373ca2465eacc80bd7a15366a9498d1" => :catalina
+    sha256 "977c5b90406eae09323fa305f33e6bdb4fe15cc373cd108c66de723da84c978a" => :mojave
+    sha256 "abfcecf769eeecbe3deda440ab947e972398f47bb286172b1d5fb94c3af0d112" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -30,6 +29,10 @@ class Wownero < Formula
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
+
+    # Fix conflict with miniupnpc.
+    # This has been reported at https://github.com/monero-project/monero/issues/3862
+    rm lib/"libminiupnpc.a"
   end
 
   plist_options manual: "wownerod --non-interactive"

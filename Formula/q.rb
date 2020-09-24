@@ -3,16 +3,16 @@ class Q < Formula
 
   desc "Run SQL directly on CSV or TSV files"
   homepage "https://harelba.github.io/q/"
-  url "https://github.com/harelba/q/archive/2.0.18.tar.gz"
-  sha256 "db4f90602d3c45395675fa09b94293078f0ff693a94ec5fb23ae7041492fcebd"
-  license "GPL-3.0-only"
+  url "https://github.com/harelba/q/archive/2.0.19.tar.gz"
+  sha256 "cd4c60923bc40f53d974b54849f76096bf9901407c618cd0a3ccbc322aacc97d"
+  license "GPL-3.0-or-later"
   head "https://github.com/harelba/q.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ce6de63e5ae0de8e3f892736348d6e749b62b3ba5e6f81fa8735928fe4757a24" => :catalina
-    sha256 "fea8bb5f0ed27921dc5a6a8854158c96822ae489492495720e00e2e987b36f72" => :mojave
-    sha256 "4c839623778884c788ea838276b1d486d639f683eb00820d5be1b169e17389a3" => :high_sierra
+    sha256 "f400f27622cd10d2e00166557d426acf0c9ebb5d902c91149acfd91b70807ec9" => :catalina
+    sha256 "cf36dcb7c4950e64c0c1281f2efbeab7f178069a6c5f33f1c39f8e2556777bb8" => :mojave
+    sha256 "68368b50bc4b208deda10fe9b47d617382166ebfea84f6fa1cb6a53b4c5706a6" => :high_sierra
   end
 
   depends_on "python@3.8"
