@@ -16,6 +16,7 @@ class Bcpp < Formula
     sha256 "e7c25aa0608c77248f3414b49ebfa7808673b4afea1925e57323c9b1384d8c03" => :catalina
     sha256 "75cfd0b4bf87b30217e8d36c29d083fd961425583e322b5fdfdf16f189009048" => :mojave
     sha256 "7bd443a2afe3a8bccdc39c0744de2e7b3f9c6d45ff11030c9757e434d4767b85" => :high_sierra
+    sha256 "7a3c18fc561f6d09aa21cbef655544d335ed9a7aba5cd5882fb02c989c9bece2" => :x86_64_linux
   end
 
   def install
