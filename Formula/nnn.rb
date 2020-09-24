@@ -12,6 +12,7 @@ class Nnn < Formula
     sha256 "44109c19d7e9c4108538ed3fc5a75c3ae176cdecaf64d19d194ccf4802aa6354" => :catalina
     sha256 "a8dd428c9cbdea23be4b13493edfe09583814adbdee2d49627812268481af7df" => :mojave
     sha256 "e0d170451efa4edb22b8899577ee1bd0fb2f5cac90218fcc021f20514ef52ece" => :high_sierra
+    sha256 "d35acbefd087e92c20c38f6c662d2fa42b7e6f2b50776e9b0e23614ea5a73e1b" => :x86_64_linux
   end
 
   depends_on "gnu-sed"
