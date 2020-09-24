@@ -10,6 +10,7 @@ class Nebula < Formula
     sha256 "7ffeb1007dd970546c484ac5f2a3f7cc8f8e4c91624d8bbc9ed22dcca5cce478" => :catalina
     sha256 "41f78ae9272360e99b8cc89931f8a26ac5a189cfa653679a06b78a0fd4adedd6" => :mojave
     sha256 "bcf0c677c2a13a1e937625bf73b1e437dc3d1ae520a6a96cc798721cd18769f9" => :high_sierra
+    sha256 "940199fd1e8654b5ddcf637f734dbcca8b66c822c6825d53d42c019e51f9c30e" => :x86_64_linux
   end
 
   depends_on "go" => :build
