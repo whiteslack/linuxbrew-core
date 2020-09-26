@@ -19,6 +19,7 @@ class Asciiquarium < Formula
     sha256 "890b0e69b0261ff61b0d0666f2b3e0f579c1f63556c77c2d8d24bc1ef3f4e241" => :sierra
     sha256 "9120f02b70c63672af2752de536aeaeac5ef57bc2b3a388afe1ab9e12d40a59b" => :el_capitan
     sha256 "6b20abf264f40c7123e40f0f34cfc11f0c12a03b1a74a324e3f3a7ae75e94f3f" => :yosemite
+    sha256 "0dac9c84a11c1ae34f1c028e104d398c47d648b08b856c82c8e90600aa1f2f89" => :x86_64_linux
   end
 
   uses_from_macos "ncurses"
