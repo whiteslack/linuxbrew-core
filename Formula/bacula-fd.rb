@@ -13,6 +13,7 @@ class BaculaFd < Formula
     sha256 "0dd869846330eeec14fdf2c4c4fb4c68366f436a541d15c2ffb5cce2184b7d68" => :catalina
     sha256 "835731f3c18291b5dc2d30cd55040e0b1fa349d00e83a8fa4c7a1de85e974c50" => :mojave
     sha256 "6283f63974c24309a3219b6952b43f30fdc91cc6776305a240e5970320c76e39" => :high_sierra
+    sha256 "055d6b81d8b4297f33a178caa4306b472b81eed5acdede4cbc853020c257fc8c" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
