@@ -16,6 +16,7 @@ class Ninja < Formula
     sha256 "63c39e6268dc84add9ec7322a8d030546054892a89cd0df362ae8b71d9fe3dd1" => :catalina
     sha256 "1522e6c7e3cf3e9d6c8c4bb19c118f20def7d10f681a5af466486e5f8f50d388" => :mojave
     sha256 "48ae1960e86fc500b4f4c6d90ec79d82dece00ae7e26936a12cc539b2f707e37" => :high_sierra
+    sha256 "1fee451e72b4bab1a28261cff7a8da2099fcbfa2d16c4c2acd5b8abb1f8638e4" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
