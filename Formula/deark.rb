@@ -16,6 +16,7 @@ class Deark < Formula
     sha256 "68804787d02c78c38d58b3fb09136b2957cb9df252be1752a961aa26297bdbe3" => :catalina
     sha256 "bc52c1bd04e7f78955081c5b43b989db9ccde94954eb9980e7186c98cb5a0114" => :mojave
     sha256 "267616c6a3ec1ed57a5ba6b3744ffa851d6f3513210e6896f1310ed9dc379810" => :high_sierra
+    sha256 "7fbc0c69c0303d574ba893ce087fe2a3d0912257511d60688c904bce296413be" => :x86_64_linux
   end
 
   def install
