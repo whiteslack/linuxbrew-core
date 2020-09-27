@@ -23,14 +23,6 @@ class Creduce < Formula
   depends_on "delta"
   depends_on "llvm@9"
 
-  unless OS.mac?
-    resource "URI::Escape" do
-      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/URI-1.72.tar.gz"
-      mirror "http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/URI-1.72.tar.gz"
-      sha256 "35f14431d4b300de4be1163b0b5332de2d7fbda4f05ff1ed198a8e9330d40a32"
-    end
-  end
-
   resource "Exporter::Lite" do
     url "https://cpan.metacpan.org/authors/id/N/NE/NEILB/Exporter-Lite-0.08.tar.gz"
     sha256 "c05b3909af4cb86f36495e94a599d23ebab42be7a18efd0d141fc1586309dac2"
