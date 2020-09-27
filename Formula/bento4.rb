@@ -14,7 +14,6 @@ class Bento4 < Formula
     sha256 "4e8f883c55edd2f50eb6886668b04ebbe48d82688be5a50b234db59b964390b6" => :x86_64_linux
   end
 
-  depends_on "cmake" => :build unless OS.mac?
   depends_on xcode: :build if OS.mac?
   depends_on "python@3.8"
 
