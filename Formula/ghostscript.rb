@@ -14,6 +14,7 @@ class Ghostscript < Formula
     sha256 "6fb394c444db7f81a5de77dc355819fc2072bcde93a7f1f54b15992b5b87b832" => :catalina
     sha256 "901c2667447f42947c8a619daf7f926ab9cd4a64241d10e59165c01f09226f94" => :mojave
     sha256 "70399833327fd79bf4d584163ef87d0c65d8e732085625991ff7bd0cc1932417" => :high_sierra
+    sha256 "c98299c0d22395d8b4b6159dc3fbc3099d097dfdefcc637701163694f12e5483" => :x86_64_linux
   end
 
   head do
