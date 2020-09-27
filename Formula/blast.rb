@@ -19,7 +19,6 @@ class Blast < Formula
   end
 
   depends_on "lmdb"
-  depends_on "cpio" => :build unless OS.mac?
 
   uses_from_macos "cpio" => :build
   uses_from_macos "bzip2"
