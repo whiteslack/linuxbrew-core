@@ -1,16 +1,16 @@
 class TreCommand < Formula
   desc "Tree command, improved"
   homepage "https://github.com/dduan/tre"
-  url "https://github.com/dduan/tre/archive/v0.3.2.tar.gz"
-  sha256 "7773cd958c9f7cf2747a7526d879de6034ba0287e161a698ec61ba7bd2ed91bb"
+  url "https://github.com/dduan/tre/archive/v0.3.3.tar.gz"
+  sha256 "321a673e55397e80a0229537399f2c762a7d5196e3a486a684ea3c481e1d7bec"
   license "MIT"
   head "https://github.com/dduan/tre.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "850e60da6af3a6a385a6f176b89f48808d3000682cc639203dc722aa8dddbab0" => :catalina
-    sha256 "2c3ac22146a844ede3c8f2689e6ec00ff8dcddf4432fee2783d8cccfdf1d9e8f" => :mojave
-    sha256 "de1035a4023926ae8a8be54d00d3749c079a2954a8de25594a00584da71192d9" => :high_sierra
+    sha256 "bef95c814d73de29b1c9cc2e868191b86e9e1d1326c0a7c590dbbb45f159e060" => :catalina
+    sha256 "56ffe7b2461747687c0caededfa6b3fd2094c1773744f3ea7660d6c6ce56f0c5" => :mojave
+    sha256 "3c7d84087c637c80d13c29938d218ac442b841d1265552a6c383b28ad145204e" => :high_sierra
   end
 
   depends_on "rust" => :build

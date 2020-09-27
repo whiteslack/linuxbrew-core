@@ -29,9 +29,10 @@ class Itk < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "glibc"
     depends_on "unixodbc"
   end
+
+  depends_on "glibc" unless OS.mac?
 
   def install
     args = std_cmake_args + %W[

@@ -1,9 +1,9 @@
 class MmCommon < Formula
   desc "Build utilities for C++ interfaces of GTK+ and GNOME packages"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.1.tar.xz"
-  sha256 "28a2d775afbf05c5c957b24b220ed6e9b2023179b98ecde471d89e9754ea5ac9"
-  license "GPL-2.0"
+  url "https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.2.tar.xz"
+  sha256 "a2a99f3fa943cf662f189163ed39a2cfc19a428d906dd4f92b387d3659d1641d"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
@@ -11,10 +11,9 @@ class MmCommon < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d7a3510229c192e7aad13d7099a922ad2626eb9edccefc5428cb62dc6eb3b31e" => :catalina
-    sha256 "bba33c2217224dc5a3ed1c091201db2c3cf5ce1a497ec690e39eb63fedb63116" => :mojave
-    sha256 "bba33c2217224dc5a3ed1c091201db2c3cf5ce1a497ec690e39eb63fedb63116" => :high_sierra
-    sha256 "3675a45208e88f8f78ebc1d97d90f46f8096436d08b7bdad6e536efb7edef50a" => :x86_64_linux
+    sha256 "8c0ecc8d52d9bb2c9f90341fbfaf9013abb1aa31308a1c601b1afc356f2246ab" => :catalina
+    sha256 "acbd3eb9fc8c3b1d91eedee2d89119f10cd7aae5e1cfbe8eb3e80bb4f53d79ea" => :mojave
+    sha256 "baf753d8db7373f6c117ed53856c288a934f529435117a68ea040832a807a9df" => :high_sierra
   end
 
   depends_on "meson" => :build
