@@ -4,12 +4,13 @@ class Rqlite < Formula
   url "https://github.com/rqlite/rqlite/archive/v5.4.2.tar.gz"
   sha256 "9a78542b72883e6452029500d64e6234fc719aab4147e240476c3f7a4ce801a6"
   license "MIT"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b5deabda22a2b0095c729ada9d78a76d82eb55d45cb6c8bc5551e6b3d87518af" => :catalina
-    sha256 "32b7fef757fb78506236624d41e6946821ba7e0fbe11b46da25a670668525168" => :mojave
-    sha256 "0f8367245c0042a18e80b6791db68c8603868611a7a1b723e6f6647e153aa458" => :high_sierra
+    sha256 "fb11d83162baf6772acf451ecaa2030402afbdb0f616529c211726bb711e04c0" => :catalina
+    sha256 "f945e145d0de1262c4fac4c675e44a2bd7bc82db37fa97c9ed5846694978a521" => :mojave
+    sha256 "c13f9b8443471bb169a9e278e541113e192847e95873daf3ce984d7e5fd6d9ea" => :high_sierra
   end
 
   depends_on "go" => :build

@@ -1,9 +1,9 @@
 class Libnfnetlink < Formula
   desc "Low-level library for netfilter related communication"
   homepage "https://www.netfilter.org/projects/libnfnetlink"
-  url "git://git.netfilter.org/libnfnetlink",
-    tag:      "libnfnetlink-1.0.1",
-    revision: "1166116e34af868bc814aea338c246e49a7a8748"
+  url "https://www.netfilter.org/projects/libnfnetlink/files/libnfnetlink-1.0.1.tar.bz2"
+  sha256 "f270e19de9127642d2a11589ef2ec97ef90a649a74f56cf9a96306b04817b51a"
+  license "LGPL-2.1-or-later"
 
   bottle do
     cellar :any_skip_relocation
@@ -16,7 +16,6 @@ class Libnfnetlink < Formula
   depends_on :linux
 
   def install
-    system "./autogen.sh"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
