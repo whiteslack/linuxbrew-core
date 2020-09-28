@@ -14,18 +14,6 @@ class Cloc < Formula
     sha256 "c18878eb25b176796223a7936874886efc875a5ad3dd2ae6bd99ef4a6d0aca91" => :x86_64_linux
   end
 
-  unless OS.mac?
-    resource "Devel::GlobalDestruction" do
-      url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Devel-GlobalDestruction-0.14.tar.gz"
-      sha256 "34b8a5f29991311468fe6913cadaba75fd5d2b0b3ee3bb41fe5b53efab9154ab"
-    end
-
-    resource "Sub::Exporter::Progressive" do
-      url "https://cpan.metacpan.org/authors/id/F/FR/FREW/Sub-Exporter-Progressive-0.001013.tar.gz"
-      sha256 "d535b7954d64da1ac1305b1fadf98202769e3599376854b2ced90c382beac056"
-    end
-  end
-
   resource "Regexp::Common" do
     url "https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz"
     sha256 "ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b"
