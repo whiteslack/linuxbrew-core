@@ -24,6 +24,7 @@ class BandcampDl < Formula
     sha256 "d68897305f09f2e17db16ea4481cacd8304c353f376430901b8823a44ed1abb1" => :catalina
     sha256 "597e54edb0b1e0a46e8e87872862ad78857dc953f8af85012aee67c84e3b7e40" => :mojave
     sha256 "8a2f6f66600c7fbd9daa504cca6a15410984173ba676fb0773874fe371a88a90" => :high_sierra
+    sha256 "ad67a008c618139d18743d52713b82411f0936b21124c341b101941717103a6f" => :x86_64_linux
   end
 
   depends_on "python@3.8"
