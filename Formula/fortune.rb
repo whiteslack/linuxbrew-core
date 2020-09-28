@@ -15,6 +15,7 @@ class Fortune < Formula
     sha256 "9d1ed340349cd7995d1308fc09fc69c3520c96b329ab881dc0d96fce914e029c" => :catalina
     sha256 "9a7a866859df246c3fe9331cb1b131562359690dbc5bfed6ee4e8f5a4585025e" => :mojave
     sha256 "3421fe011b2f27d30ae6e56d880eba8a68cb1249d6c4cd063a04fd61022507be" => :high_sierra
+    sha256 "64feb5e5c695578c78e071b588bc1bdffe2c28002f0fd7bac11200a3e63346b0" => :x86_64_linux
   end
 
   def install
