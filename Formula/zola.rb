@@ -10,6 +10,7 @@ class Zola < Formula
     sha256 "a16ab6a5bc7c04cf10f6266ce79921c607b6c19226190e65c420776595ed26d7" => :catalina
     sha256 "62c8164ec43c9c6090ff3be1b33ab2f2731894e626d2b2ac660b52f0f6902a36" => :mojave
     sha256 "4f726fe8708e96ab25f2830dfbb751ef67a34221621312604d6a2bd86bc87d72" => :high_sierra
+    sha256 "c85d0df7794cb098940902206abb3032792704419c029332e20cc37ac7cf2840" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
