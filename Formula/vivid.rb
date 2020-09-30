@@ -10,6 +10,7 @@ class Vivid < Formula
     sha256 "7c4f801eab9c3f5b07aa4585766ce4cd9cf6d55a06f6889ef72a3a044559d834" => :catalina
     sha256 "e8766b975c81c7bac8992e8d09b106e3bf2f73b6357a3d3fbc86a2d5c846b06b" => :mojave
     sha256 "a2fe201c45df0fc3aa4c9a5985d7feeed8f7fca6817b54658e6299da4e604fc9" => :high_sierra
+    sha256 "6fb3d06ee8dc35ebffcab2588d27aec897a3573fb70533993477901d0545aa97" => :x86_64_linux
   end
 
   depends_on "rust" => :build
