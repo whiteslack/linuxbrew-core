@@ -16,6 +16,7 @@ class ScummvmTools < Formula
     sha256 "4d43c5933986b4c011c5cf9f45bd853cf0faabb652aab2ce53f9e5cfc5d95ae0" => :catalina
     sha256 "64cce3aa4cfbb11ee9223bb1037cf85e8cec3ab78d2206aeb93f2605ea7cf327" => :mojave
     sha256 "0c207fc3e8ee9b54b1c6f85d1461458cbe3ba05b591f87807ff4e534c4baec17" => :high_sierra
+    sha256 "da91d947e60c147ca4c6ec92971cf28c141ca4adf5fe4593d7ef90fa12ca14d2" => :x86_64_linux
   end
 
   depends_on "boost"
