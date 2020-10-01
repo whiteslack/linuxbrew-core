@@ -17,6 +17,7 @@ class Libepoxy < Formula
     sha256 "9f58a2eab6aafcc95ade6893bde8d878ab422284353e22c11d04c3a6f3a1e7cb" => :catalina
     sha256 "e42a0410e6f94fa419f785c5b0901eea1506242b1729f97b672f25b463ce3d4e" => :mojave
     sha256 "95cbc3ce1fc94931e0259f9e55a25d9dcacacd70713ae3e59cba28f3d7ff2a3a" => :high_sierra
+    sha256 "234d5a715ed2154a92c0917b52b78ca53c85addff9ef9bddd186ad72e0ccb2b9" => :x86_64_linux
   end
 
   depends_on "meson" => :build
