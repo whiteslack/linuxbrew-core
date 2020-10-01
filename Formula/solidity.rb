@@ -1,14 +1,14 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https://solidity.readthedocs.io"
-  url "https://github.com/ethereum/solidity/releases/download/v0.7.1/solidity_0.7.1.tar.gz"
-  sha256 "c69205d902ac8dd66f5aeaa78a08e5411cdb26a0b9479fcf44f394b7008b484c"
+  url "https://github.com/ethereum/solidity/releases/download/v0.7.2/solidity_0.7.2.tar.gz"
+  sha256 "71628cc4ad19500e5f532819b4c8bc241040032c7ba9a635ee51a5c8fcf480c8"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "82c08040ddaab8989960f89de602ebe5b7b890b67ae081aa16f7d304f2273d52" => :catalina
-    sha256 "f6d741893302638e028a59ccaaaccabc02e3b1f42655df5484a9d0063f4aaa7e" => :mojave
+    sha256 "f859e3a1f2de70dd59b6850201ad2635f2a9a8e2fc43dcaa0f78b7ce9f80ff73" => :catalina
+    sha256 "f0f96591dbb4bd6944a041c5807c61a983bdfb9452dc83d180c63fc365d10046" => :mojave
   end
 
   depends_on "cmake" => :build

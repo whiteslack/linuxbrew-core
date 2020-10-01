@@ -22,11 +22,12 @@ class Rubberband < Formula
   depends_on "pkg-config" => :build
   depends_on "libsamplerate"
   depends_on "libsndfile"
+
   on_linux do
-    depends_on "ladspa-sdk"
     depends_on "fftw"
-    depends_on "vamp-plugin-sdk"
+    depends_on "ladspa-sdk"
     depends_on "openjdk"
+    depends_on "vamp-plugin-sdk"
   end
 
   def install

@@ -2,15 +2,15 @@ class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
   homepage "https://openrct2.io/"
   url "https://github.com/OpenRCT2/OpenRCT2.git",
-      tag:      "v0.3.0",
-      revision: "135cc10b4766085ce35097b5830f612e36b47ba0"
+      tag:      "v0.3.1",
+      revision: "d01dcea98a5e82b28a3a8b9ff9690986e7532d58"
   license "GPL-3.0-only"
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
   bottle do
     cellar :any
-    sha256 "41bebec7c60c9cc27cbc7fdb399be17275d9dc988dd6cb5f1f355f5043617249" => :catalina
-    sha256 "bb9e8f32646037c3e054ec6e7d4fe9da7fa70c2f23097d7d91633faab102ac44" => :mojave
+    sha256 "c544e683df46bbaa04bd207df9438b4235c55bf40d7a44492e67c0619f168053" => :catalina
+    sha256 "a12caa576f824dad7af6a0c3841d74a382ec4598736b2077b35f86eae95ee965" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -18,10 +18,10 @@ class Openrct2 < Formula
   depends_on "duktape"
   depends_on "freetype" # for sdl2_ttf
   depends_on "icu4c"
-  depends_on "jansson"
   depends_on "libpng"
   depends_on "libzip"
   depends_on macos: :mojave # `error: call to unavailable member function 'value': introduced in macOS 10.14`
+  depends_on "nlohmann-json"
   depends_on "openssl@1.1"
   depends_on "sdl2"
   depends_on "sdl2_ttf"
@@ -33,8 +33,8 @@ class Openrct2 < Formula
   end
 
   resource "objects" do
-    url "https://github.com/OpenRCT2/objects/releases/download/v1.0.16/objects.zip"
-    sha256 "ac9e5b605c6ec874bbc7e01c81ac31e715598f7031b0c54ec484fbcea669768a"
+    url "https://github.com/OpenRCT2/objects/releases/download/v1.0.17/objects.zip"
+    sha256 "bc31ca8ca56f40f9ff7958416611bc712932c1eda80ca94861789aa57da1740e"
   end
 
   def install
