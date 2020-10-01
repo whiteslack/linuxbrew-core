@@ -14,6 +14,7 @@ class Freeglut < Formula
     sha256 "48bb8108331861a7f4d1ce70472c53ee8a0f4aec75857f1bfc0ab56a59e53787" => :catalina
     sha256 "fdc12ba4122ba3128551768b8abddd4815287a5d5b4ffdc6e00008828c43dd43" => :mojave
     sha256 "c29f4c83e001ee7e6a751769f72b20e5096f30eccf287ca2c572088896e92833" => :high_sierra
+    sha256 "36e6250e0e1270970b544d803dc54d183250d75585c4441c68a1a3dba5f77f38" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
