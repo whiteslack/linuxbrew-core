@@ -12,6 +12,7 @@ class Gifsicle < Formula
     sha256 "52be1cd49246909777199147dcbbeb6f490580558615138ae063b6149cfbe53c" => :mojave
     sha256 "a7cfb607906023c5bdb56a49f8a75ce0b3e2c76a971266bb530d04ed29be74f9" => :high_sierra
     sha256 "746d071f268950c6af18704590b981f5f965d35e2adf6c202aa3df0f13e943e9" => :sierra
+    sha256 "9cb712ae95154af3bd45ce4ced75d5216dd9a0013a079eaa15522ba2ba6ee35f" => :x86_64_linux
   end
 
   head do
