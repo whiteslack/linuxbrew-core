@@ -1,8 +1,8 @@
 class Sbcl < Formula
   desc "Steel Bank Common Lisp system"
   homepage "http://www.sbcl.org/"
-  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.0.8/sbcl-2.0.8-source.tar.bz2"
-  sha256 "208d46f7b94d256d036f0efc9734e6b34a85c51bb03c3eb8bf39b7a3efe699f7"
+  url "https://downloads.sourceforge.net/project/sbcl/sbcl/2.0.9/sbcl-2.0.9-source.tar.bz2"
+  sha256 "c4f700350c113fe003ee93a9922146209d6fa50b63c6accc4abf90fb38cb9b9f"
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
 
   livecheck do
@@ -10,10 +10,9 @@ class Sbcl < Formula
   end
 
   bottle do
-    sha256 "bca69d1a79cd05234927371442ae7f86aaecf9ceb2b8f1715eca050d442613d9" => :catalina
-    sha256 "08b19761b2023cbfd0f9186f02019ed3307b400d389cf20a6e4379f569e99ce5" => :mojave
-    sha256 "b21b05d3ad53d1985f40ee9b8c1222888983cd7dccfbe76258f69e14af43d0c7" => :high_sierra
-    sha256 "f8b28942e0ca77b2a69f7cfd64329b0c99a406088cbfcd60162f1615a5ba916a" => :x86_64_linux
+    sha256 "76e2f2cd95b959dc8491cbba16e8d2ee2782d778b564e6707812315c168a450f" => :catalina
+    sha256 "20fb22efdea18605e1f4b6e0f3c86e69dc208aadeb7058a01d6ede1963b75e4b" => :mojave
+    sha256 "7519da8f9d9c5b9bd22fcf638917e4b25040e666cfaae4b733923200a2bae891" => :high_sierra
   end
 
   uses_from_macos "zlib"
@@ -27,11 +26,6 @@ class Sbcl < Formula
       url "https://downloads.sourceforge.net/project/sbcl/sbcl/1.3.3/sbcl-1.3.3-x86-64-linux-binary.tar.bz2"
       sha256 "e8b1730c42e4a702f9b4437d9842e91cb680b7246f88118c7443d7753e61da65"
     end
-  end
-
-  patch :p0 do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/c5ffdb1118ce0c125c42ab396fa244a7aa01f863/sbcl/patch-make-doc.diff"
-    sha256 "7c21c89fd6ec022d4f17670c3253bd33a4ac2784744e4c899c32fbe27203d87e"
   end
 
   def install

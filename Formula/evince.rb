@@ -4,15 +4,16 @@ class Evince < Formula
   url "https://download.gnome.org/sources/evince/3.38/evince-3.38.0.tar.xz"
   sha256 "26df897a417545b476d2606b14731122e84278ae994bd64ea535449c3cf01948"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "d0442852daaaef0262801cab22f7e1f616058647fb3733114930927dd0401f6b" => :catalina
-    sha256 "a5b52193d61577a52bd7e4a17cacbcddcdbaeb2e6ca068d36c718a124c0ab125" => :mojave
-    sha256 "c63530ee5313d7b05f23cc550d31428dd97c3bb29f14bed72d70f965fe3c3d84" => :high_sierra
+    sha256 "c478ef073510fbd09bfb5dfdec372786b1551466758f8040dfd9bb7da3af278e" => :catalina
+    sha256 "8c15ca0e3e33d14e7dbcc2d3bfbd42b6f928dcf2f8c7e87060d9b0f07cdb1153" => :mojave
+    sha256 "cc431bbeb099f242d052fc51cd169edf847e792b7e51e25905f89271910c3ad2" => :high_sierra
   end
 
   depends_on "gobject-introspection" => :build
@@ -45,6 +46,7 @@ class Evince < Formula
       -Dbrowser_plugin=false
       -Dgspell=enabled
       -Ddbus=false
+      -Dps=enabled
     ]
 
     mkdir "build" do
