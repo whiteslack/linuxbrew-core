@@ -1,15 +1,15 @@
 class Rustscan < Formula
   desc "Modern Day Portscanner"
   homepage "https://github.com/rustscan/rustscan"
-  url "https://github.com/RustScan/RustScan/archive/1.10.0.tar.gz"
-  sha256 "63c387c645826107734eb10d45b0a540a69fb3a61e478593f515adce95bad530"
+  url "https://github.com/RustScan/RustScan/archive/1.10.1.tar.gz"
+  sha256 "fe47acf9f0fdabfc5e260b0a28cde9349acb347c4214767f89af2dfacff55717"
   license "GPL-3.0-or-later"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9bbd788a689f80c4e725169032456f6978e50a5351bde8ca5ceafae7271d8d61" => :catalina
-    sha256 "a9d0d7ca678fbe570150ce427b002ee0e84347dd8a5c29800645ac288f448a45" => :mojave
-    sha256 "f4d1a2a3a887a63bc232a803af28d8a2c9c1f338063646aec0d73d5244471da0" => :high_sierra
+    sha256 "283697b96fff0a738e64581b25d86c8b3391b88887aea99efac96892d3d69e7e" => :catalina
+    sha256 "0a98297ff385f5c18864a4b05f3b68323dda21fed87ab096a6c551b3bf4a81d3" => :mojave
+    sha256 "9592dcac08be3079efb91c9b9affd9a297d2ff1d650dc01629ec77b7215669e0" => :high_sierra
   end
 
   depends_on "rust" => :build

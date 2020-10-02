@@ -1,8 +1,8 @@
 class Dub < Formula
   desc "Build tool for D projects"
   homepage "https://code.dlang.org/getting_started"
-  url "https://github.com/dlang/dub/archive/v1.22.0.tar.gz"
-  sha256 "758c61faeb27fab61967faa51152651ecc66f1092e023760f641cbeb9e28c058"
+  url "https://github.com/dlang/dub/archive/v1.23.0.tar.gz"
+  sha256 "9c7196fd76efce50e8606b3f0ab103bb8b3984842dcc7c0970eb07aba63dbaa5"
   license "MIT"
   version_scheme 1
   head "https://github.com/dlang/dub.git"
@@ -14,10 +14,9 @@ class Dub < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b0d9a91c1eed292a083a19dbdc341170ffc3c7fc1fd059fb961188d368f27fcd" => :catalina
-    sha256 "65151d2ac806c92d4e15da246db43781ad50b38eb781ae59b740429495818117" => :mojave
-    sha256 "5fd60cdd406eb405bf9a68697e756590570a277a164ae7755a2169e2b808d488" => :high_sierra
-    sha256 "d5c479f2d87a5ff236fc96d3cfedb142009d3cdd6f42ba7c9e94dcda168d7204" => :x86_64_linux
+    sha256 "3a1c773ad05662b24ddecacd2b008029e731178eab826a4945db34638ecad06a" => :catalina
+    sha256 "cb6ae1c85097a78aa6e0bccc14a5c485159058d5697defe48890648d5e68476e" => :mojave
+    sha256 "25b8feb7408b60d13bcd61bd71acc3cf77ba31405a2a626cdd731140d2548c0a" => :high_sierra
   end
 
   depends_on "dmd" => :build

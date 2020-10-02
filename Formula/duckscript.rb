@@ -1,16 +1,16 @@
 class Duckscript < Formula
   desc "Simple, extendable and embeddable scripting language"
   homepage "https://sagiegurari.github.io/duckscript"
-  url "https://github.com/sagiegurari/duckscript/archive/0.6.7.tar.gz"
-  sha256 "7c3f2378413bd8176c8a4e35d01ab47a8dbe871afe3d1e9ceabb82774c31ae63"
+  url "https://github.com/sagiegurari/duckscript/archive/0.6.8.tar.gz"
+  sha256 "1773bfbf365844f874441fb4c76f3d63ef64aed82835b08d6fbf5128509d90ff"
   license "Apache-2.0"
   head "https://github.com/sagiegurari/duckscript.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "695b2d88a7f1905a2e94972d2e3560ead20bdbda501353bfaf438f5173644d9c" => :catalina
-    sha256 "3740b8bdbe7696be29fdf5005b506ce9d27f16db901f0589886b3af8fb6af020" => :mojave
-    sha256 "0089353fae5b1fe21779ab988e17d915de1319a9916c48869d81aac660d57dfa" => :high_sierra
+    sha256 "d2ac775f2fb43ed0332b5a71d0315a1397b16a2e9b57b26c1540593957f6181b" => :catalina
+    sha256 "ba552704c9c91548ceb96498cce1c7f0af4c2785f90a12b8e4e99d35d068e80d" => :mojave
+    sha256 "b8afd62072875d773f11edfa79c1fd478957d5879743758b3a16fbf46a66df1f" => :high_sierra
   end
 
   depends_on "rust" => :build

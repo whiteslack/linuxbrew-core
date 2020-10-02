@@ -1,8 +1,8 @@
 class Modules < Formula
   desc "Dynamic modification of a user's environment via modulefiles"
   homepage "https://modules.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/modules/Modules/modules-4.5.3/modules-4.5.3.tar.bz2"
-  sha256 "f6cd4ef29d5037d367d04fe041e06cc915a092afee664b56e1045ec74e66ac6b"
+  url "https://downloads.sourceforge.net/project/modules/Modules/modules-4.6.0/modules-4.6.0.tar.bz2"
+  sha256 "616f994384adf4faf91df7d8b7ae2dab5bad20d642509c1a8e189e159968f911"
 
   livecheck do
     url :stable
@@ -10,10 +10,9 @@ class Modules < Formula
   end
 
   bottle do
-    sha256 "cbc6ac501c2142c7919ecc9b56aa80d2e0828eb2c28060f792ab2d6da7947dec" => :catalina
-    sha256 "5f21d6a67818b08d239fb5b530d2c82d097ea161ca17fd4b378fa63f4a50bf55" => :mojave
-    sha256 "62863887e0df66d8fc99dd581a1949223d615d4bc58e4366bd0a086b42e8f94d" => :high_sierra
-    sha256 "8a689a598702e785ea947b9cd3c8673eaa167f7cc182e37655cb04918d6c485f" => :x86_64_linux
+    sha256 "d424799ee3a971d0330ac8247782fd8a3c2fc6ddbf40c743249d643128bf8c9e" => :catalina
+    sha256 "fbe7043ec34d578b42ab10dba769b594d19c9d5665b1f27060fdd3a8982cefcd" => :mojave
+    sha256 "688cc5ba060e509134a35d057077c022b2e9d5451e988b46c239dde24934e5f7" => :high_sierra
   end
 
   on_linux do

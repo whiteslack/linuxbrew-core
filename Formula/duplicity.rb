@@ -3,8 +3,8 @@ class Duplicity < Formula
 
   desc "Bandwidth-efficient encrypted backup"
   homepage "https://launchpad.net/duplicity"
-  url "https://code.launchpad.net/duplicity/0.8-series/0.8.15/+download/duplicity-0.8.15.tar.gz"
-  sha256 "ac69ff68b88b6c15c222f8334bb447fbe529c6849a6c9ac33e4995d7eb31e4cd"
+  url "https://code.launchpad.net/duplicity/0.8-series/0.8.16/+download/duplicity-0.8.16.tar.gz"
+  sha256 "2cfcd212834979751310d9df1a954b949f86b084efd5ad1f97dd744780ef9d1b"
   license "GPL-2.0"
 
   livecheck do
@@ -13,10 +13,9 @@ class Duplicity < Formula
 
   bottle do
     cellar :any
-    sha256 "a43147937e7e4817b8b491bd6ed56296ebadd42e799d43bfb7747e45d19cbbe5" => :catalina
-    sha256 "86e4d35211e8d7b8a35be9e582e52dda54aca5191e79a5320e8f68a817b788ef" => :mojave
-    sha256 "7608abeef69526be41d7c7f18f629dbb6d920ddaf78b9c2e6219f06f36f8a127" => :high_sierra
-    sha256 "74dc9ade17ede9f7dea46cf68fb7c039fe1deadf7c71c735204ddcdff1e7d456" => :x86_64_linux
+    sha256 "87dc6d779a109d0ed35ae65fe193f90fb6f24f8d5c0a569efb7ace1b0db914c7" => :catalina
+    sha256 "53ba597f368bbe91b2c34584d0453d1d3c23195b524141a5c2640166bfab0196" => :mojave
+    sha256 "913c63f342cb03a5c3586c4cdbb87b2975c46c4363aa9795be3c4606de8bf56f" => :high_sierra
   end
 
   depends_on "gnupg"
