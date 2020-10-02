@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-python-lint/"
-  url "https://files.pythonhosted.org/packages/33/22/973a311874a44c993abbbc4bee376aebd89c861a59e86c927720b79b396f/cfn-lint-0.36.1.tar.gz"
-  sha256 "101bf9024aa11fb5098d1b00c885b01cfefd5cf51e334c05519595873863c026"
+  url "https://files.pythonhosted.org/packages/29/f5/93257b28a1b0fc1164a557b46313d8d99ca11a81f6789ea51cafb7a28c20/cfn-lint-0.37.0.tar.gz"
+  sha256 "5178595b7ccbbafb8b2b6fe9d3bc6215007387145ddf29812ecee70bb8500801"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class CfnLint < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f4b5008ad56741f1c68ef0116b4e2fd9edd0ced6b7a36dbbecf16c25747e2fc1" => :catalina
-    sha256 "225bb8865cacc7a7529649cc6228c37f246df17c356881823a517de6198b477d" => :mojave
-    sha256 "8071821fa2c6e13854058a7d27071f1e28b7f79692efbcbed39d01b4d7ec9ff5" => :high_sierra
-    sha256 "a7fa950e112d3ce7eb92daee209124037ff814e1cb105d2655b28b260ee12672" => :x86_64_linux
+    sha256 "a611c67f200e300c840a7151ac9d1e27af10ae55ad9e3d9ad69baad37169a2b7" => :catalina
+    sha256 "4206d06bf972fb31fe91d3e126542ae6db251da0f1132ae660ddd694ee4b60b6" => :mojave
+    sha256 "7c7598d23d7b53551dccc4dfa9ae2a81319903f81c6d3b2eedef0b2a6fb6c744" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -32,13 +31,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/80/83/00c4d3f512d63771456dfe8666e9214703235a66fe353f624da6c458c45f/boto3-1.15.2.tar.gz"
-    sha256 "7e22c4e21533d7c532e0136610b9cc45e3f81e57b738ff434a1f3d0a3b16e05e"
+    url "https://files.pythonhosted.org/packages/68/57/7961b290c2aee2dac088bf240537bfb4e3ec41c55456aed5a16c0b9aab4f/boto3-1.15.10.tar.gz"
+    sha256 "04ce4665dee58c89b0eee784bbb480fb4346a7baeb1d5611f676ae21fd3f553a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a1/92/5336c9b5beac8bded4c3f6ee408e88c193d3545e3a9a901d8918a533688c/botocore-1.18.2.tar.gz"
-    sha256 "7fcfc20921de61bd015d363226476c6f51f38846c2a93f67ee7c70b66f54e223"
+    url "https://files.pythonhosted.org/packages/3c/d9/01e6e2b36cb366d00621b970a028dde369a1403fdcf3d9f3cb81bbe7f951/botocore-1.18.10.tar.gz"
+    sha256 "33083dc87ba7b4dae8ecd4b019896a5e5cb2626808f52450b6a79def8a54023b"
   end
 
   resource "decorator" do

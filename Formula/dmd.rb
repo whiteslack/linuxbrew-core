@@ -4,30 +4,29 @@ class Dmd < Formula
   license "BSL-1.0"
 
   stable do
-    url "https://github.com/dlang/dmd/archive/v2.093.1.tar.gz"
-    sha256 "4fd9fe3bdca776a0bf5edab651fe39429948735ed79d55e34ebe6ad2044a13f9"
+    url "https://github.com/dlang/dmd/archive/v2.094.0.tar.gz"
+    sha256 "3d156f3eab76d1e3bd12168d0c492d55af9517fea35b2ad0c6bedbd59b2a0dab"
 
     resource "druntime" do
-      url "https://github.com/dlang/druntime/archive/v2.093.1.tar.gz"
-      sha256 "f4b78f26322186c9332d5150a91ba75dca29db2db99f7cae57150f6614113cc0"
+      url "https://github.com/dlang/druntime/archive/v2.094.0.tar.gz"
+      sha256 "0f8adb9437582b7de7457e4ea5c19034d28d8e53a026b67bd551ad57a7987b57"
     end
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/v2.093.1.tar.gz"
-      sha256 "66b3a75c5b313e823d252b87e4e1d02a39d24079ccb956c806f960a1617288c0"
+      url "https://github.com/dlang/phobos/archive/v2.094.0.tar.gz"
+      sha256 "254c920fd4b260b909c34298a1e158975daaf05edcf9e8639b0ca2c7a760f4eb"
     end
 
     resource "tools" do
-      url "https://github.com/dlang/tools/archive/v2.093.1.tar.gz"
-      sha256 "deceea44f176b31703a11a71e827416bfc4172a368e7fa0eceece8f397cb1553"
+      url "https://github.com/dlang/tools/archive/v2.094.0.tar.gz"
+      sha256 "24c413740219b0b2d02f5d5216dd22348da3bf214f31516d2d069d550b23baf1"
     end
   end
 
   bottle do
-    sha256 "15c6aa24b2594155f9f88471af1fa7697cdbe1fcbaec088caf62b8efb843db81" => :catalina
-    sha256 "fc03172f4d36276ef0f3620a74a3074055ae44d2638913a1af49df070ce383ac" => :mojave
-    sha256 "e2f443a408dbbd334c3ba809598aa0c7deff364f20d1cae831ca39c8217b9829" => :high_sierra
-    sha256 "7d0be07395f88d1522d53aa29a77ac32257ddb89b0053bd0294597b5c199dec3" => :x86_64_linux
+    sha256 "e630c4da676e724cffe4e7ebb8bffa3fc8342a0e425dde3397a4deae5931fbf5" => :catalina
+    sha256 "61576df4b15f6605af1434586de278027b159fcf2914d9cb416fa4e4410dd66c" => :mojave
+    sha256 "6d40cd9279cf04c6be869f8a5d1590fd0c9b5d9593743ca42bc042091c9d601a" => :high_sierra
   end
 
   head do

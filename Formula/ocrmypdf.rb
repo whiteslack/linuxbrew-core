@@ -3,8 +3,8 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://github.com/jbarlow83/OCRmyPDF"
-  url "https://files.pythonhosted.org/packages/42/29/73df4609360ffd9dc71b7fb622d3ba6bb8b13d89a8835de9a3998b92b716/ocrmypdf-11.1.1.tar.gz"
-  sha256 "283b134ad8becc04c3a45ea7bfafb94854f2b9336a029d687e46c84db63fde61"
+  url "https://files.pythonhosted.org/packages/aa/b6/8fc7eb3cdc1738b49baad9dc0ac2fb4a8a74b99917f21204d2ec20082eea/ocrmypdf-11.1.2.tar.gz"
+  sha256 "ee5dcf9ecc2fd9b5bb9dbda3b0ae9241dbcd65541765ed35c0f9f38dfd7733c4"
   license "MPL-2.0"
 
   livecheck do
@@ -13,9 +13,9 @@ class Ocrmypdf < Formula
 
   bottle do
     cellar :any
-    sha256 "e6eef20b2cbd22695eb992515bf43e9ecf7ecfc81c37edbb5a6ab6cce6d93f8c" => :catalina
-    sha256 "803fd8eb9492580c17481d3ff6c503dc9839e22ea9b8109fc70a50acc2fb5fdc" => :mojave
-    sha256 "17958211ad2a1e5e2aca3526a780856181da240430e041e26935631f59d11a4c" => :high_sierra
+    sha256 "546554ffd53da5f51d829e28ec9a2fa0de312eb84c1dccad8603d583991d5a56" => :catalina
+    sha256 "da00f5f70e0e530fc3f6a5392bd17c6380ce15b7cdf44fdf7fe01131930f2ccd" => :mojave
+    sha256 "01d54f018f380894fc89dacca24e5e6ef76c30943b9e01cf48f8e6c311f60a42" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -97,8 +97,8 @@ class Ocrmypdf < Formula
   end
 
   resource "reportlab" do
-    url "https://files.pythonhosted.org/packages/f5/09/7f40a9d446007e3fb73ede9f853d425c41d45bb75d1818c4d53df2556f61/reportlab-3.5.51.tar.gz"
-    sha256 "bd1ed4d8a064e7372d46b7a23774d984c024d8bb0c2ff3283d5213749b9ffa1c"
+    url "https://files.pythonhosted.org/packages/57/e9/5bfe18a4d8d2c208dd560a515d360e577f5a2dbca56457371a88bb600e15/reportlab-3.5.52.tar.gz"
+    sha256 "a5ad4696987fdb42d976093e1b1a585ec2ad42634b5ce94dbb71362dcc758afb"
   end
 
   resource "six" do
@@ -112,8 +112,8 @@ class Ocrmypdf < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/bc/03/2bc607a15e201058cb6b19784b9c217d7ff37a686ce4a2d8a37a638f3ba5/tqdm-4.49.0.tar.gz"
-    sha256 "faf9c671bd3fad5ebaeee366949d969dca2b2be32c872a7092a1e1a9048d105b"
+    url "https://files.pythonhosted.org/packages/9f/7b/76c4e5ef1a1b528fcaada4133f972e77d33c252831676cf414119ca6093d/tqdm-4.50.0.tar.gz"
+    sha256 "93b7a6a9129fce904f6df4cf3ae7ff431d779be681a95c3344c26f3e6c09abfa"
   end
 
   def install
