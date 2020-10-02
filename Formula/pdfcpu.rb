@@ -10,6 +10,7 @@ class Pdfcpu < Formula
     sha256 "69c0ff70563f539aa68c221374fe8c145dfbb391b3848e35360371a62ab8f071" => :catalina
     sha256 "13d7bbca13901ae2aad57f99a2293136a1221996bbd1834c401d68cd78e3a391" => :mojave
     sha256 "3d4cf37450e27a34eb68f3321ff00f3a888cff219c29ee61b206d5ca42441f97" => :high_sierra
+    sha256 "9f12f49a70de28d5807f5a0c1375d766680ba20da51cb54e8fe86628d908361b" => :x86_64_linux
   end
 
   depends_on "go" => :build
