@@ -13,6 +13,7 @@ class Modules < Formula
     sha256 "d424799ee3a971d0330ac8247782fd8a3c2fc6ddbf40c743249d643128bf8c9e" => :catalina
     sha256 "fbe7043ec34d578b42ab10dba769b594d19c9d5665b1f27060fdd3a8982cefcd" => :mojave
     sha256 "688cc5ba060e509134a35d057077c022b2e9d5451e988b46c239dde24934e5f7" => :high_sierra
+    sha256 "8f1aa1146b9615fa333f98c0d8083ba45f0cfcdcbc2a4b5395bcd34cbf6ddf5a" => :x86_64_linux
   end
 
   on_linux do
