@@ -10,6 +10,7 @@ class B3sum < Formula
     sha256 "1dee5365552d84eec74a73b53f67dafa412d87eb6ebff2e4fc853b2adc1e1215" => :catalina
     sha256 "59f5a92b9d5c5b15ae121a6614e2e5e23d23092cfb8d463f6131f6c2d89e12d3" => :mojave
     sha256 "90bf07f040dc35cfb4603f7cd03bf80279de9ecf36b4ddf02f0a4687918263f1" => :high_sierra
+    sha256 "25f5f73f34d9b639279c294051ee0e9d451f728c925bc43ec262c03ba6866e08" => :x86_64_linux
   end
 
   depends_on "rust" => :build
