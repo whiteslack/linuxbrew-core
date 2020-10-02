@@ -3,8 +3,9 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/b8/f3/00b9a5cbd1f8f759ac8bdcb632114aab622db8eb3c8702a48ef166acbfa3/svtplay-dl-2.5.tar.gz"
-  sha256 "341eb21c445a5779bef6659406d21519561bb83a4784155cc617d3c1c0995afa"
+  url "https://files.pythonhosted.org/packages/f2/7d/d78f5bfb5578bd5c936aa61e8e4b2b9346d2315e45af6a0e6af76dd48882/svtplay-dl-2.6.tar.gz"
+  sha256 "8287042f6f46b1e38d11882df5a2620461e30e11a74e6355857c586b4211a860"
+  license "MIT"
 
   livecheck do
     url :stable
@@ -12,9 +13,9 @@ class SvtplayDl < Formula
 
   bottle do
     cellar :any
-    sha256 "24034fb6a4beaf77b22603a711474452043d2336cbf23616733ad1a8b5cb5f10" => :catalina
-    sha256 "b31f59285b86fbd658b275192f1b1b00874f79377b919937324e2a3f1a575014" => :mojave
-    sha256 "35dab23fd1ac5fa8485f9b09d6fa78e35340a8b529ce62f5a9f3f6d2f9121668" => :high_sierra
+    sha256 "bee63956ab938d22778b83380c689387914a622061e821471e1c63e57f65f1d2" => :catalina
+    sha256 "4f1b9eed84614920ec4db6fc2c26eeddfcc0ba53f84b87ac360fa271bfeabc62" => :mojave
+    sha256 "3cbc42e93a3a567e03d4496838b602b7212be7ee825f5b12deb26391965b83f6" => :high_sierra
   end
 
   depends_on "openssl@1.1"
@@ -26,8 +27,8 @@ class SvtplayDl < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/f7/09/88bbe20b76ca76be052c366fe77aa5e3cd6e5f932766e5597fecdd95b2a8/cffi-1.14.2.tar.gz"
-    sha256 "ae8f34d50af2c2154035984b8b5fc5d9ed63f32fe615646ab435b05b132ca91b"
+    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
+    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
   end
 
   resource "asn1crypto" do
@@ -36,8 +37,8 @@ class SvtplayDl < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/12/be/c9cc7d7ab71dbcc9e4e517ead0cdd48e8c9a48d7b8bdddb738e90d08279a/cryptography-3.1.tar.gz"
-    sha256 "26409a473cc6278e4c90f782cd5968ebad04d3911ed1c402fc86908c17633e08"
+    url "https://files.pythonhosted.org/packages/5d/4b/7bb135c5787c003cdbc44990c5f41908f0f37135e0bb554e880d90fd5f6f/cryptography-3.1.1.tar.gz"
+    sha256 "9d9fc6a16357965d282dd4ab6531013935425d0dc4950df2e0cf2a1b1ac1017d"
   end
 
   resource "certifi" do

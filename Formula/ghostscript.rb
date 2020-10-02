@@ -1,8 +1,8 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
-  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9532/ghostpdl-9.53.2.tar.gz"
-  sha256 "5559b2d094a6b977e7a71e7e9f587f1addc608137fdaae10c19faa332bc369ba"
+  url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/ghostpdl-9.53.3.tar.gz"
+  sha256 "96d04e4e464bddb062c1774ea895c4f1c1c94e6c4b62f5d32218ebd44dd65ba1"
   license "AGPL-3.0-or-later"
 
   livecheck do
@@ -11,10 +11,9 @@ class Ghostscript < Formula
   end
 
   bottle do
-    sha256 "6fb394c444db7f81a5de77dc355819fc2072bcde93a7f1f54b15992b5b87b832" => :catalina
-    sha256 "901c2667447f42947c8a619daf7f926ab9cd4a64241d10e59165c01f09226f94" => :mojave
-    sha256 "70399833327fd79bf4d584163ef87d0c65d8e732085625991ff7bd0cc1932417" => :high_sierra
-    sha256 "c98299c0d22395d8b4b6159dc3fbc3099d097dfdefcc637701163694f12e5483" => :x86_64_linux
+    sha256 "d6c05b6c190b6e908d09546977eb2dc111b475ced5db2719cba16ce89ce0b0ed" => :catalina
+    sha256 "b5e6adcbf8f65731d1f3347e81e7ee494a77f35dae6a03aab4d735e714e07b05" => :mojave
+    sha256 "c582c8db6f927273af8e33521aaa33111f216ba05ef36a6d4a2befe8da5d3062" => :high_sierra
   end
 
   head do
@@ -29,6 +28,10 @@ class Ghostscript < Formula
   depends_on "pkg-config" => :build
   depends_on "libtiff"
 
+  on_macos do
+    patch :DATA # Uncomment macOS-specific make vars
+  end
+
   on_linux do
     depends_on "fontconfig"
     depends_on "libidn"
@@ -39,8 +42,6 @@ class Ghostscript < Formula
     url "https://downloads.sourceforge.net/project/gs-fonts/gs-fonts/8.11%20%28base%2035%2C%20GPL%29/ghostscript-fonts-std-8.11.tar.gz"
     sha256 "0eb6f356119f2e49b2563210852e17f57f9dcc5755f350a69a46a0d641a0c401"
   end
-
-  patch :DATA if OS.mac? # Uncomment macOS-specific make vars
 
   def install
     # Fixes: ./soobj/dxmainc.o: file not recognized: File truncated
