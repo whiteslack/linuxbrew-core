@@ -53,7 +53,7 @@ class SdlMixer < Formula
                    "-I#{Formula["sdl"].opt_include}/SDL",
                    "-L#{lib}", "-lSDL_mixer",
                    "-L#{Formula["sdl"].lib}", "-lSDLmain", "-lSDL",
-                   "-Wl,-framework,Cocoa"
+                   *("-Wl,-framework,Cocoa" if OS.mac?)
     Utils.safe_popen_read({ "SDL_VIDEODRIVER" => "dummy", "SDL_AUDIODRIVER" => "disk" },
                           "./playwave", test_fixtures("test.wav"))
     assert_predicate testpath/"sdlaudio.raw", :exist?
