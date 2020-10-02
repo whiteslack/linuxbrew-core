@@ -11,6 +11,7 @@ class CloudNuke < Formula
     sha256 "b26fbf11f8fae75751eae2ae1b0d55ee03de49d2311db8dd0c8e645d8dd5f0a2" => :catalina
     sha256 "04962cb1ca59f14851401a293daab3062da9e7d65c62786db1358760a8cbff05" => :mojave
     sha256 "d1a11c856022022e3d256e2b8bdec34de5522398f74ad4da8faeaa7a07fd0e02" => :high_sierra
+    sha256 "0c25dcf271535498465fca3cb4ea1b218b6e33360903367afc3e84542bc65290" => :x86_64_linux
   end
 
   depends_on "go" => :build
