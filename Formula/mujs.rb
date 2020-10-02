@@ -13,6 +13,7 @@ class Mujs < Formula
     sha256 "eb7344e1f8e8e407fddc9484dd7392be6c6e7a4b88ca05f912a2028ffd780991" => :catalina
     sha256 "1c945e15f08632584cde81b06d233bf62bcd3fee4bde016cbdb37bb067e85a22" => :mojave
     sha256 "9d94f85a85c383c131a32b31f87548d7a8bd89595227a63470925ce5272b41d8" => :high_sierra
+    sha256 "5c134e99f55dc4045e3e0e7f0372388b6a6c7bb0915da3e409428a7480a37026" => :x86_64_linux
   end
 
   on_linux do
