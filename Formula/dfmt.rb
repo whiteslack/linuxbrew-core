@@ -12,6 +12,7 @@ class Dfmt < Formula
     sha256 "316ce1c0504cf87bd8de9bb045fd855e887c75132993bcbde37d1bf54c9f00d5" => :catalina
     sha256 "0644eb26171306e6e76606c373cda1f641c8afcc91f6c8852521e89a49b69864" => :mojave
     sha256 "9edcdbe4f7bf57c0c79ee7bac6f29c4ca1882bf41ec86564e1f3abb35e48c44d" => :high_sierra
+    sha256 "965a75b30b311464d9f75823db9ad6727112c50d2c32f6436f8bfdcdefc99918" => :x86_64_linux
   end
 
   depends_on "dmd" => :build
