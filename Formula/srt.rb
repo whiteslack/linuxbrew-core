@@ -11,6 +11,7 @@ class Srt < Formula
     sha256 "4d194b3700a8a66772175193fe43a3e6dfc4edc96dba84c5ccfe505a327a2dc4" => :catalina
     sha256 "2452cf8d9fc6eead38676dc6f70f83493716fd89b620c8b71b53c8e340ae319d" => :mojave
     sha256 "34a56a324d053ad9ae552c75c8ba3b4289934af552e91d3d113df4e6ff67cd6f" => :high_sierra
+    sha256 "273905599cac243c4edf8bc32e481a553a919e504e401649800290184a25baaf" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
