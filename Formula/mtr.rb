@@ -11,6 +11,7 @@ class Mtr < Formula
     sha256 "6ec962809c1c2381b7723647e16c2283dbef8042ae04af14ad675fa63c38a859" => :catalina
     sha256 "6a768b9cd07026aec0276742fd3fb6723c0f545a8498dff1ab3bb5b9e23e85e0" => :mojave
     sha256 "9c9a9c995360d16581ef42b0a729a5d3c152e7195bcc88910cda9bd9315c3299" => :high_sierra
+    sha256 "28c58554ca23c9b8ea038a27553d71076de147c452315b899c615765d96da3e2" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
