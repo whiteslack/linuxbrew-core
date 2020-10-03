@@ -16,6 +16,7 @@ class GandiCli < Formula
     sha256 "f54b377a3d3b9bf27145ab79de68adea3c5188c499b4e64736b03809d0ad6345" => :catalina
     sha256 "ea2d35473cd69b8f7b1eda66d31b8ed3365b9513918bf86177c66c1251de9e11" => :mojave
     sha256 "3888020e1fd0042fdb57bc82340d8d34eb39f098e2748cedb0e423b5f47f7924" => :high_sierra
+    sha256 "9576fc50cee120c59f3241b166981efff133dd870fed4c61105cd22c2d01068c" => :x86_64_linux
   end
 
   depends_on "python@3.8"
