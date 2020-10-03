@@ -10,6 +10,7 @@ class Abseil < Formula
     sha256 "41a1f8eaf020a761709b5d2c1d71d0d151d7f97dd85a9b06a8ac54fe2ffa5069" => :catalina
     sha256 "c5ed957360a25b35554b279530b21dbefcd2271e15df4ff3d436ff9a2de1ee0f" => :mojave
     sha256 "b07fe2fdca798d08e46cefedf3eea3d8d53fc6c6885cfd413cb4de3050f9bf04" => :high_sierra
+    sha256 "027c840fde4659c6b3ad4eb25ceaa819652dd2ee6feedf72d73b2a583d10ceb7" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
