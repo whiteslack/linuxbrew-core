@@ -10,6 +10,7 @@ class Wsk < Formula
     sha256 "09b1a197c94b0cfa767e35b26e078d25b4c6935f2a77815ea3ff377a10edee72" => :catalina
     sha256 "826e4c9d04daf02229f311006f28387d25fc4f282fc9ca53c3fade638bcc6c7a" => :mojave
     sha256 "cac45056e30af6e9c6d53c0568ab05c865c9aa7206a1b08e4fcf1de4fa48c35f" => :high_sierra
+    sha256 "84435cbee5ea5d0ba63c0e19a733e6962f3fd2a72331d6d0d22e9511891f092e" => :x86_64_linux
   end
 
   depends_on "go" => :build
