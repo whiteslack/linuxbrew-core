@@ -14,6 +14,7 @@ class Libxmlxx3 < Formula
     sha256 "51604d366f7b794feff18466d1e42bc1b80c68790f664ce07e15c7bcf18ccd40" => :catalina
     sha256 "421fc4d53570da9c554c64887b174e4f8eefa0cf97dcf98e15ecef9b9863fe78" => :mojave
     sha256 "fdefe0b6dea82091a56cc9372ff0a7b74c255a51f94b22005984967aed3a1eb0" => :high_sierra
+    sha256 "80901e66b31a4726f7e507a53a070eab1d0557acdcf3463bae2e3de501699f5b" => :x86_64_linux
   end
 
   depends_on "meson" => :build
