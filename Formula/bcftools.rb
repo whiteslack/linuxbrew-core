@@ -14,6 +14,7 @@ class Bcftools < Formula
     sha256 "fb3b25ef0fa059b400d4094e9719208c74b7665c45d378aec46f26efe5c179c6" => :catalina
     sha256 "cbc6f8a457ddb9d4e6c14a1b5f78023f66305aa9df7f8495252b9a774821fec9" => :mojave
     sha256 "d6ea207bfe680f637147e39e7cf2f3311709dc3c1964bdf5d3506d13200da7a8" => :high_sierra
+    sha256 "8239db528c841f58d0b79bdf36266c574eca6e8e6c030da2e59edc3f9c4ebee5" => :x86_64_linux
   end
 
   depends_on "gsl"
