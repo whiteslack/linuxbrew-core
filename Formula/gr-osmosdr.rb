@@ -3,15 +3,14 @@ class GrOsmosdr < Formula
 
   desc "Osmocom GNU Radio Blocks"
   homepage "https://osmocom.org/projects/sdr/wiki/GrOsmoSDR"
-  url "https://github.com/osmocom/gr-osmosdr/archive/v0.2.0.tar.gz"
-  sha256 "9812429d97bc54f0a8917b880ca9e7e2421c66aeaac8ce5608161a8ae7007122"
+  url "https://github.com/osmocom/gr-osmosdr/archive/v0.2.2.tar.gz"
+  sha256 "5a7ce7afee38a56191b5d16cb4a91c92476729ff16ed09cbba5a3851ac619713"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 "bc0e94a1514d228e6eb6868abc8aeaa56c1bb8c65c3e3afe68cdc2055381e65f" => :catalina
-    sha256 "da85067073251ba9bcb88d0047cc77b898e31762f9b3d423cbc2686e9bb5f9d7" => :mojave
-    sha256 "f973fe7465ea4931cb31096a1b26fdef355403b38dd01dfd236aa2eb4e18b182" => :high_sierra
+    sha256 "fe44d2d7c7191673e63737c5d836d678db4118c3642ac2bb8bb1a2ac9c9748c1" => :catalina
+    sha256 "eda09b693472907745359cbc0f98bf8bb684d74d1cbca4d057683efa989a59aa" => :mojave
+    sha256 "a7688b87b3100710348257944d22b23cadd98edd9fb06e145c8db1b80ad476a8" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -36,13 +35,6 @@ class GrOsmosdr < Formula
   resource "six" do
     url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
     sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
-  end
-
-  # Fix for Boost 1.73.0
-  # https://github.com/osmocom/gr-osmosdr/pull/19
-  patch do
-    url "https://github.com/osmocom/gr-osmosdr/commit/5646d55f4f8b47b4602dad60d24385e393a47f61.patch?full_index=1"
-    sha256 "2cc914dc1aea0e2258e2642c1173c6d11173bf64b1221af7cab9ceebd5f3f517"
   end
 
   def install

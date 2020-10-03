@@ -1,25 +1,17 @@
 class H3 < Formula
   desc "Hexagonal hierarchical geospatial indexing system"
   homepage "https://uber.github.io/h3/"
-  url "https://github.com/uber/h3/archive/v3.6.4.tar.gz"
-  sha256 "b80c2eee2b3e645de77893e27ca149e63d3bb6bf95d33e3a384e3f390e2681bb"
+  url "https://github.com/uber/h3/archive/v3.7.0.tar.gz"
+  sha256 "7b59780781750d2ccc64c50b6364d706947a684b0cb996c1b104f448562d2d7c"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 "09a6545834974c43aec33b061abf50fac5cc58c0dc115f7aaacb5c787d5de541" => :catalina
-    sha256 "ca32e11077bf894aa153fb0a89bb1f6b34f6a4964224d29cf422c4ad0bd817d8" => :mojave
-    sha256 "b8bc7c33678f9cc98c2abd765d410c1805bc449c4d8c66559be18eed97f270da" => :high_sierra
-    sha256 "0512932aa947024d11f21e4660c2154688f676d4d8fc790ad5b241bbd8f8dcb7" => :x86_64_linux
+    sha256 "10d7a83009f264fec7eca8a137e7ca447d5d42014c6d462901be73e01fd44150" => :catalina
+    sha256 "a9ae53d3e322038ca02c04b3d6a0cd077bfddcc20fe520fb13c7f1254d2c0b96" => :mojave
+    sha256 "6bc0a20ee7598bce3815a952f9166c6239411c2fe651007fdcaeabfe1bc9b384" => :high_sierra
   end
 
   depends_on "cmake" => :build
-
-  # remove in next release
-  patch do
-    url "https://github.com/uber/h3/commit/de1a7cb27891ed8b9934288ee645a4b307553c76.patch?full_index=1"
-    sha256 "1c31a9b6136190c8f8097cc3112de0a2a4d3074c3170ad4af21673cdf565162b"
-  end
 
   def install
     mkdir "build" do

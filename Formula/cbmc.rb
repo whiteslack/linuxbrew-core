@@ -2,15 +2,15 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https://www.cprover.org/cbmc/"
   url "https://github.com/diffblue/cbmc.git",
-      tag:      "cbmc-5.14.3",
-      revision: "d70285a9fcbea2febd823e75ac72fcd04c535ca1"
+      tag:      "5.15.0",
+      revision: "94fb414c0b2dde60e000cdd687c12e4590f9a51f"
   license "BSD-4-Clause"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b3ce4e58594ed53b480ee5345e3e137fa37604c099fb414ce5cbe135f8fe6039" => :catalina
-    sha256 "7187b825e9be22af88160a43addf37679a39d494a321f7bd644b152d7bf5cb27" => :mojave
-    sha256 "8de17d6c327221327a98195e866e711b87b53829fda93a0c2bb9fb461ef62378" => :high_sierra
+    sha256 "cbf5aa21b67d01c45c0fe817c11336cb5bd32cf30ca285248175813aaffc290a" => :catalina
+    sha256 "f1c1a40101b5b382ba90eac40560380ddf635e62e4da1b974a580b4b60160e9f" => :mojave
+    sha256 "ea860da5c47abe4b31d503c4c43bfb9ef51e7213346532996ff248816f277bd6" => :high_sierra
   end
 
   depends_on "cmake" => :build

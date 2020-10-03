@@ -3,8 +3,8 @@ class Howdoi < Formula
 
   desc "Instant coding answers via the command-line"
   homepage "https://github.com/gleitz/howdoi"
-  url "https://files.pythonhosted.org/packages/40/d2/398de8ab210d01f370faed2f7fd44ffe70cc40e5d3ce9ad846f0b7195bf1/howdoi-2.0.6.tar.gz"
-  sha256 "7e8a14a3839c6979081cc121deefc97d8356182066dd3f0ecfc9423c2c49cf3d"
+  url "https://files.pythonhosted.org/packages/34/b6/cb3f602a42b54f2992b970135b9c781cc7a69ed9a21ab0fc9c391c9be129/howdoi-2.0.7.tar.gz"
+  sha256 "09362f7390119dffd83c61a942801ad4d19aee499340ef7e8d5871167391d3d6"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class Howdoi < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f170909319810da9fbf6795a1be135055a04f3e326f1fd3ef7579490bd273e2b" => :catalina
-    sha256 "c3266f098ae884ab1ab0ae3be061a9cf6e66aebd0e8d8e2212cd842279816b05" => :mojave
-    sha256 "d38a1d90b085a90fb6e4d9f4400969d0b82fea8d0a06e15866e4292d8f236ca5" => :high_sierra
-    sha256 "72d2d18433abcac663c15fbe51b984e8302c041aa8e27f415029bab81f4fe495" => :x86_64_linux
+    sha256 "84754b7ec15d8d58e3fcdadf274d0f2a687d9138f6358b25cea583f2d2db34e9" => :catalina
+    sha256 "142737fb1dd1b397c276e6c2e75209e1b8d95e9f4d7bc39e38895b4afb9832b6" => :mojave
+    sha256 "85fd34e660eb5d04c1c4084175c8d568e35e8b16f0d3de944d7a0d449d1cc8d7" => :high_sierra
   end
 
   depends_on "python@3.8"
@@ -80,8 +79,8 @@ class Howdoi < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/5d/9d/208733ccc91b1d2c2af7270ffe3def197504bd8da875bc3fa1dc75039795/Pygments-2.7.0.tar.gz"
-    sha256 "2594e8fdb06fef91552f86f4fd3a244d148ab24b66042036e64f29a291515048"
+    url "https://files.pythonhosted.org/packages/e2/07/25bd93c9c0175adfa5fb1513a20b25e7dd6c9a67c155e19b11b5f3662104/Pygments-2.7.1.tar.gz"
+    sha256 "926c3f319eda178d1bd90851e4317e6d8cdb5e292a3386aac9bd75eca29cf9c7"
   end
 
   resource "PyJWT" do

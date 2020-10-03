@@ -1,8 +1,8 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
   homepage "https://www.zabbix.com/"
-  url "https://cdn.zabbix.com/zabbix/sources/stable/5.0/zabbix-5.0.3.tar.gz"
-  sha256 "34fcbc6bdc95c618a7903ca17434cfeb1ad12f0cdebbc75d35990975d37283b5"
+  url "https://cdn.zabbix.com/zabbix/sources/stable/5.0/zabbix-5.0.4.tar.gz"
+  sha256 "c1da683fb886bc6edcb59b07c716a1083a92b5ec31b3d2372afdbbc6307f7147"
   license "GPL-2.0-or-later"
 
   # As of writing, the Zabbix SourceForge repository is missing the latest
@@ -16,10 +16,9 @@ class Zabbix < Formula
   end
 
   bottle do
-    sha256 "9f45e84d2ca99fa5dc3db84b88da30b7be4764cca82ce40bac3515b392935f3c" => :catalina
-    sha256 "245166bc2e16916f2d916b89ba9521c803538b4e9d8f598888ef4574e3888731" => :mojave
-    sha256 "576a7e8472d4aa6ae60917618e785410d7ffce22d9560b1958f7243f88a0a374" => :high_sierra
-    sha256 "52320bdfe84a195de7f9dda6f883a1b307066ebf12647381c2ccb66590f34068" => :x86_64_linux
+    sha256 "15d06bf800f325c3195c6903161fe3dd335cc0ed31644a8c3eb22d4129fea98d" => :catalina
+    sha256 "a3af50a405519799544eb08cdb50a1eca4e7c413c15101198e2ba8dd321ec88d" => :mojave
+    sha256 "b06ee8377b5d40ccc8688c5c94d9595dab19231028a8654b6b315be20646a940" => :high_sierra
   end
 
   depends_on "openssl@1.1"

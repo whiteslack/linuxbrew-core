@@ -1,16 +1,15 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://github.com/igraph/igraph/releases/download/0.8.2/igraph-0.8.2.tar.gz"
-  sha256 "718a471e7b8cbf02e3e8006153b7be6a22f85bb804283763a0016280e8a60e95"
-  license "GPL-2.0"
+  url "https://github.com/igraph/igraph/releases/download/0.8.3/igraph-0.8.3.tar.gz"
+  sha256 "cc935826d3725a9d95f1b0cc46e3c08c554b29cdd6943f0286d965898120b3f1"
+  license "GPL-2.0-or-later"
 
   bottle do
     cellar :any
-    sha256 "3005e637b6cb7cbed28b6dc997d480f8a1917c4118852a107ae0b59936d20698" => :catalina
-    sha256 "81181b904e63af33766a9c967f5ae42a11dadc8e72ba80604804636e663414ce" => :mojave
-    sha256 "40791d18478711af9cc497917ce7b34af179538bd719108d04be073faec57db9" => :high_sierra
-    sha256 "63a8c61f1be17fedcfb70646473f8f0d40f4089fdd2b570b5a57e6b02d2b119c" => :x86_64_linux
+    sha256 "6e7d352c5b144dddc9b05052c953bc21a6dcec380d1afcf6f1b3d80d8b22f257" => :catalina
+    sha256 "d60d6d7ba09921385e29b02ca5d26fd0b7c15d1bd6b3de7e9cea33f533c76fd1" => :mojave
+    sha256 "c8081231567eb1fdbe966e687b9ac759ecbd0c61f39a26e316d7c34e29e7c365" => :high_sierra
   end
 
   depends_on "glpk"

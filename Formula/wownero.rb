@@ -2,15 +2,15 @@ class Wownero < Formula
   desc "Official wallet and node software for the Wownero cryptocurrency"
   homepage "https://wownero.org"
   url "https://git.wownero.com/wownero/wownero.git",
-    tag:      "v0.9.0.0",
-    revision: "b303931b23206236f335bca16b38df8312216668"
+    tag:      "v0.9.0.2",
+    revision: "9a58ac48d2f1ebdc94f168e63fdc30604058a7ca"
   license "BSD-3-Clause"
 
   bottle do
     cellar :any
-    sha256 "d81109acc03e655cd23cf8d0395bd3af5373ca2465eacc80bd7a15366a9498d1" => :catalina
-    sha256 "977c5b90406eae09323fa305f33e6bdb4fe15cc373cd108c66de723da84c978a" => :mojave
-    sha256 "abfcecf769eeecbe3deda440ab947e972398f47bb286172b1d5fb94c3af0d112" => :high_sierra
+    sha256 "8ec66cfd025054b7acd06e119ef569b168900de18e8c7e4cf613149a64c983f7" => :catalina
+    sha256 "1270cbab4bf4b1615af99f61b9b74453fecd2c4227755bd43b154d10dc26dbaf" => :mojave
+    sha256 "3de1293cafd981fb69f6d4fb2c10e7402ddc09f0015caf19096f544ae3be9a6b" => :high_sierra
   end
 
   depends_on "cmake" => :build
