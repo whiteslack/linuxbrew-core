@@ -16,6 +16,7 @@ class Nbdime < Formula
     sha256 "7773999e6e1ecfc4b2583f205958bcad1c34ad9cee6e10ac652351bdd9e1e385" => :catalina
     sha256 "65ac26ac48870a97c2d403785662dbd6d27f614712d9da3fda0c59642b6e6f73" => :mojave
     sha256 "bdeebd6e06b0e11e0b8a46f6243ed1e91bef2aa3cbe272850d8c09d047144f69" => :high_sierra
+    sha256 "e8f8d1e2c9c805221f5469254882db7f1cdf383d03655ea7a9275a19e1c6b6e1" => :x86_64_linux
   end
 
   depends_on "python@3.8"
