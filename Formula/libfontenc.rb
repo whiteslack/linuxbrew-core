@@ -10,6 +10,7 @@ class Libfontenc < Formula
     sha256 "b57f18c5d875f7ceded9115cd1971be92a3c3887c7c606ff5028ea1ddb160b1c" => :catalina
     sha256 "e79ca92c5f40a57da0b5745df2eb64fe532e90bbf292e4d97a4703d5b0e15791" => :mojave
     sha256 "83bf803c71ed38edf5204ee3bdd89f6569c4c04a41c64003f20ab67b7021f2f2" => :high_sierra
+    sha256 "2c5730e58b858a95e7ce321eb5d524927e1d99088751b1477ef93993406bd05f" => :x86_64_linux
   end
 
   depends_on "font-util" => :build
