@@ -10,6 +10,7 @@ class Libxfixes < Formula
     sha256 "d811d1d116d0d42f53df60cbae1a9ced87580445a1bcd30005227d43a9fd23e3" => :catalina
     sha256 "c784ffa191d81e4a4a0585df94ea4cff0281d813b8ae799283cd79798a769264" => :mojave
     sha256 "c41141d2f1965ebbdfaea27c0f316fe472e8302dd70beb026bcb5b607dbd6db0" => :high_sierra
+    sha256 "3aaba846570380f7dbf5cf7f93280866318a7730c9c5fd38fd1ad275aec037bd" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
