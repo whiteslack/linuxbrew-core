@@ -10,6 +10,7 @@ class LibpthreadStubs < Formula
     sha256 "4d69c165836f4d19d4afd152f02340ea1f6e3f218faf950dddca39e10553c80d" => :catalina
     sha256 "1baaf595e397cbfa6ba2379e1080d39de10115c39be797476cf89ff33b85938f" => :mojave
     sha256 "52d34ffb143025031355dcc9e9d4c64fe5cd46f020f2c3861fdc26d1f9c759d6" => :high_sierra
+    sha256 "56f9851df3cdf76b43e63cab025c742ff54c62794c5a0bc93cf4364323d77421" => :x86_64_linux
   end
 
   depends_on "pkg-config"
