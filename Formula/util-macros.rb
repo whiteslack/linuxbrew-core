@@ -10,6 +10,7 @@ class UtilMacros < Formula
     sha256 "298dfa88698206b08ce19e5daf66903da4a94e561ec639487c17b55c3d09ee3f" => :catalina
     sha256 "bd71cb44913a35fb4f8e63a0fd90229d8912d7af40f02c78b056cf72eb88b684" => :mojave
     sha256 "38d6cb7e6c900a555c5602af513224d346166e109b7226cc5b86cb51b9b55fe4" => :high_sierra
+    sha256 "6454b1ed0bc9c7198d66ce9bcd892d4ba9617713bc8fd76f5cbdc33f0881b6f8" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :test
