@@ -9,6 +9,7 @@ class Xdotool < Formula
     sha256 "8dbfb2b1c32176c7cba00aaa2365f3cd438619dc0286e668e5d87412c3717d53" => :catalina
     sha256 "860e5e7f2ca2ae88c86e8a979eba543f544960894bb4d8ec59d98cbba9805614" => :mojave
     sha256 "9de15325d8ed42b629a94e34ff710672e96c1570dc51a6544aff0d0445de5e9c" => :high_sierra
+    sha256 "84a3a57da30213761e5f8f8aa7a3bb954198735694df7bbe8bb495a428cc5893" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
