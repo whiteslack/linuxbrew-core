@@ -1,10 +1,8 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
-  url "https://nmap.org/dist/nmap-7.80.tar.bz2"
-  sha256 "fcfa5a0e42099e12e4bf7a68ebe6fde05553383a682e816a7ec9256ab4773faa"
-  license "GPL-2.0"
-  revision 1
+  url "https://nmap.org/dist/nmap-7.90.tar.bz2"
+  sha256 "5557c3458275e8c43e1d0cfa5dad4e71dd39e091e2029a293891ad54098a40e8"
   head "https://svn.nmap.org/nmap/"
 
   livecheck do
@@ -13,11 +11,9 @@ class Nmap < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "e1ba8b92c348e3d04c89f4ffc50800d480dd45ca34726a4f7e3fe7974b0bb651" => :catalina
-    sha256 "fb166b6d77a7a1df2a38a58f5123d51bd3ace308c736094c2c9b5a2591f405ee" => :mojave
-    sha256 "8edad05b0f4fc20552dd6c1b573a7fa6bf2d03568b014ee60c1153980fb43649" => :high_sierra
-    sha256 "3323b1cad168c03e9efca1bf51ac30a7dbdf29f16b4caa395a5859cc72ecfca7" => :x86_64_linux
+    sha256 "f86423c5d193de1df53de7264ec5c2955bf589f878943ebbdf28c718bfea2a6e" => :catalina
+    sha256 "fe5709980a63192317186cf994b2522ae401b1c37fa74e5eb497f2587a20e959" => :mojave
+    sha256 "371113f240b24105a46bbe7b7b5db504656cd33bb1c5299cbc110c872610825d" => :high_sierra
   end
 
   depends_on "openssl@1.1"
@@ -27,13 +23,6 @@ class Nmap < Formula
   uses_from_macos "zlib"
 
   conflicts_with "ndiff", because: "both install `ndiff` binaries"
-
-  # Remove for > 7.80
-  # Big Sur fix; see also: https://github.com/nmap/nmap/pull/2085
-  patch do
-    url "https://github.com/nmap/nmap/commit/05763b620d4c92a7fe4afee649f3b317894f5ca6.patch?full_index=1"
-    sha256 "3efed6ca33f7a529053c8f913c62966014ebcc1b0ef406fe0c251767e1300d37"
-  end
 
   def install
     ENV.deparallelize

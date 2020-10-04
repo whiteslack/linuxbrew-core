@@ -1,9 +1,9 @@
 class Pyqt < Formula
   desc "Python bindings for v5 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/download5"
-  url "https://files.pythonhosted.org/packages/8c/90/82c62bbbadcca98e8c6fa84f1a638de1ed1c89e85368241e9cc43fcbc320/PyQt5-5.15.0.tar.gz"
-  sha256 "c6f75488ffd5365a65893bc64ea82a6957db126fbfe33654bcd43ae1c30c52f9"
-  license "GPL-3.0"
+  url "https://files.pythonhosted.org/packages/1d/31/896dc3dfb6c81c70164019a6cbba6ab037e3af7653d9ca60ccc874ee4c27/PyQt5-5.15.1.tar.gz"
+  sha256 "d9a76b850246d08da9863189ecb98f6c2aa9b4d97a3e85e29330a264aed0f9a1"
+  license "GPL-3.0-only"
 
   livecheck do
     url :stable
@@ -11,14 +11,19 @@ class Pyqt < Formula
 
   bottle do
     cellar :any
-    sha256 "a17f79ba93b629d68857864a9b35130b4cd56c650f4c80226fb9c983d40ef199" => :catalina
-    sha256 "6bc5f85f905eb25f9bfc9e23da8af4d23ba77745ace301fe4d3e8b93ad9a27b7" => :mojave
-    sha256 "6a823bc3eedf914192f63d8d21d4fc66ee32399100cb9b79b044dfd60fa401bb" => :high_sierra
+    sha256 "ba91fe84fafeb809072d868fc831fa00fbf41b05f0f54d34ae4741a4dc6dbdb2" => :catalina
+    sha256 "9f5af42de5df0fadbed7cd97440302643481edc0ef0c91c0aef3ef8702fd3030" => :mojave
+    sha256 "4af6c3d6b8c2a874b5bfec4dfd530d43dffc45f20222bfaf1e7e9b94489a84c2" => :high_sierra
   end
 
   depends_on "python@3.8"
   depends_on "qt"
   depends_on "sip"
+
+  resource "PyQt5-sip" do
+    url "https://files.pythonhosted.org/packages/73/8c/c662b7ebc4b2407d8679da68e11c2a2eb275f5f2242a92610f6e5024c1f2/PyQt5_sip-12.8.1.tar.gz"
+    sha256 "30e944db9abee9cc757aea16906d4198129558533eb7fadbe48c5da2bd18e0bd"
+  end
 
   def install
     version = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
