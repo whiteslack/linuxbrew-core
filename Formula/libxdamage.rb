@@ -10,6 +10,7 @@ class Libxdamage < Formula
     sha256 "2c09f29dfafe280bc0179dfe6ad82b623459e6bec07fefac41cf6b3e52385100" => :catalina
     sha256 "ea0aee131addc90c4b4ba6e0d8c4f8cdfd39dc034a7bfc3e841c408042ad8906" => :mojave
     sha256 "5c0ca5debb8c99cfed432fa2299e4a280ca81f8988aaacf44e0c0194d89ca7ac" => :high_sierra
+    sha256 "bfc0ac85f89a4dcc1e94991bef37212d55607dc7c7b9708f3a1845ee9b456c4f" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
