@@ -10,6 +10,7 @@ class Libxinerama < Formula
     sha256 "7a008044d1824d0585b13cba7021ec038bda6485a8789337cd6a9fd305b83233" => :catalina
     sha256 "c69df5fe02995fbbf085b26da9ae1af4b890b2d57d1e8d115253706486297e5f" => :mojave
     sha256 "27a945b6652dd0c36b3360ca55de687dd350feca08fc0e32bafe71d06edca377" => :high_sierra
+    sha256 "06134907802d953c75bc8740121fb3ad2345e1b33d55370d09b2c92e2465f96c" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
