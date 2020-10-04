@@ -10,6 +10,7 @@ class Libxi < Formula
     sha256 "a0fddd9dcb30077a6a2736540bf2d1cee8bf44fb8291d8b6ad1207086bf6f63e" => :catalina
     sha256 "c6745a3e9274dd78e9c4372ebca168ca1ae83600fd5c5ac68a59cc4dc60f3d6a" => :mojave
     sha256 "641cd78fbe4d389ce51c071deb60b62da482aa623e49bf0fe1b765b67d1380ac" => :high_sierra
+    sha256 "3f8973202e820185cf4976d01580f63ef9f43d299f7a983415abc08a5e658a1d" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
