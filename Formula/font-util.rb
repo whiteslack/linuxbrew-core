@@ -10,6 +10,7 @@ class FontUtil < Formula
     sha256 "3b1ccaebd2a3efc9cd2daac2e9e740362349a1847e4c169ebe3d475ff3b31a8d" => :catalina
     sha256 "c606e6261604b92184fad13ea3fa0cdf377fe09bd3280389ae3c2b32b15b4785" => :mojave
     sha256 "e5a86e6341ec516e06c3c22cc347ef5329add351e8aeb1f3aac3cf981dd81d51" => :high_sierra
+    sha256 "433002ceb718eb72f97b9064e2ef8c0837d5ffc091d0f12d6f868825c82da4be" => :x86_64_linux
   end
 
   depends_on "pkg-config" => [:build, :test]
