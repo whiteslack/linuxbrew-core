@@ -12,11 +12,10 @@ class Libbluray < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "9c6ef542e0a86886c669d99765c9a4f649e62a6e48ebd5a2dd961255e8657426" => :catalina
-    sha256 "49791738b4090ceba841a1a867c6c9724257f631e054ec716e67924b838a0059" => :mojave
-    sha256 "dbba386dc3a04515924b9423c37f293a57cceee8295e15994b3afe856a5e291a" => :high_sierra
-    sha256 "615d96d6e751001d87f0de2fef662b397c65a907bd64ce0e69654be8830c1ddc" => :x86_64_linux
+    rebuild 2
+    sha256 "a6390593b5e2044ae683f2a8bb1c206c6eb705b570ffede50e478be63c07ff81" => :catalina
+    sha256 "b59b3ea706de1a5a0c5bae9db673e7659428ccb2b35c2b28a71aa5b6c91e996d" => :mojave
+    sha256 "957c062a77d5ad187c21388a41352e416b8b5be65696bd042fc422a547365a98" => :high_sierra
   end
 
   head do
@@ -28,11 +27,7 @@ class Libbluray < Formula
   end
 
   depends_on "ant" => :build
-  if OS.mac?
-    depends_on java: ["1.8", :build]
-  else
-    depends_on :java
-  end
+  depends_on "openjdk" => :build
   depends_on "pkg-config" => :build
   depends_on "fontconfig"
   depends_on "freetype"
@@ -40,21 +35,10 @@ class Libbluray < Formula
   uses_from_macos "libxml2"
 
   def install
-    if OS.mac?
-      # Need to set JAVA_HOME manually since ant overrides 1.8 with 1.8+
-      ENV["JAVA_HOME"] = Language::Java.java_home("1.8")
+    # Build system doesn't detect Java version if this is set
+    ENV.delete "_JAVA_OPTIONS"
 
-      # https://mailman.videolan.org/pipermail/libbluray-devel/2014-April/001401.html
-      ENV.append_to_cflags "-D_DARWIN_C_SOURCE"
-    else
-      ENV["JAVA_HOME"] = Formula["adoptopenjdk"].opt_prefix
-    end
-
-    # Work around Xcode 11 clang bug
-    # https://code.videolan.org/videolan/libbluray/issues/20
-    ENV.append_to_cflags "-fno-stack-check" if DevelopmentTools.clang_build_version >= 1010
-
-    args = %W[--prefix=#{prefix} --disable-dependency-tracking]
+    args = %W[--prefix=#{prefix} --disable-dependency-tracking --disable-silent-rules]
 
     system "./bootstrap" if build.head?
     system "./configure", *args
