@@ -16,6 +16,7 @@ class Libbluray < Formula
     sha256 "a6390593b5e2044ae683f2a8bb1c206c6eb705b570ffede50e478be63c07ff81" => :catalina
     sha256 "b59b3ea706de1a5a0c5bae9db673e7659428ccb2b35c2b28a71aa5b6c91e996d" => :mojave
     sha256 "957c062a77d5ad187c21388a41352e416b8b5be65696bd042fc422a547365a98" => :high_sierra
+    sha256 "ce3caa2891667daa633e8751d13fc4aca52232ece29595ece24cd9a61b4c9b95" => :x86_64_linux
   end
 
   head do
