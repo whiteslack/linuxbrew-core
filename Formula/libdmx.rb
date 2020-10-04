@@ -10,6 +10,7 @@ class Libdmx < Formula
     sha256 "89fc7b694d6e0d2bd786f053bf9f8bb8aa2005f99319e6a75fad30dfcff7b831" => :catalina
     sha256 "53a22f968698ff43bd3e483a77cc1c1a1b9bcc4ef3cbdfc6ffa5039d7e6af6b1" => :mojave
     sha256 "d4b4e652d95db58f17afbf8d061cc161982b3726da03f403a05c14c8b99558a4" => :high_sierra
+    sha256 "cd51443dfbb6d29d55764a4b9679be0b850ba2500b756c6f75df412ba761d2c7" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
