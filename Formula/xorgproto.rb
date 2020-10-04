@@ -10,6 +10,7 @@ class Xorgproto < Formula
     sha256 "12227628c023328dc1c2c4d4be43c3170e9b2eb31d2be792b091ea8d21ec0619" => :catalina
     sha256 "5a66e9fd1485b634bc2d5821258599e9fd30dcc6b372862c927501330eba8c8b" => :mojave
     sha256 "3d1c8d8aa28541dc4b6f1d2f05c5472494834ef4e0fadf6545f5728ea048fb9c" => :high_sierra
+    sha256 "7cec7ba305a899f3853cfa7a9a4fe66bb63f9d91fc760594b788ebe12cf66625" => :x86_64_linux
   end
 
   depends_on "pkg-config" => [:build, :test]
