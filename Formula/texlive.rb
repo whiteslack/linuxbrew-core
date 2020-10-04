@@ -13,7 +13,6 @@ class Texlive < Formula
 
   depends_on "wget" => :build
   depends_on "fontconfig"
-  depends_on :linux
   depends_on "libice"
   depends_on "libsm"
   depends_on "libx11"
@@ -22,6 +21,7 @@ class Texlive < Formula
   depends_on "libxmu"
   depends_on "libxpm"
   depends_on "libxt"
+  depends_on :linux
   depends_on "perl"
 
   def install
