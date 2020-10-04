@@ -19,6 +19,7 @@ class Plotutils < Formula
     sha256 "b63f4f051452f8fd9b5ddb50f9d574122c2277c9778e1a56c3f2d59e55c3da73" => :sierra
     sha256 "b734cdcbc7ce11c4a716bc96ee7671f3883a5d41dadceac28d994ad2c20292f9" => :el_capitan
     sha256 "fae89f252628820ac83a0896fa022b1c08cacca6e6234b2fb23c10554f424fd3" => :yosemite
+    sha256 "ab12cbf3c92cb3b48d3da89bba5ef6d70db71ec779db0d6c743c5a9ea3d07da0" => :x86_64_linux
     sha256 "e51b4b5c367e8f9ec533f54e20c9df0b887818ee35c4cde19ba8feb73d4d2ff2" => :mavericks
   end
 
