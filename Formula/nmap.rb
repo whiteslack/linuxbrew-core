@@ -14,6 +14,7 @@ class Nmap < Formula
     sha256 "f86423c5d193de1df53de7264ec5c2955bf589f878943ebbdf28c718bfea2a6e" => :catalina
     sha256 "fe5709980a63192317186cf994b2522ae401b1c37fa74e5eb497f2587a20e959" => :mojave
     sha256 "371113f240b24105a46bbe7b7b5db504656cd33bb1c5299cbc110c872610825d" => :high_sierra
+    sha256 "cb05bb64ee19f8ad16c34387549de04c9eb567aae166ec1b7a607628ea298048" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
