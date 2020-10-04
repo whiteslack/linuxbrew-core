@@ -10,6 +10,7 @@ class Libxcursor < Formula
     sha256 "c8c48a2d78f7a5d23c1a1322ceac267d1d50ae8b7f1ad93c7a8b0e510afdf39e" => :catalina
     sha256 "fe9c7b74829d92a0330caa49aeaf03d52213f2d8671fe8a4840b2700fa1cb863" => :mojave
     sha256 "ac83b3e1c320f65c0dd7d66ef03abb3a5163ee8cb4b8932e14f008ae4cce5126" => :high_sierra
+    sha256 "76a5cf8e0782ff5fd5180c656e04de32cf9e4d167d0447463baa12e1fd00b1f4" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
