@@ -10,6 +10,7 @@ class Libxrandr < Formula
     sha256 "62f9efb3fcb658182731de45c6b8a20a941ecb5b1e14e4a5375aa3d1b58ef530" => :catalina
     sha256 "d1cf6d028abfae84918dbfc05a497ee46daa653a2337a3112ecb101193f0ed2b" => :mojave
     sha256 "5cd68c19e9821dff52249e3598b82c2010ddc43cb029fa80ef73c3b620c65bed" => :high_sierra
+    sha256 "dde0fd3c63a0471016e822a59d83826b530104047c0962163fff97ff06d84eb2" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
