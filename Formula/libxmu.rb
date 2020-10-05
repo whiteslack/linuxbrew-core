@@ -10,6 +10,7 @@ class Libxmu < Formula
     sha256 "ff33cd2f865f77d04ad861dd5e10784842511050c754e9bd772ab81b2e1c6918" => :catalina
     sha256 "a437eedd57edefe94c7a4d7cb30ac03d5ea6852f7a6ba6be33e12c839cde6ac6" => :mojave
     sha256 "24ca27eaf60f6dfe9d35d61ff4edc5ba7b9e04e3d9efc9938fe5eb905057c8e6" => :high_sierra
+    sha256 "4e8b5ed3d29011b11d5dc7689ab2ba1f256c85beded37b838de4b4534236bc65" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
