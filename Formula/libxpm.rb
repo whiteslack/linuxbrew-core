@@ -1,16 +1,15 @@
 class Libxpm < Formula
   desc "X.Org: X Pixmap (XPM) image file format library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXpm-3.5.12.tar.bz2"
-  sha256 "fd6a6de3da48de8d1bb738ab6be4ad67f7cb0986c39bd3f7d51dd24f7854bdec"
+  url "https://www.x.org/archive/individual/lib/libXpm-3.5.13.tar.bz2"
+  sha256 "9cd1da57588b6cb71450eff2273ef6b657537a9ac4d02d0014228845b935ac25"
   license "MIT"
 
   bottle do
     cellar :any
-    sha256 "53865d3b3d752c71525a40db99851580b5d979f7b722b0bf361d923e33a39ea5" => :catalina
-    sha256 "9b34b6b7ca85c9e0082b823d31e82094c5b7106e7d3af1e8cba33fc994b54382" => :mojave
-    sha256 "32c76e168d128d34dea14d51c422888fab28c3db1ecad10fc5bd457afe239b8a" => :high_sierra
-    sha256 "8061d4887d5b2ed30053f9d5b99b8caf6a2ae7d50f7c1ffcda476f3013ed0b99" => :x86_64_linux
+    sha256 "fbd3f2bbf058c081bd35672c0129a33efa38b7e599726be145d0b8b818549516" => :catalina
+    sha256 "c3f788d5e8d2f0ec940af7c758acc0efce194cf526b19ab64bdeaba55e1b6793" => :mojave
+    sha256 "72d7dc1306010048b85b9070287e8c9d5f5a24308b1a413080a4e129aa9bcc0f" => :high_sierra
   end
 
   depends_on "gettext" => :build
