@@ -45,6 +45,7 @@ class Libepoxy < Formula
       #ifdef OS_MAC
       #include <OpenGL/CGLContext.h>
       #include <OpenGL/CGLTypes.h>
+      #include <OpenGL/OpenGL.h>
       #endif
       int main()
       {
