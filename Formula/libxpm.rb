@@ -10,6 +10,7 @@ class Libxpm < Formula
     sha256 "fbd3f2bbf058c081bd35672c0129a33efa38b7e599726be145d0b8b818549516" => :catalina
     sha256 "c3f788d5e8d2f0ec940af7c758acc0efce194cf526b19ab64bdeaba55e1b6793" => :mojave
     sha256 "72d7dc1306010048b85b9070287e8c9d5f5a24308b1a413080a4e129aa9bcc0f" => :high_sierra
+    sha256 "80615a56d19df0cb6cc68f85dbeb2f4c18ad8b16224fb42f24a8406a04176d40" => :x86_64_linux
   end
 
   depends_on "gettext" => :build
