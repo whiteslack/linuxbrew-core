@@ -4,17 +4,19 @@ class Shtools < Formula
   url "https://github.com/SHTOOLS/SHTOOLS/archive/v4.7.1.tar.gz"
   sha256 "6ed2130eed7b741df3b19052b29b3324601403581c7b9afb015e0370e299a2bd"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/SHTOOLS/homebrew-shtools.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4cc5c0cf89291f3b8add63f05e12a90875a953b02fc3273ef81b0d7103cfcb32" => :catalina
-    sha256 "b2f7e074fa7ecea8d703c96201de2301682cfcb3dd7d1b781f1e2a2e1c75ad8a" => :mojave
-    sha256 "efa5d3314011b1483184edca0ec6b7eedbfc3f132aa613c58d04b5936338b424" => :high_sierra
+    sha256 "02042f2cf73c441cc6f0a98654ededcaccefe1851d7817bdb7dde72d6f7a8af4" => :catalina
+    sha256 "b8f08723ebb0811022c50a8e86cab9a9844427859ddc708660c7d5375825983b" => :mojave
+    sha256 "e96a79e0e15a37acd2758c10c2b3d3bb7a98d5372f8fb856205a1a8b10a4891f" => :high_sierra
   end
 
   depends_on "fftw"
   depends_on "gcc"
+  depends_on "openblas"
 
   def install
     system "make", "fortran"
@@ -37,7 +39,7 @@ class Shtools < Formula
                    "LIBPATH=#{HOMEBREW_PREFIX}/lib",
                    "LIBNAME=SHTOOLS",
                    "FFTW=-L #{HOMEBREW_PREFIX}/lib -lfftw3 -lm",
-                   "LAPACK=-framework accelerate",
+                   "LAPACK=-L #{Formula["openblas"].opt_lib} -lopenblas",
                    "BLAS="
   end
 end

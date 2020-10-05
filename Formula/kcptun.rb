@@ -1,26 +1,19 @@
 class Kcptun < Formula
   desc "Stable & Secure Tunnel based on KCP with N:M multiplexing and FEC"
   homepage "https://github.com/xtaci/kcptun"
-  url "https://github.com/xtaci/kcptun/archive/v20200930.tar.gz"
-  sha256 "90d0851e96ff723d4bcd7fd00795e926418ce5cf17c841e1e0185b0770b84874"
+  url "https://github.com/xtaci/kcptun/archive/v20201004.tar.gz"
+  sha256 "35d33bda5b643f07fab8b211cc1181298e27781e558bfc94b77491ea6abe61af"
   license "MIT"
   head "https://github.com/xtaci/kcptun.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a24dcf85d60e426dbd0aabb2ff2e71f8a636f08f99e1d7f66304b3888757e113" => :catalina
-    sha256 "f3e3b5213b2dfee93d4b4570c7d3b857628500625476e169f7f9d0d6a513eebd" => :mojave
-    sha256 "7faf8fbed918092b584bf7b091f66d821f7dbe99bdccff9763aa142376ae66c6" => :high_sierra
+    sha256 "36653ac264f01283cbb14b7fb989376da517aa00c47786bc41f2f4691c2d3025" => :catalina
+    sha256 "e99f12f570f0c73d503c2f9f9f9f51737acd6d1300928c58e042f8b04cbae507" => :mojave
+    sha256 "c98615ed593399c32783ef66f570eedcebb9a08b02d2b3f743be910d7352732f" => :high_sierra
   end
 
   depends_on "go" => :build
-
-  # fix outdated vendored dependencies issue
-  # remove in next release
-  patch do
-    url "https://github.com/chenrui333/kcptun/commit/3a2d679.patch?full_index=1"
-    sha256 "ff985884cd20a8e91af61ba1426e5bd21f553c1b42f64a9207e9ae75c38f7217"
-  end
 
   def install
     system "go", "build", "-ldflags", "-X main.VERSION=#{version} -s -w",

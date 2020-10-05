@@ -6,10 +6,10 @@ class Scrcpy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 "ba6b589a05badb63cddb4d6624980d525c6b71e01509e9661f04de457d971803" => :catalina
-    sha256 "5390385c2d1813d566fd6657183188b162856010db9d767a8cdbae12b6a11e44" => :mojave
-    sha256 "74e4d0a9ad2d6b105822b8d716bd88093317d12a234c58a5c4691b61c2c35796" => :high_sierra
-    sha256 "f2774eeab7c9ebd01387816d0dc32ea1cedbc0c9d7baceca558ef48d18d0a5d4" => :x86_64_linux
+    rebuild 1
+    sha256 "584738a06361a66960a1f15435ad4ed85409bb70a03baaa27a1f36b7cd156c62" => :catalina
+    sha256 "b41d43844a54e77169e91fecc064c30ee973da3a135c7ca8281d97463e8b09ca" => :mojave
+    sha256 "460868201832cd2771e7225ed248d4ab0ba7dddd9ad32a523b079960a1974657" => :high_sierra
   end
 
   depends_on "meson" => :build
@@ -21,6 +21,13 @@ class Scrcpy < Formula
   resource "prebuilt-server" do
     url "https://github.com/Genymobile/scrcpy/releases/download/v1.16/scrcpy-server-v1.16"
     sha256 "94a79e05b4498d0460ab7bd9d12cbf05156e3a47bf0c5d1420cee1d4493b3832"
+  end
+
+  # Fix build on Xcode 12 (https://github.com/Genymobile/scrcpy/issues/1726)
+  # Remove in the next release
+  patch do
+    url "https://github.com/Genymobile/scrcpy/commit/bd9f656933e79f7b21b42993f8a70a761ab47226.patch?full_index=1"
+    sha256 "3ab1c2d4b9cc38fe94ae24c49c74b4008a36ffb8079442545feeffa5d3448540"
   end
 
   def install
