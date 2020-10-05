@@ -16,6 +16,7 @@ class Sslscan < Formula
     sha256 "c1fad47864adc523961d3116312124a89c95b66f0f12c3ad2bfab68c8d41f5f1" => :catalina
     sha256 "703cfebce6d66dc36d0f019b1feed8ce988d11b74453350123dd955bb6ee0cbe" => :mojave
     sha256 "0a9e4699f5604e6f13b6f56d728198b2fd17c0d32e84a30c9c03faae8f0c125f" => :high_sierra
+    sha256 "ca1da59813fe5c4107deef64a9302fbe161bfae86bdcb36275ac607c9230b527" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
