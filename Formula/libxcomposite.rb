@@ -10,6 +10,7 @@ class Libxcomposite < Formula
     sha256 "3b8b0780e6c95393d9a6d56739ecc501b183d462009544c45d89293850c2ccf6" => :catalina
     sha256 "5332e3ec89bac3372540513a9b54b3ba1d5f4bbe0dfe233d8297a4fbc6168d98" => :mojave
     sha256 "4571cc99283062d9f242fcad7bbabb32ea687974723eaa0289639d018393ff61" => :high_sierra
+    sha256 "36325590c3613db2a9d671f1d8cdae14a470e2ad9102e6e2bbb7056a2767e200" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
