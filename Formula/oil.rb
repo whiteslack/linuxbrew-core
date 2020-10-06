@@ -1,20 +1,18 @@
 class Oil < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
   homepage "https://www.oilshell.org/"
-  url "https://www.oilshell.org/download/oil-0.8.0.tar.gz"
-  sha256 "0ca934741aea5a86dceeb5febd61563f7d7fbd49f0c55dc0fdf6e71b8c87a590"
+  url "https://www.oilshell.org/download/oil-0.8.1.tar.gz"
+  sha256 "d2ebfe83b5ea1c3fbc77cb90241cab6115d2152f61b53db3c8f39bbff73be1da"
   license "Apache-2.0"
   head "https://github.com/oilshell/oil.git"
 
   bottle do
-    sha256 "abcca1e8d09418c37353e4e3dd4d402ef0b88ae5a62145505a8f0a1013ebab98" => :catalina
-    sha256 "1092e415a1068d6ec386bb35d2db622f99b9ad494170dc8a481b21fc994dd6da" => :mojave
-    sha256 "5d4a42d6a676077d188149e33b9faf4c31dfd36f06cbe3496839b9b6e5928344" => :high_sierra
+    sha256 "38ff82b2a9792212b4fe218c9cca824642090b9ff5d8f2e0d595c56e5bf37659" => :catalina
+    sha256 "14201c3b8aef65af80c4f54018f6393042491dab629e25cc9ddcecdb532d9308" => :mojave
+    sha256 "88edd8bee8e6509e565ef943fcf42ea7cf9b83678a873c3d0d06332b81c13569" => :high_sierra
   end
 
   def install
-    # Disable hardcoded HAVE_EPOLL, unsupported in macOS
-    inreplace "Python-2.7.13/pyconfig.h", /^(#define HAVE_EPOLL .*)$/, '/* \1 */'
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "./install"
