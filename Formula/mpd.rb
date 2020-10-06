@@ -1,17 +1,15 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https://www.musicpd.org/"
-  url "https://www.musicpd.org/download/mpd/0.21/mpd-0.21.25.tar.xz"
-  sha256 "20a0ad01bf327b2dbeb6ae8e1af952cb0de83d2d63fab0fa4b7183a74765c201"
-  license "GPL-2.0"
+  url "https://www.musicpd.org/download/mpd/0.22/mpd-0.22.tar.xz"
+  sha256 "7de742d925d01bf52685cc6cbb31fdeb671e4992a448720897ef706e57e39076"
+  license "GPL-2.0-or-later"
   head "https://github.com/MusicPlayerDaemon/MPD.git"
 
   bottle do
     cellar :any
-    sha256 "e0f7ce87e92b540230d05c111f5571a568d6b75562b2d4b5abcc2975dde45a7a" => :catalina
-    sha256 "f21a70a4d1c8ebcc7c72caa6d7284c1a549c6c630290a9b4c7cc1b5ced1415ea" => :mojave
-    sha256 "b2ac7ec06cd9dd81f63f1bd1ce0bd6eff8171d2c5b0f79e385a05d01ddad2db2" => :high_sierra
-    sha256 "d1044541df444b4cc7756312fe0f220fb6f2d9e0110f63aa293cd12af244dade" => :x86_64_linux
+    sha256 "d357d1f78ddae648b2609afaa4199595c0e74c57a4567142a3696ae41a875015" => :catalina
+    sha256 "93a07c91613b8b2b6d29584f904205ae579964453a7da055a47f6d544f06dd24" => :mojave
   end
 
   depends_on "boost" => :build
@@ -35,6 +33,7 @@ class Mpd < Formula
   depends_on "libshout"
   depends_on "libupnp"
   depends_on "libvorbis"
+  depends_on macos: :mojave # requires C++17 features unavailable in High Sierra
   depends_on "opus"
   depends_on "sqlite"
 

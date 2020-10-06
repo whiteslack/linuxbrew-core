@@ -7,10 +7,6 @@ class VstsCli < Formula
   sha256 "27defe1d8aaa1fcbc3517274c0fdbd42b5ebe2c1c40edfc133d98fe4bb7114de"
   revision OS.mac? ? 2 : 4
 
-  livecheck do
-    url :stable
-  end
-
   bottle do
     cellar :any_skip_relocation
     sha256 "b37f51f73b543f2c9403e0a982aa1ae625f170b971a75b1ab07a23a62aa01949" => :catalina

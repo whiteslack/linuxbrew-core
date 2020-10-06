@@ -1,17 +1,17 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://www.manticoresearch.com"
-  url "https://repo.manticoresearch.com/repository/manticoresearch_source/release/manticore-3.5.0-200722-1d34c49-release-source.tar.gz"
-  version "3.5.0"
-  sha256 "00d65103d7f07d52b953731566c1015d5f668dd35e8709eeca10cc0fbedb9a66"
+  url "https://repo.manticoresearch.com/repository/manticoresearch_source/release/manticore-3.5.2-201002-8b2c175-release-source.tar.gz"
+  version "3.5.2"
+  sha256 "9eb41e68d422a9e0043415ffc5e2f6d39e8d94eae9c843b4b55b54eacc33a517"
   license "GPL-2.0"
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git"
 
   bottle do
-    sha256 "1116f8caad4dfdcd0ede2422e5b5be19e45cf549e0b3d402b90962ce0f2455b4" => :catalina
-    sha256 "493a87ab30c5cac2f6f4531713259048c7555f03fbd8efa176f58259ca3c8834" => :mojave
-    sha256 "b27d0c40106e49e2323063fa8cae2d5a4a51a6af902252576cc6d3c7d9f30ffc" => :high_sierra
+    sha256 "6e8eab5ea85129311caca57dd605bae1bad03e7e9a021fbad9c6a2ebc5a204a5" => :catalina
+    sha256 "9413bdb874c9e02936326f22b2f3343d9b4b1312db95c324b12045741f71f729" => :mojave
+    sha256 "173f37791179e84ddf9d4304eee37a3a0ea6485847aa4d8ec7359623e884a1d2" => :high_sierra
   end
 
   depends_on "boost" => :build
@@ -19,7 +19,6 @@ class Manticoresearch < Formula
   depends_on "icu4c" => :build
   depends_on "libpq" => :build
   depends_on "mysql" => :build
-  depends_on "unixodbc" => :build
   depends_on "openssl@1.1"
 
   conflicts_with "sphinx", because: "manticoresearch is a fork of sphinx"
@@ -29,6 +28,7 @@ class Manticoresearch < Formula
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
       -DDISTR_BUILD=macosbrew
       -DBoost_NO_BOOST_CMAKE=ON
+      -DWITH_ODBC=OFF
     ]
     mkdir "build" do
       system "cmake", "..", *std_cmake_args, *args

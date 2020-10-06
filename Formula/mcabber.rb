@@ -1,15 +1,14 @@
 class Mcabber < Formula
   desc "Console Jabber client"
   homepage "https://mcabber.com/"
-  url "https://mcabber.com/files/mcabber-1.1.1.tar.bz2"
-  sha256 "d789ceb33eaa78967c172241e941d43f91300ee0235a33f826f3df6f1163f959"
+  url "https://mcabber.com/files/mcabber-1.1.2.tar.bz2"
+  sha256 "c4a1413be37434b6ba7d577d94afb362ce89e2dc5c6384b4fa55c3e7992a3160"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 "ee47a9acdd7772e85f13479db1306c612a4a3da1695fba50d10c2f769a43305a" => :catalina
-    sha256 "922acf4fa2a52e1bac0156099357081a779c875a7d7f05d04343b13d555c2d8a" => :mojave
-    sha256 "1c988edd8a478dfb42532470a455b3c5c81f41186186683e77793e0d881c4153" => :high_sierra
-    sha256 "b7715999c9ca682ac4ecc8f729c94765f4427293553ad93109e322124a4bd0ec" => :x86_64_linux
+    sha256 "f5296e7fffbc0702dcce5794e2f47c77a998f002b0852416c8411ac5ad44b31e" => :catalina
+    sha256 "301d1883a89bcf494b5ab8c2c6dc4f267b29124d479d47483f562e8c3739d531" => :mojave
+    sha256 "73d4da3e1e562308e3d4a3b3318f2b5de951d50a44eec9115780170f282022b6" => :high_sierra
   end
 
   head do

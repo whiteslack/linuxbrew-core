@@ -3,8 +3,8 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://github.com/conan-io/conan"
-  url "https://github.com/conan-io/conan/archive/1.29.2.tar.gz"
-  sha256 "b1ca928045b0c0a272dc3983955c0de93603b1febb477cf7fe69ea403e4db038"
+  url "https://files.pythonhosted.org/packages/a7/f6/c437f320b4c998ef3f77b0823018078081cb615f88c7eed37a5523d70c0b/conan-1.30.0.tar.gz"
+  sha256 "465e3fde8414e9abdaf6d8b8d2f501c88e6b4a79fcd4eb62541792746a2574e2"
   license "MIT"
   head "https://github.com/conan-io/conan.git"
 
@@ -15,10 +15,9 @@ class Conan < Formula
 
   bottle do
     cellar :any
-    sha256 "9575d4515a33f7bdeba90b0e04249b07f23443ab54672bc1d85498a85bb020c1" => :catalina
-    sha256 "c7803da1708eda0975ff07d3a390d356a7dc8fb14701e7240cddb753d04984cc" => :mojave
-    sha256 "efec63a9ee0097e14a1e0d103681da571dc4513d2f2a9a3e74445e284eaeac5e" => :high_sierra
-    sha256 "ced001eb6bbf404c593ad406b6022c0e802c3b7e6c2f6997f4e401c355d1c75e" => :x86_64_linux
+    sha256 "f74d04255bb6bf4ff685741da54dae31129f07ade72a52a055e8421af1db050f" => :catalina
+    sha256 "489b20a21e9ed7488e29ec0b547afb7d73c162c2953b62444b5526839a4cb4ce" => :mojave
+    sha256 "85f2abbb9bedd24f714b6ce3f505dea64c50f7696f1f4ac5c925d4985b6e9c0c" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -167,8 +166,8 @@ class Conan < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/bc/03/2bc607a15e201058cb6b19784b9c217d7ff37a686ce4a2d8a37a638f3ba5/tqdm-4.49.0.tar.gz"
-    sha256 "faf9c671bd3fad5ebaeee366949d969dca2b2be32c872a7092a1e1a9048d105b"
+    url "https://files.pythonhosted.org/packages/9f/7b/76c4e5ef1a1b528fcaada4133f972e77d33c252831676cf414119ca6093d/tqdm-4.50.0.tar.gz"
+    sha256 "93b7a6a9129fce904f6df4cf3ae7ff431d779be681a95c3344c26f3e6c09abfa"
   end
 
   resource "urllib3" do

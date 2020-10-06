@@ -3,8 +3,8 @@ class NodeSass < Formula
 
   desc "JavaScript implementation of a Sass compiler"
   homepage "https://github.com/sass/dart-sass"
-  url "https://registry.npmjs.org/sass/-/sass-1.26.11.tgz"
-  sha256 "230ad5f949c6034b170ef7e536fe27d718ceaca3421910cafba26e89394c5e01"
+  url "https://registry.npmjs.org/sass/-/sass-1.26.12.tgz"
+  sha256 "954ad376eee274ca65e78e281151809e4e605cd081ffb64e9bd8fee6e8fbb85b"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class NodeSass < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "be08c87ba8b6c076f7301df843f5dac56e026d20163160e86c0b475d749b06a6" => :catalina
-    sha256 "3e35cded55a71399541d045d35a950a12d31913cd47923a7cb53bd3b5f39e52f" => :mojave
-    sha256 "0d9347340a1012275ca3047105265182a044ad8ecb34b6db7740254a02d1b295" => :high_sierra
-    sha256 "ba8526477c055dbf4bae46b200b0dfe97ab5e300cbdcd575d52d2377904945b6" => :x86_64_linux
+    sha256 "d7a651431570f89f212e8c153dce8075b4ac4d183c4dc576d7560fff8406bf62" => :catalina
+    sha256 "1e678719335e1dc69ecb93bc5961011e96ee7d1a8c69a10da3002021e359c56f" => :mojave
+    sha256 "3d63493ab2ea2b44711a18252334edb2e5092eb76f648169c0e1e9f161760354" => :high_sierra
   end
 
   depends_on "node"
