@@ -11,6 +11,7 @@ class Helmsman < Formula
     sha256 "e268fd8463f917ac09ae8dec49393de76ab0d2d947939f1efc51cb90f6e3a239" => :catalina
     sha256 "e1ecb4697f6a4ebeeca791d3b1ed3f114e4e3c9c787cf4ca38df69e427432d64" => :mojave
     sha256 "dab66588b219350e7d49ef1d49234d90f45e1839e2215379f1459b46a01b762a" => :high_sierra
+    sha256 "1021ab4a7f6502f4678417406529efc63d3bd59858e94e79ec1af9cc7fabf930" => :x86_64_linux
   end
 
   depends_on "go" => :build
