@@ -12,6 +12,7 @@ class NlohmannJson < Formula
     sha256 "b541218f118a50a5f95f7f3650e520be58398619bbc6073d7b36cb320bf212c7" => :catalina
     sha256 "fe00728aa85f032016788a0ec770b47a0e8e4b7cf2fc1547aa4ecf774bf1028c" => :mojave
     sha256 "43b0bfd3b8d202358ab4141a01a11588f1b90c9ecf0a71c5764d97ac546f5fde" => :high_sierra
+    sha256 "db1538985ad8d299b7d155906cfe61258b17e28b3bd3d81978114cb1129355e1" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
