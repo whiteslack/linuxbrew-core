@@ -1,17 +1,17 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0224.tar.gz"
-  version "0.224"
-  sha256 "3518e71ec20fbeac8ebe93f8ec856078b8288e19f0d7cb38959d4bde30cd2810"
+  url "https://github.com/mamedev/mame/archive/mame0225.tar.gz"
+  version "0.225"
+  sha256 "ca4d5a429d72b30fd2bdf60350e490c7de4ac64b1e0dafcf38450f8ba84a1a95"
   license "GPL-2.0-or-later"
   head "https://github.com/mamedev/mame.git"
 
   bottle do
     cellar :any
-    sha256 "02234561654ce4acf965841a0392225186d1edf4200653d3a09ae0f94dcfbe33" => :catalina
-    sha256 "8258fdcf71c960ae6fadf019cbeecc68e2d91977c39c22b884295fa8eeacadac" => :mojave
-    sha256 "ab42ed0bce4a11ef242c0988b80de0e7f51a0168009ec0917e8b64d8b61fb830" => :high_sierra
+    sha256 "83213f72ac58cf58f72d8ea3b909fd817160c67ff81dfb47800c7bd186812aae" => :catalina
+    sha256 "abee5d7f6b1283896f68876f11044c63742863a85b847ce116ef1513d5b40063" => :mojave
+    sha256 "edf1a6f4f05b6cda89117a7f1d93bfc388e225e6565db2c90b2d746d640f0983" => :high_sierra
   end
 
   depends_on "glm" => :build
@@ -57,7 +57,7 @@ class Mame < Formula
     bin.install "mame64" => "mame"
     cd "docs" do
       # We don't convert SVG files into PDF files, don't load the related extensions.
-      inreplace "source/conf.py", "'sphinxcontrib.rsvgconverter'", ""
+      inreplace "source/conf.py", "'sphinxcontrib.rsvgconverter',", ""
       system "make", "text"
       doc.install Dir["build/text/*"]
       system "make", "man"

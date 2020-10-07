@@ -4,21 +4,21 @@ class NlohmannJson < Formula
   url "https://github.com/nlohmann/json/archive/v3.9.1.tar.gz"
   sha256 "4cf0df69731494668bdd6460ed8cb269b68de9c19ad8c27abc24cd72605b2d5b"
   license "MIT"
+  revision 1
   head "https://github.com/nlohmann/json.git", branch: "develop"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b" => :catalina
-    sha256 "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b" => :mojave
-    sha256 "cefd6cb12cf0afc46418be91946f462879b0c0e654501598f5fbb05d3141395b" => :high_sierra
-    sha256 "d99749591f4a8d1de44854bcb52fe6ed3279c4ca656a1b12353ddf2e821043ed" => :x86_64_linux
+    sha256 "b541218f118a50a5f95f7f3650e520be58398619bbc6073d7b36cb320bf212c7" => :catalina
+    sha256 "fe00728aa85f032016788a0ec770b47a0e8e4b7cf2fc1547aa4ecf774bf1028c" => :mojave
+    sha256 "43b0bfd3b8d202358ab4141a01a11588f1b90c9ecf0a71c5764d97ac546f5fde" => :high_sierra
   end
 
   depends_on "cmake" => :build
 
   def install
     mkdir "build" do
-      system "cmake", "..", "-DJSON_BuildTests=OFF", *std_cmake_args
+      system "cmake", "..", "-DJSON_BuildTests=OFF", "-DJSON_MultipleHeaders=ON", *std_cmake_args
       system "make", "install"
     end
   end

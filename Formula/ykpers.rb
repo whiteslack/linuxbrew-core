@@ -4,7 +4,7 @@ class Ykpers < Formula
   url "https://developers.yubico.com/yubikey-personalization/Releases/ykpers-1.20.0.tar.gz"
   sha256 "0ec84d0ea862f45a7d85a1a3afe5e60b8da42df211bb7d27a50f486e31a79b93"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://developers.yubico.com/yubikey-personalization/Releases/"
@@ -13,10 +13,9 @@ class Ykpers < Formula
 
   bottle do
     cellar :any
-    sha256 "f5615ed1ad958e10d5908c16feb53bc706fd42f7721d0e8cfd3ea8dd4658a221" => :catalina
-    sha256 "1cd502d61459515ab043d2cd8d2d8df3d97f605578766934312fa53343a619ec" => :mojave
-    sha256 "215538176c67853276fe86e6894d6a19be95323d236175c5e4a84b4ce73b39d6" => :high_sierra
-    sha256 "e8b0538f5fbe7e5b2e9ecd070f35ee6bb99743b3a1f80764d062b6c8ff81ed8d" => :x86_64_linux
+    sha256 "8c5ed1924d1059265589a221b8e2bb26a2bcd59f91ede210e3a1267412867f47" => :catalina
+    sha256 "c2e6089348f9cc4f9c887eeb5975378749c42ea386ef12d7f84a3285b718dc45" => :mojave
+    sha256 "79c240a018183c2f62eae6e7c22f631598b167d321a715f0983ff4653c1c2eee" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -31,6 +30,11 @@ class Ykpers < Formula
   patch do
     url "https://github.com/Yubico/yubikey-personalization/commit/0aa2e2cae2e1777863993a10c809bb50f4cde7f8.patch?full_index=1"
     sha256 "349064c582689087ad1f092e95520421562c70ff4a45e411e86878b63cf8f8bd"
+  end
+  # Fix device access issues on macOS Catalina and later. Remove with the next release.
+  patch do
+    url "https://github.com/Yubico/yubikey-personalization/commit/7ee7b1131dd7c64848cbb6e459185f29e7ae1502.patch?full_index=1"
+    sha256 "bf3efe66c3ef10a576400534c54fc7bf68e90d79332f7f4d99ef7c1286267d22"
   end
 
   def install
