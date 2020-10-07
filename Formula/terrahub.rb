@@ -16,6 +16,7 @@ class Terrahub < Formula
     sha256 "7972ce492779018b540cd90079578097685cef3cc75874ced360d0ba6465934f" => :catalina
     sha256 "e8e599a557875175f9b65dba1ef209244db279cd2d068c4b037d3405316a8011" => :mojave
     sha256 "d66c2d8e0ea4602dbe306647ebc6fc52f7bb56685033ba972f3e44de2a506102" => :high_sierra
+    sha256 "4b316afb556b043c16951fd6f999528d5dbde736214109f6052a65c5e73a9ebe" => :x86_64_linux
   end
 
   depends_on "node"
