@@ -4,6 +4,7 @@ class Gdal < Formula
   url "https://download.osgeo.org/gdal/3.1.3/gdal-3.1.3.tar.xz"
   sha256 "161cf55371a143826f1d76ce566db1f0a666496eeb4371aed78b1642f219d51d"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -11,9 +12,9 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 "7e8d139f6ea1ebc3221b8f23da4866b4f3caeb842ccf3a2ca6445d88ca1a95fb" => :catalina
-    sha256 "0cd88ac215a8c45598dd9c486f458fe9ca2ef6ca89e5e07c326bac6b7415caeb" => :mojave
-    sha256 "d6a6970bb486cf2515bc1ce25884d3635728c677483f7398616cc376eb66d8e5" => :high_sierra
+    sha256 "10c07cf5dacad5649544bdfe14c9f3630efb3457a64dc73651cfad891e976595" => :catalina
+    sha256 "d3c793c141b9b900906d00ac2bc083acd2a2c957468d487a652d6fb30d75a552" => :mojave
+    sha256 "48efbc4fd4585112694b3291ff1995fb7ca8a68123a262931a56adf2ee51d418" => :high_sierra
   end
 
   head do
@@ -80,8 +81,6 @@ class Gdal < Formula
       "--with-threads",
 
       # GDAL native backends
-      "--with-bsb",
-      "--with-grib",
       "--with-pam",
       "--with-pcidsk=internal",
       "--with-pcraster=internal",
@@ -117,6 +116,7 @@ class Gdal < Formula
       "--with-armadillo=no",
       "--with-qhull=no",
       "--without-grass",
+      "--without-jasper",
       "--without-jpeg12",
       "--without-libgrass",
       "--without-mysql",
@@ -125,24 +125,23 @@ class Gdal < Formula
       # Unsupported backends are either proprietary or have no compatible version
       # in Homebrew. Podofo is disabled because Poppler provides the same
       # functionality and then some.
-      "--without-gta",
-      "--without-ogdi",
-      "--without-fme",
-      "--without-hdf4",
-      "--without-openjpeg",
-      "--without-fgdb",
       "--without-ecw",
+      "--without-fgdb",
+      "--without-fme",
+      "--without-gta",
+      "--without-hdf4",
+      "--without-idb",
+      "--without-ingres",
+      "--without-jp2mrsid",
       "--without-kakadu",
       "--without-mrsid",
-      "--without-jp2mrsid",
       "--without-mrsid_lidar",
       "--without-msg",
       "--without-oci",
-      "--without-ingres",
-      "--without-idb",
-      "--without-sde",
+      "--without-ogdi",
       "--without-podofo",
       "--without-rasdaman",
+      "--without-sde",
       "--without-sosi",
     ]
 

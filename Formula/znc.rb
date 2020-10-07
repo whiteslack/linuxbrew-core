@@ -4,12 +4,12 @@ class Znc < Formula
   url "https://znc.in/releases/archive/znc-1.8.2.tar.gz"
   sha256 "ff238aae3f2ae0e44e683c4aee17dc8e4fdd261ca9379d83b48a7d422488de0d"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 "0b02e44228df2fb44db94b8dd34e084f597ecc6d01885942df5aebbd5a9a87e5" => :catalina
-    sha256 "cdded48a2efbd597eb87f74f6deb62e8efc5db435ab448142313347d96629db9" => :mojave
-    sha256 "6674bc79049906362368dd5e942991229e02cec51d53ba90d38c22d8a81b140f" => :high_sierra
-    sha256 "76498619c3ed38a2e51540f1b186d2ee46c10c3fcea2d4d4d5532eff19fa35fa" => :x86_64_linux
+    sha256 "0968a0d12ce30428023911e4074b276b1d5e80f689fabf5cdb4ff72a3f57e721" => :catalina
+    sha256 "476fe82c16953d5e0645f59128e8dd86cb1cba86bb798a483d2b3ef394b8e28e" => :mojave
+    sha256 "512c83a43b82c84dc773a603e3ccc21f1f315fd8bcef1e259cc4a50c46359e2e" => :high_sierra
   end
 
   head do
@@ -23,7 +23,7 @@ class Znc < Formula
   depends_on "pkg-config" => :build
   depends_on "icu4c"
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "zlib"
 
