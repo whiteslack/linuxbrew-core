@@ -15,6 +15,7 @@ class GnomeCommon < Formula
     sha256 "079756ae6ef88387933614b1adcd2a76f239f779817f6128493cdac85c8f5baa" => :catalina
     sha256 "7c853c9cdcd84eddb2a3567d161182b27b42dd28c2d696005dc43cf27bdb7038" => :mojave
     sha256 "e0d511e98b09eff8a4e0a0511b421459b4610516d643fc9094a44c9e480a7771" => :high_sierra
+    sha256 "0835dd4fbaba34c985889195bad9a94a17bf3a1de41ff8e3c466d73ab878a4a2" => :x86_64_linux
   end
 
   conflicts_with "autoconf-archive", because: "both install ax_check_enable_debug.m4 and ax_code_coverage.m4"
