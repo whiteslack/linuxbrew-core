@@ -17,6 +17,7 @@ class Csvtomd < Formula
     sha256 "c9749639795ac8d18278813fd8e8c62df76de23919cd58de6c65175539b7ec96" => :catalina
     sha256 "39dbb7e395b6dd34ca0e7ae1c723b586875551ab9a3cbff93b250a695ee25e64" => :mojave
     sha256 "4233cce0f722709b0d1b49c3af66faf3ea75ff5317a53d404dda2420ed147d75" => :high_sierra
+    sha256 "954b0891a358eabe03643bb255cb33d1f5d67cd4ac7a448847206a50c0d292a4" => :x86_64_linux
   end
 
   depends_on "python@3.9"
