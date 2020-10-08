@@ -4,18 +4,18 @@ class Ginac < Formula
   url "https://www.ginac.de/ginac-1.7.11.tar.bz2"
   sha256 "96529ddef6ae9788aca0093f4b85fc4e34318bc6704e628e6423ab5a92dfe929"
   license "GPL-2.0"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "1f8cfa27de553a5d255476f6b9bf733e07b2a7fae0634c54cf3f76a6df70657e" => :catalina
-    sha256 "d7ac7422a7cc3b9d629e5ec07af4882ebc6228a306d5a30b30fea9f0caaf0ed8" => :mojave
-    sha256 "7a29a3fd12ee311e585dbd768fdb7a41634db388c76dd62d08435eec2d93738e" => :high_sierra
-    sha256 "447039a4bbda847f3bb4e68a36fc4c3a46dfb25d60326a17bb006acdd21e16e1" => :x86_64_linux
+    sha256 "5aa97c64e02bb68db70b2caa2c4af5f17f7871ef7ae3b075bcc4931be2748e58" => :catalina
+    sha256 "3c5498d4814f09e728798b0b75537da316aae5c37438609fb9befa4f681590da" => :mojave
+    sha256 "56f2147cc61429d2bf970d2b920d0dd493f10d8bb7e16f53490eb27f2a2aa16c" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "cln"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
   depends_on "readline"
 
   def install

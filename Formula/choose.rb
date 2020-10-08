@@ -4,19 +4,17 @@ class Choose < Formula
   url "https://github.com/geier/choose/archive/v0.1.0.tar.gz"
   sha256 "d09a679920480e66bff36c76dd4d33e8ad739a53eace505d01051c114a829633"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/geier/choose.git"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "add76ddd5165ad17bfc784dff7237777eac7ee898379bd55d76228e6f6897d6d" => :catalina
-    sha256 "74170f2582ab4a29bffcc34583017f97f39c5b600a5f5cfebacd6d66ecd5c818" => :mojave
-    sha256 "388b64e8072a54f01006ab9cad297789eda36fe0bec83b45759cfe80dbf8cb2c" => :high_sierra
-    sha256 "2f389f87ab1391b4adea1d0ec7040eacbe47564e5aeef6c8e747b4e36c3b9853" => :x86_64_linux
+    sha256 "086ebca8f9bff4d065e788c9076bfe204b958f96b8da0cce142f3c890c38cb75" => :catalina
+    sha256 "bef5f7490cf4a45398bfdef4867163957675227e74bab1494ea0da56cda2cda6" => :mojave
+    sha256 "f860816e00292d161ed6f6617cef47c3297eb91e9231f3c125ce12b16ad7d220" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   conflicts_with "choose-gui", because: "both install a `choose` binary"
   conflicts_with "choose-rust", because: "both install a `choose` binary"

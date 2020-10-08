@@ -6,6 +6,7 @@ class Coconut < Formula
   url "https://files.pythonhosted.org/packages/49/bd/c77663bf5525bcb3c0995ebe0257cc5a9ef6d191cdb354faccc9841afe99/coconut-1.4.3.tar.gz"
   sha256 "5053e876388faaa792154d3e86c27dcfa721d48a3611a8d9b94e7567e5652c0b"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Coconut < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "721657bf79238e4b65554edf1ae2559d2455223233af7376f3520cae9db0068d" => :catalina
-    sha256 "0c25d41587f659e14e81828374384dc803ac5ad61077103c597257ece36ac0a2" => :mojave
-    sha256 "80c780f3b9b9d1b07a258008aba03156a2ff4e44bd92850d38320d3d8d90b74d" => :high_sierra
+    sha256 "4a4707189427a591dde0fd1897af8c31e64e350fbc8598bd2d929aa6df726cc9" => :catalina
+    sha256 "088c30ab276e9a04cf3ea31a65f96ca532d6f3870d55673cc0784fe83aaa6652" => :mojave
+    sha256 "97e617049fd9e250dfd0c3353441595fb1d4a8bacd6a0ec73eefb15fe2a0e63c" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "cPyparsing" do
     url "https://files.pythonhosted.org/packages/f4/2e/11f7fd3dd699c57d27890971e104b632c7f6c4f96a9e58cd062473b39922/cPyparsing-2.4.5.0.1.1.tar.gz"

@@ -6,6 +6,7 @@ class Hy < Formula
   url "https://files.pythonhosted.org/packages/e2/a8/d2118cf14aab7652d54283e6a9a199177f528610348e3712509a8596c0d0/hy-0.19.0.tar.gz"
   sha256 "3a5a1d76ddeb2f1d5de71ad1b1167799850db955b5eb0258e351fb182b2e6016"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Hy < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "dde477be6e4a681568b5cbc06e5c3ce042f2043ca2572610df998a851468d131" => :catalina
-    sha256 "f3a62d0d0ac1eff081d28617a970217871fe6b6324dfa95707392c549026c9cd" => :mojave
-    sha256 "7b73de653a54d353ccc18f7e31b34275b6e7931b9f3c21f1b18cfb48a870199c" => :high_sierra
+    sha256 "8d26542c3b7206359d5a67555e30ea778d96be433a2bfc3539b4b593f50cb2d4" => :catalina
+    sha256 "1a466ad15fbd8e08b20da924b51464674842074a1ff50722df4150675c122789" => :mojave
+    sha256 "3517d09c61dac52cabd9dadead19f34280c5560e491fb2dfe46f47a55927d556" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -53,6 +54,6 @@ class Hy < Formula
     (testpath/"test.hy").write "(print (+ 2 2))"
     assert_match "4", shell_output("#{bin}/hy test.hy")
     (testpath/"test.py").write shell_output("#{bin}/hy2py test.hy")
-    assert_match "4", shell_output("#{Formula["python@3.8"].bin}/python3 test.py")
+    assert_match "4", shell_output("#{Formula["python@3.9"].bin}/python3 test.py")
   end
 end

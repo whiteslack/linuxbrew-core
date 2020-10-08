@@ -5,7 +5,7 @@ class Notifiers < Formula
   homepage "https://pypi.org/project/notifiers/"
   url "https://files.pythonhosted.org/packages/4f/36/4c300f55949b9be84284d51253ae48d564dc2c4f2bffb94f26c8c1485f07/notifiers-1.2.1.tar.gz"
   sha256 "34625af405f4aa19293eaaefe145ccc92c6018ae9798f53a03a7fcc996e541aa"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
 
   livecheck do
     url :stable
@@ -13,13 +13,12 @@ class Notifiers < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "627cae6d4d4620c83fe486beea84a42868880ba68aedbee156a23d4d9fa0047e" => :catalina
-    sha256 "011b44eafa3ba60a890f050f45c3c0356cabdc449797ceb1ed6cf2c42d844fc0" => :mojave
-    sha256 "99759b6553b572f9b417f500f75c1f6d1a8006265154be77877229ff70683d0a" => :high_sierra
-    sha256 "98f177c215877b0ed14ef26fa1720818f22d91e8c049e645f8eda07eec249e34" => :x86_64_linux
+    sha256 "97f389f0f3bea37994deb5d1d8b1e4ef67fbdc2822ed73734f13f728d7bc86d3" => :catalina
+    sha256 "62bbd2a965c1feadc28ea3a1b6263f8781a42515f3bc8a23f796d1e8b11029a8" => :mojave
+    sha256 "e7cd27abdadb3f0f85c6e365cfaeb7dbe24ba1aeb7d161eff4ad9ac96f90702f" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/98/c3/2c227e66b5e896e15ccdae2e00bbc69aa46e9a8ce8869cc5fa96310bf612/attrs-19.3.0.tar.gz"

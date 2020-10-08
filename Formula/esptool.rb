@@ -6,17 +6,16 @@ class Esptool < Formula
   url "https://github.com/espressif/esptool/archive/v2.8.tar.gz"
   sha256 "f6187ab0467e05bff6ef4e777bde5ee8eb57a74154865d30491ebb42b228c617"
   license "GPL-2.0"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "76e3c103172aca7021c785f9cfa3c5832353b439b7d1fa16db134f529c3ae331" => :catalina
-    sha256 "00903c838ed3185dad44f25793111f1298824df11ba5864820e3c7224f7080f4" => :mojave
-    sha256 "48cbb59cf7b2af574997ee6c9afe9d0c4dab75617179f66cce07030059941d4d" => :high_sierra
-    sha256 "f432059434b715df570c1b7fe4cc0ea9d9bfbefa7e19c3e5078e6886b734b9e1" => :x86_64_linux
+    sha256 "5604775a4ca2fd6862321cea2669d433ca6e787dd3067f906253850b916dbd55" => :catalina
+    sha256 "d4042620d6ea819adf11e05d909d77a1872a0d100cd47bed163514994a9f81b9" => :mojave
+    sha256 "62c206f044e3b712ae9068919882a5f311cae0740affe3846043407439d8183c" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "ecdsa" do
     url "https://files.pythonhosted.org/packages/f9/e5/99ebb176e47f150ac115ffeda5fedb6a3dbb3c00c74a59fd84ddf12f5857/ecdsa-0.13.tar.gz"

@@ -7,6 +7,7 @@ class AwscliAT1 < Formula
   url "https://github.com/aws/aws-cli/archive/1.18.150.tar.gz"
   sha256 "1c916fd6b70231e96be3e2f9d4386b70ba414577a7905399c3ee430c91a27f6c"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -15,17 +16,16 @@ class AwscliAT1 < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6d05990b015c8f9147be02fa497a6acf595bfd927d4287e653416300051db8af" => :catalina
-    sha256 "987950fde49cf449d1136a8ee75014b8c25ef0a5f2b843edf0edceb5c802ecca" => :mojave
-    sha256 "3fbeacd2bf5c87efadc00db85aa8726235231ab0792ad77077a917033937bda1" => :high_sierra
-    sha256 "242873535792384bbfb7079a35debc25d26199cdc4ae919a69ca42e7da49c5e8" => :x86_64_linux
+    sha256 "d4249768aa663f0c4651cd5778214ede273834ce9aa789aa6823602a9d39c111" => :catalina
+    sha256 "2df344ffa3a3149e1f7ab185172ab6d1fa16afae3ce6ef3afcf7ae132168509e" => :mojave
+    sha256 "74e615056a8bd6e5f2898325fd7514a1577a6d281bbda730c9de1f1ae89179d7" => :high_sierra
   end
 
   keg_only :versioned_formula
 
   # Some AWS APIs require TLS1.2, which system Python doesn't have before High
   # Sierra
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "groff"
 

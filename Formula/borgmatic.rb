@@ -6,6 +6,7 @@ class Borgmatic < Formula
   url "https://files.pythonhosted.org/packages/3a/ef/de134b945ec2a73eeaea23efc9d8ff4f2c8ab23b14208d6c7b5e2a8b8137/borgmatic-1.5.10.tar.gz"
   sha256 "31459e5573c34b7b9e53ad54012be6d367e2f23c0612fd5a315593ebf23074c5"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,14 +14,13 @@ class Borgmatic < Formula
 
   bottle do
     cellar :any
-    sha256 "1779e107b6760355c7fd974356e687d680e0c03d34c39617cca6408f142e0b2f" => :catalina
-    sha256 "3f87068d5e4339228793005f4b67f79367e9bc13ac53a57fd5020aebda12cfbe" => :mojave
-    sha256 "161c4fde2155faa1949a3fd99321d66ea5be85dc1810558007426494b9de1665" => :high_sierra
-    sha256 "14a3b3c6f68c07e2d76dd503f50314006167f9c3fa3430ef6a5c28d141ee0770" => :x86_64_linux
+    sha256 "5133d439390d3e5008ec29e5030d8c95285b985d5c83184fccb3e3e3699b337e" => :catalina
+    sha256 "efe8edf5de007ed7d4e2f9b9b40429e3658e30259c4db086aab710b5f513600b" => :mojave
+    sha256 "5138d2b4ef52e1a11cc60b0843723a2aae7d86c0d4903282f5650f681113cb26" => :high_sierra
   end
 
   depends_on "libyaml"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/40/a7/ded59fa294b85ca206082306bba75469a38ea1c7d44ea7e1d64f5443d67a/certifi-2020.6.20.tar.gz"

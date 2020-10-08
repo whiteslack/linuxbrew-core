@@ -6,18 +6,17 @@ class Googler < Formula
   url "https://github.com/jarun/googler/archive/v4.2.tar.gz"
   sha256 "ee0887ec30aea14823bb32117c97f4af8cdba381244b393665d2e273f8b60b43"
   license "GPL-3.0"
-  revision 1 unless OS.mac?
+  revision OS.mac? ? 1 : 2
   head "https://github.com/jarun/googler.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0689e822b6428b12c88c4d8a54775562e360a60e298cbea02e4bbfc42f12ffc9" => :catalina
-    sha256 "0689e822b6428b12c88c4d8a54775562e360a60e298cbea02e4bbfc42f12ffc9" => :mojave
-    sha256 "0689e822b6428b12c88c4d8a54775562e360a60e298cbea02e4bbfc42f12ffc9" => :high_sierra
-    sha256 "c004d2b468aa0650a029aec7b811971c7e1579ba9bea50034f7eb25b0b48a0d8" => :x86_64_linux
+    sha256 "ab7dc8c32567630c5eb8348dd980024a0e627c39770f465f8f4bc5b7f2333d2f" => :catalina
+    sha256 "2dbb353381599066e977437e053a751f0ee7d09de78c1837040d1eb38f29ed33" => :mojave
+    sha256 "adb6f377a2dc1af03609a799edb3c94b81602c179f76ed0ea1837a37a17a25c9" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     rewrite_shebang detected_python_shebang, "googler"

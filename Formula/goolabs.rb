@@ -5,7 +5,7 @@ class Goolabs < Formula
   homepage "https://pypi.python.org/pypi/goolabs"
   url "https://files.pythonhosted.org/packages/ce/86/2d3b5bd85311ee3a7ae7a661b3619095431503cd0cae03048c646b700cad/goolabs-0.4.0.tar.gz"
   sha256 "4f768a5b98960c507f5ba4e1ca14d45e3139388669148a2750d415c312281527"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
 
   livecheck do
     url :stable
@@ -13,13 +13,12 @@ class Goolabs < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c784f76b536c01324365eae262d9fb1b6feff9eeb39173f5ea0269eae3b3d73c" => :catalina
-    sha256 "1b1fe110089fe56dbb9db0d11eb28dbe57629462c8274eb33a2fe7f9198b482d" => :mojave
-    sha256 "1705b23fe27ee59062383dc353dbf34770d1aef2378a3740e77b02c71724f001" => :high_sierra
-    sha256 "1885cbe04d2751d2e20df30154127768ce5682c39033e2859552e66c533120aa" => :x86_64_linux
+    sha256 "cce23cbee7e9db39636fc2fdc023fc24a2790867f3979fff2f2ece8a0580f690" => :catalina
+    sha256 "7ec468710694a97546f137e9ebc5e26b124646ea4a0bbe3f1c44b6a4203389e0" => :mojave
+    sha256 "0c2057e24ee158933764e90ed0dff1a4e2e0f43871329658791c53fef270d185" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/b8/e2/a3a86a67c3fc8249ed305fc7b7d290ebe5e4d46ad45573884761ef4dea7b/certifi-2020.4.5.1.tar.gz"

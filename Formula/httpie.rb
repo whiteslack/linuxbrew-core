@@ -6,6 +6,7 @@ class Httpie < Formula
   url "https://files.pythonhosted.org/packages/37/6c/0d050f49e3b2bac589367d0c3aee9c078e23c6914b0210ffc0117218bdaf/httpie-2.2.0.tar.gz"
   sha256 "31ac28088ee6a0b6f3ba7a53379000c4d1910c1708c9ff768f84b111c14405a0"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/jakubroztocil/httpie.git"
 
   livecheck do
@@ -14,13 +15,12 @@ class Httpie < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "443726f066b0dfd2b6c69fd51ab3008965d0dfae8c35346e0607d92454716b4e" => :catalina
-    sha256 "d0e7b6ce991c68d8a07a6387ec685cab4a912a6e9c6213f2f1b308b05b132e00" => :mojave
-    sha256 "e638b750ffdce34252f3f6b361f588f210aad1850de84d85c34e8f1c34cfb670" => :high_sierra
-    sha256 "8a87f4c036a2285127f6fad67cabcda35441d26feb1b2f4a54eacde0622664e6" => :x86_64_linux
+    sha256 "6956f918eabb4070d81f28f26d995056246179276d322d1929610f89733740f0" => :catalina
+    sha256 "772cd022ca55198ac20e90b510bbcd3e6d9adbeff81b6bf17d5063c1c2454b6c" => :mojave
+    sha256 "f792c4ee6183335d70e3c57d28326df0479e9de55b2ab0696d50aac051183b02" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "Pygments" do
     url "https://files.pythonhosted.org/packages/6e/4d/4d2fe93a35dfba417311a4ff627489a947b01dc0cc377a3673c00cf7e4b2/Pygments-2.6.1.tar.gz"

@@ -6,6 +6,7 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/34/b6/cb3f602a42b54f2992b970135b9c781cc7a69ed9a21ab0fc9c391c9be129/howdoi-2.0.7.tar.gz"
   sha256 "09362f7390119dffd83c61a942801ad4d19aee499340ef7e8d5871167391d3d6"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class Howdoi < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "84754b7ec15d8d58e3fcdadf274d0f2a687d9138f6358b25cea583f2d2db34e9" => :catalina
-    sha256 "142737fb1dd1b397c276e6c2e75209e1b8d95e9f4d7bc39e38895b4afb9832b6" => :mojave
-    sha256 "85fd34e660eb5d04c1c4084175c8d568e35e8b16f0d3de944d7a0d449d1cc8d7" => :high_sierra
-    sha256 "47f05b1fc1c610e10eea07a3d8b898d18215181388502ad731d6468cf72884ba" => :x86_64_linux
+    sha256 "0a683665c2e322649885a5c2070aa6305cf569cf53879af9d88a1c9e0036fdf6" => :catalina
+    sha256 "d9c55a11f68323c81c31c3bf19279ca7ca492ca64ac31626b63a908a13591715" => :mojave
+    sha256 "d66437ecf7679c576c2ecb5a230a4d0dfd3eaa87de5e89b8392c00aa53dfc833" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"

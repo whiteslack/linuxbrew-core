@@ -6,16 +6,17 @@ class GitRemoteCodecommit < Formula
   url "https://github.com/aws/git-remote-codecommit/archive/1.15.1.tar.gz"
   sha256 "23bcc0715c72217f8dcd5841aecce537c360138016baa6b1ed9a2873af546e0b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aws/git-remote-codecommit.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "71392ab342c2b182d371f8219cd176705b2d98d790868c146c058e0642108bf6" => :catalina
-    sha256 "563bc42f34b6b865a790d8b4b7bf17db9693b09d31ae650c441882f67569fa85" => :mojave
-    sha256 "f8e50499e041294d303aaf3c4b2fc72de65d6e4a1fb13bd267287045f721ee92" => :high_sierra
+    sha256 "67424681bf8ead286d446d946c818027049cbec4c4ddf618644cf1d10b8b24f7" => :catalina
+    sha256 "b98901e24f879198646f624346d0e04ae92d92eddad8857e5d9aa0f97d4294ae" => :mojave
+    sha256 "842cc8e9642a4c5e5875d33b962005a0e0aef7915624216f9b517c9561515b50" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/a7/10/d9bbdbee6d3ea63897e468dddabb3edb7b7360a901e3eee249cdb132a78a/botocore-1.17.43.tar.gz"

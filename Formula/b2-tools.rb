@@ -6,21 +6,21 @@ class B2Tools < Formula
   url "https://github.com/Backblaze/B2_Command_Line_Tool/archive/v2.0.2.tar.gz"
   sha256 "1ac04158c73fa40734e8f206757aced0b1668c8f3433975361fa9d100ea85e68"
   license "MIT"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "44a0e9dd53f7711359859cf75fcadfd741cb15f413929589923770a7c5094358" => :catalina
-    sha256 "6153a57ec789a18a9566d692213d814199b9239019f63a3edcb5fe8ccaa05a1d" => :mojave
-    sha256 "50f86e78975ab3401e41ddcc6259e94eced3782df36c978b4b4ef7c169fc83dc" => :high_sierra
-    sha256 "a40a83006162aadb98633fb57df0f764dd2e2794f40c089918ef540552e21444" => :x86_64_linux
+    sha256 "0828a503f620c700dbdc14b1ed8c7c3f3e24d8ec7957d4ddc82096878937dc27" => :catalina
+    sha256 "699e4b2c8b59b1e0e8f9a201414999a849d310e74df0b324630f04a49d7fb909" => :mojave
+    sha256 "8df0fc81ad83193c54130bce8697f578b9581dbeaf73b736812e5e8aa603290f" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   conflicts_with "boost-build", because: "both install `b2` binaries"
 
   def install
-    venv = virtualenv_create(libexec, Formula["python@3.8"].opt_bin/"python3")
+    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_bin/"python3")
     system libexec/"bin/pip", "install", "-v", "--no-binary", ":all:",
                               "--ignore-installed", buildpath
     system libexec/"bin/pip", "uninstall", "-y", "b2"

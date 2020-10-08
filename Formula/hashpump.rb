@@ -4,7 +4,7 @@ class Hashpump < Formula
   url "https://github.com/bwall/HashPump/archive/v1.2.0.tar.gz"
   sha256 "d002e24541c6604e5243e5325ef152e65f9fcd00168a9fa7a06ad130e28b811b"
   license "MIT"
-  revision 4
+  revision 5
 
   livecheck do
     url "https://github.com/bwall/HashPump/releases/latest"
@@ -13,14 +13,13 @@ class Hashpump < Formula
 
   bottle do
     cellar :any
-    sha256 "117ca0966fcc664caacd251d564dbebde369b0a5b6c9a35242c898f5b12f232e" => :catalina
-    sha256 "71b04dff8cc052944d44566bd79385236db3af53fea647381e587d13503bb148" => :mojave
-    sha256 "e7dc1492f0177f7e186deebccb47428861cd2525bbb352959a2b69608f86de3f" => :high_sierra
-    sha256 "8603d8275f16d90df42b9402970cf2a1605494684c27a951eb533f4eb29d7049" => :x86_64_linux
+    sha256 "96dc135554b1dfa6b432120e716ab925ed28f9ea570ee2741816bb3309fbc9bb" => :catalina
+    sha256 "0f9dc011b37341b4b0c6817738811d4825910aab7f25c6a34fe62e85e679281a" => :mojave
+    sha256 "9ca69bd8f3c736e915db2f5b80de0b804170f6f2a71876fa4656c788187db6e7" => :high_sierra
   end
 
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   # Remove on next release
   patch do

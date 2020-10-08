@@ -5,7 +5,7 @@ class Doitlive < Formula
   homepage "https://doitlive.readthedocs.io/en/latest/"
   url "https://files.pythonhosted.org/packages/e5/d9/4ce969d98f521c253ec3b15a0c759104a01061ac90fb9d8636b015bcb4ea/doitlive-4.3.0.tar.gz"
   sha256 "4cb1030e082d8649f10a61d599d3ff3bcad7f775e08f0e68ee06882e06d0190f"
-  revision OS.mac? ? 8 : 9
+  revision OS.mac? ? 9 : 10
 
   livecheck do
     url :stable
@@ -13,13 +13,12 @@ class Doitlive < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5434bf69eb3f7d608ef63faf1003dbacf2fb9faf39c45ad392e580f4e5809cc3" => :catalina
-    sha256 "ae4ab2b939e8ab89e1c539c1d9fc8eff24706715b37771fe87d0a7fc03c35c42" => :mojave
-    sha256 "6362e404ef2f1af74b0a564186b5a16967f140ba549fda494c286143dd387bbe" => :high_sierra
-    sha256 "a6557c9dc90c28116133b140039f888093565afde4d972ef3875355bfdc51c8f" => :x86_64_linux
+    sha256 "645c4c69758416768b1f853fba5d9e742c28985d8c1297aff866dcd05a84cce6" => :catalina
+    sha256 "114d1d58d047ae404eb0a9280e11598359117b7cc832a993e2b4fd2a024a55e1" => :mojave
+    sha256 "d17d744e85a69fbe1dccd0433b208aa554e9791866969a1fff484780150e24c6" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/4e/ab/5d6bc3b697154018ef196f5b17d958fac3854e2efbc39ea07a284d4a6a9b/click-7.1.1.tar.gz"

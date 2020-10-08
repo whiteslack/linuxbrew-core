@@ -6,6 +6,7 @@ class Nbdime < Formula
   url "https://files.pythonhosted.org/packages/d8/55/34e050f939e37b79c1a6283ea6c8b411cfda21a12e5d492da32fbdac23d5/nbdime-2.1.0.tar.gz"
   sha256 "4e3efdcfda31c3074cb565cd8e76e2e5421b1c4560c3a00c56f8679dd15590e5"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class Nbdime < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "7773999e6e1ecfc4b2583f205958bcad1c34ad9cee6e10ac652351bdd9e1e385" => :catalina
-    sha256 "65ac26ac48870a97c2d403785662dbd6d27f614712d9da3fda0c59642b6e6f73" => :mojave
-    sha256 "bdeebd6e06b0e11e0b8a46f6243ed1e91bef2aa3cbe272850d8c09d047144f69" => :high_sierra
-    sha256 "e8f8d1e2c9c805221f5469254882db7f1cdf383d03655ea7a9275a19e1c6b6e1" => :x86_64_linux
+    sha256 "363fbfa9e62b3fa5e1480a978fd711e441aa5bf3763d00c7c9b05ff5fba8d8f0" => :catalina
+    sha256 "5cfff6bdb2c2099a49e3e09306078c8f7d4ba7875b1bd61bcf5025b3c80ccd0d" => :mojave
+    sha256 "54176cb78ae39efe9c535b6594740884aabaf25c34d8e3f33bbed00fdfb8b58a" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   if OS.mac?
     resource "appnope" do

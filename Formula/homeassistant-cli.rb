@@ -6,6 +6,7 @@ class HomeassistantCli < Formula
   url "https://files.pythonhosted.org/packages/ea/14/3e1f0327335a2a50409efbcdd35f4eea2961308a735bb1b1dd5b70ff6cec/homeassistant-cli-0.9.1.tar.gz"
   sha256 "eec1b7f16d688fb8781b554f8c41325222316237aa3eb980f30bf172859f61a8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/home-assistant/home-assistant-cli.git"
 
   livecheck do
@@ -14,13 +15,12 @@ class HomeassistantCli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "147e080fb5b9377766c8788a371ac336da5568e960b6857468a94c2410d8ff15" => :catalina
-    sha256 "70ebba0eb012d61f1d523ecbb72cb95ec411d63a358c06d881f0c50599919d11" => :mojave
-    sha256 "a7d4301ca443bc0e0a2761d4592515e027e1bfa964a07de6752bb0f714e0f2bf" => :high_sierra
-    sha256 "d3349dabfdf43f07f9865312b4298b4ed411ae5313e6f96e927d9f1c68e8cb03" => :x86_64_linux
+    sha256 "8a70958355f2b91aa5c917971c959648abc28655d6f6146965547f585e287b08" => :catalina
+    sha256 "f105b6052a65b77a21878e6f9b5c7075c74a36f987d95a27023984a1eeab0159" => :mojave
+    sha256 "b5841f2adfbe46a3e20603d5c9c8c316c59aa822505d7e4097de9b975610e7d1" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "aiohttp" do
     url "https://files.pythonhosted.org/packages/00/94/f9fa18e8d7124d7850a5715a0b9c0584f7b9375d331d35e157cee50f27cc/aiohttp-3.6.2.tar.gz"

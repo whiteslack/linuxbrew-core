@@ -6,17 +6,17 @@ class Buku < Formula
   url "https://github.com/jarun/buku/archive/v4.4.tar.gz"
   sha256 "c7d755569117ceb85fdda734dcca657e01f6d5252d7d3b9f757faeedfdcac741"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "eddbed7b65e27d075deac0c14aaad86714085e02fa8e565a9f34524049c9a9b9" => :catalina
-    sha256 "211a2ba97cba060b7820a7def2d2956224ea21ae56ac9c2a97ee233f055ec4ec" => :mojave
-    sha256 "663b219a77e3005f067e4030633ed9ffbdf9d89213b66b8d1d07ab54df23c078" => :high_sierra
-    sha256 "1a4dc1f62db94a1d127753bc07291806493e843a637d8cecabd34337ab522d93" => :x86_64_linux
+    sha256 "044b82a3e27d301b94f09289e4b3aee1e8447149eeb64c9d3db2ff8102f62cf6" => :catalina
+    sha256 "9e0087d9d5c7e5aab848658d68b8ae81965094e8f26778c335c483e9ec00c0d9" => :mojave
+    sha256 "4712518906a802e6aeb2dea503b3c6654062ec8bd1052a000dc3986e540b558f" => :high_sierra
   end
 
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "expect" => :test
   uses_from_macos "libffi"

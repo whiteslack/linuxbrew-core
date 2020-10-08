@@ -6,17 +6,17 @@ class Cookiecutter < Formula
   url "https://github.com/cookiecutter/cookiecutter/archive/1.7.2.tar.gz"
   sha256 "32d176621bbbe76f11012e015930d2382f0fbe803362091e79a5dddbf5612abc"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/cookiecutter/cookiecutter.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a2478744f1af2f5f7c88cf397f9b0909aa7ccbd9006bb47bae8d0d7de47e827a" => :catalina
-    sha256 "94952b16808a3e0428e3403f495d163532079a93ed7e1d1c56b0946f8bc354f4" => :mojave
-    sha256 "ced26761fb874fe209564d63067b40713ae17de01c7bb16baed6b8e75675abc6" => :high_sierra
-    sha256 "2369cd6f497d050bf658b20d592de11dfdce8846b92d9cff478b8b7f41ec5910" => :x86_64_linux
+    sha256 "e766079db982bb0f5fc5dc9c6d5c9f95d8b4f2bd1d186ee2f7f3a5c33e88aae3" => :catalina
+    sha256 "8abb80935cd4c22813adee5a114142c7cc0ffdd9c3e98ac9b87f55a8fbdda77f" => :mojave
+    sha256 "2e54c9c71d301a212f3147d7afcca25edcc9dc7f386ccecff6eb0eeaa8629fc8" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/17/d0/8a69308a5cf4f07c53dca744402606610ec910dda1a9cdc94b3fc4a0c3a5/arrow-0.15.5.tar.gz"

@@ -8,15 +8,16 @@ class Bumpversion < Formula
   url "https://github.com/c4urself/bump2version/archive/v1.0.0.tar.gz"
   sha256 "06a7cb0fb7155b9283c4d10180e477f658754595b4dedb249f1e143e899d0e6c"
   license "MIT"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a379a5aa089128d51f39a585e3465520b4a109a7b98e0237dc5b4478ce050001" => :catalina
-    sha256 "dea282fd874f598a1099885ee821f1f45662844724e9650362848de637e421d0" => :mojave
-    sha256 "0ef3a9a86d8504dc510d4ccff21d71b832335abb7d7c739b5e514ef654b3900c" => :high_sierra
+    sha256 "87490444b85667f4bd90ea644a9ab798377bb7a900ad686e853ebc7909eb1c4d" => :catalina
+    sha256 "12c6314db620e3983e9d94cea879ba6ccb772c4a492de190068dce2a6a30c3ec" => :mojave
+    sha256 "c412d7297dcf8bc5b2061b06b3eec738300f801ba57212568953260b038999bb" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     virtualenv_install_with_resources

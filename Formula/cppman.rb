@@ -6,6 +6,7 @@ class Cppman < Formula
   url "https://files.pythonhosted.org/packages/e4/a0/6c8af0f95dc7fe418f2cf812a8704780f83295235c7f32b12e87e77a79e4/cppman-0.5.1.tar.gz"
   sha256 "a34261da3186d4f13836fec72e32258b82b6fad7d25f353d54ca54e831dd8589"
   license "GPL-3.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class Cppman < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fdae58d79f577a45b067be37598b239ee07f339f0dbdce0ef206caed7c83f33b" => :catalina
-    sha256 "6d2a39cf742b3c18ce35010bb81addd1164c6ce254e7fbf8999b0922b9326174" => :mojave
-    sha256 "df16ad64a2749394e0d105be9ddad4ddf782d5db56648577bf2d2568d5bd800b" => :high_sierra
-    sha256 "6506709b782702938dd7e70ab26d7d14956714900641db783daf3f719e930942" => :x86_64_linux
+    sha256 "4b80eea61f0f7c9050c52a076f297a591f3482513350532f00c039a4cba58860" => :catalina
+    sha256 "70c43842a449dd2fc325c188a79d48e0465bca0fa3909d92807d4860cb71898b" => :mojave
+    sha256 "c8fd2f679703f64dfe3f2cb8a073c10fff3b5db4325291643e07c4c13dc37211" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/c6/62/8a2bef01214eeaa5a4489eca7104e152968729512ee33cb5fbbc37a896b7/beautifulsoup4-4.9.1.tar.gz"

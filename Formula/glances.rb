@@ -4,16 +4,16 @@ class Glances < Formula
   url "https://github.com/nicolargo/glances/archive/v3.1.4.1.tar.gz"
   sha256 "0347a0b949451fd0022c0f22e54092fe526120a776af1f2bde1ea7ba61d6b792"
   license "LGPL-3.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "3bc1dc122d7ed7542795ac6b390dea5e7645528439295d29f8f127148425b5c2" => :catalina
-    sha256 "4f1c3d51bf77bb95586c81bdf5170f5fd2b53d544f06a311d9152c00f4abb038" => :mojave
-    sha256 "27db703a8a6fd3decc1d96ebed0c0d991c41a74e5a25d1c708a843671be072fd" => :high_sierra
-    sha256 "06bfce814bf4652ab0cb2d8cebc2002ee111b427ef36991da9ea5a8ed7cfc27f" => :x86_64_linux
+    sha256 "e3cc7737ee711e1ea8921861e4cd1416025fbb5c7177d6db3feef035bca8d7fd" => :catalina
+    sha256 "6ebc73a5ba9c22466b0b334acea4a92b7e41df55f6a3875d8aac9efd1cfdddb2" => :mojave
+    sha256 "133469cae4e025b99698460b447c1f5a41be32a7436e696894c31eead425c694" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "bernhard" do
     url "https://files.pythonhosted.org/packages/51/d4/b2701097f9062321262c4d4e3488fdf127887502b2619e8fd1ae13955a36/bernhard-0.2.6.tar.gz"

@@ -4,17 +4,17 @@ class EulerPy < Formula
   url "https://github.com/iKevinY/EulerPy/archive/v1.4.0.tar.gz"
   sha256 "0d2f633bc3985c8acfd62bc76ff3f19d0bfb2274f7873ec7e40c2caef315e46d"
   license "MIT"
+  revision 1
   head "https://github.com/iKevinY/EulerPy.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264" => :catalina
-    sha256 "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264" => :mojave
-    sha256 "e6bdba6e4de38fad5949439b3699fd81784f51c6e7ef211697e04c805e9a1264" => :high_sierra
-    sha256 "b1cca05cf81de6f3dd99eebe981c14638a6ad97e15d6c9b673e009b40a35355c" => :x86_64_linux
+    sha256 "b5983d05f31d241d0fa6209c659076129f606aaaa8a6b34958822f80a194e56a" => :catalina
+    sha256 "8aa6bb9a5d762c3b4836eb18b8a29428f451641af3ea21fe8bc5860b18fdbadb" => :mojave
+    sha256 "ab94e651eff246074bb51d7984a5ba5e09f76ecbf2c8484e3f64409deb672de2" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/7b/61/80731d6bbf0dd05fe2fe9bac02cd7c5e3306f5ee19a9e6b9102b5784cf8c/click-4.0.tar.gz"
@@ -22,7 +22,7 @@ class EulerPy < Formula
   end
 
   def install
-    ENV["PYTHON"] = Formula["python@3.8"].opt_bin/"python3"
+    ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
 
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/lib/python#{xy}/site-packages"

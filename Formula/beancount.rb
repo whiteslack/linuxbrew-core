@@ -6,6 +6,7 @@ class Beancount < Formula
   url "https://files.pythonhosted.org/packages/34/16/41f47df1a7929addab1c75a0f8905890827f00694d4de9d10c83bd5799ff/beancount-2.3.2.tar.gz"
   sha256 "0d6205a0882c3f9bc3ebfd642b329659412e10b36a3e0c7e2648410d9670d7f1"
   license "GPL-2.0"
+  revision 1
   head "https://github.com/beancount/beancount.git"
 
   livecheck do
@@ -14,12 +15,12 @@ class Beancount < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ae26e4efac2cb7cd50c9c88de5ea6e30f05ee54f452bf6156b2e2a33ebc77857" => :catalina
-    sha256 "ccfc81e943ac128a947593513c078614198b6843149756f1b5be378def0ebace" => :mojave
-    sha256 "dedb54aead11e33a9a29ef57273f1fa3042e52fd2cb27990afcaee2363c6da7d" => :high_sierra
+    sha256 "dbef918963d0caa5e103a53d21517b49dfb79c7533fb67b7770dde226d5e9e62" => :catalina
+    sha256 "8ee3c488acaf2ee93bf9bed61d32266b606a9147468b92bb49208396dc88d7ea" => :mojave
+    sha256 "af377797bcc82dcc9baf77489a6392d283ad1b130bd129504e4f9b7339b346c9" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/81/d0/641b698d05f0eaea4df4f9cebaff573d7a5276228ef6b7541240fe02f3ad/attrs-20.2.0.tar.gz"

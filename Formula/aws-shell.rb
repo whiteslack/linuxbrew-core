@@ -6,7 +6,7 @@ class AwsShell < Formula
   url "https://files.pythonhosted.org/packages/46/5a/c01bbff96fcbe8051e0b59e6191e07f5917f7f2cf667557c7dcbb85f62c3/aws-shell-0.2.1.tar.gz"
   sha256 "2044b0ef78c7542c392f2cee4b74a4439545c63dda0a3e28b712fff53e8e5823"
   license "Apache-2.0"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
 
   livecheck do
     url :stable
@@ -14,13 +14,12 @@ class AwsShell < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "80649fd9dfb5ef9c0506db4f74e0a4ff275617a718249cbc12d2c62efb46657f" => :catalina
-    sha256 "174cce4bc60dfa38babc3bae1dd3b1ab8614c2339340eaaf438012724ebc3646" => :mojave
-    sha256 "e59a26cea8549c99c0f6586db2f85d9400b53911902ec9ebdac1e6379d2518ac" => :high_sierra
-    sha256 "c62e6ef0f327fdb655dc2da20b7d4006c739c0f85cd125bcc73911ff03423021" => :x86_64_linux
+    sha256 "2eb377f0029ee8f674c8efde9c169cebeb95f28830ecd24d3bfb27b2af17228c" => :catalina
+    sha256 "d4e54334449cac6e6cacd8d4c86358b32c34fea009855e5fc412f314aed0b212" => :mojave
+    sha256 "c4e91c196361901059abdbfacef23b3f6bb80a04b7f91d478766558ae095147e" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "awscli" do
     url "https://files.pythonhosted.org/packages/71/2f/8f9a58eac96d48bb1496596e64bebada636b0178b8f117498d313b13b0a2/awscli-1.16.313.tar.gz"
