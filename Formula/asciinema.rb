@@ -18,6 +18,7 @@ class Asciinema < Formula
     sha256 "caa76523c644cf5916cde300c407d89282509a0291cfa9c4812d888c26ce7f77" => :catalina
     sha256 "b1a1aff9cf3f46328f0df80773a85898db70453fff4785e26e7ee4d6f12ef408" => :mojave
     sha256 "4ce78d8edeeb635ad7cf2f5edd88770baaa72d623ecc471fb0e8f5e12efb0e04" => :high_sierra
+    sha256 "6d9b0631ae9a33c2ced51a537061bbbf339e9de34ed1bd350b297313d780e30f" => :x86_64_linux
   end
 
   depends_on "python@3.9"
