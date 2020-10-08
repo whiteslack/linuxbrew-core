@@ -15,6 +15,7 @@ class LinkGrammar < Formula
     sha256 "d2125eec68c573874249d6b3629b54b9c55c7c378343f9ae969440dfdbb3497d" => :catalina
     sha256 "5c6e347b0c82683ae1a3c8838bec8bf9b840c06fbe33e59a494ea3495256b0e0" => :mojave
     sha256 "64a9aa4bebc23fe23063f436cd18bca518e11f3be4322ca60d2d710c9ed6cd8c" => :high_sierra
+    sha256 "c9ef2ac45085a4074b899cb71eec83981092d06799641fabcce1dd8bb6e65435" => :x86_64_linux
   end
 
   depends_on "ant" => :build
