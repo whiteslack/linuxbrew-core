@@ -6,6 +6,7 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/bc/44/306b41996e0cf62082c4ff5bc4863cc488d8475ae7d8c6ce5db8b26137c5/gimme%20aws%20creds-2.3.4.tar.gz"
   sha256 "a9cf1c816c9d0f8401832bca7f1ae05061edc0632a37853f3de9d942ad5d60d6"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class GimmeAwsCreds < Formula
 
   bottle do
     cellar :any
-    sha256 "736faae3b3e9f48ea386933bc68de1cb64a293e13e5ae4111d437997964386ec" => :catalina
-    sha256 "9f6234bc623c5c32a120b3dfaa7d507e56e92d0b7386b71d768f15bf942e13e9" => :mojave
-    sha256 "d2e420d0a093b64c25f766c8a79bae90d5504324829bea3a0f50add60b7f1839" => :high_sierra
-    sha256 "b1f269dc08de216f3738c8ed83d93c8c93f588b5e11f0d2b22ea22a6d5a1c6b1" => :x86_64_linux
+    sha256 "985603eaa52a2c2afbcabaab3f0f3875f5b74926f8883a722eaec41a9f831a34" => :catalina
+    sha256 "ded8894319e03a8dda97888fa90b832d96e4d890037475ee8849e87ce37fe86c" => :mojave
+    sha256 "f6d41b3fd40cb109b262dff0e1e05a3d0f720a04b4ab0a6a5bc0594eddd9ce0a" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

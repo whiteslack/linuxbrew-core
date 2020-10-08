@@ -6,19 +6,19 @@ class Certbot < Formula
   url "https://github.com/certbot/certbot/archive/v1.8.0.tar.gz"
   sha256 "ce7381c0110d0876615a869c0b11d900ec4a84c316cc2a4d78d1bc6aaa2592cb"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/certbot/certbot.git"
 
   bottle do
-    sha256 "1d3bf594b8a8bc23862c5fe9e9e21fadd545f76121f49f643f9532801106233a" => :catalina
-    sha256 "1f152d44f5d57a559fcca96b5c19e630bdb575c3f9db31d91ce910aa8d9ef0f5" => :mojave
-    sha256 "73808a5a9681594f9d635f0a71bca72b78635f5c97b5d0c667ff7b809a8abb20" => :high_sierra
-    sha256 "aa42a9c715d97943b8f804bd135c197e1fa5cd341a44946023727180465bd194" => :x86_64_linux
+    sha256 "8a1b9021d1bb9d63e942d74d2389025e3a76f82816e6e5105f1fde0c0d923e92" => :catalina
+    sha256 "19b32ab7b94474e4fe12d72d4e95d2a3092fa06dccbc14f2899a27e0d215b17c" => :mojave
+    sha256 "8e772618b038a7d43545d77a3c29c64f69efd00b926d4e60ab546955e2732105" => :high_sierra
   end
 
   depends_on "augeas"
   depends_on "dialog"
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

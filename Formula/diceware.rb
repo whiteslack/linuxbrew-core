@@ -6,17 +6,16 @@ class Diceware < Formula
   url "https://github.com/ulif/diceware/archive/v0.9.6.tar.gz"
   sha256 "ff55832e725abff212dec1a2cb6e1c3545ae782b5f49ec91ec870a2b50e1f0e8"
   license "GPL-3.0"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "510a0f4aca2e72306d28a54c0c5d5a2d5dd98b6a7c5e8b5a104e637b1499866a" => :catalina
-    sha256 "f5dfaf498b1d3097b8b5346b215e81f1af6dcd98da65ec123a8b129690df3650" => :mojave
-    sha256 "a5838d0d6d69978d1bd9d56699ae4256af9a56bd5636614e783b4e4379c8365f" => :high_sierra
-    sha256 "e27e65a0056b41043543f929af44918d21896d2b35d006eee9e173cf80d2d0c4" => :x86_64_linux
+    sha256 "98142655d4892f15af5f4063171df2004ff3d394bfbd4d783af9fe03cbcb0add" => :catalina
+    sha256 "4c2751c3a7d2f0049f0080eb6b8b0def6febe62252ef0957d06dbfced55271f0" => :mojave
+    sha256 "5128fb4da8f9189651bf0b164c92ce58fc64290dc2539dc0b70a103799fb9405" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     virtualenv_install_with_resources

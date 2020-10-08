@@ -6,6 +6,7 @@ class Jc < Formula
   url "https://files.pythonhosted.org/packages/e3/b9/7878a4f71c873c7d67f39615086f1c8315740534b25eddc1a4f75f314832/jc-1.13.4.tar.gz"
   sha256 "45480ac3d399f70b57d8cc97a6795ea875a19863c55a56eae596c6e67303c5b8"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Jc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "7702ba20f9132d178d6b8a601ed0ae78df11a99df16453643d38c348d91ee053" => :catalina
-    sha256 "e8ed48546f16a735a4b54bd7384222698c77e0a99df9b9041cc76240e1f1f4ae" => :mojave
-    sha256 "d41d6e5ab5e6b58bb8850d84f2c93dac3903ac7955b80d1c9edcde9d6316236e" => :high_sierra
+    sha256 "313688f0f20b532ca13557cfc17646733742138f140b17453c7485a32f1f2048" => :catalina
+    sha256 "fe818b492817a0d857121ca5170ce693c141c796d4c4fd7b99f172fe5077a5ae" => :mojave
+    sha256 "bd3fe1005d4773d72ce992685c86fbe5114d3660638c26bb024fc0be45aec0e7" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "Pygments" do
     url "https://files.pythonhosted.org/packages/6e/4d/4d2fe93a35dfba417311a4ff627489a947b01dc0cc377a3673c00cf7e4b2/Pygments-2.6.1.tar.gz"

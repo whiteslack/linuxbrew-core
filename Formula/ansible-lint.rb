@@ -6,6 +6,7 @@ class AnsibleLint < Formula
   url "https://files.pythonhosted.org/packages/86/d0/f5e50fbaf775baf0f930445f53005b305c782a668336ddf2946969660a36/ansible-lint-4.3.5.tar.gz"
   sha256 "bec230cf5fcc4d976246d4170da3ae289715f99185529ca8bba4b3c173035656"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,16 +14,15 @@ class AnsibleLint < Formula
 
   bottle do
     cellar :any
-    sha256 "7e36723112166f0e06eaccf09f7e62a3011b67aa43a19155c03d520c62daa03f" => :catalina
-    sha256 "eaabc7ec801e0a8971a19d18be7a473a3eb533311936907232ce8cf19e90357d" => :mojave
-    sha256 "02e41b212b8019d67a1c9a232b9e1a06cc8a943ef0c691f50b2b7effb86df1c8" => :high_sierra
-    sha256 "95d071adae1fcf9828238d5b5cba0b2513f55bd00ffcab33a0374138d86de2cd" => :x86_64_linux
+    sha256 "d240c303fa361ca6635cd334e1ddb6abcbbee8a68010283592e003dfe7e309a5" => :catalina
+    sha256 "b49ed8c0b61bec87061d4756a6ce5387d1aba84564eae33437c9f5ce87b20cb5" => :mojave
+    sha256 "8eabe6295018521866209005248193a010a6a5420494f96fe19bd9cb8d869482" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "libyaml"
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

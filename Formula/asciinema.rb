@@ -6,7 +6,7 @@ class Asciinema < Formula
   url "https://files.pythonhosted.org/packages/a7/71/771c859795e02c71c187546f34f7535487b97425bc1dad1e5f6ad2651357/asciinema-2.0.2.tar.gz"
   sha256 "32f2c1a046564e030708e596f67e0405425d1eca9d5ec83cd917ef8da06bc423"
   license "GPL-3.0"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
   head "https://github.com/asciinema/asciinema.git"
 
   livecheck do
@@ -15,14 +15,12 @@ class Asciinema < Formula
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "4ac59de631594cea60621b45d85214e39a90a0ba8ddf4eeec5cba34bd6145711" => :catalina
-    sha256 "b395128b1d0825a1b0ab81c4238d0acf38f6edc2df2a1bcfcaf6658ba191900d" => :mojave
-    sha256 "1a941e2c0594a7c0a07c66f02c411e121ed2b3e869f3f015c6e69cb4fd92daba" => :high_sierra
-    sha256 "21867b3730473f70d30f31aa5be231e2513df4d4c7d1cb64f6270eed36bbea14" => :x86_64_linux
+    sha256 "caa76523c644cf5916cde300c407d89282509a0291cfa9c4812d888c26ce7f77" => :catalina
+    sha256 "b1a1aff9cf3f46328f0df80773a85898db70453fff4785e26e7ee4d6f12ef408" => :mojave
+    sha256 "4ce78d8edeeb635ad7cf2f5edd88770baaa72d623ecc471fb0e8f5e12efb0e04" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     virtualenv_install_with_resources

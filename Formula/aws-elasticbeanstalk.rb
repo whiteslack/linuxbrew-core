@@ -6,19 +6,19 @@ class AwsElasticbeanstalk < Formula
   url "https://files.pythonhosted.org/packages/3e/72/18aae8bbfdb7d9ed8ff509f4c5274af86da45b0647b834d50589547ee9dd/awsebcli-3.19.0.tar.gz"
   sha256 "35fc8417a37c9234789947d40b6f66b49a115d06d0dd9f6ce0bebd617df60202"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "b998a1cac651cbbed4522655526557497294134f3cd4d0e70e79acd5514c3be3" => :catalina
-    sha256 "f614a425f6e810e369b1e09ebdb5b48e8927a58933af7776ec446f0e656847ec" => :mojave
-    sha256 "ca0d168e38d332f2fa8855756fc26151052c6328a8cfc92643aa1847e0526d3f" => :high_sierra
-    sha256 "788db40e3cf4caba1c917bdfdc2e986b5025b3f75a9fbbbee2f34ebcfd54a8de" => :x86_64_linux
+    sha256 "075d19100c9324150aedbd78eb35c1637c68775cfe555b4151df45e85f4f24d2" => :catalina
+    sha256 "1b1ec66d32c4db0df5ef286d9d88ac0823218fda1ffe2a85accb2b70fda4aa29" => :mojave
+    sha256 "b4a136adf50bd63f52446325ab41deeb0b9f18b1011ec2689952d6d4948ba4d3" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

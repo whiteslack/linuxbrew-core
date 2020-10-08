@@ -6,17 +6,17 @@ class Flake8 < Formula
   url "https://gitlab.com/pycqa/flake8/-/archive/3.8.4/flake8-3.8.4.tar.bz2"
   sha256 "66f65cf5614a24f813a76ab6388507ad8def068dcee859568a3c32a49a5d597b"
   license "MIT"
+  revision 1
   head "https://gitlab.com/PyCQA/flake8.git", shallow: false
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "aa8db7e7d150ff72c2b0ee62a431815ff978dd004b6bc0bb20ff6f58175bdb72" => :catalina
-    sha256 "38c8b24e9e93e18056478da43452621521e9edbc18d65d80c446044bfd672add" => :mojave
-    sha256 "54672186e5aa4e630c877d95ca562312eacbe1bc0edbe2a9e92f05ae5e5c93e0" => :high_sierra
-    sha256 "f5bba5e400a4c12032798e19b589b28ccec748d525ca07c87493eaf02cabdb48" => :x86_64_linux
+    sha256 "77549fc69b29277ab03f89a5d0f266163fa3989f15c6bc69a3ed822e124c21a8" => :catalina
+    sha256 "6e6ed9e932cbf0bb54700d6e0e8d8433254b6fa250951f2b7ea27cdf53e6a32e" => :mojave
+    sha256 "57fef973e58c0e8bb0ac0030844c3cba24001fd3676c2f2c95d76ea74c460897" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "mccabe" do
     url "https://files.pythonhosted.org/packages/06/18/fa675aa501e11d6d6ca0ae73a101b2f3571a565e0f7d38e062eec18a91ee/mccabe-0.6.1.tar.gz"

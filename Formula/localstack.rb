@@ -6,17 +6,17 @@ class Localstack < Formula
   url "https://files.pythonhosted.org/packages/c1/ed/9c7caa9d68bc80aaa9bb7f84f225d15ff28fa42c4314befe9b92fa430dd0/localstack-0.11.5.tar.gz"
   sha256 "f3280a21aab8d6e99c139b331ca716240201f4d6e60acbe55a52d4993c326c62"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "7e91884c1994740605b91ca899c6132f18ad3da3f0f5601445168f9c482b4a8f" => :catalina
-    sha256 "7ce927d68a70de0bf7de7954d083af9ba65d9f18c092d2d24bd708f901838676" => :mojave
-    sha256 "313c1d0ab1899d1a97135ed3d08905c49da5ffbd844e42f79ee3bcdb9c58ba07" => :high_sierra
-    sha256 "2990c844cfc4d99f2a7dd48b10ed8161251eeb6e5ff0149c0e1a89f0e870d88b" => :x86_64_linux
+    sha256 "925f7c1abb391ad6ee80b4718a5c9276f3af4315add48ace76c22c32caf6b112" => :catalina
+    sha256 "43f726bb6fafb0c90cf23509207b7cb89dd4bbd778a2534612f72c0ef66f0b93" => :mojave
+    sha256 "5fa84c9b8617b9e045fcb9faaa1cfcd6e42b1a324ad61d657e61aa0a4ca0e26f" => :high_sierra
   end
 
   depends_on "docker" => :test
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "boto3" do
     url "https://files.pythonhosted.org/packages/34/cf/6d11d4ec66f4c290fb58e9ce04441681714c3b8c76a35fe2d97a3ab423d0/boto3-1.14.63.tar.gz"

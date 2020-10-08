@@ -6,6 +6,7 @@ class C7n < Formula
   url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.6.0.tar.gz"
   sha256 "0b4d68a92645ab86e56ee57079f3739c32a852ebaca23dd5e86e6b3fb33b3fe2"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://github.com/cloud-custodian/cloud-custodian/releases/latest"
@@ -14,12 +15,12 @@ class C7n < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1836faa86219202251ceb279bf3a13c4d0dd043c447f175f3d384d60668cde48" => :catalina
-    sha256 "5616103541e7f1383b4ff7749c74dc46a25850d129e56afc494e25b2e1ea492a" => :mojave
-    sha256 "46f21faaea2347228671a719bc9e2348f9f501a725eb80c73c9cf792d626d551" => :high_sierra
+    sha256 "2320722957e3595e4648181d83a2fc95d045160dfbc9ee722e1239578df0902b" => :catalina
+    sha256 "73517770cbbb5b9c5dbcc753562899470f6bc54e3c2bd1cbc4bf0a4fdddc91e9" => :mojave
+    sha256 "3b82ae597f6dd4d3603fa0121c6ae6b198f039a5bfecd5ec756bcf63cc0a156b" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/df/a0/3544d453e6b80792452d71fdf45aac532daf1c2b2d7fc6cb712e1c3daf11/argcomplete-1.12.0.tar.gz"

@@ -6,6 +6,7 @@ class Athenacli < Formula
   url "https://files.pythonhosted.org/packages/17/fb/645836b65d26808fc936b7dec83e763078f8ababd27bfcdebd0a6ce19844/athenacli-1.5.0.tar.gz"
   sha256 "696a4141e88ea16d7ca4f6bfad0da25f61f974bb0cc32bdee1f3915dfacdfcdd"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Athenacli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "81fb89e0aa0c8e5c75052d37b478b18d4359c82ba2b6843c831b4fcb7b4f1fda" => :catalina
-    sha256 "ff4d178524842927198499cabe654b3da1b18d8fdf2c01601a1401133da33c9e" => :mojave
-    sha256 "e469a3601277e28533e381f497fc82d3485683836f171a4dbcc468579c1dcfab" => :high_sierra
+    sha256 "25b81369d3a0b6e365cbabe1ffc43cc14e806f50ac47cb2b8c8a85288b735a6f" => :catalina
+    sha256 "304b38ae3ab78ce105675bec7eba3bc99314a98f06b721ed3fb8d4719a8c752c" => :mojave
+    sha256 "e266f80cf2419bd52cf28ddff195689d1ccf40d0c5d9fe5fc73e5611641397ff" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "boto3" do
     url "https://files.pythonhosted.org/packages/4c/71/410d956522a03b331e339813dbd0871bb941f1118a49227617e1c97943d9/boto3-1.14.39.tar.gz"

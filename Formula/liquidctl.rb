@@ -6,6 +6,7 @@ class Liquidctl < Formula
   url "https://files.pythonhosted.org/packages/7d/92/5f6eb3f70e4de0241301927593a12e4622e89a9445f5e87bdbb19ddd5a62/liquidctl-1.4.1.tar.gz"
   sha256 "59a3bc65b3f3e71a5714224401fe6e95dfdee591a1d6f4392bc4e6d6ad72ff8d"
   license "GPL-3.0"
+  revision 1
   head "https://github.com/jonasmalacofilho/liquidctl.git"
 
   livecheck do
@@ -14,13 +15,13 @@ class Liquidctl < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2ac17a2c76c3e9573fa25446b3163d6d12971717a5fffe398a0bfed1b96cc0cb" => :catalina
-    sha256 "751f952fd1716a93878e4260706f9b704bb7131cd187426caa66092e6ea442de" => :mojave
-    sha256 "a792d9ed36334e5b7a3d56b84445a630dd5cfc1124cf1da1271399368d0e7214" => :high_sierra
+    sha256 "0576c2c42d71f540b597bd82123089e672823b78fad935a66be454199720a4cf" => :catalina
+    sha256 "cb19ea7668ed3cdb0786b349fd070934e6ca1ecbaf7802d6dc0926fd33f6fb4d" => :mojave
+    sha256 "05915ab1acfcc7b9a4c39db5e45e964f109f7b2349e95e58d38bfafa9c3528a3" => :high_sierra
   end
 
   depends_on "libusb"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "docopt" do
     url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"

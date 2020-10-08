@@ -5,6 +5,7 @@ class Datasette < Formula
   url "https://files.pythonhosted.org/packages/f6/37/73cbc9aaa7f83ec75d49439a76d56c730c14449977edeb177205cf08e18e/datasette-0.49.1.tar.gz"
   sha256 "21366cb40c2daf35bd6716c5a06eca3159fc2b67312a8e9fd849d6ffabcd3abf"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,12 @@ class Datasette < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ffa9a25c204ad8f8d0ab06c7d13ebab4e26e690e7a03cd9d81ea6565efc21cc1" => :catalina
-    sha256 "7f8f1519ac2b48db0d9b9aa7aa0e9bb395b580c2e472b95b3813add42bed1476" => :mojave
-    sha256 "cee5a157f3293a7834942eb5c7d56db0c50dd37bc1c0c552906da075534c8b50" => :high_sierra
+    sha256 "708a02986b8541ace4d206cb755d94044a2e1b1249de74832c552893fef6ec24" => :catalina
+    sha256 "58059c69cd889bb677f6549d5a48052a59eaf714e286b80ae9ce8dfe2ab93a8a" => :mojave
+    sha256 "357a8b2b3bdf9efdb62e337317fe141f87138e8dd4aea923129c6cdc912e19dc" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/2b/64/437053d6a4ba3b3eea1044131a25b458489320cb9609e19ac17261e4dc9b/aiofiles-0.5.0.tar.gz"

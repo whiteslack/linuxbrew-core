@@ -6,7 +6,7 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/d4/62/5e4a86f7c4b111e016577f1b304063ebe604f430db15465ac58b13993608/magic-wormhole-0.12.0.tar.gz"
   sha256 "1b0fd8a334da978f3dd96b620fa9b9348cabedf26a87f74baac7a37052928160"
   license "MIT"
-  revision 2 unless OS.mac?
+  revision OS.mac? ? 1 : 2
 
   livecheck do
     url :stable
@@ -14,15 +14,14 @@ class MagicWormhole < Formula
 
   bottle do
     cellar :any
-    sha256 "2a7df1e4f3f866733c53a8dc8c6656eeb4634d57386ba8f75d49656582891225" => :catalina
-    sha256 "8dc8d54c2e161693d905b51710f8111c8d4469c597010f43412f6a169b1318d8" => :mojave
-    sha256 "3e836c232597424b884bd7cc218bbf0e9c844d13518a3a3af8e3ae190feb788c" => :high_sierra
-    sha256 "6c5805292983a7d959efedcdc9579440676305ae0076bf0218be8f878305006a" => :x86_64_linux
+    sha256 "a38618887b672835349b4a2ce32dccc558127dd45c463181b0435399b5277448" => :catalina
+    sha256 "2f0e06c85511fc89f5519d7acb16b851ed6f67c24b9fbbfef023735fed80b989" => :mojave
+    sha256 "7c4cf8909a6df354d17f047da1a7c5e759b0bafa713bcc6a1d495bf6130fba34" => :high_sierra
   end
 
   depends_on "libsodium"
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 
