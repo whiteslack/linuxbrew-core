@@ -18,6 +18,7 @@ class Awslogs < Formula
     sha256 "54ac7491a722ea8c9139cb08ab8c8a157bbe90e5f634cd56c6f1def1e16f1635" => :catalina
     sha256 "0401664d4b96671c53d6491719942b92801805f90836f08d5fa8d0cfddf6be29" => :mojave
     sha256 "4a58816b1c333a4592d50abb75e8dbb3779904e56389dec857d42c6166a6f1ab" => :high_sierra
+    sha256 "62d37396212f595effacb36299f5779102f9943bcdb731b737f9464b5eee26d4" => :x86_64_linux
   end
 
   depends_on "python@3.9"
