@@ -12,6 +12,7 @@ class Choose < Formula
     sha256 "086ebca8f9bff4d065e788c9076bfe204b958f96b8da0cce142f3c890c38cb75" => :catalina
     sha256 "bef5f7490cf4a45398bfdef4867163957675227e74bab1494ea0da56cda2cda6" => :mojave
     sha256 "f860816e00292d161ed6f6617cef47c3297eb91e9231f3c125ce12b16ad7d220" => :high_sierra
+    sha256 "577698dec911d21f1fcf290d25546930531d37f4b4fb9f05f25422cf8384bf0b" => :x86_64_linux
   end
 
   depends_on "python@3.9"
