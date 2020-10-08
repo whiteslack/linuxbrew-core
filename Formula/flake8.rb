@@ -14,6 +14,7 @@ class Flake8 < Formula
     sha256 "77549fc69b29277ab03f89a5d0f266163fa3989f15c6bc69a3ed822e124c21a8" => :catalina
     sha256 "6e6ed9e932cbf0bb54700d6e0e8d8433254b6fa250951f2b7ea27cdf53e6a32e" => :mojave
     sha256 "57fef973e58c0e8bb0ac0030844c3cba24001fd3676c2f2c95d76ea74c460897" => :high_sierra
+    sha256 "d244d2bf90446880dd2568a97dab9c981b10662e8c01566dc1ff24a48990cbaa" => :x86_64_linux
   end
 
   depends_on "python@3.9"
