@@ -17,6 +17,7 @@ class Codespell < Formula
     sha256 "4cb15e19443191ba519e77ae1503e645096fe38cebc29425f7aab0c1da0c0e96" => :catalina
     sha256 "d2d93078208cbf498d4f18e6c7f1096a33b70ea00d8f7ef5e556150842d1c4fc" => :mojave
     sha256 "5e533ea4ed12daf3435849cc585f880da3ef80edc51131e5b601dc91a41c5120" => :high_sierra
+    sha256 "f0999d53525cf43a03e293b6b49e6eaa3cef20be6baa1a2c65aa2f959e883eae" => :x86_64_linux
   end
 
   depends_on "python@3.9"
