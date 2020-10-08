@@ -14,6 +14,7 @@ class Credstash < Formula
     sha256 "0b4ed42bb27bc5d5757716bf8ee62e39f34a4f65f524810e407ec32d6fa391eb" => :catalina
     sha256 "9399dad416c93c1d966a9ec29a66ae4647a7ffed2566c230de748bc98349d789" => :mojave
     sha256 "77db559935fa985d23b7bbbfe9c8a5a322d05136809024a7748171ead197481a" => :high_sierra
+    sha256 "2e64807154ffb374039bcd084b7955b15ca6674d00f67474ce5942a763071b65" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
