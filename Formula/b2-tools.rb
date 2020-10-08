@@ -13,6 +13,7 @@ class B2Tools < Formula
     sha256 "0828a503f620c700dbdc14b1ed8c7c3f3e24d8ec7957d4ddc82096878937dc27" => :catalina
     sha256 "699e4b2c8b59b1e0e8f9a201414999a849d310e74df0b324630f04a49d7fb909" => :mojave
     sha256 "8df0fc81ad83193c54130bce8697f578b9581dbeaf73b736812e5e8aa603290f" => :high_sierra
+    sha256 "d409eaacbc7d1aab34532984b6a9aa51370aa92ca3d6a16a023c20a593a39ba5" => :x86_64_linux
   end
 
   depends_on "python@3.9"
