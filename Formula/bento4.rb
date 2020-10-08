@@ -11,6 +11,7 @@ class Bento4 < Formula
     sha256 "3b5840c8f8c049032e39a19a571a616a3faf3157f874f1ed0e22e5e248a3b59b" => :catalina
     sha256 "c4312f145319b6f1b48d1413d897e7c98f3be60c19379f2fcf7692b65a585fcf" => :mojave
     sha256 "2c8431f14ae7303a9738c8d036a03763835b2146446c28dc464f647c9caab04d" => :high_sierra
+    sha256 "96c5d7ea2584e35d4aae18c29229664d3c43d2080cd763aa62ce6befe4ffac35" => :x86_64_linux
   end
 
   depends_on xcode: :build if OS.mac?
