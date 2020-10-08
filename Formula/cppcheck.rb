@@ -11,6 +11,7 @@ class Cppcheck < Formula
     sha256 "b126ab11f1a38e53d94f4f58a5f5f48d0e0cb7cc2a24fd104e0d8a4526f8455f" => :catalina
     sha256 "e2f6f74f00041c30404a337c78c6b15e7a189a94398cfec1bcae3ccc48c4ba98" => :mojave
     sha256 "a43ed45890d3253137ca3b47d7c2562951abd5791a404a29c121461fda28813d" => :high_sierra
+    sha256 "f7ebf7d2252a4a0b2267b5f19cce1c52a6cf59501f54889a1d83c7b5fb5ef78e" => :x86_64_linux
   end
 
   depends_on "python@3.9" => :test
