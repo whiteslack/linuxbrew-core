@@ -14,6 +14,7 @@ class Scour < Formula
     sha256 "f0cbfbf1df3579bbd13c1ad1ff27943f89fc79adb1c81d34fc1a8455eec793ab" => :catalina
     sha256 "206139ff183f844e57b8b93a9689d5e2120c5fe9e6d3d618bc5fc884d306de7b" => :mojave
     sha256 "969e45c7db350a7506591221ffdf774b2c272bc14bca989a6241612ee4768f6f" => :high_sierra
+    sha256 "fa3ee9dc458804024e802e0ff22c52cc7bea06ad7810ad76c00a8be7574f54bd" => :x86_64_linux
   end
 
   depends_on "python@3.9"
