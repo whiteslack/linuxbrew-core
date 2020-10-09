@@ -13,6 +13,7 @@ class Termtosvg < Formula
     sha256 "350d8b4e73ae41f0ea1268c19df0c5f0eb101085bc2d29df5013579b24e72a4d" => :catalina
     sha256 "22decfefbd2791ac22f3e267467f53a84524298a5cf1d9b285e97568555b12f0" => :mojave
     sha256 "26a80230af97da8f083d5e3004cb3a000e4cd16e33ce4e733400a9d9d0ade42a" => :high_sierra
+    sha256 "564428687edf353e231ef7fe70fc77b35d29654a9a3e31f45dff5855da3252e6" => :x86_64_linux
   end
 
   deprecate! date: "2020-10-08", because: :repo_archived
