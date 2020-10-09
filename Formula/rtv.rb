@@ -14,6 +14,7 @@ class Rtv < Formula
     sha256 "c3a4eb9ce139d6d768a8ff6f3dfaaf6c24dee517fd18a8243ba88215df162650" => :catalina
     sha256 "aaffc3c8e0859424697554af41e79b82057e252b1d3ce5eb3e929a0695ed5785" => :mojave
     sha256 "76dd530c8986d96aa2417f565beb6b2db7662c84de06ff65e4953ceceff761d8" => :high_sierra
+    sha256 "d1cc7833f36f428747827fb23f2f4dc81b84d69386c34d44f953bbf3092dd56b" => :x86_64_linux
   end
 
   deprecate! date: "2019-06-02", because: :repo_archived
