@@ -17,6 +17,7 @@ class Mupdf < Formula
     sha256 "c781037e13df1edd80ab97d715bf087f8ed1011016804123fcae03bc4e20cf14" => :catalina
     sha256 "c487a3e37a7004cfe63cc617db030d15199924d68eeec75d7c2f445448457d81" => :mojave
     sha256 "21389eb838991da63ebd3bb5903ce83c001d716ed192c38c0a14ae3939f758a8" => :high_sierra
+    sha256 "39c2a3a81cf6a2cbcee06482e51082b0faa5d572bc143261f4c3cdcae1e99252" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
