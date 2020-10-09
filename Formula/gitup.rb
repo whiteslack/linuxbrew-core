@@ -14,6 +14,7 @@ class Gitup < Formula
     sha256 "077ec1911a7591d4b4b64fdf2da125e952109b9185d2814c6cc067b13e0742d2" => :catalina
     sha256 "5cc3e9e0a1dd4e9771ad49a91466bc770613919ab6d341be8c19af2ea52ed13e" => :mojave
     sha256 "ba293f09c3a286b21da18aaedc5a41b202918e7f7c1a2e1743df2b3da9f4197d" => :high_sierra
+    sha256 "cee02b86ebc4e89088f5e958c7e46cf28758c02676a276f24e35b387bacd637f" => :x86_64_linux
   end
 
   depends_on "python@3.9"
