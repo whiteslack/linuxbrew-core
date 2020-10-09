@@ -17,6 +17,7 @@ class Sqlparse < Formula
     sha256 "51938899cca31fea46f4b8ca06ed6ea730b3fa9f8ccf3b05c0d5ae01a58b4bac" => :catalina
     sha256 "2d52f1ea77ef4b97c95a5dc77097c324f950c9ec0fe370afd795222a41d8b6a8" => :mojave
     sha256 "60f79b4eca3f227ee975ab3a464f772b7f3e6c955aca664b891d978f5c9dd0d7" => :high_sierra
+    sha256 "75babbed41e707b76c237c0f9cfbbf4469a4f0a77df76f638cc9b5e26ea042ee" => :x86_64_linux
   end
 
   depends_on "python@3.9"
