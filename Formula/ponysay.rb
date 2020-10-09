@@ -21,6 +21,7 @@ class Ponysay < Formula
     sha256 "8c53b69ff726780b68fa8d644a13325bf46b80ae13eb198804f0eb7aa601a893" => :catalina
     sha256 "d91ddb61651ee73e49f565095257cf8226d66585d8032783fe208ee359448912" => :mojave
     sha256 "ba848b6de300211972228d752805e4d4bed7ba44af9356e0f56fc6bdd9f23f79" => :high_sierra
+    sha256 "e158f916b47c0b62d15d3def63e061de6a4c5678fe2099e32092a18c4e80f957" => :x86_64_linux
   end
 
   depends_on "gzip" => :build
