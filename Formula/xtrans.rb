@@ -10,6 +10,7 @@ class Xtrans < Formula
     sha256 "74e4e5cf12976f0b9ef865052f6b40b6d3bb17fad1f6298f7cb54792aec3cb8e" => :catalina
     sha256 "a84a48c11a607fa66fa70119c46b6a590ee0b744ff600c22c2887a6bdedf73bf" => :mojave
     sha256 "7bd1e64df9191e69567a8fe7f82e97e6c2aac7a39f3f3ad96661b3369978c861" => :high_sierra
+    sha256 "4241fbb0a5fa9f83f5c5bbccf1cbe860140adb9872ec24fc090c44b693c08c68" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
