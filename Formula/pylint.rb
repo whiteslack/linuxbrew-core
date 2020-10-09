@@ -17,6 +17,7 @@ class Pylint < Formula
     sha256 "b1e5bed48c317aed3d64861bea461c7abce9805c325e620bd4eac8295ac0e353" => :catalina
     sha256 "a804e7a7bff4e0bf3fdf274ec1ff0928b80fbcbdedfc4cadc2fdf6ae70aa9f96" => :mojave
     sha256 "68159b9ad518eeb463602115179a194ae365bbfb27a6a947aec801da0ca0d7fe" => :high_sierra
+    sha256 "3dc3e45d277c4847ad83e5abf09a7ccf9da96d7dea931b29f108efd06dc8ad2d" => :x86_64_linux
   end
 
   depends_on "python@3.9"
