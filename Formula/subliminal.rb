@@ -18,6 +18,7 @@ class Subliminal < Formula
     sha256 "ae842ceb5c2b8488ceca4cf40efb8bf6a384945827f82359162b22f8c3ff8cc9" => :catalina
     sha256 "a8a0a8866b687758fe4382bf7a999a64918d2b84805ecc51bdd6d2b934e31bdc" => :mojave
     sha256 "f311103549dacb446020249bc66b64599faca35421183dc180a9cf73722e1faa" => :high_sierra
+    sha256 "43a4fcfdc5649e569cf68ffea6adc72ef1151a3cf3a9a700c6bebbf783889f30" => :x86_64_linux
   end
 
   depends_on "python@3.9"
