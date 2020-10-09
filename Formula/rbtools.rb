@@ -6,6 +6,7 @@ class Rbtools < Formula
   url "https://files.pythonhosted.org/packages/04/98/10d5f67470c48e000cf9c95fb748f6a302eb01c0cb006d3ec37ff2f1e7c1/RBTools-1.0.3.tar.gz"
   sha256 "ff4cea3ad7b2d1b1666b811021cf5047f1fbe9417428fb5133a40ede81e3e83c"
   license "MIT"
+  revision 1
   head "https://github.com/reviewboard/rbtools.git"
 
   livecheck do
@@ -14,12 +15,12 @@ class Rbtools < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5a748911d650da054e85d6c78c208664b64c9c78a22c6a44ad33959317893b2c" => :catalina
-    sha256 "cedc380f26e21667b91379462b7108f231c81a736650412f322c5256bb55a2cb" => :mojave
-    sha256 "6aa5f77cc2368f5e442635294a6878d1e3d738a0ac27083ba3856b255c0b3ba2" => :high_sierra
+    sha256 "0b12f736ad37628d1fb9c87c909985696a73518c9f7ff5377f48be9310ca399e" => :catalina
+    sha256 "654a068175e2e29facbef092127b5848f3a4464fe1f2077cc08e0be1f3d93e5f" => :mojave
+    sha256 "8982afb981edc037655be37cceaebd5a352f29b05e6385d8b67ce678f832c5bf" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/76/53/e785891dce0e2f2b9f4b4ff5bc6062a53332ed28833c7afede841f46a5db/colorama-0.4.1.tar.gz"

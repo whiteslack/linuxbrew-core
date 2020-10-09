@@ -5,7 +5,7 @@ class Livestreamer < Formula
   homepage "https://livestreamer.io/"
   url "https://files.pythonhosted.org/packages/ee/d6/efbe3456160a2c62e3dd841c5d9504d071c94449a819148bb038b50d862a/livestreamer-1.12.2.tar.gz"
   sha256 "ef3e743d0cabc27d8ad906c356e74370799e25ba46c94d3b8d585af77a258de0"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -13,12 +13,12 @@ class Livestreamer < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "23a5d9a062d09bbdb506daf64a8d57ffc621f8d62823f049a54233772dc2049f" => :catalina
-    sha256 "bbdac34096cf43e0d330c8b2fabe256c62cd36c83b5fd92e018d558fa0013de8" => :mojave
-    sha256 "c5e389be81bbd2736c8edcfcb7e725c321c188a057ce43e195cdbb96223dd76f" => :high_sierra
+    sha256 "fb66f50467554c547b0dc938621146994dce5069ac01f8b55badbb6363e8f11d" => :catalina
+    sha256 "4e01e88af3e7134c460b64e0405093b345d3a60130a1792b7a3d371bac089370" => :mojave
+    sha256 "7d52881a8c42d16e27bd03a5b678b4b6a3ad8a93179dd9cee9507c8a9676859b" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/b8/e2/a3a86a67c3fc8249ed305fc7b7d290ebe5e4d46ad45573884761ef4dea7b/certifi-2020.4.5.1.tar.gz"

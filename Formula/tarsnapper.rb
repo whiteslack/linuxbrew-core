@@ -6,17 +6,17 @@ class Tarsnapper < Formula
   url "https://github.com/miracle2k/tarsnapper/archive/0.4.tar.gz"
   sha256 "94ac22c3ed72e6321596f7d229b34fd21b59a00035162c5b22f2a1ee64dc6d01"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
 
   bottle do
     cellar :any
-    sha256 "1a349c8831f9538426254c7bd811c5144f481728ea259dd5ad8d0af629a1d406" => :catalina
-    sha256 "a153f159001c5be37fcf8ae16e89dc6aa99d752854620d3fb289e8745795a034" => :mojave
-    sha256 "a39196665b10717c42c69bc749e35cee06736e3509e992db950ccd6b248f2e23" => :high_sierra
+    sha256 "7b793b4d3a42fe3b6099442d604cf689ce764e3b0e71cfff162a9afb73a81ade" => :catalina
+    sha256 "58b2d3d7a2a58234900edbfa683073d8409e8b55900cdb1b4caa4c5201c9f8c9" => :mojave
+    sha256 "242565b804312be5b0f9c0bbfd034bb0982ffdad7f7130e0b868206c2fe751fd" => :high_sierra
   end
 
   depends_on "libyaml"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
   depends_on "tarsnap"
 
   resource "argparse" do

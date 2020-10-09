@@ -6,6 +6,7 @@ class TwinePypi < Formula
   url "https://files.pythonhosted.org/packages/14/54/2fc5732362649f4b6f4c245c17dc5a526148b1fb2c3a89176a2ef950628a/twine-3.2.0.tar.gz"
   sha256 "34352fd52ec3b9d29837e6072d5a2a7c6fe4290e97bba46bb8d478b5c598f7ab"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/pypa/twine.git"
 
   livecheck do
@@ -14,12 +15,12 @@ class TwinePypi < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6a39af0a3905556400c68636ea2cf39658ac8b3b85bfd1d4bd23d5bf29ce075d" => :catalina
-    sha256 "2c17e73674ae49ff7db1071784b7c523b8d3efb48e6f382a7084b6119bf73e2c" => :mojave
-    sha256 "2928900b6410e78fc1bca1e2f7a5eca6fa1fd705085aa0226a25cee70775ff15" => :high_sierra
+    sha256 "d94f3f8df7fda5c17f09d642d84145d538447eed181b0be2b87e685bb57f9b55" => :catalina
+    sha256 "d3be73663253bb1997b4450e8ad70f9dd1c01c135d8baf0fbca87f95590dbad9" => :mojave
+    sha256 "17010769531a56d929ceeaf35bf40f2cbbeb5673cd3728abc6bf035f88e12700" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "bleach" do
     url "https://files.pythonhosted.org/packages/a9/ac/dc881fca3ac66d6f2c4c3ac46633af4e9c05ed5a0aa2e7e36dc096687dd7/bleach-3.1.5.tar.gz"

@@ -4,7 +4,7 @@ class Stormssh < Formula
   url "https://files.pythonhosted.org/packages/0a/18/85d12be676ae0c1d98173b07cc289bbf9e0c67d6c7054b8df3e1003bf992/stormssh-0.7.0.tar.gz"
   sha256 "8d034dcd9487fa0d280e0ec855d08420f51d5f9f2249f932e3c12119eaa53453"
   license "MIT"
-  revision OS.mac? ? 3 : 4
+  revision OS.mac? ? 4 : 5
   head "https://github.com/emre/storm.git"
 
   livecheck do
@@ -12,13 +12,12 @@ class Stormssh < Formula
   end
 
   bottle do
-    sha256 "ea320fc79f2b33f81f123833bcd77212cca1a2fb93fd4094ddc4b175f31fdaed" => :catalina
-    sha256 "0517af91bef9ee09a89d36105786eae1068aa66e81988636bae1c2e279660156" => :mojave
-    sha256 "e69de64df1e5e1285fbd26ac1651d2ab1ad964237531151de7b3e05dbd23161e" => :high_sierra
-    sha256 "86b4379c69a0d899bdd932f59b9ee774fe9070d4637e45fda2036e86ac08f138" => :x86_64_linux
+    sha256 "e79afe5b92e065a4700562f0c440ca31ca10942bf3d7bd53676e9db0fe76765e" => :catalina
+    sha256 "63e97d8df81a1e56544fc231f404693cf0ce0263ea2a375d97b6a2c6608e72a2" => :mojave
+    sha256 "e4e4311de89e372150f030d233bbad94d03300fa81106bb212176c838fb82de1" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

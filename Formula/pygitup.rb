@@ -6,6 +6,7 @@ class Pygitup < Formula
   url "https://files.pythonhosted.org/packages/6b/d6/177fc6cea5f34653fb9931e763d7b441ce35b0d7fbb95d5ac0e5e28f7a18/git-up-2.0.1.post1.tar.gz"
   sha256 "43d463199449cd6e3e80d2cef83a8e68f735f03fc33c94310e83b2241db9d73f"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class Pygitup < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b24547f109bc71367094cf46ebda061cc1251922babba3d69944be531d87a3d5" => :catalina
-    sha256 "fda3f2ab548f808bfe1c281c87657608b3348b1682812a88e1d0808b9cc9a27d" => :mojave
-    sha256 "d9613ae27a6ee79a837cfb05668631d2da067651dd2240426c476bd07191983c" => :high_sierra
-    sha256 "5ef66d4ca8e1e6f657111bb04875fd5e47e4aa6d860e0d06970576935ef9e674" => :x86_64_linux
+    sha256 "e02c94526d58af22a560a80d981fea7c537f5faa7253e27f216cbb07ddb2eddf" => :catalina
+    sha256 "3638f5357ceb0aa375c334b1586efd376d524c0134c0d89b738145e890f1e3d0" => :mojave
+    sha256 "aee7d37c874a7bab06dcb113eddacd69b38f538cd6a880894a41fed90ec55840" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz"

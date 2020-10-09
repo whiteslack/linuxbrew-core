@@ -6,15 +6,16 @@ class ReorderPythonImports < Formula
   url "https://github.com/asottile/reorder_python_imports/archive/v2.3.5.tar.gz"
   sha256 "e5c5b77efbd3a61fc2a4ab1ad36c57445dbec4313b8177725ead98ae05f8426e"
   license "MIT"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f82f81ae238fb1ea08d2847d85688226f665c247cee99e6928761139bd84f14a" => :catalina
-    sha256 "00b8dfb9fc9de88820c7115a701a86c582fe08651130eab710216e629fa748ab" => :mojave
-    sha256 "e068d759d9b9897c699e515c5a41791fd8029c990bb8bdedd2a38ce2f91122c1" => :high_sierra
+    sha256 "a99c24a8f52bc9c1803e594d4c62f090eb9977a873dfb196bf2be944d56e193d" => :catalina
+    sha256 "524ef0d9f2ae793062d28c3e85eee754d0d5f30667c5c5ee36b7d3f886e43e9e" => :mojave
+    sha256 "cbe113673b47a06b68e67bb2d2d36ee4cda1f69a6c4f51c5bdc40137859e4675" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "aspy.refactor-imports" do
     url "https://files.pythonhosted.org/packages/34/6e/37cbfba703b06fca29c38079bef76cc01e8496197701fff8f0dded3b5b38/aspy.refactor_imports-2.1.1.tar.gz"

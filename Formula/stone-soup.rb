@@ -4,6 +4,7 @@ class StoneSoup < Formula
   url "https://github.com/crawl/crawl/archive/0.25.1.tar.gz"
   sha256 "41ddf73543940a4d16a7f23c618e2f464dd6d3dd3affc999d2412d8af3f01126"
   license "GPL-2.0"
+  revision 1
 
   livecheck do
     url "https://crawl.develz.org/download.htm"
@@ -11,13 +12,13 @@ class StoneSoup < Formula
   end
 
   bottle do
-    sha256 "aed9973952598da0eec03689ab04b5133e6170ad2b3009da470191a2fbb0b3b6" => :catalina
-    sha256 "3ca35a24927cb22726a0f187d794b90637e1b6c09151f507507e79156f6bc33c" => :mojave
-    sha256 "dc43d1b520ed222b5f00b1a92610422fb2f4dcdf134d5f624cc41b0c23629f6d" => :high_sierra
+    sha256 "d204a26d9742e6355a77d867878044e88302df1814c55c02ca0056698a6c668d" => :catalina
+    sha256 "55ca7e2a08746780c722188bfb5805369afbde633f819ebc88acc24cec478633" => :mojave
+    sha256 "6e0ff6160286762bce0fed0805ff0d9384f2c183fb351df174b4fe31705dab8d" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.8" => :build
+  depends_on "python@3.9" => :build
   depends_on "lua@5.1"
   depends_on "pcre"
   depends_on "sqlite"
@@ -29,7 +30,7 @@ class StoneSoup < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", buildpath/"vendor/lib/python#{xy}/site-packages"
 

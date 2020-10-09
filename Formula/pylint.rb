@@ -6,6 +6,7 @@ class Pylint < Formula
   url "https://files.pythonhosted.org/packages/24/4a/a07484119d23283de4d8db8176e85be3b20583eefc1cbfa8363b1414fbe2/pylint-2.6.0.tar.gz"
   sha256 "bb4a908c9dadbc3aac18860550e870f58e1a02c9f2c204fdf5693d73be061210"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class Pylint < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4fa6ace1f6ff0c43f7d27cafd437fb1db755915b9a1a4a70fd02bd7abd8fc697" => :catalina
-    sha256 "099a4c201c006c1a50d9f0b3f6524465eb552866b4aac41572495795320fefe7" => :mojave
-    sha256 "e2171cf87e0749362b22a6240b2a04d199d009639732f23f7a269690cd5529fa" => :high_sierra
-    sha256 "ca9166b1e7e2a03f4b1d156d036a1769eb27d92d506b07c245a019c54cbb7981" => :x86_64_linux
+    sha256 "b1e5bed48c317aed3d64861bea461c7abce9805c325e620bd4eac8295ac0e353" => :catalina
+    sha256 "a804e7a7bff4e0bf3fdf274ec1ff0928b80fbcbdedfc4cadc2fdf6ae70aa9f96" => :mojave
+    sha256 "68159b9ad518eeb463602115179a194ae365bbfb27a6a947aec801da0ca0d7fe" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "astroid" do
     url "https://files.pythonhosted.org/packages/ee/25/d3f01bc7e16641e0acb9a8c12decf1d5c2f04336c1f19ba69dc8e6927dff/astroid-2.4.2.tar.gz"

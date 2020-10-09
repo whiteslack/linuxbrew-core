@@ -2,7 +2,7 @@ class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
   license "Apache-2.0"
-  revision 4
+  revision 5
   head "https://github.com/facebook/watchman.git"
 
   stable do
@@ -24,10 +24,9 @@ class Watchman < Formula
   end
 
   bottle do
-    sha256 "7840f564c11d33425c9eb8985f9156e782e66ef2a3578329dba83ee15a9bf0be" => :catalina
-    sha256 "ba2338b0f23c8b8817fd7bfa92466b7a97ab416e93ec6c3a400041aef013de86" => :mojave
-    sha256 "150468653b5c5a8e4eb92a3ecf420f157ed0e4772513ee93425bb3f635964dad" => :high_sierra
-    sha256 "c511d8aab0be3913b5154b043b571948fbd09841aed677aeeee339d1c619e798" => :x86_64_linux
+    sha256 "30ed7115aa2a2534f5255508915f827c2e6f3100fcd7842415db64e31eabac30" => :catalina
+    sha256 "135eb0a8f098417a8e4d67bf8d732a19bad1932eee085497877e93982e91074f" => :mojave
+    sha256 "e872c3aae64c3b78197de9f12e272bebd5d20c316a120916f59a5f1cd2fac039" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -36,7 +35,7 @@ class Watchman < Formula
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
   depends_on "pcre"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     system "./autogen.sh"
@@ -50,7 +49,7 @@ class Watchman < Formula
     system "make", "install"
 
     # Homebrew specific python application installation
-    python3 = Formula["python@3.8"].opt_bin/"python3"
+    python3 = Formula["python@3.9"].opt_bin/"python3"
     xy = Language::Python.major_minor_version python3
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     cd "python" do

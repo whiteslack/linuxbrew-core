@@ -4,6 +4,7 @@ class PythonYq < Formula
   url "https://files.pythonhosted.org/packages/50/4b/65a4e82636c21b8ffb96550191b463c6c56b99cc2db3c80f414ff2df5c75/yq-2.11.1.tar.gz"
   sha256 "74f64e3784a34d8a18efd8addc83cf5ca3478a0a69517d70fd9158a3809f99e0"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,14 +12,13 @@ class PythonYq < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "14367444c4678afdef3b135fe1cac576c87dfa70b30f15262a38e22692c12d3c" => :catalina
-    sha256 "74be260f3b475b0117ddaa1ea78bcc2d29f45cecd6e72e829ba2a19720760ca1" => :mojave
-    sha256 "1d99de9b25e693959ee8d30f9181d541a74348b951e6b795899c2b08fdca66d7" => :high_sierra
-    sha256 "95d6039deef05d85808028a984ab77c5890ef5b98761e9e3b5de00f97ae9d153" => :x86_64_linux
+    sha256 "45289e8520aa9dced6210c1fa4baa69042f9d15ca49b89dc21659c6f49311df8" => :catalina
+    sha256 "511b92444a1adc14910119fecb575d45bb2f4293309b9097cf66f6d610a98a23" => :mojave
+    sha256 "629339b0b95e4d92e9f14122efd7d497738bab9355e4b9679db56b0dbbc29632" => :high_sierra
   end
 
   depends_on "jq"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   conflicts_with "yq", because: "both install `yq` executables"
 

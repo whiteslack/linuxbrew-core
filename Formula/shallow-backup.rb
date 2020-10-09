@@ -6,16 +6,17 @@ class ShallowBackup < Formula
   url "https://github.com/alichtman/shallow-backup/archive/v5.0.1.tar.gz"
   sha256 "a4f2e2702ca656d43852b26a85e7ae0056f7c89297b1288b11c0526449c62f8e"
   license "MIT"
+  revision 1
   head "https://github.com/alichtman/shallow-backup.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "229b33c4ec8ca8298b4a6fdf88161d2cb7023399af7adeaf445516557e9dea8c" => :catalina
-    sha256 "d5e2a09b5c4cf1da508b1e18f44d1509f70313e7b831f38424db2e67367907fd" => :mojave
-    sha256 "bf8b92d72f9e051d036ad04386ecf753191732342f92618b7b80238c8f00738b" => :high_sierra
+    sha256 "ab0480d15430cc6fdfcde70fca423784efcf2a4e32aa5286a60b53ba5d713b23" => :catalina
+    sha256 "1dbe77e521a242d1b1c3d833b981427724006c82c3885fb87062c30d272e4cc2" => :mojave
+    sha256 "1de7f1b14391ee61eb08f4016d92ecac7e431337bfea369bcb6bb95cfb1461f6" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "blessed" do
     url "https://files.pythonhosted.org/packages/20/6b/80d2704532134a0acf513a2804d342686a66a779d28822eb48346dc2a861/blessed-1.17.6.tar.gz"

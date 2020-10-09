@@ -4,9 +4,10 @@ class EyeD3 < Formula
   desc "Work with ID3 metadata in .mp3 files"
   homepage "https://eyed3.nicfit.net/"
   url "https://eyed3.nicfit.net/releases/eyeD3-0.9.5.tar.gz"
+  mirror "https://files.pythonhosted.org/packages/3a/7a/07fc7a0e4f7913f599dae950ea5024f006ccef2bc1bbffba288ed8fdfcab/eyeD3-0.9.5.tar.gz"
   sha256 "faf5806197f2093e82c2830d41f2378f07b3a9da07a16fafb14fc6fbdebac50a"
   license "GPL-3.0"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
 
   livecheck do
     url "https://eyed3.nicfit.net/releases/"
@@ -15,13 +16,12 @@ class EyeD3 < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e6e2679d03c1f68674d39a5ba1b590432f1a8e7ea5660b8c40c7da18bc3d6621" => :catalina
-    sha256 "d5c1f8bf92732fc14a16b94ae62f97dda8ee5b74251842a12f85be97712a0463" => :mojave
-    sha256 "643842f3f4a5d4f2598765ad8b4ec44180ecd530d9f91f606c9dc182ca264116" => :high_sierra
-    sha256 "7ecc7c75556c2ec7a4aa113a3275a1a3fbc7ac4c9e92d14522ff2996ed865ab0" => :x86_64_linux
+    sha256 "8c413651ff61a76a5e5998eff9fd51944895b63c92ee7f82e2af436f9a9ce2cb" => :catalina
+    sha256 "427a4f9c0bed9e543ea478ca1d5d6914a1dd3e38897bdd3e25855a1771a3d4af" => :mojave
+    sha256 "6abe02207943590759f2853e3dee4aed9f8815d1a621ebe238ae70a5be0286db" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   # Looking for documentation? Please submit a PR to build some!
   # See https://github.com/Homebrew/homebrew/issues/32770 for previous attempt.

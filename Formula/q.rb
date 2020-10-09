@@ -6,16 +6,17 @@ class Q < Formula
   url "https://github.com/harelba/q/archive/2.0.19.tar.gz"
   sha256 "cd4c60923bc40f53d974b54849f76096bf9901407c618cd0a3ccbc322aacc97d"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/harelba/q.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f400f27622cd10d2e00166557d426acf0c9ebb5d902c91149acfd91b70807ec9" => :catalina
-    sha256 "cf36dcb7c4950e64c0c1281f2efbeab7f178069a6c5f33f1c39f8e2556777bb8" => :mojave
-    sha256 "68368b50bc4b208deda10fe9b47d617382166ebfea84f6fa1cb6a53b4c5706a6" => :high_sierra
+    sha256 "c1ba50d0c4c47cddb88e3c2b1aa024b7c8f81810aa2c52c988e61d7115d1e708" => :catalina
+    sha256 "6676084cffd70aec2c8bb073189df32ae0617d7e039d39e4b13a7d6cb7dc05ca" => :mojave
+    sha256 "a4976c08f89e618b70c73e96fd69bc8faebd193c4935a9d5b425012194c95af5" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "six" do
     url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"

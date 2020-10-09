@@ -6,6 +6,7 @@ class Subliminal < Formula
   url "https://files.pythonhosted.org/packages/dd/3a/ac02011988ad013f24a11cb6123a7ff9e17a75369964c7edd9f64bfea80f/subliminal-2.1.0.tar.gz"
   sha256 "c6439cc733a4f37f01f8c14c096d44fd28d75d1f6f6e2d1d1003b1b82c65628b"
   license "MIT"
+  revision 1
   head "https://github.com/Diaoul/subliminal.git"
 
   livecheck do
@@ -14,13 +15,12 @@ class Subliminal < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "acb2c64ce2c6bebcedda7841217ad4e3d2c3f7c0818da57dd6d881236e97f573" => :catalina
-    sha256 "a3bb9afb7a47164726675b04a85b50263f2a771e9b53ae833eccf44c63ad1c02" => :mojave
-    sha256 "a3bb9afb7a47164726675b04a85b50263f2a771e9b53ae833eccf44c63ad1c02" => :high_sierra
-    sha256 "403ed64de452d00fba62d31d8260e268e9996c9db053244335df2d7c612891e1" => :x86_64_linux
+    sha256 "ae842ceb5c2b8488ceca4cf40efb8bf6a384945827f82359162b22f8c3ff8cc9" => :catalina
+    sha256 "a8a0a8866b687758fe4382bf7a999a64918d2b84805ecc51bdd6d2b934e31bdc" => :mojave
+    sha256 "f311103549dacb446020249bc66b64599faca35421183dc180a9cf73722e1faa" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/48/69/d87c60746b393309ca30761f8e2b49473d43450b150cb08f3c6df5c11be5/appdirs-1.4.3.tar.gz"

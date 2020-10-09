@@ -6,16 +6,17 @@ class VpnSlice < Formula
   url "https://github.com/dlenski/vpn-slice/archive/v0.14.2.tar.gz"
   sha256 "cae69cfe2994fea487f563edb601f7ef8a59b5059baa104349121764da9d37a2"
   license "GPL-3.0"
+  revision 1
   head "https://github.com/dlenski/vpn-slice.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "350f4032091eaf9e5daeae9bc4232e7eb6f873dc0fd2cd838bdb5feed820ec1a" => :catalina
-    sha256 "b8057aa360ec68539ec028a0f30a883440bcf7cb2d72e62159594e5ec4146017" => :mojave
-    sha256 "7f6c4cb4440b65b6579bd3796591ee95a7caeda748f40c82aea386b089d2898b" => :high_sierra
+    sha256 "913cade2832a94bdd301ec1607bb9536abebcab70ec89fbb07d8226d580b93bd" => :catalina
+    sha256 "25853a55dbd7b31f1724297c5d1a249fc4e40e9da268052e01fcda985346f5bd" => :mojave
+    sha256 "e306dcb3032b7e14abd6f0d22392e365248816b4a345b14b020d7fd608a52fb3" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "dnspython" do
     url "https://files.pythonhosted.org/packages/ec/c5/14bcd63cb6d06092a004793399ec395405edf97c2301dfdc146dfbd5beed/dnspython-1.16.0.zip"

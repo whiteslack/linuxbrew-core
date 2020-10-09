@@ -6,15 +6,16 @@ class Redo < Formula
   url "https://github.com/apenwarr/redo/archive/redo-0.42c.tar.gz"
   sha256 "6f1600c82d00bdfa75445e1e161477f876bd2615eb4371eb1bcf0a7e252dc79f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a1198ba3e8feb77e588367d6c829fccd07a89baa0eb85a0dddbd27d75d926fa6" => :catalina
-    sha256 "801a8288a70e024e715b8fdfdcf6b2eca37d51ddb5f3b64d0809bf929c46e180" => :mojave
-    sha256 "78615055158a19503f04f1ef8698b4dc9cf7f61753b9f5bc59bd3fe99c2c11d9" => :high_sierra
+    sha256 "4531c1e25405e7cc940e109fdc7f028cfc84b6b224874d861f112371da993fac" => :catalina
+    sha256 "9b3f873c69959f246ea6c8abbea58f875e436fa260aefcb2697d798cfd803b3e" => :mojave
+    sha256 "0e30bad1e3dad48d66fb4061e4fb7dbd7b5b3450a53a93275990a66b2bc558dc" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "Markdown" do
     url "https://files.pythonhosted.org/packages/44/30/cb4555416609a8f75525e34cbacfc721aa5b0044809968b2cf553fd879c7/Markdown-3.2.2.tar.gz"
@@ -27,7 +28,7 @@ class Redo < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, Formula["python@3.8"].opt_bin/"python3")
+    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_bin/"python3")
     venv.pip_install resources
     # Set the interpreter so that ./do install can find the pip installed
     # resources

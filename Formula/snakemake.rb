@@ -6,6 +6,7 @@ class Snakemake < Formula
   url "https://files.pythonhosted.org/packages/f3/e7/380c16954cb99dad8abe143b816a843e0ec348c70ceb0112bed23ff70553/snakemake-5.26.1.tar.gz"
   sha256 "94cfed2f47f6441cca6cf9d53cffdc11eb78dd1758d96c0af9cd5e453247363e"
   license "MIT"
+  revision 1
   head "https://github.com/snakemake/snakemake.git"
 
   livecheck do
@@ -14,14 +15,13 @@ class Snakemake < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c0740659042ff03651e53858543e7877947fbb46a1477b6e24510344928b9c77" => :catalina
-    sha256 "73295591f718de467bfcf9c78987adfd78174a1676f38ef32f1ae54d155e93fe" => :mojave
-    sha256 "815b69192b61457199bafc15da12bdb0fa368d363457927731e0f8a4ae2b00eb" => :high_sierra
-    sha256 "14799d236c7e3e49f88bacc1aed9fae8464bcb2d44374f32a82e5ce128906f82" => :x86_64_linux
+    sha256 "75dc510b640de5cb5b4dc3a9caaa9cd9c81877a1e4cd570c805c93abca619378" => :catalina
+    sha256 "c7c4a69825c692a35ace95b8121617b02c474d173809b6a33fd60847d0f7096b" => :mojave
+    sha256 "840651c15eb152a42bb22254c7632b1ed237996781e1032eff04ca8c4087c8f8" => :high_sierra
   end
 
   depends_on "cbc"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "amply" do
     url "https://files.pythonhosted.org/packages/7f/11/33cb09557ac838d9488779b79e05a2a3c1f3ce9747cd242ba68332736778/amply-0.1.2.tar.gz"

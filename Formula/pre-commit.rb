@@ -6,17 +6,17 @@ class PreCommit < Formula
   url "https://github.com/pre-commit/pre-commit/archive/v2.7.1.tar.gz"
   sha256 "b6ca162ba902dac6b0567d5b2ed3a7cc479ead512bdad5579e35a6836b8c1b0e"
   license "MIT"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "16fedb26ac5b237eecb5ab73a2a4aef5a7f1c87cd9bb1409c523a0e00f3fa572" => :catalina
-    sha256 "ea8e2a1eedfe8a1ea1035e39601d5974ce166dee4395ceb0ea388af577b64a18" => :mojave
-    sha256 "a9701f56135259c2896d7fdc83bd299aedb70dbda1c909c243d899ed800a317f" => :high_sierra
-    sha256 "87242c6360892f829039a4d9934e24d01989b29f484a372c19ccd23831f50665" => :x86_64_linux
+    sha256 "a726f725420715e597305e888b66c08b63a84d8bec811fa851a6d589775237e1" => :catalina
+    sha256 "e3da06e12e90323574d7fc9edff9d0d61bf0a842deb8e795ba2b88683e8a072a" => :mojave
+    sha256 "feda82f14ded0c20813e22d53fca6fa6375926b9cba6c925801dfb246554c16a" => :high_sierra
   end
 
   depends_on "libyaml"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"

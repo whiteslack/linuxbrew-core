@@ -6,6 +6,7 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/13/a2/9659165ab6511afc1fde31205f463c394d3080058135ab86a275cfd733f9/pwntools-4.2.1.tar.gz"
   sha256 "0d3768b436ad3d8aca01e8ae84fda6f1a6f43c4b96fa8c09b1dbb1cc13d607ba"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,13 @@ class Pwntools < Formula
 
   bottle do
     cellar :any
-    sha256 "cf14eb0499f5bfee521b9cbaecb583e238418e9b50de44f708c7d929353c28a2" => :catalina
-    sha256 "fabb4ca05b2c8774d56f1d53686555369ea0b0a6d7211b2415b890fd2b2358e3" => :mojave
-    sha256 "34fcfd5999de0314b9b354aad81806b72404eb01a4760564cd2eda68ff0c5056" => :high_sierra
+    sha256 "54ec5a23c2645acac56a1be2eaee3e00ffce0c23703c2d97b5049c5e5ada84fa" => :catalina
+    sha256 "700f6d128b4f60c4cc766ec53eab6ba339780b7ff30f96ec3c2ff2006ef45a6e" => :mojave
+    sha256 "cdd990efc09a024d3ad8d06bbfd8190a6f2567741e5581d34d72f51739a4e3c7" => :high_sierra
   end
 
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

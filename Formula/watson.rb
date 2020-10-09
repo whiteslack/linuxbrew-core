@@ -6,6 +6,7 @@ class Watson < Formula
   url "https://files.pythonhosted.org/packages/d3/1c/b2e928b12a320ee098da477b50ee9dd1d5054b9501f63fae670767bee279/td-watson-1.10.0.tar.gz"
   sha256 "f223bc0cd03a4baeb0b149032731edda9c6fc0c04ff61d819c6f542f01957369"
   license "MIT"
+  revision 1
   head "https://github.com/TailorDev/Watson.git"
 
   livecheck do
@@ -14,13 +15,12 @@ class Watson < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "583a25260198299269ba64f89afa737eb99afbd7ab36796b714c893bae7975be" => :catalina
-    sha256 "483126d899edf48bd344dfa75c13a3b2a62df7e17e6a162a573ec39b5ee58220" => :mojave
-    sha256 "9ae4b875d9424a815e1594fa23a78f6c4ad26230b93c4234e99b7f8a3a6984a3" => :high_sierra
-    sha256 "99594cc57f46ea3b5c8b5a8080775b41e40105c334870c54985eb4e79d00a110" => :x86_64_linux
+    sha256 "66987a4358988a3de67d3f1d95c14f396d43d417f566b7e4747939374abfa011" => :catalina
+    sha256 "ab7d7da5d7c96d4838fc631b648ab627fdd998909e34aa20d35723afb87f94d1" => :mojave
+    sha256 "2dd361ff58ad7182aff12325fa5399afb667cee4d7a0d49beeb9c0cc5e906e39" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/3f/e5/ddd9d095abbd249c2a610e6676c806a5f156c943677b30c2904f4c18f1b9/arrow-0.15.7.tar.gz"

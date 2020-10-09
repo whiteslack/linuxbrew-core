@@ -5,19 +5,19 @@ class Vim < Formula
   url "https://github.com/vim/vim/archive/v8.2.1800.tar.gz"
   sha256 "230ab1f0b194eba70ddd329bf0e0f6aebd92de9a2c6b9cd6137044448ebf2f9c"
   license "Vim"
+  revision 1
   head "https://github.com/vim/vim.git"
 
   bottle do
-    sha256 "82f09ff6d1cf4df6fa4dad220dcacf46f1c19e3154228021da9e300928dcf6eb" => :catalina
-    sha256 "9f3edba459729fefe681f2d4fa00610a5302e5fc2cf964ab4f6c2c0eaf5b20e3" => :mojave
-    sha256 "ab0131de9fc088db2cd62a5064534c943dc60764da25a0553eb2fe42559d85e2" => :high_sierra
-    sha256 "33581a624da6d142a9ee0123772268449c6ba63be86d3a01bf3b38f85bfbac27" => :x86_64_linux
+    sha256 "b5a74c7c281d3a85ef3de8d504812af5c37bddcc60ce8d4fba52d6c462f60f84" => :catalina
+    sha256 "7c180e618a61ece01426e00d4abdbacc579563ba703d0045287ee00a130c9516" => :mojave
+    sha256 "ef8cee2017ab43c277f56b0497a5a5eab02d30d0c4e81e9f0b3fa9b6a25b47dc" => :high_sierra
   end
 
   depends_on "gettext"
   depends_on "lua"
   depends_on "perl"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
   depends_on "ruby"
 
   uses_from_macos "ncurses"
@@ -29,7 +29,7 @@ class Vim < Formula
     because: "vim and macvim both install vi* binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
 
     # https://github.com/Homebrew/homebrew-core/pull/1046
     ENV.delete("SDKROOT")

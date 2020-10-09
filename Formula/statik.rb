@@ -6,19 +6,18 @@ class Statik < Formula
   url "https://github.com/thanethomson/statik/archive/v0.23.0.tar.gz"
   sha256 "6159066f486811e5773da318d6e8d1b1dd4c99ac140f1a3c660ef1c1f5e7124f"
   license "MIT"
-  revision OS.mac? ? 1 : 3
+  revision OS.mac? ? 2 : 4
   head "https://github.com/thanethomson/statik.git"
 
   bottle do
     cellar :any
-    sha256 "cab701f93b5c776a91b46f83140f92fd39885e0ce99d50374116c3b437b2fe8e" => :catalina
-    sha256 "9b83cfba38b5dec6a411291ec401908fa7e5017c22ebbfb269c78094edfd41a7" => :mojave
-    sha256 "87917f38bc4ef1f2121d82f8f697b451d5ef46e0e10df7b6538348f5b8a39d97" => :high_sierra
-    sha256 "1315d00703bd37b2afeb5e1792b743e4d675619a185d68c807ce6f57151e3d41" => :x86_64_linux
+    sha256 "60f8ec8cefcd4e7f98a894c35521fb635f033a1cdf9dede1a29b590afb5242a8" => :catalina
+    sha256 "910b7adb6ef7eece9cf1ebcc8ecc1d15377015467ca6de86e646d3141d31df0d" => :mojave
+    sha256 "c36c8cab174dba74e8e1998f7530609ef3514ad51f9a88a7b1471122a9829fa2" => :high_sierra
   end
 
   depends_on "libpq"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

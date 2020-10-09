@@ -6,7 +6,7 @@ class Weboob < Formula
   url "https://git.weboob.org/weboob/weboob/uploads/7b91875f693b60e93c5976daa051034b/weboob-2.0.tar.gz"
   mirror "https://files.pythonhosted.org/packages/88/c1/b3423348d8e2a557c7e0d53b5977cf1a382703c7b4d1397876836184b493/weboob-2.0.tar.gz"
   sha256 "fc8be1f77ad3a53285cef8b20a8b747960c163fad729c56838043d8ddcdfc9b0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://git.weboob.org/weboob/weboob.git"
@@ -15,16 +15,16 @@ class Weboob < Formula
 
   bottle do
     cellar :any
-    sha256 "b0258a8a3e10541d81b2eb546f42e650437d0bccdf9625cdac309ec9e374aa2a" => :catalina
-    sha256 "0916a1cf462a4630ae2f4d3650ce9c8efc9f82c28bfcb3aea255ff2ae5fcce87" => :mojave
-    sha256 "7d5eb2b628f85938aa6a484f7c102bfeea3e6bfb3d27e0912dcff7f5a9300dab" => :high_sierra
+    sha256 "a4347ac13e479dc024e4fdb27f7403a8b4651aca064401b808d03caa3c76bbe1" => :catalina
+    sha256 "01d9798fee2890b412c663d5a75564299ff1c96b0d62afdd588dc5998c52f418" => :mojave
+    sha256 "2069c0ae93e3e2d8a3b06980640b27fb5169f6e19380ac2c1cbe96bc54d95549" => :high_sierra
   end
 
   depends_on "freetype"
   depends_on "gnupg"
   depends_on "jpeg"
   depends_on "libyaml"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "Babel" do
     url "https://files.pythonhosted.org/packages/34/18/8706cfa5b2c73f5a549fdc0ef2e24db71812a2685959cff31cbdfc010136/Babel-2.8.0.tar.gz"
@@ -102,7 +102,7 @@ class Weboob < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.8")
+    venv = virtualenv_create(libexec, "python3")
 
     resource("Pillow").stage do
       inreplace "setup.py" do |s|

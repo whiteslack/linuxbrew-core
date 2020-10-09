@@ -6,7 +6,7 @@ class TrezorAgent < Formula
   url "https://files.pythonhosted.org/packages/f1/a7/8989377dfce48abf9115055baf6d2cfba55102929a7c5f3e5b9c8e8b5c18/trezor_agent-0.11.0.tar.gz"
   sha256 "139d917d6495bf290bcc21da457f84ccd2e74c78b4d59a649e0cdde4288cd20c"
   license "LGPL-3.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -14,13 +14,13 @@ class TrezorAgent < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9482a60c735039a2c62c221e2976680a726e2d5fd3fe703486881a73f4206e3a" => :catalina
-    sha256 "a6d1e6ba68f9e240d3a5577fcdcbf7df3b6e18fe5c2fa78cb587ad905c2a894e" => :mojave
-    sha256 "71454920f5460eb56b1a2c10bb3818967d117a080bab61e8bf8bb1f9eb8e4de2" => :high_sierra
+    sha256 "b6643735a7479e7939cd70e6c4078373caceff7b86ca33af73220301ad757613" => :catalina
+    sha256 "8f15afae4c2fd007fecd2d970e3a14b6716ea6d1f611dcf872f3365e144d21e6" => :mojave
+    sha256 "839c53e9d5b7b88d9863c234bfdc681f06b4ee0dbb821ff0aa3dc6a1153c1c67" => :high_sierra
   end
 
   depends_on "libusb"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   # Gather dependencies for trezor-agent, ledger-agent & keepkey-agent
 

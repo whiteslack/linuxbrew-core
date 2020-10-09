@@ -5,20 +5,19 @@ class VstsCli < Formula
   homepage "https://docs.microsoft.com/en-us/cli/vsts"
   url "https://files.pythonhosted.org/packages/f9/c2/3ed698480ab30d2807fc961eef152099589aeaec3f1407945a4e07275de5/vsts-cli-0.1.4.tar.gz"
   sha256 "27defe1d8aaa1fcbc3517274c0fdbd42b5ebe2c1c40edfc133d98fe4bb7114de"
-  revision OS.mac? ? 2 : 4
+  revision OS.mac? ? 3 : 5
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b37f51f73b543f2c9403e0a982aa1ae625f170b971a75b1ab07a23a62aa01949" => :catalina
-    sha256 "27a52ac2afc49b4392804ce47984f8ea1986dde0a221d599d2f3afa0e93ca6b3" => :mojave
-    sha256 "59d1ccaa24e3356771bd998de79c226803957811170765933d5ca03f3547f99a" => :high_sierra
-    sha256 "fb811b5fdcfcd5e86766bd0c509365813d19ac27ed670bfe4b5b05a161fe2322" => :x86_64_linux
+    sha256 "8e952995319c76b81ff6bc83d57333ec92948f9912bf733303b15c45c1d40010" => :catalina
+    sha256 "9bf14052f8080b919ae1e20471a8c4f3157a10b3f0a232aa2ebff503b42dff26" => :mojave
+    sha256 "a20fcbd530d6cc07eebd219652bbdbd8c9cd51f01a61d0aee629e8e4868907b2" => :high_sierra
   end
 
   # https://github.com/Azure/azure-devops-cli-extension/pull/219#issuecomment-456404611
   deprecate! date: "2019-01-22", because: :unsupported
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

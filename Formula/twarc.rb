@@ -6,6 +6,7 @@ class Twarc < Formula
   url "https://files.pythonhosted.org/packages/48/0f/b0491173d98d7c0093d3ad912b281f6fefccfcd59b268b2e67581ca08434/twarc-1.10.1.tar.gz"
   sha256 "db8d6f5fc4d786d9af3f9ca622e4e83175a34e93bda756923e5d6c546bca6c3e"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class Twarc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "74c4def26e79e513331d2a7aa2fd6c7edc115ca06124545707abd8f2d3031b98" => :catalina
-    sha256 "f219ea9b791a7700a3bbfdb4f57830af517f13942c004a5b1a962ebc80aecb69" => :mojave
-    sha256 "8a845fe5b8a179c99eca6df8ae3d14665ec7c705b3cd4b7dff8a9b8c61df54e8" => :high_sierra
-    sha256 "90dbcb720db6f252061d3d5fffe31d8dbe0aa3c253392b5b201241144a0bab91" => :x86_64_linux
+    sha256 "bcfb503dd5e613af26bc6b0838a6b251221bbda76c1f055aab2a9a99216cb87b" => :catalina
+    sha256 "4cf56576591e56fbb674450855929c593ab798dd55733a633e24969b473cbd24" => :mojave
+    sha256 "98885be73b7ba78ad178d65ecbde595e55af50edb04ab961fa4af24a8af844ae" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/98/c3/2c227e66b5e896e15ccdae2e00bbc69aa46e9a8ce8869cc5fa96310bf612/attrs-19.3.0.tar.gz"

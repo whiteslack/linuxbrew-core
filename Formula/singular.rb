@@ -5,13 +5,12 @@ class Singular < Formula
   version "4.1.3p2"
   sha256 "ee7ac6076d7f8622a1f24d37e9b632bae0700c6e314f56728400be136df64494"
   license "GPL-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 "ec4a73d624d17771e510be59ee936fdb6575a6651292a95797f3f92f167042c3" => :catalina
-    sha256 "b1f33f87b56645ba798dddc2ed4492d50dacb02aa8142e6052802e6b6197a711" => :mojave
-    sha256 "ffc36b5ecccb30537bf16f92e1321d51eaaa9d5faabca727eb4ba2a2f3d555c3" => :high_sierra
-    sha256 "5453526a0bc9975f7df5257be927fb8b98692bb85b4c56c712705a84f2e11e71" => :x86_64_linux
+    sha256 "75f8a2d324d2d9bff14ec7063ccc23992502f899ddacc6603102dd7e0047f482" => :catalina
+    sha256 "6462648583c2d1a3f21e6bcd341ff75ffc6cf9e2a945b80d268093187591dcd4" => :mojave
+    sha256 "f0c3ef15a16f9e59290da7ad7530a5c6897aacf2b825b41db5ea4da61bb7cf25" => :high_sierra
   end
 
   head do
@@ -25,7 +24,7 @@ class Singular < Formula
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ntl"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     system "./autogen.sh" if build.head?
@@ -33,7 +32,7 @@ class Singular < Formula
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--with-python=#{Formula["python@3.8"].opt_bin}/python3",
+                          "--with-python=#{Formula["python@3.9"].opt_bin}/python3",
                           "CXXFLAGS=-std=c++11"
     system "make", "install"
   end

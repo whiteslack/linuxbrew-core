@@ -6,20 +6,19 @@ class Termius < Formula
   url "https://github.com/termius/termius-cli/archive/v1.2.12.tar.gz"
   sha256 "89be6d35e5c4918c0d9e3f2410620d3a84c7108e52c2c87cfa6166c5612e08ee"
   license "BSD-3-Clause"
-  revision OS.mac? ? 3 : 4
+  revision OS.mac? ? 4 : 5
   head "https://github.com/termius/termius-cli.git", branch: "master"
 
   bottle do
     cellar :any
-    sha256 "e91fa9088b648af8c8774485450c1104b8b4cd5c2f3cef0839114056fddd25fc" => :catalina
-    sha256 "1267ac5caba6db09fa22e3552caa0c2f4e417c7b97998a11d71a041d98197d5d" => :mojave
-    sha256 "be10f0b1b3886e5917f54fc6d0558ca6cafeb5764ce3fa06fbed9f6dcdc2dd5a" => :high_sierra
-    sha256 "498076ec63c60c73da1cf68d84e5344cf94f23fdbe2ca172a388fae2d150055e" => :x86_64_linux
+    sha256 "b113f763e6dbb284dbd4f8f08268b9c36a74819f6a8dcd4afc69af9b4d757527" => :catalina
+    sha256 "a1175cb5eda83f402e9ea05ceba2325cdd5ae805fcf69f4272621ad8465e8efa" => :mojave
+    sha256 "b4a57a9aeae1eaf37a2cc510b693e0f196fe1cf1aaf0c7c2248409b12b24783f" => :high_sierra
   end
 
   depends_on "libyaml"
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

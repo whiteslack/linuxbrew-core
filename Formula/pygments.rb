@@ -6,6 +6,7 @@ class Pygments < Formula
   url "https://files.pythonhosted.org/packages/e2/07/25bd93c9c0175adfa5fb1513a20b25e7dd6c9a67c155e19b11b5f3662104/Pygments-2.7.1.tar.gz"
   sha256 "926c3f319eda178d1bd90851e4317e6d8cdb5e292a3386aac9bd75eca29cf9c7"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/pygments/pygments.git"
 
   livecheck do
@@ -14,13 +15,12 @@ class Pygments < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d2ce36688ac7270295bffffcc606c0f0068ac7bbc323e0b28f3fcf94d8125afd" => :catalina
-    sha256 "1ad894a00625ed6b8eb1c9372fc08e3f33cbf22bb74daaa7340eaaa94056446e" => :mojave
-    sha256 "538dd6dffdaf7327775f0b5df1dd08878338c225b58296f9164795df17b1960c" => :high_sierra
-    sha256 "87217c81dfd7c38931fdb2e7d25cb2dce09743da61a7a0b15dfb3b638db8974b" => :x86_64_linux
+    sha256 "77d8bf6fe306db9188a28e33b5f726ddfd4a6f2681445b5f63800f22dc12b75e" => :catalina
+    sha256 "675ff6a15cfacb88ab07724dde5cdd6f9f0b97c83a3cfa32f2a0223ab6cf8a0c" => :mojave
+    sha256 "6edc5643a255601adc1564db75f6a8bc47233cf23a2dbabd0e4361a7e9a66298" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     bash_completion.install "external/pygments.bashcomp" => "pygmentize"

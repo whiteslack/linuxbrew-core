@@ -6,17 +6,17 @@ class TranslateToolkit < Formula
   url "https://github.com/translate/translate/archive/3.0.0.tar.gz"
   sha256 "edbd6035ca20f2edffb434fb80378f77494fdf41698f006fc93e0c4ce2eea8f2"
   license "GPL-2.0"
+  revision 1
   head "https://github.com/translate/translate.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ea2f48f2d845370599c79250cff84803ebcf726bd31692d1c97cd2596d1e0f22" => :catalina
-    sha256 "247a179be9f3125d7a87bf2c6cbace25cec702b39197c7f021f0eba2730b1dfb" => :mojave
-    sha256 "f24e86898ef8e33d9090c369a4c9fbb235fa18307f8fda529a63b965f005c9a8" => :high_sierra
-    sha256 "9b8b4b51fd8c26eda8df4c95c85e892eb862f4a1114e618860a8472297c804ea" => :x86_64_linux
+    sha256 "f865d11e700f97b366112d5ef3db5363c0e260109f9b4ff7e64dac9992635e18" => :catalina
+    sha256 "474b0474ea2a85a5204b96de4da80dacb9fe0c3385a63a15dcc83bfeb83cae52" => :mojave
+    sha256 "8fa6b51b0530a4249243e3117eeef6bc3d5b9cf0a0847fade2184183e5ed0ce0" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "argparse" do
     url "https://files.pythonhosted.org/packages/18/dd/e617cfc3f6210ae183374cd9f6a26b20514bbb5a792af97949c5aacddf0f/argparse-1.4.0.tar.gz"

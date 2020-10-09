@@ -3,18 +3,18 @@ class Zurl < Formula
   homepage "https://github.com/fanout/zurl"
   url "https://dl.bintray.com/fanout/source/zurl-1.11.0.tar.bz2"
   sha256 "18aa3b077aefdba47cc46c5bca513ca2e20f2564715be743f70e4efa4fdccd7a"
-  license "GPL-3.0"
-  revision 1
+  license "GPL-3.0-or-later"
+  revision 2
 
   bottle do
     cellar :any
-    sha256 "34df5e2569529b11cfdb776fbb7693bd2be133f6f79ebf058a6ec9e40c14b3e7" => :catalina
-    sha256 "461956a45a61737a7ecd8c4e4a22f9511341f72a07bc5e05551771c94e264055" => :mojave
-    sha256 "b6c5d64251514191c0f987ef18481bce8f8a06f4de292c39c21112c939a3c9cf" => :high_sierra
+    sha256 "17c084231724231503046a4d1b0de95c8cedceade6b2c4dd589ab259fc34518a" => :catalina
+    sha256 "aac838332c5f0288bf435680564418739ddbcd72e8b1b0309e9df12ad914a60c" => :mojave
+    sha256 "268dc7ab197c9ba0937f4254375e9e144449896d7110c6b2d75a80e6f2b85021" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.8" => :test
+  depends_on "python@3.9" => :test
   depends_on "qt"
   depends_on "zeromq"
 
@@ -37,7 +37,7 @@ class Zurl < Formula
     runfile = testpath/"test.py"
 
     resource("pyzmq").stage do
-      system Formula["python@3.8"].opt_bin/"python3",
+      system Formula["python@3.9"].opt_bin/"python3",
       *Language::Python.setup_install_args(testpath/"vendor")
     end
 
@@ -96,9 +96,9 @@ class Zurl < Formula
     end
 
     begin
-      xy = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
+      xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
       ENV["PYTHONPATH"] = testpath/"vendor/lib/python#{xy}/site-packages"
-      system Formula["python@3.8"].opt_bin/"python3", runfile
+      system Formula["python@3.9"].opt_bin/"python3", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

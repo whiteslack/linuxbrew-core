@@ -6,18 +6,17 @@ class ReconNg < Formula
   url "https://github.com/lanmaster53/recon-ng/archive/v5.1.1.tar.gz"
   sha256 "470e293e931c23a0dc76e6915098e04db7f2e254a0639bb2c0383e0758c4fbc2"
   license "GPL-3.0"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "7b4b03cc22d532fa9dbef0f5b705bbf8fb2df69d75d124f06f171e7f9609c048" => :catalina
-    sha256 "db7c9ed3ef46fb0b192f3fe4194902991b09afeeb56b766c9b212a8deed679b9" => :mojave
-    sha256 "497f43629d955ccd254e1db15fa6ac4ebaea01a34023e8ffbfa5c0a1a0511af2" => :high_sierra
-    sha256 "cb64aff2e8edce7d5a338b901e0b0f60a5094e83c0f7bf1add677757bc130f66" => :x86_64_linux
+    sha256 "b93174a7fe5c779df7257c582718ae2558817a59e6c1a7d11ba13bcdf33306ec" => :catalina
+    sha256 "40afc4b0ef762c32d86281ed20cd7d33b9424d0370e677a03277f303dc9b72b8" => :mojave
+    sha256 "5ab42403952a0af2ac5e78e5dd779cd8ff380d678852e620215206bc63d3144e" => :high_sierra
   end
 
   depends_on "libyaml"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
