@@ -4,7 +4,7 @@ class Unoconv < Formula
   url "https://files.pythonhosted.org/packages/ab/40/b4cab1140087f3f07b2f6d7cb9ca1c14b9bdbb525d2d83a3b29c924fe9ae/unoconv-0.9.0.tar.gz"
   sha256 "308ebfd98e67d898834876348b27caf41470cd853fbe2681cc7dacd8fd5e6031"
   license "GPL-2.0"
-  revision 1
+  revision 2
   head "https://github.com/dagwieers/unoconv.git"
 
   livecheck do
@@ -13,13 +13,12 @@ class Unoconv < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a" => :catalina
-    sha256 "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a" => :mojave
-    sha256 "b8926bf449026133df038d3f6fa221803173193765a1de2de70da7b1e9ea4c7a" => :high_sierra
-    sha256 "1baebd24b729f0f3c87570995d31572ee230a2fbde9526056231f64deb21a6e0" => :x86_64_linux
+    sha256 "f2512d061951b02d953ad4c968d5fc4edf6f1ce0b11fecaf9b806c5655c70f7d" => :catalina
+    sha256 "92911d5bef4561db470583e2a2d42a918ad13c4016f79902448c07f6b8a17a00" => :mojave
+    sha256 "cbfd5a7ba3828eedcbfe26dd7f64ed4c58988f42d7972c2139e4e747010a68e5" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     # /usr/bin/env: 'python': No such file or directory

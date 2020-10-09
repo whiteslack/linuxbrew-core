@@ -1,16 +1,15 @@
 class PowerlineGo < Formula
   desc "Beautiful and useful low-latency prompt for your shell"
   homepage "https://github.com/justjanne/powerline-go"
-  url "https://github.com/justjanne/powerline-go/archive/v1.17.0.tar.gz"
-  sha256 "d7825168044159dfdd3983519ea26cf8753f24c3d8c0600ce494c4a6db7a015f"
-  license "GPL-3.0"
+  url "https://github.com/justjanne/powerline-go/archive/v1.18.0.tar.gz"
+  sha256 "f7418109e89a8280f2181c675a7790669ba0b0ba5c0eae2bca13879257f96d57"
+  license "GPL-3.0-or-later"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "85b3fb674ef3946a25e14c89239effff331e6fd9de986932537066d42e62072f" => :catalina
-    sha256 "789998f2e911d299619dc48ef5065daa6c376ac79ecae129c7fa34bd1b5b95e8" => :mojave
-    sha256 "48fb69d4fc789942392ee92d5c284c819cd02d50d101739f30a8f2a2506f16af" => :high_sierra
-    sha256 "ea7008072e3bffa347cc1fef4e3a3a1a65bcef8eb1ea978b2f52cce32245ef21" => :x86_64_linux
+    sha256 "5b0d6f9c5324165ee50404989724a0fac3413ac74ee9be71fffc0823d0bae6af" => :catalina
+    sha256 "07e4b014438c4de846d49c8ccd7d0f2a362b1271f50386916218c4a1c9edb5ce" => :mojave
+    sha256 "1a872e444bba7d8ae32c266817b4b8c1985477b52340310e92f502f20c9b161d" => :high_sierra
   end
 
   depends_on "go" => :build
