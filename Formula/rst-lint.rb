@@ -13,6 +13,7 @@ class RstLint < Formula
     sha256 "bd41571f9b9392ddba89b20f41d4ca1b2e2c62d2a0430983ad5e8e00341da8d0" => :catalina
     sha256 "585d2d891b0f107d0b6d961de6689a4004aa49646ce2894464c7627039e1598c" => :mojave
     sha256 "b22e716ab45eec53f86e360efec814d3e882aa9a29cd938dd814d29a87eb9cd8" => :high_sierra
+    sha256 "eb6186ae0403c5520e43e6ed5285e4a85244c54f777f0c661b1705f1579036e4" => :x86_64_linux
   end
 
   depends_on "python@3.9"
