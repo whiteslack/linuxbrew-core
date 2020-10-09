@@ -16,6 +16,7 @@ class Tvnamer < Formula
     sha256 "4aa04fbeb798e09e25444881dc0934a360623b199e90315af8cee9afb8733c8b" => :catalina
     sha256 "f198528b97ea17c14e97cb1a0e077093449052f2f7089dfd590c60386395c84a" => :mojave
     sha256 "a9eab9105b8dbcd5814e808469ac3685a907bee69ddf86630ed5a5a7d58a5f8f" => :high_sierra
+    sha256 "965c3ce3351710934caf44fa2fc7742995afc02f53e60f9029fafff87d043062" => :x86_64_linux
   end
 
   depends_on "python@3.9"
