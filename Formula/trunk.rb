@@ -11,6 +11,7 @@ class Trunk < Formula
     sha256 "a9b8cd96d4d13b560c963292a02ef324fe4210b882c2c3b3d0991a7fdd38b82c" => :catalina
     sha256 "922aecbb7cc7542846c46f49275d374bf867e3b1db3118902c16cb33cf39603e" => :mojave
     sha256 "03cc21c0906a089a51b2013c6adb9ecf0174726d6215bafd22badfac1d8197fa" => :high_sierra
+    sha256 "14cf432855dc02607b0e509e6232b8a6b30404580d5988bbaa2c792ac69bc6f3" => :x86_64_linux
   end
 
   depends_on "rust" => :build
