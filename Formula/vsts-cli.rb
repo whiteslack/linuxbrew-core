@@ -12,6 +12,7 @@ class VstsCli < Formula
     sha256 "8e952995319c76b81ff6bc83d57333ec92948f9912bf733303b15c45c1d40010" => :catalina
     sha256 "9bf14052f8080b919ae1e20471a8c4f3157a10b3f0a232aa2ebff503b42dff26" => :mojave
     sha256 "a20fcbd530d6cc07eebd219652bbdbd8c9cd51f01a61d0aee629e8e4868907b2" => :high_sierra
+    sha256 "c14cf959a28cba7643d7ffc0fc1cc18e232e2acdc38e928edfa1e125c65d4898" => :x86_64_linux
   end
 
   # https://github.com/Azure/azure-devops-cli-extension/pull/219#issuecomment-456404611
