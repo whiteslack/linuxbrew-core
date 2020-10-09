@@ -10,6 +10,7 @@ class Fselect < Formula
     sha256 "7da995ae54157a3ecdaa8d5799a1a6b2356c6e8cf3ba2291ba29502c1d422053" => :catalina
     sha256 "ec6594a93ea9d8034833603fd78ba3dfbc2b6095018ea8f314b383c566f73534" => :mojave
     sha256 "d9fd1eb3acdda1c204adc4c7c2424ec0cc53e9ce0b516a92506ca04fe2ab21cc" => :high_sierra
+    sha256 "fbfdbe0e8192085fb6aea9a3851a63eb0b5cc1fb0f45b67002144f258a6d9315" => :x86_64_linux
   end
 
   depends_on "rust" => :build
