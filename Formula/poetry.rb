@@ -3,10 +3,9 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
-  url "https://files.pythonhosted.org/packages/1b/e0/1f0edd3214986fb58ccda90acf43af763d31556499697b72f11186c5b1b1/poetry-1.1.0.tar.gz"
-  sha256 "0a05625681c530c1ba3ffe0ae5b612de3a0434fd0a043259481da01b48e9b24a"
+  url "https://files.pythonhosted.org/packages/94/6d/5dd4b17416b5b15fac19d37ad9ef969df0299ef7fc68f30842caf2b80fe8/poetry-1.1.2.tar.gz"
+  sha256 "acb153b63ebcf01ccc1b42ff2d20e6c8d07cb4aa4914fededcdbbd7546150408"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,9 +13,9 @@ class Poetry < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b25bc16b6ce0e00147397f297c5e9de4aad46e7fef7ee7ea172bb13cc75c2719" => :catalina
-    sha256 "fd6e681059f2d42c58ef64dc87d43d1ba5871bbc5f575a45a38d3600e5bd8a83" => :mojave
-    sha256 "5f26a5c67a1bc1ee6aefd986902d1e7f5e33a9c4a12f0a0a14b6bfde9f902fb9" => :high_sierra
+    sha256 "b5070d6931c76053bd42ac61b55be91d9da604bca5b2bc9e971b794cc8a0696a" => :catalina
+    sha256 "5dc93d291c87751ba8ac637874a29afe1b81d2f0a48bb4ca0d3d548b7175a6bb" => :mojave
+    sha256 "6fd2af1123ce3e05dde590cd94177e0dfc87bd2b39ee7ba5aefd7f6131129fee" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -162,8 +161,8 @@ class Poetry < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/86/90/0d30f9cea58b9589016ec5cc33eec6a077d31b0f9bce092e925e528f4802/virtualenv-20.0.32.tar.gz"
-    sha256 "3d427459dfe5ec3241a6bad046b1d10c0e445940e013c81946458987c7c7e255"
+    url "https://files.pythonhosted.org/packages/85/3e/6c3abf78b2207f3565ebadd0b99d1945f4ff18abdc6879617a4f6d939e41/virtualenv-20.0.33.tar.gz"
+    sha256 "a5e0d253fe138097c6559c906c528647254f437d1019af9d5a477b09bfa7300f"
   end
 
   resource "webencodings" do

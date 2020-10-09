@@ -1,8 +1,8 @@
 class MupdfTools < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.17.0-source.tar.xz"
-  sha256 "c935fb2593d9a28d9b56b59dad6e3b0716a6790f8a257a68fa7dcb4430bc6086"
+  url "https://mupdf.com/downloads/archive/mupdf-1.18.0-source.tar.xz"
+  sha256 "592d4f6c0fba41bb954eb1a41616661b62b134d5b383e33bd45a081af5d4a59a"
   license "AGPL-3.0"
   head "https://git.ghostscript.com/mupdf.git"
 
@@ -13,10 +13,9 @@ class MupdfTools < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "469777d46f4da93ca69069fc283b1464ec65db3f03df430290fbfb77c1fd5b2d" => :catalina
-    sha256 "02993c27c49e2ae8f2bf30a3fe3680770320bec2873124990c7dd5561ec16f19" => :mojave
-    sha256 "6bd4ca00d57e19125e20cf04e7b6ff1ed7de306d1d0a8f75eb23ad878b94ba99" => :high_sierra
-    sha256 "49ca48bd97e06b4ec0bafc6e9c2ae4cb700c0de42582d215a5d9d7d2ebda4801" => :x86_64_linux
+    sha256 "e985551872925ed4b66ce995c551fda59152c1e7f9cf2bdbd205ab749e867e17" => :catalina
+    sha256 "50f1628c7c396fdfd65eb5ce84541a5b9a695bc6fe003cc7abc732e212762bc3" => :mojave
+    sha256 "2a7a4799ca7e75e948331ce00f5799ae8cb6ae2f23e1143955b9d03d8eccbcd9" => :high_sierra
   end
 
   conflicts_with "mupdf",

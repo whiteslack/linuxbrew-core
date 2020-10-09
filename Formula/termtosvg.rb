@@ -6,17 +6,18 @@ class Termtosvg < Formula
   url "https://github.com/nbedos/termtosvg/archive/1.1.0.tar.gz"
   sha256 "53e9ad5976978684699d14b83cac37bf173d76c787f1b849859ad8aef55f22d2"
   license "BSD-3-Clause"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f882539d594efc11647207ad81eed3c1a2f365c6c9a3b7be1401dffbab6ea98d" => :catalina
-    sha256 "860ca46763f9cfeb387a806e380d6a680fc39f13d31795ebed68e7c2df087aaa" => :mojave
-    sha256 "6cb7b9688575469970762f3ecdee882a30051a4b6d42f41af0e6aed159d97b0b" => :high_sierra
-    sha256 "ea0cd674da54e2489e60f5c699150f7d9659398aed598b7561a7a361ec9dbb76" => :x86_64_linux
+    sha256 "350d8b4e73ae41f0ea1268c19df0c5f0eb101085bc2d29df5013579b24e72a4d" => :catalina
+    sha256 "22decfefbd2791ac22f3e267467f53a84524298a5cf1d9b285e97568555b12f0" => :mojave
+    sha256 "26a80230af97da8f083d5e3004cb3a000e4cd16e33ce4e733400a9d9d0ade42a" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  deprecate! date: "2020-10-08", because: :repo_archived
+
+  depends_on "python@3.9"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"

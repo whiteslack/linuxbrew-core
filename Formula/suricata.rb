@@ -1,9 +1,9 @@
 class Suricata < Formula
   desc "Network IDS, IPS, and security monitoring engine"
   homepage "https://suricata-ids.org/"
-  url "https://www.openinfosecfoundation.org/download/suricata-5.0.3.tar.gz"
-  sha256 "34413ecdad2ff2452526dbcd22f1279afd0935151916c0ff9cface4b0b5665db"
-  license "GPL-2.0"
+  url "https://www.openinfosecfoundation.org/download/suricata-6.0.0.tar.gz"
+  sha256 "3c175a6dee9071141391f64828502cfb6e48dc1a20833e1411fb45be5368923b"
+  license "GPL-2.0-only"
 
   livecheck do
     url "https://suricata-ids.org/download/"
@@ -11,10 +11,9 @@ class Suricata < Formula
   end
 
   bottle do
-    sha256 "ce6e9acf117b139febc73ae854aa279c1bab29981c107524ee3ff7c1b3c780a8" => :catalina
-    sha256 "033c282b979418b4356b4f208781bcea7fd9100c62e4981a8980b396424aefc9" => :mojave
-    sha256 "6943af9391e189cd28c441645aeec26f48782eaf1c7760c30bdd9ef2e5cf3c7d" => :high_sierra
-    sha256 "42ff284671816c93afcfea4c5d56a9b1cb568062b6b4055a7814d9cd8dd46aef" => :x86_64_linux
+    sha256 "59dd569ae8dbece8f60d01b0668b75eee9b87ff5481ecb809df3cad77db6c458" => :catalina
+    sha256 "eb00f491a77c0a0deaa2bc040be98759fcb9272d32ab5940c430911ad1ea7f9d" => :mojave
+    sha256 "b9848f2cae99d5dcfc6cd0d5e56bcf1045c14ccf24b1ad0d7cbccfee4aa81e19" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
