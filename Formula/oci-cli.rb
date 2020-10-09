@@ -6,16 +6,17 @@ class OciCli < Formula
   url "https://files.pythonhosted.org/packages/41/a6/5752f45b222be222e47ab3cea9ea0714dddb3ace26efd7f6a653f47205e4/oci-cli-2.12.13.tar.gz"
   sha256 "aba3c3f0519965757d8c46b4ae672856b2df8e515f5b82587cf0a848af372c87"
   license any_of: ["UPL-1.0", "Apache-2.0"]
+  revision 1
   head "https://github.com/oracle/oci-cli.git"
 
   bottle do
     cellar :any
-    sha256 "f0d4447270f844cbee46c8b70c86e46293364ac7e6936117a87c1887d79d4a6a" => :catalina
-    sha256 "951b6da890138f96580e3e7970c98c3d251f4d3eaa4b8fab5e8fd88ea23018d8" => :mojave
-    sha256 "7d213bb938b24709a245cb04d079c9eacb30cb99ea7fc6c5663019cc516e1ffa" => :high_sierra
+    sha256 "8cba6f3fd72fccbb8b37ea85cb02388a8472ab16435895f53f738a90c03f019c" => :catalina
+    sha256 "13adc1ae17338971b234864ff96ff4f97c04130022de66557b8c04d8f447fda0" => :mojave
+    sha256 "2be5fda1f0b17d0e3671ccf0f6d5429ef44dc48b62416c5c1d774e1087379c4f" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/0d/de/2a480ff72f88876e3e2763f1e25b05c779587c1c5d5b2f83c11ba9bb28f9/arrow-0.14.7.tar.gz"

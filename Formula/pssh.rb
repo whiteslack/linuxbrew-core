@@ -5,7 +5,7 @@ class Pssh < Formula
   url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/parallel-ssh/pssh-2.3.1.tar.gz"
   sha256 "539f8d8363b722712310f3296f189d1ae8c690898eca93627fc89a9cb311f6b4"
   license "BSD-3-Clause"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
 
   livecheck do
     url "https://www.googleapis.com/download/storage/v1/b/google-code-archive/o/v2%2Fcode.google.com%2Fparallel-ssh%2Fdownloads-page-1.json?&alt=media"
@@ -14,13 +14,12 @@ class Pssh < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "62460d1e1e69472684b09842c05d80e9b6da5f9510815b6d40b527a452067c3c" => :catalina
-    sha256 "5b456c61d419a842c5c979a41494c5e2d7c4beb71190a621635a89c9c603c772" => :mojave
-    sha256 "c06b726eead0f61a02e2c0a8f6fcdf8cf78f437deb841112b08447829b828e90" => :high_sierra
-    sha256 "8621fa933a33000ebe4694d18799b0eb4f1cc7c63c5506698013d4eb144efa81" => :x86_64_linux
+    sha256 "01d4dbe79b114a2e0a0e0cb10de0279f7872e9ed09036550102989bb9b59cb66" => :catalina
+    sha256 "7446d15d9d2fe0579fa3f7c37f5e5958309d4de88ea456b6f6e9aebc3a8e4ced" => :mojave
+    sha256 "d01989822798d3d6c6a4b3cd6fba588170128860e9f20300b88035443b915d4b" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   conflicts_with "putty", because: "both install `pscp` binaries"
 

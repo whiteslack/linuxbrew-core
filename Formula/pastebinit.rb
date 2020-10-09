@@ -4,7 +4,7 @@ class Pastebinit < Formula
   url "https://launchpad.net/pastebinit/trunk/1.5/+download/pastebinit-1.5.tar.gz"
   sha256 "0d931dddb3744ed38aa2d319dd2d8a2f38a391011ff99db68ce7c83ab8f5b62f"
   license "GPL-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,14 +12,13 @@ class Pastebinit < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "088a0565e08ea4beced3319aff9ebc0fa97101be72c9e54f34c603ee3c501c80" => :catalina
-    sha256 "088a0565e08ea4beced3319aff9ebc0fa97101be72c9e54f34c603ee3c501c80" => :mojave
-    sha256 "088a0565e08ea4beced3319aff9ebc0fa97101be72c9e54f34c603ee3c501c80" => :high_sierra
-    sha256 "4ce08eea949644182b42818b428f6aa83f78a017852cf0372ed1afb4620b9c6a" => :x86_64_linux
+    sha256 "f24d4dbd9723f5726c7786af82cd16df86485ea3ae075906531f82d0544ec688" => :catalina
+    sha256 "d2195934de64bf7814790b59d2429b90cb58e492f13f08430958b82ec3bd652d" => :mojave
+    sha256 "4ca0432c7652ab49ee0f61823335d0e0ea70caaf220f4654291406dcb425cd23" => :high_sierra
   end
 
   depends_on "docbook2x" => :build if OS.mac? # broken on linux
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   # Remove for next release
   patch do
@@ -29,7 +28,7 @@ class Pastebinit < Formula
 
   def install
     inreplace "pastebinit" do |s|
-      s.gsub! "/usr/bin/python3", Formula["python@3.8"].opt_bin/"python3"
+      s.gsub! "/usr/bin/python3", Formula["python@3.9"].opt_bin/"python3"
       s.gsub! "/usr/local/etc/pastebin.d", etc/"pastebin.d"
     end
 

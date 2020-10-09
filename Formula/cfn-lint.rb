@@ -6,6 +6,7 @@ class CfnLint < Formula
   url "https://files.pythonhosted.org/packages/29/f5/93257b28a1b0fc1164a557b46313d8d99ca11a81f6789ea51cafb7a28c20/cfn-lint-0.37.0.tar.gz"
   sha256 "5178595b7ccbbafb8b2b6fe9d3bc6215007387145ddf29812ecee70bb8500801"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class CfnLint < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a611c67f200e300c840a7151ac9d1e27af10ae55ad9e3d9ad69baad37169a2b7" => :catalina
-    sha256 "4206d06bf972fb31fe91d3e126542ae6db251da0f1132ae660ddd694ee4b60b6" => :mojave
-    sha256 "7c7598d23d7b53551dccc4dfa9ae2a81319903f81c6d3b2eedef0b2a6fb6c744" => :high_sierra
-    sha256 "4caea050c583cb5e0e0715b9a12c13d00d79ecd1653cf372b3b0f19f8c40e56c" => :x86_64_linux
+    sha256 "8515a06d9f9ef9b5b4d2e1a6f07ca15fd9ed1fdb3fe2d009887b2946d5976988" => :catalina
+    sha256 "fb887854d2c75925e6538d18c4545c502034d01720d66122a6f26b9f5a494e34" => :mojave
+    sha256 "6c643850c303619f1e35697f6d0c4c9a89bdcfd1530a643e6f909504c8e4f120" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/81/d0/641b698d05f0eaea4df4f9cebaff573d7a5276228ef6b7541240fe02f3ad/attrs-20.2.0.tar.gz"

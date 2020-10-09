@@ -6,6 +6,7 @@ class Openstackclient < Formula
   url "https://files.pythonhosted.org/packages/02/0d/18025e48934e59768a085cb4393bebd385be2c4da1d39b4095ab48a321bf/python-openstackclient-5.4.0.tar.gz"
   sha256 "21d228d600421ad5145f31178cdc8578df7d2e569f43381c654caae5a1993b67"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Openstackclient < Formula
 
   bottle do
     cellar :any
-    sha256 "ca6b8383c8de2a27a211cc3d7d9bade73ef515e822d35a5f552ee1cc33202e35" => :catalina
-    sha256 "78e06438c8ab89beb4d576a85ec290bce34671a6ee1330d1524bd101af9fa908" => :mojave
-    sha256 "91a1961fb31d29f36ae859de770845d8c1d7d1c6fb7a2e5a8a77996900c33b28" => :high_sierra
+    sha256 "0db7bf3a5b6c11c32546250d0f82c69948d8b7a88e70b718e6823ab6d821bf2c" => :catalina
+    sha256 "9b4cbbc0ea2e9337f84d3b0b212bf3fb025ba704e6339c8e85032592d195804e" => :mojave
+    sha256 "af5a9657ce5ec79a3c09479a05cab6d331a08613e6dcc81b39b29603b4892686" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"

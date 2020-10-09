@@ -4,17 +4,17 @@ class Mitie < Formula
   url "https://github.com/mit-nlp/MITIE/archive/v0.7.tar.gz"
   sha256 "0830955e64c2a4cceab803884355f090cf8e9086e68ac5df43058f05c34697e8"
   license "BSL-1.0"
-  revision 1
+  revision 2
   head "https://github.com/mit-nlp/MITIE.git"
 
   bottle do
     cellar :any
-    sha256 "194f53bc1f0f2bcc8c833d486229cb960c33705b389d7e83d0edf0afb14756eb" => :catalina
-    sha256 "f433ff3785259a3ca1a76066ac500639cf8bfe80cb5e327b3ff0a5345ec27442" => :mojave
-    sha256 "4ca2709376e8a37abe3a3f2763b698489b79fb2ff3c65d6845cbd2aefa9a2e9b" => :high_sierra
+    sha256 "7190df4ed270f1ed0d6b09ea3410b673af9bf8de7349db5cc7c58a8596d10094" => :catalina
+    sha256 "523dbdb69c94746e8e451c01a400897e294f414981bacc7c3933e3cefef590c5" => :mojave
+    sha256 "36a3671f823322c4542af4c555ccfcc1f69ce7c50360f17903b0decc34ddb63e" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "models-english" do
     url "https://downloads.sourceforge.net/project/mitie/binaries/MITIE-models-v0.2.tar.bz2"

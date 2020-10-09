@@ -6,17 +6,18 @@ class PassGitHelper < Formula
   url "https://github.com/languitar/pass-git-helper/archive/v1.1.0.tar.gz"
   sha256 "85c9e2f1f544227da9129503d91ce5d502be127c83ad24cbc6dc8ba3ab746b8e"
   license "LGPL-3.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1f3954dd243690c880e3feb3a919e6c2778646ec90e56f0b1e285837c8441c20" => :catalina
-    sha256 "e08a67118a8d49dc0d3088dfd239b7f8869eebd1fcfd833aaa26bf799eb12fde" => :mojave
-    sha256 "1e05bbb2761624c80e9eb1c952f70a97ae6d214bc2e9cee9c17949e3eb099933" => :high_sierra
+    sha256 "16c381567a7d7584955dd3584ab6cdf73db6f27ba240b638e1e5e5a9a1157825" => :catalina
+    sha256 "d3db9b4d99dc078897b3998d76abf4dee8e8236ee8c0addcbef1b9a49b693845" => :mojave
+    sha256 "47647006f90c61081c40579fdbb3431398f8f67084b344b084f356558ead87f6" => :high_sierra
   end
 
   depends_on "gnupg" => :test
   depends_on "pass"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "pyxdg" do
     url "https://files.pythonhosted.org/packages/47/6e/311d5f22e2b76381719b5d0c6e9dc39cd33999adae67db71d7279a6d70f4/pyxdg-0.26.tar.gz"

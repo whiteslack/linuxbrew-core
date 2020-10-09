@@ -6,6 +6,7 @@ class Poetry < Formula
   url "https://files.pythonhosted.org/packages/1b/e0/1f0edd3214986fb58ccda90acf43af763d31556499697b72f11186c5b1b1/poetry-1.1.0.tar.gz"
   sha256 "0a05625681c530c1ba3ffe0ae5b612de3a0434fd0a043259481da01b48e9b24a"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,12 +14,12 @@ class Poetry < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6d412b6b2102b046c7fd26fcd8fd92c71b8911608e2fc3d028f574bcaca9356a" => :catalina
-    sha256 "df25704267c29940d5ef9d0434324c0445cc922a65eba206292e7ccab2c5297f" => :mojave
-    sha256 "48383f505d280b96450ccfc0eee1df435b0c51528808a1533bba38ffab58cff7" => :high_sierra
+    sha256 "b25bc16b6ce0e00147397f297c5e9de4aad46e7fef7ee7ea172bb13cc75c2719" => :catalina
+    sha256 "fd6e681059f2d42c58ef64dc87d43d1ba5871bbc5f575a45a38d3600e5bd8a83" => :mojave
+    sha256 "5f26a5c67a1bc1ee6aefd986902d1e7f5e33a9c4a12f0a0a14b6bfde9f902fb9" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -177,22 +178,22 @@ class Poetry < Formula
   end
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
+    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
 
     vendor_site_packages = libexec/"vendor/lib/python#{xy}/site-packages"
     ENV.prepend_create_path "PYTHONPATH", vendor_site_packages
     resources.each do |r|
       r.stage do
-        system Formula["python@3.8"].opt_bin/"python3", *Language::Python.setup_install_args(libexec/"vendor")
+        system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(libexec/"vendor")
       end
     end
 
     site_packages = libexec/"lib/python#{xy}/site-packages"
     ENV.prepend_create_path "PYTHONPATH", site_packages
-    system Formula["python@3.8"].opt_bin/"python3", *Language::Python.setup_install_args(libexec)
+    system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(libexec)
 
     (bin/"poetry").write <<~PYTHON
-      #!#{Formula["python@3.8"].opt_bin/"python3"}
+      #!#{Formula["python@3.9"].opt_bin/"python3"}
       import sys
 
       sys.path.insert(0, "#{site_packages}")

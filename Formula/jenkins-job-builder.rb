@@ -4,6 +4,7 @@ class JenkinsJobBuilder < Formula
   url "https://files.pythonhosted.org/packages/ba/14/999a397eea25509ffe39743fa90d15b252da2cdfc6fccb2cadd7862063df/jenkins-job-builder-3.6.0.tar.gz"
   sha256 "7c2a3ba43d4e0c5d13a9897901843748bf65a7dab4bf1b7f440a016b3e9382a4"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,12 @@ class JenkinsJobBuilder < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f1fce9b95ebc176a4d3b150f70230b6a7f270afbdc4481403f746053379a76b1" => :catalina
-    sha256 "5a9318ec9854e03d25f10ccfd4a7e733cfa099e03b8bb210f3ddb3da2cc44bec" => :mojave
-    sha256 "1357d919b09de265741046c94f994cec46a36a0032640b0b5749ffed1366308d" => :high_sierra
-    sha256 "64247702b5dcd8ffd3b2dea7b70b1cefd59c72d24f3052d46d97e04a34d8e542" => :x86_64_linux
+    sha256 "8899c1fcbed964729b91073a4ee71bd1d33b7aa31a603fc9ed132e1a5c258f96" => :catalina
+    sha256 "9345cac6841052beed6fd065550c746c4c5a61ec67e449de67d7987fe8cd6730" => :mojave
+    sha256 "e6b2ac23e5ea15459e90734ce0e5644d3719f94f470103a0551b7cd26c3d971d" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/40/a7/ded59fa294b85ca206082306bba75469a38ea1c7d44ea7e1d64f5443d67a/certifi-2020.6.20.tar.gz"

@@ -6,17 +6,17 @@ class Commitizen < Formula
   url "https://github.com/commitizen-tools/commitizen/archive/v2.4.1.tar.gz"
   sha256 "b50e1f0f9c9d6e06c20ac39c07f62e9ec9e38081dd856513f2565ad2a270b6bf"
   license "MIT"
+  revision 1
   head "https://github.com/commitizen-tools/commitizen.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4cc2028185dd06b2c48201b79497dd3034a6eed4d612dcfa12135c9b408c1ff7" => :catalina
-    sha256 "fccbe5fdcafb59e96492ed7a2c1e7f6c2331e3ad35107192718c905a2fb93dc2" => :mojave
-    sha256 "0aa03b3bfb92eaac4f6016a2168f6111044133fe4afb3f3c3bfcb9f92ad5c0df" => :high_sierra
-    sha256 "aac1a25805d4d6daf49bd28675436f0f008083e117789cd7d70bdad15646cfe4" => :x86_64_linux
+    sha256 "995e49652bdead4339657a18c74d9977ab46d9400ed46cd2b378555ed1e05671" => :catalina
+    sha256 "b164cb763ae330dfbe36daa3879468514728a38977f601f51d75e04d6326c7dc" => :mojave
+    sha256 "ffcdbe751c8c69b23b378aea67146de4f3cb7688d1a117960c3a5c3ed86e469f" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/82/75/f2a4c0c94c85e2693c229142eb448840fba0f9230111faa889d1f541d12d/colorama-0.4.3.tar.gz"
