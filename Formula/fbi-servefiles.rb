@@ -13,6 +13,7 @@ class FbiServefiles < Formula
     sha256 "9383ebc1948e403d7fef0e0613063cb1febb62e5b8142c3fe7ab62bf3f3d5c1d" => :catalina
     sha256 "4055c03cc79761271cf0ea70be2f54250fa5b67db91f030f4ac9449e0a2f7307" => :mojave
     sha256 "d8d8d483abd92d016d8d1a7f0e4535c51233c83914f1c61d1223b72d750f1b8a" => :high_sierra
+    sha256 "5fe5372bcb379d644427261a91a9efbe76394a9cd41c09b0db00eec2213a3cb1" => :x86_64_linux
   end
 
   depends_on "python@3.9"
