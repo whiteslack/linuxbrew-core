@@ -18,6 +18,7 @@ class Proselint < Formula
     sha256 "2f0a8c853ee9b4c7fb31f867d6371a36147772510a1af3431ccdcc272fbaac24" => :catalina
     sha256 "d410f307de6c9f59b5964b141e52d33318a0de5e871c5b8ed7663a5fbff2f279" => :mojave
     sha256 "787e948c2466df6ec0b3f8933702badc907bc08e34ca8b357c1568ad134dbd29" => :high_sierra
+    sha256 "89da639a64b115397caa5776d0a092ec485f983fa33a16ea868f0926237d722a" => :x86_64_linux
   end
 
   depends_on "python@3.9"
