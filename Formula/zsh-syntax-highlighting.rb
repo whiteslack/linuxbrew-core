@@ -9,13 +9,13 @@ class ZshSyntaxHighlighting < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b" => :catalina
-    sha256 "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b" => :mojave
-    sha256 "6b7d4cdc41b56c842a4b76f9901d922d1f39bd638e94249881078a873de8970b" => :high_sierra
-    sha256 "52323c91da50503c802baba48b0dd2c1e515322ce3269c11cc4cfe3b4af0205a" => :x86_64_linux
+    rebuild 1
+    sha256 "8b240a93c28b0c190c427afee55b80a0195dc0ed0cdb2ec956871330e0b2f3a5" => :catalina
+    sha256 "ab57b09a3770c0497b1704ca86bbd285d9bcab439316c0bd7f72ab72e8597d92" => :mojave
+    sha256 "f8e941c6208a3b895a174be341a9ef2c114a3d5efeb0e86b421825b2aee0b943" => :high_sierra
   end
 
-  uses_from_macos "zsh"
+  uses_from_macos "zsh" => [:build, :test]
 
   def install
     system "make", "install", "PREFIX=#{prefix}"

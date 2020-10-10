@@ -24,7 +24,9 @@ class Gprof2dot < Formula
   depends_on "graphviz"
   depends_on "python@3.8"
 
-  depends_on "libx11" unless OS.mac?
+  on_linux do
+    depends_on "libx11"
+  end
 
   def install
     virtualenv_install_with_resources

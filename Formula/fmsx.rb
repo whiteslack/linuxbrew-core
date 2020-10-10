@@ -17,9 +17,12 @@ class Fmsx < Formula
   end
 
   depends_on "pulseaudio"
-  depends_on :x11 if OS.mac?
 
-  unless OS.mac?
+  on_macos do
+    depends_on :x11
+  end
+
+  on_linux do
     depends_on "libpthread-stubs"
     depends_on "libx11"
     depends_on "libxext"

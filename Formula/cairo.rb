@@ -35,7 +35,7 @@ class Cairo < Formula
 
   uses_from_macos "zlib"
 
-  unless OS.mac?
+  on_linux do
     depends_on "libxext"
     depends_on "libxrender"
   end
