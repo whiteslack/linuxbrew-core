@@ -14,6 +14,7 @@ class PythonAT38 < Formula
     sha256 "96e123a1befbb1a2f98577d728a52df126441de118e75edba0c1a3a1ca1380f3" => :catalina
     sha256 "89bded8572c9b24f4075e258520352655338812fc7f28d8e34b4802452c77ab5" => :mojave
     sha256 "0f1e7747bdbb87ef304f02bafc522a77132beb08de7081b2eb2662e1050df914" => :high_sierra
+    sha256 "92944878ce148a4c168bb499d89174ed6be9ad4cf60fc1e42ecfcc4596298215" => :x86_64_linux
   end
 
   # setuptools remembers the build flags python is built with and uses them to
