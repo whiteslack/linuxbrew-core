@@ -6,6 +6,7 @@ class Pipenv < Formula
   url "https://files.pythonhosted.org/packages/cc/0a/ed147c6bb2245ac9b275ef28db37b338181f1afe696317e0372786b57107/pipenv-2020.8.13.tar.gz"
   sha256 "eff0e10eadb330f612edfa5051d3d8e775e9e0e918c3c50361da703bd0daa035"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,12 @@ class Pipenv < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c5058ffbbadf6d538bd7eb2c721b27a31ae91203b3d2bbed6b75d0eff20c4782" => :catalina
-    sha256 "9c6ac58c1c92a49c90486b1457bd06d188f02adcd4e81b95860160b8b111304e" => :mojave
-    sha256 "c1d7054bcac7369353d537e86bee0553a0c1dc14248ea1c4e7b9746257cef2af" => :high_sierra
-    sha256 "7033a42efa6c1ef402174adb42233afaed9f3a8aecece4543cb224b2817e0254" => :x86_64_linux
+    sha256 "57dd9bd11dbd7672c92f6c4608a54f993e9116208f011234e3f2db643d3c7efc" => :catalina
+    sha256 "7181c3e9b1f54851fb987b832207f3a723c997df4dd4ef79d76807e28473f41f" => :mojave
+    sha256 "564b119e61e3514b6fd2bf28e47f62802bebc063859568d6cd35c0830f3322f4" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"

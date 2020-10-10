@@ -1,8 +1,8 @@
 class PythonAT38 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tar.xz"
-  sha256 "e3003ed57db17e617acb382b0cade29a248c6026b1bd8aad1f976e9af66a83b0"
+  url "https://www.python.org/ftp/python/3.8.6/Python-3.8.6.tar.xz"
+  sha256 "a9e0b79d27aa056eb9cce8d63a427b5f9bab1465dee3f942dcfdb25a82f4ab8a"
   license "Python-2.0"
 
   livecheck do
@@ -11,10 +11,9 @@ class PythonAT38 < Formula
   end
 
   bottle do
-    sha256 "3f0592dfdf6bf38c25870b57ba3e71b5b47e6c5a5ddb76aaafcbffe67eff8354" => :catalina
-    sha256 "c663ffeac543b83aeae1ca13700fcb039edd57b3f0579b78fed1c2c4836ae54f" => :mojave
-    sha256 "089e6eb9f410d2b8c975734df1633b847e6738f193a999f2d1f6cce82aa260b6" => :high_sierra
-    sha256 "62223273142197c2153461267e1af384ae78ab7e9f69343588047c7a06511420" => :x86_64_linux
+    sha256 "96e123a1befbb1a2f98577d728a52df126441de118e75edba0c1a3a1ca1380f3" => :catalina
+    sha256 "89bded8572c9b24f4075e258520352655338812fc7f28d8e34b4802452c77ab5" => :mojave
+    sha256 "0f1e7747bdbb87ef304f02bafc522a77132beb08de7081b2eb2662e1050df914" => :high_sierra
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -61,18 +60,18 @@ class PythonAT38 < Formula
   link_overwrite "Frameworks/Python.framework/Versions/Current"
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/2f/8e/38259f4a44944a92068d5ff77230511a4c685604b47a81318f9e5cf2cc24/setuptools-49.2.0.zip"
-    sha256 "afe9e81fee0270d3f60d52608549cc8ec4c46dada8c95640c1a00160f577acf2"
+    url "https://files.pythonhosted.org/packages/7c/1b/9b68465658cda69f33c31c4dbd511ac5648835680ea8de87ce05c81f95bf/setuptools-50.3.0.zip"
+    sha256 "39060a59d91cf5cf403fa3bacbb52df4205a8c3585e0b9ba4b30e0e19d4c4b18"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/08/25/f204a6138dade2f6757b4ae99bc3994aac28a5602c97ddb2a35e0e22fbc4/pip-20.1.1.tar.gz"
-    sha256 "27f8dc29387dd83249e06e681ce087e6061826582198a425085e0bf4c1cf3a55"
+    url "https://files.pythonhosted.org/packages/59/64/4718738ffbc22d98b5223dbd6c5bb87c476d83a4c71719402935170064c7/pip-20.2.3.tar.gz"
+    sha256 "30c70b6179711a7c4cf76da89e8a0f5282279dfb0278bec7b94134be92543b6d"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/75/28/521c6dc7fef23a68368efefdcd682f5b3d1d58c2b90b06dc1d0b805b51ae/wheel-0.34.2.tar.gz"
-    sha256 "8788e9155fe14f54164c1b9eb0a319d98ef02c160725587ad60f14ddc57b6f96"
+    url "https://files.pythonhosted.org/packages/83/72/611c121b6bd15479cb62f1a425b2e3372e121b324228df28e64cc28b01c2/wheel-0.35.1.tar.gz"
+    sha256 "99a22d87add3f634ff917310a3d87e499f19e663413a52eb9232c447aa646c9f"
   end
 
   # Remove this block when upstream adds arm64 compatibility
