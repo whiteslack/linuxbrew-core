@@ -5,14 +5,14 @@ class Libpciaccess < Formula
   sha256 "214c9d0d884fdd7375ec8da8dcb91a8d3169f263294c9a90c575bf1938b9f489"
   license "MIT"
 
-  depends_on "pkg-config" => :build
-  depends_on "util-macros" => :build
-  depends_on :linux
-
   bottle do
     cellar :any_skip_relocation
     sha256 "0ad20571544fac268f42c3d5f4c0b3d35e3ad0024f29dabe18ddd24030a39567" => :x86_64_linux
   end
+
+  depends_on "pkg-config" => :build
+  depends_on "util-macros" => :build
+  depends_on :linux
 
   def install
     args = %W[
