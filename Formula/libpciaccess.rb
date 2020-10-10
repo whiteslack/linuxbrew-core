@@ -10,6 +10,8 @@ class Libpciaccess < Formula
   depends_on :linux
 
   bottle do
+    cellar :any_skip_relocation
+    sha256 "0ad20571544fac268f42c3d5f4c0b3d35e3ad0024f29dabe18ddd24030a39567" => :x86_64_linux
   end
 
   def install
