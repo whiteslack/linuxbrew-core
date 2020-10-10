@@ -15,6 +15,7 @@ class Pangomm < Formula
     sha256 "ca5fe430408d2572094db56e29a43dd7c374a408ea266129c4c1111841df849b" => :catalina
     sha256 "649d2e47e1ce7f15aa6fe2609d44a1b82374140e11eec6f7a641be8fdec06370" => :mojave
     sha256 "0e236d57c5bb063d28a5beefc60be9a93eb7352b33f4570d4dcdd5cc85c860ab" => :high_sierra
+    sha256 "9819de6e2d43e0dca53cd0c1862a74a7b21b355fe32c632042fb860f7bf747ea" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
