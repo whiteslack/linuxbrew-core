@@ -16,6 +16,7 @@ class AwsShell < Formula
     sha256 "d8f0c4ef68861caf28dd575f0f5999a512df996aee959c340fa9d0a7d60dcac0" => :catalina
     sha256 "140dd82c2a4222400fed642d61b13b2b6e4afe76edc4c49a877b3124775e382a" => :mojave
     sha256 "2c963b5ee92cdf2a8c272aba8f37b878018794a84ef523532e19b3b55fa9770b" => :high_sierra
+    sha256 "6acff3c8c3b3b854632f6540ce4a23c1f279cf757687d9d9bfe5e59a37d0633d" => :x86_64_linux
   end
 
   depends_on "python@3.9"
