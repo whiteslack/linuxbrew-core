@@ -19,15 +19,17 @@ class Openjdk < Formula
   unless OS.mac?
     depends_on "cups"
     depends_on "fontconfig"
-    depends_on "unzip"
-    depends_on "zip"
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxrandr"
     depends_on "libxrender"
     depends_on "libxt"
     depends_on "libxtst"
+    depends_on "unzip"
+    depends_on "zip"
   end
+
+  ignore_missing_libraries "libjvm.so" if OS.linux?
 
   on_linux do
     depends_on "pkg-config" => :build
@@ -69,8 +71,7 @@ class Openjdk < Formula
                           ("--with-cups=#{HOMEBREW_PREFIX}" unless OS.mac?),
                           ("--with-fontconfig=#{HOMEBREW_PREFIX}" unless OS.mac?)
 
-    ENV["MAKEFLAGS"] = "JOBS=#{ENV.make_jobs}"
-    system "make", "images"
+    ENV.deparallelize { system "make", "images" }
 
     if OS.mac?
       jdk = Dir["build/*/images/jdk-bundle/*"].first
