@@ -13,6 +13,7 @@ class ZshSyntaxHighlighting < Formula
     sha256 "8b240a93c28b0c190c427afee55b80a0195dc0ed0cdb2ec956871330e0b2f3a5" => :catalina
     sha256 "ab57b09a3770c0497b1704ca86bbd285d9bcab439316c0bd7f72ab72e8597d92" => :mojave
     sha256 "f8e941c6208a3b895a174be341a9ef2c114a3d5efeb0e86b421825b2aee0b943" => :high_sierra
+    sha256 "ea187a121058cffe001a75863a4931ee7483a68c84b88f53d828b6b52114197a" => :x86_64_linux
   end
 
   uses_from_macos "zsh" => [:build, :test]
