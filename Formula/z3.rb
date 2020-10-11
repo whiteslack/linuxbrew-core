@@ -17,6 +17,7 @@ class Z3 < Formula
     sha256 "214adde7572bc8a15e496c5d5c9e4ead2896f734c4aae4ede0769ac103668e9a" => :catalina
     sha256 "12808ffa55f75ef38a61faf4f973445a6436ccc1cae30fd29489b249fd22467b" => :mojave
     sha256 "037a6a59ab8b4c776421d4beb3583ce10b0e45b00c4dac9d8075ec56e0e9e858" => :high_sierra
+    sha256 "b7e1f7872f66fd132558c56e1791e9b6832e5de5c4ccfaa38350c0217a7003df" => :x86_64_linux
   end
 
   # Has Python bindings but are supplementary to the main library
