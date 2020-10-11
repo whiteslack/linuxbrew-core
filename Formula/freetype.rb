@@ -16,6 +16,7 @@ class Freetype < Formula
     sha256 "5de27c6884ecd2174ee5e2e794d7b43c92339c22d08122d020c065a26ba59c5e" => :catalina
     sha256 "488e592f0a2be222d26d5affc99c9d4047aa98e36c50af9e5f2179a83ba718ef" => :mojave
     sha256 "5ade1e7eddcc11940262dd86c1e0ceec5b66c8a427e4eeccc5f1b95b0efb5187" => :high_sierra
+    sha256 "3b1a66a349f5a0e1757ea1d03631f2bd171e5998cf98f4bc802862922597a5dc" => :x86_64_linux
   end
 
   depends_on "libpng"
