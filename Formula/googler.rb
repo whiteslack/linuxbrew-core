@@ -13,6 +13,7 @@ class Googler < Formula
     sha256 "c4fb5962e04ee3941d712fd0c94019c55e9ee06ee022ab48258a728d3175ded4" => :catalina
     sha256 "353a9c1e807a98e75b12c216f896a4204c032f34485522561c73b918445fb482" => :mojave
     sha256 "2eacfab54e0ff38c0befb5d72cc6040c291eba6dfebf505f274c44ec7bfaf98b" => :high_sierra
+    sha256 "05b924bd14cd24e97c5c387ffedac09992bd871c7eb630aa76e6513dd47bbff7" => :x86_64_linux
   end
 
   depends_on "python@3.9"
