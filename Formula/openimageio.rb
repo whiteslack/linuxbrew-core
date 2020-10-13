@@ -51,8 +51,7 @@ class Openimageio < Formula
       -DUSE_QT=OFF
     ]
 
-    # CMake picks up the system's python dylib, even if we have a brewed one.
-    ext = OS.mac? ? "dylib" : "so"
+    # CMake picks up the system's python shared library, even if we have a brewed one.
     py3ver = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
     py3prefix = if OS.mac?
       Formula["python@3.8"].opt_frameworks/"Python.framework/Versions/#{py3ver}"
@@ -63,14 +62,14 @@ class Openimageio < Formula
     ENV["PYTHONPATH"] = lib/"python#{py3ver}/site-packages"
 
     args << "-DPYTHON_EXECUTABLE=#{py3prefix}/bin/python3"
-    args << "-DPYTHON_LIBRARY=#{py3prefix}/lib/libpython#{py3ver}.#{ext}"
+    args << "-DPYTHON_LIBRARY=#{py3prefix}/lib/#{shared_library("libpython#{py3ver}")}"
     args << "-DPYTHON_INCLUDE_DIR=#{py3prefix}/include/python#{py3ver}"
 
     # CMake picks up boost-python instead of boost-python3
     args << "-DBOOST_ROOT=#{Formula["boost"].opt_prefix}"
     boost_lib = Formula["boost-python3"].opt_lib
     py3ver_without_dots = py3ver.to_s.delete(".")
-    args << "-DBoost_PYTHON_LIBRARIES=#{boost_lib}/libboost_python#{py3ver_without_dots}-mt.#{ext}"
+    args << "-DBoost_PYTHON_LIBRARIES=#{boost_lib}/#{shared_library("libboost_python#{py3ver_without_dots}-mt")}"
 
     # This is strange, but must be set to make the hack above work
     args << "-DBoost_PYTHON_LIBRARY_DEBUG=''"

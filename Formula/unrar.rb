@@ -31,7 +31,7 @@ class Unrar < Formula
     system "make", "clean"
     system "make", "lib"
 
-    lib.install "libunrar.#{OS.mac? ? "dylib" : "so"}"
+    lib.install shared_library("libunrar")
   end
 
   test do

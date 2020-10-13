@@ -96,8 +96,7 @@ class Pypy < Formula
       system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
     end
 
-    dylib = OS.mac? ? "dylib" : "so"
-    (libexec/"lib").install libexec/"bin/libpypy-c.#{dylib}"
+    (libexec/"lib").install libexec/"bin/#{shared_library("libpypy-c")}"
     if OS.mac?
       MachO::Tools.change_install_name("#{libexec}/bin/pypy",
                                        "@rpath/libpypy-c.dylib",
@@ -109,7 +108,7 @@ class Pypy < Formula
     # we want to avoid putting PyPy's Python.h somewhere that configure
     # scripts will find it.
     bin.install_symlink libexec/"bin/pypy"
-    lib.install_symlink libexec/"lib/libpypy-c.#{dylib}"
+    lib.install_symlink libexec/"lib/#{shared_library("libpypy-c")}"
 
     # Delete two files shipped which we do not want to deliver
     # These files make patchelf fail

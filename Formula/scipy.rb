@@ -29,8 +29,7 @@ class Scipy < Formula
   def install
     openblas = Formula["openblas"].opt_prefix
     ENV["ATLAS"] = "None" # avoid linking against Accelerate.framework
-    dylib = OS.mac? ? "dylib" : "so"
-    ENV["BLAS"] = ENV["LAPACK"] = "#{openblas}/lib/libopenblas.#{dylib}"
+    ENV["BLAS"] = ENV["LAPACK"] = "#{openblas}/lib/#{shared_library("libopenblas")}"
 
     config = <<~EOS
       [DEFAULT]

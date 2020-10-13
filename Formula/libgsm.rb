@@ -42,7 +42,6 @@ class Libgsm < Formula
 
     # Dynamic library must be built first
     library = OS.mac? ? "libgsm.1.0.13.dylib" : "libgsm.so"
-    dylib = OS.mac? ? "dylib" : "so"
     system "make", "lib/#{library}",
            "CC=#{ENV.cc}", "CCFLAGS=#{ENV.cflags}" + (" -fPIC" unless OS.mac?),
            "LDFLAGS=#{ENV.ldflags}" + (" -fPIC" unless OS.mac?)
@@ -52,7 +51,7 @@ class Libgsm < Formula
     system "make", "install",
            "INSTALL_ROOT=#{prefix}",
            "GSM_INSTALL_INC=#{include}"
-    lib.install Dir["lib/*#{dylib}"]
+    lib.install Dir["lib/#{shared_library("*")}"]
   end
 
   test do

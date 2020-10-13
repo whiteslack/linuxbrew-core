@@ -21,7 +21,7 @@ class Rhash < Formula
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
-    lib.install "librhash/librhash.#{OS.mac? ? "dylib" : "so"}"
+    lib.install "librhash/#{shared_library("librhash")}"
     system "make", "-C", "librhash", "install-lib-headers"
   end
 

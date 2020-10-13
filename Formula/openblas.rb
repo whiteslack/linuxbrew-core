@@ -29,9 +29,8 @@ class Openblas < Formula
     system "make", "CC=#{ENV.cc}", "FC=gfortran", "libs", "netlib", "shared", *("NO_AVX512=1" unless OS.mac?)
     system "make", "PREFIX=#{prefix}", "install"
 
-    so = OS.mac? ? "dylib" : "so"
-    lib.install_symlink "libopenblas.#{so}" => "libblas.#{so}"
-    lib.install_symlink "libopenblas.#{so}" => "liblapack.#{so}"
+    lib.install_symlink shared_library("libopenblas") => shared_library("libblas")
+    lib.install_symlink shared_library("libopenblas") => shared_library("liblapack")
   end
 
   test do

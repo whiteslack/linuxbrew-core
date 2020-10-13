@@ -36,13 +36,13 @@ class VampPluginSdk < Formula
     EOS
 
     if OS.mac?
-      system ENV.cxx, "test.cpp", "-I#{include}", "-Wl,-dylib", "-o", "test.dylib"
+      system ENV.cxx, "test.cpp", "-I#{include}", "-Wl,-dylib", "-o", shaed_library("test")
     else
-      system ENV.cxx, "test.cpp", "-I#{include}", "-shared", "-fPIC", "-o", "test.so"
+      system ENV.cxx, "test.cpp", "-I#{include}", "-shared", "-fPIC", "-o", shared_library("test")
     end
     assert_match /Usage:/, shell_output("#{bin}/vamp-rdf-template-generator 2>&1", 2)
 
-    cp "#{lib}/vamp/vamp-example-plugins.so", testpath/"vamp-example-plugins.#{OS.mac? ? "dylib" : "so"}"
+    cp "#{lib}/vamp/vamp-example-plugins.so", testpath/shared_library("vamp-example-plugins")
     ENV["VAMP_PATH"]=testpath
     assert_match /amplitudefollower/, shell_output("#{bin}/vamp-simple-host -l")
   end
