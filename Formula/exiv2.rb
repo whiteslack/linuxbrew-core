@@ -29,7 +29,6 @@ class Exiv2 < Formula
 
   def install
     args = std_cmake_args
-    so = OS.mac? ? "dylib" : "so"
     args += %W[
       -DEXIV2_ENABLE_XMP=ON
       -DEXIV2_ENABLE_VIDEO=ON
@@ -42,7 +41,7 @@ class Exiv2 < Formula
       -DEXIV2_ENABLE_CURL=ON
       -DEXIV2_ENABLE_SSH=ON
       -DEXIV2_BUILD_SAMPLES=OFF
-      -DSSH_LIBRARY=#{Formula["libssh"].opt_lib}/libssh.#{so}
+      -DSSH_LIBRARY=#{Formula["libssh"].opt_lib}/#{shared_library("libssh")}
       -DSSH_INCLUDE_DIR=#{Formula["libssh"].opt_include}
       ..
     ]

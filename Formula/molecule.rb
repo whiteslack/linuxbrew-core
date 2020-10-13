@@ -6,6 +6,7 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/a0/a4/f6f0676de9fde9426015d1aaa860444cd3ff6098cbec36aeab8cf1022579/molecule-3.0.8.tar.gz"
   sha256 "42d0c661b52074b00a620466df367ddab9c3682875e6d685bfc93487ef0479cc"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,15 +14,14 @@ class Molecule < Formula
 
   bottle do
     cellar :any
-    sha256 "d10ed0909fa01d10a4b3b1e38d37311ad1dd7960d2f8109215e51ab24b1f6260" => :catalina
-    sha256 "50ceb8f436bbd015a201598d28fa69f1a83428ae5724be7ec369daae8bd930ec" => :mojave
-    sha256 "563727f4056c3c91448da1134bebc3401cc70a126b79b99d4ddb6879a0b6ec03" => :high_sierra
-    sha256 "cd917c1539a1ad31e50a02ad3ad5e9c47b84f36ca7bd234dad32b5738c4e6c0f" => :x86_64_linux
+    sha256 "d39e826bdac425d8b7cd19fdb3b33d55344c532b21e1b54089795b4cfad54c2e" => :catalina
+    sha256 "e0b6ebe9a0aec1f11cf8a8f3ca13c7ae72d67de4d4970f80dbcd97059cc14378" => :mojave
+    sha256 "5d50d23861d39d107d5177d53d84f67527e2b91a00fcf38f571f8ddc0aa17a82" => :high_sierra
   end
 
   depends_on "ansible"
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
 

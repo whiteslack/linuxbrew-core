@@ -2,6 +2,7 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
     url "https://static.rust-lang.org/dist/rustc-1.46.0-src.tar.gz"
@@ -15,10 +16,9 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 "ccc053fe461dd07492963ccf9e0d6b7161e9646e056315844e97034dd70f96a7" => :catalina
-    sha256 "c12714862bbb2886e8f254d36665edc7790a545efaa68073707fc8c608268160" => :mojave
-    sha256 "70425090c1efd179f3e7a4fa0af7f2103a4a99896d03e39039381e137f1bfa92" => :high_sierra
-    sha256 "8e2f7744b51931a6be4baba5561cfd33e624573851317150aba035a21c384238" => :x86_64_linux
+    sha256 "63c0a4f24a25ba84f68f2bd6d975b25b199252aa78c1d3dd7140a4462230c3e0" => :catalina
+    sha256 "9a7032d17aa4bbe552083a78897dca8708f5951c580ae59a368c533463ab43fe" => :mojave
+    sha256 "45fb425d272b697d89994afff133f8d44aeab09d0440dd0ac58020199eca8c78" => :high_sierra
   end
 
   head do
@@ -30,7 +30,7 @@ class Rust < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.8" => :build
+  depends_on "python@3.9" => :build
   depends_on "libssh2"
   depends_on "openssl@1.1"
   depends_on "pkg-config"
@@ -57,7 +57,7 @@ class Rust < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
 
     # Fix build failure for compiler_builtins "error: invalid deployment target
     # for -stdlib=libc++ (requires OS X 10.7 or later)"

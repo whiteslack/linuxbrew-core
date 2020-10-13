@@ -15,7 +15,7 @@ class Miniserve < Formula
     sha256 "567ea39868cd884189324c9a8558cd84af45e3b252631d9df3083ebfed5d3d47" => :x86_64_linux
   end
 
-  depends_on "rust"
+  depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args

@@ -6,6 +6,7 @@ class Ansible < Formula
   url "https://releases.ansible.com/ansible/ansible-2.9.13.tar.gz"
   sha256 "3ab21588992fbfe9de3173aefd63da1267dc12892a60f5cfdc055fe19c549644"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   livecheck do
@@ -15,16 +16,15 @@ class Ansible < Formula
 
   bottle do
     cellar :any
-    sha256 "0b4ec04679f0697a282718298908fc4e2e5ad28dd1b67c4fb3995c862e64a993" => :catalina
-    sha256 "7f306c0d42c1d00509659f57af503654f1ff5065c72829a5fdd488a0ec6f6aba" => :mojave
-    sha256 "e04d2a9ab9910b1090eb0fb26c12039a605f0ea47c3d5f496f494acfdb72121f" => :high_sierra
-    sha256 "5266fa45bf3594d75f5696396e83c2005bfc4b8d2fc2e372bf3da409d92349ab" => :x86_64_linux
+    sha256 "a00e5a3534107544427e25e9612456a9b170be720a8542ce48069c772f510285" => :catalina
+    sha256 "3df1ba19af8e35e160b20e5704349d024def26167c218e5d09b03fbc28bf1797" => :mojave
+    sha256 "bd5d212310489aaef23af4e10e1540343a0550a3d4efbdda39a7decda74e8431" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "libyaml"
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "libffi"
   uses_from_macos "libxslt"
@@ -658,7 +658,7 @@ class Ansible < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.8"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
 
     # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && MacOS.version <= :sierra

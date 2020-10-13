@@ -3,7 +3,7 @@ class Spotifyd < Formula
   homepage "https://github.com/Spotifyd/spotifyd"
   url "https://github.com/Spotifyd/spotifyd/archive/v0.2.24.tar.gz"
   sha256 "d3763f4647217a8f98ee938b50e141d67a5f3d33e9378894fde2a92c9845ef80"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
   head "https://github.com/Spotifyd/spotifyd.git"
 
   livecheck do
@@ -13,9 +13,10 @@ class Spotifyd < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "3f51d6a45bdb965dcc88e34411949006b21050b7dfde5482e46cc6d74de41fa8" => :catalina
-    sha256 "c8ab59ca503c0cc84a1d684950be2e40db6bffc9f4392a686852fe10f0e3137c" => :mojave
-    sha256 "10b06d3fd2aaab659a75eb67170cd0e54f81830b3ebd4b7a65d1bcf7dce17570" => :high_sierra
+    rebuild 1
+    sha256 "e86e0a3ece83eccdfecfd584b4a6dea2682c857b766945821dfbf792370540de" => :catalina
+    sha256 "d7e0da5e772657ce9cbdb3a6f48aa47cc55a87b563913f957cf35ba678814991" => :mojave
+    sha256 "d745753724407c3b7e1d88743c4abfac7c1c945a9f03608dc7be4d90f1878bd0" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +24,7 @@ class Spotifyd < Formula
   depends_on "dbus"
 
   def install
+    ENV["COREAUDIO_SDK_PATH"] = MacOS.sdk_path_if_needed
     system "cargo", "install", "--no-default-features",
                                "--features=dbus_keyring,rodio_backend",
                                *std_cargo_args
