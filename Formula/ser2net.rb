@@ -15,6 +15,7 @@ class Ser2net < Formula
     sha256 "3477841d573b2612fff98a0dd1fa8ac46e3d43fdc110ddfd3767f6b433b344a4" => :catalina
     sha256 "822c56bfd75eccbdcc8a447236c996ca146e5efe324eea471dbbc212611dc0be" => :mojave
     sha256 "b11cef34c33d9f40ac677c034ff1557444d69735f3d5c88e8eaaffd135237d7d" => :high_sierra
+    sha256 "7f58ba0938e244ab6561f7f13ba721087c0e9d4da914f08cadedd6a3e95b3ed9" => :x86_64_linux
   end
 
   depends_on "libyaml"
