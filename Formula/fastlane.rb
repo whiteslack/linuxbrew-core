@@ -16,6 +16,7 @@ class Fastlane < Formula
     sha256 "8e335dbdd786ba2b12220474ebd4c3bc3d6131b87bb58e68bcab558d1e980412" => :catalina
     sha256 "30f7ae697cf99f74b3e322bfd21f8c157d98b63edf9b134cd07894439e4537ac" => :mojave
     sha256 "9a5bbc4913582b65bb52d032a21220614c9d77490207e9877850d6694f169a95" => :high_sierra
+    sha256 "65073b2990238281dacee57fbbb6e5a4f8b69a87c1d64527ce4a9eb15de91d91" => :x86_64_linux
   end
 
   depends_on "ruby"
