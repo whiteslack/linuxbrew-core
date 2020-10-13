@@ -15,6 +15,7 @@ class Libomp < Formula
     sha256 "a882de3c79dd02d1fd9c622fb8e667d97e7aa0319f2600ec5ad06e5e843a66c6" => :catalina
     sha256 "0716db5d51938b2fae8ab89c71db9a5786849b84c3924e215916f889f7e9e4c1" => :mojave
     sha256 "421af56c2bd2980ac04213b9e772ec9593e23737c2816cfca829f22db388cb58" => :high_sierra
+    sha256 "b52917c48ef980351c06a937649d2868529680f901cbf05d5c85acd03c237fee" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
