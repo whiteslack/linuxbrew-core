@@ -1,16 +1,15 @@
 class Toast < Formula
   desc "Tool for running tasks in containers"
   homepage "https://github.com/stepchowfun/toast"
-  url "https://github.com/stepchowfun/toast/archive/v0.31.0.tar.gz"
-  sha256 "03f766763314fd2930820a0bed8fdc3d4405a40408e9c7b74c320bf453a35a5e"
+  url "https://github.com/stepchowfun/toast/archive/v0.32.0.tar.gz"
+  sha256 "27a40690e69a76c7887b1a4456d96493cb46a2d3298b243db2e3ce0669f3aeeb"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1a941a71fbbab8e21f41756a0d3b63e6e3ee859547cc4a99c3042cdc4485d6dd" => :catalina
-    sha256 "23905ffe680fe8babd9650b0cc306ddec5ec279adfc36a41add793d571e49d8a" => :mojave
-    sha256 "b02f8e3bd163f086ff3575917b9b775f61027b3ee5436de836d90f39a1f2f9c3" => :high_sierra
-    sha256 "82d43f4b9a9f4165ac140615d7d80af52db85aea07587f6911ede8bca158037e" => :x86_64_linux
+    sha256 "7d64f44aeeffee13008cc6fb8f8aafc4277f1fa032b8da12e5e484f44db10cee" => :catalina
+    sha256 "248c78453c196fc4b821c9e9b5a94d12e38795c80a94c863aaccb22a0c109278" => :mojave
+    sha256 "5da5b46d7f8b6eb4902696cdaaddfde84d81e3d4267f2242fd5691ef699778b5" => :high_sierra
   end
 
   depends_on "rust" => :build
