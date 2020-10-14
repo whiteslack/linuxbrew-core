@@ -12,25 +12,30 @@ class Jasper < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "freeglut" unless OS.mac?
   depends_on "jpeg"
 
   def install
     mkdir "build" do
-      # Make sure macOS's GLUT.framework is used, not XQuartz or freeglut
-      # Reported to CMake upstream 4 Apr 2016 https://gitlab.kitware.com/cmake/cmake/issues/16045
-      glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework" if OS.mac?
+      os_cmake_args = []
+      if OS.mac?
+        # Make sure macOS's GLUT.framework is used, not XQuartz or freeglut
+        # Reported to CMake upstream 4 Apr 2016 https://gitlab.kitware.com/cmake/cmake/issues/16045
+        glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework"
+        os_cmake_args.push "-DGLUT_glut_LIBRARY=#{glut_lib}"
+      end
 
       system "cmake", "..",
-        *("-DGLUT_glut_LIBRARY=#{glut_lib}" if OS.mac?),
         "-DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=false",
+        *os_cmake_args,
         *std_cmake_args
       system "make"
       system "make", "install"
       system "make", "clean"
 
       system "cmake", "..",
-        "-DGLUT_glut_LIBRARY=#{glut_lib}",
         "-DJAS_ENABLE_SHARED=OFF",
+        *os_cmake_args,
         *std_cmake_args
       system "make"
       lib.install "src/libjasper/libjasper.a"
