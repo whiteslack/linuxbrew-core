@@ -13,10 +13,10 @@ class ApacheArrow < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "4ee0bde4bc71342b6dc68afb180cea27e231abbe50499f72bdff603ae7c3684f" => :catalina
-    sha256 "31e51d4a7466d045c3badea22a41223334710bec8d10a764ac99968dbff888c6" => :mojave
-    sha256 "7a78b3bb24fe9fe9c0935e1236db0ac5007d0b8e987c0b4d7e8f080b07e5be79" => :high_sierra
+    rebuild 2
+    sha256 "d6989006cc4cbfd1440e37b10953539ac31d3e6545570afef8d919d742e605f3" => :catalina
+    sha256 "cbd0ad01c6d8cd50b159c6f01207971b3fc437a510416fa7253bd1f2776054a8" => :mojave
+    sha256 "e10b6e6b62a241e2084b18840f8e9f9926130d740cf049346e66653d30d3e8f6" => :high_sierra
   end
 
   depends_on "boost" => :build
@@ -31,6 +31,7 @@ class ApacheArrow < Formula
   depends_on "protobuf"
   depends_on "python@3.8"
   depends_on "rapidjson"
+  depends_on "re2"
   depends_on "snappy"
   depends_on "thrift"
   depends_on "zstd"
@@ -47,6 +48,7 @@ class ApacheArrow < Formula
     # link against system libc++ instead of llvm provided libc++
     ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
     args = %W[
+      -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=TRUE
       -DARROW_FLIGHT=ON
       -DARROW_GANDIVA=ON
       -DARROW_JEMALLOC=ON
@@ -65,8 +67,7 @@ class ApacheArrow < Formula
       -DPYTHON_EXECUTABLE=#{Formula["python@3.8"].bin/"python3"}
     ]
 
-    mkdir "build"
-    cd "build" do
+    mkdir "build" do
       system "cmake", "../cpp", *std_cmake_args, *args
       system "make"
       system "make", "install"

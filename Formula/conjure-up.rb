@@ -6,13 +6,13 @@ class ConjureUp < Formula
   url "https://github.com/conjure-up/conjure-up/archive/2.6.14.tar.gz"
   sha256 "c9f115229a305ff40eae051f40db2ca18a3dc2bd377397e22786bba032feb79a"
   license "MIT"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "cf5da249d3e6045fd8e170399cb5486a566f3673c112c1f37454cfda1d383094" => :catalina
-    sha256 "a86f3cfe45e1e04e83a17fba28edaa64c17b490fe278c54220c46b0063618406" => :mojave
-    sha256 "0ad79673bcf095a1b7923f252eeca5a9d72e0482b88fa4d8803e0de5006428b8" => :high_sierra
-    sha256 "5dd336da7c4994dd62946ce5dcab545e121a2cfe72193d47c11f3b85c3d3b724" => :x86_64_linux
+    sha256 "4c1d6d263ed87f9fd3460deb70723bf2204d1cf77ca0774d7f37c0604e9722d7" => :catalina
+    sha256 "277b9eb27b13b0a517a228b52160a69b367b4f3535a08d3626830bb665f727a3" => :mojave
+    sha256 "1a467b8f94796f8e03820cc0ff227c3f4fa13b9819b205e8bb79a7b1e9ee8379" => :high_sierra
   end
 
   depends_on "awscli"
@@ -21,7 +21,7 @@ class ConjureUp < Formula
   depends_on "juju-wait"
   depends_on "libyaml"
   depends_on "pwgen"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
   depends_on "redis"
 
   uses_from_macos "libffi"
@@ -107,7 +107,7 @@ class ConjureUp < Formula
     url "https://files.pythonhosted.org/packages/d0/22/ca60ef57ad0ea904292daaa1cb0f1e991303667f70794a97674f4a3695fa/macaroonbakery-1.2.3.tar.gz"
     sha256 "bd27e7d2d98cb3dc1973d7b67b2a0c475fb005c0f9c35c04dbf9b272e98939ec"
 
-    # Python 3.8 compatibility platform.linux_distribution
+    # Python 3.9 compatibility platform.linux_distribution
     # Remove in next release
     patch do
       url "https://github.com/go-macaroon-bakery/py-macaroon-bakery/commit/78daf9d233e33da3f4bd2c34553843f82c09b21e.patch?full_index=1"

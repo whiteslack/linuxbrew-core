@@ -16,9 +16,10 @@ class Semgrep < Formula
 
   bottle do
     cellar :any
-    sha256 "2e5644c66e1c0f50600d4adc1e83da510a683c813b944127259b1888a43a0808" => :catalina
-    sha256 "716dd733e4a6e6dd782a42f9cfb6fad4f4ff18e8853d69520615fcd5abbf5672" => :mojave
-    sha256 "5a3aeb44c48cf457875e7370c942ca1a8a346f87c5ee432781b7725487940a9f" => :high_sierra
+    rebuild 1
+    sha256 "8361eafc0a19176b0fd3feabf70223981990625ff83be753e7aad60efe4df368" => :catalina
+    sha256 "d069664040c1e1ebf0452805451c69ca4f3d7f12acbdff700f39b8e77af9852a" => :mojave
+    sha256 "f8a46d6d359f2d757679a5cacb12ec7f77cc2c0603306aabed647de51593cdec" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,7 @@ class Semgrep < Formula
   depends_on "ocaml" => :build
   depends_on "opam" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/81/d0/641b698d05f0eaea4df4f9cebaff573d7a5276228ef6b7541240fe02f3ad/attrs-20.2.0.tar.gz"
@@ -156,7 +157,7 @@ class Semgrep < Formula
 
     python_path = "semgrep"
     cd python_path do
-      venv = virtualenv_create(libexec, Formula["python@3.8"].bin/"python3.8")
+      venv = virtualenv_create(libexec, Formula["python@3.9"].bin/"python3.9")
       venv.pip_install resources
       venv.pip_install_and_link buildpath/python_path
     end
