@@ -3,11 +3,10 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://codeload.github.com/Azure/azure-cli/legacy.tar.gz/74f7683ef37fad9df9d71e059ceac50a4db04841"
-  version "2.12.1"
-  sha256 "12aa412261b10cf341c29f70314a703b047cdae7045584a98237d14e8381deab"
+  url "https://codeload.github.com/Azure/azure-cli/legacy.tar.gz/0e939a0e21e752baf182d99af3707afc1fa5f46e"
+  version "2.13.0"
+  sha256 "ad764c748915ad5e18de3c53423e7bdc1b383704f721b97a315beb244da245e0"
   license "MIT"
-  revision 1
   head "https://github.com/Azure/azure-cli.git"
 
   livecheck do
@@ -17,14 +16,14 @@ class AzureCli < Formula
 
   bottle do
     cellar :any
-    sha256 "3c3589685e000bf7a712ac46b5c6dc8c7a8c42c6fe22215d4fea5ee4cb998156" => :catalina
-    sha256 "0354146487b6c35140e04a195573145b162d1e73671880885fb3cf1accddc31a" => :mojave
-    sha256 "399b21dcf54db931922f44a83422687e54d6d8e131593b87a0996f4a5ea870d0" => :high_sierra
-    sha256 "c5ea704d8d96f990b24a30acdf9db44dadd1ce1ccefb807e93913bc623d83e49" => :x86_64_linux
+    sha256 "55aef02512835462cb02544e3c3a74cc26ca1b2fa0c4b039ba3ab5b1a2438b4f" => :catalina
+    sha256 "4577ab4c6fa8009e69d2dabeaacb14c4827fe69bba8cefa51b5f4437ecd7b0fa" => :mojave
+    sha256 "b221718a17349a0b31e26631cf899ff977640405e9073b46ff165e912438df67" => :high_sierra
   end
 
   depends_on "openssl@1.1"
-  depends_on "python@3.9"
+  # Azure CLI is not compatible with Python 3.9 yet
+  depends_on "python@3.8"
 
   uses_from_macos "libffi"
 
@@ -53,8 +52,8 @@ class AzureCli < Formula
   end
 
   resource "azure-appconfiguration" do
-    url "https://files.pythonhosted.org/packages/a1/33/2351f8341d7bc8d5d24326b560ec200a5b83d9d536c87af391cfbe06e547/azure-appconfiguration-1.1.0.zip"
-    sha256 "27b9ea9b1f3d6fe83231e2203c27a81831ea576dd2be00cebedf2244f7286057"
+    url "https://files.pythonhosted.org/packages/21/0a/1b24d1b3c1477b849d48aa29dcde3141c1524fab293042493f3432b672c2/azure-appconfiguration-1.1.1.zip"
+    sha256 "b83cd2cb63d93225de84e27abbfc059212f8de27766f4c58dd3abb839dff0be4"
   end
 
   resource "azure-batch" do
@@ -163,8 +162,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-compute" do
-    url "https://files.pythonhosted.org/packages/fe/21/0bfccf9db639ecb764bf4c441b3778c66e10ddea6f89b557382c9b4374b2/azure-mgmt-compute-13.1.0.zip"
-    sha256 "4246181fc6ade41d4143577e2a780a227a0dc71497f4d3c06faf11fe3c63d8d0"
+    url "https://files.pythonhosted.org/packages/60/5e/729e8fec8a606ef05a2480814fd9275eae4e033252f1cc5a84b01c2a7324/azure-mgmt-compute-13.1.1.zip"
+    sha256 "5df73b570183c7709c69fdc0719ee7d92350d0d003f60d153dc1727d5e6bd7bf"
   end
 
   resource "azure-mgmt-consumption" do
@@ -178,8 +177,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-containerregistry" do
-    url "https://files.pythonhosted.org/packages/26/ad/3d7544db91b0a6e770138bcda15460735f50b50c5274c6eb5aad4c9823f5/azure-mgmt-containerregistry-3.0.0rc14.zip"
-    sha256 "d23ce93ec5903d00f79f0ac995e16bf47197130239f7f182509add3277b73071"
+    url "https://files.pythonhosted.org/packages/fc/76/98ebc879dbc4e15e2bcb7b3d7e053368f5d7b446cc7291eadea997248dd2/azure-mgmt-containerregistry-3.0.0rc15.zip"
+    sha256 "6b1b3cc4929da8a0c95be519f66ac28b35c5eda97917cd0533b6cd53076dd5ba"
   end
 
   resource "azure-mgmt-containerservice" do
@@ -703,8 +702,8 @@ class AzureCli < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/30/a3/a67b64feac23b22c71ca2a4084387a6f205dc7cb4f0c67c755d6a4b29a7f/zipp-3.2.0.tar.gz"
-    sha256 "b52f22895f4cfce194bc8172f3819ee8de7540aa6d873535a8668b730b8b411f"
+    url "https://files.pythonhosted.org/packages/7b/50/8a41d217ae898bb7a422a55a2a2afc22dfaab42b7bce5fe771a3892fe5e7/zipp-3.3.0.tar.gz"
+    sha256 "64ad89efee774d1897a58607895d80789c59778ea02185dd846ac38394a8642b"
   end
 
   def install
