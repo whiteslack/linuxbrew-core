@@ -16,6 +16,7 @@ class Bison < Formula
     sha256 "f5bfd5e40ae8b0501e398e2ea29f95e8b80bdbabab2daedcb40c19cf5c4e3491" => :catalina
     sha256 "8a99fb499af4af8e49d93e8eae8b48e26a4c30400a9d7cc66e70ea0621b47e7e" => :mojave
     sha256 "20c775058c2bc15b2f7ccf27cf3b2817a98ea13cf656fa69f1877af2ea62cf04" => :high_sierra
+    sha256 "0876f2a7b92a29c4412aac61623681785bfc742bc79f94083326ccdbe4f2d341" => :x86_64_linux
   end
 
   keg_only :provided_by_macos
