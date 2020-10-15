@@ -25,6 +25,7 @@ class Mycli < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "libffi"
   end
 
   resource "asn1crypto" do

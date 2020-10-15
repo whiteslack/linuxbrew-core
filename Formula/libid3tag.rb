@@ -22,6 +22,19 @@ class Libid3tag < Formula
     sha256 "b7230b9f4ebfee12518bf90fc51c570de0952c0cc4cfaca5744733de90db1838" => :x86_64_linux
   end
 
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "gperf"
+
+    # fix build with gperf
+    # https://bugs.gentoo.org/show_bug.cgi?id=605158
+    patch do
+      url "https://gist.githubusercontent.com/iMichka/c23ea881388319b38838183754349bba/raw/4829ff0702a511f96026369676a11edd9a79ab30/libid3tag.diff"
+      sha256 "00f04427c6b3bab2bb8595f6df0ebc774b60031ee60428241801ccf6337d4c5d"
+    end
+  end
+
   # patch for utf-16 (memory leaks), see https://bugs.launchpad.net/mixxx/+bug/403586
   {
     "utf16.patchlibid3tag-0.15.1b-utf16" => "487d0c531f3653f8e754d720729cf1cec1bce6e897b845fa61adaaf2668d1568",
