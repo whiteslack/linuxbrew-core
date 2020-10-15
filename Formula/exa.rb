@@ -17,6 +17,7 @@ class Exa < Formula
     sha256 "db91d6383734415664520fadb8a4401c465f08b6c8dbd5c56d47e959d04ec6f5" => :catalina
     sha256 "6c4473e06868d60a18657f8f6d98985ec7480de89213765738a3e33eeb9ceee1" => :mojave
     sha256 "e47d5005f3a6a05bc442ed8e12a8e3206f39d0e4daf4835e84545ab158c4f089" => :high_sierra
+    sha256 "a65638aa0ecbf99d3342ad1c166b423e937a714c390a9f0c11cafce4207e7baf" => :x86_64_linux
   end
 
   depends_on "rust" => :build
