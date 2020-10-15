@@ -1,27 +1,25 @@
-class Postgresql < Formula
+class PostgresqlAT12 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v13.0/postgresql-13.0.tar.bz2"
-  sha256 "80e750be8d436b54197636a02636f8fd3263ba6779bf865b04832495ea592296"
+  url "https://ftp.postgresql.org/pub/source/v12.4/postgresql-12.4.tar.bz2"
+  sha256 "bee93fbe2c32f59419cb162bcc0145c58da9a8644ee154a30b9a5ce47de606cc"
   license "PostgreSQL"
-  head "https://github.com/postgres/postgres.git"
-
-  livecheck do
-    url "https://www.postgresql.org/docs/current/static/release.html"
-    regex(/Release v?(\d+(?:\.\d+)*)/i)
-  end
 
   bottle do
-    sha256 "0c8e80038485e0e398210b87b309da03e409dab0b0f78d2b7a3be9f51a3d30c0" => :catalina
-    sha256 "74499938a2f7bde3c33fb158161566eaf61a70975e69d1c59b491deff94826dd" => :mojave
-    sha256 "5175c72b20e73566ef1dadc07286a68b70ae4f31eacc484ad11c4f90f39fd840" => :high_sierra
+    sha256 "9a77bfba8c21995349b40344f5e37a1922accd358ba589fd1baa63c3aa6158e9" => :catalina
+    sha256 "b25e735de5a85feb7dbcbf8764acce39f37fd7f99f5d9ef0b86faa2a9559ac5a" => :mojave
+    sha256 "a27afea346d392eda96c7d767d7582becebf02ad7bf8b72490933cea76757cd6" => :high_sierra
   end
+
+  keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
   depends_on "icu4c"
+
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"
+
   depends_on "openssl@1.1"
   depends_on "readline"
 
@@ -40,28 +38,24 @@ class Postgresql < Formula
     args = %W[
       --disable-debug
       --prefix=#{prefix}
-      --datadir=#{HOMEBREW_PREFIX}/share/postgresql
-      --libdir=#{HOMEBREW_PREFIX}/lib
-      --includedir=#{HOMEBREW_PREFIX}/include
+      --datadir=#{opt_pkgshare}
+      --libdir=#{opt_lib}
+      --includedir=#{opt_include}
       --sysconfdir=#{etc}
       --docdir=#{doc}
       --enable-thread-safety
+      --with-bonjour
+      --with-gssapi
       --with-icu
+      --with-ldap
       --with-libxml
       --with-libxslt
       --with-openssl
+      --with-pam
       --with-perl
+      --with-tcl
       --with-uuid=e2fs
     ]
-    if OS.mac?
-      args += %w[
-        --with-bonjour
-        --with-gssapi
-        --with-ldap
-        --with-pam
-        --with-tcl
-      ]
-    end
 
     # PostgreSQL by default uses xcodebuild internally to determine this,
     # which does not work on CLT-only installs.
@@ -76,12 +70,6 @@ class Postgresql < Formula
                                     "pkgincludedir=#{include}/postgresql",
                                     "includedir_server=#{include}/postgresql/server",
                                     "includedir_internal=#{include}/postgresql/internal"
-
-    unless OS.mac?
-      inreplace lib/"postgresql/pgxs/src/Makefile.global",
-                "LD = #{HOMEBREW_PREFIX}/Homebrew/Library/Homebrew/shims/linux/super/ld",
-                "LD = #{HOMEBREW_PREFIX}/bin/ld"
-    end
   end
 
   def post_install
@@ -89,7 +77,7 @@ class Postgresql < Formula
 
     (var/"log").mkpath
     (var/"postgres").mkpath
-    if !Process.euid.zero? && !(File.exist? "#{var}/postgres/PG_VERSION")
+    unless File.exist? "#{var}/postgres/PG_VERSION"
       system "#{bin}/initdb", "--locale=C", "-E", "UTF-8", "#{var}/postgres"
     end
   end
@@ -106,7 +94,7 @@ class Postgresql < Formula
     EOS
   end
 
-  plist_options manual: "pg_ctl -D #{HOMEBREW_PREFIX}/var/postgres start"
+  plist_options manual: "pg_ctl -D #{HOMEBREW_PREFIX}/var/postgres@12 start"
 
   def plist
     <<~EOS
@@ -139,8 +127,8 @@ class Postgresql < Formula
 
   test do
     system "#{bin}/initdb", testpath/"test" unless ENV["CI"]
-    assert_equal "#{HOMEBREW_PREFIX}/share/postgresql", shell_output("#{bin}/pg_config --sharedir").chomp
-    assert_equal "#{HOMEBREW_PREFIX}/lib", shell_output("#{bin}/pg_config --libdir").chomp
-    assert_equal "#{HOMEBREW_PREFIX}/lib/postgresql", shell_output("#{bin}/pg_config --pkglibdir").chomp
+    assert_equal opt_pkgshare.to_s, shell_output("#{bin}/pg_config --sharedir").chomp
+    assert_equal opt_lib.to_s, shell_output("#{bin}/pg_config --libdir").chomp
+    assert_equal opt_lib.to_s, shell_output("#{bin}/pg_config --pkglibdir").chomp
   end
 end
