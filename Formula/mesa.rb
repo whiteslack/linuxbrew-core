@@ -6,7 +6,7 @@ class Mesa < Formula
   url "https://mesa.freedesktop.org/archive/mesa-20.2.1.tar.xz"
   sha256 "d1a46d9a3f291bc0e0374600bdcb59844fa3eafaa50398e472a36fc65fd0244a"
   license "MIT"
-  revision 1 unless OS.mac?
+  revision 2 unless OS.mac?
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   livecheck do
@@ -17,7 +17,6 @@ class Mesa < Formula
     sha256 "b9a8ad195d431e9431a47398413240023f318d0fdcfd5ca181c7d2071690e705" => :catalina
     sha256 "d5c046a82a8fa536278652685e0a57729381fee75c2b2e9b8076308aa80cd83e" => :mojave
     sha256 "8dc6f6ff504068dab3a7d045365abad1dcaef104a3037bc8f6c660a6208e71d7" => :high_sierra
-    sha256 "5714e29ed07e711e733c8e4419fc6eb71124c8f1c5ae92d92ec4b21715b6168a" => :x86_64_linux
   end
 
   depends_on "meson" => :build
@@ -47,7 +46,7 @@ class Mesa < Formula
     depends_on "libxv"
     depends_on "libxvmc"
     depends_on "libxxf86vm"
-    depends_on "linuxbrew/xorg/libdrm"
+    depends_on "libdrm"
     depends_on "linuxbrew/xorg/libomxil-bellagio"
     depends_on "linuxbrew/xorg/libva-internal"
     depends_on "linuxbrew/xorg/libvdpau"
