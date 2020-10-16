@@ -40,7 +40,7 @@ class Qt < Formula
     depends_on "libice"
     depends_on "libsm"
     depends_on "libxcomposite"
-    depends_on "linuxbrew/xorg/libdrm"
+    depends_on "libdrm"
     depends_on "linuxbrew/xorg/wayland"
     depends_on "linuxbrew/xorg/xcb-util"
     depends_on "linuxbrew/xorg/xcb-util-image"
