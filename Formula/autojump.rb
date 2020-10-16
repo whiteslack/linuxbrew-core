@@ -3,22 +3,21 @@ class Autojump < Formula
   homepage "https://github.com/wting/autojump"
   url "https://github.com/wting/autojump/archive/release-v22.5.3.tar.gz"
   sha256 "00daf3698e17ac3ac788d529877c03ee80c3790472a85d0ed063ac3a354c37b1"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/wting/autojump.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "11ab5e57c200bd21825899a7f2a7792afd0c19f8c065729e56673f5f949a97e7" => :catalina
-    sha256 "5576b3f2b9fcb2a236d6ac22b163af03994edb98b69c997ed5a88db85c8d0a15" => :mojave
-    sha256 "5576b3f2b9fcb2a236d6ac22b163af03994edb98b69c997ed5a88db85c8d0a15" => :high_sierra
-    sha256 "c95107719bd784e0e348be6dbfb3a780240d96f8d76710271c3642335babbd8f" => :sierra
-    sha256 "922ca87c1c1f1cb50bb7a8d68d06c0709ea5ed6e5aa71ecd5b72eb370fcc7449" => :x86_64_linux
+    sha256 "160a92bfee5152dc1642133296dca2277d145ec1aaa05523bca23c809971586a" => :catalina
+    sha256 "6a9dcc3219489432367104903e1985b41ca2c7f6f23eb7a3816f197d1597a19f" => :mojave
+    sha256 "8383941ff7aab058fa913df0d88e0c16852b4715725a156d984d9316bdd1df9a" => :high_sierra
   end
 
-  depends_on :macos # Due to Python 2
+  depends_on "python@3.9"
 
   def install
-    system "./install.py", "-d", prefix, "-z", zsh_completion
+    system Formula["python@3.9"].opt_bin/"python3", "install.py", "-d", prefix, "-z", zsh_completion
 
     # Backwards compatibility for users that have the old path in .bash_profile
     # or .zshrc

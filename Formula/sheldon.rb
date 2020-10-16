@@ -1,16 +1,16 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
   homepage "https://rossmacarthur.github.io/sheldon"
-  url "https://github.com/rossmacarthur/sheldon/archive/0.5.4.tar.gz"
-  sha256 "2707f05f59ce3df7e572f8a098d6f0d675b0b351695d04ba8d159d5a7eee8562"
+  url "https://github.com/rossmacarthur/sheldon/archive/0.6.0.tar.gz"
+  sha256 "5c04abd956634725e23a3a782fe0fb40a9fe1323ed07fcf8ff2a30ce59b83b59"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rossmacarthur/sheldon.git"
 
   bottle do
     cellar :any
-    sha256 "c0b02a54e4d4aa0fc5d444d25dc4931284e195805f589072a7c67527d58f3553" => :catalina
-    sha256 "5b87b182244565b087e5d781f9adc3955002a4306b4e87c57a202c0d75a5ca3a" => :mojave
-    sha256 "3f1fdfdfac34a711fd99a9db7d6bec8375bdc7633b16433551ab23834ce6c5ae" => :high_sierra
+    sha256 "7bbb0e9ca7d115d7ed4c310248c3937e7117feab47ba13683a80f675d76b4c44" => :catalina
+    sha256 "72906d43188f39876956cea5803662f6eba42c59b285ae48e46853e671f9312f" => :mojave
+    sha256 "ab46bcf3bdea25e2f39aa079044d9bf3ccd691697296e6747f9f63fe09c316b4" => :high_sierra
   end
 
   depends_on "rust" => :build
@@ -22,7 +22,7 @@ class Sheldon < Formula
 
   test do
     touch testpath/"plugins.toml"
-    system "#{bin}/sheldon", "--home", testpath, "--root", testpath, "lock"
+    system "#{bin}/sheldon", "--home", testpath, "--config-dir", testpath, "--data-dir", testpath, "lock"
     assert_predicate testpath/"plugins.lock", :exist?
   end
 end
