@@ -12,6 +12,7 @@ class Autojump < Formula
     sha256 "160a92bfee5152dc1642133296dca2277d145ec1aaa05523bca23c809971586a" => :catalina
     sha256 "6a9dcc3219489432367104903e1985b41ca2c7f6f23eb7a3816f197d1597a19f" => :mojave
     sha256 "8383941ff7aab058fa913df0d88e0c16852b4715725a156d984d9316bdd1df9a" => :high_sierra
+    sha256 "2b469d214b2790b42bd8b3b041ac31e994e96f15c7bee1d071ba6121b9a27c1b" => :x86_64_linux
   end
 
   depends_on "python@3.9"
