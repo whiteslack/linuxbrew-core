@@ -4,8 +4,8 @@ require "json"
 class Babel < Formula
   desc "Compiler for writing next generation JavaScript"
   homepage "https://babeljs.io/"
-  url "https://registry.npmjs.org/@babel/core/-/core-7.11.6.tgz"
-  sha256 "4ce5e610252196c5c8f406e04510edf946bfa4d18b0454bd3b118a73fc6a01fc"
+  url "https://registry.npmjs.org/@babel/core/-/core-7.12.1.tgz"
+  sha256 "ffc04ccd8f62cb29c8ab6ead10cc2254716aac6df3c2f63632d80b6b27137b67"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class Babel < Formula
   end
 
   bottle do
-    sha256 "57ef34b67255a4b551a96db8cf39edf7a41de72c8672af87334e1a6591b26de4" => :catalina
-    sha256 "c6bb760bd560268e77b847acfeab100d84b105c7bf356b178ea5a9204b325b98" => :mojave
-    sha256 "1730a4b800e14842c4756c5cbd97270a8d82f552fc13575d4de1cde674d509c2" => :high_sierra
-    sha256 "04db4418fe56410722a528ea8a06fd4516bea179cd4d580b64edd4b98e5c72fa" => :x86_64_linux
+    sha256 "87d99aa8d29a652aa610745e95579274cd854b301eb1044ac972e4489748f349" => :catalina
+    sha256 "b78ab95ea6f544a0c2a3325ad4d89cbd5196b78d46bed549c815cf01d24b4c86" => :mojave
+    sha256 "cf805d8ade32058695247a80f8a669ecfc21bdf4a85087c979b7a364a9f4808a" => :high_sierra
   end
 
   depends_on "node"
