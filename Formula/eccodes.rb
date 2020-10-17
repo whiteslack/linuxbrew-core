@@ -1,9 +1,9 @@
 class Eccodes < Formula
   desc "Decode and encode messages in the GRIB 1/2 and BUFR 3/4 formats"
   homepage "https://confluence.ecmwf.int/display/ECC"
-  url "https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-2.18.0-Source.tar.gz"
-  sha256 "d88943df0f246843a1a062796edbf709ef911de7269648eef864be259e9704e3"
-  revision 1
+  url "https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-2.19.0-Source.tar.gz"
+  sha256 "a1d080aed1b17a9d4e3aecccc5a328c057830cd4d54f451f5498b80b24c46404"
+  license "Apache-2.0"
 
   livecheck do
     url "https://software.ecmwf.int/wiki/display/ECC/Releases"
@@ -11,9 +11,9 @@ class Eccodes < Formula
   end
 
   bottle do
-    sha256 "752b23e86c8c5c54d1870ff3cee3adbb4f2bd3eb552c6a87073ba3867107354f" => :catalina
-    sha256 "7b0366448047c170843a0519611acb03a6cdf10c6f67df6b6813514a8f2d8854" => :mojave
-    sha256 "cf12c6c0ae154b545e8ca764a635a6df15ac0fba85eac7143a6564ca740283ed" => :high_sierra
+    sha256 "c0c829bba23f63746d90bf272bc6d76a00bea9242ae51a11c7c30c000125a0c1" => :catalina
+    sha256 "5bbb366ed000e7a66bf97a17f94037c20bdd89b6b4a9927860a940abf6b5852a" => :mojave
+    sha256 "5e16d1a7cc800bdefa75767c57a67f6056b528033ee6c74ee1dbf016f58dcadf" => :high_sierra
   end
 
   depends_on "cmake" => :build

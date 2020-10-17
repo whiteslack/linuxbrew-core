@@ -1,17 +1,16 @@
 class Trunk < Formula
   desc "Build, bundle & ship your Rust WASM application to the web"
   homepage "https://github.com/thedodd/trunk"
-  url "https://github.com/thedodd/trunk/archive/v0.7.2.tar.gz"
-  sha256 "ec6ee6fcbf75d0baffbc1e7a29f889b84424cbedeff3806a76470a6e0564a99d"
+  url "https://github.com/thedodd/trunk/archive/v0.7.3.tar.gz"
+  sha256 "5847947d13491af835482019452970f2d0f9276afdaeb361a222bb17af0c3187"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/thedodd/trunk.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8792cb8b3d878d5f3eb5a125720e3241358852f89684b90674ef7625781332c0" => :catalina
-    sha256 "23152ec74bda2ab62f646c56304c533454217a2fb5291f676339247efb6a0f8e" => :mojave
-    sha256 "68b6bc386726f1f8539a0d89046f8cefcc532ee5559fda1f38ab4a57046de9ef" => :high_sierra
-    sha256 "a391c940ce6ce00d6fcdd31bf1597999aeba2ca1755779f27b77aed8dc3ba83c" => :x86_64_linux
+    sha256 "e1d19b1b84c80eff7f298e3ffda7765d7dd95fa6cd4d1320b7fc28fcbd0dcd49" => :catalina
+    sha256 "269360fc9e6f348b79c79f02281afe9d8ce321601ac7e3031042f58e55972cb3" => :mojave
+    sha256 "882301f19abbd26aafa6d8587072a9703f9a751942cb34a36e1963e7ae49568c" => :high_sierra
   end
 
   depends_on "rust" => :build

@@ -1,17 +1,15 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
   homepage "https://github.com/sharkdp/hyperfine"
-  url "https://github.com/sharkdp/hyperfine/archive/v1.10.0.tar.gz"
-  sha256 "b949d6c1a78e9c1c5a7bb6c241fcd51d6faf00bba5719cc312f57b5b301cc854"
+  url "https://github.com/sharkdp/hyperfine/archive/v1.11.0.tar.gz"
+  sha256 "740f4826f0933c693fb281e3542d312da9ccc8fd68cebe883359a8085ddd77e9"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "09e341141f121b5b0caf0b4a9552b79a0777f8076910b1c91a65c29483102b36" => :catalina
-    sha256 "29051b59797e70714593561f09901ef02e9c79bc9b9b4b6ae226c53ca021f4ca" => :mojave
-    sha256 "49ea032f8c1403e6ab23e0f451e9bdf2e16f6e581cbd84f94743243ced62910d" => :high_sierra
-    sha256 "9f249db70d1f14cfab0540949c7d41a8cbbfe480bb60609ba71c306e6d0f1116" => :x86_64_linux
+    sha256 "f00c3c13082cb07e6c40bace87ab0e1a03572d1296661d6d217fefc525f2075e" => :catalina
+    sha256 "162a1fac5ab92895d620f85a2a9de1e77786ba3a5a02037cfee57a9d50048c72" => :mojave
+    sha256 "588d7e8466b0fa4303eda838677bb68fe888521bbce1ce89dbf6f28b304ffbc6" => :high_sierra
   end
 
   depends_on "rust" => :build
