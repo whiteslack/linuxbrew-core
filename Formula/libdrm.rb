@@ -30,8 +30,6 @@ class Libdrm < Formula
 
   test do
     (testpath/"test.c").write <<~EOS
-      #include <stdint.h>
-      #include <stdlib.h>
       #include <libdrm/drm.h>
       int main(int argc, char* argv[]) {
         struct drm_gem_open open;
