@@ -25,6 +25,8 @@ class Qt < Formula
 
   keg_only "Qt 5 has CMake issues when linked"
 
+  disable! because: :does_not_build
+
   depends_on "pkg-config" => :build
   depends_on xcode: :build if OS.mac?
   depends_on macos: :sierra if OS.mac?
