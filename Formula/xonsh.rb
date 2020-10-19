@@ -3,17 +3,16 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https://xon.sh/"
-  url "https://github.com/xonsh/xonsh/archive/0.9.23.tar.gz"
-  sha256 "44afe504c2878686b4ee732e380c804489477aec2fcc61f5476574ee064fbddc"
+  url "https://github.com/xonsh/xonsh/archive/0.9.24.tar.gz"
+  sha256 "ed981f129f2501b3d7354466b7c85ff58d22750f18df0910d66c8dbe94ec9b3b"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "31b3f88c1bcfda78c01ac54a15ac4de68dcab507250587241b04d2ce224b0b85" => :catalina
-    sha256 "3d207fb786050207fd263507c104c77e3a2231905e5f5e5e29a323a6df67bf4c" => :mojave
-    sha256 "5b327841ff4d4b809f8e997be9e34a7c376b4c21d5279d4ae563bb081c90af38" => :high_sierra
-    sha256 "3a16469b1c0e06863cc41fe6d67eebeecdc374315ff6edb4cb0207058db995f1" => :x86_64_linux
+    sha256 "f151539d535a20d69d0ae170883f83101a09be772421eb3adcc96e2e92b314b7" => :catalina
+    sha256 "2a8897561350ada2eb6c18919c220cf360854db84fa06714483954e67d5a83cc" => :mojave
+    sha256 "dc3cfbb0128ee2a6bd1a9f8886a4e96c623302cee7b18394189b162a36a55201" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -22,8 +21,8 @@ class Xonsh < Formula
   # See https://xon.sh/osx.html#dependencies
 
   resource "prompt_toolkit" do
-    url "https://files.pythonhosted.org/packages/18/0f/ae4b350b969dc1d8ecfcbdc1060d59ff025336a23f153ece49aa662a1309/prompt_toolkit-3.0.7.tar.gz"
-    sha256 "822f4605f28f7d2ba6b0b09a31e25e140871e96364d1d377667b547bb3bf4489"
+    url "https://files.pythonhosted.org/packages/d4/12/7fe77b49d67845a378cfadb484b64218ed09d0e8bf420c663b4fe28f0631/prompt_toolkit-3.0.8.tar.gz"
+    sha256 "25c95d2ac813909f813c93fde734b6e44406d1477a9faef7c915ff37d39c0a8c"
   end
 
   resource "Pygments" do

@@ -3,16 +3,16 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/b1/f4/dc1ae80fe0f962179461a479fdbe0d262efc6574da905c6986f8477c49a0/oci-cli-2.13.0.tar.gz"
-  sha256 "9a3f3111948e91c33932f704191b597d82c8bd5d4d249dd4d2cbf45b38e89a9a"
+  url "https://files.pythonhosted.org/packages/88/d6/06aa00ee081b9a14dc1c779363d3c431ff630877aab4480b1dd518ef1c36/oci-cli-2.14.0.tar.gz"
+  sha256 "20b393df4df5c4a78ee708d457c47259b03ed2d91cc689e96ddc134ab4715dfa"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git"
 
   bottle do
     cellar :any
-    sha256 "15ec4d902ade252a0932302514c6667a55157d243da71dd28c388ead272f9d77" => :catalina
-    sha256 "03c537079d196452132117ca8556418996445ed2424c420212f304455236b26e" => :mojave
-    sha256 "be52b940f4a30cf9185b33de47b1e765d4ebb1abe9917f3a7aaad9d4ddd0cd45" => :high_sierra
+    sha256 "e8424b565d1e0554e43b98921f6b823521e05464184cd9274ba472b45c3a0ed7" => :catalina
+    sha256 "83e24a31ca98edba4be1cba96391f0c7c8abaaf7ac3b7b97a0741df780cc0305" => :mojave
+    sha256 "41b57b10a1e5e5d6fca9d55b272d63434ed56ed93c2960cdab59282c3efa6bbd" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -53,8 +53,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/19/ed/2f0fd9321fafbe00c5171dbd3c08c84f56067b7c7b5289b246e2cec16d7d/oci-2.22.0.tar.gz"
-    sha256 "b86652019a4598e003ad8d2b90f3f6412ff68a153bbe1185b9d31fc897521b30"
+    url "https://files.pythonhosted.org/packages/45/85/c1fbf07321e6d6baa3e535094622cf954a5fca390cdfb04105992dbb4ddf/oci-2.23.0.tar.gz"
+    sha256 "f8f6d883c91ae11ab69a91407ea54a9acf172a330c760e4cce1af0665e16d51d"
   end
 
   resource "pycparser" do

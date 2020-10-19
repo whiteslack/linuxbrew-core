@@ -1,17 +1,16 @@
 class CloudNuke < Formula
   desc "CLI tool to nuke (delete) cloud resources"
   homepage "https://gruntwork.io/"
-  url "https://github.com/gruntwork-io/cloud-nuke/archive/v0.1.22.tar.gz"
-  sha256 "72ee9f70151835361c14a487abe641d0f36fa3184410b668d777b980a77290db"
+  url "https://github.com/gruntwork-io/cloud-nuke/archive/v0.1.23.tar.gz"
+  sha256 "5d68710dbae7cde1da0b7c7ab13f70a4cbf28af5b36e25e3d3b1808d7228ac80"
   license "MIT"
   head "https://github.com/gruntwork-io/cloud-nuke.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9182465620514438ebc59d73701a93a5a34f257ca9d175194f319623d5984b14" => :catalina
-    sha256 "bb76feb5d0c97e46bcbd9743d53070f96eb5fdafd0e38e104bb1b3d44f147439" => :mojave
-    sha256 "6883004870027bc2e3b8e6ca7163b38e89f1a43376a5449a53e11d23c9f9cc8c" => :high_sierra
-    sha256 "e14794b8920087bec0487c5abaab2a294174ed4c072ea33cc33cd9baa0ddb947" => :x86_64_linux
+    sha256 "ac2f1a0c8c8ad02cc0fb1244ea067ee158f9073a254c06dbe118366b2ae26b7a" => :catalina
+    sha256 "21ebf7a8ab689ff06593b2b1c28eb22e9e0cfa2d97db33542a793a284a35f222" => :mojave
+    sha256 "7f4a022d959addd1e994a471cdda468faa790cde402a32f299772a5eb60ce451" => :high_sierra
   end
 
   depends_on "go" => :build

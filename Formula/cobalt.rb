@@ -1,16 +1,15 @@
 class Cobalt < Formula
   desc "Static site generator written in Rust"
   homepage "https://cobalt-org.github.io/"
-  url "https://github.com/cobalt-org/cobalt.rs/archive/v0.16.3.tar.gz"
-  sha256 "86316ab2d86e6f84e0665a6a78b632daf8a557824e1b8a2c0440f500c260e672"
+  url "https://github.com/cobalt-org/cobalt.rs/archive/v0.16.4.tar.gz"
+  sha256 "24b1fde3bdd1c8e6e8aa0e24c37c1bd2821a7e41a8bce4724f0473fd3722c478"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "05ca26b8e2ae6c7f10f6e52ad37027d8d3990092a37e78d3a2475bdda2fa51f7" => :catalina
-    sha256 "52b2a35136119708ec6598dbf8b964ca5cdc71bd955a04bbeda4a9dc45741e71" => :mojave
-    sha256 "5001ab4d12aed7498b3bd42cad67cc75c6e8aecdb6fcde205b0a7c989ce260eb" => :high_sierra
-    sha256 "45d47870eec516f1eb260ec5057cfc944bd9cdea18c07e518ac3ad3dca46c47d" => :x86_64_linux
+    sha256 "ece5edf627390bd8aa6a7f2b423f1e8fd87122570531edafe8bf7a2c8ef2d917" => :catalina
+    sha256 "53d8b9854325201c5a490a912f75489f691e7f0bb8935bbd3d5266d548c4619f" => :mojave
+    sha256 "8f4416c77f2c1a20bda2e74cafde341602eefeecc03e81f719e08a1872c2c369" => :high_sierra
   end
 
   depends_on "rust" => :build

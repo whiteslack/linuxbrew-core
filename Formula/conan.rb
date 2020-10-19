@@ -3,8 +3,8 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://github.com/conan-io/conan"
-  url "https://files.pythonhosted.org/packages/20/20/99a5b57ce4086735d11e2e935d90c9bdfd95beac17bd27cd84e8e057fc0e/conan-1.30.1.tar.gz"
-  sha256 "10a7b1882c17339eb7dd6e4ba6db9de167ad9c81ebd88b2204bfa6b5212a3394"
+  url "https://github.com/conan-io/conan/archive/1.30.2.tar.gz"
+  sha256 "317caf9205811002ad8a5b699cf5d729e534b925167300a0c97d34e9ca54cfd7"
   license "MIT"
   head "https://github.com/conan-io/conan.git"
 
@@ -15,16 +15,15 @@ class Conan < Formula
 
   bottle do
     cellar :any
-    sha256 "fe77fdd6e888e5059e519c8d1a4d5c8749eaebdb74c84f22ac2a0b4098a8d3e7" => :catalina
-    sha256 "9737487b4e5b04fd5e39d49aef0c9e2f179ecff9dc5594ca68188ce0b0ac5a9f" => :mojave
-    sha256 "e16d9ef0bf61cf14551422e9ab2518caabf3c558b6867e457f9981eddb04a04f" => :high_sierra
-    sha256 "9cd37dff6939b1e9afdc2c4bb77b53090f9b09b57b160ac20330d6a5c66f1e91" => :x86_64_linux
+    sha256 "1460e5af7a9b786c43321c522279d039ebb930beb7fdadb6eec67460a519d190" => :catalina
+    sha256 "20cb958a84bbdcd2880d26260c277f5e8aaf44cb5a6d7817e8328d13e31ca48d" => :mojave
+    sha256 "8d6b0477a28b9fc00631f0390dc62e205ad86816c3578128c2cd5df5806b59ea" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "libffi"
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "asn1crypto" do
     url "https://files.pythonhosted.org/packages/6b/b4/42f0e52ac2184a8abb31f0a6f98111ceee1aac0b473cee063882436e0e09/asn1crypto-1.4.0.tar.gz"
@@ -52,8 +51,8 @@ class Conan < Formula
   end
 
   resource "colorama" do
-    url "https://files.pythonhosted.org/packages/82/75/f2a4c0c94c85e2693c229142eb448840fba0f9230111faa889d1f541d12d/colorama-0.4.3.tar.gz"
-    sha256 "e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"
+    url "https://files.pythonhosted.org/packages/1f/bb/5d3246097ab77fa083a61bd8d3d527b7ae063c7d8e8671b1cf8c4ec10cbe/colorama-0.4.4.tar.gz"
+    sha256 "5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"
   end
 
   resource "cryptography" do
