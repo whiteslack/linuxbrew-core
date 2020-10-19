@@ -12,6 +12,7 @@ class Streamlink < Formula
     sha256 "94c9bbc54f6d4acd49a2e5d66e73a84ecb65a21d5c0728043bbaff512a4e8808" => :catalina
     sha256 "e258065cdaa91ea8b28ee8821200981596285160bf62f81f809c8eeb8409341b" => :mojave
     sha256 "63ae898d941b2e92fff7f8d79c36e2f69a47cd4201055bad72770483a8e0fc70" => :high_sierra
+    sha256 "08d0d76649d6dbceb3643846d212457112617179bc774fe53295ebf43a674c92" => :x86_64_linux
   end
 
   depends_on "python@3.9"
