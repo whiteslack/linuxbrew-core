@@ -10,6 +10,7 @@ class Cobalt < Formula
     sha256 "ece5edf627390bd8aa6a7f2b423f1e8fd87122570531edafe8bf7a2c8ef2d917" => :catalina
     sha256 "53d8b9854325201c5a490a912f75489f691e7f0bb8935bbd3d5266d548c4619f" => :mojave
     sha256 "8f4416c77f2c1a20bda2e74cafde341602eefeecc03e81f719e08a1872c2c369" => :high_sierra
+    sha256 "e9696d93c0541451fa7aab3b1496dc1816763f3e6fec241e04d3193503471cab" => :x86_64_linux
   end
 
   depends_on "rust" => :build
