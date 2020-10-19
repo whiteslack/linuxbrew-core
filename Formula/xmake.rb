@@ -11,6 +11,7 @@ class Xmake < Formula
     sha256 "a89fed1ec09cacfbf34950727ca18b1ec764bf71be1371d87094189fbcf593b6" => :catalina
     sha256 "44ec44e4422e1717b1cb2aca8ddbf6a6bc62758887e93303096d61fc777e282a" => :mojave
     sha256 "4f26742105d0628cbe437862b1e69b0c4fdf9deb40e593c5d2a70dd2897257a1" => :high_sierra
+    sha256 "937c7646a6cd5f6f586c9c12e5bbe6380785b30d09d67d3c1d454a14ffff139f" => :x86_64_linux
   end
 
   on_linux do
