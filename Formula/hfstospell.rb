@@ -15,6 +15,7 @@ class Hfstospell < Formula
     sha256 "73ed82308ae27989db1584b449a0035220b4f9eb1dc70df6d311c361e06f5201" => :catalina
     sha256 "dda1e98815f201c5598441c4e4b16b2ed9502c15c2f159c04a289b711233f697" => :mojave
     sha256 "e37d41f7279ce5c4f26f4e3b61b459690980a2a39e96e948ac4e0002a46174d7" => :high_sierra
+    sha256 "cb1cfb06a2edd0b337867c229f20b74ee57892121a2358d1e9c0b59d8ffac7bb" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
