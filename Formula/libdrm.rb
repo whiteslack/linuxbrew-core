@@ -10,7 +10,7 @@ class Libdrm < Formula
     url "https://dri.freedesktop.org/libdrm/"
     regex(/href=.*?libdrm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
-  
+
   bottle do
     sha256 "ec3a5da1cc2c9b3637be882384f4686e533daa2f1d9f99b5f147542e8d82e83f" => :x86_64_linux
   end
