@@ -15,6 +15,7 @@ class Libraw < Formula
     sha256 "465ba53999bd9b1297fed5283b8cf09ccc600fc1ca00ea4be58a6193a96910d4" => :catalina
     sha256 "2c62cfe8160a4cf45819255cc2a1bb77427827bfa7c4cf782a42f95ee9822112" => :mojave
     sha256 "dd4ab6f94e1dc725cb23ea1f4ee0267b632e01c7187c7a2b109053f457a17284" => :high_sierra
+    sha256 "2a08fd7d968ebdb16e1354e4f0110e51184588e2716cf0e7c8e8e388d0a3e988" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
