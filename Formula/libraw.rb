@@ -1,8 +1,8 @@
 class Libraw < Formula
   desc "Library for reading RAW files from digital photo cameras"
   homepage "https://www.libraw.org/"
-  url "https://www.libraw.org/data/LibRaw-0.20.0.tar.gz"
-  sha256 "1f0a383da2ce9f409087facd28261decbf6be72cc90c78cd003b0766e4d694a3"
+  url "https://www.libraw.org/data/LibRaw-0.20.2.tar.gz"
+  sha256 "dc1b486c2003435733043e4e05273477326e51c3ea554c6864a4eafaff1004a6"
   license any_of: ["LGPL-2.1-only", "CDDL-1.0"]
 
   livecheck do
@@ -12,12 +12,14 @@ class Libraw < Formula
 
   bottle do
     cellar :any
-    sha256 "b1ca92d6627af7e3f7eb67683da5d5e911298b2e3c45c20d233e9beaa0ab8d44" => :catalina
-    sha256 "5e016ab1fe114cb8e9d272aeb7f0135222ac56715f8326f87a3d2f81f5ab2d9e" => :mojave
-    sha256 "8a41cdb86d8af0121493d810cebfcecde17fc39cc4e73645a3f485b9fd66274f" => :high_sierra
-    sha256 "e33d93c4a23428b43824a21890b0e49929bb7d8dd2120e98d9fa2819b47cd50c" => :x86_64_linux
+    sha256 "465ba53999bd9b1297fed5283b8cf09ccc600fc1ca00ea4be58a6193a96910d4" => :catalina
+    sha256 "2c62cfe8160a4cf45819255cc2a1bb77427827bfa7c4cf782a42f95ee9822112" => :mojave
+    sha256 "dd4ab6f94e1dc725cb23ea1f4ee0267b632e01c7187c7a2b109053f457a17284" => :high_sierra
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "jasper"
   depends_on "jpeg"
@@ -30,6 +32,7 @@ class Libraw < Formula
   end
 
   def install
+    system "autoreconf", "-fiv"
     system "./configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking",
                           "ac_cv_prog_c_openmp=-Xpreprocessor -fopenmp",
