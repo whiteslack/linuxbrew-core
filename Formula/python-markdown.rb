@@ -17,6 +17,7 @@ class PythonMarkdown < Formula
     sha256 "86fdb3082a32df892f8344100929795de8aba2dac965677b0c7e7b6a4470729a" => :catalina
     sha256 "80e595735252ab2d6ec6059bad7e4b1a976b5fd1ba11f8c28fad977c68ccf032" => :mojave
     sha256 "a4fc3011403266446e0507eaa930908ba864b2fe199b7abb6bb14ecdaa81855d" => :high_sierra
+    sha256 "7abcef37ff540b0be234ad03db761d9588ffd4c033c2caa7fa8104414d0e678b" => :x86_64_linux
   end
 
   depends_on "python@3.9"
