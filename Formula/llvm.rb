@@ -5,95 +5,31 @@ class Llvm < Formula
   homepage "https://llvm.org/"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0"
-  revision 2
+  head "https://github.com/llvm/llvm-project.git"
 
   stable do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/llvm-10.0.1.src.tar.xz"
-    sha256 "c5d8e30b57cbded7128d78e5e8dad811bff97a8d471896812f57fa99ee82cdf3"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/llvm-project-11.0.0.tar.xz"
+    sha256 "b7b639fc675fa1c86dd6d0bc32267be9eb34451748d2efd03f674b773000e92b"
 
-    resource "clang" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/clang-10.0.1.src.tar.xz"
-      sha256 "f99afc382b88e622c689b6d96cadfa6241ef55dca90e87fc170352e12ddb2b24"
-
-      unless OS.mac?
-        patch do
-          url "https://gist.githubusercontent.com/iMichka/9ac8e228679a85210e11e59d029217c1/raw/e50e47df860201589e6f43e9f8e9a4fc8d8a972b/clang9?full_index=1"
-          sha256 "65cf0dd9fdce510e74648e5c230de3e253492b8f6793a89534becdb13e488d0c"
-        end
-      end
-
-      patch :p1 do
-        url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-clang.diff"
-        sha256 "44a605f614a26fb20d127b041e2a87e6adc9b8332e07cbbb6b457bc391cda660"
-      end
+    patch do
+      url "https://github.com/llvm/llvm-project/commit/c86f56e32e724c6018e579bb2bc11e667c96fc96.patch?full_index=1"
+      sha256 "6e13e01b4f9037bb6f43f96cb752d23b367fe7db4b66d9bf2a4aeab9234b740a"
     end
 
-    resource "clang-tools-extra" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/clang-tools-extra-10.0.1.src.tar.xz"
-      sha256 "d093782bcfcd0c3f496b67a5c2c997ab4b85816b62a7dd5b27026634ccf5c11a"
+    patch do
+      url "https://github.com/llvm/llvm-project/commit/31e5f7120bdd2f76337686d9d169b1c00e6ee69c.patch?full_index=1"
+      sha256 "f025110aa6bf80bd46d64a0e2b1e2064d165353cd7893bef570b6afba7e90b4d"
     end
 
-    resource "compiler-rt" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/compiler-rt-10.0.1.src.tar.xz"
-      sha256 "d90dc8e121ca0271f0fd3d639d135bfaa4b6ed41e67bd6eb77808f72629658fa"
-
-      patch :p1 do
-        url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-compiiler-rt.diff"
-        sha256 "8ad0ce521b010dfb941c0979c1c072a2b40e4a69424374541d28122ba74ce4a0"
-      end
+    patch do
+      url "https://github.com/llvm/llvm-project/commit/3c7bfbd6831b2144229734892182d403e46d7baf.patch?full_index=1"
+      sha256 "62014ddad6d5c485ecedafe3277fe7978f3f61c940976e3e642536726abaeb68"
     end
 
-    if OS.mac?
-      resource "libcxx" do
-        url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/libcxx-10.0.1.src.tar.xz"
-        sha256 "def674535f22f83131353b3c382ccebfef4ba6a35c488bdb76f10b68b25be86c"
-      end
+    patch do
+      url "https://github.com/llvm/llvm-project/commit/c4d7536136b331bada079b2afbb2bd09ad8296bf.patch?full_index=1"
+      sha256 "2b894cbaf990510969bf149697882c86a068a1d704e749afa5d7b71b6ee2eb9f"
     end
-
-    resource "libunwind" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/libunwind-10.0.1.src.tar.xz"
-      sha256 "741903ec1ebff2253ff19d803629d88dc7612598758b6e48bea2da168de95e27"
-    end
-
-    resource "lld" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/lld-10.0.1.src.tar.xz"
-      sha256 "591449e0aa623a6318d5ce2371860401653c48bb540982ccdd933992cb88df7a"
-
-      patch :p1 do
-        url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-lld.diff"
-        sha256 "734f87580e89d76507b8c41a5a75b5105c41a2d03a8dc2fad5c7ef027d771a3e"
-      end
-    end
-
-    resource "lldb" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/lldb-10.0.1.src.tar.xz"
-      sha256 "07abe87c25876aa306e73127330f5f37d270b6b082d50cc679e31b4fc02a3714"
-
-      patch :p1 do
-        url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-lldb.diff"
-        sha256 "69c7d4c803a174dff6809d02255e7e4c19d80f25c73dd5fcf2657769db158e25"
-      end
-    end
-
-    resource "openmp" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/openmp-10.0.1.src.tar.xz"
-      sha256 "d19f728c8e04fb1e94566c8d76aef50ec926cd2f95ef3bf1e0a5de4909b28b44"
-    end
-
-    resource "polly" do
-      url "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/polly-10.0.1.src.tar.xz"
-      sha256 "d2fb0bb86b21db1f52402ba231da7c119c35c21dfb843c9496fe901f2d6aa25a"
-    end
-  end
-
-  unless OS.mac?
-    patch :p2 do
-      url "https://github.com/llvm/llvm-project/commit/7f5fe30a150e7e87d3fbe4da4ab0e76ec38b40b9.patch?full_index=1"
-      sha256 "9ed85d2b00d0b70c628a5d1256d87808d944532fe8c592516577a4f8906a042c"
-    end
-
-    # Needed for crystal
-    patch :p2, :DATA
   end
 
   livecheck do
@@ -103,28 +39,15 @@ class Llvm < Formula
 
   bottle do
     cellar :any
-    sha256 "d8ad1f1c539c4c643017882878d60bc3a45b7e4a67e4d697ac071d20926d121c" => :catalina
-    sha256 "7a5600152cc5d8c7043b9c92db2194e757e17cae6f9e0a498468c3921efb9770" => :mojave
-    sha256 "9ce34ed1a0be220267b76e8c81d7b4955cca470957a4f921fe7e380b0a81b67f" => :high_sierra
-    sha256 "81c285097be8b91baa44f5bcf6e3c8c2427f1a5fc74dfcbf032292cb801d6e4f" => :x86_64_linux
+    sha256 "313e4f27bc61f4a7afe193288c0fb98a8c96efe89edf82990ae1b79d584196c5" => :catalina
+    sha256 "0d9e7f09db772677467075f5fe8440130cd08b3019ed73ca4afa7b2f307d962e" => :mojave
+    sha256 "d3c239a222cf92151616f98ab2ff28ec40d9eee3d395a55d23c12a374a2e0977" => :high_sierra
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
   pour_bottle? do
     reason "The bottle needs the Xcode CLT to be installed."
     satisfy { !OS.mac? || MacOS::CLT.installed? }
-  end
-
-  head do
-    url "https://github.com/llvm/llvm-project.git"
-
-    unless OS.mac?
-      patch do
-        url "https://gist.githubusercontent.com/iMichka/9ac8e228679a85210e11e59d029217c1/raw/e50e47df860201589e6f43e9f8e9a4fc8d8a972b/clang9?full_index=1"
-        sha256 "65cf0dd9fdce510e74648e5c230de3e253492b8f6793a89534becdb13e488d0c"
-        directory "clang"
-      end
-    end
   end
 
   keg_only :provided_by_macos
@@ -153,11 +76,6 @@ class Llvm < Formula
     conflicts_with "clang-format", because: "both install `clang-format` binaries"
   end
 
-  patch :p1 do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/c7da61787c62822804dd90192dd9dd254511192c/llvm/10.0.1-llvm.diff"
-    sha256 "86b4e2bf10dfb9a04153e3d4fc744c3f323f3e13fc7b3a7d22e6791d47eb2e2c"
-  end
-
   def install
     projects = %w[
       clang
@@ -172,16 +90,9 @@ class Llvm < Formula
     runtimes = %w[
       compiler-rt
       libunwind
+      libcxxabi
     ]
     args << "libcxx" if OS.mac?
-    # Can likely be added to the base runtimes array when 11.0.0 is released.
-    runtimes << "libcxxabi" if build.head?
-
-    llvmpath = buildpath/"llvm"
-    unless build.head?
-      llvmpath.install buildpath.children - [buildpath/".brew_home"]
-      (projects + runtimes).each { |p| resource(p).stage(buildpath/p) }
-    end
 
     py_ver = "3.9"
 
@@ -253,6 +164,7 @@ class Llvm < Formula
       args << "-DCMAKE_LINKER=/Library/Developer/CommandLineTools/usr/bin/ld"
     end
 
+    llvmpath = buildpath/"llvm"
     mkdir llvmpath/"build" do
       system "cmake", "-G", "Unix Makefiles", "..", *(std_cmake_args + args)
       system "make"
@@ -418,19 +330,22 @@ class Llvm < Formula
       assert_equal "int main() { printf(\"Hello world!\"); }\n",
       shell_output("#{bin}/clang-format -style=google clangformattest.c")
     end
+
+    # Ensure LLVM did not regress output of `llvm-config --system-libs` which for a time
+    # was known to output incorrect linker flags; e.g., `-llibxml2.tbd` instead of `-lxml2`.
+    # On the other hand, note that a fully qualified path to `dylib` or `tbd` is OK, e.g.,
+    # `/usr/local/lib/libxml2.tbd` or `/usr/local/lib/libxml2.dylib`.
+    ext = shared_library("")
+    shell_output("#{bin}/llvm-config --system-libs").chomp.strip.split(" ").each do |lib|
+      if lib.start_with?("-l")
+        assert !lib.end_with?(".tbd"), "expected abs path when lib reported as .tbd"
+        assert !lib.end_with?(ext), "expected abs path when lib reported as .dylib"
+      else
+        p = Pathname.new(lib)
+        if p.extname == ".tbd" || p.extname == ext
+          assert p.absolute?, "expected abs path when lib reported as .tbd or .dylib"
+        end
+      end
+    end
   end
 end
-__END__
-diff --git a/llvm/include/llvm/BinaryFormat/Dwarf.h b/llvm/include/llvm/BinaryFormat/Dwarf.h
-index 2ad201831..8bb9c6bed 100644
---- a/llvm/include/llvm/BinaryFormat/Dwarf.h
-+++ b/llvm/include/llvm/BinaryFormat/Dwarf.h
-@@ -232,6 +232,8 @@ inline bool isCPlusPlus(SourceLanguage S) {
-   case DW_LANG_hi_user:
-     return false;
-   }
-+  if (S >= DW_LANG_lo_user && S <= DW_LANG_hi_user)
-+    return false;
-   llvm_unreachable("Invalid source language");
- }
- 

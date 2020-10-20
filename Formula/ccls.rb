@@ -4,13 +4,13 @@ class Ccls < Formula
   url "https://github.com/MaskRay/ccls/archive/0.20190823.6.tar.gz"
   sha256 "83dd45120e9674319f91e4379013831e124c0858e050bbc3521e3f8aebe5c95b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/MaskRay/ccls.git"
 
   bottle do
-    sha256 "826b74e4e2f5ed44734b1776e960fb4485bbd20ee6383dc9bc426ca2fed9ba03" => :catalina
-    sha256 "f32c94ebdd1b65fa75a32701573dfb1c87d16a339f57f261712ead133caeab3f" => :mojave
-    sha256 "fe0edff63df20a3c4624ce335c73276299f60d5bfad836c1acba32ce7435de18" => :high_sierra
-    sha256 "342494b296a491c055769bdcfdaac545951c867897ec7cd418368090cd37216b" => :x86_64_linux
+    sha256 "f1215fa22a47c52ea83666f2ebc1c416a39a0b7b80d7f7767e4d049b97e3b8ac" => :catalina
+    sha256 "0acf04329f231cd825d4abf3366a7bf5fa26717c4e1421c06b0fef262de1f7ba" => :mojave
+    sha256 "b8c9a39e3fc523a5b70f2d25682365ce921761923bd35ac1b41ca4a7f43dce66" => :high_sierra
   end
 
   depends_on "cmake" => :build
