@@ -4,7 +4,7 @@ class Ledger < Formula
   url "https://github.com/ledger/ledger/archive/v3.2.1.tar.gz"
   sha256 "92bf09bc385b171987f456fe3ee9fa998ed5e40b97b3acdd562b663aa364384a"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/ledger/ledger.git"
 
   livecheck do
@@ -13,9 +13,9 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 "9389b112e1243aeeba892aa4159fade1d4cddaf6f9e9cd134f7ae4e5c48949b6" => :catalina
-    sha256 "c6296f9a1093aea18b386efc82ed8c3a5c870560c1c32b189639644dd396f5ea" => :mojave
-    sha256 "130e42b66db744081ad7e25e3f71dc70c2923e25e0476ef0e306514081ed1aca" => :high_sierra
+    sha256 "9f19cc8b74fe91947ed39dfb1c7f69d98ffcd69ab8c3216c3406781a17471539" => :catalina
+    sha256 "1918009a3f3fbbd9347406bca4e3317d1b9215167eb9a6cbf09db6737f01cf1b" => :mojave
+    sha256 "f8db0f0c312bd26da3bb8e9a28abfeeae318aed1f99194bdbe815015ecb5029d" => :high_sierra
   end
 
   depends_on "cmake" => :build

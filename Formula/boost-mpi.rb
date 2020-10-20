@@ -1,28 +1,20 @@
 class BoostMpi < Formula
   desc "C++ library for C++/MPI interoperability"
   homepage "https://www.boost.org/"
-  url "https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.bz2"
-  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_73_0.tar.bz2"
-  sha256 "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
+  url "https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2"
+  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_74_0.tar.bz2"
+  sha256 "83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git"
 
   bottle do
-    sha256 "c9f768e84953960f029ca0e4742169492ce7f78f63b70c9262efd6f483014006" => :catalina
-    sha256 "23ea2a6c362ba43697d1d583b90c56446030faadf5878cdd12a0a369a2cb872f" => :mojave
-    sha256 "2d02ebd7d916d416d0921b58b454e1f7e214450f0f61b1823bc49eafcbf98f38" => :high_sierra
-    sha256 "6be12636b77e7f2c7179afee3d2a434376497f98caffe370bef8510b83859cbf" => :x86_64_linux
+    sha256 "3a7a77d91db3d7f2f04bc564c2189769e53e37ffeb2cc08a716a299a341b0eb8" => :catalina
+    sha256 "78868cfa11d4bccdbbedb69ad36c208c7b467d77f4fefd198591e7b51a3d250c" => :mojave
+    sha256 "ae3da02f294d9eaaca43ef27316cb117136b84e3f7ce8eecbe671f17d1d2e90a" => :high_sierra
   end
 
   depends_on "boost"
   depends_on "open-mpi"
-
-  # Fix build on Xcode 11.4
-  patch do
-    url "https://github.com/boostorg/build/commit/b3a59d265929a213f02a451bb63cea75d668a4d9.patch?full_index=1"
-    sha256 "04a4df38ed9c5a4346fbb50ae4ccc948a1440328beac03cb3586c8e2e241be08"
-    directory "tools/build"
-  end
 
   def install
     # "layout" should be synchronized with boost

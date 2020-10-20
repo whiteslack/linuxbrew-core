@@ -4,7 +4,7 @@ class SourceHighlight < Formula
   url "https://ftp.gnu.org/gnu/src-highlite/source-highlight-3.1.9.tar.gz"
   mirror "https://ftpmirror.gnu.org/src-highlite/source-highlight-3.1.9.tar.gz"
   sha256 "3a7fd28378cb5416f8de2c9e77196ec915145d44e30ff4e0ee8beb3fe6211c91"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,10 +12,9 @@ class SourceHighlight < Formula
   end
 
   bottle do
-    sha256 "a53d8ff1e0e9631023af43429e7702319951a0cdecfdc186f59807ed94b69fc7" => :catalina
-    sha256 "1b6058fe3438ef1eaed5f9fd7d84c2e99a82f5dde673201b5987846734f425cd" => :mojave
-    sha256 "f54f7d667efc1887b15d0d9b0bc6cc144470a3f1030daadcdb7ff1caac1ba457" => :high_sierra
-    sha256 "56542715045ac4760d393f676e13c7c511d1327cbeb0293d5c0675ef02edb0ca" => :x86_64_linux
+    sha256 "e11d0a5ba8039635b7462ad70b6b01b9c8f44ba52ed50d0a1e07b4cbdb0f7695" => :catalina
+    sha256 "655ff057f0faa1c048e123eb593264fd3060e70e10b311fe11b34252372acde5" => :mojave
+    sha256 "0a4b58f6b35335861e29d6f662d87076fb68c20a78599389fec6406ceab295de" => :high_sierra
   end
 
   depends_on "boost"

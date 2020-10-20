@@ -4,12 +4,13 @@ class I2pd < Formula
   url "https://github.com/PurpleI2P/i2pd/archive/2.33.0.tar.gz"
   sha256 "6a30eb410263d2da23d238758ad156e36983bff1ed347fe57789763ae986d0f4"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "f091f0923c6316eaedaceb23341a74991ca1d6cfc9ed1dd15def0924f2b44c6a" => :catalina
-    sha256 "be66f39ebe5bf3af18580e46b7fc10eef56934c3748242a671b213e8675646e5" => :mojave
-    sha256 "9bcd3b180c11c9940f8d2f7887cf1cc2b0c57143d7fe3fc70dc7f3efd31437b4" => :high_sierra
+    sha256 "2211cb8d625965e36d350825432df84794ef35fedaaea06823a58d55ab18315d" => :catalina
+    sha256 "2feb17a2f91d30d9b5805abf1d4233920fc1e850adf09e78ca512f0a77982e33" => :mojave
+    sha256 "dc420798089587474284054d4113868a7ee87e20d41660643e8fd1af24e4db80" => :high_sierra
   end
 
   depends_on "boost"

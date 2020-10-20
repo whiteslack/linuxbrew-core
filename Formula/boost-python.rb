@@ -1,28 +1,21 @@
 class BoostPython < Formula
   desc "C++ library for C++/Python2 interoperability"
   homepage "https://www.boost.org/"
-  url "https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.bz2"
-  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_73_0.tar.bz2"
-  sha256 "4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402"
+  url "https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2"
+  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_74_0.tar.bz2"
+  sha256 "83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git"
 
   bottle do
     cellar :any
-    sha256 "04fb7370e7cae6e4fda40545eaf8624576253ba72d6ed405debc0d48da4e6821" => :catalina
-    sha256 "9709be9548489de159a5a756fee04b8a3807a7f135c08b1ebce82ae363f49269" => :mojave
-    sha256 "b0773fe6e6125e6a45966aa5ef9e078a02c77c86d16f3fd6f7c50df4c23d7c78" => :high_sierra
+    sha256 "2bfdf94233748ade31906e2d97fd2f6f486b11aa4216eaa7b95184857f8eb2e0" => :catalina
+    sha256 "322e42a7162fdb8007d2fd43301de78bd6d8d2f322524a6b63c5c8f48253a672" => :mojave
+    sha256 "7300cdd1653d195336215d7c2374377e575f770b8b37ac6722abf41b65a86c46" => :high_sierra
   end
 
   depends_on "boost"
   depends_on :macos # Due to Python 2
-
-  # Fix build on Xcode 11.4
-  patch do
-    url "https://github.com/boostorg/build/commit/b3a59d265929a213f02a451bb63cea75d668a4d9.patch?full_index=1"
-    sha256 "04a4df38ed9c5a4346fbb50ae4ccc948a1440328beac03cb3586c8e2e241be08"
-    directory "tools/build"
-  end
 
   def install
     # "layout" should be synchronized with boost
