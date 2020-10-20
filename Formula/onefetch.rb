@@ -10,6 +10,7 @@ class Onefetch < Formula
     sha256 "27171a15aba067cb38280669e653ab1f0f2e11543dc561d780317129edeeb4c4" => :catalina
     sha256 "266e070dc4d1fdabd9516d03d9d489f6daf901e28aa7a4852e381d1286756be2" => :mojave
     sha256 "7200468a5be454fb189fd21423dd748c9a662f9ae00befa308a17bd176f83229" => :high_sierra
+    sha256 "b970079aa21d8941c865d3049ce673a781898247b4b78409d5cbe08aa933b729" => :x86_64_linux
   end
 
   depends_on "rust" => :build
