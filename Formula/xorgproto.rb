@@ -1,16 +1,15 @@
 class Xorgproto < Formula
   desc "X.Org: Protocol Headers"
   homepage "https://www.x.org/"
-  url "https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2019.2.tar.bz2"
-  sha256 "46ecd0156c561d41e8aa87ce79340910cdf38373b759e737fcbba5df508e7b8e"
+  url "https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2020.1.tar.bz2"
+  sha256 "54a153f139035a376c075845dd058049177212da94d7a9707cf9468367b699d2"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "12227628c023328dc1c2c4d4be43c3170e9b2eb31d2be792b091ea8d21ec0619" => :catalina
-    sha256 "5a66e9fd1485b634bc2d5821258599e9fd30dcc6b372862c927501330eba8c8b" => :mojave
-    sha256 "3d1c8d8aa28541dc4b6f1d2f05c5472494834ef4e0fadf6545f5728ea048fb9c" => :high_sierra
-    sha256 "7cec7ba305a899f3853cfa7a9a4fe66bb63f9d91fc760594b788ebe12cf66625" => :x86_64_linux
+    sha256 "b50060e1137a990a6cb6c873c4f2bf8383af62285fdb229445d2d160f84d0736" => :catalina
+    sha256 "0809cb3a8941d8e3994a9f940e181b465fb67db49e8dc2e434fbd53d10f04e3c" => :mojave
+    sha256 "11537fb587e7d0e539a60850f62327ded423b635969e846865dbdded481d24c8" => :high_sierra
   end
 
   depends_on "pkg-config" => [:build, :test]

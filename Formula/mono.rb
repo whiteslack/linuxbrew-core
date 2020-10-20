@@ -1,8 +1,8 @@
 class Mono < Formula
   desc "Cross platform, open source .NET development framework"
   homepage "https://www.mono-project.com/"
-  url "https://download.mono-project.com/sources/mono/mono-6.8.0.123.tar.xz"
-  sha256 "e2e42d36e19f083fc0d82f6c02f7db80611d69767112af353df2f279744a2ac5"
+  url "https://download.mono-project.com/sources/mono/mono-6.12.0.90.tar.xz"
+  sha256 "51de5c02ad511333f93ff585bca54c8784de35af4ff27b759d16b46c4402cdac"
   license "MIT"
 
   livecheck do
@@ -11,18 +11,20 @@ class Mono < Formula
   end
 
   bottle do
-    sha256 "5d9418923f6bc1705af86db81c56beff8b3a3d12c15e99ecbc7dffc2306817e1" => :catalina
-    sha256 "c7e8edb593056e88bbf9e2e2bf990045f1400ed72d77ebcfcd90818d07f4ecce" => :mojave
-    sha256 "7fcbbda42e4f412d8849ac21c070ccc2333e086049efe17a03703413952ddd8f" => :high_sierra
+    sha256 "421985d8fc075fd12f11d239f7fc68be0408ce38b6299d79975a14964a60e40c" => :catalina
+    sha256 "9ef2de479c2863279aa87021129032a4f558956dbbececeecd9db33222d052ba" => :mojave
+    sha256 "8d3e8499fd5c23a353e3571da084d789943c72d804f39ae90bb07ffd37777bbf" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on :macos # Due to Python 2
+  depends_on "python@3.9"
 
   uses_from_macos "unzip" => :build
 
   conflicts_with "xsd", because: "both install `xsd` binaries"
+  conflicts_with cask: "mono-mdk"
+  conflicts_with cask: "mono-mdk-for-visual-studio"
 
   # xbuild requires the .exe files inside the runtime directories to
   # be executable

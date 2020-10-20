@@ -1,16 +1,16 @@
 class Box2d < Formula
   desc "2D physics engine for games"
   homepage "https://box2d.org"
-  url "https://github.com/erincatto/box2d/archive/v2.4.0.tar.gz"
-  sha256 "38bce8217afb974e5be070da0b6768bb4fc0e246fa1cee42fecf71c4c6e9ad19"
+  url "https://github.com/erincatto/box2d/archive/v2.4.1.tar.gz"
+  sha256 "d6b4650ff897ee1ead27cf77a5933ea197cbeef6705638dd181adc2e816b23c2"
   license "MIT"
   head "https://github.com/erincatto/Box2D.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1007faf13049c1f129e114fb0a2d55d2b5e35b47370cf2d7926fd391605fb341" => :catalina
-    sha256 "4b0ae6666eaa0276c7e90b860cf7e705d9123893c729b126114603b318615b79" => :mojave
-    sha256 "304c665585267303ba601d6efe71dbc1dcf435622ecb08180d59237c02313fdf" => :high_sierra
+    sha256 "5c6508a2d661409273a28ac5f0495d7d7c506b5d1bc7ceeb9ab90298db225178" => :catalina
+    sha256 "51709abf7cf22ce487b7fb543c2760add5f6935459b00163567448f47ab6d86c" => :mojave
+    sha256 "0312b876dd91ae896fc127fa6afe21736b7dd1d55569389a6cfc20af90f83cd6" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -24,9 +24,7 @@ class Box2d < Formula
 
     system "cmake", ".", *args
     system "cmake", "--build", "."
-    # Install by cmake when possible: https://github.com/erincatto/box2d/issues/649
-    include.install Dir["include/*"]
-    lib.install "src/libbox2d.a"
+    system "cmake", "--install", "."
     pkgshare.install "unit-test/hello_world.cpp", "unit-test/doctest.h"
   end
 

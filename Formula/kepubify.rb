@@ -1,17 +1,16 @@
 class Kepubify < Formula
   desc "Convert ebooks from epub to kepub"
   homepage "https://pgaskin.net/kepubify/"
-  url "https://github.com/pgaskin/kepubify/archive/v3.1.5.tar.gz"
-  sha256 "73cc026538ed5cdb961366b1b9897c8bec36a6cdf6d1cc404b86aa24da276374"
+  url "https://github.com/pgaskin/kepubify/archive/v3.1.6.tar.gz"
+  sha256 "09b81eff1cf53fb184773cf289c1eee56c3354cf6e1efddb5e308566b31de69f"
   license "MIT"
   head "https://github.com/pgaskin/kepubify.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8e02509869a8df49f088eb41e66ed902666df38cd71b0f7ef7b84422b2ddea91" => :catalina
-    sha256 "fa527fc68639a4cc54e28cac3423707c31f7d4b6dc2bce6109180ee8e8f98e9d" => :mojave
-    sha256 "3e9bfdabc6bfcd290764ac61c7d118662e482baba0bf711d8542d3662c1527b4" => :high_sierra
-    sha256 "f61d553075f02e0e933d9b508bb80f54f80b0f1707fd2e87f7c0f8455cba5a46" => :x86_64_linux
+    sha256 "02f990a949cebef432e4355e90c5e4685d85f556519392ecb425a0d7e0730add" => :catalina
+    sha256 "6f5f0a9dff4919fbdd57fece754775014f2528fdd86e0f6a3ed5b30333d14435" => :mojave
+    sha256 "ea8a1abda1b013780b9475fdcd9ee1332fbb33d22e8e41a43bfd4ad7b99bbfd1" => :high_sierra
   end
 
   depends_on "go" => :build

@@ -1,17 +1,16 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https://github.com/lotabout/skim"
-  url "https://github.com/lotabout/skim/archive/v0.8.2.tar.gz"
-  sha256 "04af8e9facd8a9f10e9d18f02b78e6d80e987cd58937df960c9b48ae5f42b761"
+  url "https://github.com/lotabout/skim/archive/v0.9.1.tar.gz"
+  sha256 "a5ae4a7955a2c3a4cbf832db32293b0467dfb52a9b38fce5bd1ac0d78a900354"
   license "MIT"
   head "https://github.com/lotabout/skim.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5292b952619fdff305f8124e8ff7342487c2b8904582d21d7d36ee70552e55cb" => :catalina
-    sha256 "88cd830c34f998238c0bc89e435fa114fd89081bada5e6c04baed79d5f97f2c9" => :mojave
-    sha256 "cdf01b18bb6d20bbe3063246520e09caf0591490212e1ced07e996027a87dc32" => :high_sierra
-    sha256 "06666c0cf5b91a7ed556cf756b5af02c3a3f50f5e5cb7b575da6bb3ca9179f3e" => :x86_64_linux
+    sha256 "6a146d9090fbd0624dcbae55791647fb2fb940aab21cfee8f4637037b7336047" => :catalina
+    sha256 "878902b610b34ddf3b20bb3e28dd446eda864c46dfccfff7d3ada2d0c9e6572c" => :mojave
+    sha256 "6baa791af6658ddf2220de97d1a88d446a5a32fcf9760beb63432e7bbabf3a0e" => :high_sierra
   end
 
   depends_on "rust" => :build

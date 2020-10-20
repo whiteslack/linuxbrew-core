@@ -11,10 +11,10 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 "d53f6e27e9488d57e6fa7993fe03e45e4ceaf760a0d8d8c431fa5fbe50bdb2fb" => :catalina
-    sha256 "ec25b5dade84225363018719b7cebdb388fe2d6f7bbf06437f30f41e220f6fab" => :mojave
-    sha256 "17b572faa52e2f08e6199ad796da1120b70a0a7166ceb2ab650a87d951204570" => :high_sierra
-    sha256 "6fa42aeb029d536ea827f9afef4465d6406600b5fb08a77daf96eae122d7d198" => :x86_64_linux
+    rebuild 1
+    sha256 "01447562e498cafee646ff65117446834f7db63f0e3e34b0950c1f66856f9df2" => :catalina
+    sha256 "49d663baef12229a4b236cd6d7827e671142709cb3b58f0bf7ef7756d4774a3a" => :mojave
+    sha256 "de6926fb7165101ce316bee6e6fc1e7369a2ef3b3c5fb1619207ee88c7d60257" => :high_sierra
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -268,7 +268,7 @@ class PythonAT39 < Formula
     end
 
     # post_install happens after link
-    %W[pip3 pip#{xy} easy_install-#{xy} wheel3].each do |e|
+    %W[pip#{xy} easy_install-#{xy}].each do |e|
       (HOMEBREW_PREFIX/"bin").install_symlink bin/e
     end
 
