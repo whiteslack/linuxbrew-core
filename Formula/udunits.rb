@@ -19,8 +19,8 @@ class Udunits < Formula
 
   unless OS.mac?
     patch :p1 do
-      url "https://github.com/Unidata/UDUNITS-2/commit/0bb56200221ad960bc2da11fc0b4a70ec3c5d7c9.diff?full_index=1"
-      sha256 "302fc33a7df84d8a60a21a0024d2676d5d16c08d3eb61d48e04d70f9499616f2"
+      url "https://github.com/Unidata/UDUNITS-2/commit/0bb56200221ad960bc2da11fc0b4a70ec3c5d7c9.patch?full_index=1"
+      sha256 "8b84fabe21d2da252e6bdd2dd514230d73579ca034d4d83e42f40527dc72fe0c"
     end
   end
 
