@@ -22,6 +22,7 @@ class Qt < Formula
     sha256 "98b58f82856c44dd6d675db01bcbbf05bf371c62d63be8c32b1a2facb17145bb" => :catalina
     sha256 "b9e96e6ae3d37a9d3c56369ab4dfa329361d83c2b632da53037feaf26d0362b5" => :mojave
     sha256 "75f2dda074131afb9423cff66d38f20815f61955b192a4834b169947a4ebf8e4" => :high_sierra
+    sha256 "555a0e067b609970e4329ec94bd5b20f6aa9c30e426ebd564e5c7f4ee77d5af4" => :x86_64_linux
   end
 
   keg_only "Qt 5 has CMake issues when linked"
