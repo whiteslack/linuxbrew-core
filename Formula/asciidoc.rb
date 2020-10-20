@@ -13,6 +13,7 @@ class Asciidoc < Formula
     sha256 "35432712b96f6c242f69dce68cb0a1c694666dcbbb59ada1b52f44c5382c07c1" => :catalina
     sha256 "53a91455c88216dec9bf411065a8e8fa3d2b088e8a3c2859a3e10be1d84e1062" => :mojave
     sha256 "67864189bcd3e8d1f49107bd0cb6aaa5554c9227e5904e048343e8fb1483f29b" => :high_sierra
+    sha256 "5f123750869f413af438de064600029a76afd74600e63d8b3d7d1759d39a6bbb" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
