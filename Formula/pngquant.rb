@@ -1,8 +1,8 @@
 class Pngquant < Formula
   desc "PNG image optimizing utility"
   homepage "https://pngquant.org/"
-  url "https://pngquant.org/pngquant-2.12.5-src.tar.gz"
-  sha256 "3638936cf6270eeeaabcee42e10768d78e4dc07cac9310307835c1f58b140808"
+  url "https://pngquant.org/pngquant-2.13.0-src.tar.gz"
+  sha256 "0d1d5dcdb5785961abf64397fb0735f8a29da346b6fee6666e4ef082b516c07e"
   license "GPL-3.0"
   head "https://github.com/kornelski/pngquant.git"
 
@@ -13,11 +13,9 @@ class Pngquant < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "6212657919215e9f140239aa7df37b97d1b9820543e884bc4af45ef0deda523a" => :catalina
-    sha256 "0c90b318acdfa38b8fb7a0bea76c5932a9c1bfb00f2a866bbd30781631876e33" => :mojave
-    sha256 "da0955f28f17ef1b50dc15256f80b5742c0c940d1c6ce683990edde6fffd642a" => :high_sierra
-    sha256 "b0b78bc304a4931cb4d240e047babe60a3e34c10607097d8c64d65da3bc2e160" => :x86_64_linux
+    sha256 "cad350e78adc1912e1895b2f1c4abaf27bd14db902bad179424580934b9e1a05" => :catalina
+    sha256 "60f111e8252d2480df50d6fc77e2938c50480dc03e00207a75033b882cbeb740" => :mojave
+    sha256 "eb2b662bda1612dece961a7809ea5336997a00354fe204a001b4191b5b658fed" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

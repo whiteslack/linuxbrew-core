@@ -8,6 +8,7 @@ class ImagemagickAT6 < Formula
   mirror "https://www.imagemagick.org/download/releases/ImageMagick-6.9.11-34.tar.xz"
   sha256 "1a0de3fc2ab0cbaae4b06e3300755a2f6729b967f627982467ee3ef9e6948d29"
   license "ImageMagick"
+  revision 1
   head "https://github.com/imagemagick/imagemagick6.git"
 
   livecheck do
@@ -16,10 +17,9 @@ class ImagemagickAT6 < Formula
   end
 
   bottle do
-    sha256 "e0f2a56a122f18f8aafc6c80f0593a0cbcd4de074c84266e616f70d100f96b81" => :catalina
-    sha256 "ab8878f003911d053889dfe438a9d63668c44c90e1f16b6128d0665857f25010" => :mojave
-    sha256 "cb97fa268f47ae3218d5cf283bfafc5bdcdc590fc4ec26b7746ccfb46c9a3693" => :high_sierra
-    sha256 "b02b35d300b7a2b48d30f0c94a241d6189239b175f4aa1f70d53ee0c08194334" => :x86_64_linux
+    sha256 "c8aba1abaa38df628bb42187c85fa67746747aeeb33606b15a03cfae2d920e21" => :catalina
+    sha256 "f21189601b1e125ca7943c4373b5072dbbd012f5acb3d53606168c50c0243dca" => :mojave
+    sha256 "3659bfa32ba8361b85c70477ed451bb8979f0100cded695ce0f2a72f20210222" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -27,6 +27,7 @@ class ImagemagickAT6 < Formula
   depends_on "pkg-config" => :build
 
   depends_on "freetype"
+  depends_on "ghostscript"
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
@@ -55,7 +56,7 @@ class ImagemagickAT6 < Formula
       --with-modules
       --with-webp=yes
       --with-openjp2
-      --without-gslib
+      --with-gslib
       --with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts
       --without-fftw
       --without-pango

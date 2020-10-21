@@ -1,8 +1,8 @@
 class Dhall < Formula
   desc "Interpreter for the Dhall language"
   homepage "https://dhall-lang.org/"
-  url "https://hackage.haskell.org/package/dhall-1.35.0/dhall-1.35.0.tar.gz"
-  sha256 "834f5eb2986eaf05670b94b01d6335593870c94dbd937e55502d61dc9f5300a6"
+  url "https://hackage.haskell.org/package/dhall-1.36.0/dhall-1.36.0.tar.gz"
+  sha256 "9207c8becbbc1890568b861d35a623e10451feea0e0d34b317ec77966b6f8b04"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,9 +11,9 @@ class Dhall < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ad07e516294f9b2d8b9c60d10e1a82784609c4f218fa045ce981d889dbd63dd1" => :catalina
-    sha256 "32766c9a63c4ab1a45f2b6fcfae88acb7d97971045bc89ab7c491d92f52dd2cf" => :mojave
-    sha256 "d42361066cb208d5fac715c41a19253132180f85fb3030ccc3fe3813268bcf8a" => :high_sierra
+    sha256 "02331205e3f27d14f8c5fe108bbd69497c01d7b2e795c92158fa5c0cbe628913" => :catalina
+    sha256 "53dacefb2ccf077ee0b8545c33da906aae9fa262d306da709f9eb13c38aae7f5" => :mojave
+    sha256 "f332b105f50c549fe3e96e9b077d2c076e47e312397bdf48f70bb68990b27c02" => :high_sierra
   end
 
   depends_on "cabal-install" => :build
