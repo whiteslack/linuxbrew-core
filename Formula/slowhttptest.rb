@@ -4,19 +4,25 @@ class Slowhttptest < Formula
   url "https://github.com/shekyan/slowhttptest/archive/v1.8.2.tar.gz"
   sha256 "faa83dc45e55c28a88d3cca53d2904d4059fe46d86eca9fde7ee9061f37c0d80"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/shekyan/slowhttptest.git"
 
   bottle do
     cellar :any
-    sha256 "baaffefacf315bcb7ae0d5a241e8f41e326c76a3ac67e119ced1c9139e198bde" => :catalina
-    sha256 "77d5fe071eb0015008a405ffa3838060a186d6e6134ae6dcf8ee9498a995857c" => :mojave
-    sha256 "c9b36ccf8aee0f6572e2eb1112caf25811c22f1500ad81c1277309c76bd6460b" => :high_sierra
-    sha256 "1f922d5218def6739f7597f247d60bf2fe0bb942e03f55f11b940b6ed8c0ce64" => :x86_64_linux
+    sha256 "7cd865ac1b118d8ef7bdf0b540f56140ff4254e7a38d2b22d520c9bd1158df5d" => :catalina
+    sha256 "f4da64ee55ba56ffaff0d383954d0e13577326dbca30b431d5d89775dcfb396e" => :mojave
+    sha256 "3ffeaec203cd16a00aeb0bf239dfe5b32087e35a74dd5c6917bd3e7a2a09848f" => :high_sierra
   end
+
+  # Remove these in next version
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
 
   depends_on "openssl@1.1"
 
   def install
+    inreplace "configure.ac", "1.8.1", "1.8.2"
+    system "autoconf" # Remove in next version
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
@@ -24,5 +30,7 @@ class Slowhttptest < Formula
   test do
     system "#{bin}/slowhttptest", "-u", "https://google.com",
                                   "-p", "1", "-r", "1", "-l", "1", "-i", "1"
+
+    assert_match version.to_s, shell_output("#{bin}/slowhttptest -h", 1)
   end
 end

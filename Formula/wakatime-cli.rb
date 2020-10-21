@@ -1,10 +1,9 @@
 class WakatimeCli < Formula
   desc "Command-line interface to the WakaTime api"
   homepage "https://wakatime.com/"
-  url "https://files.pythonhosted.org/packages/0f/45/4d3bd56a3840d384ee0a24270658d139780ceb5a2f3e7aa3cb10d5e46360/wakatime-13.0.7.tar.gz"
-  sha256 "07a6d07e1227e3bd45242a2a4861d105bddc6220174a9b739c551bd2d45ce0fd"
+  url "https://files.pythonhosted.org/packages/87/03/1e919ddff6488a9be5e609ee3de500bf17b0151734d57c8923c605246235/wakatime-13.1.0.tar.gz"
+  sha256 "8da2e38335a60819b61adb60a72adc6588b3755eca376d05c9588cbf5fe64c57"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,10 +11,9 @@ class WakatimeCli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d275f57a3ac6975be6b3fb65ab6d788b767c9c7bfc4c6471b61881b14f858586" => :catalina
-    sha256 "391196df0c849c90c8fad31b1c7fe29668cc4999fc3805ff54770c01820dfd5a" => :mojave
-    sha256 "e8ec76f4f302361f95d2a462f88fd12687e036da8cc6acee381499cbaf196b50" => :high_sierra
-    sha256 "d8eac099e3292688f4195284f3fced68e3da91639417069d3724b4e203e790fc" => :x86_64_linux
+    sha256 "1573e0dd92f96002d51d388bb75f4ea06946dacf8c2e46c2408513c0a13c9feb" => :catalina
+    sha256 "84e365ad5241e4c17926bb32730cbf0d2d9de798551e137fe568a3934e7d733f" => :mojave
+    sha256 "9c4ddbce30fc3b94deb970c30527a80534e4389810524cfc58b634fc0863fc0c" => :high_sierra
   end
 
   depends_on "python@3.9"

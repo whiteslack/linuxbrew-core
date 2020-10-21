@@ -1,16 +1,14 @@
 class Sparse < Formula
   desc "Static C code analysis tool"
   homepage "https://sparse.wiki.kernel.org/"
-  url "https://www.kernel.org/pub/software/devel/sparse/dist/sparse-0.6.2.tar.xz"
-  sha256 "519ca0de92c1c5dbb76494176c7e567ce4cc8f64a2ecd27b2fae32ce156421fc"
-  revision 1
+  url "https://www.kernel.org/pub/software/devel/sparse/dist/sparse-0.6.3.tar.xz"
+  sha256 "d4f6dbad8409e8e20a19f164b2c16f1edf76438ff77cf291935fde081b61a899"
   head "https://git.kernel.org/pub/scm/devel/sparse/sparse.git"
 
   bottle do
-    sha256 "7b68cfced4d0ab9aa951900794eae5610ff9f6641b57a3fc6cd8a6d61b69f3f7" => :catalina
-    sha256 "6f9eb074c79700342aa36a6359079e8d853e5a6b9d6203459b62118b747e1210" => :mojave
-    sha256 "b74ccd0fe82e07b7d0552954634e1e7a8395ceaae09b8405d8460ce3b828e75d" => :high_sierra
-    sha256 "1e8ac45997eb8f805887db4afb868a3e236358592b56b9c0ec08df37bf290937" => :x86_64_linux
+    sha256 "1fb15ba5444a7c67d9f45215fc02e948583c28d8078546b3e0f766df50a1a859" => :catalina
+    sha256 "ac0ade8d4c0f98cadcca728fdd3c0694e3d3a4432c57edf0725542a91d750128" => :mojave
+    sha256 "7dcabb27270d98a6ad13d6b2c6b8c1bf3f0a9fa001a9737db841f1cd604dbeec" => :high_sierra
   end
 
   depends_on "gcc" if DevelopmentTools.clang_build_version < 1100
