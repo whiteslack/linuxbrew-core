@@ -14,6 +14,7 @@ class Vgmstream < Formula
     sha256 "9b28ea5e9373114cd0553a1da3ee0bcb424c5d99d967ca586e736b201ab9a07f" => :catalina
     sha256 "298a3a24cf365b1600fb8cc4e393181e8f4674b40dfc1e536392d4e14299334f" => :mojave
     sha256 "7ab68532f977a0ff2f0214d585c132ea68a825aad487aa98f43b68f33dfb998e" => :high_sierra
+    sha256 "72b2582105c14f981f2779341c4992a3bde1d34c6e0a1e96841c2d5663ee4676" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
