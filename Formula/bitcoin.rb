@@ -12,6 +12,7 @@ class Bitcoin < Formula
     sha256 "adfe0983a4c57e70c5d084206f779d42d31b6cd4fe3e81205d81330da01c1cfe" => :catalina
     sha256 "f887ce011df22dbe1c001ee42fb6f0adddf22736fc12ea83b5d373bbd5a90e43" => :mojave
     sha256 "b6b4763357bcbadbd9439c0d39132d43306a7b9b08c61c90afbe11c6cb2b3ff1" => :high_sierra
+    sha256 "ac1274e1030d0935250f80a87a20354edb64e2d250645ac1e5381e37cc8e27cd" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
