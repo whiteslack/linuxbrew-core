@@ -10,6 +10,7 @@ class Googletest < Formula
     sha256 "ebe4172d84fd8d29282e61c810e1f99b3b6b78ac0369381b617755cd070371c6" => :catalina
     sha256 "7eface4df1365cd951d402e244a28984a2f656afb2e3fee31cf046f1a8aefaff" => :mojave
     sha256 "595a13da3151557305ddf8fc479fcab3cd6041c2ee9832fe18a9f717046116b1" => :high_sierra
+    sha256 "50be0d93a09818029d464be9fea80f7b619a0388d2cd2311a7d8e5119e327e4e" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
