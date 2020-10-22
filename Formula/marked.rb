@@ -16,6 +16,7 @@ class Marked < Formula
     sha256 "c33c355f7605e1552c9b89bc1ac9f1cc0fa411e01a691914bdbe736f9598f3b8" => :catalina
     sha256 "cc7758a220a884f9142fc047785014239e52e62e8e919065a1f481cb55481950" => :mojave
     sha256 "1124ae7c64f33ffa3c2d14d4931f6e491e8a5ef330d0489e24a2bf05f83f42e4" => :high_sierra
+    sha256 "b6267a6f0a4170b2b0fa4bca5f0d7c8bc8a4b350d05822fb89c2b1d8f65c6fe2" => :x86_64_linux
   end
 
   depends_on "node"
