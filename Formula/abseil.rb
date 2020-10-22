@@ -1,17 +1,15 @@
 class Abseil < Formula
   desc "C++ Common Libraries"
   homepage "https://abseil.io"
-  url "https://github.com/abseil/abseil-cpp/archive/20200923.1.tar.gz"
-  sha256 "808350c4d7238315717749bab0067a1acd208023d41eaf0c7360f29cc8bc8f21"
+  url "https://github.com/abseil/abseil-cpp/archive/20200923.2.tar.gz"
+  sha256 "bf3f13b13a0095d926b25640e060f7e13881bd8a792705dd9e161f3c2b9aa976"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ac18b6939251847cf870284e02b81a322b6eb1b52ed6309fdc54226a3826f8c4" => :catalina
-    sha256 "83e37a50324358e6858db2420f5dad181fd36c9ef4c8133e6aafc5fbd429a8e3" => :mojave
-    sha256 "3f25082bb450d9e81b7be69ec8f3d34ae05a68a6f94c1f48820be427aa18be1a" => :high_sierra
-    sha256 "93263d053293a8732eb2a86a23e4623d5c66e23f87feea6ca7177b3cb29b9de2" => :x86_64_linux
+    sha256 "427d76ee4e58414546725bab7720284f0e513fa4317c4259ad1a4ffdc1f6be56" => :catalina
+    sha256 "60c98f7731cf9de032fe54a3691f648908f12ae462590b1e0a99e607abe5b939" => :mojave
+    sha256 "ad2c933b411cbfc06f39e6abed04f26522d7ea9eaea9bf47887a0eca7c6754c7" => :high_sierra
   end
 
   depends_on "cmake" => :build

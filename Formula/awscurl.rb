@@ -3,18 +3,16 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https://github.com/okigan/awscurl"
-  url "https://github.com/okigan/awscurl/archive/v0.20.tar.gz"
-  sha256 "3ce06d105067b42398cf0bb6696742b790258e16487d5e5afa025b7c3ca983e4"
+  url "https://github.com/okigan/awscurl/archive/v0.21.tar.gz"
+  sha256 "772d7cf1e46f1b82e659973a5486722aa4c447830490b70c7372a8c2cdfed4cb"
   license "MIT"
-  revision OS.mac? ? 2 : 4
   head "https://github.com/okigan/awscurl.git"
 
   bottle do
     cellar :any
-    sha256 "7b4a63349870bd2279e277f130e703ba811b2f645f306fba33164c2144bea583" => :catalina
-    sha256 "161885cf59500de377e1c74d5248a64d2e25ba977f9a1bda76888b8264a72782" => :mojave
-    sha256 "f489f6be212f02ad9dc4f0a3c0685722a8c2f121a2acdf2c7c28d67c753bb90b" => :high_sierra
-    sha256 "ded869b503603dde4c28b13ab18e824482d053fba0a1c0a8ead5267ee046e8fb" => :x86_64_linux
+    sha256 "efa9b0530287ea2f6c6b66d04aa77728b65afcf0ba12f4ec76717bb5315362ea" => :catalina
+    sha256 "8ad98d1c5efd9c68f413c7718bdf4deb6c003279a6edc6cf398184725e88bcb6" => :mojave
+    sha256 "1a6466c5d01b1d62910a821be9f3c3926a9b152684f612b91de539a0c2174a07" => :high_sierra
   end
 
   depends_on "python@3.9"

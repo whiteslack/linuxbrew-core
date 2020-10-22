@@ -5,8 +5,8 @@ class Kpcli < Formula
 
   desc "Command-line interface to KeePass database files"
   homepage "https://kpcli.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.5.pl"
-  sha256 "bbe4fed616de87341100c903fad486dcf2640e4de4197c4e60bb41821d4a70c4"
+  url "https://downloads.sourceforge.net/project/kpcli/kpcli-3.6.pl"
+  sha256 "01f23882d458dfffc176fe5f268ced13c667de22b7fbf60d488eca87f3362deb"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
@@ -16,10 +16,9 @@ class Kpcli < Formula
 
   bottle do
     cellar :any
-    sha256 "55c17bfbb4818b397244fadf5a3f56ff6dc9ac8797e1c7bbdfb07cd0d1c9ac2f" => :catalina
-    sha256 "9b8ae59c165b6aa8c1d1a7850a9709913862a328e01bb6830f442216b166b8ab" => :mojave
-    sha256 "47620f4793a8bac1c4c5b21c66587e9750182aba9b0463d2a821bdf2b2c70211" => :high_sierra
-    sha256 "c23a70f9ef1b71cb13fb45a6afed23821ddc475f0852f2fe7c62fc58497d43cd" => :x86_64_linux
+    sha256 "6193bb5123810dbe1332a60545e101eb75a68d013054baaa16651f829d0a19b6" => :catalina
+    sha256 "a2a1aaa9f96cc3d748f0ca0a048e052eddc69b1ae9fbe51c0c3e212e99be3497" => :mojave
+    sha256 "50d956c615d763c6088c774f568e758a365fe7a6d7432df442cff9b3d1d99133" => :high_sierra
   end
 
   depends_on "readline"
