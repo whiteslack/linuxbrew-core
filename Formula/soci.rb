@@ -1,17 +1,18 @@
 class Soci < Formula
   desc "Database access library for C++"
   homepage "https://soci.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/soci/soci/soci-4.0.0/soci-4.0.0.zip"
-  sha256 "c7fffa74867182d9559e20c6e8d291936c3bd8cfa8c7d0c13bb2eeb09e0f318b"
+  url "https://downloads.sourceforge.net/project/soci/soci/soci-4.0.1/soci-4.0.1.zip"
+  sha256 "ec25f69df0237882bb9035c69e21d91e62f0c6a2cd6f9f0153bbf00b435ff6b2"
+  license "BSL-1.0"
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "b25ecdd8f098dc48dc20195cd8852533e47e12fe6cbac8bccb31db99854d9c5b" => :catalina
-    sha256 "0dc4c5223dcefeefbdbc647dc7827adf7fc01fe52a23f3bd325d6cf32624e532" => :mojave
-    sha256 "76d7380ed18a0cac1d883d6d38aea9f7a43b587584f4dceab1c32f56596341cf" => :high_sierra
+    sha256 "367f4d37091b11f2e63e220361f9344622a93f8c961122901889c5ef132fb0ec" => :catalina
+    sha256 "c51aea80672de81e7663b36e6ff39ce9cc3025aa3c531539424dd089c1b347a8" => :mojave
+    sha256 "6e6fced1aa11defaed5f6ea4461b5bbf763b8f55349035e587c80c4bbd68df27" => :high_sierra
   end
 
   depends_on "cmake" => :build
