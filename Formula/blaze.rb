@@ -11,6 +11,7 @@ class Blaze < Formula
     sha256 "0b6eea6a400363549d96c9093a8987653c966580c39c2e96b223a9139974636b" => :catalina
     sha256 "5dd4f2b4876abb2b483c3a8a529e0019cef7e6ee62631d10d041ca6d377f5ca9" => :mojave
     sha256 "99d8e68c81380e11226786f2843b476d782e305fc0a78dbf0fc095b659a9fe50" => :high_sierra
+    sha256 "3c3e3c96c03713b7a8f0fee3409a8030b12660f641a6ba8921008b3133837304" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
