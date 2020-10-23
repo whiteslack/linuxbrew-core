@@ -12,6 +12,7 @@ class Opencolorio < Formula
     sha256 "41140d26dbe70add3bece6d1dfc2b6a01b7ed1879c79c18e29eeefd66694b9db" => :catalina
     sha256 "f3b183e64cf41cc28273b9e0fe99013fd1bd4a7f3774f3be370423d04ac847da" => :mojave
     sha256 "4beea67e0c1400c1d82b1257bae9476e4f58fbab6a727f31161199b5dae4d3bc" => :high_sierra
+    sha256 "77916165084b65355952010108e6a2411e8d3baa24a8142a51247ead1f337ab4" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
