@@ -16,6 +16,7 @@ class FbClient < Formula
     sha256 "82e67636b175bcc810c7789d2707e885d30d89a4a65e08c0719278242a6fe8ee" => :catalina
     sha256 "a7d6b0bc96223ea4beb09d0552a7af27c73d52f5cef8ea2c4d60eb8d8d0c5bcc" => :mojave
     sha256 "1461589a04844a009842a6754b028e023129d995206ba31ad98089cee10d5018" => :high_sierra
+    sha256 "3464275e17c5352289d97d22c266dda31d34e0302de8a3ec177e6b145e819685" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
