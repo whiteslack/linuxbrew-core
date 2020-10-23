@@ -11,6 +11,7 @@ class Libxcb < Formula
     sha256 "8d62bcf36239e430333af2204b1546606444c77c09b48c8c08e06b0528426545" => :catalina
     sha256 "86e8405269ea3972dfc2fb9fde8c1da709c4be85346906eaf018b0603257d509" => :mojave
     sha256 "e4c9db5bee37ecf410e8ee49aff2eafd1ec3b10c52a44e7af444788068110839" => :high_sierra
+    sha256 "20a67e2f2a84fb2a66faf4deb365164deb1097daf9f0683c872fac13dee81a33" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
