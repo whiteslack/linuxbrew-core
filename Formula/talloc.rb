@@ -15,6 +15,7 @@ class Talloc < Formula
     sha256 "f9b77cca02b56ffa431f45d49d090c21f1a762a47149d6e92d57884772dd0875" => :catalina
     sha256 "e0a573fbcce5380f8a31be002f14651f8f9e0cf43b254fe50100ae9134ff319a" => :mojave
     sha256 "c4c4ebb7d3e92b05abe832134c3f6745e8279a0585963e5a9967471b6c3a753a" => :high_sierra
+    sha256 "c19bbdcd79902fe0150c1e24b7fdec207a4c2ca3654c67463a13a4d3a33f7478" => :x86_64_linux
   end
 
   depends_on "python@3.9" => :build
