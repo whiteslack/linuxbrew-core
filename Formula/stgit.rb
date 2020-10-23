@@ -12,6 +12,7 @@ class Stgit < Formula
     sha256 "9731655f9bd99aea5170be4862f2857a630f711fba241bdc87898916914c6634" => :catalina
     sha256 "f1352a1dbdfefd630ac1a5e6018858225cf06988305b71605a8799d54fc5972c" => :mojave
     sha256 "b6d112ee69bc0c131240ad47e53ba22500a0c595fc499a1b48b4b3beba785e2f" => :high_sierra
+    sha256 "e1206670ead1b4350dff90cb843967ad40e7cff02ac89c127bc549d4c6ed9eb2" => :x86_64_linux
   end
 
   depends_on "asciidoc" => :build
