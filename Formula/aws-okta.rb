@@ -10,6 +10,7 @@ class AwsOkta < Formula
     sha256 "777d0c9ec40e1a729e3f49a3a92a54e8c8e1ce90bb69456d73a04101b87ba857" => :catalina
     sha256 "ceef209f595070b174b806dbbadf716ede6b8dff3b76ee6a90b7173078bb0ae1" => :mojave
     sha256 "22de340f758bcdfc006e622f8fc12148cf6a6be76eea2d9e2f1d9952a778b816" => :high_sierra
+    sha256 "23c3605cd4a53beb3649c6c1d992deb14a88e01625c6a9c873c01a890c6a0d38" => :x86_64_linux
   end
 
   depends_on "go" => :build
