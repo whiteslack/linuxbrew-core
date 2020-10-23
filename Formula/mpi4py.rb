@@ -13,6 +13,7 @@ class Mpi4py < Formula
     sha256 "c6163dd690053dc5adcca25c63c54c5feb34d46248685e3d448ef673e907de36" => :catalina
     sha256 "e3bec47030124ee25c7d8d0bc31f24f6c317e81da4878e008ae8bb4cb26fb017" => :mojave
     sha256 "3c73ed25e9e29e5232bfe258147ebe87dd78ae5d295d4de6a1ec4f93475635a6" => :high_sierra
+    sha256 "0e21df60d261097e377d1a30a08234d3931dabd064f9a7e005bfe24735a8e295" => :x86_64_linux
   end
 
   depends_on "cython" => :build
