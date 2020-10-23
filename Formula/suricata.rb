@@ -15,6 +15,7 @@ class Suricata < Formula
     sha256 "357f14c8a5904953453139e1d9363388d1f5779fa21ab413357a4b476eff6c24" => :catalina
     sha256 "aa86c75ad788ab24ccd6b3dcf47e21e2766bcf018a302d67bfa569289da59edb" => :mojave
     sha256 "5d885e9492f79dcc5cb039f3a5012dc8eb3549ccbf91695c563e73ffd205a329" => :high_sierra
+    sha256 "e0827dff6c69db2bf0ac460a6340b9bd020edcb321fe57ca649de7c26ff1b3a4" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
