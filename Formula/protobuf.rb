@@ -15,6 +15,7 @@ class Protobuf < Formula
     sha256 "10df8a94c8077b4d2578e4db9410b586b865e4299cd6e7199993ca1c5a88af97" => :catalina
     sha256 "ddef4d788c58c5e94007403fab456bd46ebdb631b0929289876bcb9c6b7483c1" => :mojave
     sha256 "b7a53da8093a922302da1f34e85fe647f3d6250e7c4d56b5777d1391ee534e93" => :high_sierra
+    sha256 "48e7543dab358ae773e3163634906128409e9101b479c22ddefa4dee133a51cd" => :x86_64_linux
   end
 
   head do
