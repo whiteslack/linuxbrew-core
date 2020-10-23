@@ -12,6 +12,7 @@ class Mvtools < Formula
     sha256 "01785cf0cea2080cb2b875df545e027aaaf339fbbddeca53fd5dae8f39bf4726" => :catalina
     sha256 "0809f0353e48e30d8628bbe2124cebfa0ebd1a6add77e2d27798ce968dadb84d" => :mojave
     sha256 "0a1bab6b74375cb11959d2100e562bb2cc8124da7115b754975cd70c31e676b2" => :high_sierra
+    sha256 "8c661a87ff6607c8fb33f8ccc809d77557f17e8ab13fffcf0eb8ff0f18e43265" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
