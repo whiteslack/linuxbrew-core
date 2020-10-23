@@ -14,6 +14,7 @@ class Cxxtest < Formula
     sha256 "40c95a78befc9212653a872f53f7b87669d6ed855da71355a6324571cfc09f9c" => :catalina
     sha256 "19feab27f801c6af7cba8075900cdb96f492244d06fc49ed9b4c943b1f13777e" => :mojave
     sha256 "c989ac0116f6c42404580610e42f467af4d476b4107e2303d47da4f576a394f2" => :high_sierra
+    sha256 "d81340d817944f1d148c0e9ea06f3750100b76ee17472876a5d440d55b3b1a87" => :x86_64_linux
   end
 
   depends_on "python@3.9"
