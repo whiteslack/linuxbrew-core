@@ -16,6 +16,7 @@ class NanopbGenerator < Formula
     sha256 "bb5fdfea277280c189f98dbbd39d644e110a6a62bd11584d2e3bea174857cdf1" => :catalina
     sha256 "ec63479e9cf31542c7bb34d2b1b17ae674412e1052a78957831200d5160b088a" => :mojave
     sha256 "92184e5d0af8a845db7b7633d4db5967d201b7efd8af5615c31867fea38cd2df" => :high_sierra
+    sha256 "f4b108d9b1dc3e5917b89e6b577cbcb8c473362667e0df9052467ab9ef1a786d" => :x86_64_linux
   end
 
   depends_on "protobuf"
