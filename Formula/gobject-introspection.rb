@@ -16,6 +16,7 @@ class GobjectIntrospection < Formula
     sha256 "3e85468a3324cb560775e024c6fd52212af73994898b381faff9aad5baa2fdb6" => :catalina
     sha256 "1d42d9c900dab307aefddffe723140ec2dfa25201426b4426c76cca28a4c46fa" => :mojave
     sha256 "e22482d7c20cefd6c020eb7bb3406a9da8e159a128a700fa9d13983c3da426e7" => :high_sierra
+    sha256 "560515d2e21b552f23366996031b21059645afd544fe1a6176d702d1fee579a1" => :x86_64_linux
   end
 
   depends_on "bison" => :build
