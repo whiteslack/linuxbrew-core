@@ -15,6 +15,7 @@ class MmCommon < Formula
     sha256 "0848953327bb61223c30f3fc08c3cf8845c8e7387cafeaca31001967e990c2ae" => :catalina
     sha256 "82e99d77f2e543ebda262f6bf98cef0cfde5142a95a09a2374358f9ba7d3c781" => :mojave
     sha256 "292ce8133ff860d6083d049fa2e6d1cb357e8ce9c41453894fbba742ea7bdc20" => :high_sierra
+    sha256 "6904015b49a8d4f2d90dc5f5931c9024c3790d6539edea55d504e61e9c68aaf9" => :x86_64_linux
   end
 
   depends_on "meson" => :build
