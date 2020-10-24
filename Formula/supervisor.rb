@@ -5,17 +5,16 @@ class Supervisor < Formula
   homepage "http://supervisord.org/"
   url "https://github.com/Supervisor/supervisor/archive/4.2.0.tar.gz"
   sha256 "05031f36ad15cad47fb56f01d8e075f952ae39ba8ce492ea790ebb310e3f0368"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "baf24c9b9b0ce2463148d676f1f985d090edde2b5393417cce8e4d9df93d3523" => :catalina
-    sha256 "8987e771d53dea6bee2955f83a1fd4255af39cca86bb02ae518bc1a7daca2f6b" => :mojave
-    sha256 "7a13e792368a2fbba5c426860206f7acf18b5625312f33a97d1cc97e9c5f71c4" => :high_sierra
-    sha256 "4c59fcc5a977b68b57618219a369b6b450ee076090b91b7b19d7b317e90a9a3c" => :x86_64_linux
+    sha256 "bd9a26f19bc257abded6138d2c0ae208252d6c780ae2daa85b7d093c47234eb1" => :catalina
+    sha256 "484eeb4bd246381f6c629023f126515d960a564fd3de4788e3eace9085cf698d" => :mojave
+    sha256 "cca1a2525646a0aaeb2bae9c5885bca7757737415bbfe54f12cb1b2367548bb3" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     inreplace buildpath/"supervisor/skel/sample.conf" do |s|

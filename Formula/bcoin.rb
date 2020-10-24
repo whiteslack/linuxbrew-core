@@ -6,19 +6,21 @@ class Bcoin < Formula
   url "https://github.com/bcoin-org/bcoin/archive/v2.1.2.tar.gz"
   sha256 "b4c63598ee1efc17e4622ef88c1dff972692da1157e8daf7da5ea8abc3d234df"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/bcoin-org/bcoin.git"
 
   bottle do
-    sha256 "408858a3f5353615b6ebd052ae5d8ecb2707c0575ecd0fd8993ceacf7d80338e" => :catalina
-    sha256 "fc3226b4ec0341accfb96e26578ce631b12259bafb83ab3ee118c67aab2ac896" => :mojave
-    sha256 "72ba73b25be636e27aaa14267bfb0e8383ffdb484f73b1ccc88c55fc9b7ae28f" => :high_sierra
+    sha256 "b70e1482829bad93ab67cc8eb466fc6278a73d3df8ea1bf71c017d7c5aead94d" => :catalina
+    sha256 "7daae17e8a2d2cba2373855e4c795cef9fe75211f06ce084c24fba89137fcbe8" => :mojave
+    sha256 "b405e5f6ad2987e380259fb75a6acfb07d9b6fc0eadc444b8277fb47bb384056" => :high_sierra
   end
 
   depends_on "python@3.9" => :build
   depends_on "node"
 
   def install
+    # These dirs must exists before npm install.
+    mkdir_p libexec/"lib"
     system "#{Formula["node"].libexec}/bin/npm", "install", *Language::Node.std_npm_install_args(libexec)
     (bin/"bcoin").write_env_script libexec/"bin/bcoin", PATH: "#{Formula["node"].opt_bin}:$PATH"
   end

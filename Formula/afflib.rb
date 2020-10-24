@@ -3,13 +3,13 @@ class Afflib < Formula
   homepage "https://github.com/sshock/AFFLIBv3"
   url "https://github.com/sshock/AFFLIBv3/archive/v3.7.19.tar.gz"
   sha256 "d358b07153dd08df3f35376bab0202c6103808686bab5e8486c78a18b24e2665"
+  revision 1
 
   bottle do
     cellar :any
-    sha256 "4cc737d25010d916fee5998d5409ac803e2051876008602af9e4df5446b820c8" => :catalina
-    sha256 "3e533865a44b9cbea70f9e5268fa48828abeb2b8ad864b8b1e3ab8e16c44ce13" => :mojave
-    sha256 "09ee4859a479fb096ffa391a21f3e0db65ae16b5953f4a5749ed49219bf51449" => :high_sierra
-    sha256 "7781fe848e6b9aef94918b44db573428ce97a8407209d0e54d2035071847038b" => :x86_64_linux
+    sha256 "63075bb1473d3342521c6e29fd1c8c628114cef274ec8b7cc572d46068f19f4a" => :catalina
+    sha256 "9a50d803eedfeb45425b1f7a0452e8f7072d87c2b7b5b488dfca6222a18440c6" => :mojave
+    sha256 "9367940cd2b04b6a244b00ba0970ab20b23393604689ee45b5b5b2b5274e752c" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -17,13 +17,19 @@ class Afflib < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "curl"
   uses_from_macos "expat"
 
+  # Fix for Python 3.9, remove in next version
+  patch do
+    url "https://github.com/sshock/AFFLIBv3/commit/aeb444da.patch?full_index=1"
+    sha256 "90cbb0b55a6e273df986b306d20e0cfb77a263cb85e272e01f1b0d8ee8bd37a0"
+  end
+
   def install
-    ENV["PYTHON"] = Formula["python@3.8"].opt_bin/"python3"
+    ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
 
     args = %w[
       --enable-s3

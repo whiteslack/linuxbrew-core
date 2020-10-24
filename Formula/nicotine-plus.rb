@@ -6,19 +6,20 @@ class NicotinePlus < Formula
   url "https://github.com/Nicotine-Plus/nicotine-plus/archive/2.1.2.tar.gz"
   sha256 "3ed18ade97183c632836eb8e304a515fc19a35babb46cc6e6747bcfd8205dcdf"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/Nicotine-Plus/nicotine-plus.git"
 
   bottle do
     cellar :any
-    sha256 "79f838b75ca361f58760ba72b1249c7713def0cd7aecf4f6d08ea111989cee50" => :catalina
-    sha256 "21e9579eb01c586c391a5d23785021ea10be26fd493bce2592cb1ea7af59c582" => :mojave
-    sha256 "c82082e0ff3002617e91804a3539c34c19170bb1f33c057c7f69198569a1177a" => :high_sierra
+    sha256 "26558aa583525e7e3b7c4316a50a459adcd00dbf92b548830931844c1db0f879" => :catalina
+    sha256 "23b3b9539a553e7a282a3b2891ca0c3c02d62ae77dd807c8012d5234746de1a3" => :mojave
+    sha256 "a38b6cf787524bcb0258233f2c5c8209a5d2b8293a440426910509138c5020eb" => :high_sierra
   end
 
   depends_on "adwaita-icon-theme"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
   depends_on "taglib"
 
   resource "miniupnpc" do
@@ -32,9 +33,7 @@ class NicotinePlus < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
-    venv.pip_install resources
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do

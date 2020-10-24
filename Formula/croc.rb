@@ -1,16 +1,16 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
   homepage "https://github.com/schollz/croc"
-  url "https://github.com/schollz/croc/archive/v8.6.4.tar.gz"
-  sha256 "66606c43fdf1dda24da1ec9d6160eeaf8ba7729dcfb071363450fb0b6a3bc4b8"
+  url "https://github.com/schollz/croc/archive/v8.6.5.tar.gz"
+  sha256 "6fc57c09a112a338a5faad65f48536be673de5cb6f3cb2eeee64ffd663683a8e"
   license "MIT"
   head "https://github.com/schollz/croc.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "82c31455d6d6010ba7a6012f01adc014075307089f6cd589fbef63b7fe0e435f" => :catalina
-    sha256 "8b406f8c1e6be1779a99fbabbb1f539a32703eb7b806e7244ae3ef477c206435" => :mojave
-    sha256 "75a7061af51e4db4851e069ac2003cd49103eb28399caa942e1fe085f61a6813" => :high_sierra
+    sha256 "98249aa16eaf16722abd3a0cc6c98c4499d26b644909ee8879e01a3fac878ffa" => :catalina
+    sha256 "71fec2667e693fbdc000d8ac4bc99f1b1898101d963c84247f23add13c1af13e" => :mojave
+    sha256 "c294ca113397098cf77867dfbd042fc69ebc7fa52c418b08cb04049a730b00fb" => :high_sierra
   end
 
   depends_on "go" => :build

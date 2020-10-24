@@ -1,9 +1,9 @@
 class Libmpc < Formula
   desc "C library for the arithmetic of high precision complex numbers"
   homepage "http://www.multiprecision.org/mpc/"
-  url "https://ftp.gnu.org/gnu/mpc/mpc-1.2.0.tar.gz"
-  mirror "https://ftpmirror.gnu.org/mpc/mpc-1.2.0.tar.gz"
-  sha256 "e90f2d99553a9c19911abdb4305bf8217106a957e3994436428572c8dfe8fda6"
+  url "https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/mpc/mpc-1.2.1.tar.gz"
+  sha256 "17503d2c395dfcf106b622dc142683c1199431d095367c6aacba6eec30340459"
 
   livecheck do
     url :stable
@@ -11,10 +11,9 @@ class Libmpc < Formula
 
   bottle do
     cellar :any
-    sha256 "94f1002674d74f582bf3d87079c2b3ddbb4b6add13d4bd7b522acd7bda419bba" => :catalina
-    sha256 "5896218dabc22de4582cde53ce464263a6675eece309f52c6a262b02e5b6dc60" => :mojave
-    sha256 "b48ea39caa145b937b7158c73218e2d98f045bbb6186b48eb1873f45e6a51dea" => :high_sierra
-    sha256 "ed89d45030be9799f73568d7f442f9d967de12ac30a2d85df222a6aa5b6de319" => :x86_64_linux
+    sha256 "8c037df4b551058d00351676dc2c5ec395bd69c88545fac9ccfd0749dadb8ee2" => :catalina
+    sha256 "c229b6def61f4acc41b4b159d93dbc63a5c77f87f61623c9f7c5399da440cc4f" => :mojave
+    sha256 "939f0ad01d809356e33bdc70a8a8483eb1b021fd5f3723d0e61a2698af00f01b" => :high_sierra
   end
 
   depends_on "gmp"

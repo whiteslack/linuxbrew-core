@@ -5,17 +5,16 @@ class Subversion < Formula
   mirror "https://archive.apache.org/dist/subversion/subversion-1.14.0.tar.bz2"
   sha256 "6ba8e218f9f97a83a799e58a3c6da1221d034b18d9d8cbbcb6ec52ab11722102"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "f29ca77b3b570fd1735d4de53681739857cb426bdd4540d3f9ace5bd160ba7a2" => :catalina
-    sha256 "6b1d06b1b646e93bcaa764591c807f01a79e755409225c06388656eb0a96ee84" => :mojave
-    sha256 "a73b6306ff79e41d56bf258a325ac696f76a3da3562407d1ea691e28ef20531c" => :high_sierra
-    sha256 "9bd577bbd4894591412815b87f968b9b1f4ff9b6b6424e5b598fa8c80b8c95e9" => :x86_64_linux
+    sha256 "1bb2df197810198edc544f4b49abf1fb3c11ff9d84ad61d79fa73525803276a5" => :catalina
+    sha256 "63e3ab1c8cd1effd84c7376116a76d59f622171f42dea828342c590bdaa55821" => :mojave
+    sha256 "25f3e999d67c550f669d5bf2bdee0d03a4d37871ce59aa64e405a5eed53d0a82" => :high_sierra
   end
 
   head do
@@ -141,7 +140,6 @@ class Subversion < Formula
     system "./autogen.sh" if build.head?
     system "./configure", *args
     system "make"
-    # Fix ld: cannot find -lsvn_delta-1
     ENV.deparallelize { system "make", "install" }
     bash_completion.install "tools/client-side/bash_completion" => "subversion"
 

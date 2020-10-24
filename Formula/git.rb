@@ -2,8 +2,8 @@ class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
   # Note: Please keep these values in sync with git-gui.rb when updating.
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.0.tar.xz"
-  sha256 "28432d995257c4626fe0fb2091f588df6eed98e9571419e72c83bc23372e6b89"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.1.tar.xz"
+  sha256 "3005609697d0dd61699d86b533f4db873da82e80804cbb55111b2e330114adb3"
   license "GPL-2.0-only"
   head "https://github.com/git/git.git", shallow: false
 
@@ -13,10 +13,9 @@ class Git < Formula
   end
 
   bottle do
-    sha256 "ec73f2ef4364451a8bffef7af1f4f2fbb53145135ea6b9e595ce181bb7567314" => :catalina
-    sha256 "a5b8ca103d32cf62f1693e20f70335bd9e331e413e565b72c9ce7da33e5b923f" => :mojave
-    sha256 "d71e19675402b0f88a0bc8f0c6cb13b85a5ebf110adcb671a756a8ae740b51e1" => :high_sierra
-    sha256 "2ade4459ed18389307b0066188285e1bd017845460d4f1f7cf4d4114f48d6bed" => :x86_64_linux
+    sha256 "385f0411bc491f64ee14e76a74ae4d4e09a7f7ec8c2fa2dcd8933090fc1a27e2" => :catalina
+    sha256 "85be6b3c6c44b38b3076994a211b821daa0f74ed5fcd9f168ea5d640d0dbee3e" => :mojave
+    sha256 "3aa9aa95a05f2ec114fbb5acac525f45c42088122976ef369648c45acb0f138f" => :high_sierra
   end
 
   depends_on "gettext"
@@ -31,13 +30,13 @@ class Git < Formula
   end
 
   resource "html" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.29.0.tar.xz"
-    sha256 "c281a4f3486362b19f7f632260a120fa77bb085d1815ea3059df87962dd02628"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.29.1.tar.xz"
+    sha256 "c69e59cb6899ef84dbdf0ec28d00e7f6eeec257d37ca386e2521aed79a7dfe2b"
   end
 
   resource "man" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.29.0.tar.xz"
-    sha256 "8d2e44513a58833fdd737ef9f262b3c4a390726df660548b44404fb4c25af0cb"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.29.1.tar.xz"
+    sha256 "d3c7958aea93106d974ecf2516636270676679d8fcbff540e6ee398c2074c7be"
   end
 
   resource "Net::SMTP::SSL" do
