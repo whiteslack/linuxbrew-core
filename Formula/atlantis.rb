@@ -11,6 +11,7 @@ class Atlantis < Formula
     sha256 "e7f5145126d1cc314934ad56f4b52e3a2931f843b2179fa36945f7ca9dd8d8cf" => :catalina
     sha256 "dabaa3ed8301fb3de91746512d5298856f6a28a2e9399ce1430539ef5eab99fd" => :mojave
     sha256 "8737a55b922002efb17fe1e087996a5c2fc759e694d94279eb5263c6a9975fa8" => :high_sierra
+    sha256 "d42a540d72bb877cd4c117741511ba04c3e796e015e8a7eb2de9ad0a527732f2" => :x86_64_linux
   end
 
   depends_on "go" => :build
