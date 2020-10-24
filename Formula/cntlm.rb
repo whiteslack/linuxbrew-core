@@ -15,6 +15,7 @@ class Cntlm < Formula
     sha256 "7239fa52155edd2040ed7bff62b954351bb5e96fd226b4f0e1f7e956c64223d7" => :catalina
     sha256 "79b1221fa60196d7670bb3cbcd6bab63490ba780222e7faf84404a57ac52d6ba" => :mojave
     sha256 "9a1bafd1930ba3ade9b8df892d9fd28a0c414750ee728a791886dd9c999d0173" => :high_sierra
+    sha256 "7f2bffe14a5d29d68f91bb3c65d0ccd90b2235df1579a8d3ab984b0e35cfa049" => :x86_64_linux
   end
 
   def install
