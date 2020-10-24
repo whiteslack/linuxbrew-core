@@ -8,10 +8,9 @@ class Bind < Formula
   # "version_scheme" because someone upgraded to 9.15.0, and required a
   # downgrade.
 
-  url "https://downloads.isc.org/isc/bind9/9.16.7/bind-9.16.7.tar.xz"
-  sha256 "9f7d1812ebbd26a699f62b6fa8522d5dec57e4bf43af0042a0d60d39ed8314d1"
+  url "https://downloads.isc.org/isc/bind9/9.16.8/bind-9.16.8.tar.xz"
+  sha256 "9e9b9c563692be86ec41f670f6b70e26c14e72445c742d7b5eb4db7d2b5e8d31"
   license "MPL-2.0"
-  revision 1
   version_scheme 1
   head "https://gitlab.isc.org/isc-projects/bind9.git"
 
@@ -23,10 +22,9 @@ class Bind < Formula
   end
 
   bottle do
-    sha256 "4e30344b9663cd8ae33af31e8a5241ca9d98f33985f7360701cea1ff072a691e" => :catalina
-    sha256 "76ff0b81b4e52f3ca7a503b240204e5fd31704c9dc3cdfc970e3e0ee5334309e" => :mojave
-    sha256 "eb2c21722592007b5567c8df20bfed89819bcaa08bcfba597031df65122c0569" => :high_sierra
-    sha256 "53925a5dfefe840a0409fa6b3b1f3c06d8cf78d4a7189bd6c9706d55b0248ef3" => :x86_64_linux
+    sha256 "1b1361e9192d1605142f16c4d16d753dcd6b63b8d127447c74ac15f4a3a942ff" => :catalina
+    sha256 "6b2f9796d650d85cdc30493c7cdf16536f88cc1bce39e2769a03d576506017ce" => :mojave
+    sha256 "b2fc44bdc3f8f4a4c838016cb4c0662092e2016fe4d0dac81c6d6760b203c784" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

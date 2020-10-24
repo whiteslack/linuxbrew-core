@@ -6,7 +6,7 @@ class S3cmd < Formula
   url "https://files.pythonhosted.org/packages/c7/eb/5143fe1884af2303cb7b23f453e5c9f337af46c2281581fc40ab5322dee4/s3cmd-2.1.0.tar.gz"
   sha256 "966b0a494a916fc3b4324de38f089c86c70ee90e8e1cae6d59102103a4c0cc03"
   license "GPL-2.0"
-  revision 1 unless OS.mac?
+  revision OS.mac? ? 1 : 2
   head "https://github.com/s3tools/s3cmd.git"
 
   livecheck do
@@ -15,13 +15,12 @@ class S3cmd < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ea18ab2445955c20de54537447b5930de60cf8e927fe291f662760d50c0df8db" => :catalina
-    sha256 "737880ee8c7e9d73848eec50d87b1b7da7762a8b8d6172fd1f4be173888e18fe" => :mojave
-    sha256 "4d2c498462eba573c43413ec16f4681a8e604b67ff6739351900e500e2be5923" => :high_sierra
-    sha256 "d3fef12558ac96314fd0c28670b6c73e9a3877d92bfe89659ef0425f5edaa01f" => :x86_64_linux
+    sha256 "0f660e6f188828607eecea389019d1c9d1c2d128ac400969bea0e56a7b7453a1" => :catalina
+    sha256 "584271d030de4833c8d17a6cbb198157052b06c3df7ca6be923552f23e5f68d1" => :mojave
+    sha256 "3f071500164cbeeab6b43eb832145b93610260f013257eee2736242032ec8ff0" => :high_sierra
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"

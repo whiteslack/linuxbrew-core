@@ -6,7 +6,7 @@ class Dvc < Formula
   url "https://github.com/iterative/dvc/archive/1.8.4.tar.gz"
   sha256 "71e9d1acc3ad5ce6fc94a7b3d3e4390e1754f8adfe484daa9a251b03e874353f"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://github.com/iterative/dvc.git"
@@ -15,9 +15,9 @@ class Dvc < Formula
 
   bottle do
     cellar :any
-    sha256 "b6a98b2041950134d8e00e7c3f3b0ff22f0c1794364919500f23d7687531e17a" => :catalina
-    sha256 "201ff697648cb11529ac4e1a2f6c8b3d9471f8814ed47ff400be0734d5c5d5ae" => :mojave
-    sha256 "66f83dc652e40ffec16f9f70c256713a0e1c166f0edb99475687840dcc632917" => :high_sierra
+    sha256 "c26330c83b1619123a772302b3ed9d394a56d132339ed53920324e1eb7048fd9" => :catalina
+    sha256 "79ee30d58bfa1740ba3243529c35badd5b1416320298394080e01d16e6eb5da4" => :mojave
+    sha256 "a536d36d723bcfaa45fa3e3f464fab7f7b6a52a5f455316c179f71eb3dee93e9" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
