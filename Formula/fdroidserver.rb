@@ -16,6 +16,7 @@ class Fdroidserver < Formula
     sha256 "6d640234123d13d4bdacd8f84ecdf417563b461f35fb003ba77a94cf76392e1d" => :catalina
     sha256 "4c63bee7bfbc167cbca0205724bd8fb32730f05370d0944776ccd4f1938b8646" => :mojave
     sha256 "b0ac3694db543cacc00f92f9f08962b4d05f7199a7edf5ee8d45bdf9a37bd7b3" => :high_sierra
+    sha256 "1d7ddd515b4338d7ab9f6c0eda846319ca2954171bc3f5636eede8a0e77e865a" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
