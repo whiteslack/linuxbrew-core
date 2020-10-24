@@ -10,6 +10,7 @@ class Pybind11 < Formula
     sha256 "e13f81335fd6c3ac5d5e2e179e98b95e572f6c597576168b39ff38cd4284e274" => :catalina
     sha256 "38d34b6db4344e234ac0d3974478e41e412402e77fa05b29a4f09481b78680d0" => :mojave
     sha256 "87e2009160c3929c4ff0b6629f08885f93349f55e0a2f17ccc06d8196c068795" => :high_sierra
+    sha256 "e830c2359fbf4e45c09963571affaff6a296c2ffb822c128af1f0a640902b388" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
