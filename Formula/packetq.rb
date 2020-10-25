@@ -15,6 +15,7 @@ class Packetq < Formula
     sha256 "e09c6588aa801951e518c10e09339d496fa23ab88c0a837a06b963bf6c6a5ba9" => :catalina
     sha256 "cf369b7e772dd7a390ca50f68e6b8eead2448414353ce313042ecaedb2f6ee88" => :mojave
     sha256 "58bfb682012318c49bb013b791771f94896d008d77f0ce1bb189d13ab55b20ea" => :high_sierra
+    sha256 "479803e357cbccb6b1722fb0d83c1287fe2d7435d2905e72d55ecc2fa6c5dd97" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
