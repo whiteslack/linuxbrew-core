@@ -14,6 +14,7 @@ class John < Formula
     sha256 "bc61b94c66cd5e711cfb069f2f7dc8f448d717cd1179cbe2fed954f0786a0023" => :catalina
     sha256 "6bc29b809b272d370240703ab20715a7e57c651cdcf27b918a49cc9232c386eb" => :mojave
     sha256 "96fad56c615dad3f07b2c4babf9e03a0dce6533e3e4cc11e7c37e99ef9379253" => :high_sierra
+    sha256 "2c47411d3fa79c81b38785a55cc052ef0b99ff606b3b5cf0ab7562c5e2b1c8f0" => :x86_64_linux
   end
 
   conflicts_with "john-jumbo", because: "both install the same binaries"
