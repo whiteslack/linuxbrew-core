@@ -3,10 +3,9 @@ class Pygments < Formula
 
   desc "Generic syntax highlighter"
   homepage "https://pygments.org/"
-  url "https://files.pythonhosted.org/packages/e2/07/25bd93c9c0175adfa5fb1513a20b25e7dd6c9a67c155e19b11b5f3662104/Pygments-2.7.1.tar.gz"
-  sha256 "926c3f319eda178d1bd90851e4317e6d8cdb5e292a3386aac9bd75eca29cf9c7"
+  url "https://files.pythonhosted.org/packages/5d/0e/ff13c055b014d634ed17e9e9345a312c28ec6a06448ba6d6ccfa77c3b5e8/Pygments-2.7.2.tar.gz"
+  sha256 "381985fcc551eb9d37c52088a32914e00517e57f4a21609f48141ba08e193fa0"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/pygments/pygments.git"
 
   livecheck do
@@ -15,10 +14,9 @@ class Pygments < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "77d8bf6fe306db9188a28e33b5f726ddfd4a6f2681445b5f63800f22dc12b75e" => :catalina
-    sha256 "675ff6a15cfacb88ab07724dde5cdd6f9f0b97c83a3cfa32f2a0223ab6cf8a0c" => :mojave
-    sha256 "6edc5643a255601adc1564db75f6a8bc47233cf23a2dbabd0e4361a7e9a66298" => :high_sierra
-    sha256 "818ba4396dc07c19396d6dc7f001a364919de1dba017ffa709cd36dad8e3194e" => :x86_64_linux
+    sha256 "8e900db6179b52b2a216430b5b1f7c5962f421c6bea365023cfa22f4198f9aee" => :catalina
+    sha256 "0a869fbf52f375e695e13bac636e543f5696fd40372bb6a5085618976d09a617" => :mojave
+    sha256 "9f8e6c987e2d6e4f296266501489a0b8f8708588a824cdf1555277f77e6c3036" => :high_sierra
   end
 
   depends_on "python@3.9"

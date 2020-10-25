@@ -3,10 +3,9 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://github.com/jbarlow83/OCRmyPDF"
-  url "https://files.pythonhosted.org/packages/8e/51/9b300c3ef8aa155f0a296561c0e53097789fdc8988b110408ad5d6db0c4e/ocrmypdf-11.2.1.tar.gz"
-  sha256 "8f773a64979c4e5def6c08a7ee0895895ac1f1a5a176f1df1522b8603975c006"
+  url "https://files.pythonhosted.org/packages/fe/c7/455510db33427432307c2f8d5fbf413144f9c0040b88dcc446747d5acb6c/ocrmypdf-11.3.0.tar.gz"
+  sha256 "6ba47399d3459768a3c7689169e6235f30634614ea3759e65b4933326c052fef"
   license "MPL-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,10 +13,9 @@ class Ocrmypdf < Formula
 
   bottle do
     cellar :any
-    sha256 "60bd6497c8f053fcac36070eb05ace352f6784afb4ef87817b39cf610c738aa2" => :catalina
-    sha256 "d4535ddddafefc59452eeb77c84940df01d878ec7a1aa12174cc73b66e55aea2" => :mojave
-    sha256 "4d4c502ed2a6e8167a049db38b4383bca87482263ddd312cfc003bea5f513888" => :high_sierra
-    sha256 "5cdcf6a425f2be21c99b8e54bd30f461b16409e8655ec7da6533347bf30722c7" => :x86_64_linux
+    sha256 "cee1a70a0d683ee846077b0c1df3f19ae3b48dcdd24e524f023d6bdb7f0abe3a" => :catalina
+    sha256 "1c2f57ea82296704ed02dd8796c83ed05c8db36cca9bcc220f36a2ed62e9f885" => :mojave
+    sha256 "4360921718708863773c3309bd819bdabedef261f6a188d08e3bb76a6dbdb570" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -69,8 +67,8 @@ class Ocrmypdf < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/2c/4d/3ec1ea8512a7fbf57f02dee3035e2cce2d63d0e9c0ab8e4e376e01452597/lxml-4.5.2.tar.gz"
-    sha256 "cdc13a1682b2a6241080745b1953719e7fe0850b40a5c71ca574f090a1391df6"
+    url "https://files.pythonhosted.org/packages/c5/2f/a0d8aa3eee6d53d5723d89e1fc32eee11e76801b424e30b55c7aa6302b01/lxml-4.6.1.tar.gz"
+    sha256 "c152b2e93b639d1f36ec5a8ca24cde4a8eefb2b6b83668fcd8e83a67badcb367"
   end
 
   resource "pdfminer.six" do
@@ -84,8 +82,8 @@ class Ocrmypdf < Formula
   end
 
   resource "Pillow" do
-    url "https://files.pythonhosted.org/packages/3e/02/b09732ca4b14405ff159c470a612979acfc6e8645dc32f83ea0129709f7a/Pillow-7.2.0.tar.gz"
-    sha256 "97f9e7953a77d5a70f49b9a48da7776dc51e9b738151b22dacf101641594a626"
+    url "https://files.pythonhosted.org/packages/2b/06/93bf1626ef36815010e971a5ce90f49919d84ab5d2fa310329f843a74bc1/Pillow-8.0.1.tar.gz"
+    sha256 "11c5c6e9b02c9dac08af04f093eb5a2f84857df70a7d4a6a6ad461aca803fb9e"
   end
 
   resource "pluggy" do
