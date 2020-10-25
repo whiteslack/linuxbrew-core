@@ -16,6 +16,7 @@ class Libassuan < Formula
     sha256 "e605a00c83f3a0dc2a938b3c44894ca150383223c059c712e87480f4f63f0411" => :catalina
     sha256 "be3c6bfb29b520cb0a35aaca1a59d4f2ed85f6ec84a508f0a0e1702509a567a0" => :mojave
     sha256 "eda33cb3a7e0f07d7ed67ab01067bc528d1169a745a538a3c5a8f8f114f2a9a9" => :high_sierra
+    sha256 "53bc6920e2261dc656876b6bfb7260d13319a25371e811a1fbc49b90210dcf0f" => :x86_64_linux
   end
 
   depends_on "libgpg-error"
