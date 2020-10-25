@@ -14,6 +14,7 @@ class Hashcat < Formula
     sha256 "dd7e0ba6e2441b0517b55ef243efc8f8be3dfd1550b83033e264057a677e8fa2" => :catalina
     sha256 "ad145c3ffb0ffb779dbdde3e0c1c0329b2b45d491e76ba0b92c48c02028e51c1" => :mojave
     sha256 "2e1cbf12a3f5ed5fceb622e5f773d102edfaff06a847df925456e92dd6ca91ba" => :high_sierra
+    sha256 "f21e825a7e55e16ba1eb3c6e463a8e07a7d345ce9cb72bd3aa2a21c51ceba706" => :x86_64_linux
   end
 
   depends_on "gnu-sed" => :build
