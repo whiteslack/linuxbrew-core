@@ -10,6 +10,7 @@ class Dynet < Formula
     sha256 "d699aaf34e601dca84a10d735a822954de02b2139757699da77df2632d9ae95c" => :catalina
     sha256 "edc5ba7539f3c224b091ae08b2f23ae667f6851ebbc10515e410fbe2efb2aec4" => :mojave
     sha256 "a8b5c58b84c07911937f5b2c633e38e884f860ac97fc45881bfa817f6045c467" => :high_sierra
+    sha256 "6b91023247574ff1d134700b35f9be07cdb1350c13ba6fb8932438ede2af313d" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
