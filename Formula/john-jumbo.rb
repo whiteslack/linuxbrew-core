@@ -23,6 +23,8 @@ class JohnJumbo < Formula
   depends_on "gmp"
   depends_on "openssl@1.1"
 
+  uses_from_macos "zlib"
+
   conflicts_with "john", because: "both install the same binaries"
 
   # https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/doc/INSTALL#L133-L143
