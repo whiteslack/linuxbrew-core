@@ -1,9 +1,9 @@
 class Libgcrypt < Formula
   desc "Cryptographic library based on the code from GnuPG"
   homepage "https://gnupg.org/related_software/libgcrypt/"
-  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.6.tar.bz2"
-  sha256 "0cba2700617b99fc33864a0c16b1fa7fdf9781d9ed3509f5d767178e5fd7b975"
-  license "GPL-2.0"
+  url "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.7.tar.bz2"
+  sha256 "03b70f028299561b7034b8966d7dd77ef16ed139c43440925fe8782561974748"
+  license "GPL-2.0-only"
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/libgcrypt/"
@@ -12,10 +12,9 @@ class Libgcrypt < Formula
 
   bottle do
     cellar :any
-    sha256 "bc8f0fdc3dccd598c6bc332e6e2f7add94812bef84db722e878c5a85dcf43565" => :catalina
-    sha256 "a019ef3d51d67a318557b15745552d59315e20ebbae74c39bac3588932869260" => :mojave
-    sha256 "142003e0e2f01c607e2f1a7c132c0db4612aa758d7a038e06f64910b0dcfa1a3" => :high_sierra
-    sha256 "d64cabc3d2cd6be6d3c4bf4190294553740537b7c553a26549a1aae070eac7a4" => :x86_64_linux
+    sha256 "b736ce71bf9af64a1b3adee264cf231635828d12d9c064d795404ff049535778" => :catalina
+    sha256 "7d729f53cf725dae16a5f7de79e69e583a62aef05bfd65d58deb0969b8b67171" => :mojave
+    sha256 "586e65a329af130e0da3f1f72a40cacbc8b2e0f6c882d167907d6da3a4f7213b" => :high_sierra
   end
 
   depends_on "libgpg-error"

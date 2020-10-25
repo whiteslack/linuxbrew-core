@@ -1,10 +1,10 @@
 class Mtools < Formula
   desc "Tools for manipulating MSDOS files"
   homepage "https://www.gnu.org/software/mtools/"
-  url "https://ftp.gnu.org/gnu/mtools/mtools-4.0.24.tar.gz"
-  mirror "https://ftpmirror.gnu.org/mtools/mtools-4.0.24.tar.gz"
-  sha256 "3483bdf233e77d0cf060de31df8e9f624c4bf26bd8a38ef22e06ca799d60c74e"
-  license "GPL-3.0"
+  url "https://ftp.gnu.org/gnu/mtools/mtools-4.0.25.tar.gz"
+  mirror "https://ftpmirror.gnu.org/mtools/mtools-4.0.25.tar.gz"
+  sha256 "8b6d4a75122984350186250aaa6063665bfa69100253fd77b972d2744e07dc08"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
@@ -12,22 +12,17 @@ class Mtools < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a5229fbfcd666abf4c79cd065be6a58801228460f999319a0234319ccb8aba3a" => :catalina
-    sha256 "3a9d80e7a7e9a6dd377d0030a5fbc29e509ca6dd598e24943b36169ed1512670" => :mojave
-    sha256 "ebed9be10002c3a8a68089ff43702b24f1f2c451be9e14778eaece3ad4e0cdc0" => :high_sierra
+    sha256 "cb2c2d3fc7800cdea12f6be7ed16caba9a4c7c19ab88e3e63a5c1918997f574d" => :catalina
+    sha256 "6fdc5e5b10131648eeeadd8a76ceb81b6f06a0a7b8918fffae500b0d0b41d0ad" => :mojave
+    sha256 "753dd7f093256f2e8e0a609e9196f1365953e68661aeb4849441aef6c1b168da" => :high_sierra
   end
 
   conflicts_with "multimarkdown", because: "both install `mmd` binaries"
 
-  def install
-    # Prevents errors such as "mainloop.c:89:15: error: expected ')'"
-    # Upstream issue https://lists.gnu.org/archive/html/info-mtools/2014-02/msg00000.html
-    if ENV.cc == "clang"
-      inreplace "sysincludes.h",
-        "#  define UNUSED(x) x __attribute__ ((unused));x",
-        "#  define UNUSED(x) x"
-    end
+  # 4.0.25 doesn't include the proper osx locale headers.
+  patch :DATA
 
+  def install
     args = %W[
       LIBS=-liconv
       --disable-debug
@@ -46,3 +41,19 @@ class Mtools < Formula
     assert_match /#{version}/, shell_output("#{bin}/mtools --version")
   end
 end
+
+__END__
+diff --git a/sysincludes.h b/sysincludes.h
+index 056218e..ba3677b 100644
+--- a/sysincludes.h
++++ b/sysincludes.h
+@@ -279,6 +279,8 @@ extern int errno;
+ #include <pwd.h>
+ #endif
+ 
++#include <xlocale.h>
++#include <strings.h>
+ 
+ #ifdef HAVE_STRING_H
+ # include <string.h>
+

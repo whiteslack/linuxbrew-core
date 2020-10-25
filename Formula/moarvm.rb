@@ -1,8 +1,8 @@
 class Moarvm < Formula
   desc "Virtual machine for NQP and Rakudo Perl 6"
   homepage "https://moarvm.org"
-  url "https://github.com/MoarVM/MoarVM/releases/download/2020.08/MoarVM-2020.08.tar.gz"
-  sha256 "3ede5e70352885e596b505a8ec6bd302513527578a077102886a5a5a3ef907bf"
+  url "https://github.com/MoarVM/MoarVM/releases/download/2020.09/MoarVM-2020.09.tar.gz"
+  sha256 "48b21922f8843d53a3bf4c04ef357f1d9d2d8cd96f63c5eb59df72eceda6f922"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,9 +11,9 @@ class Moarvm < Formula
   end
 
   bottle do
-    sha256 "90f47968f3a270437bacdf0803de1d3aad9e9c6e50cd5cc8cd903d75b314294f" => :catalina
-    sha256 "43f3eec7e9d9c58e695c3f8d6b47eaf469afb3cf02ec78ffbf7118cc65b0fb5e" => :mojave
-    sha256 "fa5889f5024bed04226b7aeabec7e626d8bd27728f09d8363022922da4cfd3b7" => :high_sierra
+    sha256 "9b3fee5144e62120ab86c10f0b66b648d9b6e2491c6ff5ea6c4c759c476bcb19" => :catalina
+    sha256 "6887fbd716e7e9056cfc422ffbcd4632efb4292abfda92fc9353a7309d0a51d0" => :mojave
+    sha256 "7cccf71f0ad76e2f8415c0c0a049c971c801bea1fd18bb0135819f1d0bce088f" => :high_sierra
   end
 
   depends_on "libatomic_ops"

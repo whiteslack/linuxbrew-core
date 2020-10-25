@@ -1,9 +1,9 @@
 class Libmatio < Formula
   desc "C library for reading and writing MATLAB MAT files"
   homepage "https://matio.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/matio/matio/1.5.17/matio-1.5.17.tar.gz"
-  sha256 "5e455527d370ab297c4abe5a2ab4d599c93ac7c1a0c85d841cc5c22f8221c400"
-  revision 2
+  url "https://downloads.sourceforge.net/project/matio/matio/1.5.18/matio-1.5.18.tar.gz"
+  sha256 "5fad71a63a854d821cc6f4e8c84da837149dd5fb57e1e2baeffd85fa0f28fe25"
+  license "BSD-2-Clause"
 
   livecheck do
     url :stable
@@ -11,10 +11,9 @@ class Libmatio < Formula
 
   bottle do
     cellar :any
-    sha256 "5b8bf79fa47dddfa85405fc2e0ea4e0ca44d9154ff690144568b1b8d334edd03" => :catalina
-    sha256 "fb0f8804978485fedcdd4cd8b6800840aa0b25778be9bbfab29b4dcabb76f5d8" => :mojave
-    sha256 "961900fbb90c3c37a0e1607bead7c92baa23f289afaee607775731303e335b4b" => :high_sierra
-    sha256 "c89ae38a2488c4f2a3233ac5e34e1e4d5155103303aefc3f8f551d8f90ebf405" => :x86_64_linux
+    sha256 "9e87acb5d2a032f3dbb64656087a9b4cb10c7cb56bdf39da17fa4c30c8412612" => :catalina
+    sha256 "096ac8e13070e2f6cf7517d394affe195615a2ead8e5f494cd41b601bf7bb36c" => :mojave
+    sha256 "8463938afb1af8f518b301e643639afebc7564b12ae41acaec7b7784f3a46a65" => :high_sierra
   end
 
   depends_on "hdf5"

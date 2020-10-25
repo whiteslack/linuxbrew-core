@@ -1,17 +1,14 @@
 class Wordgrinder < Formula
   desc "Unicode-aware word processor that runs in a terminal"
   homepage "https://cowlark.com/wordgrinder"
-  url "https://github.com/davidgiven/wordgrinder/archive/0.7.2.tar.gz"
-  sha256 "4e1bc659403f98479fe8619655f901c8c03eb87743374548b4d20a41d31d1dff"
-  revision 1
+  url "https://github.com/davidgiven/wordgrinder/archive/0.8.tar.gz"
+  sha256 "856cbed2b4ccd5127f61c4997a30e642d414247970f69932f25b4b5a81b18d3f"
   head "https://github.com/davidgiven/wordgrinder.git"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "79fa0f89e7e123f7746ab934514834eaaecd35fa228a64e243d620825e508f7d" => :catalina
-    sha256 "daa17cb7ea4b7ad382352a18b359deaa7f1a9cd8b2c7c8949b2f6dca41f0674c" => :mojave
-    sha256 "735f8f1c7d405d11e0fd464d937d3f943c192c939126ca610a388f145da1a7da" => :high_sierra
-    sha256 "2b195e83a932435477e27724538db25c4e87ae391c697059fb0ed3cf9e6ecdc1" => :x86_64_linux
+    sha256 "34217b351fac13fc71bdcf99757e27547d31b028720ede8cff75dd8df98d731b" => :catalina
+    sha256 "044ee7c9874894b65e2b407e38fef047dae2277f8bb4ad85e927f038612cfa82" => :mojave
+    sha256 "7fe55fe2030606991d37ca2d0541674e3761e17dc02192ab62e54e8fceaec3f0" => :high_sierra
   end
 
   depends_on "ninja" => :build
