@@ -14,6 +14,7 @@ class Libmatio < Formula
     sha256 "9e87acb5d2a032f3dbb64656087a9b4cb10c7cb56bdf39da17fa4c30c8412612" => :catalina
     sha256 "096ac8e13070e2f6cf7517d394affe195615a2ead8e5f494cd41b601bf7bb36c" => :mojave
     sha256 "8463938afb1af8f518b301e643639afebc7564b12ae41acaec7b7784f3a46a65" => :high_sierra
+    sha256 "28ba5f714a8143d0c661f8e488d61ffa68776b889f2756df3997b707ce2012d8" => :x86_64_linux
   end
 
   depends_on "hdf5"
