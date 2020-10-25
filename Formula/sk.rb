@@ -11,6 +11,7 @@ class Sk < Formula
     sha256 "eae85d55547ad47ee6e5a9e7123ffee741eddb444fd6df555ab2d29d559881cc" => :catalina
     sha256 "e2f1fd4afbaf9ab007876517266277f0124dc51d5ab1a97ffdf3843f1c3f9372" => :mojave
     sha256 "15a9ca7198bfa40597ca0533a5294c2d5484dc26004e33b26cc44dc7dcd370bd" => :high_sierra
+    sha256 "b42ae5bd6ad13aea698965f16c2b1d40a5b8832409b4451fb2c71cfb016020cc" => :x86_64_linux
   end
 
   depends_on "rust" => :build
