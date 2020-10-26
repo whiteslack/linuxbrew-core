@@ -19,6 +19,7 @@ class Vdirsyncer < Formula
     sha256 "d87dd5b19a013e2099aa915c02caea1bf5ba5bce1ed9fdb1c599900da98f1574" => :catalina
     sha256 "999dcfe149cd6cb2a072006159ce83e680e2da30431d28b380a0dd3549b59d98" => :mojave
     sha256 "b48980fb7b1f225d07e847ab50b2a6c6e6bdca56386f902982163d7cfb11f6e7" => :high_sierra
+    sha256 "d5817c3606980c18697f3b395e55105056c759f53b37444a196ef943d5cc8c54" => :x86_64_linux
   end
 
   depends_on "python@3.9"
