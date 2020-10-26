@@ -18,6 +18,7 @@ class Parallel < Formula
     sha256 "ff1a330be51f19aaac564e19993cb0577da67c83f6218b02f94ea3d9a110ceb3" => :catalina
     sha256 "11d90c8fbbc68580b6e0aa738b29b79eaa5fb515ab5c217e55552bc62b242d5c" => :mojave
     sha256 "fa0ef5033ed82ff4639af5d4ea53ca8036f3e28d9c4aad280b645a273bda78f1" => :high_sierra
+    sha256 "b4159fee4adef14dcf8a497e1b05612cb45036c80b689350eb93bdbe6bef6fb4" => :x86_64_linux
   end
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"
