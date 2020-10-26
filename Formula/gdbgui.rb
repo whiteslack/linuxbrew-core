@@ -17,6 +17,7 @@ class Gdbgui < Formula
     sha256 "c5694285a5e01534c2ddd9f38794ee56bf900763d432eeb8459f79dd5b116a56" => :catalina
     sha256 "a82a2f379f9354730b72f5cea442f2627d8c3fd76c0d11ea9dd977a6bdfff6b9" => :mojave
     sha256 "56fcf6ea4eec7533a22aa1a957d05046fa7a4df4c923b7c6bbeea7706fa13f04" => :high_sierra
+    sha256 "9a2552397942169548d4e3239b36a263b02064b35bc426ff56f094df95d4c513" => :x86_64_linux
   end
 
   depends_on "gdb"
