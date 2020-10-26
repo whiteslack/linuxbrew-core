@@ -1,16 +1,16 @@
 class Pueue < Formula
   desc "Command-line tool for managing long-running shell commands"
   homepage "https://github.com/Nukesor/pueue"
-  url "https://github.com/Nukesor/pueue/archive/v0.7.2.tar.gz"
-  sha256 "c03d50313cc63bf312d3206180cc5f5cae05b5e897ef1968a43244a2d528aa57"
+  url "https://github.com/Nukesor/pueue/archive/v0.8.0.tar.gz"
+  sha256 "9ebf85fd55f1e5ee15546efe26fb403a80c02cba36ce6e8f845bfd841929f100"
   license "MIT"
   head "https://github.com/Nukesor/pueue.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d6da8f2924635e4f38ac635cfd7426e1c1f477f0c207eec8651364f9b9b5f8ab" => :catalina
-    sha256 "133f90723e9ed0141f5105288b55a6174e95c91d096d29fa3eb07ec9b11dc73d" => :mojave
-    sha256 "efc315e0694b2ecdc71556523d1f01b4d3f3bcc7fecd31665095dca95303beb4" => :high_sierra
+    sha256 "f7974f5ee8b7404833d4441687752b199d5f8da29f03ac8cc682311c1fabea09" => :catalina
+    sha256 "7c3b9e8a139ebeb0ecbd35de9f1e4374608de5a82f27f6137206c141b0500c6e" => :mojave
+    sha256 "cb85aac5135dbb66d8a11be3e9835443ebfe301717fb79a962905a3993b98c46" => :high_sierra
   end
 
   depends_on "rust" => :build

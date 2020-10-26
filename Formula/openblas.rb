@@ -1,31 +1,22 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
   homepage "https://www.openblas.net/"
-  url "https://github.com/xianyi/OpenBLAS/archive/v0.3.10.tar.gz"
-  sha256 "0484d275f87e9b8641ff2eecaa9df2830cbe276ac79ad80494822721de6e1693"
+  url "https://github.com/xianyi/OpenBLAS/archive/v0.3.12.tar.gz"
+  sha256 "65a7d3a4010a4e3bd5c0baa41a234797cd3a1735449a4a5902129152601dc57b"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/xianyi/OpenBLAS.git", branch: "develop"
 
   bottle do
     cellar :any
-    sha256 "30b44b63c1dcbd46ffaf78a03caa423e198c5827ccc4f14ef847a66d05c3223e" => :catalina
-    sha256 "2a924ce4abd8558cfbbc53c124c50fb188e34c318a98c38136962201b6d92549" => :mojave
-    sha256 "e99c28e8e72f7ac07277b2cf1511bcd1abdf7091b723c9605a70c4551f603b44" => :high_sierra
-    sha256 "1c6fe0dd614cd3b96210e4b4d67818a11445b24462b6aa0d19dfbe6b5ffdb022" => :x86_64_linux
+    sha256 "7ba7ba209680b05379b11cc82aa90961e46c77441205b7cec05566ac01707e0c" => :catalina
+    sha256 "f3fb72089ff3e7ea288027f9dbcac730caa3cb8fc3bb0b650f8a5ae6682c094f" => :mojave
+    sha256 "8433e192ab508dfdbfb4e1a7071ef01e7e5c2c3d38187c7bcfd32536be3b5590" => :high_sierra
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"
 
   depends_on "gcc" # for gfortran
   fails_with :clang
-
-  # This patch fixes a known issue with large matrices in numpy on Haswell and later
-  # chipsets.  See https://github.com/xianyi/OpenBLAS/pull/2729 for details
-  patch do
-    url "https://github.com/xianyi/OpenBLAS/commit/6c33764ca43c7311bdd61e2371b08395cf3e3f01.patch?full_index=1"
-    sha256 "a945a8df0a77c25e7c3540a8d3b998b567b207f5d104cbb723de3d8dcb43dd5c"
-  end
 
   def install
     ENV["DYNAMIC_ARCH"] = "1"

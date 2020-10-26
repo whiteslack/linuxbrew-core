@@ -6,6 +6,7 @@ class Gdbgui < Formula
   url "https://files.pythonhosted.org/packages/06/af/2953018117f73a9bcfd0939c7e801b36cff03590f1b52dd7451d8102a021/gdbgui-0.14.0.1.tar.gz"
   sha256 "4f1482b3bafb04d1d1d0b0ac140bb89befdf5456482ed1533734cd5ab1ca0656"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,13 @@ class Gdbgui < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d653f45782d02d9d650d4eca51daabd17741f76555c122f498f9ba8e5663c179" => :catalina
-    sha256 "bb7b0fb4b1f2e1255981efd07e317001ca027bfc4deefb521d03d552b0d44e08" => :mojave
-    sha256 "2fd752f8a0cce2051757a58da5ea86a1d8b6ea141796464983adc9c7a376f755" => :high_sierra
+    sha256 "c5694285a5e01534c2ddd9f38794ee56bf900763d432eeb8459f79dd5b116a56" => :catalina
+    sha256 "a82a2f379f9354730b72f5cea442f2627d8c3fd76c0d11ea9dd977a6bdfff6b9" => :mojave
+    sha256 "56fcf6ea4eec7533a22aa1a957d05046fa7a4df4c923b7c6bbeea7706fa13f04" => :high_sierra
   end
 
   depends_on "gdb"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "Brotli" do
     url "https://files.pythonhosted.org/packages/2a/18/70c32fe9357f3eea18598b23aa9ed29b1711c3001835f7cf99a9818985d0/Brotli-1.0.9.zip"
@@ -130,6 +131,9 @@ class Gdbgui < Formula
     port = free_port
 
     fork do
+      # Work around a gevent/greenlet bug
+      # https://github.com/cs01/gdbgui/issues/359
+      ENV["PURE_PYTHON"] = "1"
       exec bin/"gdbgui", "-n", "-p", port.to_s
     end
     sleep 3
