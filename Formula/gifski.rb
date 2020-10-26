@@ -4,13 +4,13 @@ class Gifski < Formula
   url "https://github.com/ImageOptim/gifski/archive/1.2.2.tar.gz"
   sha256 "e5830f18b38fb333f1d89af99d651c173c816d71f764e703460a38d241ce8df4"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a182e69abac92bdf599cc3d3ebacb1ea35e927fd3e449b59998d91bdcd869a9b" => :catalina
-    sha256 "e741a3a221748d34c244db43da3b8823087bb82bd5ab78e29914292f5a4120a1" => :mojave
-    sha256 "b0de13b3b0b300bf7c6317db0bfcb619384ec0809ef4c75e984b457e2713db65" => :high_sierra
-    sha256 "f19985fbb26282277ce60bf2463f18785df3a4542ce421a4a2df8c0cb6cd3ec4" => :x86_64_linux
+    sha256 "2ed67ec41d01f066787ae791cf9dae12a5fa789130191ff07df9fafc98fc533e" => :catalina
+    sha256 "6d955ad92a79489e5d0ff927fc57c10a562efb1cb484fd85f7cf997b805184aa" => :mojave
+    sha256 "515618c62c7f30df3913fa62c551193d973adfb8f0eb6c86d0acdcc8debd7c78" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

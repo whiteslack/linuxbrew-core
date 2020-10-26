@@ -4,6 +4,7 @@ class GstLibav < Formula
   url "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.18.0.tar.xz"
   sha256 "42f93f5ce9a3fc22051e5f783a4574b56ebf213f331f75dcbc3552459bd3a06a"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://anongit.freedesktop.org/git/gstreamer/gst-libav.git"
 
   livecheck do
@@ -13,10 +14,9 @@ class GstLibav < Formula
 
   bottle do
     cellar :any
-    sha256 "6caaaefdbc19002a84ab270be444d611b8602df450eaf8e9e5e71081f2fd1c10" => :catalina
-    sha256 "4b9b3cbff2fa2072fb6b4b9bc65328b5f096e201213e63cc9dc5f7406874d0d7" => :mojave
-    sha256 "ba4f52d9065ac3371ee0f0ea11014dedc2cc16defd068847ca14372d348ee2b5" => :high_sierra
-    sha256 "4fe3b8c312873edbcf9f8be5e1f1d464499d123152e5408f58fd32b966f5a3f7" => :x86_64_linux
+    sha256 "ce24ec8a013573c32b3dc6ea87a293c357940bde754c14122791f1364f163d5b" => :catalina
+    sha256 "de2f2af27d204baa1c237696a26d83e9135501d646f9725aa2d10256a9cb42a3" => :mojave
+    sha256 "0a1cce814e298ee0ad6ba15e5b35f827aebdda29e3e423ca697b11d45f7718cc" => :high_sierra
   end
 
   depends_on "meson" => :build

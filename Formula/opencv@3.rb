@@ -4,12 +4,12 @@ class OpencvAT3 < Formula
   url "https://github.com/opencv/opencv/archive/3.4.12.tar.gz"
   sha256 "c8919dfb5ead6be67534bf794cb0925534311f1cd5c6680f8164ad1813c88d13"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 "79b76d3ea5bb101253891a96309c2e7b44263979fbf443c8bee0962f7e8cb40e" => :catalina
-    sha256 "87795a720609695bf4bef8f7eb88c7bbb020f7afb1f7c7473e53170c1d8decd0" => :mojave
-    sha256 "df7413d4501e193294314729210f7b9ef47f0b79221511b2f9e14375f5087e86" => :high_sierra
+    sha256 "90a2aa273693abc9b3de52923d5ef33ff866c55bc0ad5bd3f16c0905636896f5" => :catalina
+    sha256 "85ad11917a6d75d4ba7154a2e60207d462ed0f335073387b184f4c60d5a4612b" => :mojave
+    sha256 "691697becba8e36b743ef0d6ae48b9d730a0086a5540a4a665ee2fa3471b5dec" => :high_sierra
   end
 
   keg_only :versioned_formula
