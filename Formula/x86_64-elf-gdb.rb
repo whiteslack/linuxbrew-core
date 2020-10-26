@@ -1,15 +1,20 @@
 class X8664ElfGdb < Formula
   desc "GNU debugger for i386-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-9.2.tar.xz"
-  sha256 "360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-10.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-10.1.tar.xz"
+  sha256 "f82f1eceeec14a3afa2de8d9b0d3c91d5a3820e23e0a01bbb70ef9f0276b62c0"
   license "GPL-3.0-or-later"
-  revision 1
+  head "https://sourceware.org/git/binutils-gdb.git"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
-    sha256 "d2355fbe70719b02b830f2c3522c8b41ff4e95cd1242b31250004c0f76d1e363" => :catalina
-    sha256 "fb7e178d35f25670759ee6c1d9467779efb0f942b638e2e9b76dfa0ec227a4ab" => :mojave
-    sha256 "36e4d6e182b2d62c4848d424be5dd3f88895e11e457acdca56c37f2622ef2c54" => :high_sierra
+    sha256 "fc5398cdb8a918f3e0153c3467074145e69112fd42866c3dc8fee5a66869e8da" => :catalina
+    sha256 "7f6d20cc6f1d7f23834614f2f159d8438732e31bb3375c380d64e8dd010232c1" => :mojave
+    sha256 "bc725f791779a9400ab2b11d485ebba7e71aced9e6cef3365db614dbb273205c" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -17,13 +22,6 @@ class X8664ElfGdb < Formula
 
   conflicts_with "gdb", because: "both install include/gdb, share/gdb and share/info"
   conflicts_with "i386-elf-gdb", because: "both install include/gdb, share/gdb and share/info"
-
-  # Fix for Python 3.9, remove in next version
-  # https://sourceware.org/pipermail/gdb-patches/2020-May/169110.html
-  patch do
-    url "https://github.com/Homebrew/formula-patches/raw/88f56f8f/gdb/python39.diff"
-    sha256 "19e989104f54c09a30f06aac87e31706f109784d3e0fdc7ff0fd1bcfd261ebee"
-  end
 
   def install
     args = %W[

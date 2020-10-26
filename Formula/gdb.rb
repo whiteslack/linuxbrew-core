@@ -1,11 +1,10 @@
 class Gdb < Formula
   desc "GNU debugger"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-9.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-9.2.tar.xz"
-  sha256 "360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555"
-  license "GPL-2.0"
-  revision 2
+  url "https://ftp.gnu.org/gnu/gdb/gdb-10.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-10.1.tar.xz"
+  sha256 "f82f1eceeec14a3afa2de8d9b0d3c91d5a3820e23e0a01bbb70ef9f0276b62c0"
+  license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git"
 
   livecheck do
@@ -13,10 +12,9 @@ class Gdb < Formula
   end
 
   bottle do
-    sha256 "1423f4be295c421835b9da9af107b24eb898ad9a109d7386d46ca3d75765992b" => :catalina
-    sha256 "628a0639add17870b589dd586aa683c85c8090ba8d4abcb954d04e0051444181" => :mojave
-    sha256 "f159ff299b9bd7fc5aec573b5bbf4bb13036decf2eb9a16db1096f9073838828" => :high_sierra
-    sha256 "fa9b9b90111b0e4f0296f40e9542b81175f464c4378ff31f84a974166c93f155" => :x86_64_linux
+    sha256 "fbd7836617ad0bb335ad9175280f14162dfdf0dd2f5e6b634d37b2d93765b51e" => :catalina
+    sha256 "f3656f04b8725825296ce977461af0d0e6133ec9a1f9086ca3b889661f40802e" => :mojave
+    sha256 "a57db00038cdcdc85f80c064332f3b4ef45571a2c0cd0defa55f2e6bde6a751d" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -40,13 +38,6 @@ class Gdb < Formula
       probe.c:63:28: error: default initialization of an object of const type
       'const any_static_probe_ops' without a user-provided default constructor
     EOS
-  end
-
-  # Fix for Python 3.9, remove in next version
-  # https://sourceware.org/pipermail/gdb-patches/2020-May/169110.html
-  patch do
-    url "https://github.com/Homebrew/formula-patches/raw/88f56f8f/gdb/python39.diff"
-    sha256 "19e989104f54c09a30f06aac87e31706f109784d3e0fdc7ff0fd1bcfd261ebee"
   end
 
   def install
