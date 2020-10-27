@@ -7,10 +7,10 @@ class Helmfile < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9742eed453ec51834550c262f61e328a8878cba06ecec8e23a797b79b2e3a249" => :catalina
-    sha256 "fa9e43b2542536f38c7e53a26fbf3342ddf55e16683c12208b2f54a93ca59232" => :mojave
-    sha256 "7bad25a5081cb1a62561719da3accbfa0d10836e45570324dc73abc792ff3a0c" => :high_sierra
-    sha256 "a778fb39fe82010998fc99630a3f459843be2a96ba5828040e29b5c43e9ceb0e" => :x86_64_linux
+    rebuild 1
+    sha256 "000121b006aa32c2835be4fc7d9f4d6e0efd142ef34da3d01a6f1de94ac8aef0" => :catalina
+    sha256 "bff824acf11cdcb2226b46e0f296599b939782a1c8679a88c58099c2afb0ff8d" => :mojave
+    sha256 "4ebca3dfaaa7c78b0449ffede248786525a50db5a3cb35165564f7791e621f92" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -25,7 +25,7 @@ class Helmfile < Formula
     (testpath/"helmfile.yaml").write <<-EOS
     repositories:
     - name: stable
-      url: https://kubernetes-charts.storage.googleapis.com
+      url: https://charts.helm.sh/stable
 
     releases:
     - name: vault                            # name of this release
@@ -37,7 +37,7 @@ class Helmfile < Formula
       version: ~1.24.1                       # the semver of the chart. range constraint is supported
     EOS
     system Formula["helm"].opt_bin/"helm", "create", "foo"
-    output = "Adding repo stable https://kubernetes-charts.storage.googleapis.com"
+    output = "Adding repo stable https://charts.helm.sh/stable"
     assert_match output, shell_output("#{bin}/helmfile -f helmfile.yaml repos 2>&1")
     assert_match version.to_s, shell_output("#{bin}/helmfile -v")
   end
