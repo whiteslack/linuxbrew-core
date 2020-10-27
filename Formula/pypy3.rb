@@ -1,10 +1,9 @@
 class Pypy3 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.6-v7.3.1-src.tar.bz2"
-  sha256 "0c2cc3229da36c6984baee128c8ff8bb4516d69df1d73275dc4622bf249afa83"
+  url "https://downloads.python.org/pypy/pypy3.6-v7.3.2-src.tar.bz2"
+  sha256 "fd6175fed63ff9fccd7886068078853078948d98afae9bd4f5554c6f7873c10d"
   license "MIT"
-  revision 1
   head "https://foss.heptapod.net/pypy/pypy", using: :hg, branch: "py3.7"
 
   livecheck do
@@ -13,11 +12,9 @@ class Pypy3 < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "384b960848c433008154103f8cdf57c77b8ee805115818cae4cb502e5485f043" => :catalina
-    sha256 "de50ccf32775b38c4d1e2324fe7b9c0e23856fbe34eaf6ebd7b23e7d6d8f6459" => :mojave
-    sha256 "ea4031fc8f85001fea131cc880108416f0d9bbac400655a7d8337ad8cb8f1547" => :high_sierra
-    sha256 "6eb2eaee59434b131729dddaf5dd2a31578128463c84afe4f5f111435c5023b0" => :x86_64_linux
+    sha256 "0abe67d4da37ae77c85e8883bcb01ed6b5b8061ad54d4ef9f659b50d9e7a8246" => :catalina
+    sha256 "7b80681acba5b237e6a164e3f91dd1d968ebf5b35b60c503d19e4ad3d903147e" => :mojave
+    sha256 "022d70ee06728680081e825e1d6737fab2d74d0b51fcc758361a01258423df34" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -80,14 +77,8 @@ class Pypy3 < Formula
     # Work around "dyld: Symbol not found: _utimensat"
     ENV.delete("SDKROOT") if OS.mac? && MacOS.version == :sierra && MacOS::Xcode.version >= "9.0"
 
-    # Fix build on High Sierra
-    inreplace "lib_pypy/_tkinter/tklib_build.py" do |s|
-      if OS.mac?
-        s.gsub! "/System/Library/Frameworks/Tk.framework/Versions/Current/Headers/",
-                "#{prefix}/opt/tcl-tk/include"
-        s.gsub! "libdirs = []",
-                "libdirs = ['#{prefix}/opt/tcl-tk/lib']"
-      else
+    unless OS.mac?
+      inreplace "lib_pypy/_tkinter/tklib_build.py" do |s|
         s.gsub! "/usr/include/tcl", Formula["tcl-tk"].opt_include.to_s
         s.gsub! "'tcl' + _ver, 'tk' + _ver", "'tcl8.6', 'tk8.6'"
       end

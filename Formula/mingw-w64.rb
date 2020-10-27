@@ -1,10 +1,9 @@
 class MingwW64 < Formula
   desc "Minimalist GNU for Windows and GCC cross-compilers"
   homepage "https://sourceforge.net/projects/mingw-w64/"
-  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v7.0.0.tar.bz2"
-  sha256 "aa20dfff3596f08a7f427aab74315a6cb80c2b086b4a107ed35af02f9496b628"
+  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v8.0.0.tar.bz2"
+  sha256 "44c740ea6ab3924bc3aa169bad11ad3c5766c5c8459e3126d44eabb8735a5762"
   license "ZPL-2.1"
-  revision 2
 
   livecheck do
     url :stable
@@ -12,10 +11,9 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 "092d1d30ae9f2de677a35f14ec2907d285b85f9b4ed465a506f72a970deea715" => :catalina
-    sha256 "cdefb18e91d0102ba193caa2c6994d83c30742fa03e03e12b3fc5864ca6b003c" => :mojave
-    sha256 "2658e687bbfee45cfa9d0d74c9c129f9ffc2ac1de017143d25b4017aa899404f" => :high_sierra
-    sha256 "7c8e6071d8c7b5a17efe32885aefd1021b73a85f244f4b610b3a016577938203" => :x86_64_linux
+    sha256 "d294bc0e960294bf573b9da364a8d95a06a257aec8f388c16e2b975ed8e4410c" => :catalina
+    sha256 "e6390c194b2d5fadbf5b9d39737e6862a22126f2b5a4086350c47f6d91dfb271" => :mojave
+    sha256 "5af1dc0450f49e20c94a011b0818f9f194db1d91a918ea748b9021f366f741a5" => :high_sierra
   end
 
   # Apple's makeinfo is old and has bugs
@@ -27,15 +25,15 @@ class MingwW64 < Formula
   depends_on "mpfr"
 
   resource "binutils" do
-    url "https://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.xz"
-    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.34.tar.xz"
-    sha256 "f00b0e8803dc9bab1e2165bd568528135be734df3fabf8d0161828cd56028952"
+    url "https://ftp.gnu.org/gnu/binutils/binutils-2.35.1.tar.xz"
+    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.35.1.tar.xz"
+    sha256 "3ced91db9bf01182b7e420eab68039f2083aed0a214c0424e257eae3ddee8607"
   end
 
   resource "gcc" do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
-    sha256 "71e197867611f6054aa1119b13a0c0abac12834765fe2d81f35ac57f84f742d1"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
+    sha256 "b8dd4368bb9c7f0b98188317ee0254dd8cc99d1e3a18d0ff146c855fe16c1d8c"
   end
 
   def target_archs
@@ -54,6 +52,7 @@ class MingwW64 < Formula
           --prefix=#{arch_dir}
           --enable-targets=#{target}
           --disable-multilib
+          --disable-nls
         ]
         mkdir "build-#{arch}" do
           system "../configure", *args
@@ -89,6 +88,7 @@ class MingwW64 < Formula
         --with-mpc=#{Formula["libmpc"].opt_prefix}
         --with-isl=#{Formula["isl"].opt_prefix}
         --disable-multilib
+        --disable-nls
         --enable-threads=posix
       ]
 

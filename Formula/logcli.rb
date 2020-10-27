@@ -1,15 +1,15 @@
 class Logcli < Formula
   desc "Run LogQL queries against a Loki server"
   homepage "https://grafana.com/loki"
-  url "https://github.com/grafana/loki/archive/v1.6.1.tar.gz"
-  sha256 "25d130f47aa4408ea9def4096253a37d4df4e0c44bdd59aa7e9a69f81e6fbd17"
+  url "https://github.com/grafana/loki/archive/v2.0.0.tar.gz"
+  sha256 "e7ab246d98be52caf7b475245f5ea2cf62fb00f61d6e5377f31423414847556b"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "130981f7347099308a00b999953d7233fb4f793607e06253a8d310d0bd1e77f4" => :catalina
-    sha256 "707888b346c37ba3deee914f1c44551c055ec4de7fba4d6a72803ea1a1d05a24" => :mojave
-    sha256 "16e78a76040d4da26f3e88accc19893bb33b5b84c0ce0a2b10ceaab9e807d1e5" => :high_sierra
+    sha256 "b1a559d5d7d78851b73e659673d86f42d408d512f96d8bd38b46d9e41df0890b" => :catalina
+    sha256 "8c42544e8dea3ed9042392ccacbd7de7e944cc7ab88ea27c899fdec52483cba4" => :mojave
+    sha256 "4914fb833d0e4f4d4cb83bdd5b7b791bec1e432ea87cce75e02ff63e97dd28ba" => :high_sierra
   end
 
   depends_on "go" => :build

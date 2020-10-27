@@ -1,15 +1,15 @@
 class Promtail < Formula
   desc "Log agent for Loki"
   homepage "https://grafana.com/loki"
-  url "https://github.com/grafana/loki/archive/v1.6.1.tar.gz"
-  sha256 "25d130f47aa4408ea9def4096253a37d4df4e0c44bdd59aa7e9a69f81e6fbd17"
+  url "https://github.com/grafana/loki/archive/v2.0.0.tar.gz"
+  sha256 "e7ab246d98be52caf7b475245f5ea2cf62fb00f61d6e5377f31423414847556b"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "98a8c826668b4ec1af40730cc82f26d293cd33f03cecc4bfba917723de8b3487" => :catalina
-    sha256 "ecec472508439e9b36d2e2f12363371ed3bfbe048115600110be0684bd851398" => :mojave
-    sha256 "add5dc05140a531958e5bb521ed47d0038d442839bc21c75ecbe514f5944887a" => :high_sierra
+    sha256 "06f2c343a982edbe5ab3428396ca883e9097db629d60504f84e5a247d96d53dd" => :catalina
+    sha256 "7f0e19c930e2c6b56f5dd3b2b09c1222a5fd33956a85867772e67a9ccc683932" => :mojave
+    sha256 "3b20f9947335d86303060d466851acb58a0366296d6e54d4d8afdc28ed29c215" => :high_sierra
   end
 
   depends_on "go" => :build
