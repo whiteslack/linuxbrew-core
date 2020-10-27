@@ -1,10 +1,9 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
   homepage "https://www.scipy.org"
-  url "https://files.pythonhosted.org/packages/53/10/776750d57ade26522478a92a2e14035868624a6a62f4157b0cc5abd4a980/scipy-1.5.2.tar.gz"
-  sha256 "066c513d90eb3fd7567a9e150828d39111ebd88d3e924cdfc9f8ce19ab6f90c9"
+  url "https://files.pythonhosted.org/packages/93/63/4a566494594a13697c5d5d8a754d6e329d018ddf881520775e0229fa29ef/scipy-1.5.3.tar.gz"
+  sha256 "ddae76784574cc4c172f3d5edd7308be16078dd3b977e8746860c76c195fa707"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/scipy/scipy.git"
 
   livecheck do
@@ -12,10 +11,9 @@ class Scipy < Formula
   end
 
   bottle do
-    sha256 "3b9454a7533036e0e91dd5e0c2184926bc2ea8bcfd9b9dda3f7536d4c1e06458" => :catalina
-    sha256 "4d141e857dc1cf52700121ef72f1e9ca18601cc26867e188c2594e104fe5e928" => :mojave
-    sha256 "5944b89506b9c45fccad0ef6f8ac10cf8c727113577412af86bd0f5356552051" => :high_sierra
-    sha256 "a7d580f4ce7717abe190255fc7aa47dd50ad449a480fce691a186a844399ca90" => :x86_64_linux
+    sha256 "1327bbe2b07ef7056fb84f3e2763d2490ec49fdc2e4a190ca01edb0218a616cc" => :catalina
+    sha256 "a3ebbef3da062ff7584f5b2a208f0b5d730795061f78fedaa3ce62a21ce89622" => :mojave
+    sha256 "8958c94dd55cf780d3b048548810b971bb1f4777c58bb128fc11071913d9e6bf" => :high_sierra
   end
 
   depends_on "swig" => :build
@@ -33,13 +31,6 @@ class Scipy < Formula
   patch do
     url "https://github.com/scipy/scipy/commit/b8e47064.patch?full_index=1"
     sha256 "2cb39e75f00d89564cdc769598bee2e772f6cb7bde5cc94560a2e588fb7a0027"
-  end
-
-  # Fix compilation with Xcode 12
-  # https://github.com/scipy/scipy/issues/12860
-  patch do
-    url "https://github.com/scipy/scipy/commit/de679deb.patch?full_index=1"
-    sha256 "97fd91849d3b2d6693ed656b941be593411bfe63d7df473544a59a8e7f8dcc60"
   end
 
   def install
