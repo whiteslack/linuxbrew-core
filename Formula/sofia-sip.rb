@@ -14,6 +14,7 @@ class SofiaSip < Formula
     sha256 "ab14de67ceb92a79d8095b94d3e76680765185088773fe4c5b014574ef32a892" => :catalina
     sha256 "5f9a402b196aa592405fb10ddca2bd8f3736d62cfd8f2709d52fb18d9402af8f" => :mojave
     sha256 "7729020836b875104c6044afd0a72cf8755619978216430d89a585cf9783c8b0" => :high_sierra
+    sha256 "cfc3c2d133044ad53deef0c2b84b44bdae05badb1557a72dbb79cd7acb49ceb9" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
