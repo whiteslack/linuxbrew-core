@@ -9,6 +9,7 @@ class Libx11 < Formula
     sha256 "74866ceb706b28e81a08161b6e0e954d98145582426458139be4ed456c0a4ea8" => :catalina
     sha256 "11062a043878726b396a166c4bb60a34640628d6cae9ff0d17364de1d2f2c730" => :mojave
     sha256 "a9c9c8f5a88a58b292a069729a9958880501d3c57d2fe54f0f1ed869f8ca0f1a" => :high_sierra
+    sha256 "3892086b92fb14605e98e0a0fc2e71e760a45cb0c66a600788229e181f3d383f" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
