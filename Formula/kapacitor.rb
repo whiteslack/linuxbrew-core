@@ -17,6 +17,7 @@ class Kapacitor < Formula
     sha256 "e418264589e6068854fea663315369616977a59568dad1c4b5641cccef1cf38b" => :catalina
     sha256 "8c78689d4c22160d4acbf4aeb11af9906a20c0d922d95401134ee6786bcfaf63" => :mojave
     sha256 "d39896edf580fa9692057a2acbd04b204021a3f6ce31d47c3d1471a230a86836" => :high_sierra
+    sha256 "4cba6cca229fb1d13d90d7c2aeeef2971c174b23dd860767a5bb386abe19071e" => :x86_64_linux
   end
 
   depends_on "go" => :build
