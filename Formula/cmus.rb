@@ -11,6 +11,7 @@ class Cmus < Formula
     sha256 "28bcd80ed26797cfbf1d7e0b42da105fcf431e8ddf268410a9d48def8c5c9b6b" => :catalina
     sha256 "04bb64db2401fc5007bbb82746676c789ef33d83415a7d56235ded3983bb0e12" => :mojave
     sha256 "d81b4668ed5acac3d758bd90b79c01ec12f3ea51186f804941f4d3418c28c72a" => :high_sierra
+    sha256 "013128d9849dc23ee52efcf32241ab3788168acef9a8c509cd9b45e56dbdc227" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
