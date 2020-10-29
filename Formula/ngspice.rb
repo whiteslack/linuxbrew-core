@@ -13,6 +13,7 @@ class Ngspice < Formula
     sha256 "947aa81277b9bfdfe5b9a52ba502f146cb2c7e5125e88770255a40f6799685bd" => :catalina
     sha256 "0d880665db391a48e55b133b6fea6cbf7f0e56c0428045b4d046b03dfff95685" => :mojave
     sha256 "9f048cc3f136b84cfd2f76afe91f39d7bf844c00e442a9fbb7363f84fa44a8c7" => :high_sierra
+    sha256 "1c491794680e304cffe3a05c1ffbab72f278f53e3ac1dbe6035978acc6cdf574" => :x86_64_linux
   end
 
   head do
