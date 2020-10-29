@@ -1,10 +1,9 @@
 class GstPython < Formula
   desc "Python overrides for gobject-introspection-based pygst bindings"
   homepage "https://gstreamer.freedesktop.org/modules/gst-python.html"
-  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.18.0.tar.xz"
-  sha256 "76bfe8b85a9c4a6ddfb81874f2635fd0da38c3f39d9d2a0b175213218516dd45"
+  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.18.1.tar.xz"
+  sha256 "42b289422f7ab32757670848cf2245c5a8a8b08a665a9cab65ded8d69364f6f6"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url "https://gstreamer.freedesktop.org/src/gst-python/"
@@ -12,9 +11,9 @@ class GstPython < Formula
   end
 
   bottle do
-    sha256 "efdf868f18e030733a6566e3cf50badf8db40b52004ba8c8f6d3696f35642ecb" => :catalina
-    sha256 "9f25b45ffd7d92f63043fe1d91da0de3e5c6944ab286e2a496f7979b70c0acd5" => :mojave
-    sha256 "a82ac49ea697ccb26ca6e58541fc171fc6aa18d7caba13d0f2422810fc5e866a" => :high_sierra
+    sha256 "1963c2fc082acabc26008d6b42c39fa2178b3e2150bffb450aba0ddd76bd7cee" => :catalina
+    sha256 "091fddf6465e03df9ada9d0d8a55491d4c8816d5859404ec5ab5fa1815a26edd" => :mojave
+    sha256 "274a31d8d6f72e2bb98b2945c839eb58a885c6c783b487bbbe3698d2531b0bac" => :high_sierra
   end
 
   depends_on "meson" => :build

@@ -1,14 +1,15 @@
 class Nqp < Formula
   desc "Lightweight Perl 6-like environment for virtual machines"
   homepage "https://github.com/perl6/nqp"
-  url "https://github.com/perl6/nqp/releases/download/2020.09/nqp-2020.09.tar.gz"
-  sha256 "b0e2449959b5d34a26542b6fecab82a24b10a74fb8fdf6ed80d98b71f2f17126"
+  # Note: Please keep these values in sync with moarvm & rakudo when updating.
+  url "https://github.com/perl6/nqp/releases/download/2020.10/nqp-2020.10.tar.gz"
+  sha256 "100c74c8a81117040c3a1b85ac99312008753c17faeeab7d69998bcf7cdb6059"
   license "Artistic-2.0"
 
   bottle do
-    sha256 "e6c981123d2dac1718de6541bcc1afbabbffb790c97a7785aa56ac3af9a8744f" => :catalina
-    sha256 "ec38507d0931044fde2a0884c234de8aabcc06c36460dbaf1e217ce0d08965dd" => :mojave
-    sha256 "d62fe0804d0ea234e9302c4dd155a7d61259011463b196157f8280d657e39e26" => :high_sierra
+    sha256 "bc47c3020f1057e6e668b006112eaf24685f56fcd89b3fc1dee4db59ea59b1d5" => :catalina
+    sha256 "88974a7300f31c0c9ad8ec4f7674cd78a4170cfa47498cc11f140921f7171f88" => :mojave
+    sha256 "4e41bdb3de219a926474ee0b086d2de88a896c866d7c048e1b35ac2137fa282a" => :high_sierra
   end
 
   depends_on "moarvm"

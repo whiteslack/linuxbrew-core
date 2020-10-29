@@ -3,8 +3,8 @@ require "language/node"
 class CubejsCli < Formula
   desc "Cube.js command-line interface"
   homepage "https://cube.dev/"
-  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-0.22.2.tgz"
-  sha256 "88e8a404aafa50dbfed288273b09d6e28afc7486d25820e427423e3cfee3d994"
+  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-0.23.2.tgz"
+  sha256 "dce5b8c0e275e3c176a57085c7c24b8ab355ad4962dfba6f4ef709b2e9d8d2b5"
   license "Apache-2.0"
 
   livecheck do
@@ -13,10 +13,9 @@ class CubejsCli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b9bad843416d926d53956b83322ada87d67cdfb910e3efc6c2d9a21562d93bb7" => :catalina
-    sha256 "6312f3955757984e3fe185fc4aff1046f63c921f1d6550a7db0a69bb9fc46a92" => :mojave
-    sha256 "aed23366d0054a80d973955beaf757c328ea0688f05131eace86a1a8055412b3" => :high_sierra
-    sha256 "fcf7e1dd7cd4bf7fc3647365f6edcb46006a19872eb5fd432f02bd01bf519927" => :x86_64_linux
+    sha256 "cec8bae27fba165c1ab42a436e1bb039cf886bb80483d0adbfe3b740dbf596a4" => :catalina
+    sha256 "3a3a3aecede9ae1f96df23c852bd17abdeb33fee32945cf0dd698f230f465530" => :mojave
+    sha256 "1f2a93491f1d95a456187df851d72f391b551a6331dcf18253645d0ea4eb4799" => :high_sierra
   end
 
   depends_on "node"
