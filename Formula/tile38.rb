@@ -2,16 +2,15 @@ class Tile38 < Formula
   desc "In-memory geolocation data store, spatial index, and realtime geofence"
   homepage "https://tile38.com/"
   url "https://github.com/tidwall/tile38.git",
-    tag:      "1.22.2",
-    revision: "5b77c446a767c290d189291ab01aee9685082bc3"
+    tag:      "1.22.3",
+    revision: "982980789b14f1ad8435ff04ccf420f2a97143d0"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "18e4001cf07554ae26d5d420cd3890b3b6d8b3d74b9cd52cfa252ef2c49c748d" => :catalina
-    sha256 "c8a0ffb58b27b60a261cd7312e3660d46e37ff72c45ea8de572489041a7492cf" => :mojave
-    sha256 "5f2b08857ba21d9cdc29d44a448d0c4064365dd8063d6f643e065ec68efad458" => :high_sierra
-    sha256 "7dd08191b1d481814389bc97154122de7f47afd40ee5302efc06f5c5ae970998" => :x86_64_linux
+    sha256 "d8161c17739677bec072016e5dab59f181ebcefe88dfcfe0b906227267a659bb" => :catalina
+    sha256 "20f5969d0de884667ae2490253fbd22411db314497492828e1d4326f6397a95f" => :mojave
+    sha256 "a0e1445076d544c498d76d04be9e6acd2110066173305d1273c47ab62b10abf9" => :high_sierra
   end
 
   depends_on "go" => :build

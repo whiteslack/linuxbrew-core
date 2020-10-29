@@ -4,6 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tar.xz"
   sha256 "9c73e63c99855709b9be0b3cc9e5b072cb60f37311e8c4e50f15576a0bf82854"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -11,11 +12,9 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "01447562e498cafee646ff65117446834f7db63f0e3e34b0950c1f66856f9df2" => :catalina
-    sha256 "49d663baef12229a4b236cd6d7827e671142709cb3b58f0bf7ef7756d4774a3a" => :mojave
-    sha256 "de6926fb7165101ce316bee6e6fc1e7369a2ef3b3c5fb1619207ee88c7d60257" => :high_sierra
-    sha256 "6afe61b89cc1479770cd63f1eec7983e67aab33f293ccf38fb3330d24a0b55b2" => :x86_64_linux
+    sha256 "fb4e0fa1e5bd0801809e88ee99df2640974bb3953e0ebfe56541ff1ba2fd4865" => :catalina
+    sha256 "77254b7bca66680c41db33e78d40bef288924fb142deb73648ce67255c6dda83" => :mojave
+    sha256 "2e1dec264883dd4ee263a89ff41c5bb6579bbf68982ca40652bb8131d1f51e66" => :high_sierra
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -28,8 +27,6 @@ class PythonAT39 < Formula
     EOS
     satisfy { !OS.mac? || MacOS::CLT.installed? }
   end
-
-  keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
   depends_on "gdbm"
@@ -44,19 +41,32 @@ class PythonAT39 < Formula
   uses_from_macos "unzip"
   uses_from_macos "zlib"
 
-  skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5", "bin/pip-3.6",
-             "bin/pip-3.7", "bin/pip-3.8", "bin/pip-3.9"
+  skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5", "bin/pip-3.6", "bin/pip-3.7", "bin/pip-3.8"
   skip_clean "bin/easy_install3", "bin/easy_install-3.4", "bin/easy_install-3.5", "bin/easy_install-3.6",
-             "bin/easy_install-3.7", "bin/easy_install-3.8", "bin/easy_install-3.9"
+             "bin/easy_install-3.7", "bin/easy_install-3.8"
+
+  link_overwrite "bin/2to3"
+  link_overwrite "bin/idle3"
+  link_overwrite "bin/pip3"
+  link_overwrite "bin/pydoc3"
+  link_overwrite "bin/python3"
+  link_overwrite "bin/python3-config"
+  link_overwrite "bin/wheel3"
+  link_overwrite "share/man/man1/python3.1"
+  link_overwrite "lib/pkgconfig/python3.pc"
+  link_overwrite "Frameworks/Python.framework/Headers"
+  link_overwrite "Frameworks/Python.framework/Python"
+  link_overwrite "Frameworks/Python.framework/Resources"
+  link_overwrite "Frameworks/Python.framework/Versions/Current"
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/7c/1b/9b68465658cda69f33c31c4dbd511ac5648835680ea8de87ce05c81f95bf/setuptools-50.3.0.zip"
-    sha256 "39060a59d91cf5cf403fa3bacbb52df4205a8c3585e0b9ba4b30e0e19d4c4b18"
+    url "https://files.pythonhosted.org/packages/a7/e0/30642b9c2df516506d40b563b0cbd080c49c6b3f11a70b4c7a670f13a78b/setuptools-50.3.2.zip"
+    sha256 "ed0519d27a243843b05d82a5e9d01b0b083d9934eaa3d02779a23da18077bd3c"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/59/64/4718738ffbc22d98b5223dbd6c5bb87c476d83a4c71719402935170064c7/pip-20.2.3.tar.gz"
-    sha256 "30c70b6179711a7c4cf76da89e8a0f5282279dfb0278bec7b94134be92543b6d"
+    url "https://files.pythonhosted.org/packages/0b/f5/be8e741434a4bf4ce5dbc235aa28ed0666178ea8986ddc10d035023744e6/pip-20.2.4.tar.gz"
+    sha256 "85c99a857ea0fb0aedf23833d9be5c40cf253fe24443f0829c7b472e23c364a1"
   end
 
   resource "wheel" do
@@ -269,7 +279,7 @@ class PythonAT39 < Formula
     end
 
     # post_install happens after link
-    %W[pip#{xy} easy_install-#{xy}].each do |e|
+    %W[pip3 wheel3 pip#{xy} easy_install-#{xy}].each do |e|
       (HOMEBREW_PREFIX/"bin").install_symlink bin/e
     end
 

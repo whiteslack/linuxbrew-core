@@ -7,10 +7,10 @@ class Lsyncd < Formula
 
   bottle do
     cellar :any
-    rebuild 3
-    sha256 "0debd8aa085f8cf12d26130566cc529db249898beabace826983703c6f0cce6d" => :catalina
-    sha256 "227ed2454a78e615514adfe0abf8958c05ebf15e4e276a628ead4b182b111ba0" => :mojave
-    sha256 "d99630522e8cff9064be87cc4539854c02b75eedf76f866e8d41e59afa6a8423" => :high_sierra
+    rebuild 4
+    sha256 "571c5f5aa4069b5ed8a42a63e47e2e43512f95da0218f5ef7f0d5e8a9c0d66ea" => :catalina
+    sha256 "45c0f8bc62b9c7224241ff3d646f6c38d3f544890deb20c9670659f2637367f4" => :mojave
+    sha256 "335359bb356c753e6e286681d5bcb484d066df0f15910cf614de74ee131628be" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -71,9 +71,12 @@ class Lsyncd < Formula
     "10.14.6" => ["xnu-4903.270.47.tar.gz", "126856fa7a1aaa5f5480034855bd58d4c7f60693397b8279aaac2c83a502a552"],
     "10.15"   => ["xnu-6153.11.26.tar.gz",  "ec75b9ec8aaed5619cc81836f09fac9aa2c26d5ffda8444d4ae0edbb10bac574"],
     "10.15.1" => ["xnu-6153.41.3.tar.gz",   "a1a8c57cf26a987760be3fe982a16d32714cc8eb49435704ef16f6160d549762"],
-    "10.15.2" => ["xnu-6153.41.3.tar.gz",   "a1a8c57cf26a987760be3fe982a16d32714cc8eb49435704ef16f6160d549762"],
-    "10.15.3" => ["xnu-6153.41.3.tar.gz",   "a1a8c57cf26a987760be3fe982a16d32714cc8eb49435704ef16f6160d549762"],
-    "10.15.4" => ["xnu-6153.41.3.tar.gz",   "a1a8c57cf26a987760be3fe982a16d32714cc8eb49435704ef16f6160d549762"],
+    "10.15.2" => ["xnu-6153.61.1.tar.gz",   "52926f41d47238485d3b98b341f8eb3932ace60f1d84849a2c55af5d90890ab7"],
+    "10.15.3" => ["xnu-6153.81.5.tar.gz",   "ed3b255b9f90c24759aeddc06227cbfa1d11f17fc6e975e37d7be75d22dc2178"],
+    "10.15.4" => ["xnu-6153.101.6.tar.gz",  "6b1aa4d60d83669d21da84c096733d5258b8ac9b20e136d08ffbc988aa69638a"],
+    "10.15.5" => ["xnu-6153.121.1.tar.gz",  "8dedfc4dfc1b9cae6e3628fa8cb3eab024106c2b5929f8ce6217001546cc8276"],
+    "10.15.6" => ["xnu-6153.141.1.tar.gz",  "01f95d12f84026c4d8359ebd64ae42958135468ad9ab5f613607a1ac4b27a6ee"],
+    "10.15.7" => ["xnu-6153.141.1.tar.gz",  "01f95d12f84026c4d8359ebd64ae42958135468ad9ab5f613607a1ac4b27a6ee"],
   }
 
   tarball, checksum = if xnu_headers.key? MacOS.full_version
