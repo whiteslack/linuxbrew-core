@@ -1,17 +1,15 @@
 class Ccls < Formula
   desc "C/C++/ObjC language server"
   homepage "https://github.com/MaskRay/ccls"
-  url "https://github.com/MaskRay/ccls/archive/0.20190823.6.tar.gz"
-  sha256 "83dd45120e9674319f91e4379013831e124c0858e050bbc3521e3f8aebe5c95b"
+  url "https://github.com/MaskRay/ccls/archive/0.20201025.tar.gz"
+  sha256 "1470797b2c1a466e2d8a069efd807aac6fefdef8a556e1edf2d44f370c949221"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/MaskRay/ccls.git"
 
   bottle do
-    sha256 "f1215fa22a47c52ea83666f2ebc1c416a39a0b7b80d7f7767e4d049b97e3b8ac" => :catalina
-    sha256 "0acf04329f231cd825d4abf3366a7bf5fa26717c4e1421c06b0fef262de1f7ba" => :mojave
-    sha256 "b8c9a39e3fc523a5b70f2d25682365ce921761923bd35ac1b41ca4a7f43dce66" => :high_sierra
-    sha256 "0d20c9367bc7fa92a8069b94a3a503b1a1bb3444472afed6cc975e4e9db33b10" => :x86_64_linux
+    sha256 "9eeac4bcb801299d73e1d8a838b9b75701cef86506928082c5b63603949fad4e" => :catalina
+    sha256 "eb2e73b77b5c3221fe9bc2b3330b9a2456b95558fc3b326fc29d35739467847d" => :mojave
+    sha256 "578e24f878766fdcc3e024ddfcd6d124fbeaa79c79e32b89f6286f58d1213894" => :high_sierra
   end
 
   depends_on "cmake" => :build

@@ -2,16 +2,15 @@ class GolangciLint < Formula
   desc "Fast linters runner for Go"
   homepage "https://golangci-lint.run/"
   url "https://github.com/golangci/golangci-lint.git",
-    tag:      "v1.31.0",
-    revision: "3d6d0e7ca66c7f81a7080575dda76cace50e9cf4"
-  license "GPL-3.0"
+    tag:      "v1.32.0",
+    revision: "9d557ed40edcf96b59d7a35c43cd9a6f45f663a2"
+  license "GPL-3.0-only"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a6e139f42c2be35b26682337be838ae8d236c4acd0c9d8c330d04f972da333de" => :catalina
-    sha256 "ab78ea189596defabdf2f5aea3e9556e299f396d0290c1c0f531a3fe74604176" => :mojave
-    sha256 "96fce72ff510e59df44e5c10555c8014196c8ce8991dd1feddbb8cd6353df519" => :high_sierra
-    sha256 "6286398aae01ef150577db964b75148a2e76a627c95e530452663ea71b3f4eec" => :x86_64_linux
+    sha256 "98989d7acd4f7a6e90e398d3ad26dc636645c4b33621fbf4bee49f7d78a64228" => :catalina
+    sha256 "2c7f5e7a21fbcddea1193afc432e583328ef74852f96ebd04c799310e0726049" => :mojave
+    sha256 "9aa8a7e5e692056e125422f819c147012cad268f0c7a088e8648694e4358c01c" => :high_sierra
   end
 
   depends_on "go"

@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-    tag:      "v0.28.0",
-    revision: "b9f1d25600247ee1042eacfec428225ae623a646"
+    tag:      "v0.29.0",
+    revision: "f398786cfc6ad152169ecc3b555dc60aacaad053"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -16,9 +16,9 @@ class Semgrep < Formula
 
   bottle do
     cellar :any
-    sha256 "7dfd2534fbace49eec8fee363abd270f835b1ac13aa6e2890df72511a235e83f" => :catalina
-    sha256 "408ed9181e45b2cc423b853302eb277cfcc6492d622edb436cb4d2b4f1b14e53" => :mojave
-    sha256 "65447813c52e3a2128625f05395ae9998bf98e6a089ab68e034780deeccbce1b" => :high_sierra
+    sha256 "6e71fa6f3463a8c1d0c37efdef52e0ca1f8d34219bdee54e3efbccf4d8ced1d2" => :catalina
+    sha256 "68c988eca9a06ebff7f0961ac3ce88f168270bdb93684988ecb4eb4f68008689" => :mojave
+    sha256 "950317bef3848dda5a7567952ca45328c45369468f0781a843c5dfa6c453b187" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -141,7 +141,7 @@ class Semgrep < Formula
         system "opam", "install", "--deps-only", "-y", "."
         system "opam", "exec", "--", "make"
         system "opam", "exec", "--", "make", "install"
-        bin.install "_build/default/src/bin/Spacegrep_main.exe" => "spacegrep"
+        bin.install "_build/default/src/bin/Space_main.exe" => "spacegrep"
       end
 
       # Install tree-sitter
@@ -158,7 +158,7 @@ class Semgrep < Formula
         system "opam", "install", "--deps-only", "-y", "."
         system "opam", "exec", "--", "make", "all"
         system "opam", "exec", "--", "make", "install"
-        bin.install "_build/default/bin/Main.exe" => "semgrep-core"
+        bin.install "_build/default/cli/Main.exe" => "semgrep-core"
       end
     end
 
