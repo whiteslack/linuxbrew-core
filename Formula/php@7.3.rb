@@ -2,16 +2,15 @@ class PhpAT73 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-7.3.23.tar.xz"
-  mirror "https://fossies.org/linux/www/php-7.3.23.tar.xz"
-  sha256 "2bdd36176f318f451fb3942bf1e935aabb3c2786cac41a9080f084ad6390e034"
+  url "https://www.php.net/distributions/php-7.3.24.tar.xz"
+  mirror "https://fossies.org/linux/www/php-7.3.24.tar.xz"
+  sha256 "78b0b417a147ab7572c874334d11654e3c61ec5b3f2170098e5db02fb0c89888"
   license "PHP-3.01"
 
   bottle do
-    sha256 "3bc9673e3f240fa3ad2351ab0a645bde05a6681187d967985149aeae6e42e3c7" => :catalina
-    sha256 "f41cacf733ec64dd801196f377f89d544b22943a5eea7c0379a2d51f0a3c0b7f" => :mojave
-    sha256 "cdebfd637f6260359df06e5357c8966ec8e474037001f22ff7698ac6410b83b0" => :high_sierra
-    sha256 "26c50c3bfc8c793b3b8bfa49b331bf73ab9de1064f821486089af32007c92ef5" => :x86_64_linux
+    sha256 "29b42a38b6bedf97c76862dbb62529204f37722023cefc5f003d6ed9a80661f8" => :catalina
+    sha256 "5b6a98cd74dcba4b24270849e090507f9de3a73e5d2aacd840ee9bf51ec1f781" => :mojave
+    sha256 "d04aff49e077579a8161480a6f7cbc1196570cda5097b795a2b1a3d7911697ac" => :high_sierra
   end
 
   keg_only :versioned_formula
@@ -50,13 +49,6 @@ class PhpAT73 < Formula
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "zlib"
-
-  # Fix build issues with Xcode 12.
-  # see https://bugs.php.net/bug.php?id=80171
-  patch do
-    url "https://github.com/php/php-src/commit/aa405b7da270595d349d0596ad31305a41d4b1c0.patch?full_index=1"
-    sha256 "4c51e35fd936a7f3f5613c72e6395b9afa8f569061c00849683e09e8fe986a0f"
-  end
 
   # PHP build system incorrectly links system libraries
   # see https://github.com/php/php-src/pull/3472
