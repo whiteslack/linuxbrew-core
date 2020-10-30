@@ -11,6 +11,7 @@ class Enet < Formula
     sha256 "9480897cb890a7aad73fd5c0acacd948df787b382f8fd9145a7a15c3083176ed" => :catalina
     sha256 "a5fef5bb0564e20031ef2cd04e9348e7c1a734be0e7dc7ee897ed067ff861f22" => :mojave
     sha256 "53bf2d44d4966917b0526e13343bc11b08bfdbfb7bbff8698df58a0d4e4e64b4" => :high_sierra
+    sha256 "d4024b4ad1262c87b3c2b8354e42707ead38d5f47040551a82548f39a78d3081" => :x86_64_linux
   end
 
   def install
