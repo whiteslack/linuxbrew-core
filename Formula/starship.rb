@@ -4,25 +4,25 @@ class Starship < Formula
   url "https://github.com/starship/starship/archive/v0.46.2.tar.gz"
   sha256 "39301c8118239eda7b6d8dbcae498f28bfd901932e69003c249d99ee7989c1bb"
   license "ISC"
+  revision 1
   head "https://github.com/starship/starship.git"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "fff0b5db2e027d157eb330302642f59f34053e46abe4c15c434598959045f329" => :catalina
-    sha256 "73a9d9c97ef62886a8be85963e6cd23a7aa38a5bbd390decbe18f42e1d491aeb" => :mojave
-    sha256 "2595690129f769c19234d819e192ea4de6f8eeda639bc57d82adc87f3658f069" => :high_sierra
-    sha256 "8b48c4879ab5125f25bf25cfe19c266b2f73b1670299dd5cff08e074b9f97fdf" => :x86_64_linux
+    sha256 "5317a3f97ca314ac35ba276dbc5491722514d54e92bed181c8d4899a490a46b8" => :catalina
+    sha256 "974a35cbc1e52f97b75c873e3e08be6411759bbe6e2ed80e1e7b2c01be8d9857" => :mojave
+    sha256 "ebdba4a9896bffcb6428b28edab648a9fd743d9dd002f7e8a488a68d3fd6e9dd" => :high_sierra
   end
 
   depends_on "rust" => :build
-  unless OS.mac?
-    depends_on "pkg-config" => :build
-    depends_on "dbus"
-    depends_on "openssl@1.1"
-  end
+  depends_on "openssl@1.1"
 
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "dbus"
+  end
 
   def install
     system "cargo", "install", "--features", "notify-rust", *std_cargo_args
