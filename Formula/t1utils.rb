@@ -10,6 +10,7 @@ class T1utils < Formula
     sha256 "dfaaef0c838273e5c4cee7d6d2eb515e91c77c3226913b4c4486ca0086c2e6bc" => :catalina
     sha256 "1b511df389dee041c0cdadae94e38e987ea978024730d687b8642623cb054e09" => :mojave
     sha256 "c17de51c95690f3133933cd508873e21734a8e4f8ed80ec6546ab3c7fb82edd2" => :high_sierra
+    sha256 "e45e52834f4776643c0b19d5008436c1afb57ffa32c6250784d3fc3038d676ae" => :x86_64_linux
   end
 
   head do
