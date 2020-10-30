@@ -11,6 +11,7 @@ class Archiver < Formula
     sha256 "a61d7f77c7e3a291af4afa1edc6a6059c3f48c4c9828303c805e51e69902caf0" => :catalina
     sha256 "eb27d3455b2ef6e30317f9be5d54e3c15196b8736209ebc5cc8ac95f3058d1ee" => :mojave
     sha256 "50d359a1201e04663c8a42b3736c11c9d0f046a814d3ec5af00d0326822474ff" => :high_sierra
+    sha256 "be9f7c24425223b5362d9da0a092adedfebd31a061699c1c74afd9765b08843b" => :x86_64_linux
   end
 
   depends_on "go" => :build
