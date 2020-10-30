@@ -3,6 +3,7 @@ class Libfuse < Formula
   homepage "https://github.com/libfuse/libfuse"
   url "https://github.com/libfuse/libfuse/releases/download/fuse-2.9.8/fuse-2.9.8.tar.gz"
   sha256 "5e84f81d8dd527ea74f39b6bc001c874c02bad6871d7a9b0c14efb57430eafe3"
+  license any_of: ["LGPL-2.1-only", "GPL-2.0-only"]
   head "https://github.com/libfuse/libfuse.git"
 
   bottle do
@@ -30,7 +31,6 @@ class Libfuse < Formula
     system "make"
     system "make", "install"
     (pkgshare/"doc").install Dir["./doc/how-fuse-works", "./doc/kernel.txt"]
-    (pkgshare/"example").install Dir["./example/Makefile", "./example/*.{c,h}"]
   end
 
   test do
