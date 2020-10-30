@@ -9,6 +9,7 @@ class Openjdk < Formula
     sha256 "9376a1c6fdf8b0268b6cb56c9878358df148b530fcb0e3697596155fad3ca8d7" => :catalina
     sha256 "a4f00dc8b4c69bff53828f32c82b0a6be41b23a69a7775a95cdbc9e01d9bdb68" => :mojave
     sha256 "bef2e4a43a6485253c655979cfc719332fb8631792720c0b9f6591559fb513f1" => :high_sierra
+    sha256 "318eb6cddc71cff93aaf9c419730a05d802cef0270051907aa2f938cbf1b4512" => :x86_64_linux
   end
 
   keg_only "it shadows the macOS `java` wrapper"
