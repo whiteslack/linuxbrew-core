@@ -2,15 +2,15 @@ class ChartTesting < Formula
   desc "Testing and linting Helm charts"
   homepage "https://github.com/helm/chart-testing"
   url "https://github.com/helm/chart-testing.git",
-      tag:      "v3.1.1",
-      revision: "3fc5a5010805e92d099ecacfba57b7c60c12d44a"
+      tag:      "v3.2.0",
+      revision: "2407e7df462ea3bc85cefd9b5870526bc7806a9f"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ec0538becd4578009f8b9928b324fdd0eef66c94668ca74f072c339974c9a343" => :catalina
-    sha256 "df94b17e1da3410a44ac91a711c3ec8c507d2a32d8f01a660ce0e0ac640837aa" => :mojave
-    sha256 "e431688deb0a4de84d7ff6203e8399a8559f307ad672f6950e4568c32a0708b5" => :high_sierra
+    sha256 "1fff6489d5da97f4e3842355ed53d15319ef11b70b109fa52c77169ddb9d226a" => :catalina
+    sha256 "c0a62b14709e97d855cc42cc4dba59ba4d1d7f954701d56e23c121e0976857fc" => :mojave
+    sha256 "a98358affb60b107631ad50e8b36d5b16c87f5a9517f033cc28ff34facadced4" => :high_sierra
   end
 
   depends_on "go" => :build

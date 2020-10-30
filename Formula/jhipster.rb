@@ -13,16 +13,17 @@ class Jhipster < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2b1e8ae95a7926b1e78790f7735c4cacd6c631a806d6c1585db36d36f706d3cb" => :catalina
-    sha256 "d7bfdb83872bb3422a5fdd11ad9f4046dc84d6764a09687893246176d55b4381" => :mojave
-    sha256 "a4dcacb4539ff11137b39071eff111b0965e10fde63c3d8f9f9280475934c309" => :high_sierra
-    sha256 "12d68e9fdd5478a7d33768210fc36729c8d19b9b826eb3ee519955c3235db949" => :x86_64_linux
+    rebuild 1
+    sha256 "c35178d2999dafde1782be1ce343c52a83b9c5d98c547a9b69318e12c6883ffc" => :catalina
+    sha256 "ac31ac32a75c9455c7e3530fb0b0fb57bacbdb7ab675079757db0e1b541e8d84" => :mojave
+    sha256 "7ef414f012ef8a91a4f449423df522a14598f6e1728265ab48ede61b2e41e5c3" => :high_sierra
   end
 
   depends_on "node"
   depends_on "openjdk"
 
   def install
+    mkdir_p libexec/"lib"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install Dir["#{libexec}/bin/*"]
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env

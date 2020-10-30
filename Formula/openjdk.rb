@@ -1,16 +1,14 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://hg.openjdk.java.net/jdk-updates/jdk14u/archive/jdk-14.0.1-ga.tar.bz2"
-  sha256 "f9c4a55ac858f858222bc5fe6e4b890f9b4a3f942fd0211575b0418aec5c14d6"
-  revision 1 unless OS.mac?
+  url "https://hg.openjdk.java.net/jdk-updates/jdk15u/archive/jdk-15.0.1-ga.tar.bz2"
+  sha256 "9c5be662f5b166b5c82c27de29b71f867cff3ff4570f4c8fa646490c4529135a"
 
   bottle do
     cellar :any
-    sha256 "d44db8c5b212a36d73f1102468106124e5f5e2f20600768a9d8cecc172df4601" => :catalina
-    sha256 "4549644dc93f35362c65fe12543bd77d580944673d836f71108f4bcaabf7c206" => :mojave
-    sha256 "b72286cb7187fa0682761f70ea5e6f6922667ceac4de4ac3ebd855786358c773" => :high_sierra
-    sha256 "20beecb201458d8a09a303826afed846358b189578e7afaab9f602de22ffb1d9" => :x86_64_linux
+    sha256 "9376a1c6fdf8b0268b6cb56c9878358df148b530fcb0e3697596155fad3ca8d7" => :catalina
+    sha256 "a4f00dc8b4c69bff53828f32c82b0a6be41b23a69a7775a95cdbc9e01d9bdb68" => :mojave
+    sha256 "bef2e4a43a6485253c655979cfc719332fb8631792720c0b9f6591559fb513f1" => :high_sierra
   end
 
   keg_only "it shadows the macOS `java` wrapper"
@@ -40,12 +38,26 @@ class Openjdk < Formula
   # From https://jdk.java.net/archive/
   resource "boot-jdk" do
     if OS.mac?
-      url "https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_osx-x64_bin.tar.gz"
-      sha256 "08fd2db3a3ab6fb82bb9091a035f9ffe8ae56c31725f4e17d573e48c39ca10dd"
+      url "https://download.java.net/java/GA/jdk14.0.2/205943a0976c4ed48cb16f1043c5c647/12/GPL/openjdk-14.0.2_osx-x64_bin.tar.gz"
+      sha256 "386a96eeef63bf94b450809d69ceaa1c9e32a97230e0a120c1b41786b743ae84"
     else
-      url "https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_linux-x64_bin.tar.gz"
-      sha256 "acc7a6aabced44e62ec3b83e3b5959df2b1aa6b3d610d58ee45f0c21a7821a71"
+      url "https://download.java.net/java/GA/jdk14.0.2/205943a0976c4ed48cb16f1043c5c647/12/GPL/openjdk-14.0.2_linux-x64_bin.tar.gz"
+      sha256 "bb67cadee687d7b486583d03c9850342afea4593be4f436044d785fba9508fb7"
     end
+  end
+
+  # Fix build on Xcode 12
+  # https://bugs.openjdk.java.net/browse/JDK-8253375
+  patch do
+    url "https://github.com/openjdk/jdk/commit/f80a6066e45c3d53a61715abfe71abc3b2e162a1.patch?full_index=1"
+    sha256 "5320e5e8db5f94432925d7c240f41c12b10ff9a0afc2f7a8ab0728a114c43cdb"
+  end
+
+  # Fix build on Xcode 12
+  # https://bugs.openjdk.java.net/browse/JDK-8253791
+  patch do
+    url "https://github.com/openjdk/jdk/commit/4622a18a72c30c4fc72c166bee7de42903e1d036.patch?full_index=1"
+    sha256 "4e4448a5bf68843c21bf96f510ea270aa795c5fac41fd9088f716822788d0f57"
   end
 
   def install
@@ -54,7 +66,24 @@ class Openjdk < Formula
     boot_jdk = OS.mac? ? boot_jdk_dir/"Contents/Home" : boot_jdk_dir
     java_options = ENV.delete("_JAVA_OPTIONS")
 
-    _, _, build = version.to_s.rpartition("+")
+    # Inspecting .hg_archival.txt to find a build number
+    # The file looks like this:
+    #
+    # repo: fd16c54261b32be1aaedd863b7e856801b7f8543
+    # node: e3f940bd3c8fcdf4ca704c6eb1ac745d155859d5
+    # branch: default
+    # tag: jdk-15+36
+    # tag: jdk-15-ga
+    #
+    # Since openjdk has move their development from mercurial to git and GitHub
+    # this approach may need some changes in the future
+    #
+    build = File.read(".hg_archival.txt")
+                .scan(/^tag: jdk-#{version}\+(.+)$/)
+                .map(&:first)
+                .map(&:to_i)
+                .max
+    raise "cannot find build number in .hg_archival.txt" if build.nil?
 
     chmod 0755, "configure"
     system "./configure", "--without-version-pre",
@@ -62,11 +91,12 @@ class Openjdk < Formula
                           "--with-version-build=#{build}",
                           "--with-toolchain-path=/usr/bin",
                           ("--with-extra-ldflags=-headerpad_max_install_names" if OS.mac?),
+                          ("--with-sysroot=#{MacOS.sdk_path}" if OS.mac?),
                           "--with-boot-jdk=#{boot_jdk}",
                           "--with-boot-jdk-jvmargs=#{java_options}",
                           "--with-debug-level=release",
                           "--with-native-debug-symbols=none",
-                          "--enable-dtrace=auto",
+                          "--enable-dtrace",
                           "--with-jvm-variants=server",
                           ("--with-x=#{HOMEBREW_PREFIX}" unless OS.mac?),
                           ("--with-cups=#{HOMEBREW_PREFIX}" unless OS.mac?),
