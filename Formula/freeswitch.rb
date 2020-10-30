@@ -2,7 +2,7 @@ class Freeswitch < Formula
   desc "Telephony platform to route various communication protocols"
   homepage "https://freeswitch.org"
   license "MPL-1.1"
-  revision 1
+  revision 2
   head "https://github.com/signalwire/freeswitch.git"
 
   stable do
@@ -44,9 +44,9 @@ class Freeswitch < Formula
   end
 
   bottle do
-    sha256 "ad4dc36db177f1b4b5a1466b7b377d4ef20132bc6816a09b51c5da89cf27b4c8" => :catalina
-    sha256 "2c8e045e02cf8ffb9946120933181bdae56785006ef0478d263c3dcc1e9eb73a" => :mojave
-    sha256 "c9eb0f2daa50051c205fd5d66ca29549a713ff19ec78f850fd35eb97fd71f5db" => :high_sierra
+    sha256 "98b7f70806d0fc0db8b68fb1f4bc60b20c8f5e651e783fca9b603acaec4612b8" => :catalina
+    sha256 "3ce8827fb84989cfeb54faafbd91ef1fe4f0271a85190c7352826fee93022f08" => :mojave
+    sha256 "ffc4904104a0dbba2cd9d10ea4e6485d77f41618b9311950e7f31d0d762e89cc" => :high_sierra
   end
 
   depends_on "autoconf" => :build
@@ -65,6 +65,7 @@ class Freeswitch < Formula
   depends_on "openssl@1.1"
   depends_on "opus"
   depends_on "pcre"
+  depends_on "sofia-sip"
   depends_on "speex"
   depends_on "speexdsp"
   depends_on "sqlite"
@@ -72,10 +73,6 @@ class Freeswitch < Formula
 
   uses_from_macos "libedit"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "util-linux"
-  end
 
   # https://github.com/Homebrew/homebrew/issues/42865
 
@@ -140,12 +137,6 @@ class Freeswitch < Formula
       revision: "6351b1824a7634853bf963c0ec399e783e35d4d1"
   end
 
-  # There's no tags for now https://github.com/freeswitch/sofia-sip/issues/24
-  resource "sofia-sip" do
-    url "https://github.com/freeswitch/sofia-sip.git",
-      revision: "f6f29b483e9c31ce8d3e87419ec3deea8679312d"
-  end
-
   resource "libks" do
     url "https://github.com/signalwire/libks.git",
       tag:      "1.6.0",
@@ -169,17 +160,6 @@ class Freeswitch < Formula
       ENV.deparallelize { system "make", "install" }
 
       ENV.append_path "PKG_CONFIG_PATH", "#{libexec}/spandsp/lib/pkgconfig"
-    end
-
-    resource("sofia-sip").stage do
-      system "./bootstrap.sh"
-      system "./configure", "--disable-debug",
-                            "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{libexec}/sofia-sip"
-      system "make", "install"
-
-      ENV.append_path "PKG_CONFIG_PATH", "#{libexec}/sofia-sip/lib/pkgconfig"
     end
 
     resource("libks").stage do
