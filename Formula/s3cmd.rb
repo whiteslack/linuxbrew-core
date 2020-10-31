@@ -5,8 +5,8 @@ class S3cmd < Formula
   homepage "https://s3tools.org/s3cmd"
   url "https://files.pythonhosted.org/packages/c7/eb/5143fe1884af2303cb7b23f453e5c9f337af46c2281581fc40ab5322dee4/s3cmd-2.1.0.tar.gz"
   sha256 "966b0a494a916fc3b4324de38f089c86c70ee90e8e1cae6d59102103a4c0cc03"
-  license "GPL-2.0"
-  revision OS.mac? ? 1 : 2
+  license "GPL-2.0-or-later"
+  revision OS.mac? ? 2 : 3
   head "https://github.com/s3tools/s3cmd.git"
 
   livecheck do
@@ -15,13 +15,17 @@ class S3cmd < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0f660e6f188828607eecea389019d1c9d1c2d128ac400969bea0e56a7b7453a1" => :catalina
-    sha256 "584271d030de4833c8d17a6cbb198157052b06c3df7ca6be923552f23e5f68d1" => :mojave
-    sha256 "3f071500164cbeeab6b43eb832145b93610260f013257eee2736242032ec8ff0" => :high_sierra
-    sha256 "f06a24ff6cd5d4f18ec6ce31ca0bbdda7f098e8977c30be1b2e65dee33a8388d" => :x86_64_linux
+    sha256 "140b574c93db1f67b40b7cf22e8468bbcb066ecbbfffb8cf649b31d268a82775" => :catalina
+    sha256 "c76760a661e4c9438bd2d0b7016430a99a934ac8e6705727b55bc868a466031d" => :mojave
+    sha256 "6c2188352b0662521ee7dac484183e0e0a65a1f802e282dad4d5287fa3c955e6" => :high_sierra
   end
 
-  depends_on "python@3.9"
+  # s3cmd version 2.1.0 is not compatible with Python 3.9, know issues are:
+  # - https://github.com/s3tools/s3cmd/issues/1146
+  # - https://github.com/s3tools/s3cmd/pull/1144
+  # - https://github.com/s3tools/s3cmd/pull/1137
+  # Do not bump Python version until these issues are fixed, probably when version 2.2.0 is released.
+  depends_on "python@3.8"
 
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
