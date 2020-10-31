@@ -16,6 +16,7 @@ class Micronaut < Formula
     sha256 "f9052ade95a7e5e61bd41e644c6338a73d50c1e0ab5acb3c21119b167b4f77fe" => :catalina
     sha256 "0ded7aeb14d5c3ec80fc9d115fbf1b4c5f0713cbddb574765efc03de5ac1daad" => :mojave
     sha256 "456fa73c4bb0da5adfef273e11a50b42eed60b9e751c9aac56caf2103ebd1df7" => :high_sierra
+    sha256 "fbed8fc34d21aed716eaf7b6ad6dcfbb32d1529410241f4aeacd010173059721" => :x86_64_linux
   end
 
   depends_on "gradle" => :build
