@@ -16,6 +16,7 @@ class TaskwarriorTui < Formula
     sha256 "069ea60cd5ce615c0d3a246fc2414b6c598e0e54f5f97c21caf8d18e06d67469" => :catalina
     sha256 "98230f38ff934584f30dd26843d3e8758b8241cc14131dd1a8e94cf376d438b4" => :mojave
     sha256 "d3d97d28e00d4f76df00ec322d144d47901abe0bcb5c9146b7e1a1b3bc1f6705" => :high_sierra
+    sha256 "e97b6d41929bf00372063c144c0b8e2d97fadf8f443610c121b3dc160a14703a" => :x86_64_linux
   end
 
   depends_on "rust" => :build
