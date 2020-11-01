@@ -18,6 +18,7 @@ class Pssh < Formula
     sha256 "97b41f49d31808abac8379f9d5891be7cecff34bc183a42b0f6fd5ae1d9fe835" => :catalina
     sha256 "2755e4052daf1641f2db79119443ea4552da5db3c578ed9dd779c86f96b35a78" => :mojave
     sha256 "3eab96d7837cfab4b2c28ad5458e1c68ceb0d75c480e87613ca1872e58b2bf55" => :high_sierra
+    sha256 "042e33021f5ddb9de9af94c985732419408785fec7f5a8535b0cfffaa65affdf" => :x86_64_linux
   end
 
   depends_on "python@3.9"
