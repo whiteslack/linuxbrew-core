@@ -14,6 +14,7 @@ class Pipemeter < Formula
     sha256 "ba82201ed8c010ce938f35dd987cab9ffd8d7b456cc5f4aeed8a638b88e84598" => :catalina
     sha256 "0f56a78ed6cc3e8b8eaccd21f2697fb6d810d64e2afd42deebbb251b93622c06" => :mojave
     sha256 "a599406cbf6dcdcef8029d156d00b81af91f585447e80c22b0bab27e8180cd99" => :high_sierra
+    sha256 "0b6338100d3ecafe74548092a9a7dbf4009c1333e4f3d1e16cdac79b21da7f0b" => :x86_64_linux
   end
 
   def install
