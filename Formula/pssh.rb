@@ -14,10 +14,10 @@ class Pssh < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "01d4dbe79b114a2e0a0e0cb10de0279f7872e9ed09036550102989bb9b59cb66" => :catalina
-    sha256 "7446d15d9d2fe0579fa3f7c37f5e5958309d4de88ea456b6f6e9aebc3a8e4ced" => :mojave
-    sha256 "d01989822798d3d6c6a4b3cd6fba588170128860e9f20300b88035443b915d4b" => :high_sierra
-    sha256 "1e8a9674edd0d050a98f4ee2bb62551bba622bff2ec38abb611e2f405162d01e" => :x86_64_linux
+    rebuild 1
+    sha256 "97b41f49d31808abac8379f9d5891be7cecff34bc183a42b0f6fd5ae1d9fe835" => :catalina
+    sha256 "2755e4052daf1641f2db79119443ea4552da5db3c578ed9dd779c86f96b35a78" => :mojave
+    sha256 "3eab96d7837cfab4b2c28ad5458e1c68ceb0d75c480e87613ca1872e58b2bf55" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -29,6 +29,13 @@ class Pssh < Formula
   patch do
     url "https://github.com/nplanel/parallel-ssh/commit/ee379dc5.patch?full_index=1"
     sha256 "79c133072396e5d3d370ec254b7f7ed52abe1d09b5d398880f0e1cfaf988defa"
+  end
+
+  # Fix for Python 3 compatibility
+  # https://bugs.archlinux.org/task/51533
+  patch do
+    url "https://bugs.archlinux.org/task/51533?getfile=14659"
+    sha256 "47c1af738d4ba252e9f35c5633da91bae2a2919a7b6b2bf425ee1f090d61c7fe"
   end
 
   def install

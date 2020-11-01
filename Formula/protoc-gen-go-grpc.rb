@@ -1,8 +1,8 @@
 class ProtocGenGoGrpc < Formula
   desc "Protoc plugin that generates code for gRPC-Go clients"
   homepage "https://github.com/grpc/grpc-go"
-  url "https://github.com/grpc/grpc-go/archive/cmd/protoc-gen-go-grpc/v1.0.0.tar.gz"
-  sha256 "488bb2b4b282b7d4adda32a6534268b2622990d59e2bdadd6f28603638f07116"
+  url "https://github.com/grpc/grpc-go/archive/cmd/protoc-gen-go-grpc/v1.0.1.tar.gz"
+  sha256 "01bfd13d2140ff671fcb826d114d091f71b921102337ea730a9c21f8272fc655"
   license "Apache-2.0"
 
   livecheck do
@@ -12,10 +12,9 @@ class ProtocGenGoGrpc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "46920c9b75eaf0f473e61865d391b7fb753253f050865ecd856509e06f2b71ea" => :catalina
-    sha256 "9634dcccbd06eaa037d88e4d647845684c7fbdb72564a889a3a856c663a0e150" => :mojave
-    sha256 "7a42ddf7f4827de9a1c8548ec0db496ffb665520a8ec10839461db2a1bf10c74" => :high_sierra
-    sha256 "2bf42e0a7513464b24e46cbd3f6394760b29980a0dc7aacf93e531d63fdd9df7" => :x86_64_linux
+    sha256 "012050e0d3a47290a2f8b55a8ec0c94898323d387a131b4021256f546d8e287a" => :catalina
+    sha256 "d99636039e0f337539516bbcbb36b08bd600201588c3391d6619e04d3767e292" => :mojave
+    sha256 "98f58a511df00b24d228148b8f938ddfdc1ef1968ebc0ec6dad57995ea7ac481" => :high_sierra
   end
 
   depends_on "go" => :build

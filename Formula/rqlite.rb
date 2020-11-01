@@ -1,16 +1,15 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
   homepage "http://www.rqlite.com/"
-  url "https://github.com/rqlite/rqlite/archive/v5.4.2.tar.gz"
-  sha256 "9a78542b72883e6452029500d64e6234fc719aab4147e240476c3f7a4ce801a6"
+  url "https://github.com/rqlite/rqlite/archive/v5.5.1.tar.gz"
+  sha256 "e50e0324d10dda9be275b7faac497ce5270662966c94ea5420db6767739714ca"
   license "MIT"
-  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fb11d83162baf6772acf451ecaa2030402afbdb0f616529c211726bb711e04c0" => :catalina
-    sha256 "f945e145d0de1262c4fac4c675e44a2bd7bc82db37fa97c9ed5846694978a521" => :mojave
-    sha256 "c13f9b8443471bb169a9e278e541113e192847e95873daf3ce984d7e5fd6d9ea" => :high_sierra
+    sha256 "c87f637a07a3aed0bb62102cad1fffc1e66450542bf1647416f5984aee76cdfb" => :catalina
+    sha256 "64f576469e3932b1a0dc333309eac4d815972d7b163fa2d64920b0f5ccc2f5f6" => :mojave
+    sha256 "6f7c825792e443a28ab231b7d403e628124939312828b7e098109e5f5fd94839" => :high_sierra
   end
 
   depends_on "go" => :build

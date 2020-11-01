@@ -1,15 +1,15 @@
 class BitGit < Formula
   desc "Bit is a modern Git CLI"
   homepage "https://github.com/chriswalz/bit"
-  url "https://github.com/chriswalz/bit/archive/v0.9.1.tar.gz"
-  sha256 "8c7c42942a65bea8398562f16342d0a670b084369ccb81ca2bf30833e3609754"
+  url "https://github.com/chriswalz/bit/archive/v0.9.6.tar.gz"
+  sha256 "eca7d63d3782a2d64f7cc6abcddff5fff2d87abf70eef994c32b6fe1f4a1fdf1"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9d8d5ce469d71500e41a71203320f54f19ff8dede36a369da3a7b34802c36bf0" => :catalina
-    sha256 "e7eee70da0e4644227b175415d75264fbe86109f7f161831aaf1b99217d2a34b" => :mojave
-    sha256 "1fb7f8988ec1c6918262b04297779b4655dee27fb0abac1f7b99567dfee9eb2c" => :high_sierra
+    sha256 "8ca334755e7f5e61db20a5dc52a636a297b33b7bdb4f3c3f7547998bd86abb26" => :catalina
+    sha256 "ffcefc3c17f5695e2f00d8ac4e0c107aa8b6115412c78a1fa4317572ab89d7ed" => :mojave
+    sha256 "2d018589f911ce954202cc01a4358c991dc4b4fdb1823f1eb39677b18cb2915a" => :high_sierra
   end
 
   depends_on "go" => :build
