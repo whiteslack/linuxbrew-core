@@ -10,6 +10,7 @@ class Qpdf < Formula
     sha256 "dd31dda8bb5b39fc025fc52951661a22e5ce87604393271a941151cb592837d3" => :catalina
     sha256 "34d03d5740b508c2c90db74cc1f59a17ef1dbff5d5e24c96de316bcc78fdbc1e" => :mojave
     sha256 "0e58fbc2dc0feb2d68f922ebf1885786ad4d3a89759d6bbcdf3f8319a021ac2e" => :high_sierra
+    sha256 "a99852495b063ec5f0060b0a5e9cfe83b93a6996ac9d9383d6dbf90918c0e6bb" => :x86_64_linux
   end
 
   depends_on "jpeg"
