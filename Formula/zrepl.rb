@@ -11,6 +11,7 @@ class Zrepl < Formula
     sha256 "1314da8c7c65f89c93a17ca3dab945e0132e61a1e5cc2ec83f3e844bb1a475fc" => :catalina
     sha256 "d4c76f92429aea1e62be4e187f263c478b60ab47bbd739d4c97f97fd3d852dab" => :mojave
     sha256 "bf399e30a67a4cab316128ef33b9e1349bb51a32a0c6befeecb79ef2837c22b5" => :high_sierra
+    sha256 "084d7c5115533202044513b32e3a063c13a7724e4c7bc382d5662c8c5cbab425" => :x86_64_linux
   end
 
   depends_on "go" => :build
