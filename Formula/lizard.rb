@@ -1,17 +1,22 @@
 class Lizard < Formula
   desc "Efficient compressor with very fast decompression"
   homepage "https://github.com/inikep/lizard"
-  url "https://github.com/inikep/lizard/archive/v2.0.tar.gz"
-  sha256 "85456b7274c9f0e477ff8e3f06dbc2f8ee8619d737a73c730c8a1adacb45f6da"
-  license "GPL-2.0"
+  url "https://github.com/inikep/lizard/archive/v1.0.tar.gz"
+  sha256 "6f666ed699fc15dc7fdaabfaa55787b40ac251681b50c0d8df017c671a9457e6"
+  license all_of: ["BSD-2-Clause", "GPL-2.0-or-later"]
+  version_scheme 1
+
+  livecheck do
+    url "https://github.com/inikep/lizard/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   bottle do
     cellar :any
-    sha256 "93f8a82b125ca4b0548d3a890a3cada1c5724aea95df42b7b224cd83191558fc" => :catalina
-    sha256 "adce9d789c2391a96697128d39f103fa0a23b3e462b7e7a2d22346ceeab74925" => :mojave
-    sha256 "c3266fb61fb88de0d7a9f3fb2ce53e3ca2708278c7c7064b2b61a4abf138708d" => :high_sierra
-    sha256 "928e2fce0d64f3a5c960684ddca781073cdd285fd5f00f61c05675d5cb617366" => :sierra
-    sha256 "6cf3e399c918fcbd4f2c80b77affb83dcc98ed74ea348ba36e247282faedf82e" => :x86_64_linux
+    rebuild 1
+    sha256 "18fe5004080acea3a2799a0e1bce34e0382bea9528a1ec036267c1eb8a702e3b" => :catalina
+    sha256 "7375bcd75ec034939751ee0f44dd703ac81431957a92712d26fec1682e00ebc7" => :mojave
+    sha256 "a42e90e02b4074e0c864ae32fe5833977cebd50b8f9c74339c7a91dcf169b098" => :high_sierra
   end
 
   def install

@@ -2,16 +2,15 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
   url "https://github.com/cwida/duckdb.git",
-      tag:      "v0.2.1",
-      revision: "d9bceddc7209a7e0b5c0402958d1191e19a491e7"
+      tag:      "v0.2.2",
+      revision: "3222accbaf4b2648e5f2b4d3ff99ba26cbf2aba5"
   license "MIT"
-  revision 1
 
   bottle do
     cellar :any
-    sha256 "450e925ec6c6bde4befa4e999dc88be06c96baf156b743fd60ac77a0c2a8dc25" => :catalina
-    sha256 "38f709bac3c504b5f1fc76e2d3b8df43c10dd25492f457f781181bca309ace58" => :mojave
-    sha256 "d13d63bc49a1ba4b27610e3dffd5ec37592dad931f316f863e5e6e883984f817" => :high_sierra
+    sha256 "b3928bdf9934279b10485a29ad3e7279ccfc12118d713fd23e3d287a01b4cf0f" => :catalina
+    sha256 "b42c5e39ae23a9b460569cfec630c93d8758e073941952acf617e859bba5c62d" => :mojave
+    sha256 "7395d6ce40323f839ee50d599abafbee2ed0e24d0429e69363d754841ebe085a" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -38,6 +37,15 @@ class Duckdb < Formula
       INSERT INTO weather (temp) VALUES (40), (45), (50);
       SELECT AVG(temp) FROM weather;
     EOS
-    assert_equal "45.0", shell_output("#{bin}/duckdb_cli < #{path}").strip
+
+    expected_output = <<~EOS
+      ┌───────────┐
+      │ avg(temp) │
+      ├───────────┤
+      │ 45.0      │
+      └───────────┘
+    EOS
+
+    assert_equal expected_output, shell_output("#{bin}/duckdb_cli < #{path}")
   end
 end

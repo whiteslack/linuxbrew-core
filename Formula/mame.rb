@@ -1,11 +1,10 @@
 class Mame < Formula
   desc "Multiple Arcade Machine Emulator"
   homepage "https://mamedev.org/"
-  url "https://github.com/mamedev/mame/archive/mame0225.tar.gz"
-  version "0.225"
-  sha256 "ca4d5a429d72b30fd2bdf60350e490c7de4ac64b1e0dafcf38450f8ba84a1a95"
+  url "https://github.com/mamedev/mame/archive/mame0226.tar.gz"
+  version "0.226"
+  sha256 "7c4c9ec232ba988e65fd29665c9b8e40b5ac3aa9f561eeb107cebbf08ba94baf"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/mamedev/mame.git"
 
   # MAME tags (and filenames) are formatted like `mame0226`, so livecheck will
@@ -19,9 +18,9 @@ class Mame < Formula
 
   bottle do
     cellar :any
-    sha256 "3680dd9e5f826552b289f521f11cb91c52fa037b215285f1e47f1a1319409eb4" => :catalina
-    sha256 "d5492c6df974c870714ce6cf4e23f84532e4a26887ae1e37eb9d798c65a185ea" => :mojave
-    sha256 "01a90fd0d0a5f88853aa10637bafb9fdafe67348ffa780e80fc9b606f6ab8e76" => :high_sierra
+    sha256 "8e1a4d788bf147d8c1b382a38fb4f2563d64fd3bec2cf9f7e7a7ec8aa79e6ebe" => :catalina
+    sha256 "cd0b9807e479bca5b2901073ddfe95a85b1f53f5ee509a238b3309f8d10652c9" => :mojave
+    sha256 "777250b5d11fec842d04a7af26ca8a0d26455f27fbbc8805cfd9d61d6c17a86e" => :high_sierra
   end
 
   depends_on "glm" => :build
