@@ -5,6 +5,11 @@ class Gpsbabel < Formula
   sha256 "30b186631fb43db576b8177385ed5c31a5a15c02a6bc07bae1e0d7af9058a797"
   license "GPL-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^gpsbabel[._-]v?(\d+(?:[._]\d+)+)$/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "ef08f246d1d7321d1bb605591194f2d207fc0cd2465755dbbe86afc640cb41db" => :catalina

@@ -9,6 +9,11 @@ class Awsume < Formula
   revision OS.mac? ? 3 : 4
   head "https://github.com/trek10inc/awsume.git"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "7ad93659da8dc66192f08328b17986b56d4b12b7babcc110987a0ffbad5b1613" => :catalina

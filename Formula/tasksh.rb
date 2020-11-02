@@ -7,6 +7,13 @@ class Tasksh < Formula
   revision 1 unless OS.mac?
   head "https://github.com/GothenburgBitFactory/taskshell.git", branch: "1.3.0"
 
+  # We check the upstream Git repository tags because the first-party download
+  # page doesn't list tasksh releases.
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "db065e61ef2e605a1987012eaf4c0f10b648a98da3d143b9a02e1c22d51216f7" => :catalina
