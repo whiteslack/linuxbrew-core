@@ -17,6 +17,7 @@ class Lizard < Formula
     sha256 "18fe5004080acea3a2799a0e1bce34e0382bea9528a1ec036267c1eb8a702e3b" => :catalina
     sha256 "7375bcd75ec034939751ee0f44dd703ac81431957a92712d26fec1682e00ebc7" => :mojave
     sha256 "a42e90e02b4074e0c864ae32fe5833977cebd50b8f9c74339c7a91dcf169b098" => :high_sierra
+    sha256 "532304003f29c40e40e1eb6e92abd97e672d49ab9568a0eacd578dd0993a2572" => :x86_64_linux
   end
 
   def install
