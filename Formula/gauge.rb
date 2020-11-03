@@ -1,16 +1,16 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
   homepage "https://gauge.org"
-  url "https://github.com/getgauge/gauge/archive/v1.1.4.tar.gz"
-  sha256 "9250fde749c51b76acd375a82e27fbed758ff8982d9e6dc82c70e4dc218e6b4a"
+  url "https://github.com/getgauge/gauge/archive/v1.1.5.tar.gz"
+  sha256 "b11767c95b03a6a59bb6570e4b9c210979d40c560ac65de009b60cdc4742eda9"
   license "Apache-2.0"
   head "https://github.com/getgauge/gauge.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f53e79aaae0ab172d32ee5a3ecf6c34e58ecd54d5cb7e84e32c62e8af52e56a7" => :catalina
-    sha256 "5826571c92e733869fddd8983169578e068d0f260cfc4196c84e53775847d252" => :mojave
-    sha256 "2aa0079b48e0d2b4f263ac55183c69f476c71e4e03521ecae1dd499f9de867ef" => :high_sierra
+    sha256 "f395799bcee7d019db8c425efac14197da0627d8fa776a1a9c3341ce3944c76b" => :catalina
+    sha256 "179ea1f964d984ae8a4bce8a281a0cbebbdebda62040242bb1782487fd8e78f8" => :mojave
+    sha256 "18a8e818061258898ab408e2711339d7559e1ac948f02f2901736e4e1e587348" => :high_sierra
   end
 
   depends_on "go" => :build

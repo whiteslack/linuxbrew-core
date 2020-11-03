@@ -3,8 +3,8 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://github.com/ansible/ansible-lint/"
-  url "https://files.pythonhosted.org/packages/82/7b/8757f707c3b2017f2f2daf081c0e99e4090d14a1593c5d1c6d6da6596519/ansible-lint-4.3.6.tar.gz"
-  sha256 "888cf2510d830de017e01ca4d5fd92abfb84458a2b2a47263a2d923a7dabc7ba"
+  url "https://files.pythonhosted.org/packages/b3/23/1ab89648d1169b19c822ee8fffd7743332c5ea5dde3ab0c42d19844e330b/ansible-lint-4.3.7.tar.gz"
+  sha256 "1012fc3f5c4c0c58eece515860f19c34c5088faa5be412eec6fae5b45bda9c4f"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class AnsibleLint < Formula
 
   bottle do
     cellar :any
-    sha256 "1de16cfc095f70ffda968df944abfe0d6b05c1d090e348ea066a73ebb7dcfeee" => :catalina
-    sha256 "4da9e9bdd2fc279bcdac852a0ae82662edb03abd9b5d6cbcedd2f277096d2a13" => :mojave
-    sha256 "2debe4a7de2ad98cb1437489207e6119e3f356e1b5e9ff823dc26f41c9b60c0c" => :high_sierra
-    sha256 "46e7d9ed5fe7db4944274565aa27c926a582ba29dc2c9e25c8bb0852304dcf8d" => :x86_64_linux
+    sha256 "541b6eb4728f18f306ac28420f707ed06d158a0056b2cf1dffe6bf5f9c3dbc04" => :catalina
+    sha256 "a7ce32ccfb9e8d7786087d8285187e957f9ce8c3ce589d4e4f6595e9dec961cb" => :mojave
+    sha256 "bb59e83de3a08c7555a53b4242e16bc1ccb1cad7357a6a811a2174f71ce67ccf" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -36,8 +35,8 @@ class AnsibleLint < Formula
   end
 
   resource "ansible-base" do
-    url "https://files.pythonhosted.org/packages/b3/7f/2a3d935534b5b41fbde5a9fab03c3fdc7c5f94c113409ec1031ddc9bc8de/ansible-base-2.10.2.tar.gz"
-    sha256 "c79fe108e13b286bad21734208624aaef9dabb49bb4211b13bc96d88829e22ab"
+    url "https://files.pythonhosted.org/packages/2e/d1/92422f8f53ae2d4e75ebdc2be2186a9ca2796b5d9679f20ed0239e86d8cf/ansible-base-2.10.3.tar.gz"
+    sha256 "35a208726b10fecbcf00c263ae4572b48f505b5796fb77a85c3e9c1036ea5e4f"
   end
 
   resource "cffi" do
