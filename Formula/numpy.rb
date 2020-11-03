@@ -14,6 +14,7 @@ class Numpy < Formula
     sha256 "a9316c2fbc6289f359a8379f667d5c7db067f86c2be153d40cd400ab03fe83a5" => :catalina
     sha256 "a01c9eac38f92f3079f860dada4f49543cb40ecbc42a62f3adf022529fb990bc" => :mojave
     sha256 "5884958d5903b9a8e5b47a81f0dc9ad5435873b472d3709b6956998356c8c353" => :high_sierra
+    sha256 "225ea32a60c1dd8e6738324111f9f6a31fc91b0b8a8787b7d15e012a90a4cca6" => :x86_64_linux
   end
 
   depends_on "cython" => :build
