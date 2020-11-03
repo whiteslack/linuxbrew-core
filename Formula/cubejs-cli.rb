@@ -16,6 +16,7 @@ class CubejsCli < Formula
     sha256 "fe27b3b649d4dd7d2b91ffbcb67e6d7cf59f212c0c222f485d7b47343fbf5c09" => :catalina
     sha256 "14b9611316f812f953e2ff3366d503a235a006f5f676e5d3a218f077fb13b1f0" => :mojave
     sha256 "d48c2295e137c55a2e4375173260ba1491519fbec401e1302e5d7ce7f009d441" => :high_sierra
+    sha256 "60e7c7b5e48f323da09190312f24473b52718670e13736fa5abcd16a244f507a" => :x86_64_linux
   end
 
   depends_on "node"
