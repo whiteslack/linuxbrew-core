@@ -1,8 +1,8 @@
 class Poppler < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-20.10.0.tar.xz"
-  sha256 "434ecbbb539c1a75955030a1c9b24c7b58200b7f68d2e4269e29acf2f8f13336"
+  url "https://poppler.freedesktop.org/poppler-20.11.0.tar.xz"
+  sha256 "021557074516492375c2bb4226a413aad431159e9177f9f14dff4159d2723b14"
   license "GPL-2.0-only"
   head "https://anongit.freedesktop.org/git/poppler/poppler.git"
 
@@ -12,9 +12,9 @@ class Poppler < Formula
   end
 
   bottle do
-    sha256 "4d2848ac3472c3fd48357d8a0c99c5c610d33a864801d74855fcacb58fe7fb69" => :catalina
-    sha256 "f1f1c59dac8d8c0e66c9f72a5abd7378d2f937e4e75472f5377f2e384e5eeb5e" => :mojave
-    sha256 "6295d1392db46253b2afab2dd08a0cf3da320b638922d617523ae1e7edf45952" => :high_sierra
+    sha256 "84aa266e0c4efaf1d24080886075de2bf06f646e184e079b449e88476d4648b2" => :catalina
+    sha256 "c1e55a26824c2f8fb6290c1092d6a63d2aa5f632ad289231e3064754da1a988a" => :mojave
+    sha256 "96a5cf0aec78d592efaffbc6b257d34966da078a13cef14dcd38bada05a5f047" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -39,8 +39,8 @@ class Poppler < Formula
     because: "poppler, pdftohtml, pdf2image, and xpdf install conflicting executables"
 
   resource "font-data" do
-    url "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz"
-    sha256 "1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012"
+    url "https://poppler.freedesktop.org/poppler-data-0.4.10.tar.gz"
+    sha256 "6e2fcef66ec8c44625f94292ccf8af9f1d918b410d5aa69c274ce67387967b30"
   end
 
   def install

@@ -1,16 +1,15 @@
 class JfrogCli < Formula
   desc "Command-line interface for Jfrog Artifactory and Bintray"
   homepage "https://www.jfrog.com/confluence/display/CLI/JFrog+CLI"
-  url "https://github.com/jfrog/jfrog-cli/archive/v1.40.0.tar.gz"
-  sha256 "4d22e02032cecc2a9d99686222c490e92b43e5aa484d9c8fff4770f7f2844ab0"
+  url "https://github.com/jfrog/jfrog-cli/archive/v1.40.1.tar.gz"
+  sha256 "c956b8750f8df440a70617e4dc1109d6f17e19a51bb60a64fc4681b83c8aad48"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a7c407c60bc26aa7a14d46daffda4d02751d9d572d77fa08f4dc716edd8975da" => :catalina
-    sha256 "0f5e4acffb90cbb3e73c36b6df032865cd3d6116faa38f47725a2fe19f8ff4d4" => :mojave
-    sha256 "2bf897c3d0899a46cca114fb1ceccbd4cb1d281d07e847d2c56b064d58d6ed2a" => :high_sierra
-    sha256 "3fdf2383e695dae8f6a50d0d18815ad1fce46553486bb527dc8553fe0b5321d9" => :x86_64_linux
+    sha256 "429a4369a845793bc28ec3665f7214243b87bb3b516f705cd2a8cf87ab8721ef" => :catalina
+    sha256 "0f20b63cb07e5119000becb106143ada57338445ff07a02b702b735f0bf23419" => :mojave
+    sha256 "49efaa10249842d061a6ade4763995fe3255385cb990de80ef7a37a8eaf323c6" => :high_sierra
   end
 
   depends_on "go" => :build
