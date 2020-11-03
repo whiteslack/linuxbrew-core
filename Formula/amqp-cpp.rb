@@ -16,6 +16,7 @@ class AmqpCpp < Formula
     sha256 "275f213084c4509dcd45d557481847ff12d9f7c0bfb0ee2347645e4357adb91b" => :catalina
     sha256 "1bb56145a2d80949f3584b4a6b23b120b35c220b355f1e47fead09e5a2d2269e" => :mojave
     sha256 "075fa09056e450157fea748b62dbefca028a9b712fef988f034eb7af58a644d1" => :high_sierra
+    sha256 "527116487cb7f98637b960b72760a527c7dc3f3c4a039501989a66347f9aa7c1" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
