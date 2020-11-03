@@ -1,25 +1,25 @@
 class Tarantool < Formula
   desc "In-memory database and Lua application server"
   homepage "https://tarantool.org/"
-  url "https://hb.bizmrg.com/tarantool.2.3.src/tarantool-2.3.2.81.tar.gz"
-  sha256 "312ee4b68a0834e01a84df0fa1eb34dd7484a5590f68e1184599ed4dd5c575a4"
+  url "https://download.tarantool.org/tarantool/2.5/src/tarantool-2.5.2.0.tar.gz"
+  sha256 "f64b8ef772d42017bd938770912b4a1727ce6302087efcd5c7faac9e425d9ac4"
   license "BSD-2-Clause"
-  head "https://github.com/tarantool/tarantool.git", branch: "2.3", shallow: false
+  head "https://github.com/tarantool/tarantool.git", branch: "2.5", shallow: false
 
   bottle do
     cellar :any
-    sha256 "e013978027f78ed680b09fd07ddc19045852ea6eb158a98af580826dd363cbb9" => :catalina
-    sha256 "8cd34bf1c2129621a127a59406037a18a2ebe2c3d11d08d8397766568d2057a4" => :mojave
-    sha256 "a66ae22addde4398e8d5300799c839ce404bae2925f2f94a0b95a0b40af7ac81" => :high_sierra
+    sha256 "10240e8f72bc8c9a2463e22fbc6ea4033b6b775b50419040f6f1491ae91ef0ff" => :catalina
+    sha256 "76d89fbaa6d7a4265051ee2acf5bea261b829041b312335047466f4a8c85723c" => :mojave
+    sha256 "35f468f277d8b6d4889199c05462d675bc37f09794ef11a8b657ab13db648c95" => :high_sierra
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "cmake" => :build
-  depends_on "libtool" => :build
   depends_on "icu4c"
   depends_on "openssl@1.1"
   depends_on "readline"
+
+  uses_from_macos "curl"
+  uses_from_macos "ncurses"
 
   def install
     sdk = MacOS::CLT.installed? ? "" : MacOS.sdk_path
@@ -39,8 +39,13 @@ class Tarantool < Formula
     args << "-DENABLE_DIST=ON"
     args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}"
     args << "-DREADLINE_ROOT=#{Formula["readline"].opt_prefix}"
+    args << "-DENABLE_BUNDLED_LIBCURL=OFF"
     args << "-DCURL_INCLUDE_DIR=#{sdk}/usr/include"
     args << "-DCURL_LIBRARY=/usr/lib/libcurl.dylib"
+    args << "-DCURSES_NEED_NCURSES=TRUE"
+    args << "-DCURSES_NCURSES_INCLUDE_PATH=#{sdk}/usr/include"
+    args << "-DCURSES_NCURSES_LIBRARY=/usr/lib/libncurses.dylib"
+    args << "-DICONV_INCLUDE_DIR=#{sdk}/usr/include"
 
     system "cmake", ".", *args
     system "make"

@@ -1,8 +1,9 @@
 class MinimalRacket < Formula
   desc "Modern programming language in the Lisp/Scheme family"
   homepage "https://racket-lang.org/"
-  url "https://mirror.racket-lang.org/installers/7.8/racket-minimal-7.8-src-builtpkgs.tgz"
-  sha256 "69b22b7f2054d5adb557fde42e6a3cf2f730bbc705ae7b8e5cba8c867f66c700"
+  url "https://mirror.racket-lang.org/installers/7.9/racket-minimal-7.9-src-builtpkgs.tgz"
+  sha256 "293aa8ef709a6240472f16833351ba66a9e461261d2813c7fb1cc5ddf59c3000"
+  license any_of: ["MIT", "Apache-2.0"]
 
   livecheck do
     url "https://download.racket-lang.org/all-versions.html"
@@ -11,10 +12,9 @@ class MinimalRacket < Formula
 
   bottle do
     cellar :any
-    sha256 "7bbc4358faae0aeb94e88a87016b4ecb899b9e188c5e318afabc151eb68f4300" => :catalina
-    sha256 "58f2fdad411b3e7852f1c442e2be4ccd01ed8ab3d563ef8c418de9101c989e88" => :mojave
-    sha256 "a9afe8d28a6c0a67b55d9bc46d5b30ee2f169db4ce25bef25355644fd4a83163" => :high_sierra
-    sha256 "8b04f0bb50927ad791466ff6739b4ad2fa6421e743fabe5f3bf9a7b5502c03dc" => :x86_64_linux
+    sha256 "330c0724e1315eaec481eaa96842cda06c6b33c613d10fed2c619c4f675c5bd2" => :catalina
+    sha256 "809d6cf0d6e8af29fe6175b5442bdd064b875b1a7653b570353b536f83ff3901" => :mojave
+    sha256 "13c1be2585bffe2252ce5cdc1357ba0bc9f5675cbd4ffd4d474e1a40c597ef20" => :high_sierra
   end
 
   uses_from_macos "libffi"
@@ -68,8 +68,6 @@ class MinimalRacket < Formula
         #{version}
       catalogs:
         https://download.racket-lang.org/releases/#{version}/catalog/
-        https://pkgs.racket-lang.org
-        https://planet-compats.racket-lang.org
       default-scope:
         installation
     EOS

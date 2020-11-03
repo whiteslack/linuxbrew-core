@@ -4,6 +4,7 @@ class X265 < Formula
   url "https://bitbucket.org/multicoreware/x265_git/get/3.4.tar.gz"
   sha256 "7f2771799bea0f53b5ab47603d5bea46ea2a221e047a7ff398115e9976fd5f86"
   license "GPL-2.0-only"
+  revision 1
   head "https://bitbucket.org/multicoreware/x265_git"
 
   livecheck do
@@ -12,11 +13,9 @@ class X265 < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "a24f202256e98285ed39c80277b2aa5d9eba2b5f37ee7f05993b269b3033684e" => :catalina
-    sha256 "5a0033bb9c6b2cf12f5836a1ad3f887f61df55eceecedc2d3414665282e576f2" => :mojave
-    sha256 "fc09819e3bba1189d57b7708ad0fcccc359b160ea380574796d7eb4a71e139ac" => :high_sierra
-    sha256 "a4ea0587c867fb1509b952009eadfaaebc458d5717de6528ee6d874c64678f3d" => :x86_64_linux
+    sha256 "0e268d680b103353ff708f4514b54f40d5a8793951a1caea1355addcda80450c" => :catalina
+    sha256 "1965fd30f49619318709945600dfaeecc368f5620d26dfd2f425f91f155f255d" => :mojave
+    sha256 "af40896873573482ba467c79b7205b0330651c58b3064a09195acb8986d43c9f" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -41,7 +40,7 @@ class X265 < Formula
     (buildpath/"8bit").mkpath
 
     mkdir "10bit" do
-      system "cmake", buildpath/"source", *high_bit_depth_args
+      system "cmake", buildpath/"source", "-DENABLE_HDR10_PLUS=ON", *high_bit_depth_args
       system "make"
       mv "libx265.a", buildpath/"8bit/libx265_main10.a"
     end

@@ -4,24 +4,27 @@ class DoubleConversion < Formula
   url "https://github.com/google/double-conversion/archive/v3.1.5.tar.gz"
   sha256 "a63ecb93182134ba4293fd5f22d6e08ca417caafa244afaa751cbfddf6415b13"
   license "BSD-3-Clause"
+  revision OS.mac? ? 1 : 2
   head "https://github.com/google/double-conversion.git"
-  revision 1 unless OS.mac?
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f016bf145173af7242ce615b5764e123972e5c0c469908ea1e3c58793e7b829e" => :catalina
-    sha256 "faa661750aeda3faf356d445d3d293fa52021c93a08fea35fd6666251b44203b" => :mojave
-    sha256 "c948a1b31bc508f9218b6373e5ac3cc92838aa033e15f777aa046675921c3369" => :high_sierra
-    sha256 "6fad17756240370dffc053a66fdfff4f17b02669c9456546a591349c3ea0e959" => :sierra
-    sha256 "56bbcd9d6807fce5bfb95994a7c5a36e906b39f1ee47d379c1e752c2aef33f00" => :x86_64_linux
+    sha256 "20b93e20891d48912ffbfbdf3ef470f7305684df2381ef93056a11cedd95c65f" => :catalina
+    sha256 "ec700c89a4f1794170b4466f5a0a100b6eafee7cb0a794e55ea53de18114a1d3" => :mojave
+    sha256 "9b54153b09683b8fa40160588792385e04f6be56ba355c5a530a2209b9f0526d" => :high_sierra
   end
 
   depends_on "cmake" => :build
 
   def install
     mkdir "dc-build" do
-      system "cmake", "..", ("-DBUILD_SHARED_LIBS=ON" unless OS.mac?), *std_cmake_args
+      system "cmake", "..", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
       system "make", "install"
+      system "make", "clean"
+
+      system "cmake", "..", "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
+      system "make"
+      lib.install "libdouble-conversion.a"
     end
 
     unless OS.mac?

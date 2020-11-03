@@ -1,16 +1,15 @@
 class Tectonic < Formula
   desc "Modernized, complete, self-contained TeX/LaTeX engine"
   homepage "https://tectonic-typesetting.github.io/"
-  url "https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.3.0.tar.gz"
-  sha256 "dd2139eaf9146853ff8901d4b3fd2227352a0e0151fbe4b82597cf65c32068d3"
+  url "https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.3.1.tar.gz"
+  sha256 "3cef4305e5de4fc386fb4cff013502e330f235155696c425b0b20f828ccee57a"
   license "MIT"
 
   bottle do
     cellar :any
-    sha256 "ed868dcee1ef9925b8368855814a19ccc6b6b78d8b98ba2492b94ff0f4881500" => :catalina
-    sha256 "3dab6bcb9177fbe5b335f911b62d36f42bb11d0185febb2b19da0e82e1a5fc2c" => :mojave
-    sha256 "966ce4ba6a7b1e907e3f0a9138b4e5c879d2ecd4fb866ab579b224c9ac310b4c" => :high_sierra
-    sha256 "43a9773706373967377273cb6967f552ed4d19255292149cad9c4c69325f22f0" => :x86_64_linux
+    sha256 "a24dea34eeffb739742ed83730fad8b30e55c92b2a601d145e589ecf118fc68e" => :catalina
+    sha256 "3e6a1e4947822ad29446dc26234aa5c2158e05975a2ddccb80314a5ec78eeadc" => :mojave
+    sha256 "4c8ba781aab4daf20287f059bb3b5668339b1596e007e6d0d0e1a94bebd35b5a" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
