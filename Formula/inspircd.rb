@@ -1,9 +1,9 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
   homepage "https://www.inspircd.org/"
-  url "https://github.com/inspircd/inspircd/archive/v3.7.0.tar.gz"
-  sha256 "e77df17ed7f774fa0927cfce4412c2b6a3e4d5a9a8acab9753685c2aef22ea3b"
-  license "GPL-2.0"
+  url "https://github.com/inspircd/inspircd/archive/v3.8.0.tar.gz"
+  sha256 "2f847c6a091332faa7a647291f92ff3ed571b17967c85198d34c816c40e47e04"
+  license "GPL-2.0-only"
 
   livecheck do
     url "https://github.com/inspircd/inspircd.git"
@@ -11,9 +11,9 @@ class Inspircd < Formula
   end
 
   bottle do
-    sha256 "224bfcd1dcc583280d917610dc35a2fcf6696e28911ce2b06fd07ae612761a37" => :catalina
-    sha256 "fc06d01b383aeeba481e00aacba60ee3a2dbaf25c49cff1662a546d6a6df2135" => :mojave
-    sha256 "84c698649f37d4165ed627a053ab1e89c2201d436692341559e132440e22e84c" => :high_sierra
+    sha256 "34dc59aeda4825d28c49bf3eb70c8a48de780a5e468518bb6f4996062cb04243" => :catalina
+    sha256 "9e958c6d286cd14e48c3da30b112dd85767559e10beb37da17d34691093bf4c9" => :mojave
+    sha256 "ec15fcc66f27585110a022330567f08251617fca67ed96efe9079c67eead9508" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -22,7 +22,7 @@ class Inspircd < Formula
   skip_clean "logs"
 
   def install
-    system "./configure", "--enable-extras=m_ldapauth.cpp,m_ldapoper.cpp"
+    system "./configure", "--enable-extras=ldap"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end

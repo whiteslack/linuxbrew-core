@@ -1,16 +1,16 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https://github.com/microsoft/vcpkg"
-  url "https://github.com/microsoft/vcpkg/archive/2020.07.tar.gz"
-  sha256 "11af5dc5ac7a01d98145e894f5962711b16b23cbcf6998bef9c77f00a565c9d1"
+  url "https://github.com/microsoft/vcpkg/archive/2020.11.tar.gz"
+  sha256 "71d714bb0fa07fd9686cfaaf3730ae2089da8a5fc9edd5094996226e3ba7a462"
   license "MIT"
   head "https://github.com/microsoft/vcpkg.git"
 
   bottle do
     cellar :any
-    sha256 "35363b2d066c920dcde30159e28b580e346f33064accaa79f789759816eef61a" => :catalina
-    sha256 "055f677516a5474e4964f7bb5fdb6f05e91913b8aea32aba56918cb7d31fe34b" => :mojave
-    sha256 "b1cab740efdb40b575553ad9bd96cd457482e16d0246315b69a996f753b72a85" => :high_sierra
+    sha256 "e181bbe56ef0d1db7c1cae4a5c6fda76b876ae5a737dbf2748bd84e0b91d1dde" => :catalina
+    sha256 "f055bfcd2264536b1b1b53d6c86d895d10da02a1984fba1350ee24693473dfe6" => :mojave
+    sha256 "64cb1e7805e0908c553974dfe70e19533abd6f3b2ef3c6253276e417e91fc16b" => :high_sierra
   end
 
   depends_on "cmake" => :build

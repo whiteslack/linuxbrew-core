@@ -3,16 +3,16 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/59/1a/cad7460a9327d81be31cf463513306f4670c48caf182079bc8d7ab52e027/oci-cli-2.14.3.tar.gz"
-  sha256 "7efcbd09685044b6b6959b0c3c50113dada5effa0e8100a58053c9ba67cecf68"
+  url "https://files.pythonhosted.org/packages/cb/ed/2429a0f1374d869adabe1bc4367e72c916769a4e73daba5773c29538cc4c/oci-cli-2.14.4.tar.gz"
+  sha256 "077d9e8f43ab3da2f8442e9d4f6179bfad31c13a81bb507911b84f7ae1050f97"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git"
 
   bottle do
     cellar :any
-    sha256 "e5e3d49769f7d1adef569546d7508947fa3303cf9f6407054c6c1f24b952f67b" => :catalina
-    sha256 "6e73ae4c196866e93c37bcaa7f7a069f1a219cb1ded966d0a724d59f27247a0e" => :mojave
-    sha256 "0a6abee2bf6302849c6cd6ad15343f175abd9000afa39bf6b89370df585ed301" => :high_sierra
+    sha256 "86832e583f154030ec61f4b8e830a506a3c77c414df49de70487f377d42594e0" => :catalina
+    sha256 "6b90d7dcd9f001c183882f10368ddcc0ed92578c101baeb1e7b30d6d56c68976" => :mojave
+    sha256 "64c8ff915e943b05104c79d874463dd2e6328f71e50391683cb2fbbb90c40117" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -53,8 +53,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/04/b4/61f2b349b93b060beee1f0c7e1f72c72ed88a1e369aca0910920faa2de12/oci-2.23.3.tar.gz"
-    sha256 "5e4cb677f681596923f8d643dd16502dc1f03dbd3854f672cf1667c26eef138b"
+    url "https://files.pythonhosted.org/packages/65/07/225a88d3cda7933cfee02a91dc698c09da7c42d520792fcf10613c557e04/oci-2.23.4.tar.gz"
+    sha256 "76a74aa27a9ca380cc91354a10639ded81a98018b950ca57795fe610c46f898a"
   end
 
   resource "pycparser" do
@@ -73,8 +73,8 @@ class OciCli < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/f4/f6/94fee50f4d54f58637d4b9987a1b862aeb6cd969e73623e02c5c00755577/pytz-2020.1.tar.gz"
-    sha256 "c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"
+    url "https://files.pythonhosted.org/packages/09/07/448a8887c7195450604dfc0305d80d74324c36ee18ed997664051d4bffe3/pytz-2020.4.tar.gz"
+    sha256 "3e6b7dd2d1e0a59084bcee14a17af60c5c562cdc16d828e8eba2e683d3a7e268"
   end
 
   resource "PyYAML" do
