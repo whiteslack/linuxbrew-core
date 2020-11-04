@@ -12,6 +12,7 @@ class Asciidoctor < Formula
     sha256 "36f5353774bbadce2a0ca7fff32cb2ed3d2aee1e71f7a16e113a6af6eeebc254" => :catalina
     sha256 "061c5a1b466a915974c92ec315aa686c2615fa311926eca72590a398cdd4bf67" => :mojave
     sha256 "c085727e1a6aeabbe2b5431359ec60a1b8a09d9209ff5d1e0229ddee9e37723d" => :high_sierra
+    sha256 "3f5e82717a3150d1d5a285af30c17029815c4e3be5cf7e95f1ca42ff2fb9f325" => :x86_64_linux
   end
 
   resource "concurrent-ruby" do
