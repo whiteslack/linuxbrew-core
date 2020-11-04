@@ -10,6 +10,7 @@ class Up < Formula
     sha256 "0b7f8e1fdef01b1395acd9331cae1bd15b703d244692ac108e0c9f3d2e75b170" => :catalina
     sha256 "fbe848c08368b189a0a97372a5b11848d72d2c6759a7c877e1628e9e4439ba30" => :mojave
     sha256 "5059e775356194442c930aecf199b7a418c3c6ecdd8b82db078c26970a1b3af5" => :high_sierra
+    sha256 "a6a66c399329d3eef5fc339d08a557a2e399493834d20a39bd3e34e2ccb58cc9" => :x86_64_linux
   end
 
   depends_on "go" => :build
