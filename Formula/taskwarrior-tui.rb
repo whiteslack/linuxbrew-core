@@ -1,8 +1,8 @@
 class TaskwarriorTui < Formula
   desc "Terminal user interface for taskwarrior"
   homepage "https://github.com/kdheepak/taskwarrior-tui"
-  url "https://github.com/kdheepak/taskwarrior-tui/archive/v0.9.2.tar.gz"
-  sha256 "dd37dc4536afecd2875517ddb5588f3c8313bac2f3e76ef12f621f38c146fd6a"
+  url "https://github.com/kdheepak/taskwarrior-tui/archive/v0.9.3.tar.gz"
+  sha256 "b6c24ee58efde1195c7ef9105450504da34cf67edca424e393d8a2f772f1ec45"
   license "MIT"
   head "https://github.com/kdheepak/taskwarrior-tui.git"
 
@@ -13,10 +13,9 @@ class TaskwarriorTui < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f2044efc86d463a6b4f595df446093fc606eb578b9aa0ec3716a0a3e112cd422" => :catalina
-    sha256 "78e0711a52ba958b29d2b2c5ab74730d58d68134eec1d1cf65bcb1c82dbc4a53" => :mojave
-    sha256 "7f3b4bb18e1c381b811e66462153e27f4640790f277b7d53912744257ec4c6df" => :high_sierra
-    sha256 "fc4f7186ccf6fc405aff0c3c0fb7fa6f95768d973661311b0db9ce8a61a5591c" => :x86_64_linux
+    sha256 "6dd7aa94ec6660f9a801932095732d0d4aa4754ab8cb80c8c3d2a2ef92e19eae" => :catalina
+    sha256 "4ad2a319a8591fa87ed612b004ef9930eaa76b563b7a4c44db563a9386e8313a" => :mojave
+    sha256 "a887400278f02386c0e0bce5c77971a8b93b4ae9a71c9e36dfea9519d6a714cb" => :high_sierra
   end
 
   depends_on "rust" => :build
