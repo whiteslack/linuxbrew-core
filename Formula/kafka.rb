@@ -5,6 +5,7 @@ class Kafka < Formula
   mirror "https://archive.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz"
   sha256 "7c789adaa89654d935a5558d0dacff7466e2cfec9620cb8177cec141e7b0fb92"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,20 +13,12 @@ class Kafka < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a00316528e00fe0a5ff2771d1883f25f186481d77de8a79dfaf491be076de3ee" => :catalina
-    sha256 "027a1d06325c8b98cca97cc2922fdbf7d980fb52917d1791861032cd501e5428" => :mojave
-    sha256 "027a1d06325c8b98cca97cc2922fdbf7d980fb52917d1791861032cd501e5428" => :high_sierra
+    sha256 "83589fb8053e087bb0c667c491f1d688e186864fdb1ae40ea9c4c910c4b8cc02" => :catalina
+    sha256 "8d3b3d4db0bbf7f8e6e9a606099570bfeabfd3ebe5c965203f884b6bfc900c7a" => :mojave
+    sha256 "d6b2a8e37b0c682c49a3b9c6b47c5587b6a9e2f14505de84d56c26f3bd5777a4" => :high_sierra
   end
 
-  # Related to https://issues.apache.org/jira/browse/KAFKA-2034
-  # Since Kafka does not currently set the source or target compability version inside build.gradle
-  # if you do not have Java 1.8 installed you cannot used the bottled version of Kafka
-  pour_bottle? do
-    reason "The bottle requires Java 1.8."
-    satisfy { quiet_system("/usr/libexec/java_home --version 1.8 --failfast") }
-  end
-
-  depends_on java: "1.8"
+  depends_on "openjdk"
   depends_on "zookeeper"
 
   conflicts_with "confluent-platform", because: "both install identically named Kafka related executables"
@@ -44,7 +37,7 @@ class Kafka < Formula
     libexec.install "libs"
 
     prefix.install "bin"
-    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env("1.8"))
+    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env)
     Dir["#{bin}/*.sh"].each { |f| mv f, f.to_s.gsub(/.sh$/, "") }
 
     mv "config", "kafka"

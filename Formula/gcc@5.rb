@@ -6,7 +6,7 @@ class GccAT5 < Formula
   url "https://ftp.gnu.org/gnu/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz"
   mirror "https://ftpmirror.gnu.org/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz"
   sha256 "530cea139d82fe542b358961130c69cfde8b3d14556370b65823d2f91f0ced87"
-  revision 5
+  revision 6
 
   livecheck do
     url :stable
@@ -16,7 +16,7 @@ class GccAT5 < Formula
   # gcc is designed to be portable.
   bottle do
     cellar :any
-    sha256 "01a2818d89c25b22bdf8b6c597186cf986f4d2c2175741a98967ec933e5e7907" => :high_sierra
+    sha256 "dcc9059b725fd7c87842287bbedf60a28745417652d42a300dcd944e15986f36" => :high_sierra
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -29,6 +29,7 @@ class GccAT5 < Formula
   depends_on maximum_macos: [:high_sierra, :build]
 
   depends_on "gmp"
+  depends_on "isl@0.18"
   depends_on "libmpc"
   depends_on "mpfr"
 
@@ -68,24 +69,38 @@ class GccAT5 < Formula
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
 
-  resource "isl" do
-    url "https://gcc.gnu.org/pub/gcc/infrastructure/isl-0.18.tar.bz2"
-    mirror "https://mirrorservice.org/sites/distfiles.macports.org/isl/isl-0.18.tar.bz2"
-    sha256 "6b8b0fd7f81d0a957beb3679c81bbb34ccc7568d5682844d8924424a0dadcb1b"
+  # Fix build with Xcode 9
+  # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=82091
+  if DevelopmentTools.clang_build_version >= 900
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/078797f1b9/gcc%405/xcode9.patch"
+      sha256 "e1546823630c516679371856338abcbab381efaf9bd99511ceedcce3cf7c0199"
+    end
+  end
+
+  # Fix Apple headers, otherwise they trigger a build failure in libsanitizer
+  # GCC bug report: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=83531
+  # Apple radar 36176941
+  if MacOS.version == :high_sierra
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/413cfac6/gcc%405/10.13_headers.patch"
+      sha256 "94aaec20c8c7bfd3c41ef8fb7725bd524b1c0392d11a411742303a3465d18d09"
+    end
+  end
+
+  # Patch for Xcode bug, taken from https://gcc.gnu.org/bugzilla/show_bug.cgi?id=89864#c43
+  # This should be removed in the next release of GCC if fixed by apple; this is an xcode bug,
+  # but this patch is a work around committed to GCC trunk
+  if MacOS::Xcode.version >= "10.2"
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/91d57ebe88e17255965fa88b53541335ef16f64a/gcc%405/gcc5-xcode10.2.patch"
+      sha256 "6834bec30c54ab1cae645679e908713102f376ea0fc2ee993b3c19995832fe56"
+    end
   end
 
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
-
-    resource("isl").stage do
-      system "./configure", "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{libexec}",
-                            "--with-gmp=system",
-                            "--with-gmp-prefix=#{Formula["gmp"].opt_prefix}"
-      system "make", "install"
-    end
 
     # C, C++, ObjC and Fortran compilers are always built
     languages = %w[c c++ fortran objc obj-c++]
@@ -106,7 +121,7 @@ class GccAT5 < Formula
       "--with-gmp=#{Formula["gmp"].opt_prefix}",
       "--with-mpfr=#{Formula["mpfr"].opt_prefix}",
       "--with-mpc=#{Formula["libmpc"].opt_prefix}",
-      "--with-isl=#{libexec}",
+      "--with-isl=#{Formula["isl@0.18"].opt_prefix}",
       "--with-system-zlib",
       "--enable-libstdcxx-time=yes",
       "--enable-stage1-checking",

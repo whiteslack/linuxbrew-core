@@ -4,17 +4,16 @@ class Imlib2 < Formula
   url "https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.7.0/imlib2-1.7.0.tar.bz2"
   sha256 "1976ca3db48cbae79cd0fc737dabe39cc81494fc2560e1d22821e7dc9c22b37d"
   license "Imlib2"
-  revision OS.mac? ? 2 : 4
+  revision OS.mac? ? 3 : 5
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "3b036ab0c372688bdd116674d463f85b7a1fc900dcb71deddbfa5aa28fca0be1" => :catalina
-    sha256 "ab1f7ef9cd4c1b7eced2f47f20bed71d724d09c48907675e4144ae039a10d297" => :mojave
-    sha256 "153ebc859ca8a20b20b9d24db87667b8d338fd0e571f01f8400262e3d5700f86" => :high_sierra
-    sha256 "5a1a657223437695db83a95686268b5797f03882a2da942e1c3b8bbea24c6251" => :x86_64_linux
+    sha256 "f12cf90a6a2d30419b0d30e030406f1e5bc5d5adda7a7a0f7efb7fc5946ca0d6" => :catalina
+    sha256 "6abc2f07f038830a81b3e8ace017c34920c7949e07552ab319a9defb0dfd6599" => :mojave
+    sha256 "4484afd5b50f13946e5b12571582d06fa9ac5443f9b32482eab26a20aec2e81a" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -23,15 +22,9 @@ class Imlib2 < Formula
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
-
-  on_macos do
-    depends_on :x11
-  end
-
-  unless OS.mac?
-    depends_on "libx11"
-    depends_on "libxext"
-  end
+  depends_on "libx11"
+  depends_on "libxcb"
+  depends_on "libxext"
 
   def install
     args = %W[
