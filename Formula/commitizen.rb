@@ -17,6 +17,7 @@ class Commitizen < Formula
     sha256 "908b5428914c6a1d82c5a4fcbaa9a4dacc98a837069693131c6f9f561c7f03e6" => :catalina
     sha256 "1878aa34ea318a77f54e229e8a715300f35152732f92549c10901294be7d8539" => :mojave
     sha256 "63c156caf2fe52b1a97131e3f546965c47439c10010fcdb84ba51fb6a9f1906d" => :high_sierra
+    sha256 "2273c6300da5376c3438b27dfebdd7450feef971780ec99f50c91df0336b9448" => :x86_64_linux
   end
 
   depends_on "python@3.9"
