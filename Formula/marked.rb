@@ -3,8 +3,8 @@ require "language/node"
 class Marked < Formula
   desc "Markdown parser and compiler built for speed"
   homepage "https://marked.js.org/"
-  url "https://registry.npmjs.org/marked/-/marked-1.2.2.tgz"
-  sha256 "b08d58fe4c9210b2615c2889531ce4e7a5da5514037fceab4a8dc0124c1514ef"
+  url "https://registry.npmjs.org/marked/-/marked-1.2.3.tgz"
+  sha256 "8635f16cfbb731b3bb170ed8c394fd2f6cb410ef934122601dcf11038be5d663"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class Marked < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c33c355f7605e1552c9b89bc1ac9f1cc0fa411e01a691914bdbe736f9598f3b8" => :catalina
-    sha256 "cc7758a220a884f9142fc047785014239e52e62e8e919065a1f481cb55481950" => :mojave
-    sha256 "1124ae7c64f33ffa3c2d14d4931f6e491e8a5ef330d0489e24a2bf05f83f42e4" => :high_sierra
-    sha256 "b6267a6f0a4170b2b0fa4bca5f0d7c8bc8a4b350d05822fb89c2b1d8f65c6fe2" => :x86_64_linux
+    sha256 "3680f6f9e41d62a6672a8cb1f98e20677443dd55543e7115543ac586f43353b6" => :catalina
+    sha256 "7642c533dac3f98894f8c1a6b4ba391900d552c0d2e9a75771a1b64b3cbf43df" => :mojave
+    sha256 "f1531c2c00a3e9eb958016b3f6664bd9d608f6864ddb401d886c3359846196a1" => :high_sierra
   end
 
   depends_on "node"

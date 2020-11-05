@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/8.6.395.17.tar.gz"
-  sha256 "421cdeb93495632a4cd814d68af56788635b58a0225ecb08661b972825be257c"
+  url "https://github.com/v8/v8/archive/8.6.395.23.tar.gz"
+  sha256 "81535d68df7ec8b6892d22f1fa9573afd7fffb3837d4a1263eac542010313834"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,9 +13,9 @@ class V8 < Formula
 
   bottle do
     cellar :any
-    sha256 "5bab1e2b027a0c2fe8778a7a01881026dd03f308fb62ba7bee41c4f1758d3f02" => :catalina
-    sha256 "88c332f74f44c81ca4bdd0169bd5a2c235b7c2003419a3c65c11bae2760c8419" => :mojave
-    sha256 "fc8de957af2a1d331fabd721975a105270c506489681a1b1c174e133ab22c117" => :high_sierra
+    sha256 "81449a444e1ec5adb6b92fe62f58d08dbe2d5ca53c128f4430a7f31ec42e9fae" => :catalina
+    sha256 "8dacddcf70aebd2d64f34e3833e343b51a4ea806b59053fb87e5b26f6ac83f1b" => :mojave
+    sha256 "6e21393aa02d033a1ff570871c45bc5bf8480f7ab30b35e134ecda125f6ac96d" => :high_sierra
   end
 
   depends_on "llvm" => :build

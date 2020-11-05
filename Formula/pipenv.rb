@@ -3,10 +3,9 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://pipenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/cc/0a/ed147c6bb2245ac9b275ef28db37b338181f1afe696317e0372786b57107/pipenv-2020.8.13.tar.gz"
-  sha256 "eff0e10eadb330f612edfa5051d3d8e775e9e0e918c3c50361da703bd0daa035"
+  url "https://files.pythonhosted.org/packages/20/4c/3903aff6c34e406e4a97b52170978df09332c740e9e98c6fe8ee61c4826b/pipenv-2020.11.4.tar.gz"
+  sha256 "d6ac39d1721517b23aca12cdb4c726dc318ec4d7bdede5c1220bbb81775005c3"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,10 +13,9 @@ class Pipenv < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "57dd9bd11dbd7672c92f6c4608a54f993e9116208f011234e3f2db643d3c7efc" => :catalina
-    sha256 "7181c3e9b1f54851fb987b832207f3a723c997df4dd4ef79d76807e28473f41f" => :mojave
-    sha256 "564b119e61e3514b6fd2bf28e47f62802bebc063859568d6cd35c0830f3322f4" => :high_sierra
-    sha256 "3ea1d646cd09579d42154567e14d760f27a8f70f0f4290c111c24c22c32e9bf9" => :x86_64_linux
+    sha256 "e1f59430bce27f5a9fbc443951b422ad0ed82f7937d098984b51da942124b3b7" => :catalina
+    sha256 "d4ae82e689ab162951f617edb6f8912df4067cb1c19be921f6e82868b95575c4" => :mojave
+    sha256 "1ee0c1f4a1f62ec1d91862a5d36709929e7e8ee68f21eb97ab2b51e1fe763e2b" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -48,8 +46,8 @@ class Pipenv < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/fb/f8/5a5fd05ee4b85b819bc7c11d287a32f6925a970fe2f867eac1889b8760ed/virtualenv-20.0.30.tar.gz"
-    sha256 "7b54fd606a1b85f83de49ad8d80dbec08e983a2d2f96685045b262ebc7481ee5"
+    url "https://files.pythonhosted.org/packages/06/8c/eb8a0ae49eba5be054ca32b3a1dca432baee1d83c4f125d276c6a5fd2d20/virtualenv-20.1.0.tar.gz"
+    sha256 "b8d6110f493af256a40d65e29846c69340a947669eec8ce784fcf3dd3af28380"
   end
 
   resource "virtualenv-clone" do

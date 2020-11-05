@@ -1,8 +1,8 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
   homepage "https://www.scipy.org"
-  url "https://files.pythonhosted.org/packages/93/63/4a566494594a13697c5d5d8a754d6e329d018ddf881520775e0229fa29ef/scipy-1.5.3.tar.gz"
-  sha256 "ddae76784574cc4c172f3d5edd7308be16078dd3b977e8746860c76c195fa707"
+  url "https://files.pythonhosted.org/packages/aa/d5/dd06fe0e274e579e1dff21aa021219c039df40e39709fabe559faed072a5/scipy-1.5.4.tar.gz"
+  sha256 "4a453d5e5689de62e5d38edf40af3f17560bfd63c9c5bd228c18c1f99afa155b"
   license "BSD-3-Clause"
   head "https://github.com/scipy/scipy.git"
 
@@ -11,10 +11,9 @@ class Scipy < Formula
   end
 
   bottle do
-    sha256 "1327bbe2b07ef7056fb84f3e2763d2490ec49fdc2e4a190ca01edb0218a616cc" => :catalina
-    sha256 "a3ebbef3da062ff7584f5b2a208f0b5d730795061f78fedaa3ce62a21ce89622" => :mojave
-    sha256 "8958c94dd55cf780d3b048548810b971bb1f4777c58bb128fc11071913d9e6bf" => :high_sierra
-    sha256 "8cbe87b640714d0598dd4a4dc7b4b64715c642e2e088fc3e84c89c5e71159093" => :x86_64_linux
+    sha256 "459a424a9433cefd235ae700f3016a070df09fadff99246ac72be3427a2259d1" => :catalina
+    sha256 "a5955e92c790150cac7c173c73eaa70447762b7afb67c658889ceb2ddcef30ae" => :mojave
+    sha256 "b660e024594d7d6c0c7717888b50e4656a74fb04359cbeeb87903ce9d77aae2f" => :high_sierra
   end
 
   depends_on "swig" => :build
@@ -25,14 +24,6 @@ class Scipy < Formula
   depends_on "python@3.9"
 
   cxxstdlib_check :skip
-
-  # Fix compilation with Xcode 12
-  # https://github.com/scipy/scipy/issues/12935
-  # https://github.com/scipy/scipy/pull/12243
-  patch do
-    url "https://github.com/scipy/scipy/commit/b8e47064.patch?full_index=1"
-    sha256 "2cb39e75f00d89564cdc769598bee2e772f6cb7bde5cc94560a2e588fb7a0027"
-  end
 
   def install
     openblas = Formula["openblas"].opt_prefix
