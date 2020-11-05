@@ -4,6 +4,7 @@ class Tmux < Formula
   url "https://github.com/tmux/tmux/releases/download/3.1c/tmux-3.1c.tar.gz"
   sha256 "918f7220447bef33a1902d4faff05317afd9db4ae1c9971bef5c787ac6c88386"
   license "ISC"
+  revision 1
 
   livecheck do
     url "https://github.com/tmux/tmux/releases/latest"
@@ -12,10 +13,9 @@ class Tmux < Formula
 
   bottle do
     cellar :any
-    sha256 "4ebc2e357323d7cc262215b6a24da9b90a0506fd773f665c11ff585b104fc51b" => :catalina
-    sha256 "4b23346825c4c6d0b7879d8e0899b400605bd7a37cba9ab70d5cd6f85747c8c8" => :mojave
-    sha256 "e66b3ee98c5fffeaa814e1f7813d9bbc15fbe6bce250bae6c6578c6fe5289cbe" => :high_sierra
-    sha256 "64b26854d8e9dd68991c11f5627199d76a7b7f36dfa263427312a0fec4a460f6" => :x86_64_linux
+    sha256 "e1148f3043ef1e77e942bc654e6b3867f40401b0ba93e6d44a460467c51e0a3b" => :catalina
+    sha256 "3ba85f3524acbf5e1fb04135fa9b7f2bbdd5d3c8ed94189685be50ca19722bbe" => :mojave
+    sha256 "ec5fcbdc337221efdbf3f21121fb087b998dd7d3bf6dd5bb72e352d9c9463a57" => :high_sierra
   end
 
   head do
@@ -35,8 +35,8 @@ class Tmux < Formula
   depends_on "utf8proc" if MacOS.version >= :high_sierra
 
   resource "completion" do
-    url "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/homebrew_1.0.0/completions/tmux"
-    sha256 "05e79fc1ecb27637dc9d6a52c315b8f207cf010cdcee9928805525076c9020ae"
+    url "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/f5d53239f7658f8e8fbaf02535cc369009c436d6/completions/tmux"
+    sha256 "b5f7bbd78f9790026bbff16fc6e3fe4070d067f58f943e156bd1a8c3c99f6a6f"
   end
 
   def install
