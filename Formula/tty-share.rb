@@ -10,6 +10,7 @@ class TtyShare < Formula
     sha256 "ccd6e95f86a6639fd8f098c9a4755c06dd32a90a2a125056edb20f767903b6df" => :catalina
     sha256 "99a8e16cbcef7ae89011182e456f70315ff4c84569a29bc4ff4d2b3db0e6502f" => :mojave
     sha256 "d5433ba927eb10a40c64a8168e26ff6fb28fb5c71a296bc83970647f573a6db3" => :high_sierra
+    sha256 "565cef144fe844a96db03faef17fe4f54a6ae1f2488b4e5da60daa04ac8a3e80" => :x86_64_linux
   end
 
   depends_on "go" => :build
