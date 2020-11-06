@@ -10,6 +10,7 @@ class Unpaper < Formula
     sha256 "20b2e6bf4adebadfeb7705f2a3b6437aac39cbec0eeeac0a924a2985d15f014d" => :catalina
     sha256 "722874cb52df909ea30a72d519f3db40a9c98389281629b4910aeefbdf88b959" => :mojave
     sha256 "649ba3d0be5c4c2ce5e32f32c2023ea3296bb59ff0473f641092173f8a664552" => :high_sierra
+    sha256 "33a521cb8348474d42eb3abf8414ac05843f06fcf01c7d83e427ff857e310dcb" => :x86_64_linux
   end
 
   head do
