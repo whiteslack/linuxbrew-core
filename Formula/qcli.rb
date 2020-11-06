@@ -4,14 +4,14 @@ class Qcli < Formula
   url "https://github.com/bavc/qctools/archive/v1.1.tar.gz"
   sha256 "e11eb93b02f9c75f88182a57b8ab44248ac10ca931cf066e7f02bd1835f2900c"
   license "GPL-3.0"
-  revision 3
+  revision 4
   head "https://github.com/bavc/qctools.git"
 
   bottle do
     cellar :any
-    sha256 "ef657d1dc674393cd3ab389527392dce56ddb392c0d89b818680bcbab67a1715" => :catalina
-    sha256 "d36d29273a40bdbdb7007392ab487fc5175cbba239611bb188d46927c8cd67bf" => :mojave
-    sha256 "89caf6ebb740e3f1ffa15401afb6f1529b32bf152153f3934d462fb888e4a7e3" => :high_sierra
+    sha256 "6091e1d0f155e12219f96bfaa15138c6257b052919cbbf2f4a5fe49a7eb9a7e8" => :catalina
+    sha256 "2f1256106214ba171796885b6fc4bf3dd4f39961b1230b83496175524b8e99b5" => :mojave
+    sha256 "07a168a9ac1ef80b314696596b6b6cbfa1510f59991e1e11dd3a82027a8403d1" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

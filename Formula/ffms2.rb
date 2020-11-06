@@ -7,14 +7,13 @@ class Ffms2 < Formula
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
   license "GPL-2.0"
-  revision 5
+  revision 6
 
   bottle do
     cellar :any
-    sha256 "2d7dec5996e8f1aa94ed24852ad8cf9abf2ff50721492d98cb245a5ff1f852d4" => :catalina
-    sha256 "1748aa600727eb0d214bff7b8b73acae50ee59c4e7a6e46b9d5933ec58593bd9" => :mojave
-    sha256 "d12367149ca820122c2f2104bf676130032358b0e27fa7195ccd8d342677c777" => :high_sierra
-    sha256 "9a131bc5d3aee0e1beb8ccbfce734181367c7d0b819bddd67ec68decb15f1109" => :x86_64_linux
+    sha256 "c6389b9e94a5502a7760cc235bf576243595da33b7fd23231f2ddd3529fade75" => :catalina
+    sha256 "3bcc31e751e167a35593aa040f25b96eeccd021e0d9cc74fbe13d6e638d84a95" => :mojave
+    sha256 "2b6276dac329bdc9d06d85bba4781cc49035bfb2de3038d12ba6ade29d6f6d64" => :high_sierra
   end
 
   head do

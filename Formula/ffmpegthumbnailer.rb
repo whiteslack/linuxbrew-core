@@ -4,15 +4,14 @@ class Ffmpegthumbnailer < Formula
   url "https://github.com/dirkvdb/ffmpegthumbnailer/archive/2.2.2.tar.gz"
   sha256 "8c4c42ab68144a9e2349710d42c0248407a87e7dc0ba4366891905322b331f92"
   license "GPL-2.0"
-  revision 3
+  revision 4
   head "https://github.com/dirkvdb/ffmpegthumbnailer.git"
 
   bottle do
     cellar :any
-    sha256 "915a04936eca7625df70cd9725b8ec8814ee837631364bbf8ff3299f7e0975c6" => :catalina
-    sha256 "8cc412573d4977a12dacc999484ea691ee267e8d4e59d6a855f2c47aa4790d0f" => :mojave
-    sha256 "f7e7e0aeb5f0401ace3976a253373c9351ca1ec1eebb74af826d827dca631e05" => :high_sierra
-    sha256 "9357265d2db50e9e506d77d40137f61a7ba58e0e678214d30528a52de5dddab1" => :x86_64_linux
+    sha256 "08386f0b8bef0e4e4d7faf5204226b3a165b03c46b6f77fcd024abc5708e48a4" => :catalina
+    sha256 "2873371242e9835e8b781290d8655b7a28c11ccaabc6abcff9aaf26bed9f28b5" => :mojave
+    sha256 "d1a7c7b565dbe5c045c4cfaaff76a536703b3aa7ffdb7f505d8feafb2ee54d00" => :high_sierra
   end
 
   depends_on "cmake" => :build
