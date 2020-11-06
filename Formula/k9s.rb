@@ -11,6 +11,7 @@ class K9s < Formula
     sha256 "d89383bc429674d5f51e5cf48a364091214f0da21b56ef7934fc34669a19daf7" => :catalina
     sha256 "319c84975aabd18ec3aebbc4ef4410ef8ec9e1f4455cd5f5bdbbb448b2b3aa03" => :mojave
     sha256 "a0ff60eec4cbc459b430a3c89d6e3cc3384bcf8d76155eccf6de42651ef0b3c7" => :high_sierra
+    sha256 "dde22c19a4d83bd32c2a683afcca3d8ddab4b6e23b302150300c4cd2e5a37e0c" => :x86_64_linux
   end
 
   depends_on "go" => :build
