@@ -14,6 +14,7 @@ class Ffms2 < Formula
     sha256 "c6389b9e94a5502a7760cc235bf576243595da33b7fd23231f2ddd3529fade75" => :catalina
     sha256 "3bcc31e751e167a35593aa040f25b96eeccd021e0d9cc74fbe13d6e638d84a95" => :mojave
     sha256 "2b6276dac329bdc9d06d85bba4781cc49035bfb2de3038d12ba6ade29d6f6d64" => :high_sierra
+    sha256 "93801e6e4d894241f4b672b71d77f0931b2e5c8199f7aa0523e155b485588188" => :x86_64_linux
   end
 
   head do
