@@ -3,25 +3,21 @@ class Xdotool < Formula
   homepage "https://www.semicomplete.com/projects/xdotool/"
   url "https://github.com/jordansissel/xdotool/archive/v3.20160805.1.tar.gz"
   sha256 "ddafca1239075c203769c17a5a184587731e56fbe0438c09d08f8af1704e117a"
-  revision OS.mac? ? 1 : 4
+  revision OS.mac? ? 2 : 5
 
   bottle do
-    sha256 "8dbfb2b1c32176c7cba00aaa2365f3cd438619dc0286e668e5d87412c3717d53" => :catalina
-    sha256 "860e5e7f2ca2ae88c86e8a979eba543f544960894bb4d8ec59d98cbba9805614" => :mojave
-    sha256 "9de15325d8ed42b629a94e34ff710672e96c1570dc51a6544aff0d0445de5e9c" => :high_sierra
-    sha256 "84a3a57da30213761e5f8f8aa7a3bb954198735694df7bbe8bb495a428cc5893" => :x86_64_linux
+    sha256 "7092970eee9f15fab6aad9e364cb23b29f11fc19b1edbedd3ac794a7858aecc5" => :catalina
+    sha256 "0a24fe2911c4db734794e7c22c596a9809602af3d974abe2aae2f6ef9babb777" => :mojave
+    sha256 "9e84711dc1979c07a5367c2a2638e07e01f9bb7b8fb5166b4d1cadaed6babb7b" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
+  depends_on "libx11"
+  depends_on "libxinerama"
   depends_on "libxkbcommon"
-  depends_on :x11 if OS.mac?
+  depends_on "libxtst"
 
-  unless OS.mac?
-    depends_on "libxtst"
-    depends_on "libx11"
-    depends_on "libxi"
-    depends_on "libxinerama"
-  end
+  depends_on "libxi" unless OS.mac?
 
   def install
     # Work around an issue with Xcode 8 on El Capitan, which

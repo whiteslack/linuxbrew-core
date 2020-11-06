@@ -1,10 +1,9 @@
 class Zile < Formula
   desc "Text editor development kit"
   homepage "https://www.gnu.org/software/zile/"
-  url "https://ftp.gnu.org/gnu/zile/zile-2.4.14.tar.gz"
-  mirror "https://ftpmirror.gnu.org/zile/zile-2.4.14.tar.gz"
-  sha256 "7a78742795ca32480f2bab697fd5e328618d9997d6f417cf1b14e9da9af26b74"
-  revision 2
+  url "https://ftp.gnu.org/gnu/zile/zile-2.4.15.tar.gz"
+  mirror "https://ftpmirror.gnu.org/zile/zile-2.4.15.tar.gz"
+  sha256 "39c300a34f78c37ba67793cf74685935a15568e14237a3a66fda8fcf40e3035e"
 
   livecheck do
     url :stable
@@ -12,11 +11,9 @@ class Zile < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "854315aad2cba51fa2b556ebce95ffb0d402a491420e900de898a22c95c082e3" => :catalina
-    sha256 "812e96a8ffe6c3baaece7400306b588bfd1eb1442f943a73f34b4066ab6b0f44" => :mojave
-    sha256 "d0cefa1b959efdf8344907a229bff4ea03cf9856b2d028a509e0b8e0a046a7f2" => :high_sierra
-    sha256 "625f2ce56c9d8e843f09bebd2d60f9a4d12c008132a6d83a8f2760ba32e2e742" => :x86_64_linux
+    sha256 "c87e1675d9eb1c34e66531c8dabdfb290acaff89c16649b57f0d225ae84fbf72" => :catalina
+    sha256 "f153836d786658870d684374b310ce47a6658ad590bcaccc981c7a6b7c66947e" => :mojave
+    sha256 "943f7ce5aba23fd916e4e89da5bae329471cafdd4261f13cd4bc6696d21bd4e6" => :high_sierra
   end
 
   depends_on "help2man" => :build
