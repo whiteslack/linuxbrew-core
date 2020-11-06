@@ -12,6 +12,7 @@ class Ffmpegthumbnailer < Formula
     sha256 "08386f0b8bef0e4e4d7faf5204226b3a165b03c46b6f77fcd024abc5708e48a4" => :catalina
     sha256 "2873371242e9835e8b781290d8655b7a28c11ccaabc6abcff9aaf26bed9f28b5" => :mojave
     sha256 "d1a7c7b565dbe5c045c4cfaaff76a536703b3aa7ffdb7f505d8feafb2ee54d00" => :high_sierra
+    sha256 "88701757481226cfe7a1d8eefb07eaaf5eea44b46e7ba5138c87dd0019bfbf64" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
