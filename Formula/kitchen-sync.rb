@@ -1,8 +1,8 @@
 class KitchenSync < Formula
   desc "Fast efficiently sync database without dumping & reloading"
   homepage "https://github.com/willbryant/kitchen_sync"
-  url "https://github.com/willbryant/kitchen_sync/archive/v2.9.tar.gz"
-  sha256 "7e50d275f5a7b47889d7679e5a28545de8e731f7cf12a699b8af42a638b64bfc"
+  url "https://github.com/willbryant/kitchen_sync/archive/v2.10.tar.gz"
+  sha256 "98d2024df192571b7a5b4c21f0522d7d7187ac2a1411051e4594f3a66ebfa1af"
   license "MIT"
   head "https://github.com/willbryant/kitchen_sync.git"
 
@@ -13,10 +13,9 @@ class KitchenSync < Formula
 
   bottle do
     cellar :any
-    sha256 "4f67d2971d1458018c776f4a48c868abab5efcf3e911a1113dc1412000eca992" => :catalina
-    sha256 "6aba34fa6c8e2b5eb0ed4aef9d3f3ed6ab884550a6076c761e89ead18878661b" => :mojave
-    sha256 "c75a5139ee4fa77c60d30fc5e4c8157b6aa27de4129960aa0cadd80a6a6aa553" => :high_sierra
-    sha256 "1af420acdaf3910318c055960c212d743d44f5f9dcde3e3ca34f2f657115cad9" => :x86_64_linux
+    sha256 "6b5366aa8413f25ff8985cb7d195723a78c9c42bc4af1eb50b9980e1694e605e" => :catalina
+    sha256 "900f81a4a99ad8b1aef571d8c1d20de1edf102dbd9d202832c6f96a09b6f4454" => :mojave
+    sha256 "80e91aab20f98adb5265fe24d39cbc4b8a10d66d2ec6663ad7ec294206554eb2" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -35,7 +34,9 @@ class KitchenSync < Formula
   end
 
   test do
-    output = shell_output("#{bin}/ks --from a://b/ --to c://d/ 2>&1")
-    assert_match "Finished Kitchen Syncing", output
+    output = shell_output("#{bin}/ks --from mysql://b/ --to mysql://d/ 2>&1", 1)
+
+    assert_match "Unknown MySQL server host", output
+    assert_match "Kitchen Syncing failed.", output
   end
 end

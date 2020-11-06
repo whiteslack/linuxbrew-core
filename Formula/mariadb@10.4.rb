@@ -1,14 +1,14 @@
 class MariadbAT104 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.org/f/mariadb-10.4.15/source/mariadb-10.4.15.tar.gz"
-  sha256 "2783d76d950a259789edc7b43a42b1ee45c350860abff454b26731644efeae31"
+  url "https://downloads.mariadb.org/f/mariadb-10.4.16/source/mariadb-10.4.16.tar.gz"
+  sha256 "36a96b0411abe9b2107d87d13f977e878ba4d92ec94a8ea79ca760efcc048f7c"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 "018335eafee070637478e29a33b185f8e098e029d73592a6147b000eb9f81b9c" => :catalina
-    sha256 "914b90892c5366e46bc6e0889b8229106434bf611f77b07df3d9cd75b6a69d97" => :mojave
-    sha256 "96e1e710b40a9c46fbac710e81566cd45b99b4524474f3bfb8f1d09fcb55ccd5" => :high_sierra
+    sha256 "06d2d59e32d56b95089a7693fea5ef3ff89e6c2cd885ed57a9be2e9683f52cc8" => :catalina
+    sha256 "cf9edaccb91ff1576e26a7842de4ac17c1df17e1e88dcf465b6fd1783ffef8c5" => :mojave
+    sha256 "62348754397b00219fd038ce0c14cd7449fe3275dd3f4fa52805a2f968a7e698" => :high_sierra
   end
 
   keg_only :versioned_formula
