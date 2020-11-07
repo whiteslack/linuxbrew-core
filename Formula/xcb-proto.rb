@@ -11,6 +11,7 @@ class XcbProto < Formula
     sha256 "c32a3d3a2fac9a68d5dafe02a75300c05beaa3151f1fbfafad5e718ce26e1553" => :catalina
     sha256 "e6faf01ae0757a6f2f49f05fb2262a36d0d39f61687b710cbfe368829856b0f2" => :mojave
     sha256 "de7af3536a1c9a33bd74567f22200e66a6541933506aec0dff275c490109d539" => :high_sierra
+    sha256 "563cdc2afbb564b8a46e3a4299e89e405659e812abe68646c82ad847f1e12503" => :x86_64_linux
   end
 
   depends_on "pkg-config" => [:build, :test]
