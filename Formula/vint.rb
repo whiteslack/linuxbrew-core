@@ -3,28 +3,24 @@ class Vint < Formula
 
   desc "Vim script Language Lint"
   homepage "https://github.com/Vimjas/vint"
-  url "https://github.com/Vimjas/vint/archive/v0.3.21.tar.gz"
-  sha256 "ebbb4ffd790324331aabf82d0b8777db8ce41d72d7c4c1c328bc099359ae06d6"
+  url "https://files.pythonhosted.org/packages/9c/c7/d5fbe5f778edee83cba3aea8cc3308db327e4c161e0656e861b9cc2cb859/vim-vint-0.3.21.tar.gz"
+  sha256 "5dc59b2e5c2a746c88f5f51f3fafea3d639c6b0fdbb116bb74af27bf1c820d97"
   license "MIT"
+  head "https://github.com/Vimjas/vint.git"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "75161a294d40430a9146e35a9e3871f3d8761cc6b60f66f8b9abd22630f8e579" => :catalina
-    sha256 "aea0df6f034bcec57f8f930781fae0a48349a0910465c253f5969e429bded6a3" => :mojave
-    sha256 "5174b7b0ffdcc7231efa29c69a69d13a1e8b7649016d384931135d7dc11640bd" => :high_sierra
+    rebuild 1
+    sha256 "8848e8f89f352b4bbcfb875438c09e4dbae683bc1a5044b30d254ee1700ec0e3" => :catalina
+    sha256 "8e4f3863fcdd29a7c727e4117dbb8731606c97ad25bf5a80ddbad65d96a43dd7" => :mojave
+    sha256 "4719b1fd512613b97246d52968fe3a7dfe6d45b7c9749bad87bd22bf4841fc0d" => :high_sierra
   end
 
   depends_on "python@3.9"
-
-  resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
-    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
-  end
 
   resource "ansicolor" do
     url "https://files.pythonhosted.org/packages/e0/00/90593d0c3078760bc3ed530f3be381c16329e80a2b47b8e6230c1288ff77/ansicolor-0.2.6.tar.gz"
@@ -34,6 +30,11 @@ class Vint < Formula
   resource "chardet" do
     url "https://files.pythonhosted.org/packages/fc/bb/a5768c230f9ddb03acc9ef3f0d4a3cf93462473795d18e9535498c8f929d/chardet-3.0.4.tar.gz"
     sha256 "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
+  end
+
+  resource "PyYAML" do
+    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
+    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
   end
 
   def install
