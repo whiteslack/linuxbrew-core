@@ -14,6 +14,7 @@ class Sword < Formula
     sha256 "606a413399112a486c2b4095a76f83b03ed6f08efc0b00074e68dcdbad6c8aff" => :catalina
     sha256 "4090521dc9b44fcfba1d9fdebd3ea2c708ca4f6046c278fea3fc568e3a8bc61c" => :mojave
     sha256 "6bb12d6e5bee18ef39752f365fdb2cfb9ea6347b51db9ee36f8d4a70684dcaa1" => :high_sierra
+    sha256 "0655824b870ba7fe9ccef218232527dd1d176b7fcb906996cbc0b0d40458d3c1" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
