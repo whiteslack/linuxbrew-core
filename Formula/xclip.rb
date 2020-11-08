@@ -11,6 +11,7 @@ class Xclip < Formula
     sha256 "2229de2d3139a5a916be1d7e6c3227ef989ff20ce4322f0881eaeb22ee34caf1" => :catalina
     sha256 "7bacdf14b8a248a969952c6cba098e01b15d63b280b95a453164d2b0117400dc" => :mojave
     sha256 "4ff44edecff889254b56f12f261127e90f20c8b0f8d10e0d7f6b41788be0b2e4" => :high_sierra
+    sha256 "2f2c0e046087e8af545bab9db1cb7b2a1d3dcdcbfca3d1720b74bd608ab3009a" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
