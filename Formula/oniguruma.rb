@@ -16,6 +16,7 @@ class Oniguruma < Formula
     sha256 "e40a40789488ed0f0a98e5aec3336bfa04f87b7983e139524fbbc1b192ea71ac" => :catalina
     sha256 "98d43005ae967cba150b66abfe0c76163f7072ecb80eb573612284a706d6e5c1" => :mojave
     sha256 "737284ca190ac20d86a070bccf720194342f617e60690781eefae867230a2f58" => :high_sierra
+    sha256 "436acb2dc16cb7fce1f8504dbda3a65e67bf0f379bc18326c2376d1ecdca3ad1" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
