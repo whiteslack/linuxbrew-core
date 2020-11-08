@@ -6,7 +6,7 @@ class Mesa < Formula
   url "https://mesa.freedesktop.org/archive/mesa-20.2.1.tar.xz"
   sha256 "d1a46d9a3f291bc0e0374600bdcb59844fa3eafaa50398e472a36fc65fd0244a"
   license "MIT"
-  revision OS.mac? ? 1 : 3
+  revision OS.mac? ? 2 : 4
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   livecheck do
@@ -14,19 +14,21 @@ class Mesa < Formula
   end
 
   bottle do
-    sha256 "748342d8a327d3020bf6f8c1f4802cc9854aabed9ae09be569945ec805a4e217" => :catalina
-    sha256 "52d122a994018dc02d1a351c59a32a9428efc81ce4342d5eee6fed7f21636a60" => :mojave
-    sha256 "22240d614adfa767e18dadd3c3f407762d4e82134ea7b7e1c9980b8f2a112c05" => :high_sierra
-    sha256 "e59c14b57ceee908a1dba23575b2f1772ff399fc8cfcc295137d3b040f0dc88c" => :x86_64_linux
+    sha256 "b73ec11cd49f37464e1b51bf32d252b1c8d930e871e704b32d1e3f1ee927b2b0" => :catalina
+    sha256 "28c93e962c002c0ae0d31b534a9d66e7573773d65fb22282c1c72dfbf53253ee" => :mojave
+    sha256 "23bce13db612c0c515bc05ca3f19db94632d2cf475fdfe345b81ec09d9dd303c" => :high_sierra
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
-  depends_on "freeglut" => :test if OS.mac?
   depends_on "expat"
   depends_on "gettext"
+  depends_on "libx11"
+  depends_on "libxcb"
+  depends_on "libxdamage"
+  depends_on "libxext"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
@@ -36,11 +38,7 @@ class Mesa < Formula
   on_linux do
     depends_on "llvm"
     depends_on "lm-sensors"
-    depends_on "libx11"
     depends_on "libelf"
-    depends_on "libxcb"
-    depends_on "libxdamage"
-    depends_on "libxext"
     depends_on "libxfixes"
     depends_on "libxrandr"
     depends_on "libxshmfence"
@@ -60,9 +58,14 @@ class Mesa < Formula
     sha256 "8195c8c1400ceb53496064314c6736719c6f25e7479cd24c77be3d9361cddc27"
   end
 
-  resource "gears.c" do
-    url "https://www.opengl.org/archives/resources/code/samples/glut_examples/mesademos/gears.c"
-    sha256 "7df9d8cda1af9d0a1f64cc028df7556705d98471fdf3d0830282d4dcfb7a78cc"
+  resource "glxgears.c" do
+    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/faaa319d704ac677c3a93caadedeb91a4a74b7a7/src/xdemos/glxgears.c"
+    sha256 "3873db84d708b5d8b3cac39270926ba46d812c2f6362da8e6cd0a1bff6628ae6"
+  end
+
+  resource "gl_wrap.h" do
+    url "https://gitlab.freedesktop.org/mesa/demos/-/raw/faaa319d704ac677c3a93caadedeb91a4a74b7a7/src/util/gl_wrap.h"
+    sha256 "c727b2341d81c2a1b8a0b31e46d24f9702a1ec55c8be3f455ddc8d72120ada72"
   end
 
   def install
@@ -74,17 +77,12 @@ class Mesa < Formula
 
     ENV.prepend_path "PATH", "#{venv_root}/bin"
 
-    resource("gears.c").stage(pkgshare.to_s)
-
     mkdir "build" do
       args = %w[
         -Db_ndebug=true
       ]
 
-      if OS.mac?
-        args << "-Dplatforms=surfaceless"
-        args << "-Dglx=disabled"
-      else
+      unless OS.mac?
         args << "-Dplatforms=x11,wayland,drm,surfaceless"
         args << "-Dglx=auto"
         args << "-Ddri3=true"
@@ -114,40 +112,16 @@ class Mesa < Formula
   end
 
   test do
-    if OS.mac?
-      flags = %W[
-        -framework OpenGL
-        -I#{Formula["freeglut"].opt_include}
-        -L#{Formula["freeglut"].opt_lib}
-        -lglut
-      ]
-      system ENV.cc, "#{pkgshare}/gears.c", "-o", "gears", *flags
-    else
-      output = shell_output("ldd #{lib}/libGL.so").chomp
-      libs = %w[
-        libxcb-dri3.so.0
-        libxcb-present.so.0
-        libxcb-sync.so.1
-        libxshmfence.so.1
-        libglapi.so.0
-        libXext.so.6
-        libXdamage.so.1
-        libXfixes.so.3
-        libX11-xcb.so.1
-        libX11.so.6
-        libxcb-glx.so.0
-        libxcb-dri2.so.0
-        libxcb.so.1
-        libXxf86vm.so.1
-        libdrm.so.2
-        libXau.so.6
-        libXdmcp.so.6
-        libexpat.so.1
-      ]
-
-      libs.each do |lib|
-        assert_match lib, output
-      end
-    end
+    %w[glxgears.c gl_wrap.h].each { |r| resource(r).stage(testpath) }
+    flags = %W[
+      -I#{include}
+      -L#{lib}
+      -L#{Formula["libx11"].lib}
+      -L#{Formula["libxext"].lib}
+      -lGL
+      -lX11
+      -lxext
+    ]
+    system ENV.cc, "glxgears.c", "-o", "gears", *flags
   end
 end
