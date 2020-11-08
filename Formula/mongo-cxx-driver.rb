@@ -1,17 +1,16 @@
 class MongoCxxDriver < Formula
   desc "C++ driver for MongoDB"
   homepage "https://github.com/mongodb/mongo-cxx-driver"
-  url "https://github.com/mongodb/mongo-cxx-driver/archive/r3.6.0.tar.gz"
-  sha256 "a5a86d5c1b233aba7111b9f4fc2d790843ac82cc3426fa3c32d86aef0a7bd956"
+  url "https://github.com/mongodb/mongo-cxx-driver/archive/r3.6.1.tar.gz"
+  sha256 "c6d1b307f7b074d178c4a815d8739195fb4d7870701064bdad6f1f2360ae0af9"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongo-cxx-driver.git"
 
   bottle do
     cellar :any
-    sha256 "447b1fbfef4124ccf1ab4377004aa8b7b509df5d4c807879b4434303d2409fd7" => :catalina
-    sha256 "5714a1e294518e6d51aba71bb3bd040bebb783713659611a357c5154abbae036" => :mojave
-    sha256 "c82743dd96a10aaa6ada2319c0d94c86ea8c08931464af58f85b1912549773bf" => :high_sierra
-    sha256 "8724de90ed9e9ac226b80c4ebb84c82a3de30d57b0e430e2c25f2cf1a16e1596" => :x86_64_linux
+    sha256 "0a62356b8c666792b0130f5b9f136641983361477f167de7da05a5adec1b5ea1" => :catalina
+    sha256 "0285042e033132fd67d226084a1031ec9030c7d9d56f08c746c45ada8f78c153" => :mojave
+    sha256 "5c53ec40c6e393fb30a27ecf9b639420d8044c7803c1fae1f990994f2a03d620" => :high_sierra
   end
 
   depends_on "cmake" => :build
