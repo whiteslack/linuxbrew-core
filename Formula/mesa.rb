@@ -3,10 +3,9 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-20.2.1.tar.xz"
-  sha256 "d1a46d9a3f291bc0e0374600bdcb59844fa3eafaa50398e472a36fc65fd0244a"
+  url "https://mesa.freedesktop.org/archive/mesa-20.2.2.tar.xz"
+  sha256 "1f93eb1090cf71490cd0e204e04f8427a82b6ed534b7f49ca50cea7dcc89b861"
   license "MIT"
-  revision OS.mac? ? 2 : 4
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   livecheck do
@@ -14,10 +13,9 @@ class Mesa < Formula
   end
 
   bottle do
-    sha256 "b73ec11cd49f37464e1b51bf32d252b1c8d930e871e704b32d1e3f1ee927b2b0" => :catalina
-    sha256 "28c93e962c002c0ae0d31b534a9d66e7573773d65fb22282c1c72dfbf53253ee" => :mojave
-    sha256 "23bce13db612c0c515bc05ca3f19db94632d2cf475fdfe345b81ec09d9dd303c" => :high_sierra
-    sha256 "652c067bf68d1d2a79f340ae0142a2fa085e18f031c7c5eddd2001685fb1b4a7" => :x86_64_linux
+    sha256 "29cd2a659ce5ddc74562aed58858de062370d0c0926b567f8a970a01df3c078a" => :catalina
+    sha256 "d595201ce00761430d745b6d7e7248e150567fc760d8f8b1d0c1d68ae05784c2" => :mojave
+    sha256 "bd279b58b20c25a4e8c76e30c43e59c02b7cc7199bb1372fb7e66c83dca3531d" => :high_sierra
   end
 
   depends_on "meson" => :build
