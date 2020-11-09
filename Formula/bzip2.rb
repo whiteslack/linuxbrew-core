@@ -12,11 +12,10 @@ class Bzip2 < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b4fd6d4e72285e422d385623273ccd7967f4a3f475335cd49aa61e22c3e7d3d6" => :catalina
-    sha256 "b8683b824f4cc702d06031c3762ba079e8bc1ea27413f6d08f10e93c539d89fd" => :mojave
-    sha256 "c7f2266c2d354c706de5163c23bb7b7204f1f15a85027ea486877a0c5d253336" => :high_sierra
-    sha256 "1f11350ccb9a3bd1dd250b5e440d68a5ea65408d4b91f9eae2aa7628e899b7c5" => :sierra
-    sha256 "e5fce257b9fee119d28d0e7f7dac9332bd26b248fe35d983ba85104243e4bc2e" => :x86_64_linux
+    rebuild 1
+    sha256 "78421d5891328cb96cce8ff6a6c20ce5930a4a74fd1b24b05ef02cd92117c5fd" => :catalina
+    sha256 "313e48f4528c1d8042a9cd4c77bd69047dedd7eda2bd350650a902e1ff549a38" => :mojave
+    sha256 "a3eedbcb61a66d3a1286685db878e19c1de90605626d1d988705f66a5aa66673" => :high_sierra
   end
 
   keg_only :provided_by_macos
@@ -26,12 +25,12 @@ class Bzip2 < Formula
 
     system "make", "install", "PREFIX=#{prefix}"
 
-    unless OS.mac?
-      # Install the shared library.
+    on_linux do
+      # Install shared libraries
       system "make", "-f", "Makefile-libbz2_so", "clean"
       system "make", "-f", "Makefile-libbz2_so"
-      lib.install "libbz2.so.#{version}", "libbz2.so.1.0"
-      lib.install_symlink "libbz2.so.#{version}" => "libbz2.so.1"
+      lib.install "libbz2.so.#{version}", "libbz2.so.#{version.major_minor}"
+      lib.install_symlink "libbz2.so.#{version}" => "libbz2.so.#{version.major}"
       lib.install_symlink "libbz2.so.#{version}" => "libbz2.so"
     end
   end
