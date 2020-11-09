@@ -22,6 +22,10 @@ class Ncurses < Formula
   depends_on "pkg-config" => :build
   depends_on "gpatch" => :build unless OS.mac?
 
+  on_linux do
+    depends_on "gpatch" => :build
+  end
+
   def install
     system "./configure", "--prefix=#{prefix}",
                           "--enable-pc-files",
@@ -43,10 +47,11 @@ class Ncurses < Formula
     major = version.major
 
     %w[form menu ncurses panel].each do |name|
-      if OS.mac?
+      on_macos do
         lib.install_symlink "lib#{name}w.#{major}.dylib" => "lib#{name}.dylib"
         lib.install_symlink "lib#{name}w.#{major}.dylib" => "lib#{name}.#{major}.dylib"
-      else
+      end
+      on_linux do
         lib.install_symlink "lib#{name}w.so.#{major}" => "lib#{name}.so"
         lib.install_symlink "lib#{name}w.so.#{major}" => "lib#{name}.so.#{major}"
       end
@@ -56,10 +61,12 @@ class Ncurses < Formula
 
     lib.install_symlink "libncurses++w.a" => "libncurses++.a"
     lib.install_symlink "libncurses.a" => "libcurses.a"
-    if OS.mac?
-      lib.install_symlink "libncurses.dylib" => "libcurses.dylib"
-    else
-      lib.install_symlink "libncurses.so" => "libcurses.so"
+    lib.install_symlink shared_library("libncurses") => shared_library("libcurses")
+    on_linux do
+      # libtermcap and libtinfo are provided by ncurses and have the
+      # same api. Help some older packages to find these dependencies.
+      # https://bugs.centos.org/view.php?id=11423
+      # https://bugs.launchpad.net/ubuntu/+source/ncurses/+bug/259139
       lib.install_symlink "libncurses.so" => "libtermcap.so"
       lib.install_symlink "libncurses.so" => "libtinfo.so"
     end

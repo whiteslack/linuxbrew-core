@@ -1,24 +1,19 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
-  url "https://ziglang.org/download/0.6.0/zig-0.6.0.tar.xz"
-  sha256 "5d167dc19354282dd35dd17b38e99e1763713b9be8a4ba9e9e69284e059e7204"
+  url "https://ziglang.org/download/0.7.0/zig-0.7.0.tar.xz"
+  sha256 "0efd2cf6c3b05723db80e9cf193bc55150bba84ca41f855a90f53fc756445f83"
   license "MIT"
-  revision 1
   head "https://github.com/ziglang/zig.git"
 
   bottle do
-    sha256 "56d061f373c70fe00ae0d38f1aace3d719123219d211ff50d613aa7d7d34c7f9" => :catalina
-    sha256 "dd0354fc2c222ca360577701e554fe2acc6c6a6884906ec721c6602b98e9d2bf" => :mojave
-    sha256 "10bca4e34e31a22c30ba447ecf999b32fd7b186e8083051458ee5694ffd493f8" => :high_sierra
+    sha256 "e1961b8c92810f085db84f43d4a20e3f14efdfe4d8d816cbd4620e412761edc7" => :catalina
+    sha256 "fe8d287d02eaea270f69a51455f4aa27dda3bc4984231e592e9f56eaafba194a" => :mojave
+    sha256 "e1cf0c30406fc5b9b0cbc00c56879674118b89cb40e2b1b840cac04996df29b4" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "llvm"
-
-  # Fix linking issues
-  # https://github.com/Homebrew/homebrew-core/issues/53198
-  patch :DATA
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -37,15 +32,3 @@ class Zig < Formula
     assert_equal "Hello, world!", shell_output("./hello")
   end
 end
-
-__END__
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -384,6 +384,9 @@ target_link_libraries(zig_cpp LINK_PUBLIC
-     ${CLANG_LIBRARIES}
-     ${LLD_LIBRARIES}
-     ${LLVM_LIBRARIES}
-+    "-Wl,/usr/local/opt/llvm/lib/libPolly.a"
-+    "-Wl,/usr/local/opt/llvm/lib/libPollyPPCG.a"
-+    "-Wl,/usr/local/opt/llvm/lib/libPollyISL.a"
- )

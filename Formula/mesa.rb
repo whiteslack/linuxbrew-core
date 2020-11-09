@@ -121,8 +121,8 @@ class Mesa < Formula
       -lGL
       -lX11
       -lXext
+      -lm
     ]
-    flags << "-lm" unless OS.mac?
     system ENV.cc, "glxgears.c", "-o", "gears", *flags
   end
 end

@@ -7,14 +7,15 @@ class Condure < Formula
 
   bottle do
     cellar :any
-    sha256 "6ed502304ea5516ac043e8476767b9b3780aabafb49aa9e3d2907c2e46ef870b" => :catalina
-    sha256 "d56f9ccffe8d8e0c6fc4f8ae80ffdf15be032be7e8ebb5a68d821ba377e692fc" => :mojave
-    sha256 "474f9b3e9832107903a4e0e2af1ce23da4d8edb714fcd36e628e5dba7781b366" => :high_sierra
+    rebuild 1
+    sha256 "4915eb903078bdf04c7d1cfe68cad3426099282f2cd9d7f84824e5bc9e22d9e0" => :catalina
+    sha256 "fc2adc0f4586cf6bf97a0a6d39b03a77a6d4aa08edec6bb97f3fcbfde95faf14" => :mojave
+    sha256 "6876102c57416a4bd25fd61ecbfff1354f08edb12797c265dcff36a90db515ea" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "python@3.8" => :test
+  depends_on "python@3.9" => :test
   depends_on "zeromq"
 
   resource "pyzmq" do
@@ -36,12 +37,12 @@ class Condure < Formula
     runfile = testpath/"test.py"
 
     resource("pyzmq").stage do
-      system Formula["python@3.8"].opt_bin/"python3",
+      system Formula["python@3.9"].opt_bin/"python3",
       *Language::Python.setup_install_args(testpath/"vendor")
     end
 
     resource("tnetstring3").stage do
-      system Formula["python@3.8"].opt_bin/"python3",
+      system Formula["python@3.9"].opt_bin/"python3",
       *Language::Python.setup_install_args(testpath/"vendor")
     end
 
@@ -85,9 +86,9 @@ class Condure < Formula
     end
 
     begin
-      xy = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
+      xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
       ENV["PYTHONPATH"] = testpath/"vendor/lib/python#{xy}/site-packages"
-      system Formula["python@3.8"].opt_bin/"python3", runfile
+      system Formula["python@3.9"].opt_bin/"python3", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
