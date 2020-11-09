@@ -10,6 +10,7 @@ class Xterm < Formula
     sha256 "88e30a37f2bab99f4de4dc13a09714cd267fde631015260e07736315a769d21a" => :catalina
     sha256 "21a7daa15dabd4b41968010342bbc2ea4a4e97075e42c7a51fe582c2d4331480" => :mojave
     sha256 "7991cdc6a1bca3713f71b76d1751aade257f50f4ca6274adc5126e36d8dc2978" => :high_sierra
+    sha256 "9985298e9b5209875f84514767f73453459e7deaebd04cce7f579384ecb26f63" => :x86_64_linux
   end
 
   depends_on "fontconfig"
