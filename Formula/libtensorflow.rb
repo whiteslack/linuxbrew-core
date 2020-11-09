@@ -6,13 +6,13 @@ class Libtensorflow < Formula
   url "https://github.com/tensorflow/tensorflow/archive/v2.3.1.tar.gz"
   sha256 "ee534dd31a811f7a759453567257d1e643f216d8d55a25c32d2fbfff8153a1ac"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     cellar :any
-    sha256 "18b25876cbc418d59bfa5c9f806e74dbd0da02bab9feffc44e65524f0028c72d" => :catalina
-    sha256 "53554298e92ce72341bec663bdf13370126d6f28fe74b75a62b8fc345b989069" => :mojave
-    sha256 "13461ccd13130e156755ea92e08c1ad59a353439bce390c781f7144f72be09d3" => :high_sierra
+    sha256 "0d95170da7f97c7744ad544c0ebd7a2c69db7b463c6dca5f9c082976452e96f6" => :catalina
+    sha256 "2fa9f87fe4706c9c3a020b16ec26ea9dbec18ace6d5d98c29bd341ec13d67878" => :mojave
+    sha256 "2e405f287eb13ef4c6837ee66cf48afdda2d86849c8785c14c4ed399e56cd400" => :high_sierra
   end
 
   depends_on "bazel" => :build
@@ -58,6 +58,7 @@ class Libtensorflow < Formula
     ]
     targets = %w[
       tensorflow:libtensorflow.so
+      tensorflow:install_headers
       tensorflow/tools/benchmark:benchmark_model
       tensorflow/tools/graph_transforms:summarize_graph
       tensorflow/tools/graph_transforms:transform_graph
@@ -65,14 +66,7 @@ class Libtensorflow < Formula
     system "bazel", "build", *bazel_args, *targets
 
     lib.install Dir["bazel-bin/tensorflow/*.so*", "bazel-bin/tensorflow/*.dylib*"]
-    (include/"tensorflow/c").install %w[
-      tensorflow/c/c_api.h
-      tensorflow/c/c_api_experimental.h
-      tensorflow/c/tf_attrtype.h
-      tensorflow/c/tf_datatype.h
-      tensorflow/c/tf_status.h
-      tensorflow/c/tf_tensor.h
-    ]
+    (include/"tensorflow/c").install Dir["bazel-bin/tensorflow/include/tensorflow/c/*"]
     bin.install %w[
       bazel-bin/tensorflow/tools/benchmark/benchmark_model
       bazel-bin/tensorflow/tools/graph_transforms/summarize_graph
