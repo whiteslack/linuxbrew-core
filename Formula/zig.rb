@@ -10,6 +10,7 @@ class Zig < Formula
     sha256 "e1961b8c92810f085db84f43d4a20e3f14efdfe4d8d816cbd4620e412761edc7" => :catalina
     sha256 "fe8d287d02eaea270f69a51455f4aa27dda3bc4984231e592e9f56eaafba194a" => :mojave
     sha256 "e1cf0c30406fc5b9b0cbc00c56879674118b89cb40e2b1b840cac04996df29b4" => :high_sierra
+    sha256 "74f6999c696443a9eca19ee2a18b7f34e9538ae47d4a12d50b98e90190ffa6b3" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
