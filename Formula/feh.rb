@@ -4,6 +4,7 @@ class Feh < Formula
   url "https://feh.finalrewind.org/feh-3.5.tar.bz2"
   sha256 "388f9dcc8284031023364355e23a82c276e79ca614f2dcd64d2f927857a4531e"
   license "MIT-feh"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,14 +12,16 @@ class Feh < Formula
   end
 
   bottle do
-    sha256 "9ab3087cc24d59b54e032dd37f6d04ab367f6b4121576bd0c969303e9a341b35" => :catalina
-    sha256 "9240eda39c189b0c0c78d4cc53f11642dec23ea9e58b899ede9fa7dec5101a30" => :mojave
-    sha256 "e73c73c598430c28f998b14191009c237668c17e71f9ce4f32686e504bb21111" => :high_sierra
+    sha256 "a61686d03a12eba87b4fbeb3d86a43cec6b90d957a1fc057d8798a4e90441c99" => :catalina
+    sha256 "b804a510489cf592cd01130d666e46b5d803ef27d3b97b75ecda6c4a375b36ac" => :mojave
+    sha256 "a3e0781f1800bb7da80dbd9142a69fb826047f137f012a5ab3890684e86c4ccd" => :high_sierra
   end
 
   depends_on "imlib2"
   depends_on "libexif"
-  depends_on :x11
+  depends_on "libx11"
+  depends_on "libxinerama"
+  depends_on "libxt"
 
   def install
     system "make", "PREFIX=#{prefix}", "verscmp=0", "exif=1"

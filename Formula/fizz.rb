@@ -1,16 +1,16 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://github.com/facebookincubator/fizz/releases/download/v2020.11.02.00/fizz-v2020.11.02.00.tar.gz"
-  sha256 "d7c0fd3ab17b51f7b173c20b6462abf774a3ff99ca1e77ddc2f17105e5f2d9ba"
+  url "https://github.com/facebookincubator/fizz/releases/download/v2020.11.09.00/fizz-v2020.11.09.00.tar.gz"
+  sha256 "1ca0905483cdde22402340b8a7efcc3d99027c641eabe01ef16b3fd3e4e42fde"
   license "BSD-2-Clause"
   head "https://github.com/facebookincubator/fizz.git"
 
   bottle do
     cellar :any
-    sha256 "560758c6df9edfaf8d45394a3ddbdaa73785416e4c09270dd2fcec92f1d63431" => :catalina
-    sha256 "e3315b4492f3909f6724980c75c48f0e34b6288de55f47bdce840017a1fbd223" => :mojave
-    sha256 "9e683d7545996b63b8c260dc8e2d30c7e2a9a923c67ee3dbd94d75dccbaeaf32" => :high_sierra
+    sha256 "f8d9f5ada2fc2a4fa5721792e1ba9a646972409493966a5758a7e048deabf543" => :catalina
+    sha256 "73b9492251604090341e307c35384a144c2577e7d1da65d024d25b303d9e79d5" => :mojave
+    sha256 "3e6ab422390157aee21dd56c031ea960132541c66724a323b904dc2abb67e184" => :high_sierra
   end
 
   depends_on "cmake" => :build
