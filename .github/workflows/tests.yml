@@ -14,6 +14,8 @@ jobs:
   tap_syntax:
     if: github.repository == 'Homebrew/linuxbrew-core'
     runs-on: ubuntu-latest
+    env:
+      HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
     steps:
     - name: Set up Homebrew
       id: set-up-homebrew
