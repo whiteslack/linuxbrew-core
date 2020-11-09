@@ -13,6 +13,7 @@ class PandocCrossref < Formula
     sha256 "723e2b9c88b96513fb9f1eac0d45a87723487aff9d5e3063e6023d4843de537d" => :catalina
     sha256 "6595989164be9000d8081f2908f84642f190084fd04f8cf6dd0ba61a4ec5b657" => :mojave
     sha256 "5c0b8fdda9d69df885f037596068d30e2271e44fb1e45452f32d0132910a3a3e" => :high_sierra
+    sha256 "dea22e332156fe2ccb9517e1c2e6d788caac7de99a3cdfaa02fb3aa1cfd01be0" => :x86_64_linux
   end
 
   depends_on "cabal-install" => :build
