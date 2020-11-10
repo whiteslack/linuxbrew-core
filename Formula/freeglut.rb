@@ -4,7 +4,7 @@ class Freeglut < Formula
   url "https://downloads.sourceforge.net/project/freeglut/freeglut/3.2.1/freeglut-3.2.1.tar.gz"
   sha256 "d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68"
   license "MIT"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 1 : 3
 
   livecheck do
     url :stable
