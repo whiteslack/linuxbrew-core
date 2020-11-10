@@ -14,6 +14,7 @@ class Pango < Formula
     sha256 "8efc7e43fabedde9160927212857a7fa950a0ee4768374a5f36fc7b7a4e79c44" => :catalina
     sha256 "39a4c6fd12e5a6cb12902e272e95358d1ef925b3bfadf41d67a43b7ab608b8c5" => :mojave
     sha256 "bbb19280fb8b85544c566fc0b668508d5363b2fa4a062091dea7bae115be5c6a" => :high_sierra
+    sha256 "08798cd937e992dc36a421b6d90cfba171d3c498f52416c871d5745076923bec" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
