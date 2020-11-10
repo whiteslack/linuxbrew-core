@@ -10,6 +10,7 @@ class Rke < Formula
     sha256 "d92779433a89164d07f0f0b74afe21ece4b756ad55835c92e6ebbbade1b8bf5d" => :catalina
     sha256 "2ec8244f28235afa18415036b3ce838c8110577a61d1df9398743c93e29b3fe8" => :mojave
     sha256 "d29c7e6d262b6228bafb5d7643e8166116839552f43e8c0e799d9fb9525c36b7" => :high_sierra
+    sha256 "cb7f8a23056cd69dc801d5c05351b50edc342d35179c179b6c4f42b0a1a1ba59" => :x86_64_linux
   end
 
   depends_on "go" => :build
