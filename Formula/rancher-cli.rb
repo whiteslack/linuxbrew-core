@@ -1,8 +1,8 @@
 class RancherCli < Formula
   desc "Unified tool to manage your Rancher server"
   homepage "https://github.com/rancher/cli"
-  url "https://github.com/rancher/cli/archive/v2.4.7.tar.gz"
-  sha256 "f3ed3cc276d2dd5ee672391125d3b4d6a3be9337e38ac59748e32c99b4d2f725"
+  url "https://github.com/rancher/cli/archive/v2.4.8.tar.gz"
+  sha256 "c5e73095a2eb6a485785a466e120697b3cc9071f2f2a695f6ebf1ce0a22de5da"
   license "Apache-2.0"
   head "https://github.com/rancher/cli.git"
 
@@ -13,10 +13,9 @@ class RancherCli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9dcae93136d9f79a102ab1d7acd3da9d7ea51302150dfb63aecbc39a8232825e" => :catalina
-    sha256 "cea838a7d939f24f60f98df61d58206385f944269bfebefac16cc046cf0537e2" => :mojave
-    sha256 "c44ed170e389fe323966e95d25eff6adefdf3e44f3dff3656ec8e5511155bf2c" => :high_sierra
-    sha256 "aab9a64aa8a7d8ccf41f052949381cc3c08500818576def014bc7b9b75bc477b" => :x86_64_linux
+    sha256 "60e0aaf8dfdd598e252e517dad981638fee13ee09ed84a17db1f73fcc0127c77" => :catalina
+    sha256 "0f2db3a62b98d2284041580c842c5962aca726c59bfab511303b179ecde27470" => :mojave
+    sha256 "89587feedd470f4af2091f29369ab4a87c8b62e2d295ce50286faaee3dcc69f9" => :high_sierra
   end
 
   depends_on "go" => :build

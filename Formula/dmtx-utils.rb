@@ -4,14 +4,13 @@ class DmtxUtils < Formula
   url "https://github.com/dmtx/dmtx-utils/archive/v0.7.6.tar.gz"
   sha256 "0d396ec14f32a8cf9e08369a4122a16aa2e5fa1675e02218f16f1ab777ea2a28"
   license "LGPL-2.1"
-  revision 1
+  revision 2
 
   bottle do
     cellar :any
-    sha256 "b769c72ede0c30f8d66fa831a0228e1896a59bee2c1edb833cc983ffad647ff3" => :catalina
-    sha256 "2aa5a9010d8aa229b81b7b571739131420a33643814b93d23de55547ac7c0202" => :mojave
-    sha256 "dc6b4de991219302c6cc12f6bfc4ef867469f76278f77e0b7bed41e07e27f598" => :high_sierra
-    sha256 "3026fcaa10b6b0d87e3614aa5fad4c1d6c870e8ee1818631e99aa7b826ddcc27" => :x86_64_linux
+    sha256 "0985c4c4a239de3a85eb2201f15c8ae12dbb49ccc9036f93f728e13d0d46705b" => :catalina
+    sha256 "7f2702b52b6e627607593542f0276a092b08de852200fa8fbc051ca76a00a3b5" => :mojave
+    sha256 "0de24aad51177bb26b8e33c7e459919e158fad2357436314410ccefc60e18024" => :high_sierra
   end
 
   depends_on "autoconf" => :build

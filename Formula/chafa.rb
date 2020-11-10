@@ -4,6 +4,7 @@ class Chafa < Formula
   url "https://hpjansson.org/chafa/releases/chafa-1.4.1.tar.xz"
   sha256 "46d34034f4c96d120e0639f87a26590427cc29e95fe5489e903a48ec96402ba3"
   license "GPL-3.0"
+  revision 1
 
   livecheck do
     url "https://hpjansson.org/chafa/releases/?C=M&O=D"
@@ -12,10 +13,9 @@ class Chafa < Formula
 
   bottle do
     cellar :any
-    sha256 "f8285220cba2737c58bea611f3c0b653b3c5e1306b8cef3ff33642ed26260fb8" => :catalina
-    sha256 "a483480366443ac91c52ebab6a06d0995a541098ce163a03c6cef71c0829be1c" => :mojave
-    sha256 "272891299f7962a49755de583274a21a49759e020418586fa0e7cdfe7c8e2202" => :high_sierra
-    sha256 "d58a4f786612b2f204f4f80088c24338be9c0136343cf8a87173bd0184a935c4" => :x86_64_linux
+    sha256 "040dab4ba89bdd45f5fc1429fd40f4952b0b1b1365e7143f0a8f2fab9f14d60f" => :catalina
+    sha256 "d102685671b1816d8c7b79e530d960778dc58655593721e0fdcd69a99b29fed1" => :mojave
+    sha256 "f75d4bbd7bfe8caaec6b386b8217c70ee432c17d7dd9ebf42ae04c0c58a88ca2" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
