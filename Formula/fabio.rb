@@ -39,15 +39,18 @@ class Fabio < Formula
       false
     end
 
-    if !port_open?(localhost_ip, fabio_default_port)
-      if !port_open?(localhost_ip, consul_default_port)
+    if port_open?(localhost_ip, fabio_default_port)
+      puts "Fabio already running or Consul not available or starting fabio failed."
+      false
+    else
+      if port_open?(localhost_ip, consul_default_port)
+        puts "Consul already running"
+      else
         fork do
           exec "consul agent -dev -bind 127.0.0.1"
           puts "consul started"
         end
         sleep 30
-      else
-        puts "Consul already running"
       end
       fork do
         exec "#{bin}/fabio &>fabio-start.out&"
@@ -62,9 +65,6 @@ class Fabio < Formula
         system "kill -9 $(pgrep fabio)"
       end
       system "consul", "leave"
-    else
-      puts "Fabio already running or Consul not available or starting fabio failed."
-      false
     end
   end
 end
