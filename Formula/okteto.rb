@@ -10,6 +10,7 @@ class Okteto < Formula
     sha256 "316b74ec48e09269d05c9dfed5be4149a57287ecde39c920727eef564497ac02" => :catalina
     sha256 "898239f86ac05ceb51659cec9f2ca49dc024767df99794f63f45d60edd7c8020" => :mojave
     sha256 "1af2f94a1d178f194e82aa5524c9564a5cc67650123f5980206f073161b5fb57" => :high_sierra
+    sha256 "f293b035101145f06ef92ab90b3fe7c9c37a0a3e5a56288a83e3d5135a784a34" => :x86_64_linux
   end
 
   depends_on "go" => :build
