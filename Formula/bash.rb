@@ -13,6 +13,7 @@ class Bash < Formula
     version "5.0.18"
 
     # Fix configure detection of strsignal() and snprintf() with Xcode 12
+    # Remove for version 5.1
     # https://savannah.gnu.org/patch/index.php?9991
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/cda4fced/bash/bash.patch"
@@ -55,11 +56,10 @@ class Bash < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "ca367f96ad5c40ae70b155af67d0a4ab772b16c55ccfc99b9317ae0afbbbc493" => :catalina
-    sha256 "524f0a60b401ecda6f73799f4458d1bd37beb04d6a227f2020ec95fb7d4f2e55" => :mojave
-    sha256 "58ba23e10da8b27178bc0811f8088aaa0225a8821552341aae7146bf4d13a35c" => :high_sierra
-    sha256 "aa6da6f8ce821875d6c59d4a8c1cb295e593ca2bb0e2360b456245965c27ea0a" => :x86_64_linux
+    rebuild 2
+    sha256 "6a701a90139e32ff22532978c5280548a2d32b96944c2b3cb1beedd912eda827" => :catalina
+    sha256 "1c163d25e8d1fe1e7d5083813e5e534ca708afcbf054017b66781a056e84ad79" => :mojave
+    sha256 "9a6e6c9d160358efc23ef4d471cc423d22b3a3fd14f6324aed3810656acf67a7" => :high_sierra
   end
 
   def install
@@ -70,6 +70,11 @@ class Bash < Formula
     # things (e.g. git+ssh) will break if the user sets their default shell to
     # Homebrew's bash instead of /bin/bash.
     ENV.append_to_cflags "-DSSH_SOURCE_BASHRC"
+
+    # Work around configure issues with Xcode 12
+    # https://savannah.gnu.org/patch/index.php?9991
+    # Remove for version 5.1
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
