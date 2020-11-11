@@ -14,6 +14,7 @@ class Openldap < Formula
     sha256 "c51d24181e4291ece30b4ff8504f864bc4e0432a0dc85b64d6f4cac68b4f43dd" => :catalina
     sha256 "8a9151d93ef5d9fe13aefe74b9cbba128524cfa5646d3bafa84b44180ffcba22" => :mojave
     sha256 "517c23bda49065c883a38d4d2ea0b1816860913c0b30013be170a01d3518a824" => :high_sierra
+    sha256 "5a2950716f8cb4d50cf8d2833a0b30367e2f8c821ad78ec0c1a2da3304c06697" => :x86_64_linux
   end
 
   keg_only :provided_by_macos
