@@ -13,6 +13,7 @@ class Tidyp < Formula
     sha256 "e9529c4cb157eb48b5d3a4cde35c4a8f1994496290a5a308b7feacd4b5bc58bf" => :catalina
     sha256 "b48c3587cde0cbc77ff07e9cb6849dcd3a985d8360ab5e8e7a7d5f0691e5d68b" => :mojave
     sha256 "267b4c383278baa37d4bab8e10aba1ee73d2eba642332414fad77d262b602099" => :high_sierra
+    sha256 "2d9bd417f45ab365fc65804afbaa68100669b5fb686ec8b2446c89c85d6bf08c" => :x86_64_linux
   end
 
   uses_from_macos "libxslt" => :build
