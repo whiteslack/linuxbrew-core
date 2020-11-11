@@ -17,6 +17,7 @@ class Unzip < Formula
     sha256 "1fac8de0e83c5a91feb1fa6e007397be17918761345f900c0244ade19fea806c" => :catalina
     sha256 "908d05001d2692e21753508aae8cca95d588dcebc4f852f3a42e0b0b1e2df9d4" => :mojave
     sha256 "96e47f47a3c6b10d59d69f614b7c63ae0aeea1e553018ee398b1b5405d22a7f5" => :high_sierra
+    sha256 "b0be46ca9933abb010c766461d3be0406ac3e5964723e84f1270ae407d4548a5" => :x86_64_linux
   end
 
   keg_only :provided_by_macos
