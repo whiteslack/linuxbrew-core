@@ -1,15 +1,15 @@
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https://hasura.io"
-  url "https://github.com/hasura/graphql-engine/archive/v1.3.2.tar.gz"
-  sha256 "e6f1293c8aba9538e1cceceff4ad0d060303d2a9f07777f08b171485dd20cc2f"
+  url "https://github.com/hasura/graphql-engine/archive/v1.3.3.tar.gz"
+  sha256 "816e46e09a21a2f2fd0d95b05373198416704035c0302fd1c07bffa5a5e04099"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "85e902904e462772a3f45e236178195a61a71daf53ca2dd488e8aafbd5374be7" => :catalina
-    sha256 "204859c85e1cbe73eeffb0a02641f23d607ead9aa4a90337c9c6e64a1b219c3e" => :mojave
-    sha256 "0b2eac67491041cf2ff84dc7a1b5668ee47c8aab366edc8fda3f943347f396ee" => :high_sierra
+    sha256 "f401fa465f27d50d1fcd467d53b2db03790f8248527514b49ca867679a622b5b" => :catalina
+    sha256 "62bf68a7d5118c8547849272425dcd49fa2be3847236cef3c3ca4e4233c972be" => :mojave
+    sha256 "1eae260ad4598bf74d835bf0923ef8323713e367d7389a4febb5134b7c821a33" => :high_sierra
   end
 
   depends_on "go" => :build

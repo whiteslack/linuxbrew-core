@@ -5,17 +5,16 @@ class Subversion < Formula
   mirror "https://archive.apache.org/dist/subversion/subversion-1.14.0.tar.bz2"
   sha256 "6ba8e218f9f97a83a799e58a3c6da1221d034b18d9d8cbbcb6ec52ab11722102"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "1bb2df197810198edc544f4b49abf1fb3c11ff9d84ad61d79fa73525803276a5" => :catalina
-    sha256 "63e3ab1c8cd1effd84c7376116a76d59f622171f42dea828342c590bdaa55821" => :mojave
-    sha256 "25f3e999d67c550f669d5bf2bdee0d03a4d37871ce59aa64e405a5eed53d0a82" => :high_sierra
-    sha256 "c1048683a725419abd45d835cab02c1dca99f71d03998fc607c3b0f24e4783d7" => :x86_64_linux
+    sha256 "ed1c362ce582ea6c8af2806c031a538f03e252515077c528aa8dae56492d9a09" => :catalina
+    sha256 "d67b1ae00fca5804a95f064eb8bdb29362a6b60d31ccfc32fa2c2c75509d5bbe" => :mojave
+    sha256 "2b809385ae0c1700a39ec14c062c22f6c8e929d2a50f691d3accbbbe7e050a72" => :high_sierra
   end
 
   head do
@@ -35,11 +34,10 @@ class Subversion < Formula
   depends_on "apr-util"
 
   # build against Homebrew versions of
-  # gettext, lz4, perl, sqlite and utf8proc for consistency
+  # gettext, lz4, sqlite and utf8proc for consistency
   depends_on "gettext"
   depends_on "lz4"
   depends_on "openssl@1.1" # For Serf
-  depends_on "perl"
   depends_on "sqlite"
   depends_on "utf8proc"
 
@@ -47,6 +45,7 @@ class Subversion < Formula
 
   uses_from_macos "expat"
   uses_from_macos "krb5"
+  uses_from_macos "perl"
   uses_from_macos "ruby"
   uses_from_macos "zlib"
 
@@ -157,8 +156,8 @@ class Subversion < Formula
     system "make", "javahl"
     system "make", "install-javahl"
 
-    archlib = Utils.safe_popen_read("perl", "-MConfig", "-e", "print $Config{archlib}")
-    perl_core = Pathname.new(archlib)/"CORE"
+    perl_version = Utils.safe_popen_read("perl", "--version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
+    perl_core = MacOS.sdk_path/"System/Library/Perl"/perl_version/"darwin-thread-multi-2level/CORE"
     onoe "'#{perl_core}' does not exist" unless perl_core.exist?
 
     if OS.mac?
@@ -195,6 +194,7 @@ class Subversion < Formula
   test do
     system "#{bin}/svnadmin", "create", "test"
     system "#{bin}/svnadmin", "verify", "test"
+    ENV["PERL5LIB"] = Dir["#{opt_lib}/perl5/site_perl/*/darwin-thread-multi-2level"][0]
     system "perl", "-e", "use SVN::Client; new SVN::Client()"
   end
 end
