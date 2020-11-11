@@ -6,6 +6,8 @@ class Afuse < Formula
   license "GPL-2.0"
   revision 1 unless OS.mac?
 
+  deprecate! because: "requires FUSE"
+
   bottle do
     cellar :any
     sha256 "cf5a7aeba0e2504ea5bf7bf691ed2d0f8245cbac069b089359588e7df04140e0" => :catalina
