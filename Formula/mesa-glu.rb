@@ -15,6 +15,7 @@ class MesaGlu < Formula
     sha256 "977fc1911d5d0334c56b9d287de0ee2f716fc23b5fde21404415bf89ce46cfce" => :catalina
     sha256 "ddfad217be6c1f0ea8f22d17348d901ad999365a01f824ab6f51a911eee654e1" => :mojave
     sha256 "598992b552b004eb5e06460a3c84de6ff39f6d7a7112be2819f99280d33f3fa9" => :high_sierra
+    sha256 "cc6c07a0fec48dbaf44144916637188e1ebdc65bfdbb0da37652bca7873c728d" => :x86_64_linux
   end
 
   head do
