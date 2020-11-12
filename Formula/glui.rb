@@ -12,6 +12,7 @@ class Glui < Formula
     sha256 "24c323dbaa5f6f1b01fbf8f837c379ef503d323a448d2bb3d673c31ced622f0d" => :mojave
     sha256 "7cd9b9d6bffa3b6b6ff806c4041f495d5a7ef40296cb50097db25d17eb616265" => :high_sierra
     sha256 "c087de27b46b86a14d583904e0a9d293428af37d8710b521ae7aeeb5174fc8fd" => :sierra
+    sha256 "f87bbfbeed8373500404dc7a708cb13b696a42d693b52e4a1671a81c37a3abee" => :x86_64_linux
   end
 
   # Fix compiler warnings in glui.h. Merged into master on November 28, 2016.
