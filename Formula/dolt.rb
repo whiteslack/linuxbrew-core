@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/liquidata-inc/dolt"
-  url "https://github.com/dolthub/dolt/archive/v0.21.4.tar.gz"
-  sha256 "bb55e0fe36b8dd4fe996f6852211862f76c4ac0ea446271f607940cbfbc25eed"
+  url "https://github.com/dolthub/dolt/archive/v0.22.0.tar.gz"
+  sha256 "cebfc98b4656d2da2275926b773d4697c97f9ab9f0f8aab324f6abe5e5aa0d8b"
   license "Apache-2.0"
 
   livecheck do
@@ -12,9 +12,9 @@ class Dolt < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0c87d142eefa06ae6e7db6a4d4a6bcdb988363ad57d7c923b2f8b3b08e57e874" => :catalina
-    sha256 "e3192165c95f7e8b1b8a9786ce525a4e492517db7d4e7e5598d18c4c47f77421" => :mojave
-    sha256 "2bdbb7c14f578b1069172d42be07203a4b5f26a104fb0d29a7214790001eb442" => :high_sierra
+    sha256 "80996f00c2ab5969505af14f35aaed07b5cd5cab357aca3ad08e0ba3c2cb9e1a" => :catalina
+    sha256 "e743819e71d685b65f73d86958ab09b26727a00216eaf6adf79da43c1961b7a2" => :mojave
+    sha256 "0e70d4f0b7655e6361a0f0f1f387e20fa1e92f4b4f2b8664cbf83648f106c7c3" => :high_sierra
   end
 
   depends_on "go" => :build

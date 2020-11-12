@@ -13,13 +13,13 @@ class Exa < Formula
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 2
-    sha256 "db91d6383734415664520fadb8a4401c465f08b6c8dbd5c56d47e959d04ec6f5" => :catalina
-    sha256 "6c4473e06868d60a18657f8f6d98985ec7480de89213765738a3e33eeb9ceee1" => :mojave
-    sha256 "e47d5005f3a6a05bc442ed8e12a8e3206f39d0e4daf4835e84545ab158c4f089" => :high_sierra
-    sha256 "a65638aa0ecbf99d3342ad1c166b423e937a714c390a9f0c11cafce4207e7baf" => :x86_64_linux
+    rebuild 3
+    sha256 "68719677084cc6f1143459636e500fc1e1eb7ab368284ea3f6a1d94eaba320d5" => :catalina
+    sha256 "e448fee9de62074020492565166bb214da1ba85045a70389df4a366d1f79a43c" => :mojave
+    sha256 "e1afc4b73ef02f23012b0c76a4aaadb7ca256530ffc685ccfda79a5d846bae49" => :high_sierra
   end
 
+  depends_on "pandoc" => :build
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
@@ -36,10 +36,22 @@ class Exa < Formula
       bash_completion.install "completions/completions.bash" => "exa"
       zsh_completion.install  "completions/completions.zsh"  => "_exa"
       fish_completion.install "completions/completions.fish" => "exa.fish"
+
+      args = %w[
+        --standalone
+        --to=man
+      ]
+
+      system "pandoc", *args, "man/exa.1.md", "-o", "exa.1"
+      system "pandoc", *args, "man/exa_colors.5.md", "-o", "exa_colors.5"
+
+      man1.install "exa.1"
+      man5.install "exa_colors.5"
     else
       bash_completion.install "contrib/completions.bash" => "exa"
       zsh_completion.install  "contrib/completions.zsh"  => "_exa"
       fish_completion.install "contrib/completions.fish" => "exa.fish"
+      man1.install "contrib/man/exa.1"
     end
   end
 
