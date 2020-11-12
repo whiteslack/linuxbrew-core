@@ -10,6 +10,7 @@ class Oxipng < Formula
     sha256 "731dc0bb62382fcc1ed327a9991af54c8b9e5a3744390eb0f33a820a2d76fba5" => :catalina
     sha256 "e7a6e4f1073c53479339da86dc958fd1cf7337892f7a6ff471437d9a03f9d4d2" => :mojave
     sha256 "78c733696edd12b4c76459399d792d0723bf469d1add45449b26d19877843be9" => :high_sierra
+    sha256 "2992c6031c95db24bd0fca63a521f1fe3a4dc419e11959bdf6c346e9bb943028" => :x86_64_linux
   end
 
   depends_on "rust" => :build
