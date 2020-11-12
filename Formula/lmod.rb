@@ -1,15 +1,15 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://github.com/TACC/Lmod/archive/8.4.12.tar.gz"
-  sha256 "b8590402d6bed99a27eed5f238116ddcb255e5ae34cff68fd5db9a5535bf909e"
+  url "https://github.com/TACC/Lmod/archive/8.4.13.tar.gz"
+  sha256 "10ee1e6bf156b417bc822fe0ffd0692620f36f13b27f4f41eb21d1ea2ab8bc71"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e1cd0dc6f650358282711fc82b7c10f1cdb1c9d348f9e9dc83d48dbe83067c58" => :catalina
-    sha256 "575bba35b57256a677a5e58cef69f4a1d649f5647b27279e6a4f59dc07fe2a0e" => :mojave
-    sha256 "f67941d48f945afc1d334919a46e6e2bfa4a4143a5720108a165449406d105ac" => :high_sierra
+    sha256 "8c97f16108f09ab403016b73fc5cdd15417f0620d3e44cf6b40f8e59325dda34" => :catalina
+    sha256 "b072296bca376528da35c35906c64938eec5f3a7315658616e304d46aab1f3a1" => :mojave
+    sha256 "3c16298679089b6fd5a3e76af464e432a1dde988b732de1f215c008586126aa1" => :high_sierra
   end
 
   depends_on "luarocks" => :build

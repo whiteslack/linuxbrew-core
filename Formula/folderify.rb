@@ -1,20 +1,25 @@
 class Folderify < Formula
   include Language::Python::Virtualenv
 
-  desc "Generate pretty, beveled macOS folder icons"
+  desc "Generate pixel-perfect macOS folder icons in the native style"
   homepage "https://github.com/lgarron/folderify"
-  url "https://github.com/lgarron/folderify/archive/v1.2.3.tar.gz"
-  sha256 "3a9eaadf1f2a9dde3ab58bb07ea5b1a5f5a182f62fe19e2cd79a88f6abe00f7e"
+  url "https://github.com/lgarron/folderify.git",
+    tag:      "v2.0.0",
+    revision: "84374fc7394f41035c07b9a7b37dd59d26747836"
   license "MIT"
-  revision 1
   # Default branch is "main" not "master"
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
+  livecheck do
+    url :head
+    regex(/^v\d+\.\d+\.\d+$/i)
+  end
+
   bottle do
     cellar :any_skip_relocation
-    sha256 "b837787fcfa5ae9ef08f2aeb51fc58174295b9139411b199db8f167f6fbfda9f" => :catalina
-    sha256 "61656a834653ba71b4b57555ca1f70d4132a3fb9ca3003b8b7d8f4444fc68a6a" => :mojave
-    sha256 "b6190ad9db316c5021d6a3a13e1ca98e2aa56d0cb47347a1671a8aaf3e722f88" => :high_sierra
+    sha256 "bf77b40c3552f1a4caebf73b6054127fa97b4f8ee41c267112801d14a5fd18be" => :catalina
+    sha256 "78f9ca5c9613430633e11ba616cf69a0b3326134a73bef485e8c9e077ca82f2d" => :mojave
+    sha256 "e48592da636f39b129abcaffb2a44a761bb6aa5b42164a303cef1e791fbe569f" => :high_sierra
   end
 
   depends_on "imagemagick"
