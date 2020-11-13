@@ -4,14 +4,14 @@ class Openblas < Formula
   url "https://github.com/xianyi/OpenBLAS/archive/v0.3.12.tar.gz"
   sha256 "65a7d3a4010a4e3bd5c0baa41a234797cd3a1735449a4a5902129152601dc57b"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/xianyi/OpenBLAS.git", branch: "develop"
 
   bottle do
     cellar :any
-    sha256 "7ba7ba209680b05379b11cc82aa90961e46c77441205b7cec05566ac01707e0c" => :catalina
-    sha256 "f3fb72089ff3e7ea288027f9dbcac730caa3cb8fc3bb0b650f8a5ae6682c094f" => :mojave
-    sha256 "8433e192ab508dfdbfb4e1a7071ef01e7e5c2c3d38187c7bcfd32536be3b5590" => :high_sierra
-    sha256 "6bbae459f6bd59300eb69b220f2557d9bf79da6911de4660071dfbd3d1e485d8" => :x86_64_linux
+    sha256 "3a8a800e16c419c04461186ee4bf2973fe980ef441492508fca0e180d8c1611d" => :catalina
+    sha256 "e9526801fff63549e268e1bee22d0181b765e6b22b11dc27269692124dae9abb" => :mojave
+    sha256 "176a723045e04c26df8bb9477b0af370a86ae105f8e570669dc0492025a9a1b1" => :high_sierra
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"
@@ -23,6 +23,8 @@ class Openblas < Formula
     ENV["DYNAMIC_ARCH"] = "1"
     ENV["USE_OPENMP"] = "1"
     ENV["NO_AVX512"] = "1"
+    # Force a large NUM_THREADS to support larger Macs than the VMs that build the bottles
+    ENV["NUM_THREADS"] = "56"
     ENV["TARGET"] = case Hardware.oldest_cpu
     when :arm_vortex_tempest
       "VORTEX"
