@@ -1,9 +1,9 @@
 class Openvpn < Formula
   desc "SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension"
   homepage "https://openvpn.net/index.php/download/community-downloads.html"
-  url "https://swupdate.openvpn.org/community/releases/openvpn-2.4.9.tar.xz"
-  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.4.9.tar.xz"
-  sha256 "641f3add8694b2ccc39fd4fd92554e4f089ad16a8db6d2b473ec284839a5ebe2"
+  url "https://swupdate.openvpn.org/community/releases/openvpn-2.5.0.tar.xz"
+  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.5.0.tar.xz"
+  sha256 "029a426e44d656cb4e1189319c95fe6fc9864247724f5599d99df9c4c3478fbd"
 
   livecheck do
     url :homepage
@@ -11,10 +11,9 @@ class Openvpn < Formula
   end
 
   bottle do
-    sha256 "b4d2c905d810562fc11e83c226ed8572386482f1e856e0f8de3e5ff63ee00526" => :catalina
-    sha256 "315e55c0f3b2cdbf4c3e8545c98702e1c4eeff20bc37dbf89921389494b3ef54" => :mojave
-    sha256 "bb3ce3b1fbbdf51cf5a207d00a1f60d22eb9b98096595fb81c563dffac077c0f" => :high_sierra
-    sha256 "d5949da94c2e5ac63644f820946bcaf2595436534b9895c64cae03de1b03b795" => :x86_64_linux
+    sha256 "918ed747493fb7f709ac2f0be98adace8e9c177b9bc45ff3fd1047ced6700be6" => :catalina
+    sha256 "62f20ab70d736ede4a3c58043f6ec1b01a17bb4bba11a71c307eddcccf162bc9" => :mojave
+    sha256 "54930a9ae5b2cc1953922802ac7fb3dc5bd8ded10a013de6cd74edb4ba801bbe" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
@@ -35,6 +34,12 @@ class Openvpn < Formula
                           "--with-crypto-library=openssl",
                           "--enable-pkcs11",
                           "--prefix=#{prefix}"
+    inreplace "sample/sample-plugins/Makefile" do |s|
+      s.gsub! HOMEBREW_LIBRARY/"Homebrew/shims/mac/super/pkg-config",
+              Formula["pkg-config"].opt_bin/"pkg-config"
+      s.gsub! HOMEBREW_LIBRARY/"Homebrew/shims/mac/super/sed",
+              "/usr/bin/sed"
+    end
     system "make", "install"
 
     inreplace "sample/sample-config-files/openvpn-startup.sh",
