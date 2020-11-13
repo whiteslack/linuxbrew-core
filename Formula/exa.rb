@@ -16,6 +16,7 @@ class Exa < Formula
     sha256 "b0c1b9366cb7c6753a9e8467b5fe1e4dcbc3e148df59b5d79bcd8b8814c30443" => :catalina
     sha256 "2770559fa1082afeb6755a38ed8b5c2f72b7e88e41132caec9c2a22b7164ef69" => :mojave
     sha256 "f93d7eaeeffbf42a471aaec0d466767187f47fa68d25e0cb448763ee169d30c9" => :high_sierra
+    sha256 "9370080e59411c11871c6564028ec4366c95a518b3d02c50befe54df618dde4d" => :x86_64_linux
   end
 
   head do
