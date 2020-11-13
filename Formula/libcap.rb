@@ -3,6 +3,7 @@ class Libcap < Formula
   homepage "https://sites.google.com/site/fullycapable/"
   url "https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.27.tar.xz"
   sha256 "dac1792d0118bee6aae6ba7fb93ff1602c6a9bda812fd63916eee1435b9c486a"
+  license all_of: ["BSD-3-Clause", "GPL-2.0-or-later"]
 
   bottle do
     cellar :any_skip_relocation
