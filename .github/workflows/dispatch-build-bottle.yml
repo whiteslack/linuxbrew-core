@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: bottles
-          path: bottles
+          path: ~/bottles/
 
       - name: Upload bottles to Bintray
         env:
