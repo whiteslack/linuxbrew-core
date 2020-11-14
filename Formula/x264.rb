@@ -25,6 +25,7 @@ class X264 < Formula
     sha256 "60b2b82a877d14c5c02f28e0d51ae90b89d4a141fa3c4efcc3fed6926d41033a" => :catalina
     sha256 "25c5033625c3de8f4f2e4de5b9d2e3f954e42ec9ec04104f49d6d4c255f65286" => :mojave
     sha256 "7a7dbe31d8afd48909c01294cc165b60fcaa20ca3df245617151b13f38d7c626" => :high_sierra
+    sha256 "b6f7ab164cba125a2087b9a7435391f17ebbca9eca77921ccb67ef094b247c2d" => :x86_64_linux
   end
 
   depends_on "nasm" => :build
