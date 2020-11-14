@@ -37,7 +37,9 @@ class Arangodb < Formula
   end
 
   def install
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version if OS.mac?
+    on_macos do
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    end
 
     resource("starter").stage do
       ENV["GO111MODULE"] = "on"
