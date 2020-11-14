@@ -15,6 +15,7 @@ class Lbdb < Formula
     sha256 "9c79b0bbc8d13e16259bce83501a2d3f285f3ca2c6675f49cdb36a4ef4366fa1" => :catalina
     sha256 "71c3c794994b1ec594bdbbef70848c0e5bb43ab1f19e1edff7e0d17e9a2f9e98" => :mojave
     sha256 "03f4287b844059e3bc9787c97bc22b903a57067add3c3fe2913d2ca53537d34f" => :high_sierra
+    sha256 "dedb21cfb40793f03cbc9fa2be48ed14c74867718a1ac3a33307cc6b5cbdba71" => :x86_64_linux
   end
 
   depends_on "abook"
