@@ -14,6 +14,7 @@ class Msmtp < Formula
     sha256 "64ace78142e59a05032fc65e683c1a36d2c28e457be1f22718519ca37c1e90c2" => :catalina
     sha256 "6e529ebbebd56ef337ab4099d39d17adf2792d5d3c827d348fd1c23ac04fa7fe" => :mojave
     sha256 "63abd352182e42ae21a6c143db533446e1bc9c8fc6cfcf4c60a69f630558a189" => :high_sierra
+    sha256 "2d23dc5c8fed26fa10c9dae2c191ae515be45cfbb5207cae15eef6941e0f1f92" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
