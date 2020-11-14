@@ -11,6 +11,7 @@ class Minizinc < Formula
     sha256 "683b363ecf631103f0cdb4989145a2d6cc85ea14d6d947ee2cde6250fe3682be" => :catalina
     sha256 "c2d573adbd73997805b3c4d857292037255a7b7deb923c238320a7c766cfff8d" => :mojave
     sha256 "d76fa3408acce79f7f184cf1e9153dd1f5961b29a43876cb3031d638aa435f89" => :high_sierra
+    sha256 "120f159c1cec66da17fcb161046dc92e1575385eabff829769cb0bcdafb6c5cb" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
