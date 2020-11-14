@@ -11,6 +11,7 @@ class Bibtexconv < Formula
     sha256 "825df161159801283a8a9a500e2854417c3d4d461c8012e782e0bea6f9accced" => :catalina
     sha256 "21f9bb60c2858343772d50f1cb6fa5075800a6804491643a9db6dd02d3224785" => :mojave
     sha256 "9820d6c2634a28a2c8fd510a71d5929cf1f83c7e5bcaffc41056536a3c3df9a9" => :high_sierra
+    sha256 "7181a574ad71d253ec2c9961d34093248e733013c7e38390dad6a8a8f859e839" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
