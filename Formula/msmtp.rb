@@ -1,8 +1,8 @@
 class Msmtp < Formula
   desc "SMTP client that can be used as an SMTP plugin for Mutt"
   homepage "https://marlam.de/msmtp/"
-  url "https://marlam.de/msmtp/releases/msmtp-1.8.12.tar.xz"
-  sha256 "a86fef9477339923afefe974988a38e32d0feb90dfeeb88f7f55aac356a96354"
+  url "https://marlam.de/msmtp/releases/msmtp-1.8.13.tar.xz"
+  sha256 "ada945ab8d519102bb632f197273b3326ded25b38c003b0cf3861d1d6d4a9bb9"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,10 +11,9 @@ class Msmtp < Formula
   end
 
   bottle do
-    sha256 "0d8168fa3b80b579fac391f7f7f15a1f62cd313360942727984192bd0d0a8395" => :catalina
-    sha256 "414f950b8fee308081e67bd90ee5b87657551a860125a3daeafc293c466347ab" => :mojave
-    sha256 "da7db756331f0a697451f982f62269cac17395fa5620b02de97381a4a8a6ce2d" => :high_sierra
-    sha256 "115fd852a157f81337012677909c740fa36975bba9e4805f543d2efef10f358c" => :x86_64_linux
+    sha256 "64ace78142e59a05032fc65e683c1a36d2c28e457be1f22718519ca37c1e90c2" => :catalina
+    sha256 "6e529ebbebd56ef337ab4099d39d17adf2792d5d3c827d348fd1c23ac04fa7fe" => :mojave
+    sha256 "63abd352182e42ae21a6c143db533446e1bc9c8fc6cfcf4c60a69f630558a189" => :high_sierra
   end
 
   depends_on "pkg-config" => :build

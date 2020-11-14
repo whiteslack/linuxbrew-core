@@ -3,8 +3,8 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/02/af/1bef525a2aa9363e682ec6209fcfb55fa30f575ca285e173d6ab1b480509/commitizen-2.6.0.tar.gz"
-  sha256 "383677da935811e37dac4f5442b273f5bbc3f289f540b1d3d22c9c452f0a0346"
+  url "https://files.pythonhosted.org/packages/09/f9/f96733240283c0555c1866a5080b18f444b7462fd9d188f64aa6ed2c721e/commitizen-2.7.0.tar.gz"
+  sha256 "0f7ee686c22e5c246f80a0c31286da137c915471ddbc9c150dfd5bf32167ff69"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git"
 
@@ -14,10 +14,10 @@ class Commitizen < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "908b5428914c6a1d82c5a4fcbaa9a4dacc98a837069693131c6f9f561c7f03e6" => :catalina
-    sha256 "1878aa34ea318a77f54e229e8a715300f35152732f92549c10901294be7d8539" => :mojave
-    sha256 "63c156caf2fe52b1a97131e3f546965c47439c10010fcdb84ba51fb6a9f1906d" => :high_sierra
-    sha256 "2273c6300da5376c3438b27dfebdd7450feef971780ec99f50c91df0336b9448" => :x86_64_linux
+    sha256 "f936f757d6ec685ca0cd162c2af8436a746f9b156225480a582a50c0b9841414" => :big_sur
+    sha256 "ce5d7692d4a7f589b2847f61c795905eb9f4cf32a671ebbb77f7eac3aeb006fb" => :catalina
+    sha256 "c05b3206b980accdce349b82e10d3068c3ec8e3080134e57b955ab4155ceaabe" => :mojave
+    sha256 "41d075fb5a54f618691079bc03844eaadbc4459933fe832acfe910f8cb1ab432" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -63,8 +63,8 @@ class Commitizen < Formula
   end
 
   resource "questionary" do
-    url "https://files.pythonhosted.org/packages/89/70/6c2176fde7cfacbd3f3833bfb321827826c72071b7c008eb56defb2ca68c/questionary-1.7.0.tar.gz"
-    sha256 "338f326d3d10204dc3a21a07cfa8243f32d8d8f3d9f3de244951066c0769f2ea"
+    url "https://files.pythonhosted.org/packages/26/4a/ef9920dc730ba84750b82e330f8b5a0f7ec292d571daa7718fd3e8a0ac8e/questionary-1.8.0.tar.gz"
+    sha256 "0f76eb389aef1048e04bec1338fec074308091446fbe92914d064c77c092a868"
   end
 
   resource "six" do
