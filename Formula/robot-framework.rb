@@ -6,7 +6,7 @@ class RobotFramework < Formula
   url "https://github.com/robotframework/robotframework/archive/v3.2.2.tar.gz"
   sha256 "6b2bddcecb5d1c6198999e38aeaf4c0366542a5e7b5bd788c6a3a36b055d5ea2"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/robotframework/robotframework.git"
 
   livecheck do
@@ -16,14 +16,13 @@ class RobotFramework < Formula
 
   bottle do
     cellar :any
-    sha256 "a503c2658071bf333557928bc35ddf4f7ee2b6c83b0fbc894990d084dc0b3b79" => :catalina
-    sha256 "91d269cae3227f25424d703791f655e85c7862d7deb7187740f38bc7417bb352" => :mojave
-    sha256 "cbb701dbc690b5e0ef53a6a66b913eaaaf797af9f8463d01a4fc341ee09918e3" => :high_sierra
+    sha256 "bca11543784d4e3cb483b2fef303bd9e01b5bc3dd79178e1e46f68662cf02435" => :catalina
+    sha256 "20a4dfaae392a2224c24835bdbd50a2dc09fcda73f501c4efd5e9f183ca15fac" => :mojave
+    sha256 "35967f471fc0b592ff50236dd57c812d9324a14a485b8f2bc5dce9cf07e1f5c9" => :high_sierra
   end
 
   depends_on "openssl@1.1"
   depends_on "python@3.9"
-  depends_on :x11
 
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/fa/aa/025a3ab62469b5167bc397837c9ffc486c42a97ef12ceaa6699d8f5a5416/bcrypt-3.1.7.tar.gz"

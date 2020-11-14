@@ -4,18 +4,18 @@ class CouchdbLucene < Formula
   url "https://github.com/rnewson/couchdb-lucene/archive/v2.1.0.tar.gz"
   sha256 "8297f786ab9ddd86239565702eb7ae8e117236781144529ed7b72a967224b700"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "56e618fa1e535e061171d52dde83b617f4793b17654c4cc9adf1fc125607e096" => :catalina
-    sha256 "03b37461aeb2eb4172ee4ff18a44c9074d9b486bec0d3192a37bb22262e078c6" => :mojave
-    sha256 "2081b4665600643fd02deaac5b2177622d91729b6aec56197087b81412ecae35" => :high_sierra
+    sha256 "714f23364619652be6321a45982688acf42be2a6b58aebbe654625b5ca6c69a3" => :catalina
+    sha256 "7df53cd760b08390dcf985ef6d033e4540e6759cbe6975add36ce0888f48b544" => :mojave
+    sha256 "087475d3e5852700d5d5a96f802072657fa623e1ed23d0b57707d1ef9eeb98c2" => :high_sierra
   end
 
   depends_on "maven" => :build
   depends_on "couchdb"
-  depends_on java: "1.8"
+  depends_on "openjdk@8"
 
   def install
     system "mvn"

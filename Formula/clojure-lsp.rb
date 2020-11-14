@@ -7,18 +7,19 @@ class ClojureLsp < Formula
     revision: "a6803d9a329961764956c7bdc05a379cd09fa3d0"
   version "20201009T224414"
   license "MIT"
+  revision 1
   head "https://github.com/snoe/clojure-lsp.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f430ac5371d44b5b32b06228a23faae6b70591c82c854ed08a3b53669035c132" => :catalina
-    sha256 "f72db8720cb108660fb16cf28c90c16187d57c43f2d69918ac8455e9ab7d8509" => :mojave
-    sha256 "edfaec762dd1d70952c90b476e8aa06b665d13cbd9c8582702c51d667f524da1" => :high_sierra
+    sha256 "4ecead5fe9522b71166075b3eb40ff9194fd4bc5f5534eb08d5c2525a89c93c0" => :catalina
+    sha256 "7c39d1f1b3cf68f04b8dcd10024d1c7669c3d0fb540665c938c03a4faff81fc8" => :mojave
+    sha256 "713e1b16819bae5f60936e27ae604b83145c681aef453f7fe98319f0a1e96a51" => :high_sierra
   end
 
   depends_on "leiningen" => :build
   # The Java Runtime version only recognizes class file versions up to 52.0
-  depends_on java: "1.8"
+  depends_on "openjdk@8"
 
   def install
     system "lein", "uberjar"
@@ -30,17 +31,14 @@ class ClojureLsp < Formula
   test do
     require "Open3"
 
-    begin
-      stdin, stdout, _, wait_thr = Open3.popen3("#{bin}/clojure-lsp")
-      pid = wait_thr.pid
-      stdin.write <<~EOF
-        Content-Length: 58
+    stdin, stdout, _, wait_thr = Open3.popen3("#{bin}/clojure-lsp")
+    pid = wait_thr.pid
+    stdin.write <<~EOF
+      Content-Length: 58
 
-        {"jsonrpc":"2.0","method":"initialize","params":{},"id":1}
-      EOF
-      assert_match "Content-Length", stdout.gets("\n")
-    ensure
-      Process.kill "SIGKILL", pid
-    end
+      {"jsonrpc":"2.0","method":"initialize","params":{},"id":1}
+    EOF
+    assert_match "Content-Length", stdout.gets("\n")
+    Process.kill "SIGKILL", pid
   end
 end

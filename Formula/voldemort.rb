@@ -4,6 +4,7 @@ class Voldemort < Formula
   url "https://github.com/voldemort/voldemort/archive/release-1.10.26-cutoff.tar.gz"
   sha256 "8bd41b53c3b903615d281e7277d5a9225075c3d00ea56c6e44d73f6327c73d55"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,15 +13,13 @@ class Voldemort < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cf54d4426d88d2cff21c465a7df3bbe25b6079610be947eb0613fa0760c3372b" => :catalina
-    sha256 "25ce694b1f816f5004a21399d514cf44be904f8e575d8df4f0911370ac1fba19" => :mojave
-    sha256 "9a4436d48d7908470727c7c4bbc9d6ed34ef45f2512646823418651f4aa6a991" => :high_sierra
-    sha256 "e1509d1ec241f1d5c693ba6aeb00938fb0cbc7d7f4e92bab54d2dafdbe631849" => :sierra
-    sha256 "c2239a35ce888e4a5b43980ba780a06f1590d247b867d36774422a32eca10bea" => :x86_64_linux
+    sha256 "0470f59cbc9dadeff4f18bafddc19f09a81f536bbdcf494982f119451d927bc6" => :catalina
+    sha256 "1c6b5439d0223165729b7f036fe7c11892347e600e8f7e1f28e2595121c26c2f" => :mojave
+    sha256 "301c2913a8e95fd9e1971cf56867b30ddeded2be1c43664011fa909b772e58bd" => :high_sierra
   end
 
   depends_on "gradle" => :build
-  depends_on java: "1.8"
+  depends_on "openjdk@8"
 
   def install
     system "./gradlew", "build", "-x", "test"

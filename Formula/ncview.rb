@@ -4,7 +4,8 @@ class Ncview < Formula
   url "ftp://cirrus.ucsd.edu/pub/ncview/ncview-2.1.8.tar.gz"
   mirror "https://dl.bintray.com/homebrew/mirror/ncview-2.1.8.tar.gz"
   sha256 "e8badc507b9b774801288d1c2d59eb79ab31b004df4858d0674ed0d87dfc91be"
-  revision OS.mac? ? 3 : 5
+  license "GPL-3.0-only"
+  revision OS.mac? ? 4 : 6
 
   # The stable archive in the formula is fetched over FTP and the website for
   # the software hasn't been updated to list the latest release (it has been
@@ -16,25 +17,21 @@ class Ncview < Formula
   end
 
   bottle do
-    sha256 "0a1594bb793189d1359cbd800e44d830cc9cf39b713d71128d41323b284e687a" => :catalina
-    sha256 "d0b8e9fb871edf26633325c7309269689d0b4bd858f16a45527230dc16533abf" => :mojave
-    sha256 "5511d243f73fd1a7867bb4dd0263afe215dd0e4e29ef77199efee5db08c2d207" => :high_sierra
-    sha256 "6afa0fce06e390ff3a5b8646fb3f98691407bac5e14a313beaed71b141d200ff" => :x86_64_linux
+    sha256 "b416e10f8aa1674f1c0323d5f1ecbadf930069520d0c093e18d71a3d07957c19" => :catalina
+    sha256 "386218ffad288810cb9447f3b666cbbea50be2517c1a6a36105980e8682be949" => :mojave
+    sha256 "37672fc5cea8e4a1178b2e0a91e2277099b900045617d01c1070cccad407fd1c" => :high_sierra
   end
 
+  depends_on "libice"
   depends_on "libpng"
+  depends_on "libsm"
+  depends_on "libx11"
+  depends_on "libxaw"
+  depends_on "libxt"
   depends_on "netcdf"
   depends_on "udunits"
-  depends_on :x11 if OS.mac?
 
-  unless OS.mac?
-    depends_on "libx11"
-    depends_on "libxaw"
-    depends_on "libxext"
-    depends_on "libice"
-    depends_on "libsm"
-    depends_on "libxt"
-  end
+  depends_on "libxext" unless OS.mac?
 
   def install
     # Bypass compiler check (which fails due to netcdf's nc-config being

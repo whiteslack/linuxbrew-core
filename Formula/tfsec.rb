@@ -1,8 +1,8 @@
 class Tfsec < Formula
   desc "Static analysis powered security scanner for your terraform code"
   homepage "https://github.com/tfsec/tfsec"
-  url "https://github.com/tfsec/tfsec/archive/v0.36.3.tar.gz"
-  sha256 "61f03f6501aca407d8e3dbdef606f989339c03c4f57f931a1530ed18481470d8"
+  url "https://github.com/tfsec/tfsec/archive/v0.36.4.tar.gz"
+  sha256 "dab0bbb233c7267467769fc7823affee7aae4b7872c4e2e5c3ea50faa16e02c3"
   license "MIT"
 
   livecheck do
@@ -12,9 +12,9 @@ class Tfsec < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c697ff0cb8c3a566a63f0d53dcbdc5523b64cb9825ef16a8366c113c62fbed73" => :catalina
-    sha256 "a43dfa5a3be0a0a58b628b44d0b5631b694153b86117cca37f491da8f7bb0318" => :mojave
-    sha256 "3ecc8fc77bdb1d5544689ee15684deceab6ed52348d5212e1972f759797a2fcf" => :high_sierra
+    sha256 "4ddc5fe1411abc1810c196c0204eec35478014cb3910ae5f65d0afd4b0600dff" => :catalina
+    sha256 "fb8796f85ea6a23aa97049b594dfc6e1eae47c679c11338360a5cb9aa04e9ad5" => :mojave
+    sha256 "502f9522b57d904ec7c780de9bdba74a7a733ed57de13e549dfc596750f3a2e7" => :high_sierra
   end
 
   depends_on "go" => :build
