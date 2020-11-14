@@ -16,6 +16,7 @@ class Libosip < Formula
     sha256 "c23d056597896c51c2f364b06b7843c2998931429cefaa5413aa05e57fedef9c" => :catalina
     sha256 "d1f91870b64ffd2b286d76ee44af1f1f7bd94749141110cbfd5de8d327a72e40" => :mojave
     sha256 "d1241b9bbcbacff0a2823b3d1a96ebeb36bc3176b8f18542b9a1cf595900c94f" => :high_sierra
+    sha256 "315146c98b4b9be1b9f543feb3ef900712c24c28796340ae3b4995784bc8bfd7" => :x86_64_linux
   end
 
   def install
