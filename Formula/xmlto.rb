@@ -17,6 +17,7 @@ class Xmlto < Formula
     sha256 "d2c21b9b398191e21dcf6e7ac53e4dd46fb59d29173e4d8443ac296101cce58f" => :catalina
     sha256 "8fca3be2271ae8e7fb646b011969ba4030f7421118a4ea6b11eca1ac0fe6979b" => :mojave
     sha256 "1214da1d14a8f01d8b8d0ead6606207ff5a29fb7ab104d6af47e57fbca4ffcc7" => :high_sierra
+    sha256 "ee4bfc1bb0d0aa6d7cbbf39804c3b0708808a5d5ef9198d17cf3a55523cbc0d6" => :x86_64_linux
   end
 
   depends_on "docbook"
