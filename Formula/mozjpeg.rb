@@ -15,6 +15,7 @@ class Mozjpeg < Formula
     sha256 "d0beedd400a16f5bf2feac98a80133673cefce67ce2480de792088a524765110" => :catalina
     sha256 "d15b8408ce94dcc80d4fcfe4d484b65f540a70f8427952c52e2486a985aaae58" => :mojave
     sha256 "1ab02dcf47af9ccdbecc73ead82521f4e14c5d8c24181dd234e6ed822119bdd6" => :high_sierra
+    sha256 "5af434d20cdc98c51cfc81407313393dc3afb369f9d0eb6fafd4d7d8a85d186e" => :x86_64_linux
   end
 
   keg_only "mozjpeg is not linked to prevent conflicts with the standard libjpeg"
