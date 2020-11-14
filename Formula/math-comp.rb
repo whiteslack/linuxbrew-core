@@ -4,15 +4,14 @@ class MathComp < Formula
   url "https://github.com/math-comp/math-comp/archive/mathcomp-1.11.0.tar.gz"
   sha256 "b16108320f77d15dd19ecc5aad90775b576edfa50c971682a1a439f6d364fef6"
   license "CECILL-B"
-  revision 1
+  revision 2
   head "https://github.com/math-comp/math-comp.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "edb89d858da73c96db674081d8e4ae7928c1e8ba84aa6d1b094d8f3ecdf9e3da" => :catalina
-    sha256 "909e8d31ba453c301dbb60429dbd34c762fc8e2d17429db26dede12baa7c78ed" => :mojave
-    sha256 "60fbe12a151b31cedb075a81e352b63f130ee01e17b3ea47bc04430be006a9b5" => :high_sierra
-    sha256 "8b5090791e08ed219e1f57fa0c10649940d3d35a842d2fb168748654f907a45a" => :x86_64_linux
+    sha256 "d0086a36c018b29886aabc80d0157e16384b9872b41dad01414b363e245d064c" => :catalina
+    sha256 "e698b892411f0a2fb4219c8af2b82f84e814acb09a36c670be728afd4f214ca8" => :mojave
+    sha256 "10ae9080c798fb8bbb25322348a9b839bf4955366e269524b3b549016e8f198c" => :high_sierra
   end
 
   depends_on "ocaml" => :build
