@@ -3,7 +3,7 @@ class Libelf < Formula
   homepage "https://web.archive.org/web/20181111033959/www.mr511.de/software/english.html"
   url "https://dl.bintray.com/homebrew/mirror/libelf-0.8.13.tar.gz" # using this url since original source is offline ( https://github.com/Homebrew/homebrew-core/pull/54887 )
   sha256 "591a9b4ec81c1f2042a97aa60564e0cb79d041c52faa7416acb38bc95bd2c76d"
-  license "LGPL-2.0"
+  license "LGPL-2.0-or-later"
   revision 1
 
   # The formula uses archive.org for the homepage and a mirrored version of the
@@ -28,7 +28,12 @@ class Libelf < Formula
     sha256 "7bf880eee47f3426bf118683c699ef1b533e8a1d2f76908e481c53e6c93bb5eb" => :x86_64_linux # glibc 2.19
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+
   def install
+    system "autoreconf", "-fvi"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
