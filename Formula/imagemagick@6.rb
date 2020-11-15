@@ -20,6 +20,7 @@ class ImagemagickAT6 < Formula
     sha256 "753008865cbee8485cdb80545637fccc65b350e2b82deea08b67caf4ccc44ca6" => :catalina
     sha256 "fc16ee371c49b36049312bd54e13e225768432d78fbc21242006a6e17ea152f2" => :mojave
     sha256 "75063171348965ecf7e276d9e45d3d5ce5ab66f64b9e2fb579aedafc9cf25961" => :high_sierra
+    sha256 "6aca57fcfd9100820540fa6c4fedaa6b15c1c0f67ba086bbb40ad6c500d2b734" => :x86_64_linux
   end
 
   keg_only :versioned_formula
