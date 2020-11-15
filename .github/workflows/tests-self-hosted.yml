@@ -43,6 +43,7 @@ jobs:
   tests:
     needs: cleanup
     runs-on: self-hosted
+    timeout-minutes: 4320
     container:
       image: homebrew/ubuntu16.04:master
     env:
