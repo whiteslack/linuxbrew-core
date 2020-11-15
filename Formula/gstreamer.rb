@@ -4,7 +4,7 @@ class Gstreamer < Formula
   url "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.18.1.tar.xz"
   sha256 "79df8de21f284a105a5c1568527f8c559c583c85c0f2bd7bdb5b0372b8beecba"
   license "LGPL-2.0-or-later"
-  head "https://gitlib.freedesktop.org/gstreamer/gstreamer.git"
+  head "https://gitlab.freedesktop.org/gstreamer/gstreamer.git"
 
   livecheck do
     url "https://gstreamer.freedesktop.org/src/gstreamer/"
@@ -12,6 +12,7 @@ class Gstreamer < Formula
   end
 
   bottle do
+    sha256 "a67df97715d03b9ce1d9fe3c0b7e64f5b2aa86a4495dd1de7dce286b0bda2bf4" => :big_sur
     sha256 "5ff80634d2da417ac4b5bce64b19ad1350fc566599caffac556c79c292eff2f9" => :catalina
     sha256 "378d6f829568e97215e770218899f288ad58f56ac56e6078f58809ce95d94fef" => :mojave
     sha256 "5ddd8a1a83fc44a194e7d580db95ed1ba9ae32ae9e189a6e0d988143de47ffc3" => :high_sierra

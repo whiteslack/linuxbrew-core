@@ -22,6 +22,7 @@ class Go < Formula
 
   bottle do
     sha256 "61f04e266ba1f69573ae46766f8988029c5a34f4ae4f1ac0951cf3daf4d919d1" => :big_sur
+    sha256 "77f172eb6849a0f86eed4fa8eaeb9e8c69223b7f154a86505a7507b4ea78de79" => :catalina
     sha256 "70969a6147bad6960136bdea78063d39b527c993a725ad525a3cf6e9f8ad6fa5" => :mojave
     sha256 "7d39badbe6096ffd120c3e997ee16fd026d12c4037eb055d26290a39f2689582" => :high_sierra
     sha256 "38fc34185729eb4e79b469fa4a42ff14f77803e850aa199688d6ca90a2b2380a" => :x86_64_linux
