@@ -13,6 +13,7 @@ class Govendor < Formula
     sha256 "654e979f975c3cf1174f6b1b572657d4d4d813551e0d4cf73239a2b6e2bc15e4" => :catalina
     sha256 "913ae29b2c13520f049c1cca03f0a12b7aba75702fdb9c981395d3e888903ed3" => :mojave
     sha256 "bf52da036c6701f20182ce7252e7920e4e12630f7e0bf0e3e3d3c9c88d58be8b" => :high_sierra
+    sha256 "09cdfd42d581cc90d4ac33756e246cc376587fbecce954b62b139a094943f40b" => :x86_64_linux
   end
 
   deprecate! because: :repo_archived
