@@ -11,6 +11,7 @@ class Bloaty < Formula
     sha256 "749928462562883be2116fb4a7065c94148ad046163a39a51fce4e227e9eac30" => :catalina
     sha256 "6e277b2abe8cedf0b4b3afecc32fbcb85bc3516d7b014f1409184d1929339589" => :mojave
     sha256 "a133017f62791ec01190fc5e734e9e1e150bbcaebe65ad50491b9d2d6631a010" => :high_sierra
+    sha256 "b019d184166e7e8189949c8a3080826c99c07dbda43a14250dce4d0af789cb59" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
