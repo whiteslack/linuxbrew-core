@@ -19,6 +19,7 @@ class Cookiecutter < Formula
     sha256 "5f4969e9554cc3edddf18d453563d37b0d87c4fae669fdd6f1fd5e39c97c6042" => :catalina
     sha256 "c2f705ced2b86ec483e360e75ada219586d55f609dd955383b49e9336d03fb05" => :mojave
     sha256 "989dfb954a7f5fb56dc7383554709a68c3fe89c8a938d16b3d97a26d722aae55" => :high_sierra
+    sha256 "cfb5b3d3e51fe4d58f179d3cc112bd30ba034487b0151c0a7cb8075169454e65" => :x86_64_linux
   end
 
   depends_on "python@3.9"
