@@ -3,6 +3,7 @@ class Atkmm < Formula
   homepage "https://www.gtkmm.org/"
   url "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.0.tar.xz"
   sha256 "4c4cfc917fd42d3879ce997b463428d6982affa0fb660cafcc0bc2d9afcedd3a"
+  license "LGPL-2.1-or-later"
   revision 2
 
   livecheck do
@@ -67,7 +68,9 @@ class Atkmm < Formula
       -lgobject-2.0
       -lsigc-2.0
     ]
-    flags << "-lintl" if OS.mac?
+    on_macos do
+      flags << "-lintl"
+    end
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end
