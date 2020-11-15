@@ -5,6 +5,7 @@ class Jmeter < Formula
   mirror "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.3.tgz"
   sha256 "d0611b46268c4e24220fed56e76d770077713ff863665c271ed6521046f2f0d0"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,14 +13,16 @@ class Jmeter < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88" => :catalina
-    sha256 "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88" => :mojave
-    sha256 "e3f6544d4e7485525fa4cf8fd377f00ce7f7350fdbeeb1cfaba3b9539a6c1a88" => :high_sierra
+    sha256 "3acc6eb0511d25a8181113baafe6886ef137167205b9a0ebc116463e6ec3b01c" => :catalina
+    sha256 "02634135916cb0aa45ed91c073ffba66824b8fd2609cd65d491e894cdae0b7e3" => :mojave
+    sha256 "ffd194e084e78018d51d80129c22f424db57eaddad21990af6a9c8dd8d617a42" => :high_sierra
   end
 
+  depends_on "openjdk"
+
   resource "jmeter-plugins-manager" do
-    url "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/1.3/jmeter-plugins-manager-1.3.jar"
-    sha256 "482b8a9cd82a69ef1b633fc4235bfa9bee96894f663e5085df7061410d6ab99a"
+    url "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/1.4/jmeter-plugins-manager-1.4.jar"
+    sha256 "473697bd4656e3277b2ba6e23ff023209db4f13524995fa18e4acabca0fc4425"
   end
 
   def install
@@ -27,7 +30,7 @@ class Jmeter < Formula
     rm_f Dir["bin/*.bat"]
     prefix.install_metafiles
     libexec.install Dir["*"]
-    bin.write_exec_script libexec/"bin/jmeter"
+    (bin/"jmeter").write_env_script libexec/"bin/jmeter", JAVA_HOME: Formula["openjdk"].opt_prefix
 
     resource("jmeter-plugins-manager").stage do
       (libexec/"lib/ext").install Dir["*"]
