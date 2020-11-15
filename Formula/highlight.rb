@@ -10,6 +10,7 @@ class Highlight < Formula
     sha256 "6ebc0f20fa97135b27033bf086de0f7847f451587a34e9f7f2f0a72ae8529688" => :catalina
     sha256 "8af8c75e2b1463383d79826a70141017db9eca6f78ec2634069d91a601ce6cb7" => :mojave
     sha256 "e68f5df12c9b8365b04226c424960ed252f01a86c429a93f5589b92833c5e752" => :high_sierra
+    sha256 "aca381344b719f48ebc6484f631f2f16221e6066b27fe2ac30d0c26232d0a237" => :x86_64_linux
   end
 
   depends_on "boost" => :build
