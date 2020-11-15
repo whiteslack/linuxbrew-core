@@ -14,10 +14,11 @@ class GtkDoc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a1cc9144fcc92bf18c0e9763322262458e077065405a7e69470bbc8b6937e371" => :catalina
-    sha256 "4ce13f299264e77c20aa9e220102783ad65c18e7ad4b5942cb27e91788f3dd04" => :mojave
-    sha256 "656c1e9210bc52ca52f3b983d8f0923abace9ca45206f8f0777c2fae74adb01f" => :high_sierra
-    sha256 "76af10a06b8dd9d7c4b229eafa7c6bcaa338ac0940fd1792fc82dba2d001e63f" => :x86_64_linux
+    rebuild 1
+    sha256 "a35e40c983e136158fc38ba12cb6fefff3158b8a558fd1593a8d60dd1eb2bd45" => :big_sur
+    sha256 "8f016abd2862496357f6a926a55c3429187dc429ac746fa98b485b302761271b" => :catalina
+    sha256 "588cd9e3cb54d2f778c82bfb586573a3211cdc9d8a537ef61e7c96a9395ad688" => :mojave
+    sha256 "2e5f324a0c3e8aac532e8946fb00cc578d18184e8fb8d247329b7fbe252054b2" => :high_sierra
   end
 
   depends_on "itstool" => :build
@@ -37,6 +38,9 @@ class GtkDoc < Formula
   end
 
   def install
+    # To avoid recording the shims path
+    ENV["PKG_CONFIG"] = Formula["pkg-config"].bin/"pkg-config"
+
     xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
     resource("Pygments").stage do
