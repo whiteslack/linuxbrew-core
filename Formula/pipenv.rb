@@ -3,8 +3,8 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://pipenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/20/4c/3903aff6c34e406e4a97b52170978df09332c740e9e98c6fe8ee61c4826b/pipenv-2020.11.4.tar.gz"
-  sha256 "d6ac39d1721517b23aca12cdb4c726dc318ec4d7bdede5c1220bbb81775005c3"
+  url "https://files.pythonhosted.org/packages/76/70/3a3fdf4549cff4e9969b2db4ea924c340969b586bf441967ab9c7d90eb52/pipenv-2020.11.15.tar.gz"
+  sha256 "8253fe6f9cfb3791a54da8a0571f73c918cb3457dd908684c1800a13a06ec4c1"
   license "MIT"
 
   livecheck do
@@ -13,11 +13,10 @@ class Pipenv < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "29d464a36d8f7146ba9ebeb713319c320e93622fb757b6dfcb804817b751a1e5" => :big_sur
-    sha256 "e1f59430bce27f5a9fbc443951b422ad0ed82f7937d098984b51da942124b3b7" => :catalina
-    sha256 "d4ae82e689ab162951f617edb6f8912df4067cb1c19be921f6e82868b95575c4" => :mojave
-    sha256 "1ee0c1f4a1f62ec1d91862a5d36709929e7e8ee68f21eb97ab2b51e1fe763e2b" => :high_sierra
-    sha256 "6b09eb5a9437b769ad74073436f3ae64087b883df95c83db1b4e6bf48e6f61ee" => :x86_64_linux
+    sha256 "58c0ee0415d06fc54e2411ca16257185512e677060f209c4b3cbd00d0c42f0d6" => :big_sur
+    sha256 "23aac8a0694ad16b9185f0f25c3cb3c4b7c0e3841d6a99515253b8e582a01243" => :catalina
+    sha256 "d0bc55ec7c8cd72b022202023de6c5573528bdf8f7a0665d826e8edb30fc6b48" => :mojave
+    sha256 "2abc2c4af6e6bbc6aa6c1af5993ad35e56e823d0b8867ec21164a0c824dd10f2" => :high_sierra
   end
 
   depends_on "python@3.9"
@@ -28,8 +27,8 @@ class Pipenv < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/40/a7/ded59fa294b85ca206082306bba75469a38ea1c7d44ea7e1d64f5443d67a/certifi-2020.6.20.tar.gz"
-    sha256 "5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3"
+    url "https://files.pythonhosted.org/packages/e6/de/879cf857ae6f890dfa23c3d6239814c5471936b618c8fb0c8732ad5da885/certifi-2020.11.8.tar.gz"
+    sha256 "f05def092c44fbf25834a51509ef6e631dc19765ab8a57b4e7ab85531f0a9cf4"
   end
 
   resource "distlib" do
