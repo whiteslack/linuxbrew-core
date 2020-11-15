@@ -15,6 +15,7 @@ class Vde < Formula
     sha256 "711f5b171e033b92505178b35a324a5c21e806ed5054a92ef02f26b3a38a760e" => :catalina
     sha256 "4f880ec345fe86fdfcfc53468c7c24d160261a17ee71a289ea3357a47b71416c" => :mojave
     sha256 "79ee1bbcca1f873e3740db401c1f8735f2366e785b56fcf6e0e4140e9048333b" => :high_sierra
+    sha256 "179806e2e53ea922669aef55c8f21c192958b8b4b674d778377d5830ba5869e9" => :x86_64_linux
   end
 
   def install
