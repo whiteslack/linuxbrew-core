@@ -14,6 +14,7 @@ class Stdman < Formula
     sha256 "0c7500e80257d9639866f2216199b605d1bb33abb3a11cca5f8c8baae5807e60" => :catalina
     sha256 "a598b69cd962050da6e5ec4bbfb844e5c84ad9a6b2afc4aa8670591cab05090e" => :mojave
     sha256 "a1d5c1b4e19ae36a4526f71a47c1868547fbb573579977d299accb678ec93234" => :high_sierra
+    sha256 "47bade99610984f1feb2d0ba434b563e72d0fa3df26321d8fc778d1df28f062e" => :x86_64_linux
   end
 
   on_linux do
