@@ -21,6 +21,7 @@ class Jack < Formula
     sha256 "cd99d66f3ddbe0aeaa35474bfeec3994b779f779fd00f9d5773c79bea8eaf248" => :catalina
     sha256 "ffc645c97ccb709f71b50b756e0fc15485b02b12a695e29b03a428f9bf8c53de" => :mojave
     sha256 "883658cd45eb52986b8eeef5b6443c5d6cf90feeded1ed78446a883e6b00fbda" => :high_sierra
+    sha256 "65008b63c05514db1c428269bbbc0e764daed9884767a15f570da3a31c367caa" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
