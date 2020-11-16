@@ -57,11 +57,12 @@ class Clamav < Formula
       --with-pcre=#{Formula["pcre2"].opt_prefix}
     ]
 
-    if OS.mac?
+    on_macos do
       args << "--with-zlib=#{MacOS.sdk_path_if_needed}/usr"
       args << "--with-libbz2-prefix=#{MacOS.sdk_path_if_needed}/usr"
       args << "--with-xml=#{MacOS.sdk_path_if_needed}/usr"
-    else
+    end
+    on_linux do
       args << "--with-zlib=#{Formula["zlib"].opt_prefix}"
       args << "--with-libbz2-prefix=#{Formula["bzip2"].opt_prefix}"
       args << "--with-xml=#{Formula["libxml2"].opt_prefix}"
