@@ -1,10 +1,9 @@
 class NodeAT12 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v12.19.0/node-v12.19.0.tar.gz"
-  sha256 "1279e49be60d92cf4c1a48c9d92397db4e9284a100bc47689ce7924686bbddd1"
+  url "https://nodejs.org/dist/v12.19.1/node-v12.19.1.tar.gz"
+  sha256 "83c36a4b8e9fd0111af8338657395c2fc05b2c34ecfc2618f6347fc284949889"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://nodejs.org/dist/"
@@ -13,11 +12,9 @@ class NodeAT12 < Formula
 
   bottle do
     cellar :any
-    sha256 "a7fea8878e64638ff6de289b88cc7ee4e1a4a37fb2b8c1a391bb96fbec3de4b5" => :big_sur
-    sha256 "daa9494f82ba99556e6a1ad9e230ec02c10e37eb1e41c67da699b886c9e2fc25" => :catalina
-    sha256 "869917c95932d812c51cd45c5c77e9faadd9d94fbfc8b3858dea32659b9436f7" => :mojave
-    sha256 "521f230437a6dcc79336dccfa12fb15f26286d6208a1384c9cd9517a6da09a60" => :high_sierra
-    sha256 "8d60e36f7f627eee32c83385efa8d0129b298f291314a511f5049f41cb48ac95" => :x86_64_linux
+    sha256 "3f052974feb874140b7675e6c5420a66e033812f38c29ca81ec11bcbb0e29025" => :big_sur
+    sha256 "4d3c7f2273d10f8d3b07d0ded9a6f2f013b961d4ba9f9f076df70c32b6b981e9" => :catalina
+    sha256 "ff351d59af671d52e5508d74511fe627751fe7f7ad719c1e4bfe1ac4517a421a" => :mojave
   end
 
   keg_only :versioned_formula
