@@ -14,6 +14,7 @@ class Gspell < Formula
     sha256 "b7165cc3def086000bc01e62724c5ae303200ca3eff64f681ead49f80313db20" => :catalina
     sha256 "eb478bbf00c69404e64f21db962abdcd237d146a326d2779aaeae08f6414b8a2" => :mojave
     sha256 "24dd633197c7ea490125a506db6379f7b134efdd1f7426bb6d9c0830c1b09f98" => :high_sierra
+    sha256 "dff473ba54e3bd5a4dc61e4eb6730b52a995db2bfbd1ba28c3405f6c467e0add" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
