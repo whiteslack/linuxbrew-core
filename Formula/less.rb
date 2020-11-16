@@ -16,6 +16,7 @@ class Less < Formula
     sha256 "a9964d5cb1b7b86e7c6b734c59931f76dd1a5e8c6caaab727936de976e3f10c4" => :catalina
     sha256 "745421ab0d0226624ca632d8db1e63c7f5063be53da579db909d3079964c8113" => :mojave
     sha256 "e9fe8e7982ddfb6e4c3ab5c5cc9e90a8190a61ffbb8afcd7cb95ea49523a44db" => :high_sierra
+    sha256 "089be5099f0a8f24b4c7db769e535d19862fb0ae4c839e635b4a83ae6bbff4c4" => :x86_64_linux
   end
 
   depends_on "pcre"
