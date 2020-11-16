@@ -3,18 +3,17 @@ class TrashCli < Formula
 
   desc "Command-line interface to the freedesktop.org trashcan"
   homepage "https://github.com/andreafrancia/trash-cli"
-  url "https://github.com/andreafrancia/trash-cli/archive/0.17.1.14.tar.gz"
-  sha256 "8fdd20e5e9c55ea4e24677e602a06a94a93f1155f9970c55b25dede5e037b974"
-  license "GPL-2.0"
-  revision OS.mac? ? 4 : 5
+  url "https://github.com/andreafrancia/trash-cli/archive/0.20.11.14.tar.gz"
+  sha256 "43e936a5795e076b9d8804394410145e1bd88dfa2f7c24f493098387bb0ab70f"
+  license "GPL-2.0-or-later"
   head "https://github.com/andreafrancia/trash-cli.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "dc13679d7b02e8ff8deb976e1866fa715cdd71a11afb4c749ed7f72ca9dd4121" => :catalina
-    sha256 "7c50f6d779aef1d69d7620433ec0bb90a5031960c0e701ff11bcb8a9737af72c" => :mojave
-    sha256 "4731567ca54e4fb86125dd7d37bce5d079fdcbd0830151c68f2c01854eff1512" => :high_sierra
-    sha256 "3c45a6695ea603b281c33b09be1c7410ac7b5da2db26f1d225a437d2541bb42e" => :x86_64_linux
+    sha256 "10e814e79699940cac7c66aef5daea1409efa4eab1a7f9bfa73cd479358f8f2a" => :big_sur
+    sha256 "c1a141e61e18ec997069b798fa2f6bf74c7da727c37e2ccac93e8868160d164e" => :catalina
+    sha256 "6db8ec702ddf03b341cc7e3e17996edfe4709f2f07e7f419b46aff9d931ffa04" => :mojave
+    sha256 "79a1a6365236113da1a70aaa9c484e3951224a6436fdfa13fd8ddbe6733a9853" => :high_sierra
   end
 
   depends_on "python@3.9"
