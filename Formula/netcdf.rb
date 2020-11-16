@@ -15,10 +15,11 @@ class Netcdf < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0ae7c27bd0ac68071faecbd09f67fb2ce91d86b030b92488dca64851e6d40de0" => :catalina
-    sha256 "db149e5597eab59a0a908c48efc35df09735ddc8bac006c94b6a02a644822814" => :mojave
-    sha256 "c1704dcf4cd4d59e48b5e71e752c44220cc098810e67d49aaa8985cc09b5724b" => :high_sierra
-    sha256 "ef7447da174c9c075918156da5701de2b9ec828182fbe1494645b33c8166dd8f" => :x86_64_linux
+    rebuild 1
+    sha256 "945407cca07cd5096c8f9e00520e5b51fef5d30d6e4bf68775de508268100f4e" => :big_sur
+    sha256 "bf768c6f17428104b463b55420ed6a57c64870c13f2c475604a3446122a0e6de" => :catalina
+    sha256 "1ef8f155374e15879156ba393750ef0449f5cea5215f625fcb457176350ea17b" => :mojave
+    sha256 "1866c199aaa33565c687d83f163a50ad779949d98dd563e967d9b385bdc030f1" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -107,6 +108,14 @@ class Netcdf < Formula
       system "make"
       system "make", "install"
     end
+
+    # Remove some shims path
+    inreplace [
+      bin/"nf-config", bin/"ncxx4-config", bin/"nc-config",
+      lib/"pkgconfig/netcdf.pc", lib/"pkgconfig/netcdf-fortran.pc",
+      lib/"cmake/netCDF/netCDFConfig.cmake",
+      lib/"libnetcdf.settings", lib/"libnetcdf-cxx.settings"
+    ], HOMEBREW_LIBRARY/"Homebrew/shims/mac/super/clang", "/usr/bin/clang"
 
     if OS.mac?
       # SIP causes system Python not to play nicely with @rpath
