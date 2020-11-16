@@ -1,9 +1,9 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.14.0.tar.bz2"
-  sha256 "cef1f710a6b0d28f5b44242713ad373702d1466dcbe512eb4e754d7f35cd4307"
-  revision 1
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.15.0.tar.bz2"
+  sha256 "0b472bc12c7d455906c8a539ec56da0a6480ef1c3a87aa5b74d7125df68d0e5b"
+  license "LGPL-2.1-or-later"
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -12,11 +12,10 @@ class Gpgme < Formula
 
   bottle do
     cellar :any
-    sha256 "90dbde159a11bd2a11fbe061f17487c00bbb687de1243e63c67c84906a863fb5" => :big_sur
-    sha256 "fa8c359b9ca00fc0269f26243da8a1032f6a75a01196942b3fbf5ab0933bca23" => :catalina
-    sha256 "95e303f1b3f7201c9d684d84a5fa849dfa5942dc623a810f9f383f3331d6bb25" => :mojave
-    sha256 "3fa5a848421bcf9f36106f49d9fde42bd59999cfbfd57c9d2b6fbd0da095ba1b" => :high_sierra
-    sha256 "bcc4e50d53c13deaa99ccb9ae70cb8a614a7b370a4d5ba58f02d44348c4e080b" => :x86_64_linux
+    sha256 "6de40ec526a4d87f6caba431dc5cb8c48ac490cc31d76f64b9e3f451c27f3ea2" => :big_sur
+    sha256 "804b505d6702fb22c25c93a7832648a23aefc877c4d660ce5c7a9026c9442bc7" => :catalina
+    sha256 "99d0cc2cb9dcd2b7d38bb48627f3b740d483d7f9e64d6fd6690941ecb5731f2b" => :mojave
+    sha256 "02bd3a9334b19890b043256a406bce8c61083fd56a71e4966161de86fd6aa4d8" => :high_sierra
   end
 
   depends_on "python@3.9" => [:build, :test]
