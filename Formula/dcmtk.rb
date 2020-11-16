@@ -16,6 +16,7 @@ class Dcmtk < Formula
     sha256 "a86027494ff074de767cef1a7bf31639e50f153d4a2ec5297bb9560bb3e48ef6" => :catalina
     sha256 "2bbb1bf5d51c7e12c2db901a632862b9429ef2b146f973feda5212fb1391ac33" => :mojave
     sha256 "352137e82f70183e543b6d532dcf67c7fa95ea67b63421ad4fc9c0a0f19ba484" => :high_sierra
+    sha256 "4d56a114f30e5df5aef1604d0f6394f7c3c0bfb113f146d6b350ee32c497ce9b" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
