@@ -1,17 +1,15 @@
 class Xtensor < Formula
   desc "Multi-dimensional arrays with broadcasting and lazy computing"
   homepage "https://xtensor.readthedocs.io/en/latest/"
-  url "https://github.com/QuantStack/xtensor/archive/0.21.9.tar.gz"
-  sha256 "845cd3cc4f4992be7425b5f44a015181415cdb35d10f73ddbc8d433e331dc740"
+  url "https://github.com/QuantStack/xtensor/archive/0.21.10.tar.gz"
+  sha256 "0d1ff8c5f801b566891cfb5c68718f838be94a0b6e07e3fc6164f66e5ec6d3b5"
   license "BSD-3-Clause"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "715f6aaffb3d3e83370442828c5ee006fb6f2785b3805bd432bc95c34a777b54" => :big_sur
-    sha256 "eb3120f867fdc837cc5296f0451d47dcc0fb75f78736c2310964c5211dbcf75b" => :catalina
-    sha256 "1b12d2e61e70d69d9468cee13552b0f12872cbc39b2fb8457569de070cdbfb73" => :mojave
-    sha256 "78f897f2dab18c602020e2d1e342667abd0b153f6c9460a6ca90cd029d42f277" => :high_sierra
-    sha256 "5f3dd00e2bdad08c3aaf55d1e863ee2081d91d387b59dc5ec37ab2bef39c1dbd" => :x86_64_linux
+    sha256 "225ca1cc6f97582dae87865ab88634bab0073518d7d9b95c954ab9e904bf75f9" => :big_sur
+    sha256 "300516fd9600018d31cc79570c690eb2ae9cae811f89fda837fcd093f7e755fa" => :catalina
+    sha256 "d2eca50afebcf20a9e602f9ffe1daf485be6dddbb2fab2beac5a779bd53690d6" => :mojave
   end
 
   depends_on "cmake" => :build
