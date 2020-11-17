@@ -12,6 +12,7 @@ class Ipopt < Formula
     sha256 "c5456fca281c86e78db399f960b2e657e6c8b8d8a1da4d8b799ad14a0c63ff65" => :big_sur
     sha256 "8f0881c3022f0fbba7821e99a766b0fabeeb9551909e44b8fb9436da91329382" => :catalina
     sha256 "d87262af5ab808ba7f5d51491035ce28fcb68c25cea07231b5d32d12a61602ef" => :mojave
+    sha256 "5714242cf12eb61db9e07f1f95fc823d8ce419790005c2b34f50609dc478bac7" => :x86_64_linux
   end
 
   depends_on "openjdk" => :build
