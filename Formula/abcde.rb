@@ -12,6 +12,7 @@ class Abcde < Formula
     sha256 "fa00c7fc4b6b4ab794439f619ba00961358a4e5684a0ae2412fbd78ba2497df1" => :catalina
     sha256 "c2ef29d1b906767727d858047ddab9516f14c70073b30174a6222b1300446432" => :mojave
     sha256 "2a81af2921befb14f0a96e66ebc3884bd33f8bab156f7dc27e2816a956d033cb" => :high_sierra
+    sha256 "adfac2e87756e765daf44f8baf588b571d964fb87c73b14136023c18eb5c569c" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
