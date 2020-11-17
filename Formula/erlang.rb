@@ -14,11 +14,10 @@ class Erlang < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "10a3e438aea64ba96e4db717bcde1458e34508b294bd41dd5b13f87a5978a3f5" => :catalina
-    sha256 "265b3f2356f9306ee0635a95181baec86a6fa935cca947a07b3f278bd920e31e" => :mojave
-    sha256 "0273f54bfe989b394bfd53db2e19da22712cb02e067dfeece0063361918cd507" => :high_sierra
-    sha256 "e6177d8cd4f7f1bacf45f0d4b376b3b336e95c86d01baf413bdab4ad22485f97" => :x86_64_linux
+    rebuild 2
+    sha256 "39916638234f4fc37584953cf1a259a601447d4bda866499373c202f128e40c2" => :big_sur
+    sha256 "aa77d0fb52b806027af6638482ac570be2203a4f90bee63208b98c800def8012" => :catalina
+    sha256 "cd9364732514895528281bba4f6ba56e92f8122aea671caf88e2ef200a34d2c6" => :mojave
   end
 
   depends_on "autoconf" => :build
@@ -34,6 +33,10 @@ class Erlang < Formula
     mirror "https://fossies.org/linux/misc/otp_doc_html_23.1.tar.gz"
     sha256 "0e0075f174db2f9b5a0f861263062942e5a721c40ec747356e482e3be2fb8931"
   end
+
+  # Fix for Big Sur, remove in next version
+  # https://github.com/erlang/otp/pull/2865
+  patch :DATA
 
   def install
     # Unset these so that building wx, kernel, compiler and
