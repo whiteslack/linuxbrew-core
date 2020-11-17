@@ -25,9 +25,9 @@ class Patchelf < Formula
   end
 
   def install
-    # Fix ld.so path and rpath
-    # see https://github.com/Homebrew/linuxbrew-core/pull/20548#issuecomment-672061606
-    unless OS.mac?
+    on_linux do
+      # Fix ld.so path and rpath
+      # see https://github.com/Homebrew/linuxbrew-core/pull/20548#issuecomment-672061606
       ENV["HOMEBREW_DYNAMIC_LINKER"] = File.readlink("#{HOMEBREW_PREFIX}/lib/ld.so")
       ENV["HOMEBREW_RPATH_PATHS"] = nil
     end

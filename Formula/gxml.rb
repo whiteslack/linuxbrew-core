@@ -66,7 +66,9 @@ class Gxml < Formula
       -lgxml-0.20
       -lxml2
     ]
-    flags << "-lintl" if OS.mac?
+    on_macos do
+      flags << "-lintl"
+    end
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
