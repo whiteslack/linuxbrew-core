@@ -1,9 +1,9 @@
 class Gmp < Formula
   desc "GNU multiple precision arithmetic library"
   homepage "https://gmplib.org/"
-  url "https://gmplib.org/download/gmp/gmp-6.2.0.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gmp/gmp-6.2.0.tar.xz"
-  sha256 "258e6cd51b3fbdfc185c716d55f82c08aff57df0c6fbd143cf6ed561267a1526"
+  url "https://gmplib.org/download/gmp/gmp-6.2.1.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz"
+  sha256 "fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2"
   license any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"]
 
   livecheck do
@@ -13,40 +13,21 @@ class Gmp < Formula
 
   bottle do
     cellar :any
-    sha256 "0f98606895130c76fc827eccdcca930700d5954b7e866672ab0b69480aaab59b" => :big_sur
-    sha256 "2e6acd6e62d1b8ef0800061e113aea30a63f56b32b99c010234c0420fd6d3ecf" => :catalina
-    sha256 "1bbea4983a4c883c8eb8b7e19df9fab52f0575be8a34b629fc7df79895f48937" => :mojave
-    sha256 "63f220c9ac4ebc386711c8c4c5e1f955cfb0a784bdc41bfd6c701dc789be7fcc" => :high_sierra
-    sha256 "8a83606f4070c86ec0cc4c642817cf5bd3c6695943da85bed413d99c433e007c" => :x86_64_linux
+    sha256 "6a44705536f25c4b9f8547d44d129ae3b3657755039966ad2b86b821e187c32c" => :big_sur
+    sha256 "35e9f82d80708ae8dea2d6b0646dcd86d692321b96effaa76b7fad4d6cffa5be" => :catalina
+    sha256 "00fb998dc2abbd09ee9f2ad733ae1adc185924fb01be8814e69a57ef750b1a32" => :mojave
+    sha256 "54191ce7fa888df64b9c52870531ac0ce2e8cbd40a7c4cdec74cb2c4a421af97" => :high_sierra
   end
 
   uses_from_macos "m4" => :build
-
-  patch do
-    # Remove when upstream fix is released
-    # https://gmplib.org/list-archives/gmp-bugs/2020-July/004837.html
-    # arm64-darwin patch
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/c53834b4/gmp/6.2.0-arm.patch"
-    sha256 "4c5b926f47c78f9cc6f900130d020e7f3aa6f31a6e84246e8886f6da04f7424c"
-  end
-
-  if Hardware::CPU.arm?
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
 
   def install
     # Enable --with-pic to avoid linking issues with the static library
     args = %W[--prefix=#{prefix} --enable-cxx --with-pic]
 
     if OS.mac?
-      if Hardware::CPU.arm?
-        args << "--build=aarch64-apple-darwin#{OS.kernel_version.major}"
-        system "autoreconf", "-fiv"
-      else
-        args << "--build=#{Hardware.oldest_cpu}-apple-darwin#{OS.kernel_version.major}"
-      end
+      cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
+      args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
     elsif !OS.mac? && Hardware::CPU.intel?
       args << "--build=core2-linux-gnu"
       args << "ABI=32" if Hardware::CPU.is_32_bit?
