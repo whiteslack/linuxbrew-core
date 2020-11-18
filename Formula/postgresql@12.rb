@@ -1,16 +1,14 @@
 class PostgresqlAT12 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v12.4/postgresql-12.4.tar.bz2"
-  sha256 "bee93fbe2c32f59419cb162bcc0145c58da9a8644ee154a30b9a5ce47de606cc"
+  url "https://ftp.postgresql.org/pub/source/v12.5/postgresql-12.5.tar.bz2"
+  sha256 "bd0d25341d9578b5473c9506300022de26370879581f5fddd243a886ce79ff95"
   license "PostgreSQL"
-  revision 1
 
   bottle do
-    sha256 "c3aebb8ad25a889aaee5ffbe69f4a711458877e0b4f7be9b231af5d5de181537" => :big_sur
-    sha256 "2e2720ad0af2af08a77c08cb3b0e70bf5b8b401e13f50317d5b2a969cc7ae0c2" => :catalina
-    sha256 "617b1ab93b938589d644d446900477be0eaec48977a13898223f6c4584d5343c" => :mojave
-    sha256 "e6b8a5b887133c2f555254232014477195760e0d860bd847a0dddfe7610bc510" => :high_sierra
+    sha256 "6e1717130028267c3f8c3910e10909fde608892da4af2669842da0dca386392a" => :big_sur
+    sha256 "197b8aed9485281f776878374357955084177c0a28fd7ddcc8c8f4f24f749c63" => :catalina
+    sha256 "b00c52d0070387e5eb4a2057e634ba637cb71eccc97aff7999cb3a8600cba1fe" => :mojave
   end
 
   keg_only :versioned_formula

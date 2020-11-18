@@ -1,8 +1,8 @@
 class PostgresqlAT95 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v9.5.23/postgresql-9.5.23.tar.bz2"
-  sha256 "e314fa7e3355c4b8a35e94eeb8e58a6cf46adf49a2f9afa0c15cbc39980c8366"
+  url "https://ftp.postgresql.org/pub/source/v9.5.24/postgresql-9.5.24.tar.bz2"
+  sha256 "065cfd3db9f5aca84e794e73e71a797c984b2e728e760f4f4226a9162a99c22a"
   license "PostgreSQL"
 
   livecheck do
@@ -11,10 +11,9 @@ class PostgresqlAT95 < Formula
   end
 
   bottle do
-    sha256 "69659c35cc5a4d662cca1737f04bea2c64e55aaa91e660f4dd9abfe0d0545a64" => :catalina
-    sha256 "f8cf1f4bf66f44d7e4939e5885c02dc5c01f07036ef8d86c3be33d9f35eba26f" => :mojave
-    sha256 "7b0ade2c3d1e0a690dcfa83e897b39f73d032aab2526708606f255d6983ff8f3" => :high_sierra
-    sha256 "7b58b39f527671bfec90344c4436745e23c96f97246d7623a75c2d6947927a39" => :x86_64_linux
+    sha256 "b4856b072806f67090e5d09d583bc772398286adbf1de11638022efefb8d2a56" => :big_sur
+    sha256 "0be4dafb4894658edd6f1df7f3f26e9460d123fc9e34a76b13b4605569aaadee" => :catalina
+    sha256 "8b24d678fb18b585ba9d4034e66edd9d2658f3567762f31a594519dd84f88f7a" => :mojave
   end
 
   keg_only :versioned_formula

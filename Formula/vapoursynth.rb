@@ -1,10 +1,9 @@
 class Vapoursynth < Formula
   desc "Video processing framework with simplicity in mind"
   homepage "http://www.vapoursynth.com"
-  url "https://github.com/vapoursynth/vapoursynth/archive/R50.tar.gz"
-  sha256 "b9dc7ce904c6a3432df7491b7052bc4cf09ccf1e7a703053f8079a2267522f97"
-  license "LGPL-2.1"
-  revision 3
+  url "https://github.com/vapoursynth/vapoursynth/archive/R52.tar.gz"
+  sha256 "4d5dc7950f4357da695d29708bc98013bc3e0bd72fc5d697f8c91ce3c4a4b2ac"
+  license "LGPL-2.1-or-later"
   head "https://github.com/vapoursynth/vapoursynth.git"
 
   livecheck do
@@ -14,10 +13,9 @@ class Vapoursynth < Formula
 
   bottle do
     cellar :any
-    sha256 "82973b4b4189fb1345898daa6d93262da6915a26023a1e70d762b4943caea2f5" => :catalina
-    sha256 "fbb5dae930a4c9d2e75b9f99a76092f7907e38fae2cf61230730d97c5168ea05" => :mojave
-    sha256 "d006a79945071d7cc003491ca3651754e08583c1feba0d94eb6b032361e64dcf" => :high_sierra
-    sha256 "8f32a69e8f200dc5f4d12ef51f8afb5fb28c5f7964e678b3ea576edf8447193f" => :x86_64_linux
+    sha256 "3c71ee0d92d3187ddab6500dac2a36597268efa50cee90c854ffb69d75d5e6e7" => :big_sur
+    sha256 "4e4668fb68c7df01857472c070dfcf562fd392c48200204f637856a1368181b8" => :catalina
+    sha256 "3d1e521272e5b5cff323d6678ff56f959945b9756f938c5ad46a797a345959c1" => :mojave
   end
 
   depends_on "autoconf" => :build
@@ -38,8 +36,6 @@ class Vapoursynth < Formula
                           "--disable-dependency-tracking",
                           "--with-cython=#{Formula["cython"].bin}/cython",
                           "--with-plugindir=#{HOMEBREW_PREFIX}/lib/vapoursynth"
-    pyflags = `python3-config --ldflags --embed`.chomp
-    system "make", "LIBS=#{pyflags}"
     system "make", "install"
     %w[eedi3 miscfilters morpho removegrain vinverse vivtc].each do |filter|
       rm prefix/"vapoursynth/lib#{filter}.la"
