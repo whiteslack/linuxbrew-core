@@ -17,6 +17,7 @@ class Flux < Formula
     sha256 "1fe90ac54ecbc345199084e5668849ba17ab8356252dcca685b1c16d94edb31e" => :big_sur
     sha256 "689eed4de5fedb95de3bb039d50278c727df292d43238cc455bd912a308451f1" => :catalina
     sha256 "0cccaeb72e45422749d77e630a6e123c45c6b71595e9213d5e36836f9630e9f3" => :mojave
+    sha256 "2150b8a4cc9798de3e77fe8eca34c5487920cb9b28210b67872701bb1569f1a9" => :x86_64_linux
   end
 
   depends_on "go" => :build
