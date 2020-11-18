@@ -13,27 +13,31 @@ class Babel < Formula
   end
 
   bottle do
-    sha256 "a959a7c232b25cc5f4e4c52442c6003108188e430b3bff4b3b55b0855f0aeda1" => :catalina
-    sha256 "192f3d82298e2d2698d967414756cc15396a6ff79c6bfe5c494524f421467a38" => :mojave
-    sha256 "6a6628757ef6b5bf29ba5511fb662f78207986c6129ecbf9c7607026e4edc44c" => :high_sierra
-    sha256 "5bdb44361a7f49a0b3761447b020a44be2dbd95bf0a5e16f20a9c9f3287c98e8" => :x86_64_linux
+    rebuild 1
+    sha256 "4406c70c05dc0e45ead7a898f279f280b9b6b95474e56808e01ded0197e0451b" => :big_sur
+    sha256 "bf09fe7aac5c201ae31d832c41696fd04ae67546e596ab5839e21584f5bcc9ad" => :catalina
+    sha256 "250e7bf00cf6396d63e410532d0e42cc8245410b269c4f40d85450f45941a01e" => :mojave
   end
 
   depends_on "node"
 
   resource "babel-cli" do
-    url "https://registry.npmjs.org/@babel/cli/-/cli-7.11.5.tgz"
-    sha256 "753dac0c168274369d18cb7c2d90326173aa15639aa843d81b29ca2ac64926e5"
+    url "https://registry.npmjs.org/@babel/cli/-/cli-7.12.1.tgz"
+    sha256 "f3df18f3c37e4bcb0294b3e4ccdbd5eef14debdf4bb83120f660b36be7418c94"
   end
 
   def install
     (buildpath/"node_modules/@babel/core").install Dir["*"]
     buildpath.install resource("babel-cli")
 
+    cd buildpath/"node_modules/@babel/core" do
+      system "npm", "install", *Language::Node.local_npm_install_args, "--production"
+    end
+
     # declare babel-core as a bundledDependency of babel-cli
     pkg_json = JSON.parse(IO.read("package.json"))
     pkg_json["dependencies"]["@babel/core"] = version
-    pkg_json["bundledDependencies"] = ["@babel/core"]
+    pkg_json["bundleDependencies"] = ["@babel/core"]
     IO.write("package.json", JSON.pretty_generate(pkg_json))
 
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
