@@ -23,6 +23,7 @@ class Less < Formula
     sha256 "0484ddddfc2032fd649e13fc85e70fb324aaf274e77a64460c6461ca8b15dc3e" => :big_sur
     sha256 "256e333b35fc588aabec222e12e21141cc75d10dd0171ccd6e8915ba84efc8db" => :catalina
     sha256 "5f44d9a8cd58bc98f833fbac17be5fcfb8057b63f33abffb7e7d4cff58be2d17" => :mojave
+    sha256 "f8412ec02371317bd1828877b1f1149a7d3ad7d1141384f084711bd33d8551d1" => :x86_64_linux
   end
 
   head do
