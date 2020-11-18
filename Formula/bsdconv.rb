@@ -10,6 +10,7 @@ class Bsdconv < Formula
     sha256 "18fa8aff61b229d34b05516953d49aa807edb4f2231108e84bbe5c4847aac9e0" => :big_sur
     sha256 "c7c3ee826009c6a77d2e435b56deee58b3243e7dc2ac54a7ddea90555a16ef7a" => :catalina
     sha256 "8ae3048037104e7a91ffd76ff6ef1910c8252d050e98b03e4083841525d19a0c" => :mojave
+    sha256 "8e622114f488e17a268e64ba67aeadb7a5de9b557aabcdaed4c66a399ce87087" => :x86_64_linux
   end
 
   def install
