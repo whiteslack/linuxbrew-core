@@ -1,17 +1,15 @@
 class Pdfpc < Formula
   desc "Presenter console with multi-monitor support for PDF files"
   homepage "https://pdfpc.github.io/"
-  url "https://github.com/pdfpc/pdfpc/archive/v4.4.0.tar.gz"
-  sha256 "5fc457b081cdf02708436bb708940fd6b689e03fc336d3faab652f0b85592c00"
-  license "GPL-2.0"
-  revision 4
+  url "https://github.com/pdfpc/pdfpc/archive/v4.4.1.tar.gz"
+  sha256 "4adb42fd1844a7e2ab44709dd043ade618c87f2aaec03db64f7ed659e8d3ddad"
+  license "GPL-2.0-or-later"
   head "https://github.com/pdfpc/pdfpc.git"
 
   bottle do
-    sha256 "c1e404b1f9ab52f405cbb8122cb2e238c44efb5b848c6eb666faad594495c4e9" => :big_sur
-    sha256 "aa21bf874d02d920eefc1ec3d8b2ce35cac2712a18d18817d1cbb0594639fb9d" => :catalina
-    sha256 "85befb240c734d282ed137ebec82ed69da0b62ee9cf72288e7c052030e0daf56" => :mojave
-    sha256 "028edb85cd773f143754f616fb54064d60126316de3330e9dc67f6332d9b5f09" => :high_sierra
+    sha256 "f7ec854f156648a550bdeb912af1be98c91a84633d9eb789892d5c3d90e067ba" => :big_sur
+    sha256 "f51bac229c55f8b5781804bd47cffe72d8acfb47b9447e3f02fc998c8abd9526" => :catalina
+    sha256 "893f490903ffd59dd8c7fdba0a9f6c6a91dc320056d8ddff940422ba5429fcd0" => :mojave
   end
 
   depends_on "cmake" => :build

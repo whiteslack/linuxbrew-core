@@ -2,18 +2,17 @@ class Needle < Formula
   desc "Compile-time safe Swift dependency injection framework with real code"
   homepage "https://github.com/uber/needle"
   url "https://github.com/uber/needle.git",
-      tag:      "v0.16.2.2",
-      revision: "1f8f8bce6a8b13106f8c679518ae96b03defc093"
+      tag:      "v0.17.1",
+      revision: "3ac31475379b5a6c18a31436c15d072189e8f5f1"
   license "Apache-2.0"
 
   bottle do
     cellar :any
-    sha256 "a76234c9daaee111f6c29cd25e7ae81f2941a0a967e2d1768e05e050e2e263e0" => :big_sur
-    sha256 "aa5b5f934e831d61d2d623324a48b0e47cab4de498e643fbbce2c52d9c060f0e" => :catalina
+    sha256 "d1b4c382f90fb980a40f4d04c7fb4f6c7afb9024b453731dbaf2a24cc974fd76" => :big_sur
+    sha256 "3d62dba1647de4fb3d967bf42435eb4009d3eedc760d3d69e87ba9be17315681" => :catalina
   end
 
-  depends_on xcode: ["11.6", :build]
-  depends_on xcode: "6.0"
+  depends_on xcode: ["12.2", :build]
 
   def install
     system "make", "install", "BINARY_FOLDER_PREFIX=#{prefix}"
@@ -22,6 +21,16 @@ class Needle < Formula
   end
 
   test do
+    (testpath/"Test.swift").write <<~EOS
+      import Foundation
+
+      protocol ChildDependency: Dependency {}
+      class Child: Component<ChildDependency> {}
+
+      let child = Child(parent: self)
+    EOS
+
+    assert_match "Root\n", shell_output("#{bin}/needle print-dependency-tree #{testpath}/Test.swift")
     assert_match version.to_s, shell_output("#{bin}/needle version")
   end
 end
