@@ -11,6 +11,7 @@ class Xkeyboardconfig < Formula
     sha256 "5d2d8508d8ea7a1aeb33520285088526d460f3e796911bde60af52e0fee0cab7" => :big_sur
     sha256 "657ec08d8201cd932171f8f9acecd94e62f66657ea7c730810fb2dec70e17c1f" => :catalina
     sha256 "20a9ec45d3b7fbeca4dfd3bef4dff0108e7ed2481a2b3256c0dd4f152b996de5" => :mojave
+    sha256 "bb73e76422781252972d515b7f0d8b5a5fe10003611972efc49bd43875f689ad" => :x86_64_linux
   end
 
   depends_on "gettext" => :build
