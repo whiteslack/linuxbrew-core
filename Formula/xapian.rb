@@ -18,6 +18,7 @@ class Xapian < Formula
     sha256 "5645bdbfbf7ebb1e0d068bb51cce7a28c1e4102a29da6647b5959d0607100d21" => :big_sur
     sha256 "f9e6103d9938f2708d0d5d38030c833c5f78d02efe53091616d1fd9e645a69ee" => :catalina
     sha256 "9ad6e312f0949659d3d96f7ef1edc63cd4e8b2a45e7a94243ffa4cb3abf940f8" => :mojave
+    sha256 "e976f3131eb781f43ef53a71b8c2f151e3ac9ab3f30b25e4175f258339ba7d24" => :x86_64_linux
   end
 
   depends_on "sphinx-doc" => :build
