@@ -2,8 +2,8 @@ class FaasCli < Formula
   desc "CLI for templating and/or deploying FaaS functions"
   homepage "https://www.openfaas.com/"
   url "https://github.com/openfaas/faas-cli.git",
-      tag:      "0.12.16",
-      revision: "c7834361318dece8fec443a2a8d085a784a7c9dd"
+      tag:      "0.12.18",
+      revision: "9e3c15ef3ad7bd7cceb0cd577144aebb50c6681c"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class FaasCli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "06f058713671f26ffea708a70365c6340b44c717e05975b1fe42894b56f50e08" => :big_sur
-    sha256 "ec8b383bd60b5904a8bb7de47c4190caebb6c15b9bf1740ae169cb84c78ee470" => :catalina
-    sha256 "98f69a510c390e8be8d9982c10f4533a448ba19685c93eb9faf1bbe93810c09c" => :mojave
-    sha256 "151d5980c4f2b80d7e28f04b7801e880b19ac77d0860ae67610383235d85a892" => :x86_64_linux
+    sha256 "7d41665521cfbac2c290eec8ff1d277e6b2a9aa1468ad5edb40eada14621b3d0" => :big_sur
+    sha256 "b61d1bb2e07ec2f44480d2de11524870427962b244faab7327590bf36352fc41" => :catalina
+    sha256 "7977a0b3a69605c4d88e4c6de1474f8fdb2238c0792e1797675a1d068ed56041" => :mojave
   end
 
   depends_on "go" => :build
