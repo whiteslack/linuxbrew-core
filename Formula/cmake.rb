@@ -1,8 +1,8 @@
 class Cmake < Formula
   desc "Cross-platform make"
   homepage "https://www.cmake.org/"
-  url "https://github.com/Kitware/CMake/releases/download/v3.18.4/cmake-3.18.4.tar.gz"
-  sha256 "597c61358e6a92ecbfad42a9b5321ddd801fc7e7eca08441307c9138382d4f77"
+  url "https://github.com/Kitware/CMake/releases/download/v3.19.0/cmake-3.19.0.tar.gz"
+  sha256 "fdda688155aa7e72b7c63ef6f559fca4b6c07382ea6dca0beb5f45aececaf493"
   license "BSD-3-Clause"
   head "https://gitlab.kitware.com/cmake/cmake.git"
 
@@ -13,11 +13,9 @@ class Cmake < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e812869b03bb867cafd5b71fa36afb795b44a59a907f132f1b6837ea72860a0c" => :big_sur
-    sha256 "c7c42e66c63448e4aee44498b374c9985f477b129fccca5dd9c13530d1e680ef" => :catalina
-    sha256 "a0b167ad7f2fbf6f6dbcca9d74cb09acbd7822c54873803e940abf04272f8028" => :mojave
-    sha256 "98704ab50ed76df9214083c01e373277ba02aad43c858182be7ed1466d005326" => :high_sierra
-    sha256 "8de1829d30428c548c17715e9e281c1d64da65e539a4ed5f82bc82ea5706d18d" => :x86_64_linux
+    sha256 "dbefaa3219729cf9a8ad2bf959f58e3a5e8626839b0b9def2e76e7175fc92ac4" => :big_sur
+    sha256 "504c4d8e36da1d87ad14f89595f585d8038f34e9668e2f25af4fbbe3794c4c1c" => :catalina
+    sha256 "0e0d838403a56af19548b0994fc265bd81f727f5fb30fda8d7723926bb45d0de" => :mojave
   end
 
   depends_on "sphinx-doc" => :build
@@ -34,7 +32,9 @@ class Cmake < Formula
   # For the GUI application please instead use `brew cask install cmake`.
 
   def install
-    ENV.cxx11 unless OS.mac?
+    on_linux do
+      ENV.cxx11
+    end
 
     args = %W[
       --prefix=#{prefix}
@@ -50,7 +50,9 @@ class Cmake < Formula
       --system-bzip2
       --system-curl
     ]
-    args -= ["--system-zlib", "--system-bzip2", "--system-curl"] unless OS.mac?
+    on_linux do
+      args -= ["--system-zlib", "--system-bzip2", "--system-curl"]
+    end
 
     system "./bootstrap", *args, "--", *std_cmake_args,
                                        "-DCMake_INSTALL_EMACS_DIR=#{elisp}"
