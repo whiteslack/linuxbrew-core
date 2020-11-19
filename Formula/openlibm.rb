@@ -9,6 +9,7 @@ class Openlibm < Formula
     sha256 "325d0ffd1c5d9ea2fa7c024718fdedbb422cb0413a3d2af4a049721259123605" => :big_sur
     sha256 "7ba4146b71d0ec4a4357bb04a000651b8acf7c4d788c754609cfe3ecb2edf907" => :catalina
     sha256 "440a34d2b12672d844a12b1b9dee61e41920a60d1a743c5ea65f864a592bf046" => :mojave
+    sha256 "6487ced8c1dfd898ba611b03f58318109f63058ff6e1a1298077a4c3e4fd40f6" => :x86_64_linux
   end
 
   keg_only :provided_by_macos
