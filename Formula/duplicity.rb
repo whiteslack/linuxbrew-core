@@ -16,6 +16,7 @@ class Duplicity < Formula
     sha256 "ddfbe44715944cb8f2fb43ba69a06c3da6ca26a7c58dba3a576e9fde2beb62dd" => :big_sur
     sha256 "d075247edc004244cf742b17fbf2f356b728d1def18e69baad277b2e277831ac" => :catalina
     sha256 "23b6cd01c61d5ef5c44e178a7915eab6665302fe72cf1a876d7987ab126c5525" => :mojave
+    sha256 "06fb1a30fa468f973d6c1468ffc99eadc0188a0b767d39b7db99438f9ab43eb5" => :x86_64_linux
   end
 
   depends_on "gnupg"
