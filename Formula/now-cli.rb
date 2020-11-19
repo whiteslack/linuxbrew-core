@@ -20,9 +20,9 @@ class NowCli < Formula
     sha256 "c1498902d1ab657e700e3a664f7956755e2c38f696b8ba6883d22276ecad46dc" => :x86_64_linux
   end
 
-  depends_on "node"
-
   disable! date: "2021-01-31", because: :unmaintained
+
+  depends_on "node"
 
   def install
     rm Dir["dist/{*.exe,xsel}"]

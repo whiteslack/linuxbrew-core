@@ -7,8 +7,6 @@ class Securefs < Formula
   license "MIT"
   head "https://github.com/netheril96/securefs.git"
 
-  deprecate! because: "requires FUSE"
-
   bottle do
     cellar :any
     sha256 "8a8c7dd74f9b3082b2b128cc058714a27206d910273e4148959a25b7d30c51b5" => :catalina
@@ -16,6 +14,8 @@ class Securefs < Formula
     sha256 "632496d8e9ed9fe91d18e9a2c9fef49c920dc091e10108246f8ab2056f75ea38" => :high_sierra
     sha256 "284e62bbc94eba3cfbe57561eb41ddc6c42b22c4c18da74190429fb13debeb74" => :x86_64_linux
   end
+
+  deprecate! because: "requires FUSE"
 
   depends_on "cmake" => :build
   if OS.mac?

@@ -4,8 +4,6 @@ class Archivemount < Formula
   url "https://www.cybernoia.de/software/archivemount/archivemount-0.9.1.tar.gz"
   sha256 "c529b981cacb19541b48ddafdafb2ede47a40fcaf16c677c1e2cd198b159c5b3"
 
-  deprecate! because: "requires FUSE"
-
   livecheck do
     url :homepage
     regex(/href=.*?archivemount[._-]v?(\d+(?:\.\d+)+)\.t/i)
@@ -18,6 +16,8 @@ class Archivemount < Formula
     sha256 "428113b60673b6bb8be9467587f1d82bf4c9447c7f0bbdea47749bed3ec86798" => :high_sierra
     sha256 "ee2773fc8e07405e24007dcb9351f89e455f7533eea3d2b878c67af5473a3006" => :x86_64_linux
   end
+
+  deprecate! because: "requires FUSE"
 
   depends_on "pkg-config" => :build
   depends_on "libarchive"

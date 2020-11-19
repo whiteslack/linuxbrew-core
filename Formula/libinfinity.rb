@@ -14,16 +14,16 @@ class Libinfinity < Formula
     sha256 "b115b475338a4ca2aaf87870b893a4b4100bbec3a298bd2c32d1bb49bdb23b71" => :x86_64_linux
   end
 
+  # libinfinity is only used by gobby
+  # latest 0.7.1 does not work with gobby 0.5.0 due to open issue, https://github.com/gobby/gobby/issues/143
+  # gobby is disabled per #57501
+  disable! because: "is only used by gobby (which has been disabled)"
+
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "gnutls"
   depends_on "gsasl"
   depends_on "gtk+3"
-
-  # libinfinity is only used by gobby
-  # latest 0.7.1 does not work with gobby 0.5.0 due to open issue, https://github.com/gobby/gobby/issues/143
-  # gobby is disbled per #57501
-  disable! because: "is only used by gobby (which has been disabled)"
 
   # MacPorts patch to fix pam include. This is still applicable to 0.6.4.
   patch :p0 do

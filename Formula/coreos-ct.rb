@@ -15,9 +15,9 @@ class CoreosCt < Formula
     sha256 "8b89024eadf9553ff4da1feb5b0d463ac5f4a7f251a4a3a706b7228ac3a7fe49" => :x86_64_linux
   end
 
-  depends_on "go" => :build
-
   deprecate! because: :repo_archived
+
+  depends_on "go" => :build
 
   def install
     system "make", "all", "VERSION=v#{version}"

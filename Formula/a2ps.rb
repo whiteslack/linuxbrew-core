@@ -22,6 +22,9 @@ class A2ps < Formula
     satisfy { HOMEBREW_PREFIX.to_s == Homebrew::DEFAULT_PREFIX }
   end
 
+  # Fails to build on Catalina. No new release since 2007
+  disable! because: :does_not_build
+
   # Software was last updated in 2007.
   # https://svn.macports.org/ticket/20867
   # https://trac.macports.org/ticket/18255
@@ -35,9 +38,6 @@ class A2ps < Formula
   on_linux do
     depends_on "gperf"
   end
-
-  # Fails to build on Catalina. No new release since 2007
-  disable! because: :does_not_build
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

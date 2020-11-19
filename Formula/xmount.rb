@@ -5,8 +5,6 @@ class Xmount < Formula
   sha256 "76e544cd55edc2dae32c42a38a04e11336f4985e1d59cec9dd41e9f9af9b0008"
   revision 2
 
-  deprecate! because: "requires FUSE"
-
   bottle do
     rebuild 1
     sha256 "55de429679b12e85dcfb854d4add045363a287c172b7b77765591d7d1d89324c" => :catalina
@@ -14,6 +12,8 @@ class Xmount < Formula
     sha256 "a4436c7060d9b84abfa6450c7156cd994f42c130eebf1281e21319d6e5c00415" => :high_sierra
     sha256 "48685578f4d3cca24e4d583b47977835607918011187a23c17dd6672aa5ef13d" => :x86_64_linux
   end
+
+  deprecate! because: "requires FUSE"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build

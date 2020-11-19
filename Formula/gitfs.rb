@@ -9,8 +9,6 @@ class Gitfs < Formula
   revision OS.mac? ? 4 : 6
   head "https://github.com/presslabs/gitfs.git"
 
-  deprecate! because: "requires FUSE"
-
   bottle do
     cellar :any
     sha256 "c8c83c94da3b5f1dc480eec0ede90bf678eee59a97bb54a64cf94555d9c57752" => :catalina
@@ -18,6 +16,8 @@ class Gitfs < Formula
     sha256 "218c5f19bcecb33e4f18c19cf0f56ce6d9628d4cfad9f095fbb1071af3cd79c2" => :high_sierra
     sha256 "4fd75de3fd2e2be47385e87fd82017956924c9a9b14f6e7f9f49bdbd11a06b2d" => :x86_64_linux
   end
+
+  deprecate! because: "requires FUSE"
 
   depends_on "libgit2"
   if OS.mac?

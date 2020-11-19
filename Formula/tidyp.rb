@@ -5,8 +5,6 @@ class Tidyp < Formula
   sha256 "20b0fad32c63575bd4685ed09b8c5ca222bbc7b15284210d4b576d0223f0b338"
   license "Zlib"
 
-  deprecate! because: :repo_archived
-
   bottle do
     cellar :any
     rebuild 1
@@ -16,6 +14,8 @@ class Tidyp < Formula
     sha256 "267b4c383278baa37d4bab8e10aba1ee73d2eba642332414fad77d262b602099" => :high_sierra
     sha256 "2d9bd417f45ab365fc65804afbaa68100669b5fb686ec8b2446c89c85d6bf08c" => :x86_64_linux
   end
+
+  deprecate! because: :repo_archived
 
   uses_from_macos "libxslt" => :build
 

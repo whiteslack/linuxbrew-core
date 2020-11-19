@@ -6,8 +6,6 @@ class Afuse < Formula
   license "GPL-2.0"
   revision 1 unless OS.mac?
 
-  deprecate! because: "requires FUSE"
-
   bottle do
     cellar :any
     sha256 "cf5a7aeba0e2504ea5bf7bf691ed2d0f8245cbac069b089359588e7df04140e0" => :catalina
@@ -18,6 +16,8 @@ class Afuse < Formula
     sha256 "2a57c7752c7b461f6b628a1c30e845fe13685eab394d933e8da3aebf7102ae9c" => :yosemite
     sha256 "7a7953cd690dfef18f9a3ea59b533aa887d9691a559306254a6333ba0b7c011b" => :x86_64_linux
   end
+
+  deprecate! because: "requires FUSE"
 
   depends_on "pkg-config" => :build
   if OS.mac?
