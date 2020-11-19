@@ -45,8 +45,6 @@ class GnuTar < Formula
     ]
 
     args << "--program-prefix=g" if OS.mac?
-    # Work around a gnulib issue with macOS Catalina
-    args << "gl_cv_func_ftello_works=yes" if OS.mac?
 
     system "./bootstrap" if build.head?
     system "./configure", *args

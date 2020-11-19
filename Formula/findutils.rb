@@ -37,8 +37,6 @@ class Findutils < Formula
     ]
 
     args << "--program-prefix=g" if OS.mac?
-    # Work around a gnulib issue with macOS Catalina
-    args << "gl_cv_func_ftello_works=yes"
     system "./configure", *args
     system "make", "install"
 

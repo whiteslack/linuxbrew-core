@@ -8,25 +8,19 @@ class Modd < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "16f137693f5e0d6a6526a74b2e3382a44576b4a6172155ad90ee36fb2dca256a" => :big_sur
-    sha256 "bc54b5c78bf68af83b2ae7233f5bcaf20295ba803e82aa4a1ccd77e5a9dd9a9f" => :catalina
-    sha256 "d1b77821aff14d108379646434442ec9ca4869ec50867083c8e109c35dfb5095" => :mojave
-    sha256 "9dab505f6322b00919c69a8b396b25efb04f38341d2113c0681e6d12181b13d0" => :high_sierra
-    sha256 "165da808127db6197c4dd7e4b527118baf29aa74747d9c7ae84cad47d1bd8e79" => :sierra
-    sha256 "d69e6cffb1157283b4d975dc8c1b9ef1d3065ec4b7c513fc66a1d018e1dfc195" => :x86_64_linux
+    rebuild 1
+    sha256 "87423ac35521b65b0d45d6d7a1b0589bbfa57a14b62e3b9dcbb4e1e2a6e2f874" => :big_sur
+    sha256 "0657ac604def86ff2bfac4797944290d0fc4afabee8855506901437d2870ce61" => :catalina
+    sha256 "c7a4a376466ad627e747c4054e6398fa4a8637e5542c2cf496740ea2b0db79ff" => :mojave
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOOS"] = OS.mac? ? "darwin" : "linux"
-    ENV["GOARCH"] = "amd64"
     ENV["GOPATH"] = buildpath
-    ENV["GOBIN"] = bin
     (buildpath/"src/github.com/cortesi/modd").install buildpath.children
     cd "src/github.com/cortesi/modd" do
-      system "go", "install", ".../cmd/modd"
-      prefix.install_metafiles
+      system "go", "build", *std_go_args, "./cmd/modd"
     end
   end
 

@@ -8,28 +8,16 @@ class Terrahelp < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "18b7f2c22a76e894e18e253a7a8e05fb184846a641221214df0d9fb19b3882a5" => :big_sur
-    sha256 "515040f845a9eb85328f110610d2bc31837771c79828c6979eeddb5c885aac8b" => :catalina
-    sha256 "f195506118d3fca9b4b0555e9aef67c4e831053a943fade0580793aa5e89139a" => :mojave
-    sha256 "df53d2e287ce9b9b31facff22d50b4181704045e9611ebfb363461025cf1eb8f" => :high_sierra
+    rebuild 1
+    sha256 "58044fae3de9a59f2420d65923e6d2619b91d026e45a1a6629699b11f9afa5be" => :big_sur
+    sha256 "e8edbc804fa080128c6fdad4182eae24e3679c846bb03cfc7c71b56bba1e983a" => :catalina
+    sha256 "7ba4bc44de9efe372c14e80ecb0eeed2f6b634fb1e49fa66768db616200206b8" => :mojave
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV.prepend_create_path "PATH", buildpath/"bin"
-
-    dir = buildpath/"src/github.com/opencredo/terrahelp"
-    dir.install buildpath.children
-
-    cd dir do
-      ENV["GOOS"] = "darwin"
-      ENV["GOARCH"] = "amd64"
-
-      system "go", "build", "-mod=vendor", "-o", "dist/darwin/amd64/terrahelp"
-      bin.install "dist/darwin/amd64/terrahelp"
-    end
+    system "go", "build", *std_go_args, "-mod=vendor"
   end
 
   test do
