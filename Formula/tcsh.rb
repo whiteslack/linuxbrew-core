@@ -14,6 +14,7 @@ class Tcsh < Formula
     sha256 "e572fcc4259db31e54c25ccf22d736637cfce0801f038691b86d5d68847d6603" => :big_sur
     sha256 "2feecc5bd032b40e4673125431957d89a37a54aac8d4e0b5849fd9fa33aa7bfa" => :catalina
     sha256 "1a278f9965f6b362035623cf793afee82e0039277f61f06f32499f7bdf0ec0ad" => :mojave
+    sha256 "0569bddbd314bf5a5eadb69f7fe3c7f3b34aa217b5edf2bc819c73324c281955" => :x86_64_linux
   end
 
   uses_from_macos "ncurses"
