@@ -17,6 +17,7 @@ class Libspatialite < Formula
     sha256 "18444b8c0c78ed66b7dd84e50bbf24b67b0d955c2f1fd8716bbe77b41353a7bf" => :big_sur
     sha256 "e4a083ce451aa9bad3ca209a042c32f946a9ed3964d498790c6d141ac9d70aab" => :catalina
     sha256 "3c8bedbf668ba7627e00dfb7dc4b16eab35681fec2d0a06275d40f5091e278a2" => :mojave
+    sha256 "6553c700ca3d9e2f0a22caa042874c815331cdb9efe200fc6cf311b60fa3d533" => :x86_64_linux
   end
 
   head do
