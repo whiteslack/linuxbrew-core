@@ -17,11 +17,24 @@ class Drip < Formula
     sha256 "048944c8240d219b4777e4f35bb7d456062042385e6b2a375f2d00d1b9d517f9" => :x86_64_linux
   end
 
+  deprecate! because: :does_not_build
+
   depends_on java: "1.8"
 
   def install
     system "make"
     libexec.install %w[bin src Makefile]
     bin.install_symlink libexec/"bin/drip"
+  end
+
+  test do
+    (testpath/"Test.java").write <<~EOS
+      public class Test {
+        public static void main (String[] args) {
+          System.out.println("Homebrew");
+        }
+      }
+    EOS
+    assert_match "Homebrew", shell_output("#{bin}/drip Test.java")
   end
 end

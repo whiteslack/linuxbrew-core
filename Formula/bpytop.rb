@@ -9,13 +9,16 @@ class Bpytop < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b39de73e084429f1e3b2f5276a3134f2075813b5810ebf2782617f7274fd23ca" => :big_sur
-    sha256 "7f7ee5558e63a38d8944eb39161c648846bf6355966fc6be7d2437a2e8de734f" => :catalina
-    sha256 "115ecf39c7e025c6a0a24d07ba8a214ddc67765f64edec049f0a5f6dcbad86d7" => :mojave
+    rebuild 1
+    sha256 "2b1f3d2ed30ceb229ad0dd2cdb438b2f050291aa386e057d6edcda8550e060d1" => :big_sur
+    sha256 "63678217e7a4aa2f9952c2dff52a02e3a07728e1010540a5b7a1fda71537c2ac" => :catalina
+    sha256 "d2d8be76d473030d004f1ade5b386e6e02bb565493259dece438003d817f6553" => :mojave
   end
 
-  depends_on "osx-cpu-temp"
   depends_on "python@3.9"
+  on_macos do
+    depends_on "osx-cpu-temp"
+  end
 
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/33/e0/82d459af36bda999f82c7ea86c67610591cf5556168f48fd6509e5fa154d/psutil-5.7.3.tar.gz"
