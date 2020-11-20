@@ -10,6 +10,7 @@ class Xinput < Formula
     sha256 "dab36aa6df662605e220ffce42106ed9eb6668088c425773335b04a59ba29575" => :big_sur
     sha256 "5bda55eccff0b10605378a85932776af6105fff7ae85593e2f10d13e9adca128" => :catalina
     sha256 "afad4cf5c8b632f1e8873eee07a2bfd694efb1466dcafc0d4c8c233e370c4195" => :mojave
+    sha256 "ac47ac3323aba9cb56483f6db789e79ec1bcbc10970995340ec6c0ffc9fc5c0e" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
