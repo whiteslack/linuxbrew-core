@@ -32,14 +32,18 @@ class Grep < Formula
       --with-packager=Homebrew
     ]
 
-    args << "--program-prefix=g" if OS.mac?
+    on_macos do
+      args << "--program-prefix=g"
+    end
     system "./configure", *args
     system "make"
     system "make", "install"
 
-    %w[grep egrep fgrep].each do |prog|
-      (libexec/"gnubin").install_symlink bin/"g#{prog}" => prog
-      (libexec/"gnuman/man1").install_symlink man1/"g#{prog}.1" => "#{prog}.1"
+    on_macos do
+      %w[grep egrep fgrep].each do |prog|
+        (libexec/"gnubin").install_symlink bin/"g#{prog}" => prog
+        (libexec/"gnuman/man1").install_symlink man1/"g#{prog}.1" => "#{prog}.1"
+      end
     end
 
     libexec.install_symlink "gnuman" => "man"
@@ -60,7 +64,7 @@ class Grep < Formula
     text_file = testpath/"file.txt"
     text_file.write "This line should be matched"
 
-    if OS.mac?
+    on_macos do
       grepped = shell_output("#{bin}/ggrep match #{text_file}")
       assert_match "should be matched", grepped
 
@@ -68,7 +72,7 @@ class Grep < Formula
       assert_match "should be matched", grepped
     end
 
-    unless OS.mac?
+    on_linux do
       grepped = shell_output("#{bin}/grep match #{text_file}")
       assert_match "should be matched", grepped
     end

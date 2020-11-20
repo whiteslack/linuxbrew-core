@@ -39,11 +39,13 @@ class Inetutils < Formula
       --with-idn
     ]
 
-    args << "--program-prefix=g" if OS.mac?
+    on_macos do
+      args << "--program-prefix=g"
+    end
     system "./configure", *args
     system "make", "install"
 
-    if OS.mac?
+    on_macos do
       # Binaries not shadowing macOS utils symlinked without 'g' prefix
       noshadow.each do |cmd|
         bin.install_symlink "g#{cmd}" => cmd
@@ -60,6 +62,7 @@ class Inetutils < Formula
         (libexec/"gnuman"/"man1").install_symlink man1/"g#{cmd}.1" => "#{cmd}.1"
       end
     end
+
     libexec.install_symlink "gnuman" => "man"
   end
 
@@ -77,9 +80,15 @@ class Inetutils < Formula
   end
 
   test do
-    path = OS.mac? ? "#{libexec}/gnubin/ftp" : "#{bin}/ftp"
-    output = pipe_output("#{path} -v",
+    on_macos do
+      output = pipe_output("#{libexec}/gnubin/ftp -v",
                          "open ftp.gnu.org\nanonymous\nls\nquit\n")
-    assert_match "Connected to ftp.gnu.org.\n220 GNU FTP server ready", output
+      assert_match "Connected to ftp.gnu.org.\n220 GNU FTP server ready", output
+    end
+    on_linux do
+      output = pipe_output("#{bin}/ftp -v",
+                         "open ftp.gnu.org\nanonymous\nls\nquit\n")
+      assert_match "Connected to ftp.gnu.org.\n220 GNU FTP server ready", output
+    end
   end
 end

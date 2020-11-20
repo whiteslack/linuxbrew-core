@@ -27,11 +27,13 @@ class Make < Formula
       --prefix=#{prefix}
     ]
 
-    args << "--program-prefix=g" if OS.mac?
+    on_macos do
+      args << "--program-prefix=g"
+    end
     system "./configure", *args
     system "make", "install"
 
-    if OS.mac?
+    on_macos do
       (libexec/"gnubin").install_symlink bin/"gmake" =>"make"
       (libexec/"gnuman/man1").install_symlink man1/"gmake.1" => "make.1"
     end
@@ -56,10 +58,11 @@ class Make < Formula
       default:
       \t@echo Homebrew
     EOS
-    if OS.mac?
+    on_macos do
       assert_equal "Homebrew\n", shell_output("#{bin}/gmake")
       assert_equal "Homebrew\n", shell_output("#{opt_libexec}/gnubin/make")
-    else
+    end
+    on_linux do
       assert_equal "Homebrew\n", shell_output("#{bin}/make")
     end
   end

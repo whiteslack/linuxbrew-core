@@ -25,11 +25,13 @@ class GnuUnits < Formula
       --with-installed-readline
     ]
 
-    args << "--program-prefix=g" if OS.mac?
+    on_macos do
+      args << "--program-prefix=g"
+    end
     system "./configure", *args
     system "make", "install"
 
-    if OS.mac?
+    on_macos do
       (libexec/"gnubin").install_symlink bin/"gunits" => "units"
       (libexec/"gnubin").install_symlink bin/"gunits_cur" => "units_cur"
       (libexec/"gnuman/man1").install_symlink man1/"gunits.1" => "units.1"
@@ -49,11 +51,12 @@ class GnuUnits < Formula
   end
 
   test do
-    if OS.mac?
+    on_macos do
       assert_equal "* 18288", shell_output("#{bin}/gunits '600 feet' 'cm' -1").strip
       assert_equal "* 18288", shell_output("#{opt_libexec}/gnubin/units '600 feet' 'cm' -1").strip
     end
-
-    assert_equal "* 18288", shell_output("#{bin}/units '600 feet' 'cm' -1").strip unless OS.mac?
+    on_linux do
+      assert_equal "* 18288", shell_output("#{bin}/units '600 feet' 'cm' -1").strip
+    end
   end
 end

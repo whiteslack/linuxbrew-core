@@ -36,11 +36,13 @@ class Findutils < Formula
       --disable-debug
     ]
 
-    args << "--program-prefix=g" if OS.mac?
+    on_macos do
+      args << "--program-prefix=g"
+    end
     system "./configure", *args
     system "make", "install"
 
-    if OS.mac?
+    on_macos do
       # https://savannah.gnu.org/bugs/index.php?46846
       # https://github.com/Homebrew/homebrew/issues/47791
       (libexec/"bin").install bin/"gupdatedb"
@@ -79,11 +81,12 @@ class Findutils < Formula
 
   test do
     touch "HOMEBREW"
-    if OS.mac?
+    on_macos do
       assert_match "HOMEBREW", shell_output("#{bin}/gfind .")
       assert_match "HOMEBREW", shell_output("#{opt_libexec}/gnubin/find .")
     end
-
-    assert_match "HOMEBREW", shell_output("#{bin}/find .") unless OS.mac?
+    on_linux do
+      assert_match "HOMEBREW", shell_output("#{bin}/find .")
+    end
   end
 end

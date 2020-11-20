@@ -31,11 +31,13 @@ class GnuIndent < Formula
       --mandir=#{man}
     ]
 
-    args << "--program-prefix=g" if OS.mac?
+    on_macos do
+      args << "--program-prefix=g"
+    end
     system "./configure", *args
     system "make", "install"
 
-    if OS.mac?
+    on_macos do
       (libexec/"gnubin").install_symlink bin/"gindent" => "indent"
       (libexec/"gnuman/man1").install_symlink man1/"gindent.1" => "indent.1"
     end
@@ -57,8 +59,12 @@ class GnuIndent < Formula
 
   test do
     (testpath/"test.c").write("int main(){ return 0; }")
-    system "#{bin}/gindent", "test.c" if OS.mac?
-    system "#{bin}/indent", "test.c" unless OS.mac?
+    on_macos do
+      system "#{bin}/gindent", "test.c"
+    end
+    on_linux do
+      system "#{bin}/indent", "test.c"
+    end
     assert_equal File.read("test.c"), <<~EOS
       int
       main ()

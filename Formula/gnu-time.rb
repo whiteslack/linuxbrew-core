@@ -29,11 +29,15 @@ class GnuTime < Formula
       --info=#{info}
     ]
 
-    args << "--program-prefix=g" if OS.mac?
+    on_macos do
+      args << "--program-prefix=g"
+    end
     system "./configure", *args
     system "make", "install"
 
-    (libexec/"gnubin").install_symlink bin/"gtime" => "time" if OS.mac?
+    on_macos do
+      (libexec/"gnubin").install_symlink bin/"gtime" => "time"
+    end
   end
 
   def caveats
@@ -49,11 +53,13 @@ class GnuTime < Formula
   end
 
   test do
-    if OS.mac?
+    on_macos do
       system bin/"gtime", "ruby", "--version"
       system opt_libexec/"gnubin/time", "ruby", "--version"
     end
 
-    system bin/"time", "ruby", "--version" unless OS.mac?
+    on_linux do
+      system bin/"time", "ruby", "--version"
+    end
   end
 end

@@ -26,12 +26,16 @@ class GnuSed < Formula
       --disable-dependency-tracking
     ]
 
-    args << "--program-prefix=g" if OS.mac?
-    args << "--without-selinux" unless OS.mac?
+    on_macos do
+      args << "--program-prefix=g"
+    end
+    on_linux do
+      args << "--without-selinux"
+    end
     system "./configure", *args
     system "make", "install"
 
-    if OS.mac?
+    on_macos do
       (libexec/"gnubin").install_symlink bin/"gsed" =>"sed"
       (libexec/"gnuman/man1").install_symlink man1/"gsed.1" => "sed.1"
     end
@@ -53,15 +57,14 @@ class GnuSed < Formula
 
   test do
     (testpath/"test.txt").write "Hello world!"
-    if OS.mac?
+    on_macos do
       system "#{bin}/gsed", "-i", "s/world/World/g", "test.txt"
       assert_match /Hello World!/, File.read("test.txt")
 
       system "#{opt_libexec}/gnubin/sed", "-i", "s/world/World/g", "test.txt"
       assert_match /Hello World!/, File.read("test.txt")
     end
-
-    unless OS.mac?
+    on_linux do
       system "#{bin}/sed", "-i", "s/world/World/g", "test.txt"
       assert_match /Hello World!/, File.read("test.txt")
     end

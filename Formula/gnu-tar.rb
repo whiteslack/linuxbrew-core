@@ -44,13 +44,14 @@ class GnuTar < Formula
       --mandir=#{man}
     ]
 
-    args << "--program-prefix=g" if OS.mac?
-
+    on_macos do
+      args << "--program-prefix=g"
+    end
     system "./bootstrap" if build.head?
     system "./configure", *args
     system "make", "install"
 
-    if OS.mac?
+    on_macos do
       # Symlink the executable into libexec/gnubin as "tar"
       (libexec/"gnubin").install_symlink bin/"gtar" =>"tar"
       (libexec/"gnuman/man1").install_symlink man1/"gtar.1" => "tar.1"
@@ -73,13 +74,13 @@ class GnuTar < Formula
 
   test do
     (testpath/"test").write("test")
-    if OS.mac?
+    on_macos do
       system bin/"gtar", "-czvf", "test.tar.gz", "test"
       assert_match /test/, shell_output("#{bin}/gtar -xOzf test.tar.gz")
       assert_match /test/, shell_output("#{opt_libexec}/gnubin/tar -xOzf test.tar.gz")
     end
 
-    unless OS.mac?
+    on_linux do
       system bin/"tar", "-czvf", "test.tar.gz", "test"
       assert_match /test/, shell_output("#{bin}/tar -xOzf test.tar.gz")
     end
