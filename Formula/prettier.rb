@@ -17,6 +17,7 @@ class Prettier < Formula
     sha256 "300017c5cb62272b854fa54bbf8b7386492523ec7e4a65745d4b310f4a1c2e66" => :big_sur
     sha256 "79ce2891788b513230cfa8c91fc5213ed0987fd44e0772cf5ccb5c7679f55c5f" => :catalina
     sha256 "af8508871ff64c9385e8a5e6163ab609bc33f32593ca883b6b65dfbdeed33d4f" => :mojave
+    sha256 "f3607d2952bfb5d90d73811c9ebc9fe8ff40d357aad4828f96a0cfada12a04f8" => :x86_64_linux
   end
 
   depends_on "node"
