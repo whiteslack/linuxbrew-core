@@ -14,6 +14,7 @@ class GitSecret < Formula
     sha256 "798cb8d91b23ac5ad8f8c4b2b74ddb2b531b4f6e3302d846f99f673b46558889" => :big_sur
     sha256 "5680327a70bdc617206c09148e3c7107b10c1069fb31ef705369399c5ce09f8c" => :catalina
     sha256 "39e2b5c3a4310bd28780e90d36f9a1efeff8f7397364306747416c3cef8faeba" => :mojave
+    sha256 "88bda1e5772a0b879240d18a49784726fb1d0c577c58d1d7348b4e245a3c7a3a" => :x86_64_linux
   end
 
   depends_on "gawk"
