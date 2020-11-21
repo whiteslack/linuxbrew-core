@@ -1,17 +1,15 @@
 class Ghz < Formula
   desc "Simple gRPC benchmarking and load testing tool"
   homepage "https://ghz.sh"
-  url "https://github.com/bojand/ghz/archive/v0.63.0.tar.gz"
-  sha256 "2912982c761f8484a3cd23b010a294e8a82515d28b2e33748e7f8b7a36c7979a"
+  url "https://github.com/bojand/ghz/archive/v0.70.0.tar.gz"
+  sha256 "8f7ab2443c61b0c666e9ad629546361d69554a6af8682c0ac323802758c983a4"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6f6d413f89022d24fbe18da2457fa8ea8a2a6eabdf2b01cc0e8b724f13f557d1" => :big_sur
-    sha256 "48be94edb841c06b25608492d8d5677cd3947c2f6f55e0bb7bf166da0131b7c3" => :catalina
-    sha256 "9ed0e1e1c076b658f80e556da6d9bb8e471099fbb7760f8374a59adb1cf05086" => :mojave
-    sha256 "532f9c7cb224ec6e6b4474f675d98a765c011be2dbf3def13ca0e79e4dc59f3b" => :high_sierra
-    sha256 "722828ce909063926bb7a57c3b801e031d7d790f5e041d53cb546cac2032ac68" => :x86_64_linux
+    sha256 "8dac100a02de1b55e03b49fbb85a9d695826c15e3dee6eac3215bf6d1fae766a" => :big_sur
+    sha256 "040a38088d607fab08dfa73665a9804eab45f42ffe108cfafd1df92355e123ca" => :catalina
+    sha256 "ef3d2680cb8f713f5a328d49843a73065ca6eb947de7a48e9d76fac30691ccf8" => :mojave
   end
 
   depends_on "go" => :build
