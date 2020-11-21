@@ -4,7 +4,7 @@ class PythonAT38 < Formula
   url "https://www.python.org/ftp/python/3.8.6/Python-3.8.6.tar.xz"
   sha256 "a9e0b79d27aa056eb9cce8d63a427b5f9bab1465dee3f942dcfdb25a82f4ab8a"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,11 +12,9 @@ class PythonAT38 < Formula
   end
 
   bottle do
-    sha256 "4e94985983e5ba90b9a4944751d466dd0631bc640356beb364a38aa2fb7df19d" => :big_sur
-    sha256 "123ddd272ba0670d72578b36c4801b59449ac21e9d5a7e47c34c9e489330600a" => :catalina
-    sha256 "6367896e90735c0f1476d297d608ee08cd5f7fccf7c794c45589093fa86f4faa" => :mojave
-    sha256 "8714bfcc84ab6486cc7c757028298478fc28609f148ef27497940cd5cd7292e7" => :high_sierra
-    sha256 "5ee32a98b1b9a45c0999f7655a1b5d0ad6336b236ae40bdbc0ff7234387e7f70" => :x86_64_linux
+    sha256 "fc87104dc4081ce3886d40c7c6e5d045eaf3e3a15642c6b60843d10d28e4ee22" => :big_sur
+    sha256 "ae8b1551229ad30c414a4a5e79db45f636a52267e0cafb39c124e6732f2aa4a7" => :catalina
+    sha256 "43276acf1db1c7aaa0a4268328c1773f94efd5824863b31291752151c7922b68" => :mojave
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -343,10 +341,10 @@ class PythonAT38 < Formula
           # the Cellar site-packages is a symlink to the HOMEBREW_PREFIX
           # site_packages; prefer the shorter paths
           long_prefix = re.compile(r'#{rack}/[0-9\._abrc]+/Frameworks/Python\.framework/Versions/#{xy}/lib/python#{xy}/site-packages')
-          sys.path = [long_prefix.sub('#{site_packages}', p) for p in sys.path]
-          # Set the sys.executable to use the opt_prefix, unless explicitly set
-          # with PYTHONEXECUTABLE:
-          if 'PYTHONEXECUTABLE' not in os.environ:
+          sys.path = [long_prefix.sub('#{HOMEBREW_PREFIX/"lib/python#{xy}/site-packages"}', p) for p in sys.path]
+          # Set the sys.executable to use the opt_prefix. Only do this if PYTHONEXECUTABLE is not
+          # explicitly set and we are not in a virtualenv:
+          if 'PYTHONEXECUTABLE' not in os.environ and sys.prefix == sys.base_prefix:
               sys.executable = '#{opt_bin}/python#{xy}'
     EOS
   end

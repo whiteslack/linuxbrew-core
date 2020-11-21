@@ -4,7 +4,7 @@ class PythonAT37 < Formula
   url "https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tar.xz"
   sha256 "91923007b05005b5f9bd46f3b9172248aea5abc1543e8a636d59e629c3331b01"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,11 +12,9 @@ class PythonAT37 < Formula
   end
 
   bottle do
-    sha256 "d58781b8d8b467285b2740dca0c5dbca1e99b08a3b2c1f2bb05ca05abd3aca2b" => :big_sur
-    sha256 "6ab2d5599aa9b26bec29562418b8a15d83aa408518402e971c7f44177690b518" => :catalina
-    sha256 "95f3926d2d889032e9dba25533caaf3c4a90dc06d7b1f2ae345e7bd8ab43d069" => :mojave
-    sha256 "31c104f6633fe8da29a9580e885cabe947917aee12729355840b4d58deb4b193" => :high_sierra
-    sha256 "0a00534e189faa0fcac48753a1ea6c275b5c94209cec7cc551583ee43fe9c22d" => :x86_64_linux
+    sha256 "936bd387e48d2dea1b743eb2812d2799f40cefbb4a4c85d1c6be8657f99f8c92" => :big_sur
+    sha256 "16b18528550d8d787456711ec1ed056cc3d6d5d6be6eb34653e20df1987ba033" => :catalina
+    sha256 "7bbb9383f3ad61757e806bae4f858ac8d46b476e18e1490209daa05bcf544311" => :mojave
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -343,9 +341,9 @@ class PythonAT37 < Formula
           long_prefix = re.compile(r'#{rack}/[0-9\._abrc]+/Frameworks/Python\.framework/Versions/#{xy}/lib/python#{xy}/site-packages')
           sys.path = [long_prefix.sub('#{site_packages}', p) for p in sys.path]
 
-          # Set the sys.executable to use the opt_prefix, unless explicitly set
-          # with PYTHONEXECUTABLE:
-          if 'PYTHONEXECUTABLE' not in os.environ:
+          # Set the sys.executable to use the opt_prefix. Only do this if PYTHONEXECUTABLE is not
+          # explicitly set and we are not in a virtualenv:
+          if 'PYTHONEXECUTABLE' not in os.environ and sys.prefix == sys.base_prefix:
               sys.executable = '#{opt_bin}/python#{xy}'
     EOS
   end

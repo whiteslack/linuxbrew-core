@@ -19,10 +19,10 @@ class Mutt < Formula
   end
 
   bottle do
-    sha256 "9bece1869d6b9c279528581d176002fa0e8118c54d541b26176d63d7a6237c4f" => :big_sur
-    sha256 "7adcdb71ca51ca1a946b03871d939bcbf178fc4a3ef022cd4f842b2e902470f8" => :catalina
-    sha256 "c9fd57c8308852dcf8bfcd21d60da6140a678bf45a25afc7e0581728a8330e9d" => :mojave
-    sha256 "c9c3f886a5da6ed920e212eb4a62e76b2bd8e5c04220c65df6c881d5fc7c6933" => :x86_64_linux
+    rebuild 1
+    sha256 "1a8a48a030eb372b8328060ca0c31d81d932de779a0dd193bf96dd8473a45c06" => :big_sur
+    sha256 "9ae8dc31b42c56775c4c8decb1bc76203fee06343dfb1f86f4dd2c4e3cecb3d1" => :catalina
+    sha256 "12c141f1ac03d7d47fe3a98207e13da22cbad9de1cb1ddeedd03bd2762b0d070" => :mojave
   end
 
   head do
@@ -38,9 +38,9 @@ class Mutt < Formula
   depends_on "gpgme"
   depends_on "openssl@1.1"
   depends_on "tokyo-cabinet"
-  depends_on "krb5" unless OS.mac?
 
   uses_from_macos "bzip2"
+  uses_from_macos "krb5"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
