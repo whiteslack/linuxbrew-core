@@ -87,7 +87,9 @@ class Pangomm < Formula
       -lpangomm-1.4
       -lsigc-2.0
     ]
-    flags << "-lintl" if OS.mac?
+    on_macos do
+      flags << "-lintl"
+    end
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end

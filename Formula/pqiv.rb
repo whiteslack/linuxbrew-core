@@ -24,6 +24,10 @@ class Pqiv < Formula
   depends_on "webp"
   depends_on "libtiff" unless OS.mac?
 
+  on_linux do
+    depends_on "libtiff"
+  end
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
