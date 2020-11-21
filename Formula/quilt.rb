@@ -25,9 +25,18 @@ class Quilt < Formula
   depends_on "gnu-sed"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
-                          ("--with-sed=#{HOMEBREW_PREFIX}/bin/gsed" if OS.mac?),
-                          "--without-getopt"
+    args = [
+      "--prefix=#{prefix}",
+      "--without-getopt",
+    ]
+    on_macos do
+      args << "--with-sed=#{HOMEBREW_PREFIX}/bin/gsed"
+    end
+    on_linux do
+      args << "--with-sed=#{HOMEBREW_PREFIX}/bin/sed"
+    end
+    system "./configure", *args
+
     system "make"
     system "make", "install", "emacsdir=#{elisp}"
   end
