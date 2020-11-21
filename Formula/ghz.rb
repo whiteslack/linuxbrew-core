@@ -10,6 +10,7 @@ class Ghz < Formula
     sha256 "8dac100a02de1b55e03b49fbb85a9d695826c15e3dee6eac3215bf6d1fae766a" => :big_sur
     sha256 "040a38088d607fab08dfa73665a9804eab45f42ffe108cfafd1df92355e123ca" => :catalina
     sha256 "ef3d2680cb8f713f5a328d49843a73065ca6eb947de7a48e9d76fac30691ccf8" => :mojave
+    sha256 "b1e6d4956dcc5f2c0d70a9905d3ffab6ec9a3d1d4e53735593ec1fb188237611" => :x86_64_linux
   end
 
   depends_on "go" => :build
