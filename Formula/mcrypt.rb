@@ -14,6 +14,7 @@ class Mcrypt < Formula
     sha256 "284a74fc68549f1479e592b8daf2fd02f695292c5ca0334e7181906803396ceb" => :big_sur
     sha256 "488ff0ff6090f2d58c4bee440fe473f53f3755017bea445e84c94455c235a5b9" => :catalina
     sha256 "55b9b6cb471b312208afddc9bbc9caaf8be6043d2b1cc7e32161633f83e226e5" => :mojave
+    sha256 "f804b33c0cc894c783b0ea2e6a61b3f3e7d6bc0144ba821e47ecb055ec0bd98a" => :x86_64_linux
   end
 
   depends_on "mhash"
