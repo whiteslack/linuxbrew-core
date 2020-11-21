@@ -2,8 +2,8 @@ class Erlang < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/archive/OTP-23.1.3.tar.gz"
-  sha256 "291e0852b71ca593f4015417f6e44c08638633c5af6648bd26582c8590390433"
+  url "https://github.com/erlang/otp/archive/OTP-23.1.4.tar.gz"
+  sha256 "8f6718b82bbca72d7dfe0b0de10b6e043cefe9e5ac08d3f84e18f8522d794967"
   license "Apache-2.0"
   head "https://github.com/erlang/otp.git"
 
@@ -14,10 +14,9 @@ class Erlang < Formula
 
   bottle do
     cellar :any
-    sha256 "98d8d1f6afedc3b680ffeb39abd157bca3965caeb4d7c0b2700908215f19864e" => :big_sur
-    sha256 "be15e140eaf0cb4f42e37feedb8ba69e05fb0849e3bedc48f1da09581a1bb3d0" => :catalina
-    sha256 "a972a8db84e577a77c0b6da689830ca753c2f5f4352f0b70ded496df02d947cf" => :mojave
-    sha256 "594c314592e7359a0ff4f3e95ec3e97dc4406001f3640b88e3191ba731c644c2" => :x86_64_linux
+    sha256 "a67cc8b5464100420fe62d841cf6282381f2534fe77c966cf0b247cddcf69e6b" => :big_sur
+    sha256 "063c056e84246980547fa28cdf07e8dc26cbbec6bed037027d8cd4f98aa2beb8" => :catalina
+    sha256 "f4ae717d26f5a0624351ccf9ec4ec5938a61bc7c99f57c8f6f76e2ea04fc4a43" => :mojave
   end
 
   depends_on "autoconf" => :build
@@ -116,17 +115,3 @@ class Erlang < Formula
     assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output("./factorial 42")
   end
 end
-__END__
-diff --git a/make/configure.in b/make/configure.in
-index bf6ee284343..898aa40c4a0 100644
---- a/make/configure.in
-+++ b/make/configure.in
-@@ -398,7 +398,7 @@ if test $CROSS_COMPILING = no; then
- 	       [1-9][0-9].[0-9])
- 	          int_macosx_version=`echo $macosx_version | sed 's|\([^\.]*\)\.\([^\.]*\)|\10\200|'`;;
- 	       [1-9][0-9].[0-9].[0-9])
--	          int_macosx_version=`echo $macosx_version | sed 's|\([^\.]*\)\.\([^\.]*\)\.\([^\.]*\)|\1\2\3|'`;;
-+	          int_macosx_version=`echo $macosx_version | sed 's|\([^\.]*\)\.\([^\.]*\)\.\([^\.]*\)|\10\20\3|'`;;
- 	       [1-9][0-9].[1-9][0-9])
- 	          int_macosx_version=`echo $macosx_version | sed 's|\([^\.]*\)\.\([^\.]*\)|\1\200|'`;;
- 	       [1-9][0-9].[1-9][0-9].[0-9])
