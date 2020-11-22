@@ -6,20 +6,16 @@ class Awscli < Formula
   url "https://github.com/aws/aws-cli/archive/2.1.1.tar.gz"
   sha256 "650bc1dd125dbb040917d5285f380abe8966369a7c6dd7f0cfc76e7cc18814b2"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    rebuild 1
-    sha256 "42db625ab93904361325dba11a8d3ad66e4db76ae3941adc31f3aaa873d6b57d" => :big_sur
-    sha256 "d62e7fccc80387e1a049eced79146c4971095e13e4781c3e52412038d66ee89c" => :catalina
-    sha256 "01d374cd8bbe91ec3a210c79583f9e327c69af434e008df2e22a39181619447c" => :mojave
-    sha256 "ac21d6fbada76bf72c82a914ed722fc321a8f77ff5e79313259ac7f488b1c6c9" => :x86_64_linux
+    sha256 "e41a65e5f3cac43fabde48a474cf2c7d57938f4c5a9aca8ed0f468a78c2ccfcb" => :big_sur
+    sha256 "7176e096b65343c22d6ebe4bb65b5a952a9fa8289bebc3a9e54386b2baabc807" => :catalina
+    sha256 "2ad9903ae44387e0b81c257be4680d165f3f935bc1d0bd4e73901ce7453bcc6e" => :mojave
   end
 
-  # NOTE: Do not upgrade Python to 3.9+ until awscli officially supports it.
-  # See https://github.com/Homebrew/homebrew-core/issues/63990
-  # and https://github.com/aws/aws-cli/issues/5692.
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   uses_from_macos "groff"
 
@@ -60,7 +56,7 @@ class Awscli < Formula
 
   test do
     assert_match "topics", shell_output("#{bin}/aws help")
-    assert_include Dir["#{libexec}/lib/python3.8/site-packages/awscli/data/*"],
-                   "#{libexec}/lib/python3.8/site-packages/awscli/data/ac.index"
+    assert_include Dir["#{libexec}/lib/python3.9/site-packages/awscli/data/*"],
+                   "#{libexec}/lib/python3.9/site-packages/awscli/data/ac.index"
   end
 end

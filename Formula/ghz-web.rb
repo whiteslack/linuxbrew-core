@@ -1,16 +1,15 @@
 class GhzWeb < Formula
   desc "Web interface for ghz"
   homepage "https://ghz.sh"
-  url "https://github.com/bojand/ghz/archive/v0.63.0.tar.gz"
-  sha256 "2912982c761f8484a3cd23b010a294e8a82515d28b2e33748e7f8b7a36c7979a"
+  url "https://github.com/bojand/ghz/archive/v0.70.0.tar.gz"
+  sha256 "8f7ab2443c61b0c666e9ad629546361d69554a6af8682c0ac323802758c983a4"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2c12c27465339e221637887e8df3e9ee5d233d356d83b23f16ac08e349ed9ba8" => :big_sur
-    sha256 "b4bd57e6d273ce5a79ae570d96a15e363ca9919781c15426cf954b0ffd201a99" => :catalina
-    sha256 "7864bd3a2445e0652b6308127def00944a1b37143a7c2cb303ef5415865fec67" => :mojave
-    sha256 "06f0573cf87aeae143591a6058d09f411e6d89fd3a604c47ee800d9ac50342ab" => :high_sierra
+    sha256 "a6bd71c5bd353eefc9d417767a96399fc9f7151987ff0a791def6aca7685a7b1" => :big_sur
+    sha256 "fc7b27ba50f95410c7717ed744be8554459b2e623272e42bb6502d8b277b3988" => :catalina
+    sha256 "42766bb8cd7d020c754511040f1dcbbbe8361f4e1cbce66e7cb6ddc76a45cea1" => :mojave
   end
 
   depends_on "go" => :build

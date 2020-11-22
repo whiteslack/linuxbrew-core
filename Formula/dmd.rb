@@ -4,32 +4,29 @@ class Dmd < Formula
   license "BSL-1.0"
 
   stable do
-    url "https://github.com/dlang/dmd/archive/v2.094.1.tar.gz"
-    sha256 "63271e939dbe5c39e866074b97f53c515c2b9161fcae9bae1df3b38924b0098d"
+    url "https://github.com/dlang/dmd/archive/v2.094.2.tar.gz"
+    sha256 "0f7406cf45b5fb36f2ec8cc4454398302f0131853b6ff1c9d4c8133d0dc5904a"
 
     resource "druntime" do
-      url "https://github.com/dlang/druntime/archive/v2.094.1.tar.gz"
-      sha256 "4bd91e438996363ec62f0b72392fa88f9d53ee73c51bea1c3be1ae97bd28d30c"
+      url "https://github.com/dlang/druntime/archive/v2.094.2.tar.gz"
+      sha256 "e0872190136cafe0c4c78ebc8750759eabf43f5af714c5619f4499ae3385a6e7"
     end
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/v2.094.1.tar.gz"
-      sha256 "e84536c538f47247d4803a9d2163f32e4b1e03acac090fa195a77083147c556f"
+      url "https://github.com/dlang/phobos/archive/v2.094.2.tar.gz"
+      sha256 "efc9fe827a480521df2a9391170d733320b0d78ae679592821d551fd76968801"
     end
 
     resource "tools" do
-      url "https://github.com/dlang/tools/archive/v2.094.1.tar.gz"
-      sha256 "5cf52d884b2951de9f27b9a6429133b9f60d103599349b49717d9172d6e97dfa"
+      url "https://github.com/dlang/tools/archive/v2.094.2.tar.gz"
+      sha256 "eed24c4b10035d52e4de6edf48199b8310c01e2d51e369562e7e3445eeea8574"
     end
   end
 
   bottle do
-    rebuild 1
-    sha256 "d3e2451ad512f6201db49c6a0cca0a78ed4f0651a2169acf6dae0bba0328130b" => :big_sur
-    sha256 "093076f19bfb6318241800aff24c6ba78a743e4ea28b13454d375b79de7da71f" => :catalina
-    sha256 "e3fd5e418d448bebcead72a1f4cc0dea9edbeb2615be05561e821a3ee7ffca26" => :mojave
-    sha256 "07b2d68d37fb32f0f4409a840a92fa084ec3623e5ebca5b54c4e0df589e44b28" => :high_sierra
-    sha256 "9adcb76599274de449b4fb9254f4d7c10c493e9350f183288d4b69e6282d0ca7" => :x86_64_linux
+    sha256 "2e9456d05fbcda78e4b2a7dbd56ba423a36ff06b754c80a15c4a1b483ed484bd" => :big_sur
+    sha256 "4524e9544890a56bcac7adf0928f91fc918c438d6a174fe4c97d7808c4b80412" => :catalina
+    sha256 "7a8683ad4e9c67dbcd9f0851ae677649150620d1a167a9901ec1bab69f941581" => :mojave
   end
 
   head do
