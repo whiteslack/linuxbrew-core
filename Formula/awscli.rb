@@ -13,6 +13,7 @@ class Awscli < Formula
     sha256 "e41a65e5f3cac43fabde48a474cf2c7d57938f4c5a9aca8ed0f468a78c2ccfcb" => :big_sur
     sha256 "7176e096b65343c22d6ebe4bb65b5a952a9fa8289bebc3a9e54386b2baabc807" => :catalina
     sha256 "2ad9903ae44387e0b81c257be4680d165f3f935bc1d0bd4e73901ce7453bcc6e" => :mojave
+    sha256 "389ae2960f4bf66c6b166b7ece87dfa705dbdd647ea12c950762337f80e69409" => :x86_64_linux
   end
 
   depends_on "python@3.9"
