@@ -8,6 +8,7 @@ class Menhir < Formula
     sha256 "52b75403ba8020c4b2005c6bf57a335efd93e31f7f860fc9d0f421f46e222090" => :big_sur
     sha256 "603e059bbea3fa6b4e2c8b08ba28b51c613fbc2cd9678b35f0383839362e12c5" => :catalina
     sha256 "1bb5089c7b12ad0a8fbf344b491854f9e394ba097d825c6470b86bb0375d0250" => :mojave
+    sha256 "0e2e3e7a93fbb78980c64ce6999537c2717a11c19804dfb3512db78a16216dfe" => :x86_64_linux
   end
 
   depends_on "dune" => :build
