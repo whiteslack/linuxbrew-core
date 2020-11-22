@@ -14,6 +14,7 @@ class DfuUtil < Formula
     sha256 "1e960a2b57fd6fa0fbfe5a9bb7aa0e35e24664ee65d686eb8fbef724152bc0d0" => :big_sur
     sha256 "3baa1c97498ad73a60b12c1d1ffa192a9b57946be6ced7ab826f3e1135113a74" => :catalina
     sha256 "6bc199867512701a02e09aeea49adfefb5d38f413e8401b35025a827fbcc4036" => :mojave
+    sha256 "b10410f815b71ca7afe2770706d6d89baa8ca590b543936870436ea3a41736f7" => :x86_64_linux
   end
 
   head do
