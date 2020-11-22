@@ -13,6 +13,7 @@ class Awscli < Formula
     sha256 "42db625ab93904361325dba11a8d3ad66e4db76ae3941adc31f3aaa873d6b57d" => :big_sur
     sha256 "d62e7fccc80387e1a049eced79146c4971095e13e4781c3e52412038d66ee89c" => :catalina
     sha256 "01d374cd8bbe91ec3a210c79583f9e327c69af434e008df2e22a39181619447c" => :mojave
+    sha256 "ac21d6fbada76bf72c82a914ed722fc321a8f77ff5e79313259ac7f488b1c6c9" => :x86_64_linux
   end
 
   # NOTE: Do not upgrade Python to 3.9+ until awscli officially supports it.
