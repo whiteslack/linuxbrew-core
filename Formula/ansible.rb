@@ -6,7 +6,7 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/9c/f4/c156b10d7ae90ba6b99b1b126f7d30628adc1e733a6fbd63569852948f21/ansible-2.10.3.tar.gz"
   sha256 "eb1d08b9b98a60e90e7123a12f40770780f29f9d73168da55d449106a9f4d348"
   license "GPL-3.0-or-later"
-  revision 1 unless OS.mac?
+  revision OS.mac? ? 1 : 2
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   livecheck do
@@ -15,11 +15,9 @@ class Ansible < Formula
 
   bottle do
     cellar :any
-    sha256 "0f54f43162a64100980711b81caeaf535be955e7554e244b58e7091744ac030a" => :big_sur
-    sha256 "e224ba5e23dca028f2dfebab76d2f3032f08c9c8683359c818329ccbdf2fdfd8" => :catalina
-    sha256 "6cef7d191a418c6754941bd716bc9f3a0ee9f2c3ee43b702384ddaa9f905225c" => :mojave
-    sha256 "c4a763a3e12ee1bb38e5e3660a0979f2c4c86073c385006f37f048ffa95efc81" => :high_sierra
-    sha256 "9b056023d0e201d30a35f5ec828a0c7cf55a5741367fb38e340e38e00064a807" => :x86_64_linux
+    sha256 "bccc1cdb7938643294de525018c130dc5c0ef2b5aa3590230920af2ca434511d" => :big_sur
+    sha256 "0079aa8e1548e9027c6d3a0e88ffa6d5816d0f88a68b24e3fe3704bf7b8ddc34" => :catalina
+    sha256 "3d994c03f745c38a953a2663cf81479c2ba00630f3b0c7b53a10a35b0d8620a3" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -693,6 +691,10 @@ class Ansible < Formula
     # Also: https://github.com/Homebrew/brew/pull/1709
     Pathname.glob(libexec/"lib/python*/site-packages/prettytable-0.7.2-py*.egg-info").each do |prettytable_path|
       chmod_R("a+r", prettytable_path)
+    end
+
+    resource("ansible-base").stage do
+      man1.install Dir["docs/man/man1/*.1"]
     end
   end
 

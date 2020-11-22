@@ -1,8 +1,8 @@
 class Memcached < Formula
   desc "High performance, distributed memory object caching system"
   homepage "https://memcached.org/"
-  url "https://www.memcached.org/files/memcached-1.6.8.tar.gz"
-  sha256 "e23b3a11f6ff52ac04ae5ea2e287052ce58fd1eadd394622eb65c3598fcd7939"
+  url "https://www.memcached.org/files/memcached-1.6.9.tar.gz"
+  sha256 "d5a62ce377314dbffdb37c4467e7763e3abae376a16171e613cbe69956f092d1"
   license "BSD-3-Clause"
   head "https://github.com/memcached/memcached.git"
 
@@ -13,11 +13,9 @@ class Memcached < Formula
 
   bottle do
     cellar :any
-    sha256 "eb5dea7075c3c756f4120f196b0c4eab3e9ae6eae9c3f842aceb9bff6fc08e03" => :big_sur
-    sha256 "af5af01dea115fbcf909f452ba9fcfed0ce04717d38eb2a5642aecf076e0553d" => :catalina
-    sha256 "78dc84a2c1b40edce260c284995d6931abef2ac5c0857579e381964766163353" => :mojave
-    sha256 "7284490f150c2fe7ef0add1915832373ba7777fea73a413fbea8ce40a96637fb" => :high_sierra
-    sha256 "11b6c1fba7a4e1b7734da222841dcd764cae8da7a3b765e7a8129f4243dd1270" => :x86_64_linux
+    sha256 "147059ed93b823666bfd59911d7c2ccc51081b16a49ac72edf50efe7beedadc7" => :big_sur
+    sha256 "b816ef4b112d8a01b0b6c1fbf05b2eb4577640e2712ad6c0ce0e87899e246d9a" => :catalina
+    sha256 "e307cfaa852e8fcda1210aadbfa07cb0331640ec7c930e03ac0cc2e98736d70d" => :mojave
   end
 
   depends_on "libevent"

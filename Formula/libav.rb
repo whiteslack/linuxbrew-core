@@ -3,8 +3,8 @@ class Libav < Formula
   homepage "https://libav.org/"
   url "https://libav.org/releases/libav-12.3.tar.xz"
   sha256 "6893cdbd7bc4b62f5d8fd6593c8e0a62babb53e323fbc7124db3658d04ab443b"
-  license "GPL-2.0"
-  revision 7
+  license "GPL-2.0-or-later"
+  revision 8
   head "https://git.libav.org/libav.git"
 
   livecheck do
@@ -14,11 +14,12 @@ class Libav < Formula
 
   bottle do
     cellar :any
-    sha256 "bc4f13de926046fac2512ef7924600b196ef0d4da72e2f32bed6541aeb471786" => :big_sur
-    sha256 "5c69b6c9b6a43ecb3db3e5cb4a610cfd50afdca964cbacbd30622fb89241aaaf" => :catalina
-    sha256 "30f9831bae193d6a9716e8e3aed399dfd8d62189079d91b5c4dfb893904a213f" => :mojave
-    sha256 "02fa538e8c123a074967d4b4c8e122c167761d4c6425ed5061a1d15cf47945a7" => :high_sierra
+    sha256 "0bd97c8c39f11b5b29d5c271a28eb4ea4a40b4062a4331f8d97f738c9a82fb05" => :big_sur
+    sha256 "fcfafef0bb5eeee417c1d69d8ddb1fe0d7a8f8fe70edf39b8499a0df841f6905" => :catalina
+    sha256 "f71b7acc7dd972d60176b7d6c9bfe247181867d98ff991d771dcff54a6beace5" => :mojave
   end
+
+  deprecate! date: "2019-04-16", because: :unmaintained
 
   depends_on "pkg-config" => :build
   # manpages won't be built without texi2html
@@ -36,6 +37,13 @@ class Libav < Formula
   depends_on "theora"
   depends_on "x264"
   depends_on "xvid"
+
+  # Cherry-picked hunk from https://github.com/libav/libav/commit/fe7bc1f16abaefe66d8a20f734ca3eb8a4ce4d43
+  # (second hunk in above commit conflicts with released source)
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/e07f287/libav/remove_unconditional_X11_probe.patch"
+    sha256 "093364c5cb0d79fb80566b5b466e6e8877d01c70e32b6f8ad624205005caba26"
+  end
 
   # https://bugzilla.libav.org/show_bug.cgi?id=1033
   patch do
@@ -82,6 +90,9 @@ class Libav < Formula
       --enable-vda
       --enable-version3
       --enable-libtheora
+      --disable-libxcb
+      --disable-vaapi
+      --disable-vdpau
     ]
 
     system "./configure", *args

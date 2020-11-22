@@ -1,17 +1,15 @@
 class Cglm < Formula
   desc "Optimized OpenGL/Graphics Math (glm) for C"
   homepage "https://github.com/recp/cglm"
-  url "https://github.com/recp/cglm/archive/v0.7.8.tar.gz"
-  sha256 "9aa78279c61f11e8a4405d1817e6472610922c9eec50f64d6ca924eadd3d421d"
+  url "https://github.com/recp/cglm/archive/v0.7.9.tar.gz"
+  sha256 "c96dd8a6f1d9aedb7ac02fe6bafd2a3a625a19e62bc18d455faf9c6825e9bd7b"
   license "MIT"
 
   bottle do
     cellar :any
-    sha256 "5a82913bc12d9106e5906b9a8cfb25ec58d8203af017250830b19be561ca94a1" => :big_sur
-    sha256 "0d34e1e16795ee82e32ffd6cfd049a99b6f47023830ca652678413c9624af843" => :catalina
-    sha256 "e91b55ad88e12eec50cf3f605b6ff64d8609bfda9562c65bb0b4224ad2b6c5c4" => :mojave
-    sha256 "7ef296d5928ff6aa279c3f959c64553d63967a2dea3077a30def78783e21f5a0" => :high_sierra
-    sha256 "6de93d11874e87f58e9193abc665b90c2efcd562ce94fbbfe801d7beefbb6de2" => :x86_64_linux
+    sha256 "200eed2ddec2f9b1bd83389a028a87f33f1e21f189113e73d1b07827b68f1d5c" => :big_sur
+    sha256 "9da6d7be20925e8e0cbb7d1fc0faa43a15fb00063d9f7b8123ce19a8eabfb1a9" => :catalina
+    sha256 "096de5d9570f52485674b349e763f53f1939240d3e6596444b6ac7a0daf6aa39" => :mojave
   end
 
   depends_on "autoconf" => :build
