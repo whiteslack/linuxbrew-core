@@ -2,8 +2,8 @@ class Moarvm < Formula
   desc "Virtual machine for NQP and Rakudo Perl 6"
   homepage "https://moarvm.org"
   # NOTE: Please keep these values in sync with nqp & rakudo when updating.
-  url "https://github.com/MoarVM/MoarVM/releases/download/2020.10/MoarVM-2020.10.tar.gz"
-  sha256 "637883083f16c4398ffd3685ea6411daa605dd0862e1f59cce632bb2b994f2c4"
+  url "https://github.com/MoarVM/MoarVM/releases/download/2020.11/MoarVM-2020.11.tar.gz"
+  sha256 "6d028273b6ed5ba7b972e7b3f2681ce1deff1897ebdf7bcd5cfcd1e7c2fec384"
   license "Artistic-2.0"
 
   livecheck do
@@ -12,10 +12,9 @@ class Moarvm < Formula
   end
 
   bottle do
-    sha256 "de33bc641ebbb24d5b74737afc5b9fb2f22254cf9d146782fc97ca6b834a984f" => :big_sur
-    sha256 "9e3146b60581d3f77792baf04ba3bfd521ac03c75d64f43cd60d2bf776ad2c85" => :catalina
-    sha256 "48ab812e389f573f85f334ed21067518ee88df8143c968ff1c9268f8959cf326" => :mojave
-    sha256 "0d93427bbe00240c7146228aedd6c5dbf7d0b987b1397aeb2be8ee0627aad556" => :high_sierra
+    sha256 "594d181a78097b848f2a488eb25f3a9274b12f54bdc546cc165c741e617df0ba" => :big_sur
+    sha256 "f012d9ed40ea2ee121057fbf07799a5bec307d0af7524c2d973d30a32c8fcced" => :catalina
+    sha256 "c478335cb67dd1c5388c20abebafb7174a3280687dd6cb4c2b9d022f7c9b1736" => :mojave
   end
 
   depends_on "libatomic_ops"
@@ -26,8 +25,8 @@ class Moarvm < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with moarvm included"
 
   resource "nqp" do
-    url "https://github.com/perl6/nqp/releases/download/2020.10/nqp-2020.10.tar.gz"
-    sha256 "100c74c8a81117040c3a1b85ac99312008753c17faeeab7d69998bcf7cdb6059"
+    url "https://github.com/perl6/nqp/releases/download/2020.11/nqp-2020.11.tar.gz"
+    sha256 "7985f587c43801650316745f055cb5fc3f9063c5bb34de5ae695d76518ad900f"
   end
 
   def install

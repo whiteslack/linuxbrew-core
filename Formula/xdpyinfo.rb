@@ -7,10 +7,10 @@ class Xdpyinfo < Formula
 
   bottle do
     cellar :any
-    sha256 "d0bfd330052a61271d604640de4f6e44b277a41ab8eec0cc9b6c5a75e649002a" => :catalina
-    sha256 "b14c61c161037be3f2913d6a7ffcdc3bc415f244718d813608c866602d9fd198" => :mojave
-    sha256 "6e069524d654b3f89ec300b5516b12360e2f713786f01a2597e7210c18b69dcf" => :high_sierra
-    sha256 "a7f410a5e12cd066f40135563a5f06e5edebb0232b86ea01cb0cc77b48f108c3" => :x86_64_linux
+    rebuild 1
+    sha256 "128f9ce7c4fad4a7bdc313c02c7c2324fa311845cc6ccaf9e19cc835bbef83e6" => :big_sur
+    sha256 "dfb295a0259be51cd1ec75a16bda4582608569ad098a37ad257818616f70b81e" => :catalina
+    sha256 "2f9c704633a4a7d7df952f4874a16bae0cc8890e6ba1fdf7cd1654bb4cad01c7" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -35,6 +35,6 @@ class Xdpyinfo < Formula
   test do
     return unless OS.mac?
 
-    assert_match /version number:\s+11.0/, shell_output("xdpyinfo")
+    assert_match("xdpyinfo #{version}", shell_output("DISPLAY= xdpyinfo -version 2>&1"))
   end
 end
