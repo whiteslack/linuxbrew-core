@@ -9,6 +9,7 @@ class Abcm2ps < Formula
     sha256 "2875a3976c83ad90ca731964fabfd916e19722e6529c8e980888af8bcaa3eabc" => :big_sur
     sha256 "7d4808a96ed60bd03b0630e089d4efe79f926c2fd040aa94de2ce7cd444e80c5" => :catalina
     sha256 "1d7083b0d688d338986406c21a4936d460e43233fe321afb020cc62d390b557b" => :mojave
+    sha256 "ea4c600effe857120aceb24cc1e49d553aafe6d5c77c95053e2df3ca2ba9b5ee" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
