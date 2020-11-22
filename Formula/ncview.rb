@@ -21,6 +21,7 @@ class Ncview < Formula
     sha256 "62940cf53207de388e665e1d1376e48c684af71732422fff53c5ab660be55648" => :big_sur
     sha256 "cd138ec52b70136fc6593d390a384490921b5cdfea173396e776f10f2fbc8466" => :catalina
     sha256 "17d275efffcb75749da6a8ad011fcc675e2db41b57fd1948e4a7951a1495aa08" => :mojave
+    sha256 "efedcbfe66fa8450f9e0de2b041a03fb0d26f3a5c4df65b45d5bea516e9ba19e" => :x86_64_linux
   end
 
   depends_on "libice"
