@@ -7,11 +7,10 @@ class Cheat < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "3672ea47c80e0bde75aaa322e19c56e8fca97ec02e5de38fd307891dba7d9856" => :big_sur
-    sha256 "c8157571d901d5b1a92214a29e70202829f1a336523782a1f63fc8ccce520a96" => :catalina
-    sha256 "aa58b40807dbee5f5127a66f5fa0b244da42344d88ceb67dd0ee8d03e1915618" => :mojave
-    sha256 "d0f7dbb233a37fffa2c76fd3bded84af3f6a95d5a56bc1bd0e36551dbbe8c9b8" => :high_sierra
-    sha256 "79a383ae9148252d7d66b00d056c91e6bf3d1391042f8dede0def1ce5ccd8c05" => :x86_64_linux
+    rebuild 1
+    sha256 "d699a1d48fe05098f3f85824aded41a1627a0a7cd7931dc3aaf231e9e22159f8" => :big_sur
+    sha256 "388447437190028ecd75df89cd5eb14c73a0a0fd9a8892c249293f44f037d2a7" => :catalina
+    sha256 "d9464021001b8f486b0465fb7ae89f77c9f1d8415b2551887a23970584f36356" => :mojave
   end
 
   depends_on "go" => :build
@@ -23,6 +22,7 @@ class Cheat < Formula
 
     bash_completion.install "scripts/cheat.bash"
     fish_completion.install "scripts/cheat.fish"
+    zsh_completion.install "scripts/cheat.zsh"
   end
 
   test do

@@ -1,16 +1,15 @@
 class Neomutt < Formula
   desc "E-mail reader with support for Notmuch, NNTP and much more"
   homepage "https://neomutt.org/"
-  url "https://github.com/neomutt/neomutt/archive/20200925.tar.gz"
-  sha256 "dcec98ea2454d7695ff92184c33a0051c2b3c46320f81f7889c4580c943140dd"
+  url "https://github.com/neomutt/neomutt/archive/20201120.tar.gz"
+  sha256 "48191d4f17cb1e5fd094ca92c581e1bb9599f058c122cc0e35df4e1c0cb53f47"
   license "GPL-2.0-or-later"
   head "https://github.com/neomutt/neomutt.git"
 
   bottle do
-    sha256 "5c4977430b85cd9123c671bd8f70d34579730187f927a6e13112ec8727e04b49" => :big_sur
-    sha256 "bb9829de2249a318f926a8f435ece8731f1534c58fb0256ca34409bbb22c42fe" => :catalina
-    sha256 "79dff03b1a3485f63c0d2affd5327d70246e72707a0c66830ff871a591bb8300" => :mojave
-    sha256 "a5fb829bdcf7cdc5925339fe37bdcdfbd1f4fdbb9d000b73592fe75c5d00ee53" => :high_sierra
+    sha256 "95751693f3db390b039e0051f81b0d93a828219632c5dc7f73270d6023581c2d" => :big_sur
+    sha256 "62fe4c4eb74ac893df26d8261a37cf79087125564f656c3f188174dcc070adb9" => :catalina
+    sha256 "1acc6a05c446cd34608fec368037fe44744fa12b1fd1361e6be84ba348c4ebf3" => :mojave
   end
 
   depends_on "docbook-xsl" => :build

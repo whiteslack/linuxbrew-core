@@ -9,14 +9,16 @@ class Awscli < Formula
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 "c421b3c811189cb1133e2880fd07336ef7c1871c8376b8fe4b2127f2d05fc386" => :big_sur
-    sha256 "fcd558b100a42b5401932845ce7588b6f70be411a34684a243355bf5dae8dcc8" => :catalina
-    sha256 "4e6ae917c968791d0f8cc4dfce4c4d7ae1782121929497120302638ae2638e11" => :mojave
-    sha256 "bdfa90c8a378d555a18fd56a35feb8a9458bc7826f51140ad3ddb5d834054773" => :high_sierra
-    sha256 "bc6af8ced452ace81630de18ca4800d7df26c99b867b6a8efb8db2e58d18ec04" => :x86_64_linux
+    rebuild 1
+    sha256 "42db625ab93904361325dba11a8d3ad66e4db76ae3941adc31f3aaa873d6b57d" => :big_sur
+    sha256 "d62e7fccc80387e1a049eced79146c4971095e13e4781c3e52412038d66ee89c" => :catalina
+    sha256 "01d374cd8bbe91ec3a210c79583f9e327c69af434e008df2e22a39181619447c" => :mojave
   end
 
-  depends_on "python@3.9"
+  # NOTE: Do not upgrade Python to 3.9+ until awscli officially supports it.
+  # See https://github.com/Homebrew/homebrew-core/issues/63990
+  # and https://github.com/aws/aws-cli/issues/5692.
+  depends_on "python@3.8"
 
   uses_from_macos "groff"
 
@@ -57,7 +59,7 @@ class Awscli < Formula
 
   test do
     assert_match "topics", shell_output("#{bin}/aws help")
-    assert_include Dir["#{libexec}/lib/python3.9/site-packages/awscli/data/*"],
-                   "#{libexec}/lib/python3.9/site-packages/awscli/data/ac.index"
+    assert_include Dir["#{libexec}/lib/python3.8/site-packages/awscli/data/*"],
+                   "#{libexec}/lib/python3.8/site-packages/awscli/data/ac.index"
   end
 end

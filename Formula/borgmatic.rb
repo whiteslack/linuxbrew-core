@@ -3,8 +3,8 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/da/d3/1ea233281e352104200798a44dc2201da8eeb453cf6e51b55f0674869fdc/borgmatic-1.5.11.tar.gz"
-  sha256 "46a888f9dc503e70bb2a8c194371ebced2df997709359186d3e6cba41e555101"
+  url "https://files.pythonhosted.org/packages/b8/f6/ab3ab90ab10bec6e0b24d59966bcc11fd07c2e05b48a8f4e5953cc527800/borgmatic-1.5.12.tar.gz"
+  sha256 "5cb6c126f351987f16f529ce8c5ef351b6b3458142316e9210edb028dff65536"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,10 +13,9 @@ class Borgmatic < Formula
 
   bottle do
     cellar :any
-    sha256 "374f261378ad88b45192b636db1581cf9cafba95850ab05b4800aeb958173528" => :big_sur
-    sha256 "b1a275aff660467fc6742fe4dc8df1ed7a0f218a4a1626dd84bda4b5b7703650" => :catalina
-    sha256 "52a8c00ff5334d2b4e36c519d383a0529ddc9e73b52dc7cb3d9fb41791cf6baa" => :mojave
-    sha256 "ddc184e5725324226100c624a7cbc2f747f1fb7292dd01179d6b94078b1fa396" => :x86_64_linux
+    sha256 "875035ec5d79c0641ef5a86ad7f41d79b9e965a90a2a9a822881cce3c318b14c" => :big_sur
+    sha256 "23676967eec18bcf94d54357eef710b94274b2b988a576eb933c2823da418bcc" => :catalina
+    sha256 "61eb64ccf14eca1e09de11aa94adfa64190354fb58b1f66eebcca0f71661bedf" => :mojave
   end
 
   depends_on "libyaml"
