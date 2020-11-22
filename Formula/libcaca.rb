@@ -24,6 +24,7 @@ class Libcaca < Formula
     sha256 "b05fb9698cfdc95696c1fa80d9b72fabd2a45372de83116f61707d7bff1cb38b" => :big_sur
     sha256 "621026d8276dd31c1464ed1fd688aac04841336b6e686ee122b9cc760a8a255f" => :catalina
     sha256 "7474fbf03e949d693c4ac8f601df4b40baa05094491438d7e2ce77df1e974d58" => :mojave
+    sha256 "94ef90b95bdde0ef5fd028fa16aaca8b8734ca7ebf6f94af99a3b7213e33699c" => :x86_64_linux
   end
 
   head do
