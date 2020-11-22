@@ -14,6 +14,7 @@ class Glibmm < Formula
     sha256 "567122ba26a6bd7858ecc9f756db191de80f2f4a717807054f8df4b80cd81abb" => :big_sur
     sha256 "436cb5e606614dcafe54f5792ab8c8e1ad9f20ca9f7c3c9dbc926199019f7d4e" => :catalina
     sha256 "b6c578734d7d68e3696305398cd43ddcc1a97aa51577ac87e57dce709d63575a" => :mojave
+    sha256 "2fe200d3c038a9a142f24830ba878fb42d03406e9ba48471286e4027e3d3d511" => :x86_64_linux
   end
 
   depends_on "meson" => :build
