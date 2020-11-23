@@ -11,6 +11,7 @@ class Ccache < Formula
     sha256 "ba8c28a2cc2a76753263e785ea4055bb0859cf1b966015755fb025335d7c21fa" => :big_sur
     sha256 "234a4d2ba07206b539a347adff99f283da2bf219775e30da5567140cbd7c4fdf" => :catalina
     sha256 "bd87ccc67069931f9a4b1833c6ac97f9168425fc4b5680d152f18b64cd87e825" => :mojave
+    sha256 "f15c38b59ebef9b2f3edcf620a39fa20b501ab2571556b55588eb7650e488154" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
