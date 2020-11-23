@@ -14,6 +14,7 @@ class Yaf < Formula
     sha256 "381c026a049cd90821c57cb05e97f66d1fd949c9e794578f9fa768132f67342d" => :big_sur
     sha256 "01a829d4aeb5fb22bee1fdf36859a514724ad593948301c195dd5dfc84b80168" => :catalina
     sha256 "72647a3208e653d43e51ff6539b9853e08ec8960cc5cda8820e9e750e4f37c9f" => :mojave
+    sha256 "3b9a14509e9b78f318861f8b0ea443881a55a05452b4a54bfc16d0299c64f32a" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
