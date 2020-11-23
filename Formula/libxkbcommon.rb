@@ -10,6 +10,7 @@ class Libxkbcommon < Formula
     sha256 "d4e9211bfc902cd0a6372a6473085f038fa2d3e6c05c1b0702b0d4d58c0b7927" => :big_sur
     sha256 "0748e8b4cce032d324934a8f59dc15e6b8d1f36b1f25279b51322ce2251cd117" => :catalina
     sha256 "43ef3c8d208439a768824fcaed0227e9ce4cafb18c983308d4711cf318a0b307" => :mojave
+    sha256 "c0835c3f9ba07507d629d271c5eeda87b4a4cd345d7ff56faaf4f7859dd383a8" => :x86_64_linux
   end
 
   depends_on "bison" => :build
