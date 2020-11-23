@@ -15,6 +15,7 @@ class Libewf < Formula
     sha256 "d724c07aa4e7e063e0e065f91f9234cbe951be8888c4f9bdb9989698cfda0b6f" => :big_sur
     sha256 "ebe6e340255e59bff651b4e59807c45e279ec3d2058e308e147567f0a7d394b8" => :catalina
     sha256 "a74019c27df3e7e6a16b54c32c7dd9ed3f5eba83d31269647098f21b2fc4e788" => :mojave
+    sha256 "6c5acc3fce7e0031cdff5d344ac25f92687e72ba6c124b218f009da0d038b577" => :x86_64_linux
   end
 
   head do
