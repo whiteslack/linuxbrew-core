@@ -1,11 +1,10 @@
 class Automake < Formula
   desc "Tool for generating GNU Standards-compliant Makefiles"
   homepage "https://www.gnu.org/software/automake/"
-  url "https://ftp.gnu.org/gnu/automake/automake-1.16.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/automake/automake-1.16.2.tar.xz"
-  sha256 "ccc459de3d710e066ab9e12d2f119bd164a08c9341ca24ba22c9adaa179eedd0"
+  url "https://ftp.gnu.org/gnu/automake/automake-1.16.3.tar.xz"
+  mirror "https://ftpmirror.gnu.org/automake/automake-1.16.3.tar.xz"
+  sha256 "ff2bf7656c4d1c6fdda3b8bebb21f09153a736bcba169aaf65eab25fa113bf3a"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,11 +12,9 @@ class Automake < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6f98db151098a67eb547f0853bb8ea72af895c2443a9171e7576c47871ac18f7" => :big_sur
-    sha256 "06c47bab91fc9c8a912a162f02fbf4c6d03b75820110250d2408e694bacd8236" => :catalina
-    sha256 "4b120878f02328e006cb51c2456f5ff26e8c5ad5688ac00fada4a53e72479ce6" => :mojave
-    sha256 "4a98437a54592391f677ecea0bbac02f823e7f3168b9a782067cca9aa8f78b4e" => :high_sierra
-    sha256 "fcfa33d54ab0ad4ff392771cb5d13aa5fc38b2e57fc070cbcd5322482f0b3190" => :x86_64_linux
+    sha256 "b19be0f4672d3ed2c258eee5f676d27429e5da189c80dc04ba8d01bc44ead320" => :big_sur
+    sha256 "25fe47e5fb1af734423e1e73f0dc53637e89d825ef8d8199add239352b5b974e" => :catalina
+    sha256 "6e25193e573d0e11376322018c9cdf96ddd68ad7e4fe7bb464212380d5e6b9cf" => :mojave
   end
 
   depends_on "autoconf"

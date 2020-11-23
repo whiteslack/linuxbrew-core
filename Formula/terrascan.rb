@@ -1,18 +1,16 @@
 class Terrascan < Formula
   desc "Detect compliance and security violations across Infrastructure as Code"
   homepage "https://www.accurics.com/products/terrascan/"
-  url "https://github.com/accurics/terrascan/archive/v1.1.0.tar.gz"
-  sha256 "4ebca4331c69fb4e11ffbe2699e19ba4354d51b597cbad5188dd39331230f8cb"
+  url "https://github.com/accurics/terrascan/archive/v1.2.0.tar.gz"
+  sha256 "8e9daa4e3b1a1e93d12925fe4facb8171f534dece6742c23ebb9049bf3dd739e"
   license "Apache-2.0"
   head "https://github.com/accurics/terrascan.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "cbeda415a8e6f7a4882de4af5b8ebf4d2cc1e9db7741ce2bf75d58c2305191c3" => :big_sur
-    sha256 "58d110ee51c8c910cf09561aec034fd7bd8c149159fb91b9da9fc93506c0fc2c" => :catalina
-    sha256 "88665e1348a8d54a64fb902718f055727d744127707eb0bda18ce699202e4206" => :mojave
-    sha256 "2d94a5b1142130bd73c3b38e1989c0b5401f248d3876cf44fa86f20045adc27a" => :high_sierra
-    sha256 "3f4b64387e0a34daba98dd50b2203ff10676ad981b55a2920563a6dc11f676b6" => :x86_64_linux
+    sha256 "911488ef4e334a7496edeb386a656bb8b5aa48de81c2ace70ea22cd857e79289" => :big_sur
+    sha256 "3d66e898e68386b23fae88df32df00a46ec1a03d1431c36aeadc96e3a233b52d" => :catalina
+    sha256 "6337a9985ded331f613fa958daf4d444feba3174d127997b6120891817afb1fb" => :mojave
   end
 
   depends_on "go" => :build
@@ -38,12 +36,12 @@ class Terrascan < Formula
 
     expected = <<~EOS
       results:
-        violations: []
-        count:
-          low: 0
-          medium: 0
-          high: 0
-          total: 0
+          violations: []
+          count:
+              low: 0
+              medium: 0
+              high: 0
+              total: 0
     EOS
 
     assert_match expected, shell_output("#{bin}/terrascan scan -f ami.tf -t aws")

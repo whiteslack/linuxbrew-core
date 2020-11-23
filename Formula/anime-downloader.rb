@@ -3,8 +3,8 @@ class AnimeDownloader < Formula
 
   desc "Download your favourite anime"
   homepage "https://github.com/vn-ki/anime-downloader"
-  url "https://files.pythonhosted.org/packages/8b/54/def46a9f9c05c89f8c4080d7df0aba2636bbadd4d1c4624e3a7be704a5d9/anime-downloader-5.0.2.tar.gz"
-  sha256 "c6a117826d6f67986f0c325c06eeca787493a7ee1cc75a4a21fc7eca67c261aa"
+  url "https://files.pythonhosted.org/packages/4d/b7/bbce23390d0721d7627dc8e98814beb12b72b0b5a3404ac517d536ecdfa5/anime-downloader-5.0.4.tar.gz"
+  sha256 "6be879e4079f7b4f3fc32fd4df5c1d80e0cb91df6452b6356c5078a69d3bf7b2"
   license "Unlicense"
   head "https://github.com/vn-ki/anime-downloader.git"
 
@@ -14,11 +14,9 @@ class AnimeDownloader < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "31d063b8eb6f5f793c5c25481278138826dc60fbd95f8ad3e32f92fdbab1cbb1" => :big_sur
-    sha256 "81ebb78d59a4cfb98e73214633968dfa7fbcd249d7d0431104cb04c69e8761f1" => :catalina
-    sha256 "0f6e247324ea4026a77631b2ced4391afa4c763d6ad744ffa52fe155a49a55b5" => :mojave
-    sha256 "14611002f9a4312230cb942fc361f0367fa09aa345a9a42eb285f0dfe3e157cd" => :high_sierra
-    sha256 "07c91597a0697dd2381ef0c4bc4cdf3cbe0b0d38c896fb919384449d4df0eca0" => :x86_64_linux
+    sha256 "788be6b27c362716fab7a0ceb0b6b73049af03dc40139abaf83ac44e34b0ecca" => :big_sur
+    sha256 "dc0f0e4f2359590085cef6882cf99c50f40ccd83137abc660e4f6012a7ea460d" => :catalina
+    sha256 "20cbbf186cdf0e5249381c3b6743d4489af65557363c7602bad8ab1708fb0455" => :mojave
   end
 
   depends_on "aria2"
@@ -31,8 +29,8 @@ class AnimeDownloader < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/40/a7/ded59fa294b85ca206082306bba75469a38ea1c7d44ea7e1d64f5443d67a/certifi-2020.6.20.tar.gz"
-    sha256 "5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3"
+    url "https://files.pythonhosted.org/packages/e6/de/879cf857ae6f890dfa23c3d6239814c5471936b618c8fb0c8732ad5da885/certifi-2020.11.8.tar.gz"
+    sha256 "f05def092c44fbf25834a51509ef6e631dc19765ab8a57b4e7ab85531f0a9cf4"
   end
 
   resource "cfscrape" do
@@ -81,8 +79,8 @@ class AnimeDownloader < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/da/67/672b422d9daf07365259958912ba533a0ecab839d4084c487a5fe9a5405f/requests-2.24.0.tar.gz"
-    sha256 "b3559a131db72c33ee969480840fff4bb6dd111de7dd27c8ee1f820f4f00231b"
+    url "https://files.pythonhosted.org/packages/9f/14/4a6542a078773957aa83101336375c9597e6fe5889d20abda9c38f9f3ff2/requests-2.25.0.tar.gz"
+    sha256 "7f1a0b932f4a60a1a65caa4263921bb7d9ee911957e0ae4a23a6dd08185ad5f8"
   end
 
   resource "requests-cache" do
@@ -101,8 +99,8 @@ class AnimeDownloader < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/76/d9/bbbafc76b18da706451fa91bc2ebe21c0daf8868ef3c30b869ac7cb7f01d/urllib3-1.25.11.tar.gz"
-    sha256 "8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2"
+    url "https://files.pythonhosted.org/packages/29/e6/d1a1d78c439cad688757b70f26c50a53332167c364edb0134cadd280e234/urllib3-1.26.2.tar.gz"
+    sha256 "19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08"
   end
 
   def install

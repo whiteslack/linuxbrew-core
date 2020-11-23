@@ -1,18 +1,15 @@
 class Libraqm < Formula
   desc "Library for complex text layout"
   homepage "https://github.com/HOST-Oman/libraqm"
-  url "https://github.com/HOST-Oman/libraqm/archive//v0.7.0.tar.gz"
-  sha256 "21ed67b8d0d2217f3801878f2ceef9b2da24495eeff830552051cef21f95938e"
+  url "https://github.com/HOST-Oman/libraqm/archive/v0.7.1.tar.gz"
+  sha256 "3a80118fde37b8c07d35b0d40465e68190bdbd6e984ca6fe5c8192c521bb076d"
   license "MIT"
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "1965b2513472b8e58b0f5b06fa5fd93e13c7a1c330fbbb1179b0343aad92cac3" => :big_sur
-    sha256 "c216caedf4a6709818f70525be9c1bbea6872d35b5ddd7e967de5e06fa48d626" => :catalina
-    sha256 "637d5a3258bb8928c537479687e82234ab0729650b23e00bcf5215fd3b6377b3" => :mojave
-    sha256 "a7bf34866571bbcb37fc95c13d985c18494625bb34d08325aa9970c22a330e91" => :high_sierra
-    sha256 "b2e547a12cef8dc1528e1627f96147a0be92c89625b58220cb7a05700295c5a4" => :x86_64_linux
+    sha256 "433cfa09f493996f697e288318dddb9f887caaa505e89f54e6258efca30c31c5" => :big_sur
+    sha256 "4c45ed51cac6ceb29ea7d7c6c7461b54b5e7f5ecc708e6fbba4396a26489c743" => :catalina
+    sha256 "d104c74c838f567086230184854a18444c570437434a001adc6ada04ce9a68a9" => :mojave
   end
 
   depends_on "autoconf" => :build
