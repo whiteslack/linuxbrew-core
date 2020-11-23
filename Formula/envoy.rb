@@ -2,16 +2,15 @@ class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io"
   url "https://github.com/envoyproxy/envoy.git",
-      tag:      "v1.16.0",
-      revision: "8fb3cb86082b17144a80402f5367ae65f06083bd"
+      tag:      "v1.16.1",
+      revision: "0717f49fef0dac3818cd7cdc52bf18e0ae1f7a2c"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "97e8a49ff74945b7af318fd3d39758201598ec7f61b32cc1ec8fbfcdc61a028d" => :big_sur
-    sha256 "537b7a21bbf0d1afb2287e7417f2a0a044207be845ef91778d40c0e1a2898a9d" => :catalina
-    sha256 "80eaea1fece13477a5f5c57412bafabab64e13edab9bf261147fead8b08e8f6d" => :mojave
-    sha256 "a66395e2f2aa616f930356904b866b0a0c28b6cb57ed3c151a2e257a4758b276" => :high_sierra
+    sha256 "53c47a2d719a6382a6ba8810b451e350f9c5ad3ffed1b6e5a0732eab8808cf5b" => :big_sur
+    sha256 "fe4cf7943fd603ceb507a55c085c55124c10ea0b8bcd3c4c6ceac145b47cadb4" => :catalina
+    sha256 "9872a1ec13f0aee427ac9715a6bc5ccf9d4f505c3aca6e94f18ae28f9f673a1a" => :mojave
   end
 
   depends_on "automake" => :build

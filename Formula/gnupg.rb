@@ -3,6 +3,7 @@ class Gnupg < Formula
   homepage "https://gnupg.org/"
   url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.24.tar.bz2"
   sha256 "9090b400faae34f08469d78000cfec1cee5b9c553ce11347cc96ef16eab98c46"
+  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gnupg/"
@@ -10,10 +11,9 @@ class Gnupg < Formula
   end
 
   bottle do
-    sha256 "2f2c92c01d35e37d239864e0ee92e5d197ac5f9859ac89f9b5aa06200b8af388" => :big_sur
-    sha256 "4db5c77dda1d32ba88ddcd87d1ac637b4a231da29bb436bc1f4a62166fd9a629" => :catalina
-    sha256 "74b40cae75b99ac65fea83c5764512eadfa69e41288d0786bf57a307aa788abd" => :mojave
-    sha256 "e1597fcfda9ee5bc4b2112704a7221c020f01085d07d43044aab7e133bded43f" => :x86_64_linux
+    sha256 "d6803d2ee6626ab275f87e39585ca35f4b5c815508d600fbdad83c3ee74c3851" => :big_sur
+    sha256 "317f1534c5fac829c914a0cb73a34f82f6b5c27a4f5150ce902f8ecccdd54a28" => :catalina
+    sha256 "bf7afe5c1f91ea190bd01c631c111989e185bc7fb097ab45d577c66453965bc2" => :mojave
   end
 
   depends_on "pkg-config" => :build

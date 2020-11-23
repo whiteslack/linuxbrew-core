@@ -4,6 +4,7 @@ class Cmake < Formula
   url "https://github.com/Kitware/CMake/releases/download/v3.19.0/cmake-3.19.0.tar.gz"
   sha256 "fdda688155aa7e72b7c63ef6f559fca4b6c07382ea6dca0beb5f45aececaf493"
   license "BSD-3-Clause"
+  revision 1
   head "https://gitlab.kitware.com/cmake/cmake.git"
 
   livecheck do
@@ -13,10 +14,9 @@ class Cmake < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "dbefaa3219729cf9a8ad2bf959f58e3a5e8626839b0b9def2e76e7175fc92ac4" => :big_sur
-    sha256 "504c4d8e36da1d87ad14f89595f585d8038f34e9668e2f25af4fbbe3794c4c1c" => :catalina
-    sha256 "0e0d838403a56af19548b0994fc265bd81f727f5fb30fda8d7723926bb45d0de" => :mojave
-    sha256 "b38aa406924f47cbe93971d74d12907d10adfb948549ed5b24cae9b856b487eb" => :x86_64_linux
+    sha256 "278f3741ae2d1c875a87c655150d7722da93310654e58b7473f98d5331b23081" => :big_sur
+    sha256 "e057f836dd9e3de9014bc61680c187d08ed24d7631be41da16cd456adce18697" => :catalina
+    sha256 "64e495953f8f6277f8e5e9e1ea2ab7ed8adcec4f03ca452c4eaad7bd915f5843" => :mojave
   end
 
   depends_on "sphinx-doc" => :build
@@ -24,6 +24,12 @@ class Cmake < Formula
 
   on_linux do
     depends_on "openssl@1.1"
+  end
+
+  # Backport patch for 3.19.0: https://gitlab.kitware.com/cmake/cmake/-/issues/21469
+  patch do
+    url "https://gitlab.kitware.com/cmake/cmake/-/commit/30aa715fac06deba7eaa3e6167cf34eb4d2521d0.patch"
+    sha256 "471843b53ea5749eda8b32ef69f9ab20c17e0087992ce3bf8cba93e6e87c54b5"
   end
 
   # The completions were removed because of problems with system bash
