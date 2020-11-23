@@ -12,6 +12,7 @@ class RustAnalyzer < Formula
     sha256 "5cfdbb5d0c8de4784a8ef77644c23d62f6392fc102eb29725a8e741579cbcab0" => :big_sur
     sha256 "e0d6e355ed208b7743274d867d5156a53177f80745c9f166ccc394bf6f2092fa" => :catalina
     sha256 "c4ab976541218ae1544211a06477210d0aaf9b75c5656d4853e4423219834b29" => :mojave
+    sha256 "4164bd9ae37d16a0379eec733821019b8be58ab0889b4c592278b81abe1c11b6" => :x86_64_linux
   end
 
   depends_on "rust" => :build
