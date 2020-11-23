@@ -17,6 +17,7 @@ class AnimeDownloader < Formula
     sha256 "788be6b27c362716fab7a0ceb0b6b73049af03dc40139abaf83ac44e34b0ecca" => :big_sur
     sha256 "dc0f0e4f2359590085cef6882cf99c50f40ccd83137abc660e4f6012a7ea460d" => :catalina
     sha256 "20cbbf186cdf0e5249381c3b6743d4489af65557363c7602bad8ab1708fb0455" => :mojave
+    sha256 "9ca88daa2a3d2a021872766d843207977114b404784af4238638875285a5a73c" => :x86_64_linux
   end
 
   depends_on "aria2"
