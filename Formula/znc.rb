@@ -37,8 +37,7 @@ class Znc < Formula
     ENV.append "CXXFLAGS", "-std=c++11"
     ENV.append "CXXFLAGS", "-stdlib=libc++" if ENV.compiler == :clang
 
-    # https://github.com/Homebrew/linuxbrew-core/issues/19150
-    unless OS.mac?
+    on_linux do
       ENV.append "CXXFLAGS", "-I#{Formula["zlib"].opt_include}"
       ENV.append "LIBS", "-L#{Formula["zlib"].opt_lib}"
     end

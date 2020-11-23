@@ -4,19 +4,19 @@ class Ipopt < Formula
   url "https://www.coin-or.org/download/source/Ipopt/Ipopt-3.13.3.tgz"
   sha256 "86354b36c691e6cd6b8049218519923ab0ce8a6f0a432c2c0de605191f2d4a1c"
   license "EPL-1.0"
-  revision 1
+  revision 2
   head "https://github.com/coin-or/Ipopt.git"
 
   bottle do
     cellar :any
-    sha256 "c5456fca281c86e78db399f960b2e657e6c8b8d8a1da4d8b799ad14a0c63ff65" => :big_sur
-    sha256 "8f0881c3022f0fbba7821e99a766b0fabeeb9551909e44b8fb9436da91329382" => :catalina
-    sha256 "d87262af5ab808ba7f5d51491035ce28fcb68c25cea07231b5d32d12a61602ef" => :mojave
-    sha256 "5714242cf12eb61db9e07f1f95fc823d8ce419790005c2b34f50609dc478bac7" => :x86_64_linux
+    sha256 "c63686d9c36309fc55f88e7d9a97b99e34d20ccabd68e66009fdaab1e7ea4f6c" => :big_sur
+    sha256 "9e14aaecd0e58c1047ea13327314a99f30dd0fbc2049af6681aa879f8dccd617" => :catalina
+    sha256 "ed286516c3ae473b824b5cefa4186e1519aa371464ec80f8c949a9da3eb50475" => :mojave
   end
 
   depends_on "openjdk" => :build
   depends_on "pkg-config" => [:build, :test]
+  depends_on "ampl-mp"
   depends_on "gcc"
   depends_on "openblas"
 
@@ -74,6 +74,8 @@ class Ipopt < Formula
       "--with-blas=-L#{Formula["openblas"].opt_lib} -lopenblas",
       "--with-mumps-cflags=-I#{buildpath}/mumps_include",
       "--with-mumps-lflags=-L#{lib} -ldmumps -lmpiseq -lmumps_common -lopenblas -lpord",
+      "--with-asl-cflags=-I#{Formula["ampl-mp"].opt_include}/asl",
+      "--with-asl-lflags=-L#{Formula["ampl-mp"].opt_lib} -lasl",
     ]
 
     system "./configure", *args
@@ -88,5 +90,6 @@ class Ipopt < Formula
     pkg_config_flags = `pkg-config --cflags --libs ipopt`.chomp.split
     system ENV.cxx, "examples/hs071_cpp/hs071_main.cpp", "examples/hs071_cpp/hs071_nlp.cpp", *pkg_config_flags
     system "./a.out"
+    system "#{bin}/ipopt", "#{Formula["ampl-mp"].opt_pkgshare}/example/wb"
   end
 end

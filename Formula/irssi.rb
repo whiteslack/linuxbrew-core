@@ -33,6 +33,7 @@ class Irssi < Formula
   depends_on "glib"
   depends_on "openssl@1.1"
 
+  uses_from_macos "ncurses"
   uses_from_macos "perl"
 
   def install
@@ -50,6 +51,13 @@ class Irssi < Formula
       --with-perl=yes
       --with-perl-lib=#{lib}/perl5/site_perl
     ]
+
+    on_macos do
+      args << "--with-ncurses=#{MacOS.sdk_path/"usr"}"
+    end
+    on_linux do
+      args << "--with-ncurses=#{Formula["ncurses"].prefix}"
+    end
 
     if build.head?
       ENV["NOCONFIGURE"] = "yes"

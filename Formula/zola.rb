@@ -22,7 +22,9 @@ class Zola < Formula
   end
 
   def install
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix unless OS.mac?
+    on_linux do
+      ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    end
     system "cargo", "install", *std_cargo_args
 
     bash_completion.install "completions/zola.bash"
