@@ -11,6 +11,7 @@ class Dbmate < Formula
     sha256 "2ff8a77e409a899dd70559f72a8e8501df068ef6c6f1095f3ac1f28b0122c241" => :big_sur
     sha256 "5223d60533452d4ddb6d9d140418f74b263fec8ea000cda0f9c1757b4c2dddef" => :catalina
     sha256 "547cad2cb3074d94999ddc6e3fc0a4b3000a0e91287bfb5192ce74fe89ca62e4" => :mojave
+    sha256 "086a2364c9cbd813057bd0d81e430a93cf76f8fb55ad58c72985fc1edda30a8a" => :x86_64_linux
   end
 
   depends_on "go" => :build
