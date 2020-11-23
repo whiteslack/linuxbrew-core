@@ -11,6 +11,7 @@ class Glow < Formula
     sha256 "c36ed9de017a0f0c0f5a70f7c33fd5387b6f3ccdee14399f1c7b445a3ca9d3fa" => :big_sur
     sha256 "64bcae8e6372b6db077687eabdfb358e7393403fc7229d430941e352d6151df9" => :catalina
     sha256 "a5e7dddbdde2fa4dd35db661559eef21cfc8eaf98234912605cd91cbfb1f3671" => :mojave
+    sha256 "d5c28e3f66cdfcbc7da6ab30388c7cafa5e3fbaea673ebcae2f78e8241daf31d" => :x86_64_linux
   end
 
   depends_on "go" => :build
