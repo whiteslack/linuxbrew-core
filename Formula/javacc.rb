@@ -15,6 +15,7 @@ class Javacc < Formula
     sha256 "81fa6c9cfa14578b76e7baa27ef7ac27ad0038558f4d372ecac6486f2eadc35a" => :big_sur
     sha256 "54792663583f44565206d4728237a9452859c162cea1e9c7ff782bf33daf6d99" => :catalina
     sha256 "f954f391fb286509601a18d87042c3f6d218a7b57414e719cd37786723d71106" => :mojave
+    sha256 "09a1b7cfc2e79aada89e9ac45f4c62d4d046fac355715fe7801297f0c89acc2b" => :x86_64_linux
   end
 
   depends_on "ant" => :build
