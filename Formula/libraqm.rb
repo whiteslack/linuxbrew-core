@@ -10,6 +10,7 @@ class Libraqm < Formula
     sha256 "433cfa09f493996f697e288318dddb9f887caaa505e89f54e6258efca30c31c5" => :big_sur
     sha256 "4c45ed51cac6ceb29ea7d7c6c7461b54b5e7f5ecc708e6fbba4396a26489c743" => :catalina
     sha256 "d104c74c838f567086230184854a18444c570437434a001adc6ada04ce9a68a9" => :mojave
+    sha256 "b8190ecf8abee2e48e845472e61c92323fc232413ae057ede2b56a3cef285e42" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
