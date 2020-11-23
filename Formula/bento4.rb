@@ -31,7 +31,7 @@ class Bento4 < Formula
     because: "both install `mp4extract` and `mp4info` binaries"
 
   def install
-    if OS.mac?
+    on_macos do
       cd "Build/Targets/universal-apple-macosx" do
         xcodebuild "-target", "All", "-configuration", "Release", "SYMROOT=build"
         programs = Dir["build/Release/*"].select do |f|
@@ -42,7 +42,8 @@ class Bento4 < Formula
         end
         bin.install programs
       end
-    else
+    end
+    on_linux do
       mkdir "cmakebuild" do
         system "cmake", "..", *std_cmake_args
         system "make"

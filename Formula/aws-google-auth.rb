@@ -6,16 +6,14 @@ class AwsGoogleAuth < Formula
   url "https://github.com/cevoaustralia/aws-google-auth/archive/0.0.36.tar.gz"
   sha256 "c880633b2813b3fd2312fd1301a8927ebc7b13c3405932bd0ec760cecfb7c780"
   license "MIT"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
   head "https://github.com/cevoaustralia/aws-google-auth.git"
 
   bottle do
     cellar :any
-    sha256 "6b17a9d6e382d0f2a93b41983f8e1a577d29c55d2ab06ecb8076b661522b1a90" => :big_sur
-    sha256 "5f2d53fa169e9c42d50a9531a2db7a6f8d4a0881c7a13391cc6eb801acda9320" => :catalina
-    sha256 "81751cb1187b9df1f7b03d93788113d9f0269c5d5998734bf2d2abf87142962b" => :mojave
-    sha256 "02b918441939858990b6da801818e599f505656a39bd0bf88edda2e57a3eec32" => :high_sierra
-    sha256 "6ab3cbab4b68db6b96bc537880143b39820a5ec49db9187adbb0abaeca77fe99" => :x86_64_linux
+    sha256 "67eb5983db407f9a4b8565a1e34837b0c8c3490b2e0d2d14f6154db86fd34c55" => :big_sur
+    sha256 "0dbd1d3d9ce7822dd3bde10fac663271e09a55a69727fe18d1be1816e40e1fdd" => :catalina
+    sha256 "a6f020f5835b11cb6650a7b6de520b7eca191548d2135460e3f8be1e4707e2b4" => :mojave
   end
 
   depends_on "freetype"
@@ -66,8 +64,8 @@ class AwsGoogleAuth < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/05/8c/40cd6949373e23081b3ea20d5594ae523e681b6f472e600fbc95ed046a36/urllib3-1.25.9.tar.gz"
-    sha256 "3018294ebefce6572a474f0604c2021e33b3fd8006ecd11d62107a5d2a963527"
+    url "https://files.pythonhosted.org/packages/29/e6/d1a1d78c439cad688757b70f26c50a53332167c364edb0134cadd280e234/urllib3-1.26.2.tar.gz"
+    sha256 "19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08"
   end
 
   resource "botocore" do
@@ -126,8 +124,8 @@ class AwsGoogleAuth < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/f5/4f/280162d4bd4d8aad241a21aecff7a6e46891b905a4341e7ab549ebaf7915/requests-2.23.0.tar.gz"
-    sha256 "b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"
+    url "https://files.pythonhosted.org/packages/9f/14/4a6542a078773957aa83101336375c9597e6fe5889d20abda9c38f9f3ff2/requests-2.25.0.tar.gz"
+    sha256 "7f1a0b932f4a60a1a65caa4263921bb7d9ee911957e0ae4a23a6dd08185ad5f8"
   end
 
   resource "tabulate" do

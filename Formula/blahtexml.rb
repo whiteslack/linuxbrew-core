@@ -32,10 +32,15 @@ class Blahtexml < Formula
   def install
     ENV.cxx11
 
-    os = OS.mac? ? "mac" : "linux"
-    system "make", "blahtex-#{os}"
+    on_macos do
+      system "make", "blahtex-mac"
+      system "make", "blahtexml-mac"
+    end
+    on_linux do
+      system "make", "blahtex-linux"
+      system "make", "blahtexml-linux"
+    end
     bin.install "blahtex"
-    system "make", "blahtexml-#{os}"
     bin.install "blahtexml"
   end
 
