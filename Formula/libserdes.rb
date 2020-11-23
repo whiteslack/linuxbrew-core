@@ -12,6 +12,7 @@ class Libserdes < Formula
     sha256 "28d5e55c0e0e06b11a30b03250eca9e615b495f666a78efda0a8794752094519" => :big_sur
     sha256 "743106f80ee1f57a8fd2966fbfc926dc18b11438ed1d90da7373ada9094d7cff" => :catalina
     sha256 "dc74a2436a72405e5fe1b03c83820e3baaeb3bc6ff7623555e3a352d9d05f822" => :mojave
+    sha256 "35b86176e8493b447a388b2f122280a394e628cf93a33f6e440079b09ac23d60" => :x86_64_linux
   end
 
   depends_on "avro-c"
