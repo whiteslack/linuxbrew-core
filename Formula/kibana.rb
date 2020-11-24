@@ -2,18 +2,16 @@ class Kibana < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
   url "https://github.com/elastic/kibana.git",
-      tag:      "v7.8.1",
-      revision: "5db9c677ea993ff3df503df03d03f5657fcea42e"
+      tag:      "v7.10.0",
+      revision: "1796b5ec8fa1e60ccea63f2e5c25ccc665b92fdc"
   license "Apache-2.0"
-  revision OS.mac? ? 1 : 2
   head "https://github.com/elastic/kibana.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "401d8c825da3b8071fc19ab7611d7786e4852217dcf16dcad8a3474312dcc1a7" => :big_sur
-    sha256 "ab4ebbdabe531a35369b61b5770d0b7a0028a21ec8cdd1dfc7070041c1fa358e" => :catalina
-    sha256 "660bcf7f4f2d5aa6488e8c54bb1cee3e5a106a11fd5f3ecfc0d5af6d34cfe2b7" => :mojave
-    sha256 "7e55dec07c62cf50140ca1bb47ba07a3ae72f2d2c0d85445d09ba0ce51fe18cb" => :high_sierra
+    sha256 "18f55a7e615160830390bb6b9ef09ff00d620a3085ee78f40a790c7b58a20dc8" => :big_sur
+    sha256 "8ddd2830d0b87aaba02cb54beef5dfab61e37afea6b8c62783c9253c4081dcd4" => :catalina
+    sha256 "d3ea8991e0adae31c382d990f39729092c5a73c8c7dcd2913b9568460fc6612c" => :mojave
   end
 
   depends_on "python@3.9" => :build
@@ -23,12 +21,16 @@ class Kibana < Formula
   depends_on "libx11" unless OS.mac?
 
   def install
+    inreplace "package.json", /"node": "10\.\d+\.\d+"/, %Q("node": "#{Formula["node@10"].version}")
+
+    # prepare project after checkout
+    system "yarn", "kbn", "bootstrap"
+
+    # build open source only
+    system "node", "scripts/build", "--oss", "--release", "--skip-os-packages", "--skip-archives"
+
     # remove non open source files
     rm_rf "x-pack"
-
-    inreplace "package.json", /"node": "10\.\d+\.\d+"/, %Q("node": "#{Formula["node@10"].version}")
-    system "yarn", "kbn", "bootstrap"
-    system "node", "scripts/build", "--oss", "--release", "--skip-os-packages", "--skip-archives"
 
     prefix.install Dir
       .glob("build/oss/kibana-#{version}-darwin-x86_64/**")
