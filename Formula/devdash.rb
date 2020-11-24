@@ -10,6 +10,7 @@ class Devdash < Formula
     sha256 "5e62dd8b464ba2ade11434f471dc51aaea30b1c799ef0aa4096c5ccabe534508" => :big_sur
     sha256 "011dfa77fabb7a61086a383e8af8dad8239d29732fa0f5a0737c9787e214cdf1" => :catalina
     sha256 "17e84eaa344dd543c936f140f08515918d00a847a675bd64eb9d4e256f8b4298" => :mojave
+    sha256 "00d65eebe319e179462e253d1faa030eb46bb4de6fd05b291861d0cc00aaad9f" => :x86_64_linux
   end
 
   depends_on "go" => :build
