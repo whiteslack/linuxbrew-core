@@ -1,30 +1,23 @@
 class Ffms2 < Formula
   desc "Libav/ffmpeg based source library and Avisynth plugin"
   homepage "https://github.com/FFMS/ffms2"
-  url "https://github.com/FFMS/ffms2/archive/2.23.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/f/ffms2/ffms2_2.23.orig.tar.gz"
-  sha256 "b09b2aa2b1c6f87f94a0a0dd8284b3c791cbe77f0f3df57af99ddebcd15273ed"
+  url "https://github.com/FFMS/ffms2/archive/2.40.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/f/ffms2/ffms2_2.40.orig.tar.gz"
+  sha256 "82e95662946f3d6e1b529eadbd72bed196adfbc41368b2d50493efce6e716320"
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
   license "GPL-2.0"
-  revision 6
+  head "https://github.com/FFMS/ffms2.git"
 
   bottle do
     cellar :any
-    sha256 "1f284ae12500266399ce330b6d4207d08b891983f905c4a7d533cf99202e4559" => :big_sur
-    sha256 "c6389b9e94a5502a7760cc235bf576243595da33b7fd23231f2ddd3529fade75" => :catalina
-    sha256 "3bcc31e751e167a35593aa040f25b96eeccd021e0d9cc74fbe13d6e638d84a95" => :mojave
-    sha256 "2b6276dac329bdc9d06d85bba4781cc49035bfb2de3038d12ba6ade29d6f6d64" => :high_sierra
-    sha256 "93801e6e4d894241f4b672b71d77f0931b2e5c8199f7aa0523e155b485588188" => :x86_64_linux
+    sha256 "92afbeb075eeca3216cb58eadd0b817bab752bdcddb1fca128c62d3196386168" => :big_sur
+    sha256 "696f811f1c101374d98efe609b27bea6a5f51b97a1e0df0c0642b411c33d4023" => :catalina
+    sha256 "e360ea4cd0d1d36526965804e8a324d00961817e41e91b8792d63586c35c0cc7" => :mojave
   end
 
-  head do
-    url "https://github.com/FFMS/ffms2.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"
 
@@ -44,12 +37,7 @@ class Ffms2 < Formula
       --prefix=#{prefix}
     ]
 
-    if build.head?
-      system "./autogen.sh", *args
-    else
-      system "./configure", *args
-    end
-
+    system "./autogen.sh", *args
     system "make", "install"
   end
 
