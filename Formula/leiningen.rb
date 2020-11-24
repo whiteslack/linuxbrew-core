@@ -14,7 +14,7 @@ class Leiningen < Formula
     sha256 "7adcc3b2f9cfe160696ad3bc1ecf24c58ffa665cc045545145b7ff3c302545bc" => :x86_64_linux
   end
 
-  depends_on java: :test unless OS.mac?
+  depends_on "openjdk" => :test unless OS.mac?
 
   resource "jar" do
     url "https://github.com/technomancy/leiningen/releases/download/2.9.4/leiningen-2.9.4-standalone.zip", using: :nounzip
