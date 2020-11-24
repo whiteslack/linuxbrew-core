@@ -4,7 +4,7 @@ class Patchelf < Formula
   url "https://bintray.com/homebrew/mirror/download_file?file_path=patchelf-0.12.tar.gz"
   sha256 "2848beb6bbdfbf4efd12d627bdc315b74e7a5ed94a6a7b01c62641cdf4560e51"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 4
   head "https://github.com/NixOS/patchelf.git"
 
   livecheck do
@@ -16,7 +16,7 @@ class Patchelf < Formula
     sha256 "d83931e807f58c62f0b321b9523d16de6602415f0e19b3702d072b4dec382cb6" => :big_sur
     sha256 "344c4459a5b03099308520eb7ef906242bca77f08ac1660ac61b74ccd7871b1c" => :catalina
     sha256 "906cd9171c62947d8133b990bbc15ad7803bb5623f5b72332fa792a01c9634ac" => :mojave
-    sha256 "0ef4927c243064a2ca308aa8c7b8776b6ebe93b5c4a48e4e9666f7d73338efba" => :x86_64_linux
+    sha256 "56a0ff9acc9ab6c5d7f53d6f8ecce4878fd8c547a581960519504cf9e9dfac51" => :x86_64_linux
   end
 
   resource "helloworld" do
