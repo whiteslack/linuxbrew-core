@@ -12,6 +12,7 @@ class Assimp < Formula
     sha256 "1a4511b5f06aa0e9d579b72af3aa4dd0d43b93860d17dfacfab586ca2947d1be" => :big_sur
     sha256 "28224c17d5d250055b39990a54de9e744f30b59950ed12d2a08ff0192d029c0c" => :catalina
     sha256 "85dc308dfd468a6dd66978d890106b777829b7b4a04970c395c04aa832ad4931" => :mojave
+    sha256 "c1b0b289501af472530329e8b9e2b9f590571577e7b605e7b2d0660b91c5e44a" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
