@@ -19,6 +19,7 @@ class Black < Formula
     sha256 "18883925c2f6cc8c68bfdf38e8e84bd1ee6a2ef30c58b6d20a6783c9bb329028" => :big_sur
     sha256 "22681c4a717a4126b010b1f768e9de8728af6374c0a4116a0761fc07260738fe" => :catalina
     sha256 "850ea678dc880e1e91b70c4afc047f3ac783ece747f9f4964450ad6c5204f5b4" => :mojave
+    sha256 "81529081e81a40c35be44add7dfa90a68c02a292812fb3eea6ce9c67414c2622" => :x86_64_linux
   end
 
   depends_on "python@3.9"
