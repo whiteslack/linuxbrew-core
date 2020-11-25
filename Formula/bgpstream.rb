@@ -1,18 +1,18 @@
 class Bgpstream < Formula
   desc "For live and historical BGP data analysis"
   homepage "https://bgpstream.caida.org/"
-  url "https://bgpstream.caida.org/bundles/caidabgpstreamwebhomepage/dists/bgpstream-1.2.3.tar.gz"
-  sha256 "2c1affec8d38a9f750029e48b77a46064937d3e41f6c10dfac72777fa934cd74"
-  license "GPL-2.0"
+  url "https://github.com/CAIDA/libbgpstream/releases/download/v2.0.0/libbgpstream-2.0.0.tar.gz"
+  sha256 "f9e377856fb282ac93277c4c5a35b421b8cef5a72e8d671c40f4d7722be0bac7"
+  license "BSD-2-Clause"
 
   bottle do
     cellar :any
-    sha256 "26f6a06267aa23f01fa2b625b1d5ae61d54a9f792707227892c38e30999bb456" => :catalina
-    sha256 "23ffe0dcc9ba7fbc1b497b955b81a6515d269f93be06356dd00e531ac8d8d96d" => :mojave
-    sha256 "8110166953d43112cd014092d0dc58005ceae09983156b73dd7ec7ada7af33af" => :high_sierra
-    sha256 "d1541897010832dee6be24eb2e37ebe59899653f2277da1b34d29c6953754b6e" => :sierra
+    sha256 "4922818badaa6fad60296cbc3337281f12aeda5bcde30beee22e3171f84bf8b5" => :big_sur
+    sha256 "9a86090dfd836211fdf98d48b4ac8927e798f1e35f684166663567319b987e25" => :catalina
+    sha256 "8ff3a6037432e94a4677b4fc9db898705ff4cbf25db175941fe2b3d8cf751e0b" => :mojave
   end
 
+  depends_on "librdkafka"
   depends_on "wandio"
 
   def install

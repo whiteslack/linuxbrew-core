@@ -4,6 +4,7 @@ class Unbound < Formula
   url "https://nlnetlabs.nl/downloads/unbound/unbound-1.12.0.tar.gz"
   sha256 "5b9253a97812f24419bf2e6b3ad28c69287261cf8c8fa79e3e9f6d3bf7ef5835"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/NLnetLabs/unbound.git"
 
   # We check the GitHub repo tags instead of
@@ -15,14 +16,13 @@ class Unbound < Formula
   end
 
   bottle do
-    sha256 "a177141e80c7018a98e7d593aa08defbbd2d5d2cc831bea47b3eae5a15b47f4e" => :big_sur
-    sha256 "c5c89b6f51314d30ed291f08f195f6733bc756a2244b024cc4a08971137b2442" => :catalina
-    sha256 "7a72e66c935707fef194772e9a747a28629a6b4ae1a32a500e6b842893afecd5" => :mojave
-    sha256 "457f5cefd1951bbdcf58ebce0ba27cc135ad0e639d06d054ff346263899b64b5" => :high_sierra
-    sha256 "8d969afe97299060c1b1027e21c785a82a3587ae00b235989a61f07e611b4e6d" => :x86_64_linux
+    sha256 "93024a8982fe47e46d6c7b772d634202504a5c06f5ba07cbff6b06d387f52229" => :big_sur
+    sha256 "a4a23f579f3f75907a3b55c135cf372ef85c90cbb07e227fa5067aec59c9721c" => :catalina
+    sha256 "fc3a5cdbe4ba68fcdddc22f5fddd737c4581bf56fae9e4c5454a585da10b7b0e" => :mojave
   end
 
   depends_on "libevent"
+  depends_on "nghttp2"
   depends_on "openssl@1.1"
 
   uses_from_macos "expat"
@@ -35,6 +35,7 @@ class Unbound < Formula
       --enable-tfo-client
       --enable-tfo-server
       --with-libevent=#{Formula["libevent"].opt_prefix}
+      --with-libnghttp2=#{Formula["nghttp2"].opt_prefix}
       --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
     ]
 

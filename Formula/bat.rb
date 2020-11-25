@@ -1,16 +1,15 @@
 class Bat < Formula
   desc "Clone of cat(1) with syntax highlighting and Git integration"
   homepage "https://github.com/sharkdp/bat"
-  url "https://github.com/sharkdp/bat/archive/v0.17.0.tar.gz"
-  sha256 "a2848389c8e213f63856ce7c664a4c069e3f28438e770ff9b93df272f61cde6b"
+  url "https://github.com/sharkdp/bat/archive/v0.17.1.tar.gz"
+  sha256 "16d39414e8a3b80d890cfdbca6c0e6ff280058397f4a3066c37e0998985d87c4"
   license "Apache-2.0"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e593195e2a85c85fd8d462d2cf70d91b2a3f061daee77fff0a5019069d07643c" => :big_sur
-    sha256 "ca5eeaae808c8b2eb95de52e80896825022c3790f112904039f1cb4b6a7d471d" => :catalina
-    sha256 "c68b601b0e4c5ce0fde06e2799ae51e9209bb844071cc81f4d69b43a8d343a1f" => :mojave
-    sha256 "63dcfaffe85ac9b301cc6a25e8b6093b4c0a77c4bc034cddf251d74876a2385b" => :x86_64_linux
+    sha256 "2154428e50a347937148312bd787b422fd21b1135b58bf9362aebd3ea08c25d8" => :big_sur
+    sha256 "37950cb2429346cacc2dd0a9902b71eb958fb9531114d3606bdc3acfdd4dc3c2" => :catalina
+    sha256 "9f4df3e3e829e59ec2d196be8a494d60f9f68ef7f9f769adfb018f75148677be" => :mojave
   end
 
   depends_on "rust" => :build

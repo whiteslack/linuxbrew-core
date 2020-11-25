@@ -9,16 +9,17 @@ class Istioctl < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "88f6d7e0f39b30e8c332084ae13d2ccc23ca8fe076091ce69e390797acd2b253" => :big_sur
-    sha256 "1ad667d0a4b954fc76ffde408e71f63028498db1bc36ccdc46dadc9e55b70147" => :catalina
-    sha256 "b77f393e1d3add2434cf91c10647a8db06ab3db99c7efb869198c5184903a7d6" => :mojave
-    sha256 "8e542329c79b652b69962566757afd3c6a17eb7ca3c99c767e6695ef39113d0c" => :x86_64_linux
+    rebuild 1
+    sha256 "13412f071699e9cd6cd6c326283762b310788826751834f94c6a739a98ca39bf" => :big_sur
+    sha256 "4054c9d31253d0de7150b9c28fd29151d18345a6bb94f07843c138521c9f1a3e" => :catalina
+    sha256 "c097dc572691619571e769d6a98f005a6b89c37d2aeb247d0af4c1db5dc0ae99" => :mojave
   end
 
   depends_on "go" => :build
   depends_on "go-bindata" => :build
 
   def install
+    ENV["VERSION"] = version.to_s
     ENV["TAG"] = version.to_s
     ENV["ISTIO_VERSION"] = version.to_s
     ENV["HUB"] = "docker.io/istio"
@@ -37,6 +38,6 @@ class Istioctl < Formula
   end
 
   test do
-    assert_match version.major_minor.to_s, shell_output("#{bin}/istioctl version --remote=false")
+    assert_equal version.to_s, shell_output("#{bin}/istioctl version --remote=false").strip
   end
 end

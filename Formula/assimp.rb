@@ -3,16 +3,14 @@ class Assimp < Formula
   homepage "https://www.assimp.org/"
   url "https://github.com/assimp/assimp/archive/v5.0.1.tar.gz"
   sha256 "11310ec1f2ad2cd46b95ba88faca8f7aaa1efe9aa12605c55e3de2b977b3dbfc"
-  license "LGPL-3.0"
+  license :cannot_represent
   head "https://github.com/assimp/assimp.git"
 
   bottle do
     cellar :any
-    sha256 "b2c52877c720f1d99f5393eb9e8ce7fbbb68cdff8256bbb821ca74a55ac47e69" => :big_sur
-    sha256 "f049baf0e3bc3941e8449dbfbc997d0448b0a1722bfdceadb69b2eacc48e3464" => :catalina
-    sha256 "620f5f399783c487ae78077da65b65f6a0c81dce23768ae56eb1edd383a57daa" => :mojave
-    sha256 "6dffc67ca984f5870bdc09a1c0adbb3c0d2209c7fb8169e2204c4c2d2d44aebe" => :high_sierra
-    sha256 "b438e25ca1ddb822185a3a16c429cbff8b9bbcdb9855e44af6c600adb6e1c5af" => :x86_64_linux
+    sha256 "1a4511b5f06aa0e9d579b72af3aa4dd0d43b93860d17dfacfab586ca2947d1be" => :big_sur
+    sha256 "28224c17d5d250055b39990a54de9e744f30b59950ed12d2a08ff0192d029c0c" => :catalina
+    sha256 "85dc308dfd468a6dd66978d890106b777829b7b4a04970c395c04aa832ad4931" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -22,6 +20,7 @@ class Assimp < Formula
   def install
     args = std_cmake_args
     args << "-DASSIMP_BUILD_TESTS=OFF"
+    args << "-DCMAKE_INSTALL_RPATH=#{lib}"
     system "cmake", *args
     system "make", "install"
   end

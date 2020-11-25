@@ -8,19 +8,59 @@ class TreeSitter < Formula
 
   bottle do
     cellar :any
-    sha256 "d128dbb7c1f73425f69cbb23e391f3428b126930cae6e00ac731061f52840610" => :big_sur
-    sha256 "5740ba521c1e62fcbd68545c41ce729356c9249412a283a3f695031935fa8831" => :catalina
-    sha256 "40f05cfb205ab7eaaf59f2bf9351ce3735f07d19e6f999c777de43f5b9c44e66" => :mojave
-    sha256 "f142b02c17ed1c789b1675a3e56f448cade7000752f099850c18764aca2b960f" => :high_sierra
+    rebuild 1
+    sha256 "c89bc31148685aa6c2abe0aca99d0283f3ac7ca8b95fdfd31f1b38c8e955ee7e" => :big_sur
+    sha256 "affadea701f887e8ae3f757ce88c3aa9cbc558887dfcf997c167f93e3a94af57" => :catalina
+    sha256 "1b745dd2fbd391ce0e26b639cb3202606f1d4f745e86a98a6f0d5c34ed3f8106" => :mojave
   end
+
+  depends_on "rust" => :build
+  depends_on "emscripten"
+  depends_on "node"
 
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
+
+    cd "cli" do
+      system "cargo", "install", *std_cargo_args
+    end
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    # a trivial tree-sitter test
+    assert_equal "tree-sitter #{version}", shell_output("#{bin}/tree-sitter --version").strip
+
+    # test `tree-sitter generate`
+    (testpath/"grammar.js").write <<~EOS
+      module.exports = grammar({
+        name: 'YOUR_LANGUAGE_NAME',
+        rules: {
+          source_file: $ => 'hello'
+        }
+      });
+    EOS
+    system "#{bin}/tree-sitter", "generate"
+
+    # test `tree-sitter parse`
+    (testpath/"test/corpus/hello.txt").write <<~EOS
+      hello
+    EOS
+    parse_result = shell_output("#{bin}/tree-sitter parse #{testpath}/test/corpus/hello.txt").strip
+    assert_equal("(source_file [0, 0] - [1, 0])", parse_result)
+
+    # test `tree-sitter test`
+    (testpath/"test"/"corpus"/"test_case.txt").write <<~EOS
+      =========
+        hello
+      =========
+      hello
+      ---
+      (source_file)
+    EOS
+    system "#{bin}/tree-sitter", "test"
+
+    (testpath/"test_program.c").write <<~EOS
       #include <string.h>
       #include <tree_sitter/api.h>
       int main(int argc, char* argv[]) {
@@ -46,7 +86,7 @@ class TreeSitter < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c", "-L#{lib}", "-ltree-sitter", "-o", "test"
-    assert_equal "tree creation failed", shell_output("./test")
+    system ENV.cc, "test_program.c", "-L#{lib}", "-ltree-sitter", "-o", "test_program"
+    assert_equal "tree creation failed", shell_output("./test_program")
   end
 end
