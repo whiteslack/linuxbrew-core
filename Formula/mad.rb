@@ -16,6 +16,7 @@ class Mad < Formula
     sha256 "0ad06329f73d5dc15cba262feca6e1c582e10ad3b9ca0476e46c37e6d878d0ab" => :big_sur
     sha256 "5416172dc7ccd3c5a5065b3f7dc18c00e83a7e20dfc6b09e0586afc4a76c5722" => :catalina
     sha256 "5baadb23763805521d306268861ff82fe2055da1eb7976aaa7c78f83d3c2f43a" => :mojave
+    sha256 "695b3347205276a26967bc850649784825eb7868c810cc3297c6a3049ddea710" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
