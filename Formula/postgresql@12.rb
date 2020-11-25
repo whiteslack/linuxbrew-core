@@ -81,22 +81,99 @@ class PostgresqlAT12 < Formula
     return if ENV["CI"]
 
     (var/"log").mkpath
-    (var/"postgres").mkpath
-    unless File.exist? "#{var}/postgres/PG_VERSION"
-      system "#{bin}/initdb", "--locale=C", "-E", "UTF-8", "#{var}/postgres"
+    versioned_data_dir.mkpath
+    system "#{bin}/initdb", "--locale=C", "-E", "UTF-8", versioned_data_dir unless versioned_pg_version_exists?
+  end
+
+  # Previous versions of this formula used the same data dir as the regular
+  # postgresql formula. So we check whether the versioned data dir exists
+  # and has a PG_VERSION file, which should indicate that the versioned
+  # data dir is in use. Otherwise, returns the old data dir path.
+  def postgresql_datadir
+    if versioned_pg_version_exists?
+      versioned_data_dir
+    else
+      old_postgres_data_dir
     end
   end
 
-  def caveats
-    <<~EOS
-      To migrate existing data from a previous major version of PostgreSQL run:
-        brew postgresql-upgrade-database
+  def versioned_data_dir
+    var/name
+  end
 
+  def old_postgres_data_dir
+    var/"postgres"
+  end
+
+  # Same as with the data dir - use old log file if the old data dir
+  # is version 12
+  def postgresql_log_path
+    if versioned_pg_version_exists?
+      var/"log/#{name}.log"
+    else
+      var/"log/postgres.log"
+    end
+  end
+
+  def versioned_pg_version_exists?
+    (versioned_data_dir/"PG_VERSION").exist?
+  end
+
+  def postgresql_formula_present?
+    Formula["postgresql"].any_version_installed?
+  end
+
+  # Figure out what version of PostgreSQL the old data dir is
+  # using
+  def old_postgresql_datadir_version
+    pg_version = old_postgres_data_dir/"PG_VERSION"
+    pg_version.exist? && pg_version.read.chomp
+  end
+
+  def caveats
+    caveats = ""
+
+    # Extract the version from the formula name
+    pg_formula_version = name.split("@", 2).last
+    # ... and check it against the old data dir postgres version number
+    # to see if we need to print a warning re: data dir
+    if old_postgresql_datadir_version == pg_formula_version
+      caveats += if postgresql_formula_present?
+        # Both PostgreSQL and PostgreSQL@12 are installed
+        <<~EOS
+          Previous versions of this formula used the same data directory as
+          the regular PostgreSQL formula. This causes a conflict if you
+          try to use both at the same time.
+
+          In order to avoid this conflict, you should make sure that the
+          #{name} data directory is located at:
+            #{versioned_data_dir}
+
+        EOS
+      else
+        # Only PostgreSQL@12 is installed, not PostgreSQL
+        <<~EOS
+          Previous versions of #{name} used the same data directory as
+          the postgresql formula. This will cause a conflict if you
+          try to use both at the same time.
+
+          You can migrate to a versioned data directory by running:
+            mv -v "#{old_postgres_data_dir}" "#{versioned_data_dir}"
+
+          (Make sure PostgreSQL is stopped before executing this command)
+
+        EOS
+      end
+    end
+
+    caveats += <<~EOS
       This formula has created a default database cluster with:
-        initdb --locale=C -E UTF-8 #{var}/postgres
+        initdb --locale=C -E UTF-8 #{postgresql_datadir}
       For more details, read:
         https://www.postgresql.org/docs/#{version.major}/app-initdb.html
     EOS
+
+    caveats
   end
 
   plist_options manual: "pg_ctl -D #{HOMEBREW_PREFIX}/var/postgres@12 start"
@@ -115,16 +192,16 @@ class PostgresqlAT12 < Formula
         <array>
           <string>#{opt_bin}/postgres</string>
           <string>-D</string>
-          <string>#{var}/postgres</string>
+          <string>#{postgresql_datadir}</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
         <key>WorkingDirectory</key>
         <string>#{HOMEBREW_PREFIX}</string>
         <key>StandardOutPath</key>
-        <string>#{var}/log/postgres.log</string>
+        <string>#{postgresql_log_path}</string>
         <key>StandardErrorPath</key>
-        <string>#{var}/log/postgres.log</string>
+        <string>#{postgresql_log_path}</string>
       </dict>
       </plist>
     EOS
