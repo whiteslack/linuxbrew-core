@@ -13,6 +13,7 @@ class Dep < Formula
     sha256 "5bd49a3da392e08bef0ae821a534bd699c4c3f6d116d90b53007477fbad6a374" => :big_sur
     sha256 "be9871f4e01aa179f9f3b32931838f21c5e64d33840ac36c8b601adeebb5e95b" => :catalina
     sha256 "a86103fd9d7349cde0906850b1adaaa4e9b6c787cb11b0a791127c9af16ede8a" => :mojave
+    sha256 "30341cfd4d3ad08400ea2dcfea6971173382ef5418102c04631d941c71cc69c0" => :x86_64_linux
   end
 
   deprecate! because: :repo_archived
