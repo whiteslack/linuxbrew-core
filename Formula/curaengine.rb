@@ -22,6 +22,7 @@ class Curaengine < Formula
     sha256 "ea4ddbed801958a3b9298b30a27fe638906bb7c04e78d5e0d7035872c0d1c680" => :big_sur
     sha256 "6d732ea2dfbe75f23ada46f804a627b425bb5b091aca784f5139f63746a7ba56" => :catalina
     sha256 "7c98a1ae8a3d08afe1fdf6eb7baa1ed273dc7b04edc8c01bb4a91d1147ac6810" => :mojave
+    sha256 "c31ad4722a3933d57c624c01a1390978743bb0d19d6fc0217d2307a2bbc2435c" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
