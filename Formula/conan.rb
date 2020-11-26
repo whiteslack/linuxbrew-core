@@ -3,8 +3,8 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://github.com/conan-io/conan/archive/1.31.3.tar.gz"
-  sha256 "1491938208424652cee4e8bc4347e36297371bf058b08c16064e8459c3b18b0b"
+  url "https://github.com/conan-io/conan/archive/1.31.4.tar.gz"
+  sha256 "14d8cbb93d1d2fa8448c5e7fb39d1ea8498cda594ea5c5341103ea7febeb3492"
   license "MIT"
   head "https://github.com/conan-io/conan.git"
 
@@ -15,10 +15,9 @@ class Conan < Formula
 
   bottle do
     cellar :any
-    sha256 "edc7cf50a4fb75653c909c55ebafae5ef26639a789a8e34468f54a495b78b009" => :big_sur
-    sha256 "9f4e34bbc70ca993b19eaa788c650f50e74f3218e57e526de0ba8285486b5d8c" => :catalina
-    sha256 "c6358e272ca783fa0d0c8165af21756921e1a610f47bf473bde7329911e48106" => :mojave
-    sha256 "cf1e8a569137978f739cfbb9f98eb054b541b44ec3f814476402e6fabadd63fa" => :x86_64_linux
+    sha256 "db3b94d88452a9779f5f3136bfb2d735d389c1b37f03aedd44ac97f5db5459cc" => :big_sur
+    sha256 "317a1576d7d2f427326e5f1c76c39c6157de2d34ef0f6d6eaa81277f50315d0c" => :catalina
+    sha256 "99f5ce2eb25a37250f64c153b4ae5c8154cbf600caddcb17646d7eca642bd9eb" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -37,8 +36,8 @@ class Conan < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "chardet" do
@@ -162,8 +161,8 @@ class Conan < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/9f/30/8c8015735a54e13444a3d4982a7a9538bde27f8b3bd35203f9e920f0d78c/tqdm-4.52.0.tar.gz"
-    sha256 "18d6a615aedd09ec8456d9524489dab330af4bd5c2a14a76eb3f9a0e14471afe"
+    url "https://files.pythonhosted.org/packages/db/af/6af426ad64a4e89696069f8a87d985c10a79e4c6f975ac772b676afc21a5/tqdm-4.53.0.tar.gz"
+    sha256 "3d3f1470d26642e88bd3f73353cb6ff4c51ef7d5d7efef763238f4bc1f7e4e81"
   end
 
   resource "urllib3" do

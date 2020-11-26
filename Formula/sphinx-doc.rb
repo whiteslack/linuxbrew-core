@@ -6,6 +6,7 @@ class SphinxDoc < Formula
   url "https://files.pythonhosted.org/packages/16/06/9a7ce305cf7c31d5f167f83e37c159e8b79ebe595b627cbc7d73d8468e81/Sphinx-3.3.1.tar.gz"
   sha256 "1e8d592225447104d1172be415bc2972bd1357e3e12fdc76edf2261105db4300"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,11 +14,9 @@ class SphinxDoc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6589fda0520e4388c6625672c32e2c7b5609db117a1973979ff0bec1f63c43be" => :big_sur
-    sha256 "adca9c1f344662ceb2e2ae859ff45f74bf4edd4d2007bf6aff4533385bad8063" => :catalina
-    sha256 "67a41ec3647562895222bfdf9a3eb21dab831673312e65ff1688a3f8c3b9c1fc" => :mojave
-    sha256 "bc095dcdcdb295677a034cfc5774fc176e87281dee6185e9d44f50807334ef1c" => :high_sierra
-    sha256 "3b0e69014b544a8b550305b27b39a43fb202e08b2e359bbad4dcfbd702ea253a" => :x86_64_linux
+    sha256 "382d3ef96a0615bda4dbe99ad0edff111f77da5f51033c01482310759fd6b4b7" => :big_sur
+    sha256 "8aaab120dae7b93c55c7a9c835699252439fdfe59c582c2758a08f23f28ece64" => :catalina
+    sha256 "8bcddf6dd2adb2c64e3f02801ae3a9f9c9bc415eb0316fb51b9da1a860d696cf" => :mojave
   end
 
   keg_only <<~EOS
@@ -70,6 +69,11 @@ class SphinxDoc < Formula
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz"
     sha256 "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
+  end
+
+  resource "numpydoc" do
+    url "https://files.pythonhosted.org/packages/3d/fb/a70f636102045fc646656f2221c7fcdf92f7a9d71ba7c9875a949a58b3e8/numpydoc-1.1.0.tar.gz"
+    sha256 "c36fd6cb7ffdc9b4e165a43f67bf6271a7b024d0bb6b00ac468c9e2bfc76448e"
   end
 
   resource "packaging" do
@@ -138,8 +142,8 @@ class SphinxDoc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/19/80/b2a19b372f16bc846fd156de8d9b3a9b1092aef1f1963d800b0f8c76a67a/urllib3-1.26.1.tar.gz"
-    sha256 "097116a6f16f13482d2a2e56792088b9b2920f4eb6b4f84a2c90555fb673db74"
+    url "https://files.pythonhosted.org/packages/29/e6/d1a1d78c439cad688757b70f26c50a53332167c364edb0134cadd280e234/urllib3-1.26.2.tar.gz"
+    sha256 "19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08"
   end
 
   def install

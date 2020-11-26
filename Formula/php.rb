@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-7.4.12.tar.xz"
-  mirror "https://fossies.org/linux/www/php-7.4.12.tar.xz"
-  sha256 "e82d2bcead05255f6b7d2ff4e2561bc334204955820cabc2457b5239fde96b76"
+  url "https://www.php.net/distributions/php-7.4.13.tar.xz"
+  mirror "https://fossies.org/linux/www/php-7.4.13.tar.xz"
+  sha256 "aead303e3abac23106529560547baebbedba0bb2943b91d5aa08fff1f41680f4"
   license "PHP-3.01"
 
   livecheck do
@@ -13,11 +13,9 @@ class Php < Formula
   end
 
   bottle do
-    sha256 "73a67f98ee592ecb37c95ebc1d706c1821d8b691391de46007b4678e37f8fe46" => :big_sur
-    sha256 "d39510178db7866bc6a7b857c379e3ddf091f5bfdde9f9ae5c895baa507d685b" => :catalina
-    sha256 "315b551456d25cf1fee37a302ac9fa80ccbc3ba138282db0cca29f6526395fec" => :mojave
-    sha256 "ae650360d6b704a2d96bdaaf2bd9d87512629ef6a442ec6480a828a53de91318" => :high_sierra
-    sha256 "c2d3047e8539c834fd8f01c2fcbaa49300e589f1cf33842e3d6c6984ea07489c" => :x86_64_linux
+    sha256 "38d2273cc27903564dc848ebc44a97c1d896f3a14d2cdaf4af207a0972f12206" => :big_sur
+    sha256 "0a0dfe81f00955ecbaf00db3207182bbdb6e6718fca4049f8cfd780a86013494" => :catalina
+    sha256 "3a255c83522169aa287769d59e156abd585f3033cf6641cd6486863fe8c19dc3" => :mojave
   end
 
   head do
