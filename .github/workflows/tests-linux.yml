@@ -1,0 +1,82 @@
+name: GitHub Actions CI
+on:
+  pull_request:
+    paths:
+      - "Formula/alsa-lib.rb"
+      - "Formula/device-mapper.rb"
+      - "Formula/hello.rb"
+      - "Formula/libaio.rb"
+      - "Formula/ladspa-sdk.rb"
+      - "Formula/libbsd.rb"
+      - "Formula/libcap.rb"
+      - "Formula/libdrm.rb"
+      - "Formula/libfuse.rb"
+      - "Formula/libmnl.rb"
+      - "Formula/libnetfilter-queue.rb"
+      - "Formula/libnfnetlink.rb"
+      - "Formula/libpciaccess.rb"
+      - "Formula/libseccomp.rb"
+      - "Formula/libtirpc.rb"
+      - "Formula/linux-headers.rb"
+      - "Formula/strace.rb"
+jobs:
+  tests_linux:
+    runs-on: ubuntu-latest
+    container:
+      image: homebrew/ubuntu16.04:master
+    env:
+      HOMEBREW_CORE_GIT_REMOTE: ${{github.event.repository.html_url}}
+      HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - run: brew test-bot --only-cleanup-before
+
+      - name: Run brew test-bot --only-formulae
+        run: |
+          mkdir ~/bottles
+          cd ~/bottles
+          brew test-bot --only-formulae
+
+      - name: Output brew test-bot --only-formulae failures
+        if: always()
+        run: |
+          cat ~/bottles/steps_output.txt
+          rm ~/bottles/steps_output.txt
+
+      - name: Upload logs
+        if: failure()
+        uses: actions/upload-artifact@main
+        with:
+          name: logs (Linux)
+          path: ~/bottles/logs
+
+      - name: Delete logs and home
+        if: always()
+        run: |
+          rm -rvf ~/bottles/logs
+          rm -rvf ~/bottles/home
+
+      - name: Count bottles
+        id: bottles
+        if: always()
+        run: |
+          cd ~/bottles
+          count=$(ls *.json | wc -l | xargs echo -n)
+          echo "$count bottles"
+          echo "::set-output name=count::$count"
+
+      - name: Upload bottles
+        if: always() && steps.bottles.outputs.count > 0
+        uses: actions/upload-artifact@main
+        with:
+          name: bottles
+          path: ~/bottles
+
+      - run: brew test-bot --only-cleanup-after
+        if: always()
+
+      - name: Post Cleanup
+        if: always()
+        run: rm -rvf ~/bottles
