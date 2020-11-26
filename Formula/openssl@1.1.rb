@@ -58,8 +58,6 @@ class OpensslAT11 < Formula
       no-ssl3
       no-ssl3-method
       no-zlib
-      #{[ENV.cppflags, ENV.cflags, ENV.ldflags].join(" ").strip unless OS.mac?}
-      #{"enable-md2" unless OS.mac?}
     ]
     on_linux do
       args += (ENV.cflags || "").split
