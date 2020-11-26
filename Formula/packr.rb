@@ -11,6 +11,7 @@ class Packr < Formula
     sha256 "0db108db4960e2bd9472f3497e43ee03f7ac26dfaeabc8ff895383a2c8d182d3" => :catalina
     sha256 "680ec6e6b1b0f1c089e643692dcc38856cec7bb97da64839cc7b1cad28739d61" => :mojave
     sha256 "ca3ad8d799b9ef78f28279f1d5eae59fd6eacf43a874fab09d202659cfd6a7fb" => :high_sierra
+    sha256 "283a5a151cc191bb2f12b0e4462835247601f6d1f00287145329b5e0472b40a7" => :x86_64_linux
   end
 
   depends_on "go" => [:build, :test]
