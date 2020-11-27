@@ -2,36 +2,28 @@ class Perkeep < Formula
   desc "Lets you permanently keep your stuff, for life"
   homepage "https://perkeep.org/"
   license "Apache-2.0"
+  head "https://github.com/perkeep/perkeep.git"
 
   stable do
     url "https://github.com/perkeep/perkeep.git",
-        tag:      "0.10",
-        revision: "0cbe4d5e05a40a17efe7441d75ce0ffdf9d6b9f5"
+        tag:      "0.11",
+        revision: "76755286451a1b08e2356f549574be3eea0185e5"
 
     # gopherjs doesn't tag releases, so just pick the most recent revision for now
     resource "gopherjs" do
       url "https://github.com/gopherjs/gopherjs/archive/fce0ec30dd00773d3fa974351d04ce2737b5c4d9.tar.gz"
       sha256 "e5e6ede5f710fde77e48aa1f6a9b75f5afeb1163223949f76c1300ae44263b84"
     end
-
-    depends_on "go@1.12" => :build
   end
 
   bottle do
-    rebuild 1
-    sha256 "8d02dc0ffab5d9189663335ce3beb1e1e5dbb5f8c2269306ffe92dded1979372" => :big_sur
-    sha256 "36f18ad54a3e656ac5da55fc438636aac922e107ad1082e0dad7353626f0db84" => :catalina
-    sha256 "51f41c16b3c4ea80d6a77c5badf28dca0ec323bd5aa2f1f90e855ce568b1c8ca" => :mojave
-    sha256 "b188c23945a51d253dc6c4435afaa509a2ddaf151124ef1f08a1186611041c92" => :high_sierra
-    sha256 "898a24470e101148d7b96ec5521cab6a1cb3ad051f251f1b21e0fb2b6113df4f" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "893d6cfc23b18401987de13cb5630bb259f9d3d4d0de56ebaa7d2f3f7e93333a" => :big_sur
+    sha256 "c676479c6b5f7e5bbee45c7b0d31b26c05915195c2ab7b61156ac46257b14cb6" => :catalina
+    sha256 "e05528f7efbb84fa9bbb39a68f3d0bb48073806a204eba8d0f70a52871ed83fc" => :mojave
   end
 
-  head do
-    url "https://github.com/perkeep/perkeep.git"
-
-    depends_on "go" => :build
-  end
-
+  depends_on "go" => :build
   depends_on "pkg-config" => :build
 
   conflicts_with "hello", because: "both install `hello` binaries"

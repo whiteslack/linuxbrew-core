@@ -1,8 +1,8 @@
-class Cairomm < Formula
+class CairommAT114 < Formula
   desc "Vector graphics library with cross-device output support"
   homepage "https://cairographics.org/cairomm/"
-  url "https://cairographics.org/releases/cairomm-1.16.0.tar.xz"
-  sha256 "7e881492c5f9f546688c31160deb742c166fc4c68b6b8eb9920c00a0f0f144f9"
+  url "https://cairographics.org/releases/cairomm-1.14.2.tar.xz"
+  sha256 "0126b9cc295dc36bc9c0860d5b720cb5469fd78d5620c8f10cc5f0c07b928de3"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -12,9 +12,9 @@ class Cairomm < Formula
 
   bottle do
     cellar :any
-    sha256 "6177df22ea052d3e7ccd44d621d24837478340ea0d1385ef401a069414f893f1" => :big_sur
-    sha256 "cad19588b9a033b690cd2f1b73cb75282e017e1d32dfd39e29f7a35e2e8d3d91" => :catalina
-    sha256 "b90f4177caced79c28888be8b38150c22d9a147eaa96493810ddbdf3fee87bf4" => :mojave
+    sha256 "ac3ed3d2ba79498f26005046e61a835978c4c8ca0ca6435d39b405d2bc39535b" => :big_sur
+    sha256 "89fc4b03efa9136f5a828959c3263b36dfb209d303b62192d57d6d6aed4058ef" => :catalina
+    sha256 "b9eff4d0aca913e713ee870137962be2a44c498936f1c915e459eb95002e60ef" => :mojave
   end
 
   depends_on "meson" => :build
@@ -22,7 +22,7 @@ class Cairomm < Formula
   depends_on "pkg-config" => :build
   depends_on "cairo"
   depends_on "libpng"
-  depends_on "libsigc++"
+  depends_on "libsigc++@2"
 
   def install
     ENV.cxx11
@@ -40,7 +40,7 @@ class Cairomm < Formula
 
       int main(int argc, char *argv[])
       {
-         Cairo::RefPtr<Cairo::ImageSurface> surface = Cairo::ImageSurface::create(Cairo::Surface::Format::ARGB32, 600, 400);
+         Cairo::RefPtr<Cairo::ImageSurface> surface = Cairo::ImageSurface::create(Cairo::FORMAT_ARGB32, 600, 400);
          Cairo::RefPtr<Cairo::Context> cr = Cairo::Context::create(surface);
          return 0;
       }
@@ -51,7 +51,7 @@ class Cairomm < Formula
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     libpng = Formula["libpng"]
-    libsigcxx = Formula["libsigc++"]
+    libsigcxx = Formula["libsigc++@2"]
     pixman = Formula["pixman"]
     flags = %W[
       -I#{cairo.opt_include}/cairo
@@ -60,20 +60,20 @@ class Cairomm < Formula
       -I#{gettext.opt_include}
       -I#{glib.opt_include}/glib-2.0
       -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/cairomm-1.16
+      -I#{include}/cairomm-1.0
       -I#{libpng.opt_include}/libpng16
-      -I#{libsigcxx.opt_include}/sigc++-3.0
-      -I#{libsigcxx.opt_lib}/sigc++-3.0/include
-      -I#{lib}/cairomm-1.16/include
+      -I#{libsigcxx.opt_include}/sigc++-2.0
+      -I#{libsigcxx.opt_lib}/sigc++-2.0/include
+      -I#{lib}/cairomm-1.0/include
       -I#{pixman.opt_include}/pixman-1
       -L#{cairo.opt_lib}
       -L#{libsigcxx.opt_lib}
       -L#{lib}
       -lcairo
-      -lcairomm-1.16
-      -lsigc-3.0
+      -lcairomm-1.0
+      -lsigc-2.0
     ]
-    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *flags
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end
 end

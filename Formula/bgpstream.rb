@@ -1,15 +1,15 @@
 class Bgpstream < Formula
   desc "For live and historical BGP data analysis"
   homepage "https://bgpstream.caida.org/"
-  url "https://github.com/CAIDA/libbgpstream/releases/download/v2.0.0/libbgpstream-2.0.0.tar.gz"
-  sha256 "f9e377856fb282ac93277c4c5a35b421b8cef5a72e8d671c40f4d7722be0bac7"
+  url "https://github.com/CAIDA/libbgpstream/releases/download/v2.1.0/libbgpstream-2.1.0.tar.gz"
+  sha256 "27a84f8048c885f67353a1fc9ef020aa8453621a15af3ae706a1fc8e776da80b"
   license "BSD-2-Clause"
 
   bottle do
     cellar :any
-    sha256 "4922818badaa6fad60296cbc3337281f12aeda5bcde30beee22e3171f84bf8b5" => :big_sur
-    sha256 "9a86090dfd836211fdf98d48b4ac8927e798f1e35f684166663567319b987e25" => :catalina
-    sha256 "8ff3a6037432e94a4677b4fc9db898705ff4cbf25db175941fe2b3d8cf751e0b" => :mojave
+    sha256 "2ef31b4b6155966b7ebb5bea8fef499e5a75e40bb0b4cc827387c20e1710908c" => :big_sur
+    sha256 "4879ed386a49e62ff13e465d822f0d6b6ea126cd7ef95add1fc8b4c0bfeb2dc6" => :catalina
+    sha256 "ed2c647b81542296080d2235d292598c9b654e4cd7a310024ea6758e2cb41aa4" => :mojave
   end
 
   depends_on "librdkafka"

@@ -3,7 +3,8 @@ class Gtkmm < Formula
   homepage "https://www.gtkmm.org/"
   url "https://download.gnome.org/sources/gtkmm/2.24/gtkmm-2.24.5.tar.xz"
   sha256 "0680a53b7bf90b4e4bf444d1d89e6df41c777e0bacc96e9c09fc4dd2f5fe6b72"
-  revision OS.mac? ? 3 : 4
+  license "LGPL-2.1-or-later"
+  revision OS.mac? ? 4 : 5
 
   livecheck do
     url :stable
@@ -12,17 +13,14 @@ class Gtkmm < Formula
 
   bottle do
     cellar :any
-    sha256 "6f01b168170de0eb9ac1bb25ea1146885624c80bf91d4c57cf6f6924ff3b54d7" => :big_sur
-    sha256 "172050b87d5a7d4cd945722d80d5a8c933ed6329ad130ba9f92c0705a44acbbd" => :catalina
-    sha256 "bfa9c862a46b1ca66466e30ba6dfcb74bf69a345089aba76f6620f6aa28b69dc" => :mojave
-    sha256 "160a917c60ae9f41117f297a3bc8933fffb0084edccb6113fc7510798ad01d3e" => :high_sierra
-    sha256 "d525d513745bb81d43bcd3b43fc7067f64a8425640c9e1a959e94bd2c7d4eee9" => :sierra
-    sha256 "1ee94f81279e7a67d339e6879370fff9fe7b83fb6bed6147ed4a12a8ec9831c1" => :x86_64_linux
+    sha256 "50ce927a7a3cfc0148eb14bcbfc026fca79a4cb066cae096abd7ccd2dbba1776" => :big_sur
+    sha256 "55cd46de396ea48d5677d2fb016e26812456114c6c857ca68b5e17634be2493a" => :catalina
+    sha256 "e1bcfde04c939fd6f5894853ce34ed515d929e8419d05d28d3713eb02e80b229" => :mojave
   end
 
   depends_on "pkg-config" => :build
   depends_on "atkmm"
-  depends_on "cairomm"
+  depends_on "cairomm@1.14"
   depends_on "glibmm"
   depends_on "gtk+"
   depends_on "libsigc++@2"
@@ -46,7 +44,7 @@ class Gtkmm < Formula
     atk = Formula["atk"]
     atkmm = Formula["atkmm"]
     cairo = Formula["cairo"]
-    cairomm = Formula["cairomm"]
+    cairomm = Formula["cairomm@1.14"]
     fontconfig = Formula["fontconfig"]
     freetype = Formula["freetype"]
     gdk_pixbuf = Formula["gdk-pixbuf"]

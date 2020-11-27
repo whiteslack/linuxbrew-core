@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-7.4.13.tar.xz"
-  mirror "https://fossies.org/linux/www/php-7.4.13.tar.xz"
-  sha256 "aead303e3abac23106529560547baebbedba0bb2943b91d5aa08fff1f41680f4"
+  url "https://www.php.net/distributions/php-8.0.0.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.0.0.tar.xz"
+  sha256 "b5278b3eef584f0c075d15666da4e952fa3859ee509d6b0cc2ed13df13f65ebb"
   license "PHP-3.01"
 
   livecheck do
@@ -13,10 +13,9 @@ class Php < Formula
   end
 
   bottle do
-    sha256 "38d2273cc27903564dc848ebc44a97c1d896f3a14d2cdaf4af207a0972f12206" => :big_sur
-    sha256 "0a0dfe81f00955ecbaf00db3207182bbdb6e6718fca4049f8cfd780a86013494" => :catalina
-    sha256 "3a255c83522169aa287769d59e156abd585f3033cf6641cd6486863fe8c19dc3" => :mojave
-    sha256 "abce786fb475e83d4717509190af27b31277ebe9ada44e6255cc54459f8048c4" => :x86_64_linux
+    sha256 "8e57a207d9919851d606ea18e9362d8cfd983666e52bd76ef4f8d663ea68e7f9" => :big_sur
+    sha256 "87985a4db279167a37f418a5cf8da255a33be910a4e7f181ad4ed7acdb8b3acb" => :catalina
+    sha256 "5660a4dbac0a2b258ff2283614fb14e4edd66a9c4253fd240db35781e1642c0f" => :mojave
   end
 
   head do
@@ -303,7 +302,7 @@ class Php < Formula
   def caveats
     <<~EOS
       To enable PHP in Apache add the following to httpd.conf and restart Apache:
-          LoadModule php7_module #{opt_lib}/httpd/modules/libphp7.so
+          LoadModule php_module #{opt_lib}/httpd/modules/libphp.so
 
           <FilesMatch \\.php$>
               SetHandler application/x-httpd-php
@@ -383,16 +382,10 @@ class Php < Formula
         DirectoryIndex index.php
       EOS
 
-      php_module = if head?
-        "LoadModule php_module #{lib}/httpd/modules/libphp.so"
-      else
-        "LoadModule php7_module #{lib}/httpd/modules/libphp7.so"
-      end
-
       (testpath/"httpd.conf").write <<~EOS
         #{main_config}
         LoadModule mpm_prefork_module lib/httpd/modules/mod_mpm_prefork.so
-        #{php_module}
+        LoadModule php_module #{lib}/httpd/modules/libphp.so
         <FilesMatch \\.(php|phar)$>
           SetHandler application/x-httpd-php
         </FilesMatch>

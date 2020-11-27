@@ -1,10 +1,9 @@
 class Urh < Formula
   desc "Universal Radio Hacker"
   homepage "https://github.com/jopohl/urh"
-  url "https://files.pythonhosted.org/packages/08/6b/00fc66ea878a26ff054562552bb9b966fc5bec8d7df1fc52134b6431af76/urh-2.8.9.tar.gz"
-  sha256 "d3cdc2612f5039b40cfccfb99e2ae7311cd1cd27011c857e0aec99b150c93919"
+  url "https://files.pythonhosted.org/packages/48/c0/262368bb3adab8a44d93e6ffe57c41081c28ae86cf72e2f06bc6ff43050a/urh-2.9.0.tar.gz"
+  sha256 "4fa5f6b846ed01697d944dd357598103bdfbda67221fb6912a7d6f7822c466ac"
   license "GPL-3.0"
-  revision 2
   head "https://github.com/jopohl/urh.git"
 
   livecheck do
@@ -13,10 +12,9 @@ class Urh < Formula
 
   bottle do
     cellar :any
-    sha256 "16bb2589b748f1c8b5d9a10bbd4548b3a4cd9784f7c1d262567c202dd2868ba0" => :big_sur
-    sha256 "b9bee49e954482216177eeb5d489c0ef552204ed0f1d4c5331d3f133d332f8c7" => :catalina
-    sha256 "bd9bad9dd91efb3ed22e5a522a41cdf8a78cd519fcdd8903a165ff8e27f15249" => :mojave
-    sha256 "a84bae547c870e05976d3d4bccc1d3df30026a30b26dd5084a06296429b654d5" => :high_sierra
+    sha256 "c9fa3d81ff9659b9e530676a4772fd757e9cd0318bd0455fa544745285b07319" => :big_sur
+    sha256 "f068fa135004bcf4b6c0cbfee87a542b65c85de90aab9f2bc104f969de63a66c" => :catalina
+    sha256 "6d2c9dc81e4713c7fed35a7bb045d6c60428381567b162b3c20edb4eebb585fb" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -27,8 +25,8 @@ class Urh < Formula
   depends_on "python@3.9"
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/aa/3e/d18f2c04cf2b528e18515999b0c8e698c136db78f62df34eee89cee205f1/psutil-5.7.2.tar.gz"
-    sha256 "90990af1c3c67195c44c9a889184f84f5b2320dce3ee3acbd054e3ba0b4a7beb"
+    url "https://files.pythonhosted.org/packages/33/e0/82d459af36bda999f82c7ea86c67610591cf5556168f48fd6509e5fa154d/psutil-5.7.3.tar.gz"
+    sha256 "af73f7bcebdc538eda9cc81d19db1db7bf26f103f91081d780bbacfcb620dee2"
   end
 
   def install
