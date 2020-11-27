@@ -15,6 +15,7 @@ class Prometheus < Formula
     sha256 "f75a66655f20ee1ac62e72fab79d1576e4a3b0f56e51cb177d00217301c05676" => :big_sur
     sha256 "2ff193125d103e3f439e923ba04a083e39aed9a53eec2243bc015faa42c2678c" => :catalina
     sha256 "b2b1b555942c57c7fe16f093094a27981eb1e727086fcd4d8839fb059f8c989c" => :mojave
+    sha256 "09374d765bbcaf1825c73ccc5502367ebf4dca1b0d4a0deefc30eed1337a0719" => :x86_64_linux
   end
 
   depends_on "go" => :build
