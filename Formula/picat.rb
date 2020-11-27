@@ -10,6 +10,7 @@ class Picat < Formula
     sha256 "cebc62f081eec861ae329b8e2b9daddc1c82286e3d82f9f0d699fa0b124ecb7b" => :big_sur
     sha256 "5c5c7429d633369628acd7d1e0946cf60e8ef4160a158a9344dfd3d4c3e89b07" => :catalina
     sha256 "842f803d6cf22c236c2e514c56a0cdd585b9b71c8a67d165bd56783d4c83a0da" => :mojave
+    sha256 "839d865eb92a182a55f64248e9c3c3a3585f7d35ce7ebc64bee87ebf6e81d014" => :x86_64_linux
   end
 
   def install
