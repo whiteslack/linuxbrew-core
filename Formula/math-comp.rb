@@ -11,6 +11,7 @@ class MathComp < Formula
     sha256 "37468c0f985d7306b040661504f238bbece0f7c5a9ba2cff67a2b3ec5bfc734a" => :big_sur
     sha256 "32aa060170d60dbef2f63b9e9c0ac0141e1ffab9862280023512665dd78092fc" => :catalina
     sha256 "17ac51a7c7d32370903679049a0285762037c9728e74a27bdc7d1008ec84d27b" => :mojave
+    sha256 "1fe8ad52ea6828cea505fbe4145a5a085b50d76fc611973dab329d420949a790" => :x86_64_linux
   end
 
   depends_on "ocaml" => :build
