@@ -10,6 +10,7 @@ class Utf8proc < Formula
     sha256 "ba7272b84ad108f17f1f129af117a3cba4cfa849915f532f7a145b1e2f97aecb" => :big_sur
     sha256 "9b73ad30c1de0f7b00754f844f146484443c258bfb1657aa0bbe57d3442b1dbc" => :catalina
     sha256 "d22e4fb3d9f59fbfe18ebda7cd3bd76b6e9acaefb75f7903e9fd00ce8d44a88e" => :mojave
+    sha256 "bf35a9f30500e3d848e8d501aac9262dc5fd6953903eb0424f7cd582b42a08f8" => :x86_64_linux
   end
 
   def install
