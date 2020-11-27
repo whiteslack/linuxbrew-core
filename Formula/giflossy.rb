@@ -12,6 +12,7 @@ class Giflossy < Formula
     sha256 "ad63a534a7e83c162d536cb43c421a78b089ca9921e89ed598c8ae13fe7adb1f" => :big_sur
     sha256 "de5ae53cff723bbb5cbe11028d088f028053ebc70a14b6497dd7f5f9ca9651b4" => :catalina
     sha256 "02eeb9a6b44178fdf1df803346dceedda853c7245cd51a1a6166290a73fb51f4" => :mojave
+    sha256 "7c0fdff9266b551b503a3e4d94540026eebde2d35dbe33e380bb3b6164a771ac" => :x86_64_linux
   end
 
   deprecate! because: :repo_archived
