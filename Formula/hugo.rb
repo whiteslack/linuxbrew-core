@@ -1,40 +1,31 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https://gohugo.io/"
-  url "https://github.com/gohugoio/hugo/archive/v0.78.2.tar.gz"
-  sha256 "bbfacf3bf379911bc348e6300912838fd07a75ad6de6d41082c54226e0055029"
+  url "https://github.com/gohugoio/hugo/archive/v0.79.0.tar.gz"
+  sha256 "83e9b7e4bd3b321d140d1f35c75eafa6a70d3b814f2cac8e2f78b11feb23f1b2"
   license "Apache-2.0"
   head "https://github.com/gohugoio/hugo.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5bee3cbeb5edff56c69fac4c199ed36baebb2725242b8f56c1349b846174b802" => :big_sur
-    sha256 "5570d90b9105217c01ca2122eb356ad567288e29a1b6c538e143bb9d8ff4e622" => :catalina
-    sha256 "9e96a53d7a2278e57d8eb148bfaf2c2866a817fac92d5020744d1293d3f1c57c" => :mojave
-    sha256 "d0268bc16fe927844a7f95cb9754c8d129784446a5f8f882a151fd9f0a2c8522" => :high_sierra
-    sha256 "317974b7763cbef8f647be295be0ad95c036ef327d3909a2b7a4d525afec9b27" => :x86_64_linux
+    sha256 "7c9400c8e814ef48203a3018792febd67d195c0bb2780f72f14b971908730efc" => :big_sur
+    sha256 "548fa07dec9697e5a4b782bb430881bcb07d88665a31d3208a4c543c9b3d9779" => :catalina
+    sha256 "02ab626815e84a1a51fa21d00b0167cdfc9cc859880bb60275cd6116944c95a4" => :mojave
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = HOMEBREW_CACHE/"go_cache"
-    (buildpath/"src/github.com/gohugoio/hugo").install buildpath.children
+    system "go", "build", *std_go_args, "-tags", "extended"
 
-    cd "src/github.com/gohugoio/hugo" do
-      system "go", "build", "-o", bin/"hugo", "-tags", "extended", "main.go"
+    # Build bash completion
+    system bin/"hugo", "gen", "autocomplete", "--completionfile=hugo.sh"
+    bash_completion.install "hugo.sh"
 
-      # Build bash completion
-      system bin/"hugo", "gen", "autocomplete", "--completionfile=hugo.sh"
-      bash_completion.install "hugo.sh"
-
-      # Build man pages; target dir man/ is hardcoded :(
-      (Pathname.pwd/"man").mkpath
-      system bin/"hugo", "gen", "man"
-      man1.install Dir["man/*.1"]
-
-      prefix.install_metafiles
-    end
+    # Build man pages; target dir man/ is hardcoded :(
+    (Pathname.pwd/"man").mkpath
+    system bin/"hugo", "gen", "man"
+    man1.install Dir["man/*.1"]
   end
 
   test do

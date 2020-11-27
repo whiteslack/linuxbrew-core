@@ -3,10 +3,10 @@ class Gitlint < Formula
 
   desc "Linting for your git commit messages"
   homepage "https://jorisroovers.github.io/gitlint"
-  url "https://github.com/jorisroovers/gitlint/archive/v0.14.0.tar.gz"
-  sha256 "c8e45c8ab9c2172e86f2cbfb916eb4ce7b903d75cd757432f8b05c5e73f7e5e1"
+  url "https://files.pythonhosted.org/packages/df/b5/04355d3abe6b372e6bae36864ec7b659012343da437b595895637713f90f/gitlint-0.15.0.tar.gz"
+  sha256 "aae7e966d765a818d941398f2d3aff6ec7f30a7251dd5c915846b7e82f4f7776"
   license "MIT"
-  head "https://github.com/jorisroovers/gitlint.git"
+  head "https://github.com/jorisroovers/gitlint.git", branch: "main"
 
   livecheck do
     url :stable
@@ -14,23 +14,21 @@ class Gitlint < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e50fd506c7d182bb45aab2cdf82cf918a37d1dbd761bc2394d1a14a7e19fe243" => :big_sur
-    sha256 "502da604b0cab7af062c12eca761ba9f913b9585df342ba9eeb2b1b8987e58c4" => :catalina
-    sha256 "591b138560d44f138511b9662c1c2094c095d3778be4fa5fd7aab43bccf81b99" => :mojave
-    sha256 "71ce9d6e42c8bc3dded0ab04fc1a5aa3b1bee7179de8c77bea4c85db4447d42c" => :high_sierra
-    sha256 "5775e0e7a042cc0494e338ed532bf3fc96d570ce27523b6d766e331d88070563" => :x86_64_linux
+    sha256 "52ac0738eaf1ee717e838a7a2d2c2e8c4745f281bafc846a054be2526567c411" => :big_sur
+    sha256 "79dacaaf2f45dedcca1fb05efbf8c84d37f85996db920a4a675ceff724a8110f" => :catalina
+    sha256 "dbb9d4e5bbabaa3a75ea7d38df6cb46ad51f95e5378591068f397884cee9ceb6" => :mojave
   end
 
   depends_on "python@3.9"
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/17/d0/8a69308a5cf4f07c53dca744402606610ec910dda1a9cdc94b3fc4a0c3a5/arrow-0.15.5.tar.gz"
-    sha256 "5390e464e2c5f76971b60ffa7ee29c598c7501a294bc9f5e6dadcb251a5d027b"
+    url "https://files.pythonhosted.org/packages/ec/74/1cf2d9912921cebdba3fa954949206c8aa159c9cc803b88140fb227f8a0e/arrow-0.17.0.tar.gz"
+    sha256 "ff08d10cda1d36c68657d6ad20d74fbea493d980f8b2d45344e00d6ed2bf6ed4"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/f8/5c/f60e9d8a1e77005f664b76ff8aeaee5bc05d0a91798afd7f53fc998dbc47/Click-7.0.tar.gz"
-    sha256 "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"
+    url "https://files.pythonhosted.org/packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz"
+    sha256 "d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"
   end
 
   resource "python-dateutil" do
@@ -39,8 +37,8 @@ class Gitlint < Formula
   end
 
   resource "sh" do
-    url "https://files.pythonhosted.org/packages/7c/71/199d27d3e7e78bf448bcecae0105a1d5b29173ffd2bbadaa95a74c156770/sh-1.12.14.tar.gz"
-    sha256 "b52bf5833ed01c7b5c5fb73a7f71b3d98d48e9b9b8764236237bdc7ecae850fc"
+    url "https://files.pythonhosted.org/packages/f6/d4/e80280b1eba9597d16144f71d12cdf62d0e66170d289880f307cf905d327/sh-1.14.1.tar.gz"
+    sha256 "39aa9af22f6558a0c5d132881cf43e34828ca03e4ae11114852ca6a55c7c1d8e"
   end
 
   resource "six" do
