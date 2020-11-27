@@ -16,6 +16,7 @@ class Gtkmm < Formula
     sha256 "50ce927a7a3cfc0148eb14bcbfc026fca79a4cb066cae096abd7ccd2dbba1776" => :big_sur
     sha256 "55cd46de396ea48d5677d2fb016e26812456114c6c857ca68b5e17634be2493a" => :catalina
     sha256 "e1bcfde04c939fd6f5894853ce34ed515d929e8419d05d28d3713eb02e80b229" => :mojave
+    sha256 "551e4174ea073ee64aba02d0cbb07101ff231efc55317b82b83b0138738be72c" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
