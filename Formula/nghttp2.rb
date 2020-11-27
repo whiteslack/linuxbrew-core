@@ -10,6 +10,7 @@ class Nghttp2 < Formula
     sha256 "caef493f1b11fb991abc2f3802d221b0d7de8941cb74fee1678cbdd739172b37" => :big_sur
     sha256 "48259656881f1604ecb9c6b95d60ea1e95e62e44407fe641df5129ec9aab9d64" => :catalina
     sha256 "d0e538dc1cf2b150354a3603aab81bfbcdca2f996741c37b1f34dfb181589307" => :mojave
+    sha256 "12c7bdf2bac9c61df742d4005fe633099a0d37a7002124e4a1a5b3023866e007" => :x86_64_linux
   end
 
   head do
