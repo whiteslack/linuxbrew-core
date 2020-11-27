@@ -17,6 +17,7 @@ class Gitlint < Formula
     sha256 "52ac0738eaf1ee717e838a7a2d2c2e8c4745f281bafc846a054be2526567c411" => :big_sur
     sha256 "79dacaaf2f45dedcca1fb05efbf8c84d37f85996db920a4a675ceff724a8110f" => :catalina
     sha256 "dbb9d4e5bbabaa3a75ea7d38df6cb46ad51f95e5378591068f397884cee9ceb6" => :mojave
+    sha256 "e521e5f7438a16fb03d874bf1d5b68ee3f481298127a02150560fee01fccb404" => :x86_64_linux
   end
 
   depends_on "python@3.9"
