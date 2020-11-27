@@ -15,6 +15,7 @@ class Libglademm < Formula
     sha256 "37c03968fa84ae1e17ff42b38dc5484812b5629232a126efdae669530aa4fa2c" => :big_sur
     sha256 "f0244dbfff89400b592ccd70e8723f19ccc22c5979ba7b6d94fc4c49ce843d96" => :catalina
     sha256 "ac71dcf2ad2efbed3c260933d4ac3c388b9798bb5b826bb9edb13d9929d77ac3" => :mojave
+    sha256 "0f25643ca8b03dab335819fb7340504ba9cc6f94207cc8bdc374904dcbf7e055" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
