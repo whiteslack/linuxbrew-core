@@ -71,6 +71,8 @@ class Emacs < Formula
       --without-imagemagick
     ]
 
+    args << "--without-selinux" unless OS.mac?
+
     if build.head?
       ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
       system "./autogen.sh"
