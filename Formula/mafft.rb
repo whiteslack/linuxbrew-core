@@ -16,6 +16,7 @@ class Mafft < Formula
     sha256 "cce002802d3d258caceaa2a20ecbdef0a75d14344f2aa7aa89aff5313a079c3e" => :big_sur
     sha256 "798be41afbf9531ec0589c935a43e910cca42d66b25eb931d914324a1bfb1ea4" => :catalina
     sha256 "5f791516aeaff07e97ebd9966d7321f13436f99a6a232618e2ee2aface522377" => :mojave
+    sha256 "61ca903df529e5a29595ea473928d72218fef09711f460d7b0e86ec7b030e0f8" => :x86_64_linux
   end
 
   def install
