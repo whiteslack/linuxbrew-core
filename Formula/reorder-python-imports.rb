@@ -3,16 +3,21 @@ class ReorderPythonImports < Formula
 
   desc "Rewrites source to reorder python imports"
   homepage "https://github.com/asottile/reorder_python_imports"
-  url "https://github.com/asottile/reorder_python_imports/archive/v2.3.6.tar.gz"
-  sha256 "33df7db05db1557c743ddb3fe24cbf2d5d29bb56c3e42cb41383a242c8a213db"
+  url "https://files.pythonhosted.org/packages/3b/d4/54272e968b47938addc61d5d836a9ef01fff598b88db6db419e5f8a9f650/reorder_python_imports-2.3.6.tar.gz"
+  sha256 "2ea16d2253536e7f90427b383cd046e46977ca25aae82464883eee882bc7d21b"
   license "MIT"
+  head "https://github.com/asottile/reorder_python_imports.git"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "58a5bdd6155465a6fb4292aaf2fb941d5da2724b7ebfae6a6320f2a16b6ffa69" => :big_sur
-    sha256 "8a46ea15899ccd66b9ce3778f8a655e42317c6e656e5f9d9c781c8078c1c2769" => :catalina
-    sha256 "688e50c273fc03cc99b0ed5670dd7b21bfbc49c6a67e401ea87f8efb6342b0b4" => :mojave
-    sha256 "eaba68481ccf5c4272ef4b29e46aea5e14875c767d1fb951004c5070dd534f8f" => :high_sierra
+    rebuild 1
+    sha256 "1f504f5fca0798b46939964114068f233e5cc330858c5c35684e9f38e5ca3294" => :big_sur
+    sha256 "b9beb2be9546035065dd15fe87f5dcd7df3bfbcfff6cfdf3941b09925e0884a4" => :catalina
+    sha256 "b5da6963dea056b23d05a8a562968eeb200b25d5fd4162f4dfcb6379784a82e4" => :mojave
   end
 
   depends_on "python@3.9"
