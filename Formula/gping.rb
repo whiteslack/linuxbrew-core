@@ -1,16 +1,20 @@
 class Gping < Formula
   desc "Ping, but with a graph"
   homepage "https://github.com/orf/gping"
-  url "https://github.com/orf/gping/archive/v0.1.7.tar.gz"
-  sha256 "5c2ff5e1d72fe1cc55b69eab073bb6ddec0fca1303313865e9c1d43bc52e85a3"
+  url "https://github.com/orf/gping/archive/v1.0.1.tar.gz"
+  sha256 "8275c02c903e49d3d6bf30b3d3a279d00a8c3ef4ac9e13e406f19a81356ec5af"
   license "MIT"
   head "https://github.com/orf/gping.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
-    sha256 "ff8625f4110f7738f3c6e1b897b837e9deb3ff306b42158b11bc764ac71ddbed" => :big_sur
-    sha256 "42501a0f26107b39eeea338bb1a44e61dc21746b94f2f5c70f6585e12afd7681" => :catalina
-    sha256 "88f22a0a0afda453cc6cfc26c3f61889e980c26be42515cb1908fa2747f8e9d0" => :mojave
+    sha256 "7e6198d7fb3672bdb10ecea486f23079509e24c004353bfbae99a5f3eef58ba9" => :big_sur
+    sha256 "bc93f9061547e8c527150b71e534fba354ed361aa464ef01b574af9a0b634e73" => :catalina
+    sha256 "5fd58669e8798a148cda01087c9b4beb957751320ac0207de12ecbe69c4d9164" => :mojave
   end
 
   depends_on "rust" => :build
@@ -36,8 +40,7 @@ class Gping < Formula
       replace: "")
     screenlog.gsub! /\e\[([;\d]+)?m/, ""
 
-    assert_match "Pinging", screenlog
-    assert_match "google.com", screenlog
+    assert_match "google.com (", screenlog
   ensure
     Process.kill("TERM", pid)
   end
