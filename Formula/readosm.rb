@@ -1,8 +1,9 @@
 class Readosm < Formula
   desc "Extract valid data from an Open Street Map input file"
   homepage "https://www.gaia-gis.it/fossil/readosm/index"
-  url "https://www.gaia-gis.it/gaia-sins/readosm-sources/readosm-1.1.0.tar.gz"
-  sha256 "c508cde9c49b955613d9a30dcf622fa264a5c0e01f58074e93351ea39abd40ec"
+  url "https://www.gaia-gis.it/gaia-sins/readosm-sources/readosm-1.1.0a.tar.gz"
+  sha256 "db7c051d256cec7ecd4c3775ab9bc820da5a4bf72ffd4e9f40b911d79770f145"
+  license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
     url :homepage
@@ -11,10 +12,9 @@ class Readosm < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "ce08bf7cc440be683acc113a26dd0808c65c8139f0ea634c0655d6254ceb097e" => :big_sur
-    sha256 "670c17d0b04569c8723b6bfab5440f3e23d60f31b891489619b760e4df1ccdf4" => :catalina
-    sha256 "15d9f661d1d775dc76755db099d986c23002dc97edd65c675289f32129a8fd9c" => :mojave
+    sha256 "6f0a6b5f33f57429ed7d4608cf6819d85b829468abd7c954c381a599c8c73647" => :big_sur
+    sha256 "2ea6c35bdfab9c28d9a5bc8a87e5306cbec6be17c26b1ad6f63ca70207a332a5" => :catalina
+    sha256 "fcc1af52f7c13bfe4b3df0e1ca559ab79cee172c8941f51a335fb0fbb505027f" => :mojave
   end
 
   def install

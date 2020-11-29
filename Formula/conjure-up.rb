@@ -6,15 +6,13 @@ class ConjureUp < Formula
   url "https://github.com/conjure-up/conjure-up/archive/2.6.14.tar.gz"
   sha256 "c9f115229a305ff40eae051f40db2ca18a3dc2bd377397e22786bba032feb79a"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     cellar :any
-    sha256 "1c5966220f3561d7aa4395458d9fac411522fb656c3db8b2351fb19e6b6d1bb1" => :big_sur
-    sha256 "4c1d6d263ed87f9fd3460deb70723bf2204d1cf77ca0774d7f37c0604e9722d7" => :catalina
-    sha256 "277b9eb27b13b0a517a228b52160a69b367b4f3535a08d3626830bb665f727a3" => :mojave
-    sha256 "1a467b8f94796f8e03820cc0ff227c3f4fa13b9819b205e8bb79a7b1e9ee8379" => :high_sierra
-    sha256 "a11d60f12198e51e04d3d89ec38d89da77cca62f5ad85746585f4b469cd11e8b" => :x86_64_linux
+    sha256 "1d755ca87d77ebcbc5d9f7d5fbb4e3287c5190a6373bb7d3d36c318606fa0b10" => :big_sur
+    sha256 "25e7e461528cf9c56ccdb4c286d38cc72c2843a7ba2310f65276f3c104ad3b80" => :catalina
+    sha256 "e722d4d340ff170432a12a97b0de57de13f774d439831989fc1286920d087376" => :mojave
   end
 
   depends_on "awscli"
