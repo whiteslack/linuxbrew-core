@@ -13,6 +13,7 @@ class Gsmartcontrol < Formula
     sha256 "5b936e741b0d53ac9fdbde2d64ac17f5399265157e1dcfd763cc85c8716d410c" => :big_sur
     sha256 "39046ff435ac8fe0c3e2caee12a462fcf7235c5eccaa3b7b91326f4465834941" => :catalina
     sha256 "0289b119ca79206d68ac0b4bcbb47b839f98945d85d1de1d63bb67a1ff408d14" => :mojave
+    sha256 "cd3e5e6dfa3f67976fdf2c76cd259d1e34700cf6b52ad6332d67ea6bf1bcb3c8" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
