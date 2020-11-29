@@ -1,9 +1,8 @@
 class Pulseaudio < Formula
   desc "Sound system for POSIX OSes"
   homepage "https://wiki.freedesktop.org/www/Software/PulseAudio/"
-  url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-13.0.tar.xz"
-  sha256 "961b23ca1acfd28f2bc87414c27bb40e12436efcf2158d29721b1e89f3f28057"
-  revision OS.mac? ? 1 : 2
+  url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-14.0.tar.xz"
+  sha256 "a834775d9382b055504e5ee7625dc50768daac29329531deb6597bf05e06c261"
 
   # The regex here avoids x.99 releases, as they're pre-release versions.
   livecheck do
@@ -12,11 +11,9 @@ class Pulseaudio < Formula
   end
 
   bottle do
-    sha256 "2c66cd8a26ff24ae4b53ec18844fb163a13ae809d8a8369e1fbd11a4d2c39e02" => :big_sur
-    sha256 "0e9445dd8d49abd299324e93f00231605e993f791674997d9d2c35b88efec528" => :catalina
-    sha256 "ae68dfdb8ad584bf3f602ea7fb36d9bc1e4540e6905986a7129e45c6170d8d95" => :mojave
-    sha256 "687c4c646487eb8a9988303e279dc2ee542b6404504cb54fcfce1d6d6bcf949f" => :high_sierra
-    sha256 "df9c734bd6a592a1012b88d1080a4cb28071b233199491d4178712cb1d9f28b8" => :x86_64_linux
+    sha256 "36f025d67efa9bc8198e4810dfc58b584d28f7980d4a98a3c2310f84caf7b773" => :big_sur
+    sha256 "fc7ff97eaf91b6bcfeeb391b6c885c2fd9c6d3843ab668d9e85a68d7bb55f92d" => :catalina
+    sha256 "78718069edbad1c576f4abf5c6fa2e6945e08699b006863dc3e94e27990f044c" => :mojave
   end
 
   head do
