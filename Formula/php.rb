@@ -6,6 +6,7 @@ class Php < Formula
   mirror "https://fossies.org/linux/www/php-8.0.0.tar.xz"
   sha256 "b5278b3eef584f0c075d15666da4e952fa3859ee509d6b0cc2ed13df13f65ebb"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https://www.php.net/releases/feed.php"
@@ -13,10 +14,9 @@ class Php < Formula
   end
 
   bottle do
-    sha256 "8e57a207d9919851d606ea18e9362d8cfd983666e52bd76ef4f8d663ea68e7f9" => :big_sur
-    sha256 "87985a4db279167a37f418a5cf8da255a33be910a4e7f181ad4ed7acdb8b3acb" => :catalina
-    sha256 "5660a4dbac0a2b258ff2283614fb14e4edd66a9c4253fd240db35781e1642c0f" => :mojave
-    sha256 "1f7be2ad66ddddb61fce755a136d3cad6ecd399ac6b8ef88cc2b995bc07316f4" => :x86_64_linux
+    sha256 "fb9e9a8db2d02ec3e80882d7f42894dde0c5a3f0d27990a3e365e470ff4ef63c" => :big_sur
+    sha256 "b1453e4e8e9ad95ec36c6e97bd2b3e0773a62d52b84a568ce26f1ccb97bc1bc6" => :catalina
+    sha256 "7bd4b3ef362185ae7e7918b04d5bc40f4ed3fd533b8dbefbebceead4b2b82393" => :mojave
   end
 
   head do
@@ -33,7 +33,7 @@ class Php < Formula
   depends_on "argon2"
   depends_on "aspell"
   depends_on "autoconf"
-  depends_on "curl-openssl"
+  depends_on "curl"
   depends_on "freetds"
   depends_on "gd"
   depends_on "gettext"

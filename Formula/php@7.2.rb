@@ -6,12 +6,12 @@ class PhpAT72 < Formula
   mirror "https://fossies.org/linux/www/php-7.2.34.tar.xz"
   sha256 "409e11bc6a2c18707dfc44bc61c820ddfd81e17481470f3405ee7822d8379903"
   license "PHP-3.01"
+  revision 1
 
   bottle do
-    sha256 "6b8510d6172096f16abcac5bfcc7d660f3c8f98fb2c8704f0c5e524231fa9230" => :big_sur
-    sha256 "8306426b1e7cf45ab64e34e81b328ceeeafe3ed6e9dccb39e6e837837e917459" => :catalina
-    sha256 "18eed639bb5627ef8ad1bdc35417c12dedf512030a3e5578535a4f4ee3dc2845" => :mojave
-    sha256 "77aa8d90cc87b74df8ea342283097db51643e481fc3b6f0c9d697a8bf8380713" => :x86_64_linux
+    sha256 "e39495f5389c97e3e3e1c2b0ea47832cdff5e5db25e671da0f918d0fc74a7137" => :big_sur
+    sha256 "0069df02b747f6e26b3e3ec5550cc83b96abd7858a6f53c6ff37f839d145fb71" => :catalina
+    sha256 "37be2c076029d9e1884c38166d3120be4ac93bd1db22cb3175d1894b830b73d1" => :mojave
   end
 
   keg_only :versioned_formula
@@ -26,7 +26,7 @@ class PhpAT72 < Formula
   depends_on "argon2"
   depends_on "aspell"
   depends_on "autoconf"
-  depends_on "curl-openssl"
+  depends_on "curl"
   depends_on "freetds"
   depends_on "freetype"
   depends_on "gettext"
@@ -141,7 +141,12 @@ class PhpAT72 < Formula
       --enable-wddx
       --enable-zip
       --with-apxs2=#{Formula["httpd"].opt_bin}/apxs
+      <<<<<<< HEAD
       --with-curl=#{Formula["curl-openssl"].opt_prefix}
+      =======
+      --with-bz2#{headers_path}
+      --with-curl=#{Formula["curl"].opt_prefix}
+      >>>>>>> 9c214141b2
       --with-fpm-user=_www
       --with-fpm-group=_www
       --with-freetype-dir=#{Formula["freetype"].opt_prefix}

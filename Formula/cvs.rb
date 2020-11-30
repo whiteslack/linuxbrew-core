@@ -23,10 +23,10 @@ class Cvs < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c80cc90d6ffbb4113745eac9386396c82b63ceee000f88acba79b7a16e05724d" => :catalina
-    sha256 "2fba5fb7a0ece4b19030e2217a9297f13d3a763303443b9f6935f48d434f636a" => :mojave
-    sha256 "eac3fab201c8e47ee3d05e95a240c2f53306e000a416956843083d7305b48da9" => :high_sierra
-    sha256 "fc5cffd3bed4c1fab6d223c18b3cf941e71e7fc7bec71ed694b611d7f4eed3ad" => :x86_64_linux
+    rebuild 1
+    sha256 "0cf65c20d4220d636cfd9c9b4f4e6f3ab011fe01136e5677f9da56cb67c0c208" => :big_sur
+    sha256 "2d6d9ac2f96edfbd55f9f13c215ba6aec3960c1c3f91e99294a512618b159bb9" => :catalina
+    sha256 "c564cc0e316461844b51f36f9d13e357184af89c325edfe8c565fd1f74d6d2da" => :mojave
   end
 
   unless OS.mac?
@@ -66,6 +66,9 @@ class Cvs < Formula
   patch :DATA
 
   def install
+    # Work around configure issues with Xcode 12
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",

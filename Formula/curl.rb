@@ -4,6 +4,7 @@ class Curl < Formula
   url "https://curl.haxx.se/download/curl-7.73.0.tar.bz2"
   sha256 "cf34fe0b07b800f1c01a499a6e8b2af548f6d0e044dca4a29d88a4bee146d131"
   license "curl"
+  revision 1
 
   livecheck do
     url "https://curl.haxx.se/download/"
@@ -11,17 +12,9 @@ class Curl < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "fd9b2ae4a0d112bcef3e8e51cfce9b77fab587c50655d727b09b0f48daccb071" => :big_sur
-    sha256 "98f3bd49f4eae8638edc391afdbc57433d81e749e310a069d670e12f5941a4ce" => :catalina
-    sha256 "dc41d1f29bc7d8b7c89b3526a426cdab854e8d56b4c686d187e4995adbd092e3" => :mojave
-    sha256 "ec6ba585b8bbcb5c17feb51efcf8df1048318368376bd7142b6a047374c010e5" => :high_sierra
-    sha256 "ba1042f6ee12e284d40edacb19187dea5a8b0397ec903f0597729ca4207827f4" => :x86_64_linux
-  end
-
-  pour_bottle? do
-    reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."
-    satisfy { OS.mac? || HOMEBREW_PREFIX.to_s == Homebrew::DEFAULT_PREFIX }
+    sha256 "c0b3cffe72118976aae9ab1651e1372ee6714d7e06ff5fdefc06536a2407c5ce" => :big_sur
+    sha256 "b4cacbe3fc84a0cd0ce1f1d58ab10e8eee299a69f940c95e92338af0cd379e22" => :catalina
+    sha256 "2e9afad916d3e93d7ca3126caf99ae84498034f92e2b9430fe84c57111ac0c18" => :mojave
   end
 
   head do
@@ -35,36 +28,39 @@ class Curl < Formula
   keg_only :provided_by_macos
 
   depends_on "pkg-config" => :build
+  depends_on "brotli"
+  depends_on "libidn2"
+  depends_on "libmetalink"
+  depends_on "libssh2"
+  depends_on "nghttp2"
+  depends_on "openldap"
+  depends_on "openssl@1.1"
+  depends_on "rtmpdump"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "openssl@1.1"
-  end
 
   def install
     system "./buildconf" if build.head?
 
+    openssl = Formula["openssl@1.1"]
     args = %W[
       --disable-debug
       --disable-dependency-tracking
       --disable-silent-rules
       --prefix=#{prefix}
+      --with-ssl=#{openssl.opt_prefix}
+      --with-ca-bundle=#{openssl.pkgetc}/cert.pem
+      --with-ca-path=#{openssl.pkgetc}/certs
       --with-secure-transport
+      --with-default-ssl-backend=openssl
+      --with-gssapi
+      --with-libidn2
+      --with-libmetalink
+      --with-librtmp
+      --with-libssh2
+      --without-libpsl
     ]
-
-    if OS.mac?
-      args << "--with-darwinssl"
-      args << "--without-ca-bundle"
-      args << "--without-ca-path"
-    else
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@1.1"].opt_lib}/pkgconfig"
-      args << "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}"
-      args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
-      args << "--with-ca-path=#{etc}/openssl@1.1/certs"
-      args << "--disable-ares"
-      args << "--disable-ldap"
-    end
 
     system "./configure", *args
     system "make", "install"
