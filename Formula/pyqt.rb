@@ -1,10 +1,9 @@
 class Pyqt < Formula
   desc "Python bindings for v5 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/download5"
-  url "https://files.pythonhosted.org/packages/1d/31/896dc3dfb6c81c70164019a6cbba6ab037e3af7653d9ca60ccc874ee4c27/PyQt5-5.15.1.tar.gz"
-  sha256 "d9a76b850246d08da9863189ecb98f6c2aa9b4d97a3e85e29330a264aed0f9a1"
+  url "https://files.pythonhosted.org/packages/28/6c/640e3f5c734c296a7193079a86842a789edb7988dca39eab44579088a1d1/PyQt5-5.15.2.tar.gz"
+  sha256 "372b08dc9321d1201e4690182697c5e7ffb2e0770e6b4a45519025134b12e4fc"
   license "GPL-3.0-only"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,11 +11,9 @@ class Pyqt < Formula
 
   bottle do
     cellar :any
-    sha256 "17da63547526967f8d8aa98e245b4e99b7a99a3dfbc42d12effc11f8d2b3acd0" => :big_sur
-    sha256 "0e29abd06e94bd6c4b142e47ae7f530e455d90bf2e47ed4be7c025b31d4dae8d" => :catalina
-    sha256 "982aa9480925244f6b4be329300019a15cf2cbc89053f2b7db37a7fc8818d15d" => :mojave
-    sha256 "bfa956a2808d171fd618f424430e9db105a796ff875eb8271330a78f501bbdfe" => :high_sierra
-    sha256 "e249a0671617a14bfca478211779e3c96b5a7397700b49b74aec54112e9cec52" => :x86_64_linux
+    sha256 "167b4359448c02c360fb319a370ae27a002c2ad00430eb0ecf81b22f04714286" => :big_sur
+    sha256 "81c8c29e4a74e31ab9cfe8bcce524c991941f69861ab61fba073a42e24707218" => :catalina
+    sha256 "25cb031596225a40027d02948692044d153a8f7d1e28102fb2b13db4146c7635" => :mojave
   end
 
   depends_on "python@3.9"

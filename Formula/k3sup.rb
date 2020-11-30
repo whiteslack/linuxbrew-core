@@ -2,8 +2,8 @@ class K3sup < Formula
   desc "Utility to create k3s clusters on any local or remote VM"
   homepage "https://github.com/alexellis/k3sup"
   url "https://github.com/alexellis/k3sup.git",
-      tag:      "0.9.11",
-      revision: "79720da83b694735d6415f3f3d01f02a1f809da8"
+      tag:      "0.9.12",
+      revision: "7fb6fdf0b4dfba45b1a11f93b8d10bca0f1698b5"
   license "MIT"
 
   livecheck do
@@ -13,10 +13,9 @@ class K3sup < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "6df88df2574b433ef89aac8b83703d4e8ba1519c057e28211a6186ea321cd1de" => :big_sur
-    sha256 "3a851fb2cc522fd85bda7b3377d0c0030bc4655c398aa72e11e09e646bdf9807" => :catalina
-    sha256 "221c9665f69b80d0e6c82bf6d00beadf1469c575b9e541fbf7642ca9c9791afc" => :mojave
-    sha256 "55d8edb0f9b24eebb2c4639fb3bfcc1e800c7a03319106cae8a81ec27057ccfc" => :high_sierra
+    sha256 "04212a4ac9c31a70b936fc22a2e4bb15900e4f5d7888be49e7b9755fc30845ad" => :big_sur
+    sha256 "0c202ba3aac77a105211c5ee4c6a1764983d7515a650f8bb8a6949316c2327e1" => :catalina
+    sha256 "1c47e9c322eedb5d020543f6f5b3590be80b0407171d4e4008ccca853f8b9079" => :mojave
   end
 
   depends_on "go" => :build
