@@ -10,6 +10,7 @@ class GitlabGem < Formula
     sha256 "7c4a0fb41401e668a957c23d934896ead423f78ee65099b451c34a5b5243224f" => :big_sur
     sha256 "9fb83bdf349a57916534fd40a2e38db4a893b713207abe572117e21d21e9df7b" => :catalina
     sha256 "2bd6150b2c26c4b746ffc8c2f43c05b311ec33c08f88a82946d08e63f6dea9d8" => :mojave
+    sha256 "f68767ab2b84de08d3864c527034da1c12e457e865da593a6982b0934f6aa505" => :x86_64_linux
   end
 
   uses_from_macos "ruby", since: :catalina
