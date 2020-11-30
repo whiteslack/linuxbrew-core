@@ -10,6 +10,7 @@ class Ecl < Formula
     sha256 "23de8394468aa1682fdfaa00544b0316798eaf726b674f5003c6451dbecbb6f8" => :big_sur
     sha256 "612d10e1c4c34d9fcb5ec731e683210634f12111c30862ae890d225a604343ce" => :catalina
     sha256 "a29d90c9343ff63a28c6442caccf1161724804b0632624a531546db9ea63ce45" => :mojave
+    sha256 "3bed72bcbf2af2b505f591b6072fd9630d352a4b162c7cac7387fef3db16ab1e" => :x86_64_linux
   end
 
   depends_on "texinfo" => :build # Apple's is too old
