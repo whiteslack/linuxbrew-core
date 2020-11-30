@@ -7,6 +7,7 @@ class Onedrive < Formula
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "5e35136dbec90713f07ceffcebbbad5605e805c7c7a03444a42cfdba4b9e9893" => :x86_64_linux
   end
 
   depends_on "dmd" => :build
