@@ -6,13 +6,13 @@ class YoutubeDl < Formula
   url "https://files.pythonhosted.org/packages/b6/d5/f003ec65e6bcfe475abddbfb3271159736be6ebca2ab95796c0f2e8ee184/youtube_dl-2020.11.29.tar.gz"
   sha256 "849d2a85ee99e5caafc8d52572bb603c4ae020dfb615a4d51c3bc90787d40df3"
   license "Unlicense"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f7cab9112815a0e18f0531029cd875f616a5b5aa910901798df87de21c19422e" => :big_sur
-    sha256 "31f217e3afc01c30fbe84a8db3754191db59579a700be50a1150817a46438a38" => :catalina
-    sha256 "7bc643f206a2e55c429e63719d121423698b720d0d94e410f4118743ffd1199a" => :mojave
-    sha256 "c88ee012094d4ce4bef6918e29b82a250675ac28d6d4ccee7a7db5eef9351c27" => :x86_64_linux
+    sha256 "42f350b8ed9148a37aae4afea76aa9f5a60402bf3a56163916aaf6027d298082" => :big_sur
+    sha256 "820ccc4953c90015d69e5c11ef133f5caf37c2115a476f40ded8e4a83d3d3d65" => :catalina
+    sha256 "1953cdb1e9bd334e5270d5cf837a9657f1a84991e2f8806285c6019c6590a851" => :mojave
   end
 
   depends_on "python@3.9"
@@ -20,6 +20,8 @@ class YoutubeDl < Formula
   def install
     virtualenv_install_with_resources
     man1.install_symlink libexec/"share/man/man1/youtube-dl.1" => "youtube-dl.1"
+    bash_completion.install libexec/"etc/bash_completion.d/youtube-dl.bash-completion"
+    fish_completion.install libexec/"etc/fish/completions/youtube-dl.fish"
   end
 
   test do

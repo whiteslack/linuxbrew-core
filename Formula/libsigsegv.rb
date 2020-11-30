@@ -4,7 +4,7 @@ class Libsigsegv < Formula
   url "https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.12.tar.gz"
   mirror "https://ftpmirror.gnu.org/libsigsegv/libsigsegv-2.12.tar.gz"
   sha256 "3ae1af359eebaa4ffc5896a1aee3568c052c99879316a1ab57f8fe1789c390b6"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
@@ -12,16 +12,22 @@ class Libsigsegv < Formula
 
   bottle do
     cellar :any
-    sha256 "2db9aa014d95cd718825fa29da0f237c44c4b20e826b9f01c770f3f39b77e790" => :big_sur
-    sha256 "aae3e97886b24afb8daf0bafdf9dc02c5fa3d18392611cf68dfd88b663deb87b" => :catalina
-    sha256 "3b92bc3dfb8000bfac2b9ebdef436acdf0047d1c98b3ed250f0a332d84ba869a" => :mojave
-    sha256 "5fea960fc3cc9f168749e36e37efbf53f3030d4a3fc2f2602f182d3dcafd5a17" => :high_sierra
-    sha256 "158f90f84a050e266c23299745b7553321c304649e9f88afcf34d73ef08f95a1" => :sierra
-    sha256 "b9808096e671482dffd3c4b7ea330d8fc58027bee92c6a774b953fefc1606eb1" => :el_capitan
-    sha256 "53be61b94241903684a8e06a332207ee4ba44c2c7316a8cc4b988c7b68891aac" => :x86_64_linux
+    rebuild 1
+    sha256 "8f4dde47fdc37a7d8bfe2e5fb5a6935df61933ac0c261c7e84a779ea9d1571f9" => :big_sur
+    sha256 "3f08091c87658aaf556a9309ce98146faee3d9be07e72380fdab78449111195c" => :catalina
+    sha256 "f883382e7eb115a7ea8f660487b40f186d2d422f16d0bceaa58ceca19f7279f9" => :mojave
+  end
+
+  head do
+    url "https://git.savannah.gnu.org/git/libsigsegv.git"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
   end
 
   def install
+    system "./gitsub.sh", "pull" if build.head?
+    system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-shared"

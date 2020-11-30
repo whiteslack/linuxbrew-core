@@ -3,9 +3,10 @@ class Pwntools < Formula
 
   desc "CTF framework used by Gallopsled in every CTF"
   homepage "https://github.com/Gallopsled/pwntools"
-  url "https://files.pythonhosted.org/packages/90/5a/f26c45ac6e09d5b9507fabf3b6ad93c779dedd227312e3477b2509a4c5d3/pwntools-4.3.0.tar.gz"
-  sha256 "bba7c2df5913295601f2a5ce7c56bba7a75cf5af0fd523cf860b8977495dfd00"
+  url "https://files.pythonhosted.org/packages/34/ea/4f18059a859d5b0fe28a95bf1fc973ee82408731652916296cc6cde3b272/pwntools-4.3.1.tar.gz"
+  sha256 "c46188e713c47617b2dbf3e32d1867f948d35d82fddf9a9d2294a33f47484a8a"
   license "MIT"
+  head "https://github.com/Gallopsled/pwntools.git"
 
   livecheck do
     url :stable
@@ -13,9 +14,9 @@ class Pwntools < Formula
 
   bottle do
     cellar :any
-    sha256 "abd1c970934a8a1ae7e62186ead1f586091ead365425266ab73d4de19278bb15" => :big_sur
-    sha256 "b111b63f375050a95dbcb49f03fe5fd8008c3103edaf745c7204ee04c8f1ea8a" => :catalina
-    sha256 "b62436dacf0068f2c5fd7da1a5e079d92025d4b8105a013d84bef21cb1a4a074" => :mojave
+    sha256 "88ac68df8de83aec0e440738bceb421600e9b700e4d4c66456d6f2e28461c599" => :big_sur
+    sha256 "8af48c6e5fb5001b5ef4946e3c711f64ef1405a4f4648dc6739028edb8a5f9c6" => :catalina
+    sha256 "b614d1c4ea0ba3f1131295563f164917447e6bd25ae7a0fc993fb2a2b59ae5f0" => :mojave
   end
 
   depends_on "openssl@1.1"
@@ -80,8 +81,8 @@ class Pwntools < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/55/fd/fc1aca9cf51ed2f2c11748fa797370027babd82f87829c7a8e6dbe720145/packaging-20.4.tar.gz"
-    sha256 "4357f74f47b9c12db93624a82154e9b120fa8293699949152b22065d556079f8"
+    url "https://files.pythonhosted.org/packages/16/7c/33ae3aa02eb10ca726b21aa88d338e3f619c674e4fb8544eb352330d880a/packaging-20.7.tar.gz"
+    sha256 "05af3bb85d320377db281cf254ab050e1a7ebcbf5410685a9a407e18a1f81236"
   end
 
   resource "paramiko" do
