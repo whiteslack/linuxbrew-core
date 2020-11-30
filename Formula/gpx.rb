@@ -11,6 +11,7 @@ class Gpx < Formula
     sha256 "254414afa9fe68137739444a5c514637131eac89d208239d4de86d953bbed5cd" => :big_sur
     sha256 "a982edd4fb776a077ea51294aea03533e5672dea8a7710329aadc2a3adca9ad1" => :catalina
     sha256 "f807c588535d7d941470c2d80dd58e97f4ad9e72d7da1b13cbbf87d9912a970a" => :mojave
+    sha256 "2c51ef5d882c9ea7283fbc4c8c3ce60e24a94c6156e374813f127e296184c273" => :x86_64_linux
   end
 
   def install
