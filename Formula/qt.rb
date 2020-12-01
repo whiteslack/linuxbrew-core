@@ -3,10 +3,10 @@
 class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/5.15/5.15.1/single/qt-everywhere-src-5.15.1.tar.xz"
-  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.1/single/qt-everywhere-src-5.15.1.tar.xz"
-  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.1/single/qt-everywhere-src-5.15.1.tar.xz"
-  sha256 "44da876057e21e1be42de31facd99be7d5f9f07893e1ea762359bcee0ef64ee9"
+  url "https://download.qt.io/official_releases/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz"
+  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz"
+  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz"
+  sha256 "3a530d1b243b5dec00bc54937455471aaa3e56849d2593edb8ded07228202240"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
   revision 2 unless OS.mac?
 
@@ -19,11 +19,9 @@ class Qt < Formula
 
   bottle do
     cellar :any
-    sha256 "d7b6d9c9f971f09ee690b7624229f7703e4f92ee347419d10b5bd29a207d5230" => :big_sur
-    sha256 "98b58f82856c44dd6d675db01bcbbf05bf371c62d63be8c32b1a2facb17145bb" => :catalina
-    sha256 "b9e96e6ae3d37a9d3c56369ab4dfa329361d83c2b632da53037feaf26d0362b5" => :mojave
-    sha256 "75f2dda074131afb9423cff66d38f20815f61955b192a4834b169947a4ebf8e4" => :high_sierra
-    sha256 "fafc8831be43f897fcaf0ea362aa96c44be62ca880240f513c3553c4b23466d5" => :x86_64_linux
+    sha256 "ac22ab5828d894518e42f00e254f1e36d5be4e5f3f1c08b3cd49b57819daaf2d" => :big_sur
+    sha256 "51ab78a99ff3498a236d15d9bed92962ddd2499c4020356469f7ab1090cf6825" => :catalina
+    sha256 "25c4a693c787860b090685ac5cbeea18128d4d6361eed5b1bfed1b16ff6e4494" => :mojave
   end
 
   keg_only "Qt 5 has CMake issues when linked"
@@ -61,18 +59,11 @@ class Qt < Formula
   uses_from_macos "flex"
   uses_from_macos "sqlite"
 
-  # Fix build on Linux when the build system has AVX2
-  # Patch submitted at https://codereview.qt-project.org/c/qt/qt3d/+/303993
+  # Find SDK for 11.x macOS
+  # Upstreamed, remove when Qt updates Chromium
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/564876/qt/qt3d-no-avx2-compile-fix.diff"
-    sha256 "dcc535d21fc2d692f4081d5e66b96960e7d48fa4e07705fcac40d63fbc713639"
-    directory "qt3d"
-  end
-
-  # Patches for Xcode 12 / Metal API changes. Remove when Qt updates its Chromium.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/f42f80503399061eab165b8e83a5519446128d5f/qt/qt-webengine-xcode-12.diff"
-    sha256 "3a3186b32ee358a25841c96d520d5d5e5ca7fba3912b2fc3b338b4f45256bcdb"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/92d4cf/qt/5.15.2.diff"
+    sha256 "fa99c7ffb8a510d140c02694a11e6c321930f43797dbf2fe8f2476680db4c2b2"
   end
 
   def install

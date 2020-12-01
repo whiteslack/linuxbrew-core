@@ -1,21 +1,19 @@
 class Octave < Formula
   desc "High-level interpreted language for numerical computing"
   homepage "https://www.gnu.org/software/octave/index.html"
-  url "https://ftp.gnu.org/gnu/octave/octave-5.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/octave/octave-5.2.0.tar.xz"
-  sha256 "2757b5cc1854c9326d6c99d2900c7cec2909ac7ed500212d170d0df592bfd26b"
-  license "GPL-3.0"
-  revision 10
+  url "https://ftp.gnu.org/gnu/octave/octave-6.1.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/octave/octave-6.1.0.tar.xz"
+  sha256 "d6cd6b79ef023e300b9287b56aa79333cfb6b651771d43ade7cbde63ca5a6010"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
   end
 
   bottle do
-    sha256 "fa73507af28bc614dcd9e4949daf653c20e062bc17cab2ba585a7398f89c4093" => :big_sur
-    sha256 "83ac9ed09181aad9dc27d3d2463ae516b1197c99b20ebe60879edbb69a784eb5" => :catalina
-    sha256 "026c0c85722f18a0d7f06de52ac48542a2069de7af5343d866b230201a140161" => :mojave
-    sha256 "cdf71e69e13c120c6c26ce3088d7c0cf3e4f8a8691951d42212bc1135a5ca1af" => :high_sierra
+    sha256 "efcf591df4a8a2acc37fcb9318236f7707d4740f437ad78f661a5ecb1a54a464" => :big_sur
+    sha256 "4bbd1ad9938b8c109147e27b88f602a0ce2e5d484d6abf0c4b8e8a2862c5604c" => :catalina
+    sha256 "a9150b5d2a3919be506ded34f87aefd90b92db66a5bf7b52b925ffccd2cbe695" => :mojave
   end
 
   head do
@@ -65,14 +63,6 @@ class Octave < Formula
 
   # Dependencies use Fortran, leading to spurious messages about GCC
   cxxstdlib_check :skip
-
-  # Octave fails to build due to error with java. See also
-  # https://github.com/Homebrew/homebrew-core/issues/39848
-  # Patch submitted upstream at: https://savannah.gnu.org/patch/index.php?9806
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/a8124b73c5216cc81d63627a4b41203ab1d91a4d/octave/5.1.0-java-version.patch"
-    sha256 "7ea1e9b410a759fa136d153fb8482ecfc3425a39bfe71c1e71b3ff0f7d9a0b54"
-  end
 
   def install
     system "./configure", "--prefix=#{prefix}",

@@ -6,15 +6,13 @@ class LiterateGit < Formula
   url "https://github.com/bennorth/literate-git/archive/v0.3.1.tar.gz"
   sha256 "f1dec77584236a5ab2bcee9169e16b5d976e83cd53d279512136bdc90b04940a"
   license "GPL-3.0-or-later"
-  revision OS.mac? ? 4 : 6
+  revision OS.mac? ? 5 : 7
 
   bottle do
     cellar :any
-    sha256 "277791dcdd9e05e693d3d1336da8ece6b8b85f66bb054b3a89a987f51c988ca6" => :big_sur
-    sha256 "917afeb38b16bd6db8b46ccc14200c3c5526f473ddbdabc6c7394b225864ae72" => :catalina
-    sha256 "99699b68365ee983617041e46bb8dc0776a4e09bf50b8d93da2581a19cf67dad" => :mojave
-    sha256 "6e990fb22252533b4b4747de9e84268300461e04a9a9c0c7b79c6279b37ffa04" => :high_sierra
-    sha256 "c2ccf76347f4ea04f5536c32ec8472e55224f70f9d4b8a53a6d4f5eeb0fdebb4" => :x86_64_linux
+    sha256 "7d0a903d891863d8ce77ac5b9508102273526dea2efc86d57b168d46d05025cd" => :big_sur
+    sha256 "1f672f78ba93ff8ce5185bd9db20b651f45cfceccde64f7c047493bf5b4e929d" => :catalina
+    sha256 "c0abc49f503c8c2ff5d58ec8af19309823b254e451a20f33db6ddaf696c01117" => :mojave
   end
 
   depends_on "libgit2"
@@ -62,8 +60,8 @@ class LiterateGit < Formula
   end
 
   resource "pygit2" do
-    url "https://files.pythonhosted.org/packages/1d/c4/e0ba65178512a724a86b39565d7f9286c16d7f8e45e2f665973065c4a495/pygit2-1.1.1.tar.gz"
-    sha256 "9255d507d5d87bf22dfd57997a78908010331fc21f9a83eca121a53f657beb3c"
+    url "https://files.pythonhosted.org/packages/3a/42/f69de8c7a1e33f365a91fa39093f4e7a64609c2bd127203536edc813cbf7/pygit2-1.4.0.tar.gz"
+    sha256 "cbeb38ab1df9b5d8896548a11e63aae8a064763ab5f1eabe4475e6b8a78ee1c8"
   end
 
   resource "Pygments" do
