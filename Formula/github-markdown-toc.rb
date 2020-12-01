@@ -10,6 +10,7 @@ class GithubMarkdownToc < Formula
     sha256 "f69bb8b399201b3f09f24314f38c87d0c78f4094ed352b77dc489ec7d4ee760e" => :big_sur
     sha256 "9c593e7c243a1b1004ec17f7a291e0036ee235c14dd653a197d2484d827067d7" => :catalina
     sha256 "c882d7acb38036793ae4746c29f37e08fa4bc242526080481ca08d4775d9cfaf" => :mojave
+    sha256 "721c279d679ea457d323fa7acac611a87f3c04319aac3785e44b5540eb3a43ce" => :x86_64_linux
   end
 
   depends_on "go" => :build
