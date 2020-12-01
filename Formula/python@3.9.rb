@@ -4,7 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tar.xz"
   sha256 "9c73e63c99855709b9be0b3cc9e5b072cb60f37311e8c4e50f15576a0bf82854"
   license "Python-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,10 +12,9 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 "9ad938e5803a6c8ce6fb183f479968cadc1d6b6cb75dd7a11d4761c5e3635131" => :big_sur
-    sha256 "a39639719e49bf3631ef41705267eae5ae06b78aebc0e8c3ffd9fdb91e75d56c" => :catalina
-    sha256 "4462c76fea0dc7abb9ea959d82594aa0b10191f5bc3e43d8d44131a05bee3950" => :mojave
-    sha256 "0f2838a538c0c094b8cfb7701a696f8d87e7ac55f14104fd7530e1d9ac732a94" => :x86_64_linux
+    sha256 "9e3b87708ad72996720f37ce28728ebef4c7001d342ed5129149192dcedd19e7" => :big_sur
+    sha256 "4f47c66a09683ff5b4b5e5a18630c7036cb69f78c7b5ba2f2c1b55fecbce3416" => :catalina
+    sha256 "5e2da6939948506de863544a98247c9464d89e9b4a1e1dcdbf11c5baefc7d9a5" => :mojave
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -67,8 +66,8 @@ class PythonAT39 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/0b/f5/be8e741434a4bf4ce5dbc235aa28ed0666178ea8986ddc10d035023744e6/pip-20.2.4.tar.gz"
-    sha256 "85c99a857ea0fb0aedf23833d9be5c40cf253fe24443f0829c7b472e23c364a1"
+    url "https://files.pythonhosted.org/packages/03/41/6da553f689d530bc2c337d2c496a40dc9c0fdc6481e5df1f3ee3b8574479/pip-20.3.tar.gz"
+    sha256 "9ae7ca6656eac22d2a9b49d024fc24e00f68f4c4d4db673d2d9b525c3dea6e0e"
   end
 
   resource "wheel" do
@@ -83,6 +82,13 @@ class PythonAT39 < Formula
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/33a9d63f/python/arm64-3.9.patch"
       sha256 "167e328cf68e9ec142f483fda9fafbb903be9a47dee2826614fdc24b2fbe6e06"
+    end
+
+    # Further patch for Big Sur, remove in 3.9.2
+    # https://github.com/python/cpython/pull/23556
+    patch do
+      url "https://github.com/fxcoudert/cpython/commit/cd26ccbb.patch?full_index=1"
+      sha256 "59c98f991f839d610d53ca5c4af1464a99adf6c85e807f8a676b3e41c5dbe0a2"
     end
   end
 

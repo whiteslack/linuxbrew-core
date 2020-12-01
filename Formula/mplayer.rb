@@ -3,7 +3,7 @@ class Mplayer < Formula
   homepage "https://mplayerhq.hu/"
   url "https://mplayerhq.hu/MPlayer/releases/MPlayer-1.4.tar.xz"
   sha256 "82596ed558478d28248c7bc3828eb09e6948c099bbd76bb7ee745a0e3275b548"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://mplayerhq.hu/MPlayer/releases/"
@@ -12,10 +12,9 @@ class Mplayer < Formula
 
   bottle do
     cellar :any
-    sha256 "f97d98645b6ddfb407d867eb8f6e75ed77a306d5fd9eff933b3c35d6026833e3" => :big_sur
-    sha256 "507f98f3d3782d767edf2bb6670d9be20ed698160ac4b742b330fd597b98fa76" => :catalina
-    sha256 "47b72b29fd5d8674ee430c64094530b7c99c66b25a199baeb380255519642b01" => :mojave
-    sha256 "a4f57d019cef0347d8275bca640574c58a0d706f0ec419acea0580756ece7d25" => :x86_64_linux
+    sha256 "acaa1e3eefe8b4cdf1ec9280897ccf9105df580ad3912a41c8cbe1d7d6572d62" => :big_sur
+    sha256 "0dd16cbb1ae697835329526876e76bea3801b6e0282a224bdb8ad80a8ff34442" => :catalina
+    sha256 "e2ffb89894320617bd3dd058060f1a99d94a3b18b8daa349cea6cdd15385adfb" => :mojave
   end
 
   head do
