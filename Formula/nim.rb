@@ -1,18 +1,15 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
   homepage "https://nim-lang.org/"
-  url "https://nim-lang.org/download/nim-1.4.0.tar.xz"
-  sha256 "9dfba2bed31a21a5a34231016dd556b1b5e0db23c01357cfab26aa8f27a6c23d"
+  url "https://nim-lang.org/download/nim-1.4.2.tar.xz"
+  sha256 "03a47583777dd81380a3407aa6a788c9aa8a67df4821025770c9ac4186291161"
   license "MIT"
 
   bottle do
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "8b726adf91c1034db26ee946974d3a57925b72951b933a033407a80409d10be8" => :big_sur
-    sha256 "94d608a2b726324490468d97eb690051505a07f75ac729dbe00214a611172513" => :catalina
-    sha256 "35068d141e7b6043c0e90502e04e4fbd9d4c9abf058600b0f9e1fc3ce638206c" => :mojave
-    sha256 "b6ab01910675c9a1f0ffa855f3faab1495b6d66f83a55998553e3a507f0372cd" => :high_sierra
-    sha256 "5b3f7c6b305c47e670f132108e99793240d0dc62f2ca4a357c1825cd1df70188" => :x86_64_linux
+    sha256 "a0bd46ce2277fd158cc74f3ff1b628a043602048a45cc5a8308a9555fafb950c" => :big_sur
+    sha256 "b7c2cde81c13442221e9145469d36bc3bfb97ee75b41cc34e5be42d09a8688cc" => :catalina
+    sha256 "55f94a676d4b5c3c362cb61866a19915ef6bd146dc9b8b601b89c69fcf4808bd" => :mojave
   end
 
   head do

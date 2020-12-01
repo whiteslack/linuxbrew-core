@@ -2,8 +2,8 @@ class Flux < Formula
   desc "Lightweight scripting language for querying databases"
   homepage "https://www.influxdata.com/products/flux/"
   url "https://github.com/influxdata/flux.git",
-      tag:      "v0.96.0",
-      revision: "9c3cf772426aef125c979c81d93e0dda37ab95b8"
+      tag:      "v0.97.0",
+      revision: "35df840f449e4aec5b17ce32a26ff0644b9082f9"
   license "MIT"
   head "https://github.com/influxdata/flux.git"
 
@@ -14,10 +14,9 @@ class Flux < Formula
 
   bottle do
     cellar :any
-    sha256 "8c638fe223f0211e9a9fe9e5c979b36b53a9fb37d6444250b8cb8d240540b9a5" => :big_sur
-    sha256 "bc46820524e04336295652034ea781060993a841b62d902d91b295edb24cca89" => :catalina
-    sha256 "fdef740161869f72f77eb79898613501c92909077e6272f693edf50e48d543a2" => :mojave
-    sha256 "690020c84188f1bf045a6a11fa27a298669bce681756f3b5b4792145f171c34b" => :x86_64_linux
+    sha256 "07785fc25b031f3427a9fbe4a89761381e4c0bc9c22aee3f837c614f4f88b045" => :big_sur
+    sha256 "c142c9ce4c026a323183c412781b4d16b2366766b8c0373e9f045a2bd636b7af" => :catalina
+    sha256 "a31a97f369e3eee86c18d45e44cffa4bee454ae4dd72bf0af764759236ed4294" => :mojave
   end
 
   depends_on "go" => :build
