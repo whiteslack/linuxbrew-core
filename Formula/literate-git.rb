@@ -13,6 +13,7 @@ class LiterateGit < Formula
     sha256 "7d0a903d891863d8ce77ac5b9508102273526dea2efc86d57b168d46d05025cd" => :big_sur
     sha256 "1f672f78ba93ff8ce5185bd9db20b651f45cfceccde64f7c047493bf5b4e929d" => :catalina
     sha256 "c0abc49f503c8c2ff5d58ec8af19309823b254e451a20f33db6ddaf696c01117" => :mojave
+    sha256 "af8a94a6dfc774b7483e4ada46226279fd91a8c072154c6253b70b95c13b7dcc" => :x86_64_linux
   end
 
   depends_on "libgit2"
