@@ -10,6 +10,7 @@ class Fortio < Formula
     sha256 "dc3dcac1c7007b2b21dd9105c55505cb1b6f86149be1242ac413baa0a361feb4" => :big_sur
     sha256 "41a9b9b4ddb5729ee114dfb42e305f558260c055d786bd1b17cc837344bff1d0" => :catalina
     sha256 "eb37c04b1d2bcdf1237fdf75fcbf0c83a274f4027b532b2eb6a9e62fe63f39d7" => :mojave
+    sha256 "7de326ef437edb7b5a701b472e3ab2622f29c680470478f27fe36f0bfaf8d869" => :x86_64_linux
   end
 
   depends_on "go" => :build
