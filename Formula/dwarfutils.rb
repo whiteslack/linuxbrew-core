@@ -14,6 +14,7 @@ class Dwarfutils < Formula
     sha256 "4b7bb9ec7ab16bc1f7621484fb36af441cb9fd9e749cda79996915cf7bc22372" => :big_sur
     sha256 "5e63608b1a3ac55a066255d09d57d07105c7adcecbcddfe65fb45738f4480460" => :catalina
     sha256 "a511dac8825fed2348399e8390170b53e7232b19247f42f59c5bd67ae24af5b4" => :mojave
+    sha256 "906713b3305fe1b7a54842c8595095937c2d9674c60c7128e11e0cd71cedd2a9" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
