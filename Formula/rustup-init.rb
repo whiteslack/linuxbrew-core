@@ -10,6 +10,7 @@ class RustupInit < Formula
     sha256 "3ca4f2a444efa1b2304799b1f2ccc4d835f30b422e1281381d0ef417eecd57ce" => :big_sur
     sha256 "bdde9b0a17227a4dbc37c52b66a921f95ac9c760c133c4b401f0abc42c05b1aa" => :catalina
     sha256 "f8501b29816fb534524bd36dc46a679456361a7a0b35e6ebc6f5b0dd75083c00" => :mojave
+    sha256 "62c37e47998cfc03eaa36254487904a97b284f8666e3cb78b3982b0f52dbc0a0" => :x86_64_linux
   end
 
   depends_on "rust" => :build
