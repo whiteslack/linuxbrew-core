@@ -10,6 +10,7 @@ class KyotoTycoon < Formula
     sha256 "6718c70e1a6f9095077180661a2fb9649e3c7f36847738ef900bd5565cefb4af" => :big_sur
     sha256 "fb28428ef7f62c2ac86f78e00101ca58940fe875d4c4a0df5cada4cca8dce7a6" => :catalina
     sha256 "2272eabbc069a844c838aaa501285b475037ebe8a76e1bf1f41ab36974bc035d" => :mojave
+    sha256 "0f0ae6ac16006c21dec942d412d3952582c7cd6c9f2d04fbe908834c9fbfce34" => :x86_64_linux
   end
 
   depends_on "lua" => :build
