@@ -12,6 +12,7 @@ class Mmctl < Formula
     sha256 "9e68bbf4eb9ecfead97a1ff81b346ca41afa0c6161f7f105ca9286956f13e6f4" => :big_sur
     sha256 "22c8df03329b1d0079d9de47e339e939cb425efba910a0c815cd780ba85ce93b" => :catalina
     sha256 "3817cbda7a0d0c258fbc0b8be820a9cbc4cbe1333cf5ef039e947c06b11c1de6" => :mojave
+    sha256 "ea5df718db4a98d8b64dcba19ab199eb3418b56d5e586789cfa002c16cefe67a" => :x86_64_linux
   end
 
   depends_on "go" => :build
