@@ -15,6 +15,7 @@ class Clingo < Formula
     sha256 "9a02b6ced933810e4cff55143989e37ef08d22bcf6a945a9682d3d73a0accedb" => :big_sur
     sha256 "5c6dd1f45a2cfe48e4616c6e4bcc45a8b9b5ab050016ad8db6c38bd810129985" => :catalina
     sha256 "55a5d161667e66004aa6d56f92ab00ccefb6863094fd2ba3c113b6d20d741968" => :mojave
+    sha256 "2db78b7065d110737da783b19a5d75a2dd049d99cab1e033688b1ec6cc138a0a" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
