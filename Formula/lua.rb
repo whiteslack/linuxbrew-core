@@ -15,6 +15,7 @@ class Lua < Formula
     sha256 "f7e0d6c4b3cd8d3fba1f26dd81d23eb68e1adfcd6f7915732449a8671eedfb1c" => :big_sur
     sha256 "7fa53bc358e3fc6ebd2e1bcc326cd13f18141d780d07daadcecb891ebe61aa94" => :catalina
     sha256 "0196098bf8f4f49c78061412237acda0e2e2010f4abc61a7ac085ede71e9b7a3" => :mojave
+    sha256 "1d96ad51e1cbbb6e520b36c81380397e637be2f0ed4dedb76bb1118d45324bbb" => :x86_64_linux
   end
 
   uses_from_macos "unzip" => :build
