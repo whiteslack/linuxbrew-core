@@ -12,6 +12,7 @@ class Luarocks < Formula
     sha256 "db3a461587f6a854b66176526ce60cfed456b502f88854e5632ed0a4f89087dd" => :big_sur
     sha256 "3bd30c08dafcabee9db8fbe701cde57f5ae11d333254394dc8d7852766ea6ac0" => :catalina
     sha256 "75b43ab5ea3a697bbc9782f1e2c21cc6ae2c7bfdd9acfedb7b7ad0e5ed5e6e74" => :mojave
+    sha256 "27a1a045a8aa60e2b102c1fea458d9eb80e479874b13c285447b120904351517" => :x86_64_linux
   end
 
   depends_on "lua@5.1" => :test
