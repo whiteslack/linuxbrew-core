@@ -2,8 +2,8 @@ class Datasette < Formula
   include Language::Python::Virtualenv
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/bd/c5/0648fe3d6bd980095f71608330ff59e7977a825a0f540fbe82fa90bba1c4/datasette-0.52.1.tar.gz"
-  sha256 "fcb1b6fc55e304b6b4dad625e0638825185ab1f14534ab7dd8ff047bc24b24ff"
+  url "https://files.pythonhosted.org/packages/93/d8/58cdd3f97ae597428920f9ad1371fd7975afc37f01705ed4f85cc73cde83/datasette-0.52.3.tar.gz"
+  sha256 "5580c10151c9cd4632187cc5797d1ec18d1a02d76c69ea6bf18663d2438b3fcb"
   license "Apache-2.0"
   head "https://github.com/simonw/datasette.git"
 
@@ -13,9 +13,9 @@ class Datasette < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8ef7389910b272739244f765123d4573a2ef26364255fcc37103e203c61dd8fe" => :big_sur
-    sha256 "8b21a7e42fa5b8d1beea47beb9eb07bacfa88d567196d1e003d4a2b2c1dfc4fa" => :catalina
-    sha256 "16519a2bcd7f895c1379b16809f7d0728dd3c75612ab4b2a7f14b625c5327202" => :mojave
+    sha256 "a0573ba0c877d745c573a7003d9d83b556b313fa4273c88d055f1f2431c845f6" => :big_sur
+    sha256 "89e06f1bf927753fb5668fbe81925366d1f40f3a945a44cd5f1bafa08d46d223" => :catalina
+    sha256 "0099e47ab8741426a5a773094465c4ab5816c049849296beeefbc6e4e6f39581" => :mojave
   end
 
   depends_on "python@3.9"
