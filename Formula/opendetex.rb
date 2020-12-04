@@ -10,6 +10,7 @@ class Opendetex < Formula
     sha256 "ce26ea02e5c47385374aba395951434319d5e48e6dbda94f7ffa25e4632b54a6" => :big_sur
     sha256 "46db3f033cb646e360fcabc83eb6fabba87b858eb1cc3e32d4bad78e73816bc6" => :catalina
     sha256 "92d55157d568aa004dd09342308f8e4be8dfb6a95f9719646c5d9792b677f7a2" => :mojave
+    sha256 "ac5c6fc89178079f6081d9a57eebe9b3d5ad72c82d20e5d64c79d097aee7a4f7" => :x86_64_linux
   end
 
   uses_from_macos "flex" => :build
