@@ -10,6 +10,7 @@ class Kubecm < Formula
     sha256 "01281af8670dee70c59c7579c306b936f9799fb2bf5c136bd4595758a4b1a174" => :big_sur
     sha256 "dd9db15f719423135955a90425ee7dbc94fd9e78804a59c7e5eabd9c52ee73e3" => :catalina
     sha256 "f0727e9f3d3a970003e9465879f208c446bd05404eba834fb6806aa737022bb8" => :mojave
+    sha256 "ce1ff7049d6f2696e4c13f059300d1a088732e00d997e25f5691ca32de3ff77c" => :x86_64_linux
   end
 
   depends_on "go" => :build
