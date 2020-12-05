@@ -11,6 +11,7 @@ class DockerLs < Formula
     sha256 "87d0952201a03ac236a71b357ddcfae8e3333c6632cadca39ef4bcc4e4dc64af" => :big_sur
     sha256 "29a02c5b825f8c2484b9cf6daf9e7849de976839cf8f3846236b1603b924b6c7" => :catalina
     sha256 "09d95ecc4e15656d88b826aabc4fc4219cede111360a5679755c682d0c90d130" => :mojave
+    sha256 "a4070032bdcef6700c2bf40201716c7fd517c766fd5cf64871e7b1c39f6c5f2f" => :x86_64_linux
   end
 
   depends_on "go" => :build
