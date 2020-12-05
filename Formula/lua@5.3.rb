@@ -12,10 +12,10 @@ class LuaAT53 < Formula
 
   bottle do
     cellar :any
-    sha256 "c5b136ccbb51ce4150c5c8b86d8bd93f773cffcffd58afcbc7ee89f03c7e6341" => :big_sur
-    sha256 "8be5939dba6e18dd559463f60b9fdff5d3c5fcd49f244c5fb2c1c37745149557" => :catalina
-    sha256 "d16178dce1c0afc10bbdf80cb233c4a69f3cebcc6f3eec699381170a65b81bdd" => :mojave
-    sha256 "a6a2e3aeeeb10496de3444eb1677c27e2d9d4891058942d5530d576dd529df49" => :x86_64_linux
+    rebuild 1
+    sha256 "3fec7275812f0646dc113da036b77ab09af80421ae5ab2d90f8a122b5b225f1e" => :big_sur
+    sha256 "1ba7031cba6c4b703e6ac2729ceb8bb23fb9ce12915888bcf395c9ebbfbb95b5" => :catalina
+    sha256 "180e59018eb294a00e41b426071ffbca0d3dc522569217064472e39aed359c0e" => :mojave
   end
 
   keg_only :versioned_formula
@@ -83,25 +83,29 @@ class LuaAT53 < Formula
 
   def pc_file
     <<~EOS
-      V= #{version.major_minor}
-      R= #{version}
-      prefix=#{HOMEBREW_PREFIX}
-      INSTALL_BIN= ${prefix}/bin
-      INSTALL_INC= ${prefix}/include/lua
-      INSTALL_LIB= ${prefix}/lib
-      INSTALL_MAN= ${prefix}/share/man/man1
-      INSTALL_LMOD= ${prefix}/share/lua/${V}
-      INSTALL_CMOD= ${prefix}/lib/lua/${V}
-      exec_prefix=${prefix}
-      libdir=${exec_prefix}/lib
-      includedir=${prefix}/include/lua
-
-      Name: Lua
-      Description: An Extensible Extension Language
-      Version: #{version}
-      Requires:
-      Libs: -L${libdir} -llua -lm #{"-ldl" unless OS.mac?}
-      Cflags: -I${includedir}
+                  V= #{version.major_minor}
+                  R= #{version}
+                  prefix=#{opt_prefix}
+                  INSTALL_BIN= ${prefix}/bin
+                  INSTALL_INC= ${prefix}/include/lua
+                  INSTALL_LIB= ${prefix}/lib
+                  INSTALL_MAN= ${prefix}/share/man/man1
+                  INSTALL_LMOD= ${prefix}/share/lua/${V}
+                  INSTALL_CMOD= ${prefix}/lib/lua/${V}
+                  exec_prefix=${prefix}
+                  libdir=${exec_prefix}/lib
+                  includedir=${prefix}/include/lua
+      #{"      "}
+                  Name: Lua
+                  Description: An Extensible Extension Language
+                  Version: #{version}
+                  Requires:
+            <<<<<<< HEAD
+                  Libs: -L${libdir} -llua -lm #{"-ldl" unless OS.mac?}
+            =======
+                  Libs: -L${libdir} -llua.#{version.major_minor} -lm
+            >>>>>>> cc60bcab602
+                  Cflags: -I${includedir}
     EOS
   end
 
