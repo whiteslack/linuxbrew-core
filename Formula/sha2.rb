@@ -15,6 +15,7 @@ class Sha2 < Formula
     sha256 "b7710c8b0af7a9c0c319b2e417a63d59e7978a6a7be560e172719a8e4a9b56dc" => :big_sur
     sha256 "dbcf9483f299affb674b45e9a5d6e3dbb13cc5e18d22b7fbdc6a80c22b6e4c9b" => :catalina
     sha256 "cc85a50ddee16d85b3e1412ad8ce420bddc4fb70af97152f3328e208030823a5" => :mojave
+    sha256 "61dcb8167985f042d839b8eba145a0422181c13a95aa561dcf3c2d549fe135b5" => :x86_64_linux
   end
 
   def install
