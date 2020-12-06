@@ -11,6 +11,7 @@ class Inspectrum < Formula
     sha256 "b2ccb3e2e45373c9aa03388d0ae6c90c15cc3261fb4c014d98f509861e8afab4" => :big_sur
     sha256 "637f4276c9515232a3784b162fd21d3de9fcfd53cef12010e7cd7b3aba78f1c6" => :catalina
     sha256 "86cc47bb1267acc1e202cbd6eb5845750225bbb0d7a5dc3ae5058a58d7be6765" => :mojave
+    sha256 "1cc7469c3ebf7a02c5c09919a7f941572e995f59a95cf5d62d9eb4ef6a1b02fb" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
