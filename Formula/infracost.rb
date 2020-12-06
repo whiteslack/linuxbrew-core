@@ -11,6 +11,7 @@ class Infracost < Formula
     sha256 "4d50fb2de6328778be4d657415d06132b0c465b8b6249bc5f490fa1e6860d5bb" => :big_sur
     sha256 "9d353a1d31c81486498c357c664441cbb3a2fa9c7d129819b926215ccf5448ce" => :catalina
     sha256 "e20a2edaa279d798d97578eabd40572563c115ecfc02f415f5c6746717086722" => :mojave
+    sha256 "ade4d6be2837ce39516a2cb80ef1171a9475f76467a90a13af75ea43244bfe28" => :x86_64_linux
   end
 
   depends_on "go" => :build
