@@ -3,17 +3,20 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/b8/ce/5480aa1b770b32225b1031e8ab8673f57458033582b19b906aa25f706956/regipy-1.7.1.tar.gz"
-  sha256 "08c2d626062fcdbe29e6b3938e846853030bbc85b11418a8b0fa0de9bfa44f21"
+  url "https://files.pythonhosted.org/packages/6e/63/a41e1b8c00941c8c980cd273bfb2a59b6fc1eefa385d0ec2841219108502/regipy-1.8.0.tar.gz"
+  sha256 "4ceca6e192044aacfc34ece349be256a73e5fde6639cedee4becf5460483f5a5"
   license "MIT"
   head "https://github.com/mkorman90/regipy.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
-    sha256 "80c19d1ee11a78c5a53fce1338bf687c0f2551bf32466cb00fda5ea9ae2dc334" => :big_sur
-    sha256 "670f0e909da308c7b690ba0441f1bb29dd3c90fb9c89c39fd35797d56a32eec5" => :catalina
-    sha256 "b094a494cbfe892aa6a633d1e332ebe4411248ca58ec3325814bac14565f25b3" => :mojave
-    sha256 "e3be1717cba1972af0db9fc92e74c5a6f694dfe00ce314b2edceb9acc8520d2a" => :high_sierra
+    sha256 "11a11f25b4299ed4eecaf7220ae3c5c8f3f8cb8c67dcd46622c6b8b3fa323314" => :big_sur
+    sha256 "62b09d78f42faba628ec6f50185fcc62acc90fbe8fdd1766be354a5d1ad86d6f" => :catalina
+    sha256 "b300cc5407e2ba579f649ccf418f2273c7bfb27cca6b637c91b02b6041740efd" => :mojave
   end
 
   depends_on "python@3.9"
