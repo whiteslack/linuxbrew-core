@@ -14,6 +14,7 @@ class Udptunnel < Formula
     sha256 "bfb564a4529a508338776cc02b0b4fcd63ceead924db45ef73f4c41c79f96908" => :big_sur
     sha256 "de4e78f6f0ff861478dae683d1a6c09ae38e9a9e7ec8780a90a9b849df422089" => :catalina
     sha256 "46dca7ebedab0825acffeafa11b6090676993a5b7b4a53591db51cc7b856e048" => :mojave
+    sha256 "68bfacffcb5588dbb7baab47b02bfabe04f6327a5317975e25bbc9a0020a692e" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
