@@ -3,16 +3,15 @@ class Certbot < Formula
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS"
   homepage "https://certbot.eff.org/"
-  url "https://github.com/certbot/certbot/archive/v1.10.0.tar.gz"
-  sha256 "ae99d2552d3d5be211ba41f9aba045df8d93847f93354471a40f03d5118e031a"
+  url "https://github.com/certbot/certbot/archive/v1.10.1.tar.gz"
+  sha256 "7652d14a12678425d3c1c618da00730b9f09147a53e11c7021f66c907cbc35b0"
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git"
 
   bottle do
-    sha256 "942912f347540faa93a6a1f928f5d2a3361918aae4a59f96c3aaa354c47bfc79" => :big_sur
-    sha256 "295796e37d2c8fae9613351aff83020d74b2aaaad253a17ad58c09679b402867" => :catalina
-    sha256 "d4585eb5f0242d7259d7d5120abc727487a7ad156de7dc398d0d4f2df0aed415" => :mojave
-    sha256 "eb47b6729e4bd174c6c580ac010cdedbc1e9f474dd4ed5e9648791a96b2569f3" => :x86_64_linux
+    sha256 "e1ba970a17f85f1ab0cb1d785ef1842e0ba2691604e25598335b403b69c2ea35" => :big_sur
+    sha256 "ffce387c91071c64807900aac16390562f44eff931c000f0af1d27b90c4d64e8" => :catalina
+    sha256 "a4e510d8174cacdc39a51228d223769a5a4d15b141c80c56869afd9d67fc11a8" => :mojave
   end
 
   depends_on "augeas"
@@ -33,13 +32,13 @@ class Certbot < Formula
   end
 
   resource "acme" do
-    url "https://files.pythonhosted.org/packages/e1/da/0d3e7291b7e746247fa0a1d0288a54239c3ae2607fd605045458f4b7ccff/acme-1.10.0.tar.gz"
-    sha256 "e3939526d08530d4b17623f843b9a983f2d772eefb7836bd31091c229da04a90"
+    url "https://files.pythonhosted.org/packages/86/9a/3e275783e1ed2cf05e2347ec8c8c38cec612600abe9c28f12f2a2152e55c/acme-1.10.1.tar.gz"
+    sha256 "fcbb559aedc96b404edf593e78517dcd7291984d5a37036c3fc77f3c5c122fd8"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/e6/de/879cf857ae6f890dfa23c3d6239814c5471936b618c8fb0c8732ad5da885/certifi-2020.11.8.tar.gz"
-    sha256 "f05def092c44fbf25834a51509ef6e631dc19765ab8a57b4e7ab85531f0a9cf4"
+    url "https://files.pythonhosted.org/packages/06/a9/cd1fd8ee13f73a4d4f491ee219deeeae20afefa914dfb4c130cfc9dc397a/certifi-2020.12.5.tar.gz"
+    sha256 "1a4995114262bffbc2413b159f2a1a480c969de6e6eb13ee966d470af86af59c"
   end
 
   resource "cffi" do
