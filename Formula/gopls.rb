@@ -10,6 +10,7 @@ class Gopls < Formula
     sha256 "8eae69564bfa8cfed1029f7a34b5f7133ce2842271cae300b5e291eaca1c83b6" => :big_sur
     sha256 "4fc207319168895d23299c5c461134391479d70781b6ed7f148526f8dc430bb0" => :catalina
     sha256 "f1ee8e73a322e36be90cabe8fa6558c641733baf0148c4b27163fb6afea07a02" => :mojave
+    sha256 "f666bfeeb15a3a757de357b633f11d461e26152a987fb00aad7ad0077a8cbff1" => :x86_64_linux
   end
 
   depends_on "go" => :build
