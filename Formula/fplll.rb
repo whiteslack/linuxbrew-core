@@ -9,6 +9,7 @@ class Fplll < Formula
     sha256 "3683b4c40387324054f6eb43ee129cd28cb7107e21cab7425b9da5fc1834578f" => :big_sur
     sha256 "de1d71773f6fe6baaf83e6b7c8cbc1521842854536242482a35b70b1c37a4b7b" => :catalina
     sha256 "dc27cc471e40516aba9bd490813f5853a9fe326ea490ee27f6cf57f5c916f1fb" => :mojave
+    sha256 "65808b755114b3c41fa1f61eff95f59fc4af0d29214a5f5a1d51a72620faa0b1" => :x86_64_linux
   end
 
   depends_on "automake" => :build
