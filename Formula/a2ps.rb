@@ -15,6 +15,7 @@ class A2ps < Formula
     sha256 "e87da2b47386fc7e3c6f20b3ff90c4bbe37b9e0aaa884440ffa216492dbc150b" => :big_sur
     sha256 "82e64b2008971430d160a3f564e32593e98fb55c43d7748c7deb9d6f546e1102" => :catalina
     sha256 "8ca49b4797277f79e87e48ab4c6794601b64d1dde35b9eac556d4153b8237a51" => :mojave
+    sha256 "a3e2faaf2a2ca2bfbb787567f0fb43b8908522587b00b2e19b1e2d8b5f69fce8" => :x86_64_linux
   end
 
   pour_bottle? do
