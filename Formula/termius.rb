@@ -3,17 +3,16 @@ class Termius < Formula
 
   desc "CLI tool for termius.com (aka serverauditor.com)"
   homepage "https://termius.com"
-  url "https://github.com/termius/termius-cli/archive/v1.2.13.tar.gz"
-  sha256 "74866c3602e92bca0174e129ee46fce08ec34048ce890d659de832de69b9fce9"
+  url "https://github.com/termius/termius-cli/archive/v1.2.14.tar.gz"
+  sha256 "4713012b0ee7174deb769f1ee4383d6f5d2dd51a42e20d05187e494461457dfe"
   license "BSD-3-Clause"
   head "https://github.com/termius/termius-cli.git", branch: "master"
 
   bottle do
     cellar :any
-    sha256 "72d4cebc58e2b27fb74f0dd9c4e5460bd009574eb764962deb98775dbacb1cd5" => :big_sur
-    sha256 "4d19f38089ddf7ea2273b4453e826a2e42c0168909715b809df2b4a823e20b78" => :catalina
-    sha256 "febcbf56ede82a8314db82ee3bf3d6595794e792ec981fe131cfff55a016a225" => :mojave
-    sha256 "b24dbd45b6260c97b5cc9ba4bd9705c87c8daea27a881209e397a020334c6172" => :x86_64_linux
+    sha256 "a897df5790441a90160500a6cbf919abf0caa5194c756258c39db5be0f971173" => :big_sur
+    sha256 "87c2164acda38a06022e6c87c8bcc3b9b698c0d535def87a890ba545a2311991" => :catalina
+    sha256 "38f00cb71712be6da361e430fbbbc12e87ba4df27571d63f1054bbef6913f7dc" => :mojave
   end
 
   depends_on "libyaml"

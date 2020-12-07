@@ -11,6 +11,7 @@ class Bind < Formula
   url "https://downloads.isc.org/isc/bind9/9.16.9/bind-9.16.9.tar.xz"
   sha256 "bcb292c4d738a46e3cbcb8afaa25ecf54f77652fa575135da9a2a1d525304a5a"
   license "MPL-2.0"
+  revision 1
   version_scheme 1
   head "https://gitlab.isc.org/isc-projects/bind9.git"
 
@@ -22,14 +23,14 @@ class Bind < Formula
   end
 
   bottle do
-    sha256 "dcd7b387c4c02f0445b4dc9add8f6c2e38b18efe4ff51c9b3ee0a0e26feb0388" => :big_sur
-    sha256 "63c5a59586745c8c9fc138d001ed75d2d35a4fe3a7a9be8567e928e8a040f83f" => :catalina
-    sha256 "b2edc107e8ed179295674e847da54423d882c4ba04ddd34ee1d7ddf68de4b864" => :mojave
-    sha256 "f19587f4679e8df6c142ce62e501171d9aa45cc0f3867b68c301b26e160b39d0" => :x86_64_linux
+    sha256 "90066276d68706178cd978e9f4081f95af54a732cdb846964b3fe97810e3c885" => :big_sur
+    sha256 "bdd3b1aefb2ea72bf5ace8b0f939563d4d1aad931385f6bd0d5de10e3fa04e9d" => :catalina
+    sha256 "446e19c0dabc4a60e7b16fceaca10c460946408cc8dbeab66f65c6e615479341" => :mojave
   end
 
   depends_on "pkg-config" => :build
   depends_on "json-c"
+  depends_on "libidn2"
   depends_on "libuv"
   depends_on "openssl@1.1"
   depends_on "python@3.9"
@@ -59,7 +60,8 @@ class Bind < Formula
                           "--with-python-install-dir=#{vendor_site_packages}",
                           "--with-python=#{Formula["python@3.9"].opt_bin}/python3",
                           *("--disable-linux-caps" unless OS.mac?),
-                          "--without-lmdb"
+                          "--without-lmdb",
+                          "--with-libidn2=#{Formula["libidn2"].opt_prefix}"
 
     system "make"
     system "make", "install"
@@ -204,5 +206,6 @@ class Bind < Formula
   test do
     system bin/"dig", "-v"
     system bin/"dig", "brew.sh"
+    system bin/"dig", "ü.cl"
   end
 end
