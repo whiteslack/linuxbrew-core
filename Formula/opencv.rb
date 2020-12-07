@@ -90,12 +90,6 @@ class Opencv < Formula
     ]
     args << "-DENABLE_PRECOMPILED_HEADERS=OFF" unless OS.mac?
 
-    # The compiler on older Mac OS cannot build some OpenCV files using AVX2
-    # extensions, failing with errors such as
-    # "error: use of undeclared identifier '_mm256_cvtps_ph'"
-    # Work around this by not trying to build AVX2 code.
-    args << "-DCPU_DISPATCH=SSE4_1,SSE4_2,AVX" if MacOS.version <= :yosemite
-
     args << "-DENABLE_AVX=OFF" << "-DENABLE_AVX2=OFF"
     args << "-DENABLE_SSE41=OFF" << "-DENABLE_SSE42=OFF" unless MacOS.version.requires_sse42?
 

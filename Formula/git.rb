@@ -89,11 +89,11 @@ class Git < Formula
       NO_TCLTK=1
     ]
 
-    if !OS.mac? && MacOS.version < :yosemite
+    if OS.mac?
+      args += %w[NO_OPENSSL=1 APPLE_COMMON_CRYPTO=1]
+    else
       openssl_prefix = Formula["openssl@1.1"].opt_prefix
       args += %W[NO_APPLE_COMMON_CRYPTO=1 OPENSSLDIR=#{openssl_prefix}]
-    else
-      args += %w[NO_OPENSSL=1 APPLE_COMMON_CRYPTO=1]
     end
 
     system "make", "install", *args
