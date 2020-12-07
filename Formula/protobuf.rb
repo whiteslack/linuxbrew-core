@@ -11,10 +11,11 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 "f41381ba1643de583cd742e491d5701cd206625783825684eb3506c62bcf997c" => :big_sur
-    sha256 "7674ca66757bd1249545829c3ae6f254518b5e75b81e12fdc26c9b56a48fc299" => :catalina
-    sha256 "db7a01c58842fea34251f5b27af0b9cbc2c3208325180a7e9b7330e7ec659161" => :mojave
-    sha256 "8b09e48aeb486343e081bda0665ddfce88d277182edea519684cd9aabfc278a6" => :x86_64_linux
+    cellar :any
+    rebuild 1
+    sha256 "b06e8c4247465d7773a359eeeaa39385e564fefab77dbbb245ac928eea334ce9" => :big_sur
+    sha256 "8d53111626404e2b4f27718127a313dceea600a74a4d38ffe0870812d8f57eb4" => :catalina
+    sha256 "0070627fe9b8c1818e54480c272cc00fa71bd5bd944b04d37ebe2e31604cb9c9" => :mojave
   end
 
   head do
@@ -33,6 +34,13 @@ class Protobuf < Formula
   resource "six" do
     url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
     sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
+  end
+
+  # Fix build on Big Sur, remove in next version
+  # https://github.com/protocolbuffers/protobuf/pull/8126
+  patch do
+    url "https://github.com/atomiix/protobuf/commit/d065bd6910a0784232dbbbfd3e5806922d69c622.patch?full_index=1"
+    sha256 "5433b6247127f9ca622b15c9f669efbaac830fa717ed6220081bc1fc3c735f91"
   end
 
   unless OS.mac?

@@ -19,16 +19,16 @@ class Cdparanoia < Formula
   depends_on "autoconf" => :build
 
   # Patches via MacPorts
-  if OS.mac?
+  on_macos do
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/2a22152/cdparanoia/osx_interface.patch"
       sha256 "3eca8ff34d2617c460056f97457b5ac62db1983517525e5c73886a2dea9f06d9"
     end
   end
 
-  if OS.linux?
+  on_linux do
     patch do
-      url "https://gist.githubusercontent.com/iMichka/c6d0ed5adb5375a8117d7c06999ae1be/raw/1592803a16ede7d3e8e15aebeff56097d6615cdd/cdparanoia-fpic"
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/bfad134/cdparanoia/linux_fpic.patch"
       sha256 "496f53d21dde7e23f4c9cf1cc28219efcbb5464fe2abbd5a073635279281c9c4"
     end
   end

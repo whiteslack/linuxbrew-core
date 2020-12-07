@@ -6,14 +6,15 @@ class A2ps < Formula
   sha256 "f3ae8d3d4564a41b6e2a21f237d2f2b104f48108591e8b83497500182a3ab3a4"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
-    rebuild 3
-    sha256 "98a293e2d83134c9a1c35026f68207d9fc2ac1bde9d7d15dd29849d7d9c5b237" => :catalina
-    sha256 "b3d7d7bd0bfcada7fc2bc2340ab67362e5087e53b4d611d84aafedf713bde6c3" => :mojave
-    sha256 "99646196c8b9e6d5a7b67ecca1589160749d690128bb89aace3b79d4c355dfde" => :high_sierra
-    sha256 "5a1c466a3f833797710464dd1aaf4ad6c9ff0a47de33ab3b2ba9cf0c2be36bfd" => :sierra
-    sha256 "532c3f14debcd59028285dad1d6fe41dbad481718cc1752b1b9e7c05fd82e27f" => :el_capitan
-    sha256 "f14fd4a117e48b7378150d8e7deaa9c49f432bb870fad1ba46742084afbed6e0" => :x86_64_linux
+    rebuild 4
+    sha256 "e87da2b47386fc7e3c6f20b3ff90c4bbe37b9e0aaa884440ffa216492dbc150b" => :big_sur
+    sha256 "82e64b2008971430d160a3f564e32593e98fb55c43d7748c7deb9d6f546e1102" => :catalina
+    sha256 "8ca49b4797277f79e87e48ab4c6794601b64d1dde35b9eac556d4153b8237a51" => :mojave
   end
 
   pour_bottle? do
@@ -21,9 +22,6 @@ class A2ps < Formula
     # https://github.com/Homebrew/brew/issues/2005
     satisfy { HOMEBREW_PREFIX.to_s == Homebrew::DEFAULT_PREFIX }
   end
-
-  # Fails to build on Catalina. No new release since 2007
-  disable! because: :does_not_build
 
   # Software was last updated in 2007.
   # https://svn.macports.org/ticket/20867
@@ -40,6 +38,9 @@ class A2ps < Formula
   end
 
   def install
+    # Work around configure issues with Xcode 12
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--sysconfdir=#{etc}",
                           "--with-lispdir=#{elisp}"
