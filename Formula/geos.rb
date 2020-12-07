@@ -35,11 +35,15 @@ class Geos < Formula
       inreplace "configure", "libpython$PYTHON_VERSION.*", "libpython3.so"
       inreplace "configure", "-lpython$PYTHON_VERSION", "-lpython3"
     end
+    args = %W[
+      --disable-dependency-tracking
+      --prefix=#{prefix}
+      --enable-python
+      PYTHON=#{Formula["python@3.9"].opt_bin}/python3
+    ]
+    args << "--disable-inline" if Hardware::CPU.arm?
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--enable-python",
-                          "PYTHON=#{Formula["python@3.9"].opt_bin}/python3"
+    system "./configure", *args
     system "make", "install"
   end
 
