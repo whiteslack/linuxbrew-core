@@ -15,6 +15,7 @@ class Autoconf < Formula
     cellar :any_skip_relocation
     rebuild 4
     sha256 "4a05c5734bd99dc0adca0160e1ca79a291f2bd7fb8d52dd4605df0da3063c891" => :big_sur
+    sha256 "9d4972cf90465fade2c2e91fadc4aabbb7cfa56fb27b41775e7d3a141418f644" => :arm64_big_sur
     sha256 "ca510b350e941fb9395522a03f9d2fb5df276085d806ceead763acb95889a368" => :catalina
     sha256 "9724736d34773b6e41e2434ffa28fe79feccccf7b7786e54671441ca75115cdb" => :mojave
     sha256 "63957a3952b7af5496012b3819c9956822fd7d895d63339c23fdc65c502e1a40" => :high_sierra
@@ -24,7 +25,6 @@ class Autoconf < Formula
     sha256 "a884e59c2b63ff27d2a76a7e343d7dda0464a72e88fcc8cc7b520c3e52e4d61f" => :x86_64_linux
     sha256 "37e77a2e7ca6d479f0a471d5f5d828efff621bd051c1884ff1363d77c5c4675e" => :mountain_lion
     sha256 "d153b3318754731ff5e91b45b2518c75880993fa9d1f312a03696e2c1de0c9d5" => :mavericks
-    sha256 "9d4972cf90465fade2c2e91fadc4aabbb7cfa56fb27b41775e7d3a141418f644" => :arm64_big_sur
   end
 
   uses_from_macos "m4"
