@@ -27,6 +27,7 @@ class W3m < Formula
     sha256 "9865fb7a43e8732bb7d309502c3de3410d05aeb093ba8916462b5aab36563a5a" => :big_sur
     sha256 "5b752461983a608c684bae9efa13a0a5e37a456def0b368c8b0706b35fd480a3" => :catalina
     sha256 "a77f9a7ceee4dbb2a7288ecfad9c903c489ce4a60ff10056cd735433986df901" => :mojave
+    sha256 "9f26364923eb26e78c99556b100ddf439a62a3f50fde7776f3baeec4d7b2644f" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
