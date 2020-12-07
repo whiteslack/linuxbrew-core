@@ -13,6 +13,7 @@ class Hfsutils < Formula
     sha256 "133b4b04a161486e76ca06ed4e78086a83ce7ed238b10b879f78a93d66d9dc68" => :big_sur
     sha256 "5a0e074c5fdcfb43508e049941dd5d7384a7f4843c8d0fe3df325880a45823fd" => :catalina
     sha256 "f32eb0e176bc5f5939a12599f0dbc808631a7680e21b5f820cc096e00fcec46e" => :mojave
+    sha256 "5277d2e8dfb96ff73ee3c5444eafd9eaa33c393980c963e7877c3eaabfddec78" => :x86_64_linux
   end
 
   def install
