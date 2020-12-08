@@ -13,10 +13,10 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 "282f9fa0ad74a511c15dc0a7fd5adc93b6d1a9d9b2568d36747ba88082c4e901" => :big_sur
-    sha256 "096b676c3b624d57baae4d55b4861cdc91f2aae1f45624f407c1b3e6459934ad" => :catalina
-    sha256 "f014a9d430e9d69e8d31fbe3cb09c16c681febb934de6bd1effd2db77372099b" => :mojave
-    sha256 "ff371a26a1c172f51904dd7e921c9834cc9039dabf92542a66f5251b1f513840" => :x86_64_linux
+    rebuild 1
+    sha256 "eb9d72649533773334b44b29b8b0cd5f4d432df81a1824f11dbbd815ebbb9939" => :big_sur
+    sha256 "eda65a2eaac10041b34cf916c53feb34317452aa4951ca0737eb41ee2e15252d" => :catalina
+    sha256 "2a0c21488c5a055192eba12a0094269728b7a87b43aaa9f12217fd0d5b17bd04" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -38,6 +38,10 @@ class Imagemagick < Formula
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "libx11"
+  end
 
   skip_clean :la
 
@@ -64,13 +68,16 @@ class Imagemagick < Formula
       --with-lqr
       --without-fftw
       --without-pango
-      --without-x
       --without-wmf
       --enable-openmp
       ac_cv_prog_c_openmp=-Xpreprocessor\ -fopenmp
       ac_cv_prog_cxx_openmp=-Xpreprocessor\ -fopenmp
       LDFLAGS=-lomp\ -lz
     ]
+
+    on_macos do
+      args << "--without-x"
+    end
 
     # versioned stuff in main tree is pointless for us
     inreplace "configure", "${PACKAGE_NAME}-${PACKAGE_VERSION}", "${PACKAGE_NAME}"

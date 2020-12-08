@@ -1,18 +1,18 @@
 class Rocksdb < Formula
   desc "Embeddable, persistent key-value store for fast storage"
   homepage "https://rocksdb.org/"
-  url "https://github.com/facebook/rocksdb/archive/v6.11.4.tar.gz"
-  sha256 "6793ef000a933af4a834b59b0cd45d3a03a3aac452a68ae669fb916ddd270532"
+  url "https://github.com/facebook/rocksdb/archive/v6.14.6.tar.gz"
+  sha256 "fa61c55735a4911f36001a98aa2f5df1ffe4b019c492133d0019f912191209ce"
   license "GPL-2.0"
 
   bottle do
     cellar :any
-    sha256 "0365931b288f5eba6cebab4cc74e00735cd9a32431a944ccacdc22af3f30523d" => :big_sur
-    sha256 "e480342b56120c038d7d29de482eea256f3d4b4b173701a37fdf9afddf92b9a9" => :catalina
-    sha256 "230c7bb4164b9a819da6b8118252c650e6b71a04769bfd242d3e561ab9361cc2" => :mojave
-    sha256 "c08fc8d6ad16f159fe8a2dccf118752e730fad45840c95ed2cf34cf875474c66" => :high_sierra
+    sha256 "4766a17ad98408c1dfd3959d09e2e14fa252bd8a6fc1513973177d79330a9e85" => :big_sur
+    sha256 "4c1fa784b95465e6fd4cde80be2df2a4df8713d5692a5c8055ae9ff9269ae5f8" => :catalina
+    sha256 "8e8b8df18fac301541221bfa8dc995773592e7fcd07de3ffd03cdb66bbfb9936" => :mojave
   end
 
+  depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "lz4"
   depends_on "snappy"
@@ -21,42 +21,43 @@ class Rocksdb < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  # Add artifact suffix to shared library
+  # https://github.com/facebook/rocksdb/pull/7755
+  patch do
+    url "https://github.com/facebook/rocksdb/commit/98f3f3143007bcb5455105a05da7eeecc9cf53a0.patch?full_index=1"
+    sha256 "6fb59cd640ed8c39692855115b72e8aa8db50a7aa3842d53237e096e19f88fc1"
+  end
+
   def install
     ENV.cxx11
-    ENV["PORTABLE"] = "1"
-    ENV["DEBUG_LEVEL"] = "0"
-    ENV["USE_RTTI"] = "1"
-    ENV["ROCKSDB_DISABLE_ALIGNED_NEW"] = "1" if MacOS.version <= :sierra
-    ENV["DISABLE_JEMALLOC"] = "1" # prevent opportunistic linkage
+    args = std_cmake_args
+    args << "-DPORTABLE=ON"
+    args << "-DUSE_RTTI=ON"
+    args << "-DWITH_BENCHMARK_TOOLS=OFF"
 
     # build regular rocksdb
-    system "make", "clean"
-    system "make", "static_lib"
-    system "make", "shared_lib"
-    system "make", "tools"
-    system "make", "install", "INSTALL_PATH=#{prefix}"
+    system "cmake", ".", *args
+    system "make", "install"
 
-    bin.install "sst_dump" => "rocksdb_sst_dump"
-    bin.install "db_sanity_test" => "rocksdb_sanity_test"
-    bin.install "db_stress" => "rocksdb_stress"
-    bin.install "write_stress" => "rocksdb_write_stress"
-    bin.install "ldb" => "rocksdb_ldb"
-    bin.install "db_repl_stress" => "rocksdb_repl_stress"
-    bin.install "rocksdb_dump"
-    bin.install "rocksdb_undump"
+    cd "tools" do
+      bin.install "sst_dump" => "rocksdb_sst_dump"
+      bin.install "db_sanity_test" => "rocksdb_sanity_test"
+      bin.install "write_stress" => "rocksdb_write_stress"
+      bin.install "ldb" => "rocksdb_ldb"
+      bin.install "db_repl_stress" => "rocksdb_repl_stress"
+      bin.install "rocksdb_dump"
+      bin.install "rocksdb_undump"
+    end
+    bin.install "db_stress_tool/db_stress" => "rocksdb_stress"
 
     # build rocksdb_lite
-    ENV.append_to_cflags "-DROCKSDB_LITE=1"
-    ENV["LIBNAME"] = "librocksdb_lite"
+    args << "-DROCKSDB_LITE=ON"
+    args << "-DARTIFACT_SUFFIX=_lite"
+    args << "-DWITH_CORE_TOOLS=OFF"
+    args << "-DWITH_TOOLS=OFF"
     system "make", "clean"
-    system "make", "static_lib"
-    system "make", "shared_lib"
-    system "make", "install", "INSTALL_PATH=#{prefix}"
-
-    if OS.linux?
-      # Strip the binaries to reduce their size.
-      system "strip", *(Dir[bin/"*"] + Dir[lib/"*"]).select { |f| Pathname.new(f).elf? }
-    end
+    system "cmake", ".", *args
+    system "make", "install"
   end
 
   test do

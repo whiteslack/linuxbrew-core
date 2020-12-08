@@ -140,8 +140,8 @@ class PythonAT39 < Formula
       "--with-system-ffi"
     end
 
-    cflags   = []
-    ldflags  = []
+    cflags   = ["-I#{HOMEBREW_PREFIX}/include"]
+    ldflags  = ["-L#{HOMEBREW_PREFIX}/lib"]
     cppflags = []
 
     if MacOS.sdk_path_if_needed

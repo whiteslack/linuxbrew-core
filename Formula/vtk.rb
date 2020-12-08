@@ -4,13 +4,13 @@ class Vtk < Formula
   url "https://www.vtk.org/files/release/9.0/VTK-9.0.1.tar.gz"
   sha256 "1b39a5e191c282861e7af4101eaa8585969a2de05f5646c9199a161213a622c7"
   license "BSD-3-Clause"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 3 : 4
   head "https://github.com/Kitware/VTK.git"
 
   bottle do
-    sha256 "1b4105c1a17805f629696925202fc53bccc804fcecdfc3d2630eefdf7c398141" => :big_sur
-    sha256 "aad0825f376a9a8ff97ab25a81a5b84a5b31f222bf367f07976df1eb8af06025" => :catalina
-    sha256 "4b873bfd637368b14ef91d1c7607fc8308c0185d0519a8531cc38eacaa3bb5b2" => :mojave
+    sha256 "ea36dc06606798e1348a8ca2938feca695a1acbeca4302d1423dffd9b0cc8424" => :big_sur
+    sha256 "be3d8520d149de99a4770dfbdc101af4ea0a415a3a0d356132e9cdd5f28f1e17" => :catalina
+    sha256 "e336aad63691695bc958ef52bfc456a7f8ab2970292b69463515f9e777b6eac5" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -34,6 +34,7 @@ class Vtk < Formula
   depends_on "qt"
   depends_on "sqlite"
   depends_on "theora"
+  depends_on "utf8cpp"
   depends_on "xz"
   uses_from_macos "expat"
   uses_from_macos "libxml2"
@@ -82,6 +83,7 @@ class Vtk < Formula
       -DVTK_MODULE_USE_EXTERNAL_VTK_sqlite:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_theora:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_tiff:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_utf8:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_zlib:BOOL=ON
       -DPython3_EXECUTABLE:FILEPATH=#{Formula["python@3.9"].opt_bin}/python3
       -DVTK_GROUP_ENABLE_Qt:STRING=YES
