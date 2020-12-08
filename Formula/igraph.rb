@@ -10,6 +10,7 @@ class Igraph < Formula
     sha256 "f465b8d9fefa756c504d37e0af723557c276b15d1f7d548ed25d45368dded147" => :big_sur
     sha256 "8e9868d06e9ad6a4bc388f7f44ed175fcc54f81c4362eb3de324fadadaf8c3c3" => :catalina
     sha256 "e14e7cb3c9925863daea2981b4130bcdb969a34c6e73b43dcfc49820c809948d" => :mojave
+    sha256 "3c7033845f5e720ede6f9e9fb7bb0ecffc8ad243b5a5f5b0912defab4cbd532b" => :x86_64_linux
   end
 
   depends_on "glpk"
