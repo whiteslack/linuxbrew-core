@@ -15,6 +15,7 @@ class Gstreamer < Formula
     sha256 "0fa613bf8670831bf70b916aa09f5f0e600f13ae83259d2f12541c39c23898fc" => :big_sur
     sha256 "ba0329667c9347b25ab0623b239af2b43f27a2d2bdc666b5800602b6c2420e02" => :catalina
     sha256 "0e6609fc738289ee0d22383fa2d06b4eb931ecf0d86c8468e2307045bb2468fb" => :mojave
+    sha256 "57e98ef894711187ffa78949264d651445d5f5a3a521468eb87c1de62fcf21bc" => :x86_64_linux
   end
 
   depends_on "bison" => :build
