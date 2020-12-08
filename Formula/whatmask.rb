@@ -11,6 +11,7 @@ class Whatmask < Formula
     sha256 "55789adc6a9326b814965c6c0fcf41f912638f2e7d55d4167cbe404ec1a6938d" => :big_sur
     sha256 "89a44972f8d27003b4c91f04a294f0be9a0d00628fb8db21faf46a55a0720cb2" => :catalina
     sha256 "a3a5a8887d1c7d43f83bf99c2f81f8900af0d83091978f5aac28447d0f093785" => :mojave
+    sha256 "da6511a9314804d3cc1a5cf2ca14efd2bbba85ab9e6d916e4faefd3eb6a6f9bd" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
