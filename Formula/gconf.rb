@@ -19,6 +19,8 @@ class Gconf < Formula
     sha256 "80d45dd84ef10113ee297fcecada53bd07f103bc591f24c45800151f9ff1477d" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
   depends_on "dbus"

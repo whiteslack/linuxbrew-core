@@ -17,6 +17,8 @@ class Libmill < Formula
     sha256 "41d12c56fbbadb54a3d8590d90a1f3553191dd343674a6b9d9e0fe4435f1c0c5" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

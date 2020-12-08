@@ -21,6 +21,8 @@ class Mboxgrep < Formula
     sha256 "5b5c75cfd31e9b04128b119778189ee919afdef8f7a05702a78480e59d535737" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   depends_on "pcre"
 
   def install

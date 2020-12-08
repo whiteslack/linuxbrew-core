@@ -16,6 +16,8 @@ class Shorten < Formula
     sha256 "9b9be4ed35f42072a08f6726eac9a520e7aa3b242aa8a0318af07425387607d4" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

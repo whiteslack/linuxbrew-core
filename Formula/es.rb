@@ -17,6 +17,8 @@ class Es < Formula
     sha256 "47eb9c54542fdc1f05144632e4d0cb93a50d8ddea973d452b98ad4de527b2d25" => :x86_64_linux # glibc 2.19
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "./configure", "--prefix=#{prefix}", "--with-editline"
     system "make"

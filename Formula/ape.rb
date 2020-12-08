@@ -15,6 +15,8 @@ class Ape < Formula
     sha256 "917659b43365eba970711505af1414fe3ce276e20d40c2a405b181c1a8393e78" => :x86_64_linux # glibc 2.19
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "./build.sh"
     # The Makefile installs a configuration file in the bindir which our bot red-flags

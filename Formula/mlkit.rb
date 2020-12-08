@@ -18,6 +18,8 @@ class Mlkit < Formula
     sha256 "2cc9e05e6be9422537cd979c898f910d7ed3c8eb7804394be8529fbd5a938a85" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "mlton" => :build
   depends_on "gmp"

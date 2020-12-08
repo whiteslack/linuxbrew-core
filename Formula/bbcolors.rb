@@ -16,6 +16,8 @@ class Bbcolors < Formula
     sha256 "bb899d6daaee980ab6d555057a7dd939c7d020b766564b12ba351cfb2ba77cfd" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     bin.install "bbcolors"
   end

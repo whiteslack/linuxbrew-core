@@ -17,7 +17,7 @@ class Drip < Formula
     sha256 "048944c8240d219b4777e4f35bb7d456062042385e6b2a375f2d00d1b9d517f9" => :x86_64_linux
   end
 
-  deprecate! because: :does_not_build
+  disable! date: "2020-12-08", because: :unmaintained
 
   depends_on "openjdk@8"
 

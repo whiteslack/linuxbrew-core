@@ -18,19 +18,9 @@ class Srmio < Formula
     sha256 "091c31156bdb1f487a811255982cd6e2ba0cbaa10124d152443c53340c5a6e77" => :x86_64_linux
   end
 
-  head do
-    url "https://github.com/rclasen/srmio.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  disable! date: "2020-12-08", because: :unmaintained
 
   def install
-    if build.head?
-      chmod 0755, "genautomake.sh"
-      system "./genautomake.sh"
-    end
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"

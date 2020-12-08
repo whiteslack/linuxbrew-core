@@ -22,6 +22,8 @@ class Marst < Formula
     sha256 "b0454e3e833180bc88cbff258db8f9737896d9f22c66180dc562a37aa4eb35ce" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"

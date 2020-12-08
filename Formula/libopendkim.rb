@@ -18,6 +18,8 @@ class Libopendkim < Formula
     sha256 "7eaaffbdfa45d5d36a0bde7e3f3ef13fdaffe19ce957c1500266a8f2e1048d45" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

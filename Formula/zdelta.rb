@@ -17,6 +17,8 @@ class Zdelta < Formula
     sha256 "bd48342dfec250f6b0705fde8cc8e338d7a293409b28d76f86a827569f937c31" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "make"
     system "make", "install", "prefix=#{prefix}"

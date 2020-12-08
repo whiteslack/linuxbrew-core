@@ -17,6 +17,8 @@ class Eventlog < Formula
     sha256 "dafbd7123de97b0a29ca89c6e965a2123664ec34851c815b8bd1a616397dc525" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"

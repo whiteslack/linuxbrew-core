@@ -21,6 +21,8 @@ class CsvFix < Formula
     sha256 "c4342077ef0be14c36cb6b367a5d78aba77964cb2cba0b52cbbdd5346fb42f06" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     # clang on Mt. Lion will try to build against libstdc++,
     # despite -std=gnu++0x

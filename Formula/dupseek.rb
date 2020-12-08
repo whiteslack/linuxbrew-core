@@ -16,6 +16,8 @@ class Dupseek < Formula
     sha256 "a955e2e3cb7bd26091695842ff64e66bba4b03a6ead7b3647e5279fb3f5bcfd7" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     bin.install "dupseek"
     doc.install %w[changelog.txt doc.txt copyright credits.txt]

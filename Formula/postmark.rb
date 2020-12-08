@@ -16,6 +16,8 @@ class Postmark < Formula
     sha256 "1d7eb15c6a01d8bb40efdaeb2b228b8b7f6f816988d06a640d0dfaba97ffc925" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system ENV.cc, "-o", "postmark", "postmark-#{version}.c"
     bin.install "postmark"

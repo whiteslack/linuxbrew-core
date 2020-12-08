@@ -16,6 +16,8 @@ class Udns < Formula
     sha256 "eb334a17a24b5246087dfd86ce1740d66def683e9e3516c96b100fd37d7b1933" => :x86_64_linux # glibc 2.19
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   # Build target for dylib. See:
   # https://www.corpit.ru/pipermail/udns/2011q3/000154.html
   if OS.mac?

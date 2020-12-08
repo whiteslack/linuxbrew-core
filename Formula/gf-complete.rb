@@ -16,6 +16,8 @@ class GfComplete < Formula
     sha256 "ac444508581c82a6d1879deab09897c70015d724f5c0f12f4c24820195236665" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

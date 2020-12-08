@@ -19,6 +19,8 @@ class Httptunnel < Formula
     sha256 "5a8bb47734a2de17116531f6b2504d9ced1527aeccdc60d7d269195c739f3e54" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 

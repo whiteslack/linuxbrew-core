@@ -16,6 +16,8 @@ class Xtail < Formula
     sha256 "640e3bc461fc43b24c2cd3ad17753e877c3d1873c44c6a861ed0a415bb97c7ba" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",

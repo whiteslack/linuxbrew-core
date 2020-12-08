@@ -18,6 +18,8 @@ class Libvbucket < Formula
     sha256 "d74034d12d03175501a165f0cb1dacb10544be8a7d6a1914ba09bf490e24b566" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

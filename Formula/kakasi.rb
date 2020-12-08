@@ -16,6 +16,8 @@ class Kakasi < Formula
     sha256 "e73e5d24e98cc69fc02f40decb1c9bee7f49f8affb8276435984737637241938" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"

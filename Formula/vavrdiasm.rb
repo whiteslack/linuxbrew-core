@@ -17,6 +17,8 @@ class Vavrdiasm < Formula
     sha256 "0612ed5b89def054568d3ef98a157aaa941d6a82c169950080dfc12bfa2ea84b" => :x86_64_linux
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   # Patch:
   # - BSD `install(1)' does not have a GNU-compatible `-D' (create intermediate
   #   directories) flag. Switch to using `mkdir -p'.

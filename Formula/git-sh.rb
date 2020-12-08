@@ -18,6 +18,8 @@ class GitSh < Formula
     sha256 "4a90e6f44bb3e10c770b7d374534b91299159f8cfdd4fb5a407aa2461d27390c" => :x86_64_linux # glibc 2.19
   end
 
+  disable! date: "2020-12-08", because: :unmaintained
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
