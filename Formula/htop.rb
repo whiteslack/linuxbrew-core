@@ -17,6 +17,7 @@ class Htop < Formula
     sha256 "2a54d4c1b36e5c02f8ab9aab1252007b84e793cbed9dbc741e71a459b56213d5" => :big_sur
     sha256 "5e17b2dc3d695878ffb853ce707e7f813957b9e763b6b28efd71071335d74742" => :catalina
     sha256 "ecd4fef722e7a81727a489de6bed8f2ab37ee8009d98029d60029c11bc2eecbb" => :mojave
+    sha256 "66a349ff2b5706d76ea1d6a43422c6ade77b577842d107c25f9b4a9c510934cc" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
