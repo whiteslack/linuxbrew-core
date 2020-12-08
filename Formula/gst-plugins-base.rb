@@ -15,6 +15,7 @@ class GstPluginsBase < Formula
     sha256 "41df7adc463eddef2e64d52990a076437dc115b5dcf501d0739aa754879f54b3" => :big_sur
     sha256 "515ad20ac0cb9d714aefc57c4dca4a566a3ae652c701251d0ea3dbe78542f65e" => :catalina
     sha256 "6ca05eda42dc16f6652f9f3135557a794806e2b3ec2dd6ce910adde700c5f5ac" => :mojave
+    sha256 "f819a6ec6f4eba014e4972c01cb9f37c6e5ff3e4e728a00f8459cd9c6d72c470" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => :build
