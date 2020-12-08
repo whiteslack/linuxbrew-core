@@ -1,8 +1,8 @@
 class Htop < Formula
   desc "Improved top (interactive process viewer)"
   homepage "https://htop.dev/"
-  url "https://github.com/htop-dev/htop/archive/3.0.2.tar.gz"
-  sha256 "b4744a3bea279f2a3725ed8e5e35ffd9cb10d66673bf07c8fe21feb3c4661305"
+  url "https://github.com/htop-dev/htop/archive/3.0.3.tar.gz"
+  sha256 "725103929c925a7252b4dedeb29b3a1da86a2f74e96c50eb9ea6c8fec1942cd2"
   license "GPL-2.0-or-later"
   revision 1 unless OS.mac?
   head "https://github.com/htop-dev/htop.git"
@@ -14,11 +14,9 @@ class Htop < Formula
 
   bottle do
     cellar :any
-    sha256 "059d986c7148b98f3fceea5944d9cfa799dd9bc5e43b4d0daed4bb1f9a756ebf" => :big_sur
-    sha256 "5bfd853dd4f051eb9a53c85ccdf21f66691f1a839036f5cff6c20a1f0ab05967" => :catalina
-    sha256 "8b577984d03fd78706384024e579dc68df3a96013fc35d251534281ff3ec7ae4" => :mojave
-    sha256 "1187ac4a948631e883539e0d2dd2362a1a64292ea562cf58ba8ec0b061150a49" => :high_sierra
-    sha256 "62d8c3263e3fe0a33915d9f6dad241d0865b562dc7ed6ab9b247f513a3f344be" => :x86_64_linux
+    sha256 "2a54d4c1b36e5c02f8ab9aab1252007b84e793cbed9dbc741e71a459b56213d5" => :big_sur
+    sha256 "5e17b2dc3d695878ffb853ce707e7f813957b9e763b6b28efd71071335d74742" => :catalina
+    sha256 "ecd4fef722e7a81727a489de6bed8f2ab37ee8009d98029d60029c11bc2eecbb" => :mojave
   end
 
   depends_on "autoconf" => :build
@@ -27,7 +25,6 @@ class Htop < Formula
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
   depends_on "ncurses" # enables mouse scroll
-  depends_on "python@3.9" => :build unless OS.mac?
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin" unless OS.mac?

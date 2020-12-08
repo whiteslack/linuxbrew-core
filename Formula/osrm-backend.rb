@@ -4,7 +4,7 @@ class OsrmBackend < Formula
   url "https://github.com/Project-OSRM/osrm-backend/archive/v5.23.0.tar.gz"
   sha256 "8527ce7d799123a9e9e99551936821cc0025baae6f2120dbf2fbc6332c709915"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/Project-OSRM/osrm-backend.git"
 
   livecheck do
@@ -14,9 +14,9 @@ class OsrmBackend < Formula
 
   bottle do
     cellar :any
-    sha256 "6bc47b5576c9509bd987c21ab2270da2a2b8127762abbd768fe3a09cced62e3c" => :big_sur
-    sha256 "49c9217bbc18c60e73be1a81aab5037e0fb53a3947aa79061cb53512fe714154" => :catalina
-    sha256 "0518af3face67285ccf0c34058b3da2552031b302d25ee875cf20fb6fe6011ee" => :mojave
+    sha256 "ac9ddfcdb59f49d02ab37712b21a69daf0893d41c75b6e8079d29c8d7eda73d8" => :big_sur
+    sha256 "8281188a00e51a463f91ad206ccfa6603046b392ea2cfb7f35d659a6b80024f4" => :catalina
+    sha256 "fc2d5a305403213f22f77f8d4de6859541ca8d43c7e40d3cabbc8c4bb3756809" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -24,11 +24,7 @@ class OsrmBackend < Formula
   depends_on "libstxxl"
   depends_on "libxml2"
   depends_on "libzip"
-
-  # Possible patch for lua5.4 support:
-  # https://github.com/Project-OSRM/osrm-backend/pull/5783
-  # Upgrade me to lua5.4 at the next version bump.
-  depends_on "lua@5.3"
+  depends_on "lua"
 
   # "invalid use of non-static data member 'offset'"
   # https://github.com/Project-OSRM/osrm-backend/issues/3719
@@ -37,8 +33,13 @@ class OsrmBackend < Formula
   depends_on "tbb"
 
   def install
+    lua = Formula["lua"]
+    luaversion = lua.version.major_minor
     mkdir "build" do
-      system "cmake", "..", "-DENABLE_CCACHE:BOOL=OFF", *std_cmake_args
+      system "cmake", "..", "-DENABLE_CCACHE:BOOL=OFF",
+                            "-DLUA_INCLUDE_DIR=#{lua.opt_include}/lua#{luaversion}",
+                            "-DLUA_LIBRARY=#{lua.opt_lib}/liblua.#{luaversion}.dylib",
+                            *std_cmake_args
       system "make"
       system "make", "install"
     end

@@ -4,7 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tar.xz"
   sha256 "9c73e63c99855709b9be0b3cc9e5b072cb60f37311e8c4e50f15576a0bf82854"
   license "Python-2.0"
-  revision 4
+  revision 5
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,11 +12,9 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "3f2f71818ed66492dcd574d9cdc0f048feae1201b6c1b5d30e3bdb2ed74d04c6" => :big_sur
-    sha256 "933ca658fbb4f1a5f63c28c4857e0071e4c759a9dd449f35a7cc3e8e04cf92dd" => :catalina
-    sha256 "bd8b7b4f75180082a186bf0a1438ee629b1cc82cf8d58ca919240a590aa97adc" => :mojave
-    sha256 "a3ba317369a3761a4241147fc542255d03fd00f157abfe991d2fc9333cc22042" => :x86_64_linux
+    sha256 "5171d1c3c5c65ce6148f2ce5a048dd0a77389f652ee88045b024d685dc18c34f" => :big_sur
+    sha256 "468e4c6d9139777bbdf025c0dd330263e51cb536cffcbcabe19e53b485cd32c7" => :catalina
+    sha256 "3c91d5f5f9e5f7d7db787bdd9f473f2e6d4dd7ec4b713c85411406dd17185e7a" => :mojave
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -73,8 +71,8 @@ class PythonAT39 < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/57/73/1911bfa69482de2a6327db4ca5eda87ae7599160018910007d6d6a1d3ada/wheel-0.36.0.tar.gz"
-    sha256 "e17f05e14282d0e666327f800ef43123b40f3dbc13a86193b604f2ebfae0dabc"
+    url "https://files.pythonhosted.org/packages/d4/cf/732e05dce1e37b63d54d1836160b6e24fb36eeff2313e93315ad047c7d90/wheel-0.36.1.tar.gz"
+    sha256 "aaef9b8c36db72f8bf7f1e54f85f875c4d466819940863ca0b3f3f77f0a1646f"
   end
 
   # Remove this block when upstream adds arm64 and Big Sur compatibility
