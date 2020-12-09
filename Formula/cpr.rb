@@ -56,13 +56,8 @@ class Cpr < Formula
       }
     EOS
 
-    if OS.mac?
-      system ENV.cxx, "-std=c++11", "-I#{include}", "-L#{lib}", "-lcpr",
-                      "test.cpp", "-o", testpath/"test"
-    else
-      system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
-                      "-lcpr", "-o", testpath/"test"
-    end
+    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
+                    "-lcpr", "-o", testpath/"test"
     assert_match "200", shell_output("./test")
   end
 end
