@@ -11,6 +11,7 @@ class Dupseek < Formula
     sha256 "5dd4ba8f61d6e17de45eed186601e3d90b84515a6971520cf38be3d94888ee4f" => :big_sur
     sha256 "aca5de3c9426773cb4ae19e791bb8662fd55b5f56075c2120d850d5228176a19" => :catalina
     sha256 "e06fc46656cf29f29a33a198a011a022753e616b03e36dfee9cf1ade5c4ab227" => :mojave
+    sha256 "3474d09c5989f98afcd59d1859a9aef933e9af9040a44d58601ec0ea7397561e" => :x86_64_linux
   end
 
   def install
