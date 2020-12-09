@@ -15,7 +15,7 @@ class Rebar < Formula
     sha256 "edf0f9176717c5fc73d62bb89730188b76607c85d1f69e9d2b43abc4eb592df7" => :x86_64_linux
   end
 
-  deprecate! because: :repo_archived
+  deprecate! date: "2020-11-24", because: :repo_archived
 
   depends_on "erlang"
 

@@ -17,7 +17,7 @@ class AwsApigatewayImporter < Formula
     sha256 "c1b5793a470c5027f4be302cb0d3143a41cf0de2edce8ce8bb7b399be125072a" => :x86_64_linux # glibc 2.19
   end
 
-  deprecate! because: :repo_archived
+  deprecate! date: "2020-11-12", because: :repo_archived
 
   depends_on "maven" => :build
   depends_on "openjdk@8"

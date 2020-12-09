@@ -18,7 +18,7 @@ class Avian < Formula
     sha256 "4eebce66edee44582178986d2f36e98392b97cf36cf683aaf3b353627cb8cf3a" => :x86_64_linux # glibc 2.19
   end
 
-  deprecate! because: :unmaintained
+  deprecate! date: "2020-11-12", because: :unmaintained
 
   depends_on "openjdk@8"
 

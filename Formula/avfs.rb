@@ -16,7 +16,7 @@ class Avfs < Formula
     sha256 "c06806fc965f9ca3e161ac243e9291f07e2f8859df270040206ebbaede6fc749" => :x86_64_linux
   end
 
-  deprecate! because: "requires FUSE"
+  deprecate! date: "2020-11-10", because: "requires FUSE"
 
   depends_on "pkg-config" => :build
   depends_on macos: :sierra # needs clock_gettime

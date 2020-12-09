@@ -14,7 +14,7 @@ class Gofabric8 < Formula
     sha256 "eea1c25113ff1206605e91ce87a817bb3eece380f9788a1385332c74827cd364" => :x86_64_linux
   end
 
-  deprecate! because: :repo_archived
+  deprecate! date: "2020-11-27", because: :repo_archived
 
   depends_on "go" => :build
 

@@ -15,7 +15,7 @@ class Giflossy < Formula
     sha256 "7c0fdff9266b551b503a3e4d94540026eebde2d35dbe33e380bb3b6164a771ac" => :x86_64_linux
   end
 
-  deprecate! because: :repo_archived
+  deprecate! date: "2020-11-27", because: :repo_archived
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

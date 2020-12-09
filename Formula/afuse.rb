@@ -17,7 +17,7 @@ class Afuse < Formula
     sha256 "7a7953cd690dfef18f9a3ea59b533aa887d9691a559306254a6333ba0b7c011b" => :x86_64_linux
   end
 
-  deprecate! because: "requires FUSE"
+  deprecate! date: "2020-11-10", because: "requires FUSE"
 
   depends_on "pkg-config" => :build
   if OS.mac?

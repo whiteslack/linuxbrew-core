@@ -15,7 +15,7 @@ class Govendor < Formula
     sha256 "3b685fd9ad81e9ae1e16e5f0e1867a6884a1a3ed8b281590345c118905043833" => :x86_64_linux
   end
 
-  deprecate! because: :repo_archived
+  deprecate! date: "2020-11-15", because: :repo_archived
 
   depends_on "go"
 

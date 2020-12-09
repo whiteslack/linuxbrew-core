@@ -16,7 +16,7 @@ class Dep < Formula
     sha256 "30341cfd4d3ad08400ea2dcfea6971173382ef5418102c04631d941c71cc69c0" => :x86_64_linux
   end
 
-  deprecate! because: :repo_archived
+  deprecate! date: "2020-11-25", because: :repo_archived
 
   depends_on "go"
 

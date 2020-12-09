@@ -15,7 +15,7 @@ class Goad < Formula
     sha256 "59cb009dc269b34c5eca144b097102947a09fe0ccae9cb4619993bc8569e8a1c" => :x86_64_linux
   end
 
-  deprecate! because: :repo_archived
+  deprecate! date: "2020-11-27", because: :repo_archived
 
   depends_on "go" => :build
   depends_on "go-bindata" => :build

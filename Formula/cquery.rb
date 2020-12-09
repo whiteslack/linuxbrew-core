@@ -18,7 +18,7 @@ class Cquery < Formula
     sha256 "733705b1b8a693c30238c3d1f893274afc426e6b697e12cf04e5cf0ac6fb23d9" => :x86_64_linux
   end
 
-  deprecate! because: :repo_archived
+  deprecate! date: "2020-11-15", because: :repo_archived
 
   depends_on "cmake" => :build
   depends_on "llvm"
