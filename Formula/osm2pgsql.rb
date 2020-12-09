@@ -1,17 +1,15 @@
 class Osm2pgsql < Formula
   desc "OpenStreetMap data to PostgreSQL converter"
   homepage "https://wiki.openstreetmap.org/wiki/Osm2pgsql"
-  url "https://github.com/openstreetmap/osm2pgsql/archive/1.3.0.tar.gz"
-  sha256 "1c0f229047491cf7d054c6f8fcb846eb3163c336340fa82035e19cc2bb7f0179"
+  url "https://github.com/openstreetmap/osm2pgsql/archive/1.4.0.tar.gz"
+  sha256 "403e25a0310d088183a868d80e5325dceee88617d0df570056e50a2930905369"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/openstreetmap/osm2pgsql.git"
 
   bottle do
-    sha256 "b9ec821f7fedd112073c18f310cca35a30ad4c7abf7e89032851e51e5b503249" => :big_sur
-    sha256 "b217411f0e467c6304373c4fd255c4616bbd549e27deaad1572ebd3403621874" => :catalina
-    sha256 "e0a6ae0c4a88dbcd7f69b7fb7996a22f4a29bdb306f578e65e8e3952a3522450" => :mojave
-    sha256 "555105f6e6f5dbaab880a0516196033bf8028bf1fd39213dd7439a95def40610" => :x86_64_linux
+    sha256 "00c0489eb3b1cf5efd5fb5d42e17fd414637359cb36e92af331d4a3f35082f76" => :big_sur
+    sha256 "a6f0296c7da5ce23f2357823bc40943654e1c9247e5714b0b0f1b3bbc773e819" => :catalina
+    sha256 "4abb189416abb098abe6ea49572ff25d8c5f75b325f169e8a4a45dbff42f480e" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -41,7 +39,7 @@ class Osm2pgsql < Formula
   end
 
   test do
-    assert_match "Connection to database failed: could not connect to server",
-                 shell_output("#{bin}/osm2pgsql /dev/null 2>&1", 2)
+    assert_match "Connecting to database failed: could not connect to server",
+                 shell_output("#{bin}/osm2pgsql /dev/null 2>&1", 1)
   end
 end
