@@ -18,6 +18,7 @@ class Ssldump < Formula
     sha256 "27b04d713522d2937232b457ee32a2293cc9c633acee5efc147ae3fa84741da2" => :big_sur
     sha256 "4f05ecf010a75b92ce19c9889759484f7f4e337e2659516be3c87fe02d99c9ed" => :catalina
     sha256 "3c9186ee97ff509fd83a0e81acc06e621d50701bcf94e15ce61e4edbbb1b9796" => :mojave
+    sha256 "39150c4b0c9fdec20c11ab78e56422e5211581cdfa0318f0d3f6bb291c737253" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
