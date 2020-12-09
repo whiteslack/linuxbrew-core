@@ -27,6 +27,7 @@ class TclTk < Formula
   depends_on "openssl@1.1"
 
   on_linux do
+    depends_on "freetype" => :build
     depends_on "pkg-config" => :build
     depends_on "freetype"   => :build
   end
