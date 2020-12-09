@@ -13,6 +13,7 @@ class Protobuf < Formula
   bottle do
     rebuild 1
     sha256 "b06e8c4247465d7773a359eeeaa39385e564fefab77dbbb245ac928eea334ce9" => :big_sur
+    sha256 "d552ba31a02e48f9eaba685dc56955a7ff5620283f3763bab684b9fe07b81042" => :arm64_big_sur
     sha256 "8d53111626404e2b4f27718127a313dceea600a74a4d38ffe0870812d8f57eb4" => :catalina
     sha256 "0070627fe9b8c1818e54480c272cc00fa71bd5bd944b04d37ebe2e31604cb9c9" => :mojave
     sha256 "3a8740e87247f14779fa953354a17f7f02d49e7ece43081f79537a26a3892fc2" => :x86_64_linux
