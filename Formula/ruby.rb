@@ -72,13 +72,17 @@ class Ruby < Formula
       --with-opt-dir=#{paths.join(":")}
       --without-gmp
     ]
-    args << "--disable-dtrace" if OS.mac? && !MacOS::CLT.installed?
+
+    on_macos do
+      args << "--disable-dtrace" unless MacOS::CLT.installed?
+    end
 
     # Correct MJIT_CC to not use superenv shim
-    args << if OS.mac?
-      "MJIT_CC=/usr/bin/clang"
-    else
-      "MJIT_CC=/usr/bin/gcc"
+    on_macos do
+      args << "MJIT_CC=/usr/bin/clang"
+    end
+    on_linux do
+      args << "MJIT_CC=/usr/bin/gcc"
     end
 
     system "./configure", *args
