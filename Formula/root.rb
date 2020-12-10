@@ -1,8 +1,8 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
-  url "https://root.cern.ch/download/root_v6.22.04.source.tar.gz"
-  sha256 "a2f066d85db8eb5b5f1c72573923484a6782a47b94954eff64879609f360e951"
+  url "https://root.cern.ch/download/root_v6.22.06.source.tar.gz"
+  sha256 "c4688784a7e946cd10b311040b6cf0b2f75125a7520e04d1af0b746505911b57"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git"
 
@@ -12,9 +12,9 @@ class Root < Formula
   end
 
   bottle do
-    sha256 "438b73d8ad8e731e58edd302a86f1d87e90245a5d8cc51e197f19e330bb3ad4d" => :catalina
-    sha256 "acbe14d4b26fd847a0cc7fdc4be0fab92f2394d1ad706523c1f1cc4efde0d116" => :mojave
-    sha256 "aca8fc57aa9d5777b6897a457a5660604c41898a578003431a6867274fe96a77" => :high_sierra
+    sha256 "43fa16262c747e5fde9e3b16c1e84051c1421fa7721e55a79db2b696acc421cd" => :big_sur
+    sha256 "6085c0eb513a710ba721652cb7e74e48ee6089963ea0e190d6882237c3181e0e" => :catalina
+    sha256 "ce2b7b2942bb7155297f30b485a584f1d40856d38d6eccc050f2e34f907582ad" => :mojave
   end
 
   if OS.mac?
@@ -105,6 +105,10 @@ class Root < Formula
 
     cxx_version = (MacOS.version < :mojave) ? 14 : 17
     args << "-DCMAKE_CXX_STANDARD=#{cxx_version}"
+
+    # Homebrew now sets CMAKE_INSTALL_LIBDIR to /lib, which is incorrect
+    # for ROOT with gnuinstall, so we set it back here.
+    args << "-DCMAKE_INSTALL_LIBDIR=lib/root"
 
     # Workaround the shim directory being embedded into the output
     inreplace "build/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx

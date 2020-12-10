@@ -8,14 +8,16 @@ class Minizinc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "7ac9febf204521d16f570a84ebe3f25ba7e1393f33771dd842287b415afa97fe" => :big_sur
-    sha256 "39365070e4c1a7e1f2834e367409c3aebbd62b1519e2cb63e0b665c5afaf7b01" => :catalina
-    sha256 "97cc0f4bee19660cbf54fdd55dd8600640a2c18a43ca39822b3c4b87f78f3f8d" => :mojave
-    sha256 "2608496407363b9ea725e7e84d12303a25f907da6e4619f852a2e005a463c423" => :x86_64_linux
+    rebuild 1
+    sha256 "1c54e2022738c39dd339bec62ba9d933b5b44fc07587c51361492cdfd5a961db" => :big_sur
+    sha256 "2ee5718af0ff50473754355384284e29162d2dff60c7b433d312c9cef0e21ff0" => :catalina
+    sha256 "9d2af2903a893c0dadeddecbdbbdd2fb55fac3b1f37364881b4648fd90c037b2" => :mojave
   end
 
   depends_on "cmake" => :build
   depends_on arch: :x86_64
+  depends_on "cbc"
+  depends_on "gecode"
 
   def install
     mkdir "build" do
@@ -25,6 +27,18 @@ class Minizinc < Formula
   end
 
   test do
-    system bin/"mzn2doc", pkgshare/"std/all_different.mzn"
+    (testpath/"satisfy.mzn").write <<~EOS
+      array[1..2] of var bool: x;
+      constraint x[1] xor x[2];
+      solve satisfy;
+    EOS
+    assert_match "----------", shell_output("#{bin}/minizinc --solver gecode_presolver satisfy.mzn").strip
+
+    (testpath/"optimise.mzn").write <<~EOS
+      array[1..2] of var 1..3: x;
+      constraint x[1] < x[2];
+      solve maximize sum(x);
+    EOS
+    assert_match "==========", shell_output("#{bin}/minizinc --solver cbc optimise.mzn").strip
   end
 end
