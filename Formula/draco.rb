@@ -10,6 +10,7 @@ class Draco < Formula
     sha256 "8102f60a854f4b5bd365b10f1c5876459424191052811d0afb42aa037c0ada7d" => :big_sur
     sha256 "4a1088d41275a89ed0238d3eacca9740d9455e9fd2fcbf79b3147ad72c942b4d" => :catalina
     sha256 "45e5548e468c702c7508ec6f2ef7aa2c4862e38af9130511b36d910c069271a0" => :mojave
+    sha256 "fe370db9aee9bdf9d89460556d4f6318e0789cf89ce338263678e0baf22362ea" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
