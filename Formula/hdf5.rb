@@ -48,7 +48,9 @@ class Hdf5 < Formula
       --enable-fortran
       --enable-cxx
     ]
-    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" unless OS.mac?
+    on_linux do
+      args << "--with-zlib=#{Formula["zlib"].opt_prefix}"
+    end
 
     system "./configure", *args
 
