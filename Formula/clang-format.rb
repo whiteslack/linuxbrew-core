@@ -26,7 +26,8 @@ class ClangFormat < Formula
   end
 
   livecheck do
-    url "https://github.com/llvm/llvm-project/releases/latest"
+    url :stable
+    strategy :github_latest
     regex(%r{href=.*?/tag/llvmorg[._-]v?(\d+(?:\.\d+)+)}i)
   end
 
