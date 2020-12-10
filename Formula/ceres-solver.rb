@@ -11,6 +11,7 @@ class CeresSolver < Formula
     sha256 "489c57c69f839424ff0b9e74ad3ad798622dbe20e3b6b32b9e4b0bfde8b10a6f" => :big_sur
     sha256 "2e64cbafd1d0297c5b87f560122bc2393b2215f440f39c50e5d9a7c958b68f35" => :catalina
     sha256 "aa4449eb545fe2a289777824d39eb080ae01dd2a9f6349943db72fab33f2a25a" => :mojave
+    sha256 "8dc8eb634d21908ea67fa2f30bebbe6809ced4da8c25161170f24be37bb1b174" => :x86_64_linux
   end
 
   depends_on "cmake"
