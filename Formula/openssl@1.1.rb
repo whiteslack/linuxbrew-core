@@ -18,6 +18,7 @@ class OpensslAT11 < Formula
     sha256 "14646cc636f207b835b12172b2ca2cd908e2955bf537d72be6ab049285db7398" => :arm64_big_sur
     sha256 "066b9f114617872e77fa3d4afee2337daabc2c181d7564fe60a5b26d89d69742" => :catalina
     sha256 "f5a348793735d449d990693ab687049fb11c08ade0b74c6f7337a56fc0a77908" => :mojave
+    sha256 "2dd3e4e402e5b9e38edf6a9e8047e061c2fb15ad7c7a5e25679da48e0410f464" => :x86_64_linux
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
