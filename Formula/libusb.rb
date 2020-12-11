@@ -15,6 +15,7 @@ class Libusb < Formula
     sha256 "74e0067e968ddbea31e070885ae86bc1db5c66fd157588e84576e653e62894c8" => :big_sur
     sha256 "034ae259f17afb5894860cdb1786fd6d391359e8d221c0f765eceed6210b60df" => :catalina
     sha256 "1318e1155192bdaf7d159562849ee8f73cb0f59b0cb77c142f8be99056ba9d9e" => :mojave
+    sha256 "b6c5e81cb430546009410949485f379a1dfd1c4201abe90d04f7698a98e977f0" => :x86_64_linux
   end
 
   head do
