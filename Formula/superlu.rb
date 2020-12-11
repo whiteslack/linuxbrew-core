@@ -15,6 +15,7 @@ class Superlu < Formula
     sha256 "62393851b2e93277e5420852f6a40ce680fb3d606620984731395024e708a2cc" => :big_sur
     sha256 "5cc18b04209b3d65f7b1c44413db97251c3bf2933d3a82e9783e269bb21e3d1b" => :catalina
     sha256 "84070217c8d262573eacc0d5e5b08ac7e19c68574d0cc229863b6f9d0615d404" => :mojave
+    sha256 "886ac40c459e1dc878e251b8e434cdb4822518c7bb56d86b42d492b562f5c62c" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
