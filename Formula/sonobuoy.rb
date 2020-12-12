@@ -10,6 +10,7 @@ class Sonobuoy < Formula
     sha256 "d7f3e8d91d907888ebe0585f29b01c64f25cc829f55e3aa0a896d9ef60177a70" => :big_sur
     sha256 "cf34ec271d9a63ea979c379cfb3c30828d4b53ebc3d691d4b7798ca83c7fb87d" => :catalina
     sha256 "d59cd7e3d92970fb71818826c9a93d3ced9ce9179493d33914df125bbbaa78b0" => :mojave
+    sha256 "b80d46fdd6fb73c1f516d85ac9e9cf6405fd20163cc549b9b5f3f67f3e1719c6" => :x86_64_linux
   end
 
   depends_on "go" => :build
