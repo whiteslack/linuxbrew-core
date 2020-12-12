@@ -16,6 +16,7 @@ class M4 < Formula
     sha256 "0df9083b268f76a3cda0c9f0d2ce84b51d21a8618d578740646fb615b00c7e7b" => :big_sur
     sha256 "2fdf452c94c6b63ea0a45608c19a4477acaf79853a298d337360971c5d51413b" => :catalina
     sha256 "2c0f28d612ba588cd6bf8380c6e286c9d3e585dcd8c4ad198b955c9e8cd1d817" => :mojave
+    sha256 "1552dd0379252680e0c32085df6b6ab59aa32f45be389ff18620a073a8f3c78c" => :x86_64_linux
   end
 
   keg_only :provided_by_macos
