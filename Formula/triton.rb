@@ -16,6 +16,7 @@ class Triton < Formula
     sha256 "9eff2740d1ee43579704b15f6cc0ec3ded59d8f2c32991aef2e7dd4243081df1" => :big_sur
     sha256 "0e80b4d4276d3e695321ce821101192f3b0becd70d7f4b90e31092cd2340cbb3" => :catalina
     sha256 "690b346b720a50ee036fe590e5b508f1d4cab865f918bffb9ad0a5eb15f142c1" => :mojave
+    sha256 "2fef1debd4f53f460fd4e2db0b6ae7f2e8272b00ed2d3f5b4704c61a6047f7b3" => :x86_64_linux
   end
 
   depends_on "node"
