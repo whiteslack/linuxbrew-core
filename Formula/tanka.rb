@@ -12,6 +12,7 @@ class Tanka < Formula
     sha256 "9b470a925b2fb43d4fa08f7798bd3c5e0ce9ab54841d71f969c33af12f09f612" => :big_sur
     sha256 "a37f3718e66f5944930c4b7c0268f9e57c65a86327663080d438ef01fcd5c198" => :catalina
     sha256 "3b2759ab2b1f4c85543ca6badf31a60a2e6682037f8a4a88950bcd59efd2f532" => :mojave
+    sha256 "bd799eb5c3b607aa2123b088d56166106a1f0bc43db09dc214f54c8d36c295ab" => :x86_64_linux
   end
 
   depends_on "go" => :build
