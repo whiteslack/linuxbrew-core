@@ -13,6 +13,7 @@ class Imlib2 < Formula
     sha256 "d2af1ccb06b90d94c4a6e0502f722880a2947d126735c0e6e15bb2ec4600955d" => :big_sur
     sha256 "530114570c89b19a5b4383adca9168f85ae033ba75627f794c557bd5bb5179f6" => :catalina
     sha256 "4e65ec5a0c3474e47a93b3c25048247c1062c62a5a92a2525842226c4ed238bb" => :mojave
+    sha256 "6bfe4710fdff9828469a89ffba3ce99a1306aeb317a375e014ef1a1f7b491908" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
