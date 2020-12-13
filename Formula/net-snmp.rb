@@ -17,6 +17,7 @@ class NetSnmp < Formula
     sha256 "4519ee0aa3a4ebdcb4235466861a13b41ff19363a2b83fce26ab507cdc40a015" => :big_sur
     sha256 "97ca904418f6fc7488478cec55106ce51987eb139fea9f90b38afa4240c4683b" => :catalina
     sha256 "ffac347f7d928bdc233355f324cff14a0751315661ef480d121362085b56f8d3" => :mojave
+    sha256 "f5558987bee51b6b6609e8eb48ea4c5ef994b4c4b9800c5ecf6df2c9c547bd58" => :x86_64_linux
   end
 
   keg_only :provided_by_macos
