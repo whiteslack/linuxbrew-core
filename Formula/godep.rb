@@ -16,7 +16,7 @@ class Godep < Formula
     sha256 "3d56638ff911d9cba71243d43aa796c37f0894a7a2d9af0f636fb7d943ab975a" => :x86_64_linux
   end
 
-  deprecate! date: "2018-01-26", because: :repo_archived
+  disable! date: "2018-01-26", because: :unmaintained
 
   depends_on "go"
 
