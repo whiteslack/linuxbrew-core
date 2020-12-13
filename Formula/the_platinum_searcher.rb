@@ -12,6 +12,7 @@ class ThePlatinumSearcher < Formula
     sha256 "63cc973af4c1fc612acb86c7a928f1680f84db7edfae52f374b95925c00761dc" => :big_sur
     sha256 "79066cac44fd6cd21b8feadc9737045f98846832f15bd2a2e1fdaae3a8165e6d" => :catalina
     sha256 "6b7fb2ff2ca2b5a0d264a7733a59eb0e1b68e211d15a261f6bbcab5664bb6ff7" => :mojave
+    sha256 "fa025f9ae8524b5d0505d5b31c15a178f91e93444ee5b3b416ccd9680a790313" => :x86_64_linux
   end
 
   depends_on "go" => :build
