@@ -11,6 +11,7 @@ class Inja < Formula
     sha256 "872f713878bc80ab3b5b789dcf85f95e9144f7ae299091b71b9f7851efd139d9" => :big_sur
     sha256 "2dc3622a52c97e3bd5824127000fc8ee4b5a505c5303591cec8ca2f5c7b3320e" => :catalina
     sha256 "e93bba969f441b2425e10ec5849b5f904a932bad7b6318b07dc62dc20bae7a5a" => :mojave
+    sha256 "cd76e48acf06cd820094bf81cda57c71e39114848eec162489f542095908c9a3" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
