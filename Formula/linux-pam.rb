@@ -10,6 +10,7 @@ class LinuxPam < Formula
     sha256 "8a27f4ff10628a7366f0a63480433fa1138c547fbd49343258abb47cd4908e67" => :big_sur
     sha256 "4b32c4d13a178a568d7a8668f0d42c40a02d161fac8ea7b10f5c2e468cbca4a6" => :catalina
     sha256 "c52e7c5c5a92e4e5faf2ab5aa6cb66eeabc943869161bf5c8853b37dbd6a49a3" => :mojave
+    sha256 "26f3fa749b46eb4a489aa258cc2a9d4a9f8cc644fb36894afd942028970cce3a" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
