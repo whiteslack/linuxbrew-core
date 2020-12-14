@@ -20,6 +20,7 @@ class GnuProlog < Formula
     sha256 "e3825d38dac91ef3dbb9d7b67a6e3352dcc27fb1f897332ba39e5a0b97caad25" => :big_sur
     sha256 "25b07a365e6907466222e64d10458a9006830b3061698eaf6af101f3355d43f9" => :catalina
     sha256 "76ed18b57bf7719b1212adc6fd323b184a9ed496c0ebc7f588ee8e172e887696" => :mojave
+    sha256 "756f230d72a326a698c3bc97f6f78a5689fa65da74d288443ce69b4e01d94006" => :x86_64_linux
   end
 
   def install
