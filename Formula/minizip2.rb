@@ -1,15 +1,15 @@
 class Minizip2 < Formula
   desc "Zip file manipulation library with minizip 1.x compatibility layer"
   homepage "https://github.com/nmoinvaz/minizip"
-  url "https://github.com/nmoinvaz/minizip/archive/2.10.4.tar.gz"
-  sha256 "6ef3d2e0c15352fe87a4a658b2e8f665fb0c21ddfb57a2e0a515658389d2e850"
+  url "https://github.com/nmoinvaz/minizip/archive/2.10.5.tar.gz"
+  sha256 "1c6420d3f3509e722178d9130a57cb77537b34900e7b67acca7e3e2858846939"
   license "Zlib"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e77e0569fac85496410972551d45a718ff3cf792bcdb92cf49b603faa58f7303" => :big_sur
-    sha256 "e632af5ee8fda3fc438e17cd88b6b57f04e9e7d014816c9270c7c0d351ba0a43" => :catalina
-    sha256 "7a0a117215461faf323a1bab2f53e94baad2f4c32ce0e2f36f2bdd505d7e9814" => :mojave
+    sha256 "a31d89be3574f9bff5a437254b3bb3245ce73e8c02952d36f20195a100f5b0bd" => :big_sur
+    sha256 "cc7cb586eead3a60df1605d9b7bf9b6b90205cf49869a9ce6f781b45a4ae693c" => :catalina
+    sha256 "76afb235aea00f06858d62369363ce01e06f7c009afc380b41f5d6a88bc6a8f7" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -27,7 +27,9 @@ class Minizip2 < Formula
     because: "libtcod, libzip and minizip2 install a `zip.h` header"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DIconv_IS_BUILT_IN=on"
+    system "cmake", ".", "-DIconv_IS_BUILT_IN=on",
+                         "-DMZ_FETCH_LIBS=OFF",
+                         *std_cmake_args
     system "make", "install"
   end
 
