@@ -1,10 +1,9 @@
 class Gtkmm3 < Formula
   desc "C++ interfaces for GTK+ and GNOME"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.2.tar.xz"
-  sha256 "6d71091bcd1863133460d4188d04102810e9123de19706fb656b7bb915b4adc3"
+  url "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.3.tar.xz"
+  sha256 "60497c4f7f354c3bd2557485f0254f8b7b4cf4bebc9fee0be26a77744eacd435"
   license "LGPL-2.1-or-later"
-  revision 3
 
   livecheck do
     url :stable
@@ -13,12 +12,13 @@ class Gtkmm3 < Formula
 
   bottle do
     cellar :any
-    sha256 "194df0dca8c246eea470f58d5a731d936f7d1a62534cc2670432a382e8c4ec90" => :big_sur
-    sha256 "63cc7304d3a0d305eb732e1bf4faf4ae1effae88c28915fb91f4242736456c8a" => :catalina
-    sha256 "54944bb05931fe24b2d150a08d5ee6a553cce40990e4c7731f68d6f87dc518d3" => :mojave
-    sha256 "0929e942c2fb7ca954dadd6a2131944e5411447866d8a1e9456c650698acab29" => :x86_64_linux
+    sha256 "b8e813ea94cacde6d50a0c1cc0d816984d85b2bd7bd84175df0e86d07f056c75" => :big_sur
+    sha256 "5d771001790cc4cafe5efa990a503e2fc1500f7e08d460829527323c63e6387f" => :catalina
+    sha256 "0128c86b4d3f8e090e9e9bf240a3cf2273cb15ecd26f4d9121f9b6663a10bdb8" => :mojave
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "atkmm"
   depends_on "cairomm@1.14"
@@ -28,8 +28,11 @@ class Gtkmm3 < Formula
   def install
     ENV.cxx11
 
-    system "./configure", "--disable-silent-rules", "--disable-dependency-tracking", "--prefix=#{prefix}"
-    system "make", "install"
+    mkdir "build" do
+      system "meson", *std_meson_args, ".."
+      system "ninja"
+      system "ninja", "install"
+    end
   end
 
   test do
