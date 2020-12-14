@@ -16,6 +16,7 @@ class Onnxruntime < Formula
     sha256 "337d7698df55dc5e51642648c48b197d16b16724a18f8b3f2dd8d945ab3d9570" => :big_sur
     sha256 "abba47ba776200c08639652a71b543152a60cb665cfeba5a6d10802329ac3637" => :catalina
     sha256 "66ad4dd817c95e4f47e29ee2728d0f0e4e1e5e21b0bcb69cee1153b08fe115c9" => :mojave
+    sha256 "5aca02db8d36d4cfb3b36a87c44c01a4645c0aa71847c8850cb72b1cb09189be" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
