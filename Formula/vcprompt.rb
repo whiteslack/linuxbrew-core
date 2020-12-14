@@ -11,6 +11,7 @@ class Vcprompt < Formula
     sha256 "571cb1cb75d76851cfe86e8622a2085e87d1cc292147b246410b61ac40f86dff" => :big_sur
     sha256 "503cb9532dff8fc7eb8fdd11291b26ba3240ce304e4bcb5e9888a35161433ac5" => :catalina
     sha256 "8be8d7b1126e40a72a85f707b07f922132769cb2c6c26f768fe57ccb9c542fa5" => :mojave
+    sha256 "e02d78730b41bee820ae2cdb772b1966df04ff890076b5c4185a30642a639839" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
