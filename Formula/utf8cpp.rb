@@ -10,6 +10,7 @@ class Utf8cpp < Formula
     sha256 "4a8248499ba22f0297020be8647f9a31601f288a67301618f2d53b1dd323c75a" => :big_sur
     sha256 "a0fa75e69c89763a208e702c4c9c60199596305db62666940a15cecd65de2a2e" => :catalina
     sha256 "d90fa3e80a1b718889cc44d54a55790051bd919f3733ad124fdab15ea16ed9c6" => :mojave
+    sha256 "e6eea4a84d6c3e5ddaa21c3e49b4b0e6142001789eed70431ce70d8f97baebbe" => :x86_64_linux
   end
 
   depends_on "cmake" => [:build, :test]
