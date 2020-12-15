@@ -16,6 +16,10 @@ class Redsocks < Formula
     sha256 "a362fc218d64e3cd927ccde66a035a0cb4bb3d4be056ec1df853818478604b32" => :x86_64_linux
   end
 
+  # 0.5 build did not get addressed and no release since 2016-12-27
+  # https://github.com/darkk/redsocks/issues/96
+  disable! date: "2020-12-13", because: :unmaintained
+
   depends_on "libevent"
 
   def install
