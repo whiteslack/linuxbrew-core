@@ -37,7 +37,7 @@ class AmplMp < Formula
   def install
     system "cmake", ".", *std_cmake_args, "-DBUILD_SHARED_LIBS=True"
     system "make", "all"
-    if OS.mac?
+    on_macos do
       MachO::Tools.change_install_name("bin/libasl.dylib", "@rpath/libmp.3.dylib",
                                        "#{opt_lib}/libmp.dylib")
     end
@@ -57,11 +57,7 @@ class AmplMp < Formula
   end
 
   test do
-    if OS.mac?
-      system ENV.cc, pkgshare/"example/miniampl.c", "-I#{include}/asl", "-L#{lib}", "-lasl", "-lmp"
-    else
-      system ENV.cc, pkgshare/"example/miniampl.c", "-std=c99", "-I#{include}/asl", "-L#{lib}", "-lasl", "-lmp"
-    end
+    system ENV.cc, pkgshare/"example/miniampl.c", "-std=c99", "-I#{include}/asl", "-L#{lib}", "-lasl", "-lmp"
     cp Dir[pkgshare/"example/wb.*"], testpath
     output = shell_output("./a.out wb showname=1 showgrad=1")
     assert_match "Objective name: objective", output
