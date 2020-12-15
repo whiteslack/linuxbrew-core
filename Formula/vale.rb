@@ -10,6 +10,7 @@ class Vale < Formula
     sha256 "c851336b346759fdd8443e8dfa80cd724fca3158c24b0d887943dc2936f7b54d" => :big_sur
     sha256 "041626949061c7d96e372f5a31c464b3cf5cfd156923dc1602af55af711b59a6" => :catalina
     sha256 "31d4fa32a4f88160199cf57ac6edfecc2cfb2faf42f32b0c71821693d84b2330" => :mojave
+    sha256 "2abda6dbdb9734dfec934130b43b3b288b77702b83e124941e7ecd0a61fbfa42" => :x86_64_linux
   end
 
   depends_on "go" => :build
