@@ -11,6 +11,7 @@ class Googletest < Formula
     sha256 "66021a83c2dfe2a3baba769a76babde2f7224e9d6b555d8909995765bc555231" => :big_sur
     sha256 "f9819a67ff4c54bfde932f1d83d9db44f8ca0e7b65e77dd812d4f71931d3deed" => :catalina
     sha256 "58f238b7d2fea41af22c3e4bc6b52d79510c84adba6b6145f548a248a2687f16" => :mojave
+    sha256 "91c4c78738d6b7c2fd12dfac7528223ba6609bcf389a5d7a7c16ed7cdee5ed90" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
