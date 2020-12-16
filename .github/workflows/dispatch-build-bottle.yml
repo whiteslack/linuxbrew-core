@@ -36,6 +36,7 @@ jobs:
           mkdir ~/bottles
           cd ~/bottles
           brew update-reset
+          brew tap linuxbrew/xorg
           brew test-bot \
             --only-formulae \
             --keep-old \
