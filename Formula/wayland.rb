@@ -5,6 +5,9 @@ class Wayland < Formula
   sha256 "4675a79f091020817a98fd0484e7208c8762242266967f55a67776936c2e294d"
   license "MIT"
 
+  bottle do
+  end
+
   depends_on "pkg-config" => :build
   depends_on :linux
 
