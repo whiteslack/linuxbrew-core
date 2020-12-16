@@ -712,7 +712,7 @@ class Ansible < Formula
       "localhost ansible_connection=local",
       *(" ansible_python_interpreter=" + which("python3") unless OS.mac?),
       "\n",
-    ].join("")
+    ].join
     system bin/"ansible-playbook", testpath/"playbook.yml", "-i", testpath/"hosts.ini"
 
     # Ensure requests[security] is activated
