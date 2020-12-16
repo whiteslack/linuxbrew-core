@@ -364,7 +364,7 @@ class Llvm < Formula
     # On the other hand, note that a fully qualified path to `dylib` or `tbd` is OK, e.g.,
     # `/usr/local/lib/libxml2.tbd` or `/usr/local/lib/libxml2.dylib`.
     ext = shared_library("")
-    shell_output("#{bin}/llvm-config --system-libs").chomp.strip.split(" ").each do |lib|
+    shell_output("#{bin}/llvm-config --system-libs").chomp.strip.split.each do |lib|
       if lib.start_with?("-l")
         assert !lib.end_with?(".tbd"), "expected abs path when lib reported as .tbd"
         assert !lib.end_with?(ext), "expected abs path when lib reported as .dylib"
