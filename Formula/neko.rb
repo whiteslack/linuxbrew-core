@@ -11,6 +11,7 @@ class Neko < Formula
     cellar :any
     sha256 "90dea5431abac1c2d3ee6c6fa46f86ae9dab8587d0fa610f038d8ee15873f9ea" => :catalina
     sha256 "57b64633f73d93c803db29d70527de47da5a8ae3443f21f942d4a077c68f69d8" => :mojave
+    sha256 "aa9c5f5dc43796169d7c90b5bd48e8932b5dc71f9840c8919880206d984b6c97" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
