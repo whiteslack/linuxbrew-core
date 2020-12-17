@@ -6,7 +6,6 @@ class AlsaLib < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 "8280bb44070d41048d081911ec73782e72cf5739d65997a5d8ee58517cf708f4" => :x86_64_linux
   end
 
   depends_on :linux
