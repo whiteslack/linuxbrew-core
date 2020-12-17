@@ -11,6 +11,7 @@ class Rocksdb < Formula
     sha256 "f8065a2594655a33d36335f516b0448f2195ba5b4088aa36186b56bf3c1fb989" => :big_sur
     sha256 "a9e2c1d9c7f27200b8ff1483233fdf671665f8bbc5671eeb27875ae20d212e07" => :catalina
     sha256 "629da5a15d3e75afc921716e2c13b5f580444d6c9bf380e3ccb92e215c9978a0" => :mojave
+    sha256 "b4a1cd2fae4f93f922c193082bf7f288b00d68456d74deea40ba83fda701f548" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
