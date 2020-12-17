@@ -17,6 +17,7 @@ class Shyaml < Formula
     sha256 "bdfdbc881e2ef1cc0ae52ad5cafae3715bdfaf76a1ac905a6e3aa3a7fc1736a2" => :big_sur
     sha256 "c95f616993a2fd70d3ed9fbb7556b582ef2aca26fbda97b36898bcfb9efbcee1" => :catalina
     sha256 "1f157591a67c0165af8492b3cb1b6049a7e151b0770aaed4c176c15fe3050f68" => :mojave
+    sha256 "bd997637829ddd933b8047b8c4428752bc0c7db7877b2b7a68a8c94d4e69d450" => :x86_64_linux
   end
 
   depends_on "libyaml"
