@@ -11,6 +11,7 @@ class Dbdeployer < Formula
     sha256 "6c946409924946d87108e3e13a0f2bd6529f2b372c62a4427ff0c9c8847a5595" => :big_sur
     sha256 "c83d5b6fa5b0d36c69c6512e9b2042b877524b0e897583de1ea86130bef40af1" => :catalina
     sha256 "c17f1d8bf41f39d826a0a060d43175909fb106e91c7c5608d67c0602bfe61f6c" => :mojave
+    sha256 "dabacd438faa067dde109686e12396bb8e775ab748802840753e0fd82616cacb" => :x86_64_linux
   end
 
   depends_on "go" => :build
