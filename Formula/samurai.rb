@@ -11,6 +11,7 @@ class Samurai < Formula
     sha256 "5e3819fa6eb240e781c236528297422575c6c2ae9aa4e38e6ddc7dbac0e25339" => :big_sur
     sha256 "35e183246e80cfe5a6f9b11b12cd2e0c3a754da15b8fb7550b5716de9e219e8d" => :catalina
     sha256 "ef652224d51e64d4e83f921a3870cd9cb4d7dbc315156cb68dd01d30d2d34414" => :mojave
+    sha256 "234c212119cdbf2c55d25a660bb650f03916ca322109fef920c1b595c000624c" => :x86_64_linux
   end
 
   def install
