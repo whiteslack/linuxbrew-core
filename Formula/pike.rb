@@ -18,6 +18,7 @@ class Pike < Formula
     sha256 "5aa4cacc8d0fd3d81fca3e029a74813f3c40b2a8d27684b9ee665aece4b50f45" => :big_sur
     sha256 "65526e58ded68ff16a6eb53104406f48ac535ac955912b320c724b497d418619" => :catalina
     sha256 "550251a57aacd9f491cfda25c997a544bd993dcd1c9b1d29f03e7386bf16c758" => :mojave
+    sha256 "048aac10e1d154c607f1f250529c5716e8c84762c31f8b5ca991f58f4b123c84" => :x86_64_linux
   end
 
   depends_on "gmp"
