@@ -13,6 +13,7 @@ class Mitmproxy < Formula
     sha256 "94c020ab4dcc81788c9d2e9927fc473a2eab830bec0f6d8c70fb586d44abe0c9" => :big_sur
     sha256 "f79b40c49e80b7f8857c97924838df92c840868ae747be9c3884486f2c17d9bf" => :catalina
     sha256 "5941b19532c712e0da05330230f5bc67d531a6c9864250ea6a3ecaaf72f3dc05" => :mojave
+    sha256 "b8ae266e0459769ad1ac076e0ef0d2cb971d24c2b963dba2b6b5ffd524ab32cf" => :x86_64_linux
   end
 
   depends_on "openssl@1.1"
