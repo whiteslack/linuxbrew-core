@@ -6,6 +6,8 @@ class WaylandProtocols < Formula
   license "MIT"
 
   bottle do
+    cellar :any_skip_relocation
+    sha256 "64e9fc4ff59725f13c60644b9157d099d283eaedc35a451f2b5d6814a3cc9b3c" => :x86_64_linux
   end
 
   depends_on "pkg-config" => [:build, :test]
