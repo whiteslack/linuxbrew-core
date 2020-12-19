@@ -16,6 +16,7 @@ class Heimdal < Formula
     sha256 "95ad69bc1e08ebbd279062632bdf576982fbcba5c34a4ba83c7e91523952b6e6" => :big_sur
     sha256 "6345879296177a9b33c73bbae4749debb92d20cf6fe951d51bb2c592f9d82b3b" => :catalina
     sha256 "280f713c88dd355d0c385eaa7e3e4e3ae762854259b1edc801821287f132c15a" => :mojave
+    sha256 "4566f796b94e95b3f475ecef760143d74d6741c545aee0c9f5c58c59042f026e" => :x86_64_linux
   end
 
   keg_only :shadowed_by_macos, "macOS provides Kerberos"
