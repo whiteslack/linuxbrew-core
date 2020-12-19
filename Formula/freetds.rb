@@ -14,6 +14,7 @@ class Freetds < Formula
     sha256 "e1915b8ec9a59b5146e50310e778c4cc247df3d12bdfbd41fd1601abc68d4a5b" => :big_sur
     sha256 "d50d6963a87b72230cdd9c30e17a05baf73970b26d2ef031e9496181bb41afad" => :catalina
     sha256 "fce5977a4c8d363777846b434747d5dd6207e00273769e31354d090ed35d9a00" => :mojave
+    sha256 "1927236e206e28de3d5ac8ea3e0641522410f7b55cbe84717db2859d58cf1b96" => :x86_64_linux
   end
 
   head do
