@@ -14,6 +14,7 @@ class Lighttpd < Formula
     sha256 "ae42401a63380c8d28ae1991d720366b46f9ec8d69320beb384a75060bc1430e" => :big_sur
     sha256 "493ddbae5f2e546bd5cf09eb83ba26189a903a37a8dca52051ebda489eff3c3f" => :catalina
     sha256 "750b8c44e473e24bf9132b79c2da440b96c972fc16105bebf44491c0fca257e4" => :mojave
+    sha256 "abe5d62afc54cd654f1caa8c9aa7f0f029be64fc91ab8f7c1d0d34f089bb5ca8" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
