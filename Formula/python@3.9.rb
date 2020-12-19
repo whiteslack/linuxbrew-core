@@ -13,6 +13,7 @@ class PythonAT39 < Formula
 
   bottle do
     sha256 "1c4b459f6c4929f723275620e867cb600805c5590f2475ec91a7ee2675a69e27" => :big_sur
+    sha256 "8c5213136c19b482350eeeebb5a0f8d02c01feed1938bf249c5c97a9c5768aee" => :arm64_big_sur
     sha256 "367924e7be7a76f966acf68c0d909fb34cf8c22959a71769a6838c9bb35fbe87" => :catalina
     sha256 "502d5df2a1d26d52e55f1e26e19408786d55275a67dd06481bb5622646ed7d99" => :mojave
     sha256 "c9a210b5f1c7f642051ce3331b4259775d8e344407575bae669b0b28c0ea684f" => :x86_64_linux
@@ -382,12 +383,16 @@ class PythonAT39 < Formula
     # Check if sqlite is ok, because we build with --enable-loadable-sqlite-extensions
     # and it can occur that building sqlite silently fails if OSX's sqlite is used.
     system "#{bin}/python#{version.major_minor}", "-c", "import sqlite3"
+
     # Check if some other modules import. Then the linked libs are working.
-    on_macos do
-      system "#{bin}/python#{version.major_minor}", "-c", "import tkinter; root = tkinter.Tk()"
-    end
     system "#{bin}/python#{version.major_minor}", "-c", "import _gdbm"
     system "#{bin}/python#{version.major_minor}", "-c", "import zlib"
+    on_macos do
+      # Temporary failure on macOS 11.1 due to https://bugs.python.org/issue42480
+      # Reenable unconditionnaly once Apple fixes the Tcl/Tk issue
+      system "#{bin}/python#{version.major_minor}", "-c", "import tkinter; root = tkinter.Tk()" if MacOS.full_version < "11.1"
+    end
+
     system bin/"pip3", "list", "--format=columns"
   end
 end
