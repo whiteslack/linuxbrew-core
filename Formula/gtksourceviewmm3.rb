@@ -4,7 +4,7 @@ class Gtksourceviewmm3 < Formula
   url "https://download.gnome.org/sources/gtksourceviewmm/3.18/gtksourceviewmm-3.18.0.tar.xz"
   sha256 "51081ae3d37975dae33d3f6a40621d85cb68f4b36ae3835eec1513482aacfb39"
   license "LGPL-2.1-or-later"
-  revision 7
+  revision 8
 
   livecheck do
     url :stable
@@ -13,9 +13,9 @@ class Gtksourceviewmm3 < Formula
 
   bottle do
     cellar :any
-    sha256 "af2e4b1e25d3845214252d31b839190e18afdc1054f88a11ed5792442a945a6a" => :big_sur
-    sha256 "a9cdca45d6a7938413682a4a37f0f2b235a6f7b1f4b336fce2cdba8f0bfa6dcf" => :catalina
-    sha256 "f933f99aca0ae0bfdc095d2f642a18c91be00f445b516098b1fb627d8e1fe885" => :mojave
+    sha256 "410f481ec74d576858da9c468fbf49b065513f1aebd4096f7316ba71b8338a75" => :big_sur
+    sha256 "51fb7575fc5e1b1cd5449fc3197a0a3d6ee60531d75996d4c2ed008e024b37c5" => :catalina
+    sha256 "e311753b64f695584ec760e8509a6a18c1a11d1aa708b59f727df889d53caf6b" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -47,7 +47,7 @@ class Gtksourceviewmm3 < Formula
     gdk_pixbuf = Formula["gdk-pixbuf"]
     gettext = Formula["gettext"]
     glib = Formula["glib"]
-    glibmm = Formula["glibmm"]
+    glibmm = Formula["glibmm@2.64"]
     gtkx3 = Formula["gtk+3"]
     gtkmm3 = Formula["gtkmm3"]
     gtksourceview3 = Formula["gtksourceview3"]

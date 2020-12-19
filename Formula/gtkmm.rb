@@ -4,7 +4,7 @@ class Gtkmm < Formula
   url "https://download.gnome.org/sources/gtkmm/2.24/gtkmm-2.24.5.tar.xz"
   sha256 "0680a53b7bf90b4e4bf444d1d89e6df41c777e0bacc96e9c09fc4dd2f5fe6b72"
   license "LGPL-2.1-or-later"
-  revision OS.mac? ? 5 : 6
+  revision OS.mac? ? 6 : 7
 
   livecheck do
     url :stable
@@ -13,16 +13,15 @@ class Gtkmm < Formula
 
   bottle do
     cellar :any
-    sha256 "c9e5728a06139ff573e5629975dc9e43d96223533fac5eb3e994c8b0da1ac258" => :big_sur
-    sha256 "2abecc62affcdfd0d4f9f3609a10e239f518af89526c3083a81acc29a256da0f" => :catalina
-    sha256 "ed81ab47fb417cde880d799998dcbeb6fc1c8ac52554a4470f9275a4751cc4e9" => :mojave
-    sha256 "0fe9a7f6b0df256e2ac8f1faf5e07b3a5e8938452254dc215037045e9dbb3682" => :x86_64_linux
+    sha256 "22f9dd4edfe7a32ec44dcaac390861b814bfd14da4ca7031f881e77f07d17b8f" => :big_sur
+    sha256 "e2303030b6d6e7328f341b7191a3271a68a66ad928a3826da7ad6207ed7655eb" => :catalina
+    sha256 "8cc3218e38411123c4cea21186157be588fb4af7b244623950fe04ab2ad30890" => :mojave
   end
 
   depends_on "pkg-config" => :build
   depends_on "atkmm"
   depends_on "cairomm@1.14"
-  depends_on "glibmm"
+  depends_on "glibmm@2.64"
   depends_on "gtk+"
   depends_on "libsigc++@2"
   depends_on "pangomm"
@@ -51,7 +50,7 @@ class Gtkmm < Formula
     gdk_pixbuf = Formula["gdk-pixbuf"]
     gettext = Formula["gettext"]
     glib = Formula["glib"]
-    glibmm = Formula["glibmm"]
+    glibmm = Formula["glibmm@2.64"]
     gtkx = Formula["gtk+"]
     harfbuzz = Formula["harfbuzz"]
     libpng = Formula["libpng"]
