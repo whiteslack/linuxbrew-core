@@ -10,6 +10,7 @@ class Webdis < Formula
     sha256 "fe2d73994d25c1291c308573029c7b408f9b3e3a76b62f9e96b6f54539abadf0" => :big_sur
     sha256 "11103600a67450f841b39f74739c2a381142f6562bb77d7bfe9ae9ae745c300c" => :catalina
     sha256 "cef141b4ce5b61b6b616e7247e39cae283efc3e1774eae1678f6d525d4ed497f" => :mojave
+    sha256 "b6001450c22418f67930fe08e438a7b9d084cd7e987cc69f7d1ef2b230dcb358" => :x86_64_linux
   end
 
   depends_on "libevent"
