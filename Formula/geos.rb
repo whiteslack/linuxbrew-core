@@ -15,6 +15,7 @@ class Geos < Formula
     sha256 "af956efbf37bc8b6462e1ad18f19e5d4a42a1b59e78f6a01901244899f8f0cba" => :big_sur
     sha256 "2dba43e2cb2dfacb24c6017c47c8f14c8433db0865e973d025e40924d8fc06e6" => :catalina
     sha256 "e460db9c6729fc8091e51e693cab84dcbb1ed046bc20e0edb54069ff39daf2b9" => :mojave
+    sha256 "fb57c65d3713d432017f5d3999c776178bfced47b79dd15029ad76125d622209" => :x86_64_linux
   end
 
   depends_on "swig" => :build
