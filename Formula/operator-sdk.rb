@@ -2,17 +2,15 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://coreos.com/operators/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.2.0",
-      revision: "215fc50b2d4acc7d92b36828f42d7d1ae212015c"
+      tag:      "v1.3.0",
+      revision: "1abf57985b43bf6a59dcd18147b3c574fa57d3f6"
   license "Apache-2.0"
   head "https://github.com/operator-framework/operator-sdk.git"
 
   bottle do
-    sha256 "7cfc1f066570db5c847f1e6dbe94d04047a5860a293a75cc79ef6c9ed06d7b52" => :big_sur
-    sha256 "9c5a65ecd8a7a880fb9313c9fdf00067468aaf758273dcc1c638cfcad982ce98" => :catalina
-    sha256 "30c354c68fac5ef3f2f24d5ad7b5db531c053084f2fe726755397d4342eb84c0" => :mojave
-    sha256 "f12d158290dbbe2ec76976da1082cf71b3a94b36a917b469735ab1ed66c0bc8d" => :high_sierra
-    sha256 "b070f887e9e6656b86bcc5e1f8c4b7860688e4261adf06b030af8f8e5d723a65" => :x86_64_linux
+    sha256 "085720eb4fb2bfafd0475119ed704cadc62390e63829ea86337b4e5e763999f2" => :big_sur
+    sha256 "8f65a0a7cb191314734b0eee3188e90d5c9f0f6441c7b103acbca01c51b67402" => :catalina
+    sha256 "ae6df2e3c3f970f3b0ca807c597cb3a9a08fdf8bca1515c723fef6b588686645" => :mojave
   end
 
   depends_on "go"
@@ -37,7 +35,7 @@ class OperatorSdk < Formula
       assert_match stable.specs[:revision], version_output
     end
 
-    system bin/"operator-sdk", "init", "--domain=example.com", "--repo=example.com/example/example"
-    assert_predicate testpath/"bin/manager", :exist?
+    output = shell_output("#{bin}/operator-sdk init --domain=example.com --license apache2 --owner BrewTest 2>&1", 1)
+    assert_match "failed to initialize project", output
   end
 end

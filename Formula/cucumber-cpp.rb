@@ -4,18 +4,17 @@ class CucumberCpp < Formula
   url "https://github.com/cucumber/cucumber-cpp/archive/v0.5.tar.gz"
   sha256 "9e1b5546187290b265e43f47f67d4ce7bf817ae86ee2bc5fb338115b533f8438"
   license "MIT"
-  revision 7
+  revision 8
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "278bdf3528a7b8bac8ec0ea20e1a57a16eaba54929ce4c544cbe4ce1c8a5279f" => :catalina
-    sha256 "5c1dede434bdd00e19cbd82e42236c18fa1ce5f7cf172fce972185249f94ddc7" => :mojave
-    sha256 "d12e60f17d95446ccc80dffdb74c77b554121b9d1ce58beabec041f9232a891c" => :high_sierra
-    sha256 "5893239722307914f66e721b8b7cea8ab63b33490aa72c7b9380680a79d91de2" => :x86_64_linux
+    sha256 "8748ea36f930107c5c0775a4ab6fab698ad402f6da0e76a574b2bd5b995b6fcc" => :big_sur
+    sha256 "5eaccab8b08ed6cde485074adf961c56b1c28423a8d14291a1ef3a8c3b37142b" => :catalina
+    sha256 "e0a19b065c490d83d944221b7860e91854f0ae5be3e13c844ded14ab4960cd3d" => :mojave
   end
 
   depends_on "cmake" => :build
-  depends_on "ruby" => :test if MacOS.version <= :sierra
+  depends_on "ruby" => :test
   depends_on "boost"
 
   def install

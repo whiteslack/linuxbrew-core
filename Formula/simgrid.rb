@@ -3,9 +3,8 @@ class Simgrid < Formula
 
   desc "Studies behavior of large-scale distributed systems"
   homepage "https://simgrid.org/"
-  url "https://framagit.org/simgrid/simgrid/uploads/0365f13697fb26eae8c20fc234c5af0e/SimGrid-3.25.tar.gz"
-  sha256 "0b5dcdde64f1246f3daa7673eb1b5bd87663c0a37a2c5dcd43f976885c6d0b46"
-  revision 2
+  url "https://framagit.org/simgrid/simgrid/uploads/98ec9471211bba09aa87d7866c9acead/simgrid-3.26.tar.gz"
+  sha256 "ac50da1eacc5a53b094a988a8ecde09962c29320f346b45e74dd32ab9d9f3e96"
 
   livecheck do
     url "https://framagit.org/simgrid/simgrid.git"
@@ -13,11 +12,9 @@ class Simgrid < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "263b044587eb968bd376738ed9ffb4f329f4776a7b1873ca23d0d4b155546338" => :big_sur
-    sha256 "d92cfa559b260f2ef1caf1e2d941e25dec386c0456799ddb7677f948c25069b6" => :catalina
-    sha256 "390ad77f58384303c8d687a1ff89992af9d4a2db6254b2661a49e57521a0bced" => :mojave
-    sha256 "6be10bc872fd9335ee4704862d703670149c9d15c18e63995f58a2955dfbc1e7" => :x86_64_linux
+    sha256 "e955b530c04845a2411dd827c289ebf3945d45ba00bcc763591f7691ba80becb" => :big_sur
+    sha256 "bf748370ffd539df857ae5365563b47a5bf685f6ea7bdcd27c3eaad31bf35d06" => :catalina
+    sha256 "64bc790d3fa33e14d1c9f067f4e047df4fbbcd630a439370adfc8ad39ab5ddd3" => :mojave
   end
 
   depends_on "cmake" => :build

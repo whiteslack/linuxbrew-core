@@ -1,9 +1,9 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
   homepage "https://www.boost.org/"
-  url "https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2"
-  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_74_0.tar.bz2"
-  sha256 "83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1"
+  url "https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.bz2"
+  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_75_0.tar.bz2"
+  sha256 "953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git"
 
@@ -14,12 +14,9 @@ class Boost < Formula
 
   bottle do
     cellar :any
-    sha256 "d6729754a88e32696dbe7755557ea4ccf754b6ab770caef94620d33d2db19368" => :big_sur
-    sha256 "e05c635fba2052d7b0d4e5d50e48b093e586810f0586ced31857e4b4af06b2de" => :arm64_big_sur
-    sha256 "0c3609787aac666de8db539259e2f604bda631bcc4fde5f5427ea83f4692dec1" => :catalina
-    sha256 "5e2e4d620e783c93a9f445a58b4814aab081ebea584b662b3f21a03155585ad9" => :mojave
-    sha256 "9237b5a9f73ff1783da15b6768cef723d4e8ffb4a129a2a00d0eb52d3ed4a7d4" => :high_sierra
-    sha256 "5ecb8b7294ddbeef2946a24e71ca23e8244f48832d2e6794292707a7e86ccca9" => :x86_64_linux
+    sha256 "82791d5a9dce5635e6617b62e06470f8f8656c44c1ca6bdf90f1a3067e54dd3e" => :big_sur
+    sha256 "937f6bf0106e3b31ef0ae3a4f9a3abf1af7f4894a72b17f07c0e1f324281446b" => :catalina
+    sha256 "32cd0dc0602e92efe8d75a74db20388b4885df4bb2e8123694b6e3fa2328fb82" => :mojave
   end
 
   depends_on "icu4c" if OS.mac?
@@ -92,19 +89,6 @@ class Boost < Formula
     system "./bootstrap.sh", *bootstrap_args
     system "./b2", "headers"
     system "./b2", *args
-  end
-
-  def caveats
-    s = ""
-    # ENV.compiler doesn't exist in caveats. Check library availability
-    # instead.
-    if Dir["#{lib}/libboost_log*"].empty?
-      s += <<~EOS
-        Building of Boost.Log is disabled because it requires newer GCC or Clang.
-      EOS
-    end
-
-    s
   end
 
   test do
