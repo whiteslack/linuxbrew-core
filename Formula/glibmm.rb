@@ -22,6 +22,12 @@ class Glibmm < Formula
   depends_on "glib"
   depends_on "libsigc++"
 
+  unless OS.mac?
+    fails_with gcc: "5"
+    fails_with gcc: "6"
+    depends_on "gcc@7"
+  end
+
   def install
     ENV.cxx11
 
