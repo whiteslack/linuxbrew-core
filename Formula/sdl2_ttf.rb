@@ -17,6 +17,7 @@ class Sdl2Ttf < Formula
     sha256 "413959be382ea92bd59af9a29e5909d40db69c571447e2f0dec821cbff612d80" => :catalina
     sha256 "74582129be8cfea5e556efa95411f9fc2eebf111c7b4f9affc80a7e05fa19cd9" => :mojave
     sha256 "1867ff73485eaa12fc00def01be8e388443ac6c226065218bb435558fdb8bb22" => :high_sierra
+    sha256 "15d01b047c2d7d93dc03572dc9b648fd4fa267fefeea48dd8b713f168d02c431" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
