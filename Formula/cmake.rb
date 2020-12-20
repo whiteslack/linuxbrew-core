@@ -22,6 +22,8 @@ class Cmake < Formula
   depends_on "sphinx-doc" => :build
   depends_on "ncurses"
 
+  uses_from_macos "ncurses"
+
   on_linux do
     depends_on "openssl@1.1"
   end
@@ -47,12 +49,13 @@ class Cmake < Formula
       --sphinx-build=#{Formula["sphinx-doc"].opt_bin}/sphinx-build
       --sphinx-html
       --sphinx-man
-      --system-zlib
-      --system-bzip2
-      --system-curl
     ]
-    on_linux do
-      args -= ["--system-zlib", "--system-bzip2", "--system-curl"]
+    on_macos do
+      args += %w[
+        --system-zlib
+        --system-bzip2
+        --system-curl
+      ]
     end
 
     system "./bootstrap", *args, "--", *std_cmake_args,
