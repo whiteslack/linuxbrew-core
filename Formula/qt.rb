@@ -8,7 +8,7 @@ class Qt < Formula
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz"
   sha256 "3a530d1b243b5dec00bc54937455471aaa3e56849d2593edb8ded07228202240"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
-  revision 4 unless OS.mac?
+  revision 5 unless OS.mac?
 
   head "https://code.qt.io/qt/qt5.git", branch: "dev", shallow: false
 
@@ -22,7 +22,6 @@ class Qt < Formula
     sha256 "ac22ab5828d894518e42f00e254f1e36d5be4e5f3f1c08b3cd49b57819daaf2d" => :big_sur
     sha256 "51ab78a99ff3498a236d15d9bed92962ddd2499c4020356469f7ab1090cf6825" => :catalina
     sha256 "25c4a693c787860b090685ac5cbeea18128d4d6361eed5b1bfed1b16ff6e4494" => :mojave
-    sha256 "99bb47046c5b14fc81da0b2ad8dc2a90beb9fb101ca51c8836504b41c1a3b01f" => :x86_64_linux
   end
 
   keg_only "Qt 5 has CMake issues when linked"
@@ -44,7 +43,6 @@ class Qt < Formula
     depends_on "libxcomposite"
     depends_on "libdrm"
     depends_on "linuxbrew/xorg/xcb-util-image"
-    depends_on "linuxbrew/xorg/xcb-util-keysyms"
     depends_on "linuxbrew/xorg/xcb-util-renderutil"
     depends_on "linuxbrew/xorg/xcb-util-wm"
     depends_on "mesa"
@@ -53,6 +51,7 @@ class Qt < Formula
     depends_on "sdl2"
     depends_on "systemd"
     depends_on "xcb-util"
+    depends_on "xcb-util-keysyms"
     depends_on "zstd"
     depends_on "wayland"
   end
