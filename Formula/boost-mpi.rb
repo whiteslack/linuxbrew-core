@@ -1,20 +1,21 @@
 class BoostMpi < Formula
   desc "C++ library for C++/MPI interoperability"
   homepage "https://www.boost.org/"
-  url "https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2"
-  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_74_0.tar.bz2"
-  sha256 "83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1"
+  url "https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.bz2"
+  mirror "https://dl.bintray.com/homebrew/mirror/boost_1_75_0.tar.bz2"
+  sha256 "953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git"
 
   bottle do
-    sha256 "430d907082d3e26559451e1e67512e9a23f863ef556c46172ed24ab5bd8d9b38" => :big_sur
-    sha256 "3a7a77d91db3d7f2f04bc564c2189769e53e37ffeb2cc08a716a299a341b0eb8" => :catalina
-    sha256 "78868cfa11d4bccdbbedb69ad36c208c7b467d77f4fefd198591e7b51a3d250c" => :mojave
-    sha256 "ae3da02f294d9eaaca43ef27316cb117136b84e3f7ce8eecbe671f17d1d2e90a" => :high_sierra
-    sha256 "3036fc29430e52b2487e65f1ed974a856e9d8f223056508871ca803f860e9e18" => :x86_64_linux
+    sha256 "e26c78b7b79809c2011c4cdfd11affa1c67c7f11ea3bb48a2ed36b23438b3430" => :big_sur
+    sha256 "9e8f6567030032ca400b8c4efa109cbdb43f7e0736638db6255ae8c1c194b505" => :catalina
+    sha256 "18c0d683a25e9ec0e7bf24a5d0a1fa8fae728719fa14d7b236656be1dc56d15c" => :mojave
   end
 
+  # Test with cmake to avoid issues like:
+  # https://github.com/Homebrew/homebrew-core/issues/67285
+  depends_on "cmake" => :test
   depends_on "boost"
   depends_on "open-mpi"
 
@@ -95,7 +96,10 @@ class BoostMpi < Formula
       }
     EOS
     boost = Formula["boost"]
-    system "mpic++", "test.cpp", "-L#{lib}", "-L#{boost.lib}", "-lboost_mpi-mt", "-lboost_serialization", "-o", "test"
+    system "mpic++", "test.cpp", "-L#{lib}", "-L#{boost.lib}", "-lboost_mpi", "-lboost_serialization", "-o", "test"
     system "mpirun", *("--allow-run-as-root" if ENV["CI"]), "-np", "2", "./test"
+
+    (testpath/"CMakeLists.txt").write "find_package(Boost COMPONENTS mpi REQUIRED)"
+    system "cmake", ".", "-Wno-dev"
   end
 end
