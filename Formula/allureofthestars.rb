@@ -11,22 +11,21 @@ class Allureofthestars < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 "cdcc579293d895e65bdfd907c2ab4d66db89e0389f78df9acaf1ea556ea47c63" => :catalina
-    sha256 "4b18f47a9ade6d260030488503b5bb3021ae523cf3b54960c8092495f0ffd47c" => :mojave
-    sha256 "2a056d85e8a4794158435ca324f7bc81d8dcb098770ec1d3d288dfcc77553c47" => :high_sierra
-    sha256 "6acbd65aa5e42e5029398bb474e72ccff971aa548f6b0effb1696ae1bfb4d564" => :x86_64_linux
+    rebuild 4
+    sha256 "18ca050f2c24ae293796e2947ca310f26fd4a4b272053b58508c9adca796c67a" => :big_sur
+    sha256 "25b7640e340a56a77e10f3453d06ac54939e3dbfea68ae758c61d8f31ec43f39" => :catalina
+    sha256 "2f2581e82436f19586c7c545d251596c0e5af643192770574c444ef61fff8017" => :mojave
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@8.8" => :build
   depends_on "pkg-config" => :build
+  depends_on "ghc"
   depends_on "gmp"
   depends_on "sdl2_ttf"
 
   def install
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
   end
 
   test do
@@ -34,7 +33,7 @@ class Allureofthestars < Formula
       shell_output("#{bin}/Allure --dbgMsgSer --dbgMsgCli --logPriority 0 --newGame 3 --maxFps 100000 " \
                                  "--stopAfterFrames 50 --automateAll --keepAutomated --gameMode battle " \
                                  "--setDungeonRng 7 --setMainRng 7")
-    assert_equal "", shell_output("cat ~/.Allure/stderr.txt")
-    assert_match "UI client FactionId 1 stopped", shell_output("cat ~/.Allure/stdout.txt")
+    assert_equal "", (testpath/".Allure/stderr.txt").read
+    assert_match "UI client FactionId 1 stopped", (testpath/".Allure/stdout.txt").read
   end
 end

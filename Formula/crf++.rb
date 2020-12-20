@@ -1,9 +1,11 @@
 class Crfxx < Formula
   desc "Conditional random fields for segmenting/labeling sequential data"
   homepage "https://taku910.github.io/crfpp/"
-  url "https://ftp.heanet.ie/mirrors/gentoo.org/distfiles/CRF++-0.58.tar.gz"
+  url "https://mirrors.sohu.com/gentoo/distfiles/f2/CRF%2B%2B-0.58.tar.gz"
   mirror "https://drive.google.com/uc?id=0B4y35FiV1wh7QVR6VXJ5dWExSTQ&export=download"
   sha256 "9d1c0a994f25a5025cede5e1d3a687ec98cd4949bfb2aae13f2a873a13259cb2"
+  license any_of: ["LGPL-2.1-only", "BSD-3-Clause"]
+  head "https://github.com/taku910/crfpp.git"
 
   # Archive files from upstream are hosted on Google Drive, so we can't identify
   # versions from the tarballs, as the links on the homepage don't include this
@@ -16,12 +18,10 @@ class Crfxx < Formula
 
   bottle do
     cellar :any
-    rebuild 2
-    sha256 "19e8421df8bbc57a584452e3d5b895f97a05641b48c7772b0c9810fd2690205c" => :catalina
-    sha256 "478347b2973b7ace27af0bc55b3ed3fca14e158433b512a8e92d9cc8f3336872" => :mojave
-    sha256 "fa5bcfa302710b90736e3fd21709d4da3619a86251b876d52c9adbb57a3b17f7" => :high_sierra
-    sha256 "5c958b605baab60e1b01eb3bbb67851119025c84e1c4c1b2c0a0dd2b272f70ea" => :sierra
-    sha256 "5ce42f436921eb39a43fbaa965db9159b2f26bdc1aed91aa5fa12541215ee5a7" => :x86_64_linux
+    rebuild 3
+    sha256 "fcf0862271c392bc7b69a4e02a74dd9bd85615b6be0273009e7611bb78298f61" => :big_sur
+    sha256 "6706e1cb8b242ed58885402da7b41cd1552f206407fc18c200907f3c64a7b9c5" => :catalina
+    sha256 "814479e15702bd1ef9afba98ff5030bbf7cd90810f2561863d1b9085a230ee8f" => :mojave
   end
 
   def install

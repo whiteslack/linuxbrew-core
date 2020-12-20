@@ -9,10 +9,10 @@ class LibjsonRpcCpp < Formula
 
   bottle do
     cellar :any
-    sha256 "b8a99a97b7ebbcb40cc19ad3f4805a93270e376fe7ef4ccbc02235c0f94f4c74" => :catalina
-    sha256 "15fbc327291d065a0a691f14ea90367923296da22a4012247a2083ebec8eca3b" => :mojave
-    sha256 "d3e24865583d50b44a833b08fb90093a2db62bda4615e3c734ffe5cd2bda23ff" => :high_sierra
-    sha256 "8d960b30033558dd03da4428d0b8ff8b007e94bdf83cd5bbd2b317bf478ed8b7" => :x86_64_linux
+    rebuild 1
+    sha256 "66710525dfe087cf3fa90cd9880b9d2a46a45e1b9d5baf2f1742cd3aa32ee019" => :big_sur
+    sha256 "1f790d2b77bc7dd5fedc0aed3982162212216196dc9b292d3c7871aea73b5383" => :catalina
+    sha256 "c4a5604efe261cddd6f8aa87a6c615251eab3a78f922b80186dfdf136e9a7b7f" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -22,6 +22,12 @@ class LibjsonRpcCpp < Formula
   depends_on "libmicrohttpd"
 
   uses_from_macos "curl"
+
+  # Fix for https://github.com/cinemast/libjson-rpc-cpp/issues/298
+  patch do
+    url "https://github.com/cinemast/libjson-rpc-cpp/commit/fa163678134aced775651558f91a006791e26ef8.patch?full_index=1"
+    sha256 "80a8cdfa40aba3dc71fbab77b0137f7f03bb9c969b9845e68f83181b4d8550f6"
+  end
 
   def install
     system "cmake", ".", *std_cmake_args, "-DCOMPILE_EXAMPLES=OFF", "-DCOMPILE_TESTS=OFF"

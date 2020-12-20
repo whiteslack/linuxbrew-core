@@ -3,13 +3,15 @@ class Xdotool < Formula
   homepage "https://www.semicomplete.com/projects/xdotool/"
   url "https://github.com/jordansissel/xdotool/archive/v3.20160805.1.tar.gz"
   sha256 "ddafca1239075c203769c17a5a184587731e56fbe0438c09d08f8af1704e117a"
+  license "BSD-3-Clause"
   revision OS.mac? ? 2 : 5
+  head "https://github.com/jordansissel/xdotool.git"
 
   bottle do
-    sha256 "7092970eee9f15fab6aad9e364cb23b29f11fc19b1edbedd3ac794a7858aecc5" => :catalina
-    sha256 "0a24fe2911c4db734794e7c22c596a9809602af3d974abe2aae2f6ef9babb777" => :mojave
-    sha256 "9e84711dc1979c07a5367c2a2638e07e01f9bb7b8fb5166b4d1cadaed6babb7b" => :high_sierra
-    sha256 "35692890d3240a8f33eb1faf24da6cb74307e5c5fa8beccea232afdca3b0352d" => :x86_64_linux
+    rebuild 1
+    sha256 "341d016062ad7e0ffe416e8d70636a912ea62e8cfeae6bfd420935ed740c70a2" => :big_sur
+    sha256 "2a11b0772f3ae332186d8d257c9687e759772d4e3fbe8a42e6fa07e9a5f11329" => :catalina
+    sha256 "fd132f4ad55f7e709179a027878df3ee13d497d82ada355f323e2dd0b8f12409" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -20,11 +22,15 @@ class Xdotool < Formula
 
   depends_on "libxi" unless OS.mac?
 
-  def install
-    # Work around an issue with Xcode 8 on El Capitan, which
-    # errors out with `typedef redefinition with different types`
-    ENV.delete("SDKROOT") if MacOS.version == :el_capitan && MacOS::Xcode.version >= "8.0"
+  # Disable clock_gettime() workaround since the real API is available on OS/X >= 10.12
+  # Note that the PR from this patch was actually closed originally because of problems
+  # caused on pre-10.12 environments, but that is no longer a concern.
+  patch do
+    url "https://github.com/jordansissel/xdotool/commit/dffc9a1597bd96c522a2b71c20301f97c130b7a8.patch?full_index=1"
+    sha256 "447fa42ec274eb7488bb4aeeccfaaba0df5ae747f1a7d818191698035169a5ef"
+  end
 
+  def install
     system "make", "PREFIX=#{prefix}", "INSTALLMAN=#{man}", "install"
   end
 

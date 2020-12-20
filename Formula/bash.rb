@@ -1,13 +1,32 @@
 class Bash < Formula
   desc "Bourne-Again SHell, a UNIX command interpreter"
   homepage "https://www.gnu.org/software/bash/"
-  url "https://ftp.gnu.org/gnu/bash/bash-5.1.tar.gz"
-  mirror "https://ftpmirror.gnu.org/bash/bash-5.1.tar.gz"
-  mirror "https://mirrors.kernel.org/gnu/bash/bash-5.1.tar.gz"
-  mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.1.tar.gz"
-  sha256 "cc012bc860406dcf42f64431bcd3d2fa7560c02915a601aba9cd597a39329baa"
   license "GPL-3.0-or-later"
   head "https://git.savannah.gnu.org/git/bash.git"
+
+  stable do
+    url "https://ftp.gnu.org/gnu/bash/bash-5.1.tar.gz"
+    mirror "https://ftpmirror.gnu.org/bash/bash-5.1.tar.gz"
+    mirror "https://mirrors.kernel.org/gnu/bash/bash-5.1.tar.gz"
+    mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.1.tar.gz"
+    sha256 "cc012bc860406dcf42f64431bcd3d2fa7560c02915a601aba9cd597a39329baa"
+    version "5.1.4"
+
+    %w[
+      001 ebb07b3dbadd98598f078125d0ae0d699295978a5cdaef6282fe19adef45b5fa
+      002 15ea6121a801e48e658ceee712ea9b88d4ded022046a6147550790caf04f5dbe
+      003 22f2cc262f056b22966281babf4b0a2f84cb7dd2223422e5dcd013c3dcbab6b1
+      004 9aaeb65664ef0d28c0067e47ba5652b518298b3b92d33327d84b98b28d873c86
+    ].each_slice(2) do |p, checksum|
+      patch :p0 do
+        url "https://ftp.gnu.org/gnu/bash/bash-5.1-patches/bash51-#{p}"
+        mirror "https://ftpmirror.gnu.org/bash/bash-5.1-patches/bash51-#{p}"
+        mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.1-patches/bash51-#{p}"
+        mirror "https://mirrors.kernel.org/gnu/bash/bash-5.1-patches/bash51-#{p}"
+        sha256 checksum
+      end
+    end
+  end
 
   livecheck do
     url :stable
@@ -15,12 +34,9 @@ class Bash < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "5bbdf900514e74d1f951c72df0ef6dc1765996f0c30ab1ef29f252e8761ec7b7" => :big_sur
-    sha256 "dd353e632f37c9e8f101ec802d59fc99bdeb9464d6e9770edc7e61c1edcdc952" => :arm64_big_sur
-    sha256 "5b2eb18068b921fc3539eeba06c6846634f4a8f811dce022670a0ac1fbbf136d" => :catalina
-    sha256 "ce8a6ffd1e5df2014d7d7290a08f0682d5124c43cee4ae2ec2ac4d49155978ff" => :mojave
-    sha256 "d9d351afdfc2f59a0968363c364fbed1698294b62a8071b13758b717b5032a16" => :x86_64_linux
+    sha256 "1c7c13309368474e6f7b3afd9c6ba13b213b00caeb9b990e171cf5e097e8e5e1" => :big_sur
+    sha256 "2195ea39cf6607ec440addd6aed524c5a66719e998d74d5f9595f594f6593b21" => :catalina
+    sha256 "4a294caec86652221a9901b9d892723a84e60d05bc91155efcb661829b13a898" => :mojave
   end
 
   def install

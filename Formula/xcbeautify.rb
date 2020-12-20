@@ -2,22 +2,22 @@ class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/thii/xcbeautify"
   url "https://github.com/thii/xcbeautify.git",
-      tag:      "0.8.1",
-      revision: "fd7b0b6972809eead52b9016b383cf6d467e00b0"
+      tag:      "0.9.0",
+      revision: "105251c21b9b70d4f9c31001d6375df858081ba7"
   license "MIT"
   head "https://github.com/thii/xcbeautify.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "71f511194e35bc4e8d75583ad11ca4f8a037b88c5a8490ac54f86faa0d77fea9" => :big_sur
-    sha256 "cd33facf2cacba1da0b35945b822b7b9befac05bbcdb11743bc623ef6d250927" => :catalina
-    sha256 "c1c8db06d34a1d8cea60edf06143abe926b89715539f4b66d4377d25a93e2e02" => :mojave
+    sha256 "05387bb5adaec4a508dd0b9a0f52210a481900d8be9ce2696a37c67add4f3901" => :big_sur
+    sha256 "a263117ddff2a44a586920f96249030b176b9d718d9b985e08b7fe6c0e9d4b51" => :catalina
   end
 
-  depends_on xcode: ["10.0", :build]
+  depends_on xcode: ["11.4", :build]
 
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    system "swift", "build", "--disable-sandbox", "--configuration", "release"
+    bin.install ".build/release/xcbeautify"
   end
 
   test do
