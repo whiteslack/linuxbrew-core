@@ -22,6 +22,7 @@ class Crfxx < Formula
     sha256 "fcf0862271c392bc7b69a4e02a74dd9bd85615b6be0273009e7611bb78298f61" => :big_sur
     sha256 "6706e1cb8b242ed58885402da7b41cd1552f206407fc18c200907f3c64a7b9c5" => :catalina
     sha256 "814479e15702bd1ef9afba98ff5030bbf7cd90810f2561863d1b9085a230ee8f" => :mojave
+    sha256 "bc81b7d708a4d9cd8c1dd873b9050e448d7d7457eaf5ce22334e6cfff4350d3d" => :x86_64_linux
   end
 
   def install
