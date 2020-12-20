@@ -13,6 +13,7 @@ class IkeScan < Formula
     sha256 "9f721c4e99f22ccbf204f54c78a6b4ff7bef621dc4590673240b5a31dab268ef" => :big_sur
     sha256 "a06543751eec6b9d198c3826ea62743a0ee12a4479bf28efb41209a0edea19be" => :catalina
     sha256 "acc102b6014ee8216274afb3a0b10460c71f0059a7aeca732dfad848c7dd2846" => :mojave
+    sha256 "3cc8fc02f822c22d0b877388f0b74d43b56e608f135a1d8b57683871752cad0d" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
