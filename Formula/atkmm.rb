@@ -15,6 +15,7 @@ class Atkmm < Formula
     sha256 "6da9ef2d79133223f88e5f2c9e7758210546fdccbb94dca3118c56a991a65c28" => :big_sur
     sha256 "2c01a34301a097d143558f31513dcdf0c1639baf364a14d6acbc4821ab0fa3a4" => :catalina
     sha256 "eb4824d31945549c230ae5ef7842ff035f98dccf0a96ef777a91bd8b2c3752ad" => :mojave
+    sha256 "544ddde65d5631262fd070ab23b0cfde246234a6f79569a3b500ef544e17c16f" => :x86_64_linux
   end
 
   depends_on "meson" => :build
