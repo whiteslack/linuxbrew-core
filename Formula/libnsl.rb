@@ -3,6 +3,7 @@ class Libnsl < Formula
   homepage "https://github.com/thkukuk/libnsl"
   url "https://github.com/thkukuk/libnsl/archive/v1.3.0.tar.gz"
   sha256 "8e88017f01dd428f50386186b0cd82ad06c9b2a47f9c5ea6b3023fc6e08a6b0f"
+  license "LGPL-2.1-or-later"
 
   bottle do
     cellar :any_skip_relocation
@@ -15,10 +16,11 @@ class Libnsl < Formula
   depends_on "automake" => :build
   depends_on "gettext" => :build
   depends_on "libtool" => :build
-  depends_on "m4" => :build
   depends_on "pkg-config" => :build
   depends_on "libtirpc"
   depends_on :linux
+
+  uses_from_macos "m4" => :build
 
   def install
     inreplace "po/Makefile.in.in" do |s|
@@ -37,10 +39,9 @@ class Libnsl < Formula
     (testpath/"test.c").write <<~EOS
       #include <rpcsvc/nis.h>
 
-      int main(int argc, char *argv[])
-      {
-        if(NIS_PK_NONE != 0)
-          return 1;
+      int main(int argc, char *argv[]) {
+          if(NIS_PK_NONE != 0)
+              return 1;
       }
     EOS
 
