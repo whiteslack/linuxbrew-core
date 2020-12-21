@@ -32,6 +32,7 @@ class Hwloc < Formula
                           "--enable-shared",
                           "--enable-static",
                           "--prefix=#{prefix}",
+                          "--disable-cairo",
                           "--without-x"
     system "make", "install"
 

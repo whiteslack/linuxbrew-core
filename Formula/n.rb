@@ -1,17 +1,16 @@
 class N < Formula
   desc "Node version management"
   homepage "https://github.com/tj/n"
-  url "https://github.com/tj/n/archive/v6.8.0.tar.gz"
-  sha256 "bb028c6890bb3c556e3d4a9a431323c638b3b46c799a57a08702d3de80d412b0"
+  url "https://github.com/tj/n/archive/v7.0.0.tar.gz"
+  sha256 "2933855140f980fc6d1d6103ea07cd4d915b17dea5e17e43921330ea89978b5b"
   license "MIT"
   head "https://github.com/tj/n.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "aa91a97c1e099b6c7311252313dfd783661b223a600a5e4547e9ed8aebfbf3d4" => :big_sur
-    sha256 "4dd46a8347ce1ddb74a8435dc872c235b4aa1117a919d3265d17880bf9b83a71" => :catalina
-    sha256 "126c4d3a7d9717bd024176052107e6359b4ed1a2dca3d4d8f96ed6cfe9c5f626" => :mojave
-    sha256 "adaad9e9355a8bd13e5e6c29f39fdcaf4c599095cb6395424bee2ddd11ec3bfb" => :x86_64_linux
+    sha256 "6e5f5c5bda7d49a0cf2c5ec8ff93aa32a37ebae54be832f3ff0a2e79357733c7" => :big_sur
+    sha256 "02c2c46f1fbe589f28b5ff91ee5605fa951026894b118f977aa01bbd0f34b67d" => :catalina
+    sha256 "7b973a504a2bdb3e39e63162d3ab40ee47dac5dd2a49eeb75a7cc2af95c0d38b" => :mojave
   end
 
   def install
