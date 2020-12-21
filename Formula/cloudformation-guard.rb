@@ -11,6 +11,7 @@ class CloudformationGuard < Formula
     sha256 "bc7dfce2654ad8ac46e0f7e60e5b9a79ec08e0c60e63ba02b4ad5131035764a7" => :catalina
     sha256 "6e62019f3ef472d09b52a322628d964787de3be3059d54e2879c3d7e166f673f" => :mojave
     sha256 "b738a55d9ced11569203dcce689e808c8573f00c61c0cbeabf0aa4745c3f8144" => :high_sierra
+    sha256 "ad7805651bbb08fc298d8ddfb1e1f5a06d707709a2b306a64145398a403a9eee" => :x86_64_linux
   end
 
   depends_on "rust" => :build
