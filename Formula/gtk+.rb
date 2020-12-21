@@ -1,11 +1,11 @@
 class Gtkx < Formula
   desc "GUI toolkit"
   homepage "https://gtk.org/"
-  revision OS.mac? ? 3 : 4
+  license "LGPL-2.0-or-later"
 
   stable do
-    url "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.32.tar.xz"
-    sha256 "b6c8a93ddda5eabe3bfee1eb39636c9a03d2a56c7b62828b359bf197943c582e"
+    url "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.33.tar.xz"
+    sha256 "ac2ac757f5942d318a311a54b0c80b5ef295f299c2a73c632f6bfb1ff49cc6da"
   end
 
   livecheck do
@@ -14,13 +14,9 @@ class Gtkx < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "598e9ab4f7b5464396f9eab2d378877c430a568ed83d5c563dcdfc88314fb550" => :big_sur
-    sha256 "09e223d16f3e891d2a4184c66fecbf0a777e70e23680ac794dd8c44e4a63d5cf" => :catalina
-    sha256 "cec64106c085533a58f8d436f029b2d7199a14cd15af9ece086814396ba48b0e" => :mojave
-    sha256 "30ce8d0a4062200196f8d802ae75769d8e05d530c338619d290704c46a7d317b" => :high_sierra
-    sha256 "a1324b85f6749111c3eb598c6d3ed231eaa8281b60fc2eb13d48a5f342da3efc" => :sierra
-    sha256 "7d6c54800efaa38d396b30126c937e9855c4faef7ab9c6f54430cb4aeefae5ea" => :x86_64_linux
+    sha256 "8ead5b96878ad431ac3e23dc3bd20bb4eac509c63c231e594986a0fa331e157f" => :big_sur
+    sha256 "3900f64476d7988670b5d0c855f072fba0af2b1bb323acf4f126f70c95a38616" => :catalina
+    sha256 "10d1f2a81a115b9cf1e8c76fbd6cdc58f5b4593eb7f9e15cbe0127e14221dd06" => :mojave
   end
 
   head do

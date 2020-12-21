@@ -4,6 +4,7 @@ class Gtkdatabox < Formula
   url "https://downloads.sourceforge.net/project/gtkdatabox/gtkdatabox/0.9.3.1/gtkdatabox-0.9.3.1.tar.gz"
   sha256 "d04938d969d5458bd0df1b4fa22f647fb2eeeef75555a71f967e6c039fb4bde5"
   license "LGPL-2.1"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,9 @@ class Gtkdatabox < Formula
 
   bottle do
     cellar :any
-    sha256 "4dbfe9fe9f52c6bef15219cbb413d49528957a5db32d82510bed44336569d761" => :big_sur
-    sha256 "e85124ef7180c8803f8700e9269a47d3b5841c1cdace25e6914a50a0b7389dd1" => :catalina
-    sha256 "bfb185bdad65010d94e7ec0d343f11dafb0135adecf0480a43b705a54b062ff1" => :mojave
-    sha256 "f0b09b52354b68f4bc4e2d01dcd970f5f5f6f549141dd75af3734a9b3c1f0b2f" => :high_sierra
-    sha256 "39f592833789c71432dcbf913363f2fd96212ef4f90dbbaae53455254ae3fac0" => :x86_64_linux
+    sha256 "0653f694493bb5cda05df1dde2b340014e5c51e46d7f0c9351092cbc9c9d45fa" => :big_sur
+    sha256 "5bbfa821a847ebaad507380489df974dd82fd7ed99fef8966cd8e27549671fe4" => :catalina
+    sha256 "af155aeb3a3df37027681ffb4873d0ab87263a34e1268d8b87e45f76c6824750" => :mojave
   end
 
   depends_on "pkg-config" => :build

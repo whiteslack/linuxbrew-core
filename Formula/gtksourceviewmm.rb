@@ -4,7 +4,7 @@ class Gtksourceviewmm < Formula
   url "https://download.gnome.org/sources/gtksourceviewmm/2.10/gtksourceviewmm-2.10.3.tar.xz"
   sha256 "0000df1b582d7be2e412020c5d748f21c0e6e5074c6b2ca8529985e70479375b"
   license "LGPL-2.1-or-later"
-  revision 10
+  revision 11
 
   livecheck do
     url :stable
@@ -13,9 +13,9 @@ class Gtksourceviewmm < Formula
 
   bottle do
     cellar :any
-    sha256 "20acdb802149d3a02ac692cb083a2c178b64220855fb16ae44ea02eb71ab5077" => :big_sur
-    sha256 "0d4d110bae135012ce41a680965da3e45c0ce6b61692a129e039664b65f9ad0d" => :catalina
-    sha256 "aba5b5f86810d03a4c4547f6bb36b72c04a408df3b24bf907c181efe88d2393e" => :mojave
+    sha256 "bf108d9937d07f20169bf75ad8a5152dd0e49a1b22f280cb0512d44e71a42656" => :big_sur
+    sha256 "db7588b5e582cd8cebe9360a47119c6ffbd8f67e253e47125f2341d1b7b441b4" => :catalina
+    sha256 "72ed8cbfc8f32720633bae6c041d04c7bfec0cae44f3aec08d36834cb648f46e" => :mojave
   end
 
   depends_on "pkg-config" => [:build, :test]

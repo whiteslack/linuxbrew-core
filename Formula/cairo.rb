@@ -12,12 +12,10 @@ class Cairo < Formula
   end
 
   bottle do
-    sha256 "42b20f0db683c4fe7a0d5ffbb605388e67d21abfba3c6578443f74d9839f80bb" => :big_sur
-    sha256 "91a1269d7e19c1d1f480e8607f0bc3bb3393efd09db1f0353fd710cfff3cebb6" => :arm64_big_sur
-    sha256 "6a23a68837269a8410a54950fdc8883feda091f221118370f1bfd3adbf5ee89c" => :catalina
-    sha256 "0984045234fb22fa3e54a337137e9e43a1bf997f5d77692ed02249dfdee2b1bf" => :mojave
-    sha256 "5c383ad4625fb1bd15e44e99fba1201490fa478b26178abaca5abb0fdb51510e" => :high_sierra
-    sha256 "07ef94167537cc324075ee02c2b675c070e2e69fde211c8b6a8c9cfffb2b8dd4" => :x86_64_linux
+    rebuild 1
+    sha256 "35dff910ea99f2190e3ddbeeb12ec53c5076db04c29f3c34b7da77f4d34533fb" => :big_sur
+    sha256 "909d9d93758a1924ed2aa868d8efcbdf298806412d6ec3607dedac4ccf1b9a91" => :catalina
+    sha256 "68ab9e19b6ff25f94cb0296e9b54b9346b7c2d13c88e4ad89cadd998fd88b5d5" => :mojave
   end
 
   head do
@@ -38,6 +36,8 @@ class Cairo < Formula
   uses_from_macos "zlib"
 
   on_linux do
+    depends_on "libx11"
+    depends_on "libxcb"
     depends_on "libxext"
     depends_on "libxrender"
   end
@@ -46,15 +46,26 @@ class Cairo < Formula
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
-      --enable-gobject=yes
-      --enable-svg=yes
-      --enable-tee=yes
-      --enable-quartz-image=#{OS.mac? ? "yes" : "no"}
-      --enable-xcb=#{OS.mac? ? "no" : "yes"}
-      --enable-xlib=#{OS.mac? ? "no" : "yes"}
-      --enable-xlib-xrender=#{OS.mac? ? "no" : "yes"}
-      --enable-valgrind=no
+      --enable-gobject
+      --enable-svg
+      --enable-tee
+      --disable-valgrind
     ]
+    on_macos do
+      args += %w[
+        --enable-quartz-image
+        --disable-xcb
+        --disable-xlib
+        --disable-xlib-xrender
+      ]
+    end
+    on_linux do
+      args += %w[
+        --enable-xcb
+        --enable-xlib
+        --enable-xlib-xrender
+      ]
+    end
 
     if build.head?
       ENV["NOCONFIGURE"] = "1"

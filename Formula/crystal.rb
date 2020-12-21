@@ -2,7 +2,7 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https://crystal-lang.org/"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   stable do
     url "https://github.com/crystal-lang/crystal/archive/0.35.1.tar.gz"
@@ -20,11 +20,9 @@ class Crystal < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "1c5c42f3c9368d1f19111a04520cacaea05a4fa27c9f3f228566b9aa5d858d26" => :catalina
-    sha256 "a1b2259a727561bc6bc78002e12177a48386773709c23d89a9d5b8b2cca6652c" => :mojave
-    sha256 "4bc797cfed7e3d3bc2a04c232b086cf409c78da84be82d13f95df9d4d1406d06" => :high_sierra
-    sha256 "1be443af9ef381dd6a0ddf113d86a0ccc5d847f97b34f27a076c70fd4f91b049" => :x86_64_linux
+    sha256 "c382e452d3586561986a8eea143dc09fb3ca089c989d9c54a7a3cd4d054f1624" => :big_sur
+    sha256 "e3907b45ca9c3e0344d130141d23915c5825d34b27660b6f1ea847351b127fb5" => :catalina
+    sha256 "0aa5aa3835d42d9139ede2d3e134d29db4d43cc29f0e735f17c48c1bdcc7ea0a" => :mojave
   end
 
   head do
@@ -43,7 +41,7 @@ class Crystal < Formula
   depends_on "gmp" # std uses it but it's not linked
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm"
+  depends_on "llvm@9"
   depends_on "openssl@1.1" # std uses it but it's not linked
   depends_on "pcre"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
@@ -111,7 +109,13 @@ class Crystal < Formula
     # Install shards
     resource("shards").stage do
       ENV["CRYSTAL_OPTS"] = "--release --no-debug"
-      shards = OS.mac? ? buildpath/"boot/embedded/bin/shards" : buildpath/"boot/bin/shards"
+      shards = nil
+      on_macos do
+        shards = buildpath/"boot/embedded/bin/shards"
+      end
+      on_linux do
+        shards = buildpath/"boot/bin/shards"
+      end
       system "make", "bin/shards", "CRYSTAL=#{buildpath/"bin/crystal"}",
                                    "SHARDS=#{shards}"
 

@@ -4,7 +4,7 @@ class GtkMacIntegration < Formula
   url "https://download.gnome.org/sources/gtk-mac-integration/2.1/gtk-mac-integration-2.1.3.tar.xz"
   sha256 "d5f72302daad1f517932194d72967a32e72ed8177cfa38aaf64f0a80564ce454"
   license "LGPL-2.1"
-  revision 4
+  revision 5
 
   # We use a common regex because gtk-mac-integration doesn't use GNOME's
   # "even-numbered minor is stable" version scheme.
@@ -14,10 +14,9 @@ class GtkMacIntegration < Formula
   end
 
   bottle do
-    sha256 "6c0cabeaa79c10746d8174026235f81065166215d9eea3841256b175f33b0029" => :big_sur
-    sha256 "f3aa06585602da10d89507059ece018889dbb0054118791015d22c65fec76cde" => :catalina
-    sha256 "a49e16175a868344c82613a7e23755bc6fc5da89c12e8ee6385c94c02da477cc" => :mojave
-    sha256 "61e69c71c4443999c5b0f53fcbcf1e5e775e7f0078117b54b5fe451dafeabc5f" => :high_sierra
+    sha256 "f0d9bb8b2c933eed402589d7b767fb87fa42382f05790e318c8499f653f9e0e2" => :big_sur
+    sha256 "399875d7fc8d09a9a36fa064b0162b77495340320a402eef3ff820672659fcfa" => :catalina
+    sha256 "b313e1ee47a17b401455b055a4a8b79279a2016f682ee5239a6a915aa11f5884" => :mojave
   end
 
   head do
