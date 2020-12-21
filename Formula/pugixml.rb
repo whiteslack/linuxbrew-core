@@ -4,7 +4,7 @@ class Pugixml < Formula
   url "https://github.com/zeux/pugixml/releases/download/v1.11.3/pugixml-1.11.3.tar.gz"
   sha256 "aa2a4b8a8907c01c914da06f3a8630d838275c75d1d5ea03ab48307fd1913a6d"
   license "MIT"
-  revision 1 unless OS.mac?
+  revision 2 unless OS.mac?
 
   livecheck do
     url :stable
@@ -16,7 +16,6 @@ class Pugixml < Formula
     sha256 "5c2a0594b325ba7a199c1a855905fa7e3c2e7993eaeaf14bbbb929ddcb2b42cd" => :big_sur
     sha256 "7ce6497d0653fbcdca776a9e4804e25583b218329dd209a8d76b2d7020e7b3ea" => :catalina
     sha256 "1b482898c331dbfb80f9b98c935805b5d2380cea2b84cd3f1d74faa664686e1f" => :mojave
-    sha256 "15873d5b20d16b4d6bb09d2fd374943ec5b5d9bb1ab762951e5287bbbed38298" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
