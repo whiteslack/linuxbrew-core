@@ -3,8 +3,8 @@ class Nginx < Formula
   homepage "https://nginx.org/"
   # Use "mainline" releases only (odd minor version number), not "stable"
   # See https://www.nginx.com/blog/nginx-1-12-1-13-released/ for why
-  url "https://nginx.org/download/nginx-1.19.5.tar.gz"
-  sha256 "5c0a46afd6c452d4443f6ec0767f4d5c3e7c499e55a60cd6542b35a61eda799c"
+  url "https://nginx.org/download/nginx-1.19.6.tar.gz"
+  sha256 "b11195a02b1d3285ddf2987e02c6b6d28df41bb1b1dd25f33542848ef4fc33b5"
   license "BSD-2-Clause"
   head "https://hg.nginx.org/nginx/", using: :hg
 
@@ -14,10 +14,9 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 "9deda8734db308f21e3c8601e0a62a22dc91260fa9155f3695fe9bdb294af69a" => :big_sur
-    sha256 "aff0c071bc1b2e8e84e0dd99ffe01a6a29fc6fc933372099bb2aa55d312e501d" => :catalina
-    sha256 "9f8c235119144279a014e3b88db1658f139bc1bbc9f81ea714a99b3dbba887f1" => :mojave
-    sha256 "22ae73389dcce31573eee08c1acb1526713d96f68baf8617e4aacc9fd3cfd3df" => :x86_64_linux
+    sha256 "46cd798a40572dfc3bddfa9cdcc7da237dc34c2cff053af6ab12e5ae22c4e976" => :big_sur
+    sha256 "628bae501776c960748ccfb6632138c109efacb68727e47cd1266a96dacf6825" => :catalina
+    sha256 "06c55f1663aa49bd9ddff7bd25dca106f42f24610a353d5973fa561bdac5d60b" => :mojave
   end
 
   depends_on "openssl@1.1"
