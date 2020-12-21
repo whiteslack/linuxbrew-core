@@ -16,6 +16,7 @@ class Libtiff < Formula
     sha256 "31dc53e161b68394309dfe7743f9b7f37995b441d66b1637b9424696973b3d40" => :big_sur
     sha256 "208176ae2c5642eb0dff7c97d7b011d6b1d6317be4242db1e54bbb92609f758b" => :catalina
     sha256 "706a61c81bd7a17f266f315339ff63e9bc965c962cd6d9a6a03167cd620d07a1" => :mojave
+    sha256 "5c1a4cb09b036d5f67d2afef0070e7ae8e6d89d347f9c86836efd3b49e967a0b" => :x86_64_linux
   end
 
   depends_on "jpeg"
