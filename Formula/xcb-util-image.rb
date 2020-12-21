@@ -10,6 +10,7 @@ class XcbUtilImage < Formula
     sha256 "be6e0bdd4cd0ddde48bca0e424da9661ca5ecfa6f64f8184e88f1df4e44186f2" => :big_sur
     sha256 "556a8960b5ee6b2290eb223df2dda18054b113b3284b91c4d10cdc3f905ef75c" => :catalina
     sha256 "3aeb055928e61fddb3473ea17005774aa6f0b0f32af8323f3da8963d836c7baf" => :mojave
+    sha256 "b4ef0a8fa018eed55552337f05ee3c7f2796508a2bef8ac98c843d75bce3c558" => :x86_64_linux
   end
 
   head do
