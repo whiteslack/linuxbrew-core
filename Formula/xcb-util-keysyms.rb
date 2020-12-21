@@ -13,11 +13,19 @@ class XcbUtilKeysyms < Formula
     sha256 "2a86550481e0c4f0d53883c27463d10d069bc6d97649a8a026108703896d2407" => :x86_64_linux
   end
 
+  head do
+    url "https://gitlab.freedesktop.org/xorg/lib/libxcb-keysyms.git"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkg-config" => [:build, :test]
-  depends_on "util-macros" => :build
   depends_on "libxcb"
 
   def install
+    system "./autogen.sh" if build.head?
     system "./configure", "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
@@ -28,6 +36,6 @@ class XcbUtilKeysyms < Formula
   end
 
   test do
-    assert_match "-I#{include}", shell_output("pkg-config --cflags xcb-keysyms").chomp
+    assert_match "-I#{include}", shell_output("pkg-config --cflags xcb-keysyms")
   end
 end
