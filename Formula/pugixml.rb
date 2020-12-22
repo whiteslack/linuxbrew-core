@@ -4,7 +4,7 @@ class Pugixml < Formula
   url "https://github.com/zeux/pugixml/releases/download/v1.11.3/pugixml-1.11.3.tar.gz"
   sha256 "aa2a4b8a8907c01c914da06f3a8630d838275c75d1d5ea03ab48307fd1913a6d"
   license "MIT"
-  revision 2 unless OS.mac?
+  revision OS.mac? ? 1 : 3
 
   livecheck do
     url :stable
@@ -13,10 +13,9 @@ class Pugixml < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5c2a0594b325ba7a199c1a855905fa7e3c2e7993eaeaf14bbbb929ddcb2b42cd" => :big_sur
-    sha256 "7ce6497d0653fbcdca776a9e4804e25583b218329dd209a8d76b2d7020e7b3ea" => :catalina
-    sha256 "1b482898c331dbfb80f9b98c935805b5d2380cea2b84cd3f1d74faa664686e1f" => :mojave
-    sha256 "9b5a08a119717ba1b76b437901b90f04b0a3c5de409b5ca3d40664340c89710d" => :x86_64_linux
+    sha256 "9e59b68193e7d86a991df19b65680d574226df446c3f7081259ca9103cdb950b" => :big_sur
+    sha256 "5f2fedef33525f95a64ae2d3e954c4aff513899cc10b2f3332b740fc44843760" => :catalina
+    sha256 "1305b001f9167f99d5f28c974a0a3237c1c89b2072c8edb2da56802ebc6040e4" => :mojave
   end
 
   depends_on "cmake" => :build
