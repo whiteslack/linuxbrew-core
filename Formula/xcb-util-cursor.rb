@@ -10,6 +10,7 @@ class XcbUtilCursor < Formula
     sha256 "b9b3844d3e15c8c500ce203cc958a5b7ccc1967679b16b205f9256252776b206" => :big_sur
     sha256 "7ed2fb722987ea7c6028969752d1b82df9db956bfeffbd05dfaa5689814a9b77" => :catalina
     sha256 "a2eea37585cc157739f19d770f3d921fb5eaf708bd74b0c7c2fb878e90761e8e" => :mojave
+    sha256 "4ee6628d544d67b427263b533d7fb2f2074019e18f538f0ee23a66aeddc6e872" => :x86_64_linux
   end
 
   head do
