@@ -31,13 +31,13 @@ class Nghttp2 < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
-  unless OS.mac?
+  on_linux do
+    # Fix: shrpx_api_downstream_connection.cc:57:3: error:
+    # array must be initialized with a brace-enclosed initializer
+    # https://github.com/nghttp2/nghttp2/pull/1269
     patch do
-      # Fix: shrpx_api_downstream_connection.cc:57:3: error:
-      # array must be initialized with a brace-enclosed initializer
-      url "https://gist.githubusercontent.com/iMichka/5dda45fbad3e70f52a6b4e7dfd382969/raw/" \
-          "19797e17926922bdd1ef21a47e162d8be8e2ca65/nghttp2?full_index=1"
-      sha256 "0759d448d4b419911c12fa7d5cbf1df2d6d41835c9077bf3accf9eac58f24f12"
+      url "https://github.com/nghttp2/nghttp2/commit/829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1"
+      sha256 "c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e"
     end
   end
 
