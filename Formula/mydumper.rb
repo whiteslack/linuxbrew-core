@@ -3,14 +3,14 @@ class Mydumper < Formula
   homepage "https://launchpad.net/mydumper"
   url "https://github.com/maxbube/mydumper/archive/v0.9.5.tar.gz"
   sha256 "544d434b13ec192976d596d9a7977f46b330f5ae3370f066dbe680c1a4697eb6"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     cellar :any
-    sha256 "157bb28e44f0033093c6dc1e46ad6f72e72fb0ae39c9d480e4cff4d90b0a4384" => :catalina
-    sha256 "d4a3a359cd266b24313e64204a8c99d8c1bfe0ec71fece2a31b8551bbb904eaa" => :mojave
-    sha256 "2f3f2f488038ee040fe619c6f3c35efc414c97a18bfb04885a245528645f8ade" => :high_sierra
-    sha256 "abaf309d00d2d9966daea7672ce58d3fb49fa4d3ac1a2c99a0839baba1392158" => :x86_64_linux
+    rebuild 1
+    sha256 "fb43610eb7d7f45268ab926341a55822ec02774a8887e7ecc811a11d18108cfc" => :big_sur
+    sha256 "c87396db1270975e11f320c0437a0b002715a23c9400713fa40f8fc71e4e2d39" => :catalina
+    sha256 "22d6196c9f25dce4e190e528009ead061e395a07a5aa1eb2c61247572bf1ee82" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -21,14 +21,25 @@ class Mydumper < Formula
   depends_on "openssl@1.1"
   depends_on "pcre"
 
+  uses_from_macos "zlib"
+
   # This patch allows cmake to find .dylib shared libs in macOS. A bug report has
   # been filed upstream here: https://bugs.launchpad.net/mydumper/+bug/1517966
   # It also ignores .a libs because of an issue with glib's static libraries now
   # being included by default in homebrew.
+  #
+  # Although we override the mysql library location this patch is still required
+  # because the setting of ${CMAKE_FIND_LIBRARY_SUFFIXES} affects other probes as well.
   patch :p0, :DATA
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", *std_cmake_args,
+           # Override location of mysql-client:
+           "-DMYSQL_CONFIG_PREFER_PATH=#{Formula["mysql-client"].opt_bin}",
+           "-DMYSQL_LIBRARIES=#{Formula["mysql-client"].opt_lib}/libmysqlclient.dylib",
+           # find_package(ZLIB) has troube on Big Sur since physical libz.dylib
+           # doesn't exist on the filesystem.  Instead provide details ourselves:
+           "-DCMAKE_DISABLE_FIND_PACKAGE_ZLIB=1", "-DZLIB_INCLUDE_DIRS=/usr/include", "-DZLIB_LIBRARIES=-lz"
     system "make", "install"
   end
 
