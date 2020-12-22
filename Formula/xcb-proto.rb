@@ -4,19 +4,25 @@ class XcbProto < Formula
   url "https://xcb.freedesktop.org/dist/xcb-proto-1.14.tar.gz"
   sha256 "1c3fa23d091fb5e4f1e9bf145a902161cec00d260fabf880a7a248b02ab27031"
   license "MIT"
-  revision OS.mac? ? 2 : 3
+  revision OS.mac? ? 1 : 4
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "25981c40536a924beb9c3a21b95367ef489185ded08031e635472510408d110f" => :big_sur
-    sha256 "c32a3d3a2fac9a68d5dafe02a75300c05beaa3151f1fbfafad5e718ce26e1553" => :catalina
-    sha256 "e6faf01ae0757a6f2f49f05fb2262a36d0d39f61687b710cbfe368829856b0f2" => :mojave
-    sha256 "de7af3536a1c9a33bd74567f22200e66a6541933506aec0dff275c490109d539" => :high_sierra
-    sha256 "563cdc2afbb564b8a46e3a4299e89e405659e812abe68646c82ad847f1e12503" => :x86_64_linux
+    sha256 "3a06ab668310fdc796d8cb65b7f1629525c429c4ab557152dc4cd2f6986f6e71" => :big_sur
+    sha256 "b517e748dd151eae431d41c7f245a06df71a36f9be201e3b53560df5746bada6" => :arm64_big_sur
+    sha256 "ffa4de426e5779c26533a004ea07f4806af7b2c6c258cbb1099ef328f7a44658" => :catalina
+    sha256 "ea079de49278e1432c77933a08cbdccab4c0d5d5cccd681c09ea9384b9459a3a" => :mojave
   end
 
   depends_on "pkg-config" => [:build, :test]
   depends_on "python@3.9" => :build
+
+  # Fix for Python 3.9. Use math.gcd() for Python >= 3.5.
+  # fractions.gcd() has been deprecated since Python 3.5.
+  patch do
+    url "https://gitlab.freedesktop.org/xorg/proto/xcbproto/-/commit/426ae35bee1fa0fdb8b5120b1dcd20cee6e34512.patch"
+    sha256 "58c56b9713cf4a597d7e8c634f276c2b7c139a3b1d3f5f87afd5946f8397d329"
+  end
 
   def install
     inreplace "xcbgen/align.py", "from fractions import gcd", "from math import gcd"
