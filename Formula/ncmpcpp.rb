@@ -1,16 +1,15 @@
 class Ncmpcpp < Formula
   desc "Ncurses-based client for the Music Player Daemon"
   homepage "https://rybczak.net/ncmpcpp/"
-  url "https://rybczak.net/ncmpcpp/stable/ncmpcpp-0.8.2.tar.bz2"
-  sha256 "650ba3e8089624b7ad9e4cc19bc1ac6028edb7523cc111fa1686ea44c0921554"
+  url "https://rybczak.net/ncmpcpp/stable/ncmpcpp-0.9.tar.bz2"
+  sha256 "4148687f481b8eb016aa5889f74b4ae8871920d46c0a6c004a9ede140d2f1667"
   license "GPL-2.0"
-  revision 13
 
   bottle do
     cellar :any
-    sha256 "f6720638a422628e6902d967836d3ee5afbcf60ad6fa8bca5e8e01fcf91d5113" => :big_sur
-    sha256 "27e9bf5f1d45960238c2fe17686ae0619f9cafd9a84d49dbeee7b89b92d31087" => :catalina
-    sha256 "e496faaff1d7e7b9ef1e2bde5e47b49c2f52af6f422c908dc8d1b9948ccf015a" => :mojave
+    sha256 "8e20eaa820748ed300d4d14923c3cca4b5449589618d0ee277e67e55c32bcc28" => :big_sur
+    sha256 "0aa6ab305f259cff180c27baaf19c43dc4f71a6b4ddc6f367847c2f7299d72a3" => :catalina
+    sha256 "5e750b7427b834e44ad31e649998d7cc7e8cd6f005e122c835c5333180064957" => :mojave
   end
 
   head do
