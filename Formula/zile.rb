@@ -20,6 +20,7 @@ class Zile < Formula
     sha256 "45c8f93c5e1d937a6f945343db7615c4fc1fe4d287b1b5777a9578234a2ef645" => :big_sur
     sha256 "49fb51f48ad1526f27c94f357653f0f2503a5bca98c6550378468ea513b32aed" => :catalina
     sha256 "161f09a4b1f56d85b644b994bbf0a7449e710b30dee08db4ab88e4e3db501c59" => :mojave
+    sha256 "7ed31d98829d80e30d2c959b4407ed10e95b5adc8002d83244e20745de03a220" => :x86_64_linux
   end
 
   depends_on "help2man" => :build
