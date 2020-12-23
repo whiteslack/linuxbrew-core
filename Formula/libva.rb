@@ -10,6 +10,9 @@ class Libva < Formula
     strategy :github_latest
   end
 
+  bottle do
+  end
+
   depends_on "pkg-config" => [:build, :test]
   depends_on "libdrm"
   depends_on "libx11"
