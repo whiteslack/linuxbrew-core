@@ -19,6 +19,7 @@ class Tasksh < Formula
     sha256 "8b555506f7b5fea57888cdc777ecc3da950070596ea9d7fbe72a3f26180a0a87" => :big_sur
     sha256 "e0963f51916b59d6f635a3c82a48a7ae7db0dfaa6699fedf6678a91734e0ea63" => :catalina
     sha256 "fbebc33442701a951a6a49c749be983cf7b7cd26134ac55d480a819304327286" => :mojave
+    sha256 "173e8febaab3c75875ba16c38e615e967cd17a77a815a06d777eb6cb4ca39beb" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
