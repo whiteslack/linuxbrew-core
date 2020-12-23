@@ -28,7 +28,7 @@ class Freeglut < Formula
   depends_on "libxxf86vm"
   depends_on "mesa"
 
-  unless OS.mac?
+  on_linux do
     depends_on "mesa-glu"
     depends_on "xinput"
   end
