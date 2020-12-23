@@ -12,6 +12,7 @@ class Numpy < Formula
 
   bottle do
     sha256 "980ff2b2a656a9bd8583d8ac53d79149db57c4e0ebc0787c7339ffff61196651" => :big_sur
+    sha256 "12fa9cba958b6e32a78ac795469ba679dce6c8614e7fcd87a61a95de566feb00" => :arm64_big_sur
     sha256 "a9316c2fbc6289f359a8379f667d5c7db067f86c2be153d40cd400ab03fe83a5" => :catalina
     sha256 "a01c9eac38f92f3079f860dada4f49543cb40ecbc42a62f3adf022529fb990bc" => :mojave
     sha256 "5884958d5903b9a8e5b47a81f0dc9ad5435873b472d3709b6956998356c8c353" => :high_sierra
@@ -22,6 +23,13 @@ class Numpy < Formula
   depends_on "gcc" => :build # for gfortran
   depends_on "openblas"
   depends_on "python@3.9"
+
+  # Upstream fix for Apple Silicon, remove in next version
+  # https://github.com/numpy/numpy/pull/17906
+  patch do
+    url "https://github.com/numpy/numpy/commit/1ccb4c6d.patch?full_index=1"
+    sha256 "7777fa6691d4f5a8332538b634d4327313e9cf244bb2bbc25c64acfb64c92602"
+  end
 
   def install
     openblas = Formula["openblas"].opt_prefix
