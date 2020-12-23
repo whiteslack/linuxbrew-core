@@ -7,7 +7,7 @@ class Mesa < Formula
   sha256 "af751b49bb2ab0264d58c31e73d869e80333de02b2d1becc93f1b28c67aa780f"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
-  revision 3 unless OS.mac?
+  revision 4 unless OS.mac?
 
   livecheck do
     url :stable
@@ -18,7 +18,6 @@ class Mesa < Formula
     sha256 "4c13e1d6783317c73e5affe7ff2a1ff70924eea3f0816c562c1b30a5fe187616" => :arm64_big_sur
     sha256 "0e11b188a0f24b12fccbfb7e0a20843ac73bfd4184be0a6c4d1f57e0ff942d7d" => :catalina
     sha256 "5c68d4275cddb201114e2a1f5bf3bba0909e66b5fac3f67388aab0823dcc77eb" => :mojave
-    sha256 "973d6b966cc92551e3f16f902b36c4d41a264f30c9d4d67c8828e40044b971d5" => :x86_64_linux
   end
 
   depends_on "meson" => :build
@@ -47,11 +46,11 @@ class Mesa < Formula
     depends_on "libxv"
     depends_on "libxvmc"
     depends_on "libxxf86vm"
+    depends_on "libva"
+    depends_on "libvdpau"
     depends_on "libdrm"
     depends_on "wayland"
     depends_on "wayland-protocols"
-    depends_on "linuxbrew/xorg/libva"
-    depends_on "linuxbrew/xorg/libvdpau"
   end
 
   resource "Mako" do
