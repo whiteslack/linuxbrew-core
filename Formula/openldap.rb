@@ -25,7 +25,7 @@ class Openldap < Formula
 
   on_linux do
     depends_on "groff" => :build
-    depends_on "util-linux" # for libuuid.so.1
+    depends_on "util-linux"
   end
 
   def install
