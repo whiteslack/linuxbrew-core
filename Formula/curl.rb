@@ -16,6 +16,7 @@ class Curl < Formula
     sha256 "c6ab851e1535ebea16d0af34a620ca3bf37d2b1b9571ab7a1f4403f859129c10" => :big_sur
     sha256 "f3d93b2c3ba69e5c7afd8bb2ff2b2daf67ddc9c5b0a5184a2fa565d9a05b26b2" => :catalina
     sha256 "c305611273c90a9b973df642e60f31b931ba1276294406d3a910d36472ad45ba" => :mojave
+    sha256 "f0af64490eba094f00c50b478f747135c2db1698c39daf1b6e3a04a327f837e7" => :x86_64_linux
   end
 
   head do
