@@ -117,7 +117,9 @@ class Vte3 < Formula
       -lvte-2.91
       -lz
     ]
-    flags << "-lintl" if OS.mac?
+    on_macos do
+      flags << "-lintl"
+    end
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end
