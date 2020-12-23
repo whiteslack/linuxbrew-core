@@ -1,16 +1,16 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://github.com/onflow/flow-cli/archive/v0.12.1.tar.gz"
-  sha256 "ad231ca19296ca65522eb71115900c9bd6918335caafef5913689acc1ec7effe"
+  url "https://github.com/onflow/flow-cli/archive/v0.12.2.tar.gz"
+  sha256 "ac4d04567b946faef602962ccec13fa711034d0bb7d5f01cb368fb083cc45164"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "3175e54be30ffde72756f133e3a3c57e041fce1da732c7cceb029a8605222165" => :big_sur
-    sha256 "d2e8eb6e2341f1c4f4539ebd97fbdd5274ade916408a90368977b2161cfe8818" => :catalina
-    sha256 "ff160b6e738b4035978dceeea7e66cf9e18b1cdad87b847f3c212897461c31b2" => :mojave
+    sha256 "404371fc786604d0cbaca2bd92278a20ee9cc6ec76738fb43da95968307bf505" => :big_sur
+    sha256 "57896f09498936c80f7757cf5b2f4d329ce1c0a01b0e01edae3f2ccb1cb3c398" => :catalina
+    sha256 "35d728f50b5c7428d4ff40b20ecad52fcd13064fc24d135b857db560e68d1cf2" => :mojave
   end
 
   depends_on "go" => :build

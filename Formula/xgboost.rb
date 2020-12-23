@@ -2,16 +2,15 @@ class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https://xgboost.ai/"
   url "https://github.com/dmlc/xgboost.git",
-      tag:      "v1.3.0",
-      revision: "1bf389998383f333490155dba4608bff9ca63b42"
+      tag:      "v1.3.1",
+      revision: "a78d0d41101b3b7ad10880f38498751166ae2eb3"
   license "Apache-2.0"
 
   bottle do
     cellar :any
-    sha256 "56c88f363161fcf695d5e3fa235256ef22465d405d401aa6d4322c0b79bfb02e" => :big_sur
-    sha256 "5c14b128cbe2c89a944df2cfb50543d9ea6d5890ab4bc3c834d83d42c2485800" => :catalina
-    sha256 "6a91a20f6d716f5a85e7ffd1ce5e6d957b43a414dde7a38fc4d735350dd1556b" => :mojave
-    sha256 "b22be0c6b3db917e0f290bacb2b4ffbf9cc28fe21564358227a1b1f51507a0d3" => :x86_64_linux
+    sha256 "83aa8c4de0377475ea7d59cc1b86a427614ab2d45e5947a4a0ef9725a10d9e62" => :big_sur
+    sha256 "9492eec6728f04259ee801f6f09a3f420ba626ba02d949ca3b62aeb11429d7d3" => :catalina
+    sha256 "6487891dc5aa7d5dd6748b77d6994f641e298f57aabcd33e1d5be1e4d9a1ebdf" => :mojave
   end
 
   depends_on "cmake" => :build
