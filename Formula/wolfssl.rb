@@ -18,6 +18,7 @@ class Wolfssl < Formula
     sha256 "d6703aaaf46b5c557a600dc8a6f0173cab8f445bb1bbf73de70c6a7e68d587f4" => :big_sur
     sha256 "ffcb2c8de9c2ec6b4809155164ff919bf0ece177f5ca021ae58ef89f880b537b" => :catalina
     sha256 "e0b5c7d0958000ce1450423eb67eef98d603769e432512c0c1d23b2a315e8ccf" => :mojave
+    sha256 "2908b41acc190ce38c28f2ab353fbc0cfadf21ca3fee99074ce07aae8797dfb1" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
