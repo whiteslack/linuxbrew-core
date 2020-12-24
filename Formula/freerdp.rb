@@ -4,14 +4,13 @@ class Freerdp < Formula
   url "https://github.com/FreeRDP/FreeRDP/archive/2.2.0.tar.gz"
   sha256 "883bc0396c6be9aba6bc07ebc8ff08457125868ada0f06554e62ef072f90cf59"
   license "Apache-2.0"
-  revision OS.mac? ? 1 : 4
+  revision OS.mac? ? 2 : 5
 
   bottle do
-    sha256 "9ce96071c6b5669d95af69ae583c6ae15ba3c9d52597d0eacbb967386c7461cc" => :big_sur
-    sha256 "81141b89bc0243522912ea242d05951966be48d85c69325faa1a3cd4123c6ac6" => :arm64_big_sur
-    sha256 "500faf5c949356095126fc08fd1f5bd71ee2254cdb7f65e7ac38cbfde151911d" => :catalina
-    sha256 "a97258802689aebfb320f3649a9fa36389c885953afb211f9b54962eec8a87f7" => :mojave
-    sha256 "8c95c86605b16b6a524b720f70c783c9a77e50719d49cd02a0624da03e4cf92d" => :high_sierra
+    sha256 "dd8fc56553931bdc70efae9305b68b9061092f4f1cf901df4a3f499419de7608" => :big_sur
+    sha256 "56880920e2d57fdff6796b585cecf14fc6b3464914e76617eaf4178f497c0552" => :arm64_big_sur
+    sha256 "cae2807414c8e79c8bab0e044fa02946c0eba15a3ceba56d156b12bb8867bed0" => :catalina
+    sha256 "bf764412f282f795ec8bf58055ff54489c75cd344f2c5f901d7eadd15b9201ee" => :mojave
   end
 
   head do
@@ -21,6 +20,7 @@ class Freerdp < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "jpeg"
   depends_on "libusb"
   depends_on "libx11"
   depends_on "libxcursor"
@@ -40,20 +40,13 @@ class Freerdp < Formula
   end
 
   unless OS.mac?
+    depends_on "cups"
     depends_on "systemd"
     depends_on "wayland"
   end
 
   def install
-    cmake_args = std_cmake_args
-    cmake_args << "-DWITH_X11=ON" << "-DBUILD_SHARED_LIBS=ON"
-    unless OS.mac?
-      cmake_args << "-DWITH_CUPS=OFF"
-      # cmake_args << "-DWITH_FFMPEG=OFF"
-      # cmake_args << "-DWITH_ALSA=OFF"
-      # cmake_args << "-DWITH_LIBSYSTEMD=OFF"
-    end
-    system "cmake", ".", *cmake_args
+    system "cmake", ".", *std_cmake_args, "-DWITH_X11=ON", "-DBUILD_SHARED_LIBS=ON", "-DWITH_JPEG=ON"
     system "make", "install"
   end
 
