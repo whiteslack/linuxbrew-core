@@ -1,9 +1,9 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.4.tar.gz"
-  sha256 "4bd00c1c63d38cd1fe01b90032834b52f774bc29e4b67eeb1e525b14fee07aeb"
-  revision 1
+  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.5.tar.gz"
+  sha256 "56b978faaeb8b2896032bd604d03c3501002187eef1ca58ceced40f11a65dc0e"
+  license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
   livecheck do
@@ -12,19 +12,19 @@ class Vice < Formula
   end
 
   bottle do
-    cellar :any
-    sha256 "1a0bc0f49e3f16b32f678547fef6acf1aad720e20e033651f4516b280c86a6d6" => :big_sur
-    sha256 "b65fbef8066263ccd42679a2b9ed9f3d438ff75a5d8c097dcf04ffb5fa1b1e43" => :catalina
-    sha256 "65380e5bdb80143cfbd668fe45c385b7715faa6baa8f109707003be3fb410efb" => :mojave
-    sha256 "d2532e0ccc1a84a9896a611c9ac7eac15342f7ebbaedba7c0b29f36c178a0c27" => :high_sierra
+    sha256 "54469e98b53d284cd45667fcaa90c97288c5b086e9fd3d389a6057caf94c8caa" => :big_sur
+    sha256 "00d02729c640d211d25f84a47606c99464fe6c649936566fbfffe1ac7436c7a3" => :catalina
+    sha256 "7bbc703b670c5b5555c562fa9e52eabfd0cfdc0b379e9559e9d9c5c95499fe8b" => :mojave
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "pkg-config" => :build
   depends_on "texinfo" => :build
   depends_on "xa" => :build
   depends_on "yasm" => :build
-  depends_on "autoconf"
-  depends_on "automake"
+
+  depends_on "dos2unix"
   depends_on "ffmpeg"
   depends_on "flac"
   depends_on "giflib"
@@ -38,14 +38,16 @@ class Vice < Formula
   depends_on "mpg123"
   depends_on "portaudio"
   depends_on "sdl2" unless build.head?
+  depends_on "sdl2_image"
   depends_on "xz"
 
   def install
-    configure_flags = [
-      "--prefix=#{prefix}",
-      "--disable-dependency-tracking",
-      "--disable-arch",
-      "--enable-external-ffmpeg",
+    configure_flags = %W[
+      --prefix=#{prefix}
+      --disable-dependency-tracking
+      --disable-arch
+      --disable-pdf-docs
+      --enable-external-ffmpeg
     ]
 
     configure_flags << if build.head?

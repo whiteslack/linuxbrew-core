@@ -3,14 +3,21 @@ class UtilLinux < Formula
   homepage "https://github.com/karelzak/util-linux"
   url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.36/util-linux-2.36.1.tar.xz"
   sha256 "09fac242172cd8ec27f0739d8d192402c69417617091d8c6e974841568f37eed"
-  license "GPL-2.0"
+  license all_of: [
+    "BSD-3-Clause",
+    "BSD-4-Clause-UC",
+    "GPL-2.0-only",
+    "GPL-2.0-or-later",
+    "GPL-3.0-or-later",
+    "LGPL-2.1-or-later",
+    :public_domain,
+  ]
 
   bottle do
-    sha256 "1f6f25d503de7b3424e64d51efe5bfddbddb664a44ce6c22bbb189d26286d696" => :big_sur
-    sha256 "53a903d035ed5a7c7df777b73163049b7293ffdcad8d50ac810d71e4f9222161" => :arm64_big_sur
-    sha256 "da33e347bedf2b1096b72f2d0c9480393dc0742514e8f4e840339ae7a453b908" => :catalina
-    sha256 "45f9ea4575cea284b1e708caac537c8fe74aba704bdf486e11412f3f6bf630c3" => :mojave
-    sha256 "cccac7e0c309ccdb7e1ff69d6433f48b4259135716ded56be8613e7071daab38" => :x86_64_linux
+    rebuild 1
+    sha256 "d3ca947d64da7e1a090f6747bcfacda7ba4059ad5b716d2560778aab08a26b41" => :big_sur
+    sha256 "7a2842abe7cffd1a4d40e7cda3284bb6d1a8960d4a7f528c131bd3a7916efa2b" => :catalina
+    sha256 "dd4bfa3e3ffc8b3106e55c8fa52350130d7a7616bb65eb64fb8f8b9492fc9765" => :mojave
   end
 
   keg_only "macOS provides the uuid.h header" if OS.mac?
@@ -112,12 +119,14 @@ class UtilLinux < Formula
       wall wdctl
       zramctl
     ]
-    <<~EOS
-      The following tools are not supported under macOS, and are therefore not included:
-      #{Formatter.wrap(Formatter.columns(linux_only_bins), 80)}
-      The following tools are already shipped by macOS, and are therefore not included:
-      #{Formatter.wrap(Formatter.columns(system_bins), 80)}
-    EOS
+    on_macos do
+      <<~EOS
+        The following tools are not supported for macOS, and are therefore not included:
+        #{Formatter.columns(linux_only_bins)}
+        The following tools are shipped by macOS, and are therefore not included:
+        #{Formatter.columns(system_bins)}
+      EOS
+    end
   end
 
   test do

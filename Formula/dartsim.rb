@@ -4,11 +4,11 @@ class Dartsim < Formula
   url "https://github.com/dartsim/dart/archive/v6.9.5.tar.gz"
   sha256 "624c00b65e3a753cba50de038620860c86e2ac47b1793ae51f9427a4bcb14c32"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 "1f8347a652072b6ad7fa4fbf8ff2e6f91c6d4fe1349c9bad0534b234ff6f2bca" => :catalina
-    sha256 "e971298dffa03bea02b25dbfbfefac501d8aa19f266ba4df453f1ed27a41ed79" => :mojave
+    sha256 "f3dd620fb470fff2617357bc8993679c69f38fe77aeba5d50014c45ef6329514" => :catalina
+    sha256 "128b06f7b5f049ba289304411ab16d045873ec84d24680db72d61de8ba98866d" => :mojave
   end
 
   depends_on "cmake" => :build
