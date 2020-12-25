@@ -18,6 +18,7 @@ class UtilLinux < Formula
     sha256 "d3ca947d64da7e1a090f6747bcfacda7ba4059ad5b716d2560778aab08a26b41" => :big_sur
     sha256 "7a2842abe7cffd1a4d40e7cda3284bb6d1a8960d4a7f528c131bd3a7916efa2b" => :catalina
     sha256 "dd4bfa3e3ffc8b3106e55c8fa52350130d7a7616bb65eb64fb8f8b9492fc9765" => :mojave
+    sha256 "8ed9101b038700b1a996f4a8be6079b527cd001bb5892b0167225034a109aef8" => :x86_64_linux
   end
 
   keg_only "macOS provides the uuid.h header" if OS.mac?
