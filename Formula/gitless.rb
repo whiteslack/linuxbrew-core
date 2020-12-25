@@ -3,17 +3,17 @@ class Gitless < Formula
 
   desc "Simplified version control system on top of git"
   homepage "https://gitless.com/"
-  url "https://github.com/gitless-vcs/gitless/archive/v0.8.8.tar.gz"
-  sha256 "470aab13d51baec2ab54d7ceb6d12b9a2937f72d840516affa0cb34a6360523c"
+  url "https://files.pythonhosted.org/packages/9c/2e/457ae38c636c5947d603c84fea1cf51b7fcd0c8a5e4a9f2899b5b71534a0/gitless-0.8.8.tar.gz"
+  sha256 "590d9636d2ca743fdd972d9bf1f55027c1d7bc2ab1d5e877868807c3359b78ef"
   license "MIT"
   revision OS.mac? ? 6 : 8
 
   bottle do
     cellar :any
-    sha256 "7e42410c00782d142475e2ac03b69f0252171896d7810eca236b542f88594bb0" => :big_sur
-    sha256 "a9e98e5ccaa560eecef92231da263ca3e1664ab4cc98009a26fde08a2e139588" => :catalina
-    sha256 "7790557c2d8c054fa08df99abf55a1c37cad8dcfc57342ca5fc2923e7352f8a3" => :mojave
-    sha256 "d39cb7b4f98b8682425d5049c1caacf18d6f39269f2b4c2ac49e02ba04e93035" => :x86_64_linux
+    rebuild 1
+    sha256 "e3a66c2fe8e063dee66c5b3929fa1714e9aa02222aa28c443e5b68e6117bd757" => :big_sur
+    sha256 "c8e8c9b31f6e834808afa8b20618375dbb2c28450f3af8562ada3108b8b4c67f" => :catalina
+    sha256 "1f16db607180b48d05f1af88aaea6bd1a5fe4a3906177d44c8ddca8d6a4d2186" => :mojave
   end
 
   depends_on "libgit2"

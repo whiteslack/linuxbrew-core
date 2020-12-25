@@ -3,21 +3,21 @@ class Borgbackup < Formula
 
   desc "Deduplicating archiver with compression and authenticated encryption"
   homepage "https://borgbackup.org/"
-  url "https://github.com/borgbackup/borg/releases/download/1.1.14/borgbackup-1.1.14.tar.gz"
+  url "https://files.pythonhosted.org/packages/dd/13/5313ccad7f76cd3d13b207e31ca6e3072ca00c0bf7d605f7e8e6bc409b0d/borgbackup-1.1.14.tar.gz"
   sha256 "7dbb0747cc948673f695cd6de284af215f810fed2eb2a615ef26ddc7c691edba"
   license "BSD-3-Clause"
   revision 2
 
   livecheck do
     url :stable
-    strategy :github_latest
   end
 
   bottle do
     cellar :any
-    sha256 "017e96feab282fac67840fc3c7ef478fe83f4ac4821530694aeb417879de07e0" => :big_sur
-    sha256 "6857259993f17a639a40c346dce9ec85b8cdb298a522d6c2057b258e2971f6eb" => :catalina
-    sha256 "f6933bd88b726529d81fc624b728061213b5b1e56cd28a48cd002e4cb98163a6" => :mojave
+    rebuild 1
+    sha256 "8fa69d333e97788e86016cf4d69a18e2e423d5176a9117ef65c16a9455c8d905" => :big_sur
+    sha256 "f9b5972744a1411afd6756135ea9d01fbd2e05b101a32a21e3be9cb0fc143ab9" => :catalina
+    sha256 "20cae900b7f125016276497ff08d9d67d23c74cfb0bd75b643775b02e9696628" => :mojave
   end
 
   depends_on "pkg-config" => :build

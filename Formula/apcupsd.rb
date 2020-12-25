@@ -3,7 +3,7 @@ class Apcupsd < Formula
   homepage "http://www.apcupsd.org"
   url "https://downloads.sourceforge.net/project/apcupsd/apcupsd%20-%20Stable/3.14.14/apcupsd-3.14.14.tar.gz"
   sha256 "db7748559b6b4c3784f9856561ef6ac6199ef7bd019b3edcd7e0a647bf8f9867"
-  license "GPL-2.0"
+  license "GPL-2.0-only" # a few files have "or later", but most do not
 
   livecheck do
     url :stable
@@ -11,11 +11,10 @@ class Apcupsd < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 "6bdbc101891e5c10b8aead1e1c86ce8ed1560f38b4de96a6c804c73953ad3ac0" => :catalina
-    sha256 "f9e745573abb55d0194e958d48256ace18a8116fc2c7577617de915746e6c18b" => :mojave
-    sha256 "8e604286ac22168ede829d3dff95ac782b458316c3389827c6d6c5168a2552e4" => :high_sierra
-    sha256 "49fed93d2fa6250a53e982d61b2cfe1e0d3ad9c897d318f2bb90708fbbe1e683" => :x86_64_linux
+    rebuild 4
+    sha256 "1c425f1d6db43a760e4d068ae8ef193c3ca32a3157564989ba1a6aa2ce44a2c7" => :big_sur
+    sha256 "7636fe8d43fde7368817c64dc8f689526f48d2a958532e3fdd3f05db3deb4c5e" => :catalina
+    sha256 "7c87a398311314a0f789cabb5956932962800297e2ba4890f07ac60c13cc3f68" => :mojave
   end
 
   depends_on "gd"
@@ -48,7 +47,10 @@ class Apcupsd < Formula
                           "--sbindir=#{sbin}",
                           "--sysconfdir=#{sysconfdir}",
                           "--enable-cgi", "--with-cgi-bin=#{sysconfdir}",
-                          "--enable-usb", "--enable-modbus-usb"
+                          "--enable-usb", "--enable-modbus-usb",
+                          # Detecting the lack of gethostname_r() goes
+                          # wrong on Xcode 12:
+                          "ac_cv_func_which_gethostbyname_r=no"
 
     system "make", "install"
   end

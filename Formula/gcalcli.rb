@@ -3,8 +3,8 @@ class Gcalcli < Formula
 
   desc "Easily access your Google Calendar(s) from a command-line"
   homepage "https://github.com/insanum/gcalcli"
-  url "https://github.com/insanum/gcalcli/archive/v4.3.0.tar.gz"
-  sha256 "597d96ee1c8b5f094cca75a059cb1a0056a612e734c32012ef0d41219ac3b0cd"
+  url "https://files.pythonhosted.org/packages/e8/d9/9d1f03b9b47c3082bf664a2f789a3aded0674dca9e0b894540d754b937cc/gcalcli-4.3.0.tar.gz"
+  sha256 "d00081460276027196e8fb957880b29ba4f22ea43136f9e232a9408016abc110"
   license "MIT"
   head "https://github.com/insanum/gcalcli.git"
 
@@ -14,11 +14,11 @@ class Gcalcli < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1e242f9b62d2085581ab1a8788d9077d41ec1bc908802f56f084e3bbc708676e" => :big_sur
-    sha256 "801693e19dc4bb515df0df1ca66339b0f4c9cfa87dcc78e6014dcb71110ad24f" => :arm64_big_sur
-    sha256 "cdba25bc19242bcef227b7ce304044267b47d8dc50f08f6e33ee7ccfeaa687a5" => :catalina
-    sha256 "7b362833fa9794fa940f0785f354c8384143dfcf764008aa3847c1fa576f6b52" => :mojave
-    sha256 "2a50521955f86a01262fac57cc327922367e2d4ec66461e652aec7a465e04f0b" => :high_sierra
+    rebuild 1
+    sha256 "ea59966235cefdd993cac5eb6e9afe3f34ed5d6409dd9017e756c112269f3934" => :big_sur
+    sha256 "e47220e4f7ac29d1309f0ff63150b9c4d1a269c5e3e1016169a28a48f712db15" => :arm64_big_sur
+    sha256 "669ebad1c69fcdaf933079ce53301861344b1d955a22993314d93db67637c701" => :catalina
+    sha256 "ffebafee3ca507d3d3629651e04e4cf42b90f61d067d704d23030368234bf9ab" => :mojave
   end
 
   depends_on "python@3.9"

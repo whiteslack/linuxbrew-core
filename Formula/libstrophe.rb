@@ -1,19 +1,17 @@
 class Libstrophe < Formula
   desc "XMPP library for C"
   homepage "https://strophe.im/libstrophe/"
-  url "https://github.com/strophe/libstrophe/archive/0.10.0.tar.gz"
-  sha256 "8d804e4c74cea1133203cc95a59a88f700fbdaead076e7959b495d734dd7936d"
+  url "https://github.com/strophe/libstrophe/archive/0.10.1.tar.gz"
+  sha256 "5bf0bbc555cb6059008f1b748370d4d2ee1e1fabd3eeab68475263556405ba39"
   license any_of: ["GPL-3.0", "MIT"]
   head "https://github.com/strophe/libstrophe.git"
 
   bottle do
     cellar :any
-    sha256 "b8a23414b9196004c337bfd76a29649477014499e86269219e61dc82805b65af" => :big_sur
-    sha256 "816902144c5782e419920596cbcc08cb850bee755dff333238614ca12d25dd07" => :arm64_big_sur
-    sha256 "a9d230d388d880b06d5e17d14e0943499d7b2eaccb33cd7921e63f16891f1d3b" => :catalina
-    sha256 "e29fab2eb0fda7024475d2ecd57476b33eee51c4123041b9e447b0a1f462fc34" => :mojave
-    sha256 "a1739c44c90b762a2e94e7e97a48ba5d3e6c99bfd1d1fe3aacb4f0aee571a919" => :high_sierra
-    sha256 "797acb630269faaf74784085a7b3743d93e12e9ac6dbbe0ed8660613953f7b2c" => :x86_64_linux
+    sha256 "8af3feb84f80d88ac047cb3719bdd44ba36569a46fbc631841557f18018e21d4" => :big_sur
+    sha256 "19f1daa320f573b87b489438069612d983d5566ba88f6382974c7d6f9a0528dc" => :arm64_big_sur
+    sha256 "9d02ccf101797f9d37ad709c6827bde93b06a356f94d50c57290b25cb917d7d6" => :catalina
+    sha256 "b85ddffb34d325b02d9d401892446b269300bc3ba2e170b14cb6c50576070d4a" => :mojave
   end
 
   depends_on "autoconf" => :build
