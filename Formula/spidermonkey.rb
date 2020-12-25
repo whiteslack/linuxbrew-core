@@ -1,11 +1,11 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
-  homepage "https://developer.mozilla.org/en/SpiderMonkey"
+  homepage "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey"
   url "https://archive.mozilla.org/pub/mozilla.org/js/js185-1.0.0.tar.gz"
   version "1.8.5"
   sha256 "5d12f7e1f5b4a99436685d97b9b7b75f094d33580227aa998c406bbae6f2a687"
   license "MPL-1.1"
-  revision OS.mac? ? 3 : 4
+  revision OS.mac? ? 4 : 5
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
   livecheck do
@@ -15,16 +15,14 @@ class Spidermonkey < Formula
 
   bottle do
     cellar :any
-    sha256 "747d9e19e27fbe0455e462c5cb1943d1120e02f05df6f964cf502b09db5975df" => :catalina
-    sha256 "739fbe8aad9a04de987cdb95e2cabf30229a799f6de4c00a5cf6ce175e2e1390" => :mojave
-    sha256 "6970c515131a108d7e4ce50e49e2623ca88def0fbe11ddec4a641ef7de7d1787" => :high_sierra
-    sha256 "dbd3bdb0970f940628aacdb2e4db2984d3c4fdd1d6829a0b648db5a9b9229738" => :sierra
+    sha256 "f27ae227bcc2f755a89fb0e7075d7609fbebf0c442c5b558dde314ed477f2e8b" => :big_sur
+    sha256 "876cb32f87f7f61b5d0b7b5b62fb5881cb859112eb8235304d75755add2b8af3" => :catalina
+    sha256 "8cda55126be55fce01a82cf60e10522e211e7d8d384a0935c74a9d524256127f" => :mojave
   end
 
   depends_on "nspr"
-  # Readline support is disabled; fails with:
-  # No rule to make target '-lreadline', needed by 'js'.  Stop.
-  depends_on "readline" if OS.mac?
+  depends_on "readline"
+
   unless OS.mac?
     depends_on "python@3.9" => :build
     depends_on "zip" => :build
@@ -38,7 +36,15 @@ class Spidermonkey < Formula
       inreplace "config/rules.mk",
         "-install_name @executable_path/$(SHARED_LIBRARY) ",
         "-install_name #{lib}/$(SHARED_LIBRARY) "
+
+      # The ./configure script assumes that it can find readline
+      # just as "-lreadline", but we want it to look in opt/readline/lib
+      inreplace "configure", "-lreadline", "-L#{Formula["readline"].opt_lib} -lreadline"
     end
+
+    # The ./configure script that comes with spidermonkey 1.8.5 makes some mistakes
+    # with Xcode 12's default setting of -Werror,implicit-function-declaration
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
 
     mkdir "brew-build" do
       system "../js/src/configure", "--prefix=#{prefix}",

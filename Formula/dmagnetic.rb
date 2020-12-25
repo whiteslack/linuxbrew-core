@@ -1,16 +1,16 @@
 class Dmagnetic < Formula
   desc "Magnetic Scrolls Interpreter"
   homepage "https://www.dettus.net/dMagnetic/"
-  url "https://www.dettus.net/dMagnetic/dMagnetic_0.28.tar.bz2"
-  sha256 "21f9c22e2a0650a8c84fe836093d443f4095dd60ba92e3d03f7309e2b7ec1e03"
+  url "https://www.dettus.net/dMagnetic/dMagnetic_0.29.tar.bz2"
+  sha256 "a980e35f85c9661fe0d98c670f9d6be56000da2bbc8b3e8e78697eac05ae5b47"
   license "BSD-2-Clause"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4d6970e081501b287f27119eeab1d5afdebacfdeb416d4f3e920cd3ad86e1e09" => :big_sur
-    sha256 "cf6672c79d6bb083382d7d5090c7b8f38ac3fad9cc955e47b7d441f3883d1fcd" => :arm64_big_sur
-    sha256 "f3198b2f700c0265ea488cb003bd0eebb17ef2438627a7d4afdc1317186c7d75" => :catalina
-    sha256 "164d9398a64684d8a81540ace3a022a178ef0802d62ee18372900130445c1104" => :mojave
+    sha256 "4e71323da4207dd754b6e7298cef93be779e1788460089a1ea5159383db3a602" => :big_sur
+    sha256 "7ce2e8df2b0a94e1f4f3b05e12d79b5660326110934d42c90628bb80766687bc" => :arm64_big_sur
+    sha256 "ca0509bc470f70a1cbefaa923ce7ae050588693505928be7e978d2690e7c2141" => :catalina
+    sha256 "f75e5bbd19aa1ae5272dc6bfdd7654a9c09e2a2dcc11cc9b58180f8ffd61acf2" => :mojave
   end
 
   def install
