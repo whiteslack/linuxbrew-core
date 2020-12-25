@@ -19,6 +19,8 @@ class GoAT111 < Formula
 
   deprecate! date: "2019-09-03", because: :unsupported
 
+  depends_on arch: :x86_64
+
   resource "gotools" do
     url "https://go.googlesource.com/tools.git",
         branch: "release-branch.go1.11"

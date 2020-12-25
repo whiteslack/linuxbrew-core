@@ -25,6 +25,7 @@ class LlvmAT7 < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on xcode: :build
+  depends_on arch: :x86_64
   depends_on "libffi"
 
   unless OS.mac?

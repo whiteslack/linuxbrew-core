@@ -20,6 +20,7 @@ class GhcAT86 < Formula
 
   depends_on "python@3.9" => :build
   depends_on "sphinx-doc" => :build
+  depends_on arch: :x86_64
 
   unless OS.mac?
     depends_on "m4" => :build
