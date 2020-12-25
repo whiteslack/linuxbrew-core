@@ -3,8 +3,8 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/bd/19/f4f58f26119ac93f7802ae469c080e3f239fb973e3626017edf08b0e8676/Sphinx-3.4.0.tar.gz"
-  sha256 "4dcde313801f23ea4789ac31e5405e240cb758b5d375804807f2f3cc3c396bfa"
+  url "https://files.pythonhosted.org/packages/4f/76/daa2e41de4e31788fc48c77d98e5113809f65b516b359503113e1b681dc0/Sphinx-3.4.1.tar.gz"
+  sha256 "e450cb205ff8924611085183bf1353da26802ae73d9251a8fcdf220a8f8712ef"
   license "BSD-2-Clause"
 
   livecheck do
@@ -13,11 +13,9 @@ class SphinxDoc < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "2a5be39e6dcfd6a92efb499cf9a907c52ff6e9abcbfc85d0f435229d2436a8ef" => :big_sur
-    sha256 "9e2c3e8c6debd88fbf6047f053ffd9d79c4ef5f10881469d60b02976b4832b6d" => :arm64_big_sur
-    sha256 "70d79cd283b76038bd5db9fed6224b1abb151ac63de13bef351405ca880f475e" => :catalina
-    sha256 "6f6224da547471ed23a921e50ce302b7a68ef6fab277d5f7a42d578e675dc27e" => :mojave
-    sha256 "08650dbe24aadc963442f17953b59473c0f19a35dc641aba2075bb71b3efbe2e" => :x86_64_linux
+    sha256 "16589db195a76745859112a11a52fc1a9166602ce323794f340cb7ce7a621f97" => :big_sur
+    sha256 "d1fc2ddacbf58bb484579af85977e4c0ecfa17a8e49efaaaf58bf0a306697a76" => :catalina
+    sha256 "b44e016572e77f0b856e193d8f413b7eca1ff2436ca3b4869eda769d6111902c" => :mojave
   end
 
   keg_only <<~EOS

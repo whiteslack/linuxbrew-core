@@ -4,6 +4,7 @@ class Pugixml < Formula
   url "https://github.com/zeux/pugixml/releases/download/v1.11.4/pugixml-1.11.4.tar.gz"
   sha256 "8ddf57b65fb860416979a3f0640c2ad45ddddbbafa82508ef0a0af3ce7061716"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,17 +13,16 @@ class Pugixml < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "fc356183abac92a705aa81a0288c772b0a782eff6c560f985be3fdf1b2cdeda7" => :big_sur
-    sha256 "f62581979fb2a0fbb08b34d18f1f3c9ff5d74803df513335c9cc4c574f79ca7b" => :arm64_big_sur
-    sha256 "54a49b15ed883ace3c368d80e3d5ffde04c3e4add7661679d2e310963e2231e8" => :catalina
-    sha256 "c5992a37c6e35161f8559151e04ab555f2f136c76f7b0a4af8cec1df90ac94ff" => :mojave
-    sha256 "89f0777612d355625ece740593a08957c86e27001233ceb4ca04fbfeb9ef866f" => :x86_64_linux
+    sha256 "b5907655e8cc2b492a94bf16429dc8f5bc291a6026bc66efc741cec5a7330878" => :big_sur
+    sha256 "2686199eb313f6e0dd1fabe17dad72e2887db87a91ece9a9941f985e6b708379" => :arm64_big_sur
+    sha256 "11822d841b3a4a1542078155e2f09ff78b06ae6cb486e0589296b1385dbf8269" => :catalina
+    sha256 "7980b0950e3aca862900ab1b167ce8ec5cfd41ceceddf43e52caa464640dc9c7" => :mojave
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", "-DBUILD_SHARED_LIBS=ON",
+    system "cmake", ".", "-DBUILD_SHARED_AND_STATIC_LIBS=ON",
                          "-DBUILD_PKGCONFIG=ON", *std_cmake_args
     system "make", "install"
   end

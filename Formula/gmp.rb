@@ -24,13 +24,18 @@ class Gmp < Formula
   uses_from_macos "m4" => :build
 
   def install
-    # Enable --with-pic to avoid linking issues with the static library
-    args = %W[--prefix=#{prefix} --enable-cxx --with-pic]
+    args = std_configure_args
+    args << "--enable-cxx"
 
-    if OS.mac?
+    # Enable --with-pic to avoid linking issues with the static library
+    args << "--with-pic"
+
+    on_macos do
       cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
-    elsif !OS.mac? && Hardware::CPU.intel?
+    end
+
+    on_linux do
       args << "--build=core2-linux-gnu"
       args << "ABI=32" if Hardware::CPU.is_32_bit?
     end

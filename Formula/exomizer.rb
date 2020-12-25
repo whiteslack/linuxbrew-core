@@ -19,6 +19,9 @@ class Exomizer < Formula
     sha256 "b4b63981c014d8978621e8125dd54efd3f8435a92fa8b7a654d28e24a012793e" => :x86_64_linux
   end
 
+  # custom license
+  disable! date: "2020-12-24", because: "custom license"
+
   def install
     cd "src" do
       system "make"
