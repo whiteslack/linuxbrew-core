@@ -3,18 +3,23 @@ class AwsGoogleAuth < Formula
 
   desc "Acquire AWS credentials using Google Apps"
   homepage "https://github.com/cevoaustralia/aws-google-auth"
-  url "https://github.com/cevoaustralia/aws-google-auth/archive/0.0.36.tar.gz"
-  sha256 "c880633b2813b3fd2312fd1301a8927ebc7b13c3405932bd0ec760cecfb7c780"
+  url "https://files.pythonhosted.org/packages/6c/cc/f4c6e51c6dfa2800f9c89c639786b61e766c07752385333374c5291510fe/aws-google-auth-0.0.36.tar.gz"
+  sha256 "2fae0f2f9963e0e3e99007adc23d679eb1f92f834da05ebf27435f48a8ae3765"
   license "MIT"
   revision OS.mac? ? 2 : 3
   head "https://github.com/cevoaustralia/aws-google-auth.git"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any
-    sha256 "67eb5983db407f9a4b8565a1e34837b0c8c3490b2e0d2d14f6154db86fd34c55" => :big_sur
-    sha256 "e37f10b43416e5d105d7f46ac44669b3e15dc19fe0f218ce709e32631ddee6d1" => :arm64_big_sur
-    sha256 "0dbd1d3d9ce7822dd3bde10fac663271e09a55a69727fe18d1be1816e40e1fdd" => :catalina
-    sha256 "a6f020f5835b11cb6650a7b6de520b7eca191548d2135460e3f8be1e4707e2b4" => :mojave
+    rebuild 1
+    sha256 "ad6d9d8de411b4c9e147be73169f1b39f8bca939e574cccbbfd968db3a56695f" => :big_sur
+    sha256 "dfe6620aae681364e57f5aeab387b5ede1218519a215f467cb953786e7f91b3b" => :arm64_big_sur
+    sha256 "d800cd512dad640afec75d8f5eae2c46a34b08775975a083248a2f012d8c7359" => :catalina
+    sha256 "b6a99e3575737f418496222fcdd3d3ef0dfe04cbf133437f56df5db72e9d595a" => :mojave
   end
 
   depends_on "freetype"

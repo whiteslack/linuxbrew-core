@@ -8,10 +8,11 @@ class CucumberCpp < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8748ea36f930107c5c0775a4ab6fab698ad402f6da0e76a574b2bd5b995b6fcc" => :big_sur
-    sha256 "5eaccab8b08ed6cde485074adf961c56b1c28423a8d14291a1ef3a8c3b37142b" => :catalina
-    sha256 "e0a19b065c490d83d944221b7860e91854f0ae5be3e13c844ded14ab4960cd3d" => :mojave
-    sha256 "7ed2bbcfa7e23ec2a547ef45ee19bad16cffb6a48383113e715bcd895f8b574c" => :x86_64_linux
+    rebuild 1
+    sha256 "f418f5fb249b81fb5842ca53352a6c74eb9870ffd653e4e9c74492642f5c9e15" => :big_sur
+    sha256 "390dca18b362d87115693bbd596bd536106e33e2a420212283ed111e3bd4d9e9" => :arm64_big_sur
+    sha256 "d0d6f87f685a4a21780b66f900007635eb8335be9b296963913cdac14dca12f6" => :catalina
+    sha256 "b86eb848c6a88b0934d755be34e314fe39bd6240da79ed7658c8946783c18e82" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -32,16 +33,11 @@ class CucumberCpp < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["ruby"].opt_bin
     ENV["GEM_HOME"] = testpath
     ENV["BUNDLE_PATH"] = testpath
-    if MacOS.version >= :mojave && MacOS::CLT.installed?
-      ENV.delete("CPATH")
-      ENV["SDKROOT"] = MacOS::CLT.sdk_path(MacOS.version)
-    elsif MacOS.version == :high_sierra
-      ENV.delete("CPATH")
-      ENV.delete("SDKROOT")
-    end
-    system "gem", "install", "cucumber", "-v", "3.0.0"
+
+    system "gem", "install", "cucumber", "-v", "5.2.0"
 
     (testpath/"features/test.feature").write <<~EOS
       Feature: Test
@@ -81,7 +77,7 @@ class CucumberCpp < Formula
         1 scenario \(1 passed\)
         3 steps \(3 passed\)
       EOS
-      assert_match expected, shell_output(testpath/"bin/cucumber")
+      assert_match expected, shell_output("#{testpath}/bin/cucumber --publish-quiet")
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

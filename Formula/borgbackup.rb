@@ -3,10 +3,9 @@ class Borgbackup < Formula
 
   desc "Deduplicating archiver with compression and authenticated encryption"
   homepage "https://borgbackup.org/"
-  url "https://files.pythonhosted.org/packages/dd/13/5313ccad7f76cd3d13b207e31ca6e3072ca00c0bf7d605f7e8e6bc409b0d/borgbackup-1.1.14.tar.gz"
-  sha256 "7dbb0747cc948673f695cd6de284af215f810fed2eb2a615ef26ddc7c691edba"
+  url "https://files.pythonhosted.org/packages/c9/4d/dd06d8787f8faa8c50a422abd9ba14be15ee0b5830e745033815c49d5313/borgbackup-1.1.15.tar.gz"
+  sha256 "49cb9eed98b8e32ae3b97beaedf94cdff46f796445043f1923fd0fce7ed3c2bc"
   license "BSD-3-Clause"
-  revision 2
 
   livecheck do
     url :stable
@@ -14,10 +13,10 @@ class Borgbackup < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "8fa69d333e97788e86016cf4d69a18e2e423d5176a9117ef65c16a9455c8d905" => :big_sur
-    sha256 "f9b5972744a1411afd6756135ea9d01fbd2e05b101a32a21e3be9cb0fc143ab9" => :catalina
-    sha256 "20cae900b7f125016276497ff08d9d67d23c74cfb0bd75b643775b02e9696628" => :mojave
+    sha256 "f947520a2800099bca60f8123095921405435a7424b85cbf0e9b071e4f751015" => :big_sur
+    sha256 "d985ac01e5ebdeb9eece5589f98eac62e5d91f58652e54062e92f5a1bbeda7df" => :arm64_big_sur
+    sha256 "7ed4740d804cc059161fc72699ca6414f83bf9d656677bc3f9743e743c050768" => :catalina
+    sha256 "f7eecc8b325130bf49bd86cb608b3ef124f04eaf0d3c7e8131baa8f0ee0659df" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -25,9 +24,15 @@ class Borgbackup < Formula
   depends_on "lz4"
   depends_on "openssl@1.1"
   depends_on "python@3.9"
+  depends_on "xxhash"
   depends_on "zstd"
 
   def install
+    ENV["BORG_LIBB2_PREFIX"] = Formula["libb2"].prefix
+    ENV["BORG_LIBLZ4_PREFIX"] = Formula["lz4"].prefix
+    ENV["BORG_LIBXXHASH_PREFIX"] = Formula["xxhash"].prefix
+    ENV["BORG_LIBZSTD_PREFIX"] = Formula["zstd"].prefix
+    ENV["BORG_OPENSSL_PREFIX"] = Formula["openssl@1.1"].prefix
     virtualenv_install_with_resources
   end
 
