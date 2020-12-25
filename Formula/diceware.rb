@@ -15,6 +15,7 @@ class Diceware < Formula
     sha256 "a509ee5a4669ed7ca0af8dd384f45ce7639221c471a937c899683f7aaee649f7" => :arm64_big_sur
     sha256 "135d84622bbe9328996ba5128e05190e23801b7802440409b80d1a4a50b7daba" => :catalina
     sha256 "42561d7b56413cdaed177753e1de2d2c9d7e882b36023e1fa112d19efc25de87" => :mojave
+    sha256 "98092bf62481b53a5397b2e27ad408ee6387d2a8dea5fa3889fcc25eea70a4a7" => :x86_64_linux
   end
 
   depends_on "python@3.9"
