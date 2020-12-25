@@ -17,6 +17,7 @@ class Pugixml < Formula
     sha256 "2686199eb313f6e0dd1fabe17dad72e2887db87a91ece9a9941f985e6b708379" => :arm64_big_sur
     sha256 "11822d841b3a4a1542078155e2f09ff78b06ae6cb486e0589296b1385dbf8269" => :catalina
     sha256 "7980b0950e3aca862900ab1b167ce8ec5cfd41ceceddf43e52caa464640dc9c7" => :mojave
+    sha256 "2cde282b6814239d453223fb3d80333470142618336e47b17ef4ab1fff167542" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
