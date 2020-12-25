@@ -13,6 +13,7 @@ class Shntool < Formula
     sha256 "a1be5a6c5cf7da02c26f1a2a04e2109c7752d55b2dbd30054d233fbb50640983" => :arm64_big_sur
     sha256 "b9978393fd387c12aa64ae33b653b790df8bb422f2d278c146071fa402de0e02" => :catalina
     sha256 "e7dfe8483a2c233a3bf6ce9838367a0a292c08a764afb1e156ca6cad537e9e31" => :mojave
+    sha256 "c47d00329611629b28ae53fb55f0a5b8d294ec1b91cd1f674319a9d61faedf7a" => :x86_64_linux
   end
 
   def install
