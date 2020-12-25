@@ -12,6 +12,7 @@ class Hiredis < Formula
     sha256 "d8e48f1d114c2522d9cdf6aed5b0cefb081db02f4bafa43aa6381f495e99c09f" => :arm64_big_sur
     sha256 "5f11389538e1c20397783e2aca46853b013468610d517f6e0e14f37160e0a3c4" => :catalina
     sha256 "9688a9f2a1adf2669c32785d9ca2354b4d79408234a444a21f864b5ecb86c28d" => :mojave
+    sha256 "c5382e0c5f2d32aa1f2198f4d9c3c1b7eb9d346decc1fd5a8740573758c56588" => :x86_64_linux
   end
 
   # remove in next release
