@@ -1,21 +1,18 @@
 class Shntool < Formula
   desc "Multi-purpose tool for manipulating and analyzing WAV files"
-  homepage "https://web.archive.org/web/20180903160820/etree.org/shnutils/shntool/"
-  url "https://web.archive.org/web/20180903160820/etree.org/shnutils/shntool/dist/src/shntool-3.0.10.tar.gz"
+  homepage "http://shnutils.freeshell.org/shntool/"
+  url "http://shnutils.freeshell.org/shntool/dist/src/shntool-3.0.10.tar.gz"
   mirror "https://www.mirrorservice.org/sites/download.salixos.org/x86_64/extra-14.2/source/audio/shntool/shntool-3.0.10.tar.gz"
   sha256 "74302eac477ca08fb2b42b9f154cc870593aec8beab308676e4373a5e4ca2102"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9454d69f59139dd015c7c414fd387016ed192fde5c9772470d3110be98fc8229" => :catalina
-    sha256 "3406dd2a363de42f9dab6d2e32e13b16357c6906ad552adb866c272f8dd1f5f2" => :mojave
-    sha256 "54203e7c0cf7a257ecc3cec107b55afd14b98edc9b8713082fbf6282eb863e38" => :high_sierra
-    sha256 "5548c0401df42faa7ade30e9c98656828864c3677836f72100aa80f4a92ff249" => :sierra
-    sha256 "910da256436f55ebf40c487ebd0e74da2979f01bf0adac83272b353c66ba99a8" => :el_capitan
-    sha256 "46d99776bb02d9721f30a6cb9b2c44293d3fbc6b4e3f522df869a7106b09a448" => :yosemite
-    sha256 "fa745e31b3c2aadb20d5c87f7175f00b3c5a39b6664ea0a9aa9d88d5767781c5" => :mavericks
-    sha256 "d1d999fc86c0dd29e9180c5bb18355378ab70bb94152c1fd952591e843a3beb1" => :x86_64_linux
+    rebuild 1
+    sha256 "2d6288006837305251858e7ff434646727104197329ac62a3c534ad7cbc50f68" => :big_sur
+    sha256 "a1be5a6c5cf7da02c26f1a2a04e2109c7752d55b2dbd30054d233fbb50640983" => :arm64_big_sur
+    sha256 "b9978393fd387c12aa64ae33b653b790df8bb422f2d278c146071fa402de0e02" => :catalina
+    sha256 "e7dfe8483a2c233a3bf6ce9838367a0a292c08a764afb1e156ca6cad537e9e31" => :mojave
   end
 
   def install

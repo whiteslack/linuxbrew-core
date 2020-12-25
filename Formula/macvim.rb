@@ -2,17 +2,17 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https://github.com/macvim-dev/macvim"
-  url "https://github.com/macvim-dev/macvim/archive/snapshot-166.tar.gz"
-  version "8.2-166"
-  sha256 "d9745f01c45fb2c1c99ce3b74bf1db6b888805bbb2d2a570bfb5742828ca601a"
+  url "https://github.com/macvim-dev/macvim/archive/snapshot-169.tar.gz"
+  version "8.2-169"
+  sha256 "3b5bd8631ada8566d7d575696fbe2e0df760f3cdd31c09b47980e3d62e523cc7"
   license "Vim"
-  revision 2
   head "https://github.com/macvim-dev/macvim.git"
 
   bottle do
-    sha256 "1b1d92000e321cf0a172c26965404c738be5ac68c51203ee34164152528bd67a" => :big_sur
-    sha256 "f2e611635742434ebfaffa952918ac44bbb7c2da40782304b49ee7d847ce62a9" => :catalina
-    sha256 "c2c4ffb3a206a59ad3ba17dc70e3a46b5cd25d79cb297732cf8a653018ce2059" => :mojave
+    sha256 "9c9acdacda5e069a2ca48c967c010e7c6d34bcca4c747ed1d22614e04943e1dd" => :big_sur
+    sha256 "0ff331045d0acd030595b49f9107e21cbcb59cf465639001da3fa7613b737865" => :arm64_big_sur
+    sha256 "7e03b1a4d69d54d39f6ff4270ac6482796a7c56852e40891f95b115686fc3f3f" => :catalina
+    sha256 "23b8818c9dec41aee05a3f743d312c12aa6a7d7eb6eb583be850b1685d53316f" => :mojave
   end
 
   depends_on xcode: :build
@@ -25,13 +25,6 @@ class Macvim < Formula
 
   conflicts_with "vim",
     because: "vim and macvim both install vi* binaries"
-
-  # Fix for Big Sur bug, remove in next version
-  # https://github.com/macvim-dev/macvim/issues/1113
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/bd6637/macvim/big_sur.patch"
-    sha256 "1d3737d664b39f902d22da392869c66397b6b5d8a420d1a83f34f9ffaf963c38"
-  end
 
   def install
     # Avoid issues finding Ruby headers
@@ -57,7 +50,8 @@ class Macvim < Formula
                           "--with-lua-prefix=#{Formula["lua"].opt_prefix}",
                           "--enable-luainterp",
                           "--enable-python3interp",
-                          "--disable-sparkle"
+                          "--disable-sparkle",
+                          "--with-macarchs=#{Hardware::CPU.arch}"
     system "make"
 
     prefix.install "src/MacVim/build/Release/MacVim.app"
