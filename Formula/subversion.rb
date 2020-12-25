@@ -130,7 +130,7 @@ class Subversion < Formula
       --without-berkeley-db
       --without-gpg-agent
       --without-jikes
-      PYTHON=#{Formula["python@3.8"].opt_bin}/python3
+      PYTHON=#{Formula["python@3.9"].opt_bin}/python3
       RUBY=#{ruby}
     ]
 
