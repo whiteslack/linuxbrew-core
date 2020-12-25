@@ -13,6 +13,7 @@ class PgpoolIi < Formula
     sha256 "5d9e9684a6889d139033d02927823fe34f23c8feb12b06f4570cf5028bc84d2d" => :big_sur
     sha256 "7b0245d2cfad6fdb47a8ae12a2c8f787cf917ae521244a42e9bdf79254f492f8" => :catalina
     sha256 "9847e3f4dfb8351c0e2d0e855b4cb3bd5beb0ea2d3237c544b82a150d0aacfeb" => :mojave
+    sha256 "8d76434fff8c2ca5aa6852f4d7fb2cd8c5f8b31b16fcf062ee19b47d0ff9c9df" => :x86_64_linux
   end
 
   depends_on "postgresql"
