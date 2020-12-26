@@ -11,6 +11,7 @@ class Htmldoc < Formula
     sha256 "0f9e6dc5e68e5684dcd531ef1a134982f29b1d1c27ac35947543d36675fe8d6a" => :arm64_big_sur
     sha256 "d5845962e26e0e164f4dab3425bdd7391b3e01f3d0d19fba643f8bc8f24f17c4" => :catalina
     sha256 "6aef5c1eaf4e4b77b6383a17078048aab90a8efb3936fae7ba1f11591b7161af" => :mojave
+    sha256 "05dbdf896e14a858d50e9c6d31cbf62a3967c8fa3bd960be393f6213f9d3a1d5" => :x86_64_linux
   end
 
   depends_on "jpeg"
