@@ -18,6 +18,7 @@ class TrashCli < Formula
     sha256 "5709ac7582a562b73ee9990da76d1e47eda1c9462de1b27c1002058a8bf4a95e" => :big_sur
     sha256 "181a25c6c47163b33789da438ddf5ed2f8b20be195a3ac1c2e4043b0a2ebcd90" => :catalina
     sha256 "c7cba34dc885096b61e2f3edb8ec473c625ae71342e42377e588a371ea475cdd" => :mojave
+    sha256 "d1a02d42b9a316c3a47ec96be695f36060c09160054f12d02ff1ac2e36d5cf8a" => :x86_64_linux
   end
 
   depends_on "python@3.9"
