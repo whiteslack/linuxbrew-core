@@ -4,7 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tar.xz"
   sha256 "991c3f8ac97992f3d308fefeb03a64db462574eadbff34ce8bc5bb583d9903ff"
   license "Python-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,11 +12,10 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 "1c4b459f6c4929f723275620e867cb600805c5590f2475ec91a7ee2675a69e27" => :big_sur
-    sha256 "7259620e42bf1fac17e2ddc3ef64467f448518b8368e7113304bdbde8cfc1011" => :arm64_big_sur
-    sha256 "367924e7be7a76f966acf68c0d909fb34cf8c22959a71769a6838c9bb35fbe87" => :catalina
-    sha256 "502d5df2a1d26d52e55f1e26e19408786d55275a67dd06481bb5622646ed7d99" => :mojave
-    sha256 "c9a210b5f1c7f642051ce3331b4259775d8e344407575bae669b0b28c0ea684f" => :x86_64_linux
+    sha256 "efbd809c802a77edc64c4cce04567b759b0a5a083bb9602d9b9a97fe707f2a2d" => :big_sur
+    sha256 "77260a737adf5f48c169d8bd80921bfa7541691e25dddd9c2b9cb7214c2912eb" => :arm64_big_sur
+    sha256 "bf8ef81a05a9790968de7b50dc1f9c5c0567a5872f23bbf11d2098cc68d0810d" => :catalina
+    sha256 "fc29320dc4807d2aaa70e559d434b44805ef55b72f91cfb18e8afc1e84eafe86" => :mojave
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -156,7 +155,8 @@ class PythonAT39 < Formula
     # even if homebrew is not a /usr/local/lib. Try this with:
     # `brew install enchant && pip install pyenchant`
     inreplace "./Lib/ctypes/macholib/dyld.py" do |f|
-      f.gsub! "DEFAULT_LIBRARY_FALLBACK = [", "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib',"
+      f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
+              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@1.1"].opt_lib}',"
       f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 

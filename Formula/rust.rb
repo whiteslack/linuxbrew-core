@@ -4,8 +4,14 @@ class Rust < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.48.0-src.tar.gz"
-    sha256 "0e763e6db47d5d6f91583284d2f989eacc49b84794d1443355b85c58d67ae43b"
+    if Hardware::CPU.arm?
+      url "https://static.rust-lang.org/dist/rustc-beta-src.tar.gz#1.49.0-beta"
+      sha256 "364fc8350d30f104595e458e51599369ffc5f796bb91b893372ba2631229963e"
+      version "1.48.0"
+    else
+      url "https://static.rust-lang.org/dist/rustc-1.48.0-src.tar.gz"
+      sha256 "0e763e6db47d5d6f91583284d2f989eacc49b84794d1443355b85c58d67ae43b"
+    end
 
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git",
@@ -16,6 +22,7 @@ class Rust < Formula
 
   bottle do
     sha256 "da85eda34441caa60b6a639e5fc4dd23705c8716b4c9c6384b84305e96e4bd8c" => :big_sur
+    sha256 "89d3f5672025a3b3004979f996f1c00b00a021e891fece6ec424dc65710485db" => :arm64_big_sur
     sha256 "52aa819637578a4ee9c75fdbc4c449b4d78c932294970d1e2480827d8c07dff0" => :catalina
     sha256 "edc2eff4e9253ddf0d3f7b5058ee1065d6db584849fe2fdee42930fe77e0a5ca" => :mojave
     sha256 "09de0edce034ec292639b17d2fd05792a557cd4c76acef108c6d34e8f8c82cb1" => :x86_64_linux
@@ -46,8 +53,13 @@ class Rust < Formula
   resource "cargobootstrap" do
     on_macos do
       # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.txt
-      url "https://static.rust-lang.org/dist/2020-11-19/cargo-1.48.0-x86_64-apple-darwin.tar.gz"
-      sha256 "ce00d796cf5a9ac8d88d9df94c408e5d7ccd3541932a829eae833cc8e57efb15"
+      if Hardware::CPU.arch == :arm64
+        url "https://static.rust-lang.org/dist/2020-12-23/cargo-beta-aarch64-apple-darwin.tar.gz"
+        sha256 "efbc0e72533d4ca7def9a985feef4b3e43d24f1f6792815bdba9125af1f8ecdf"
+      else
+        url "https://static.rust-lang.org/dist/2020-11-19/cargo-1.48.0-x86_64-apple-darwin.tar.gz"
+        sha256 "ce00d796cf5a9ac8d88d9df94c408e5d7ccd3541932a829eae833cc8e57efb15"
+      end
     end
 
     on_linux do
@@ -82,17 +94,15 @@ class Rust < Formula
     else
       args << "--release-channel=stable"
     end
-    # Cross-compile arm64 with x86_64 bootstrap compiler.
-    if Hardware::CPU.arch == :arm64
-      args << "--build=x86_64-apple-darwin"
-      args << "--host=aarch64-apple-darwin"
-      args << "--target=aarch64-apple-darwin"
-      system "./configure", *args
-      system "arch", "-x86_64", "make"
-    else
-      system "./configure", *args
-      system "make"
+
+    if Hardware::CPU.arm?
+      # Fix for 1.49.0-beta, remove when the stable version is released
+      inreplace "src/stage0.txt", "1.48.0", "beta"
+      inreplace "src/stage0.txt", "2020-11-19", "2020-12-23"
     end
+
+    system "./configure", *args
+    system "make"
     system "make", "install"
 
     resource("cargobootstrap").stage do
@@ -120,6 +130,19 @@ class Rust < Formula
       MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
       chmod 0444, dylib
     end
+  end
+
+  def caveats
+    s = ""
+
+    if Hardware::CPU.arm?
+      s += <<~EOS
+        This is a beta version of the Rust compiler for Apple Silicon
+        (rust 1.49.0-beta).
+      EOS
+    end
+
+    s
   end
 
   test do
