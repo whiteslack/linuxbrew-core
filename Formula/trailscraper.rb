@@ -3,19 +3,22 @@ class Trailscraper < Formula
 
   desc "Tool to get valuable information out of AWS CloudTrail"
   homepage "https://github.com/flosell/trailscraper"
-  url "https://github.com/flosell/trailscraper/archive/0.6.4.tar.gz"
-  sha256 "4cc20f257c8167ca0f48aab3f0f2e29e60bd8ab5316d3f16e88a35e5eab039cc"
+  url "https://files.pythonhosted.org/packages/ee/5f/67657d646b3a6fdd9059f72cf9f13cb9ed677d92c881bc83b67179c20178/trailscraper-0.6.4.tar.gz"
+  sha256 "3e076fc97addddfd8b64ea51a6cc9e2af9d9bffcc68423772ff6cb7b63a009d6"
   license "Apache-2.0"
   revision 1
+  head "https://github.com/flosell/trailscraper.git"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "51ef8b457ed906ac945456cb8ddf8ed7d579fa4b6f5cf40176f338b7a9eef48b" => :big_sur
-    sha256 "e19279e657744f18c75d5ef00c8fb24642907a69a31b78e681e5933c4cb9fe33" => :arm64_big_sur
-    sha256 "15da50f67ee3a4124d199c4a73c20b93408aa56eccd09643fb38f949113a3be5" => :catalina
-    sha256 "322bbbd8c5aa8274d63d8b5ad8662bf510820c9ba344c0cb166a6966a7d94dd7" => :mojave
-    sha256 "65f8da4cab666cf67e1456de2dfb835d186f7fde6a4c92981744546d8cfed5a8" => :high_sierra
-    sha256 "05624d09c0ef6c2345b2a6291d5ed7c8d7d29bf1ab807f63882d62d98680041f" => :x86_64_linux
+    rebuild 1
+    sha256 "fc521094a78420823394d7200f8add28f1249df1ccbb167db4c29d61905c418a" => :big_sur
+    sha256 "6ed1e90b5f3a38192b88e5fd9ae6e438136f549beef45aa5e077862517a3c406" => :catalina
+    sha256 "750acf081141fa8fc21c0bd4533d524b758f563bd2f63cbbac9f473294e84676" => :mojave
   end
 
   depends_on "python@3.9"

@@ -3,18 +3,21 @@ class YouGet < Formula
 
   desc "Dumb downloader that scrapes the web"
   homepage "https://you-get.org/"
-  url "https://github.com/soimort/you-get/archive/v0.4.1488.tar.gz"
-  sha256 "ac486cc3aeadd38b49114705d83f15b35dba6886d73ff446e292ba9e791b8330"
+  url "https://files.pythonhosted.org/packages/8e/f2/14b34acc03f2185fc24cba33da0d757d6c265149d7b7776c6940008a620e/you-get-0.4.1488.tar.gz"
+  sha256 "28aec2f15e86ea1cbf9900827ade41388aa3f1ac43b4ab49999bce48f37cf9c3"
   license "MIT"
   head "https://github.com/soimort/you-get.git", branch: "develop"
 
+  livecheck do
+    url :stable
+  end
+
   bottle do
     cellar :any_skip_relocation
-    sha256 "75cec9d34b80971178480e7f70b22b649352d447ed638cbadd82019302e8a860" => :big_sur
-    sha256 "69e528cec05ac7e0e13b29c1d900545b8c0330e0199fea93eb3c1db13abebb09" => :arm64_big_sur
-    sha256 "f51c08fdc10e1606ea6bd6f4f250f9c37369cf67ba87ce3ed04033af51994802" => :catalina
-    sha256 "e42333fd481b4199d39e5f613da991506ec14f3f23ef97b8695fa1060626adba" => :mojave
-    sha256 "8c7734f34a3eead9571286476e014871a1fbd8c2a1e4741166a4a8f4bcbafb41" => :x86_64_linux
+    rebuild 1
+    sha256 "b53a803d844d85abe7f6a14d3ef33fc8867595bc5f58e35f5c4229aaf04f7b8a" => :big_sur
+    sha256 "b3c8d2f9616e12c4c97896bdedd334ec69c206bbe521d187c226f4d7a5edcdca" => :catalina
+    sha256 "0a8e12599e2eaaf5eceddddb75c04cb3c83a37eb80fbe385023dd05774b11b17" => :mojave
   end
 
   depends_on "python@3.9"

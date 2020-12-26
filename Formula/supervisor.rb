@@ -3,16 +3,20 @@ class Supervisor < Formula
 
   desc "Process Control System"
   homepage "http://supervisord.org/"
-  url "https://github.com/Supervisor/supervisor/archive/4.2.1.tar.gz"
-  sha256 "9e930f1e85dfa2ab0a27e2b2b9843750f9898e3f91561bf396db4211a678ca2e"
+  url "https://files.pythonhosted.org/packages/11/35/eab03782aaf70d87303b21a67c345b953d3b59d4e3971a568c51e523f5c0/supervisor-4.2.1.tar.gz"
+  sha256 "c479c875853e9c013d1fa73e529fd2165ff1ecaecc7e82810ba57e7362ae984d"
+  head "https://github.com/Supervisor/supervisor.git"
+
+  livecheck do
+    url :stable
+  end
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0da8c958cc4f603b4dd4562125919cb9b616a2b211aceb7260f7f013fc256553" => :big_sur
-    sha256 "2ce8a131177ac00c0351c7a0cade73a9014e7625852d6685543bd3ff243057a3" => :arm64_big_sur
-    sha256 "87635be28d3a1a9590d6f89474f505c0085ca5d75af0a82b130ac56a53532c44" => :catalina
-    sha256 "c2a329eb52bb400fa004599f68c07db197714b60c0d184d06ba3440d597ed2b2" => :mojave
-    sha256 "7b7bc44b19740aac27c4311c198252effa56d6f8411d91ee7660158fb30172f7" => :x86_64_linux
+    rebuild 1
+    sha256 "0b6a17d29734b45552184775c3339bfb2e5af08a04716fe4252b6f3fd4e4421b" => :big_sur
+    sha256 "87d351372d24000edfe96cbc8090a085b4ff332aa4278bea7640071c95e22650" => :catalina
+    sha256 "2ec044dc73b2b99145b029fd7b95dcfc77f522a85abdad9d752f654e77091c00" => :mojave
   end
 
   depends_on "python@3.9"

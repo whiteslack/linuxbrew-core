@@ -3,18 +3,17 @@ class MpsYoutube < Formula
 
   desc "Terminal based YouTube player and downloader"
   homepage "https://github.com/mps-youtube/mps-youtube"
-  url "https://github.com/mps-youtube/mps-youtube/archive/v0.2.8.tar.gz"
-  sha256 "d5f2c4bc1f57f0566242c4a0a721a5ceaa6d6d407f9d6dd29009a714a0abec74"
-  license "GPL-3.0"
+  url "https://files.pythonhosted.org/packages/b1/8e/5156416119545e3f5ba16ec0fdbb2c7d0b57fad9e19ee8554856cd4a41ad/mps-youtube-0.2.8.tar.gz"
+  sha256 "59ce3944626fbd1a041e1e1b15714bbd138ebc71ceb89e32ea9470d8152af083"
+  license "GPL-3.0-or-later"
   revision OS.mac? ? 11 : 12
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b9077de1d446678ff5a91d341257636a8c6b59e818b1843fc1f7f14a3a568718" => :big_sur
-    sha256 "18d91d027af3797a33a1dce5cd5677045539a1c9664fd5d1e70b000f3baa0298" => :catalina
-    sha256 "51c856bc1f5cdfe4b71c8315277d17fdfb3202afcc20c0816a1c884b14b10fde" => :mojave
-    sha256 "812e64456b7e8cce5ede6fb043c904d78d6b16c8d92c8d33f620b7b85ac10984" => :high_sierra
-    sha256 "8362c8addee6af7b20d161ffddfa3e6b3ebb865a7f4999ba3c02ae29e36c6886" => :x86_64_linux
+    rebuild 1
+    sha256 "685285c44e0ee261c44db9203514028ba35eb8fb490e9688afa90ea1be76d40b" => :big_sur
+    sha256 "9142932f01ae55a253513a89754b4a9e42219d3116b8dffa4188a3a60f3c66a5" => :catalina
+    sha256 "2da76eead581d961641ee9a2daaa8be2357747400d0f75d3c8a490b914896972" => :mojave
   end
 
   depends_on "mplayer"
