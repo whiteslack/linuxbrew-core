@@ -19,6 +19,7 @@ class Statik < Formula
     sha256 "81f259b408e8b6f0aa58081f1960c4539be55cef2dfca1ba1d002443e01f1cc6" => :big_sur
     sha256 "d9e13372b0e5ef1cd7b61da5ac6dbdaddf98faec271058af493997450b400850" => :catalina
     sha256 "95732042042a451de5f590b665414c7fb92e80f2061f012600258a21b1e078db" => :mojave
+    sha256 "3f0515e235476d3ac89a23a4b9eca090d362a6b56dd1f086f9fdc54bb9aec8e6" => :x86_64_linux
   end
 
   depends_on "libpq"
