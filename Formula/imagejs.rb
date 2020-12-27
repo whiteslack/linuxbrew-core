@@ -1,13 +1,19 @@
 class Imagejs < Formula
   desc "Tool to hide JavaScript inside valid image files"
-  homepage "https://jklmnn.de/imagejs/"
+  homepage "https://github.com/jklmnn/imagejs"
   url "https://github.com/jklmnn/imagejs/archive/0.7.2.tar.gz"
   sha256 "ba75c7ea549c4afbcb2a516565ba0b762b5fc38a03a48e5b94bec78bac7dab07"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
   head "https://github.com/jklmnn/imagejs.git"
+
+  livecheck do
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     cellar :any_skip_relocation
+    sha256 "7b9812855ddca5e1553eed1e613a840642d01fbd35e5c5558610a7a96f7142a6" => :big_sur
     sha256 "2e758f8cb396b7dde6e80ff4115798122739418868b36d05a19231ff103c3028" => :catalina
     sha256 "4129ad096d0f6c28d40dd7e99749eaaa519b08db6bf708bea9b97c56cb45f6db" => :mojave
     sha256 "5abd3ddcc69f1d44205b5f66b01850c5469cc982643711f3a37f13f7bd0d649b" => :high_sierra

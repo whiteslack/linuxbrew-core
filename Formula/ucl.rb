@@ -14,16 +14,25 @@ class Ucl < Formula
     cellar :any_skip_relocation
     rebuild 1
     sha256 "91ce0597dc8e648e4ee0d0caaa30bceb5f569acc90634d88fa5e7859f2ae682a" => :big_sur
+    sha256 "ef63a86669c63e486c3682494a93c9db453a33089a2a71398efb8e5e26cf5e44" => :arm64_big_sur
     sha256 "116db1f8157bf88831fece730fb3e6fa82420d53c29b032afd63b979df42b386" => :catalina
     sha256 "89c37d38b41d5107f85c0880eb1599c885dafc2a7150a378c645b3fbe1f0e5ef" => :mojave
     sha256 "229f2ce2382f417ddf115d9789ef978568ceb787e349f3694aa8ff15bd5500f0" => :x86_64_linux
   end
+
+  depends_on "automake" => :build
 
   def install
     # Workaround for ancient ./configure file
     # Normally it would be cleaner to run "autoremake" to get a more modern one,
     # but the tarball doesn't seem to include all of the local m4 files that were used
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Workaround for ancient config.sub files not recognising aarch64 macos.
+    # As above, autoremake would be nicer, but that does not work.
+    %w[config.guess config.sub].each do |fn|
+      cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}",
+         "acconfig/#{fn}"
+    end
 
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
