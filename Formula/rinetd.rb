@@ -17,6 +17,7 @@ class Rinetd < Formula
     sha256 "1c12b89085411d90b1ee003b06f64208235210e01ad1cd940706d7663bd2dbce" => :big_sur
     sha256 "7f4dd364eba5c14a1de1901b9ec08d072165d308110912838127d1fd4e293732" => :catalina
     sha256 "f2afbf352dcf6cd00b5636ca486f0d8542e4af3d047e144e0ba409c6f828ffcd" => :mojave
+    sha256 "0f1954d269467e92cf6535857cd95898432d3238adeef813b572a4e519e34156" => :x86_64_linux
   end
 
   def install
