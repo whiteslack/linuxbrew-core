@@ -1,8 +1,8 @@
 class Hatari < Formula
   desc "Atari ST/STE/TT/Falcon emulator"
   homepage "https://hatari.tuxfamily.org"
-  url "https://download.tuxfamily.org/hatari/2.3.0/hatari-2.3.0.tar.bz2"
-  sha256 "bf48161903930f6470eca1d9c293f51b09b8c54695f5ee213af141316253b8a5"
+  url "https://download.tuxfamily.org/hatari/2.3.1/hatari-2.3.1.tar.bz2"
+  sha256 "44a2f62ca995e38d9e0874806956f0b9c3cc84ea89e0169a63849b63cd3b64bd"
   license "GPL-2.0-or-later"
   head "https://git.tuxfamily.org/hatari/hatari.git"
 
@@ -13,10 +13,10 @@ class Hatari < Formula
 
   bottle do
     cellar :any
-    sha256 "0baa34a4ce8960b24721e9423b9b3cf37c221a7ccba2aee3f948ecbf453daeea" => :big_sur
-    sha256 "e7c5b6bfc5fe993acf0965cf8ba9ee9800ad1134dcc6fd1bacc302cdb8a3dd46" => :arm64_big_sur
-    sha256 "e6bfde29e08aa400d154cdab01046f54d585c74355dc1c81d3c42d4699df9c63" => :catalina
-    sha256 "b645bf65c98e346c1ba31d8d4b2d04ea3e51ca0f602d57382746fe820f8b860e" => :mojave
+    sha256 "485738be593ab647a5543878cf748d4602f9123b053fef63672f31a271009700" => :big_sur
+    sha256 "8606d3d0c17b73205030593e2b2a3cd0ea1a87fbcb7998b2d84bba14e67957f1" => :arm64_big_sur
+    sha256 "9137d6022e24772be5ef1af60ecd2fc9441a690cea63cd9509b3c9619a88d303" => :catalina
+    sha256 "c88fc0f38bb911d3d7ef419a176118bfa3de9f3e9db4b1ab8c3d1644fe75c039" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -27,8 +27,8 @@ class Hatari < Formula
 
   # Download EmuTOS ROM image
   resource "emutos" do
-    url "https://downloads.sourceforge.net/project/emutos/emutos/0.9.10/emutos-512k-0.9.10.zip"
-    sha256 "773bbbfc418827d863c313c4f1d3c73ef3d296c5f23b4d00ee4f38f080a9c255"
+    url "https://downloads.sourceforge.net/project/emutos/emutos/1.0.1/emutos-512k-1.0.1.zip"
+    sha256 "96c698aa0fc0f51ecdb0f8b53484df9de273215467b5de3f44d245821dff795e"
   end
 
   def install

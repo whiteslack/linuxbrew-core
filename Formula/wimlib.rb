@@ -3,6 +3,8 @@ class Wimlib < Formula
   homepage "https://wimlib.net/"
   url "https://wimlib.net/downloads/wimlib-1.13.3.tar.gz"
   sha256 "8a0741d07d9314735b040cea6168f6daf1ac1c72d350d703f286b118135dfa7e"
+  license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://wimlib.net/downloads/"
@@ -11,11 +13,10 @@ class Wimlib < Formula
 
   bottle do
     cellar :any
-    sha256 "614a97547be188f045804df374d629d78f47949b0987327531802839edc25ff9" => :big_sur
-    sha256 "cca83d6932d6acad1449a9e55509868e7e403b1b360e1da34ad5d4e1900def87" => :catalina
-    sha256 "edeeaa5d20b4612eb24252ef825cec5c4a9c6e36d31f93d8901f6575bffeaeeb" => :mojave
-    sha256 "cc317323e8e2a95cf69518cb6257ae2de1bd548b8e76c3c404e057cfc27bdcf6" => :high_sierra
-    sha256 "af3416aa610e9c169575cb6e89d1a42bc19c6cf2f0e7a794d70064e43962e4c2" => :x86_64_linux
+    sha256 "2e20aabc071c0ab510538f393a13d62db0c5206d77c059be32363b67bb4fea69" => :big_sur
+    sha256 "afd742c76098123654e4e7a41b94097c3d58b959ee4205a29eb1c5f4793bee62" => :arm64_big_sur
+    sha256 "4dcc975143838b793a68e5e02ad14d08836c9cf2e89601af962105ed13b82a99" => :catalina
+    sha256 "cf8c8cb2b75f5afdaaf9468967fd04895ef2a0cead7ce14ff403c95f6fd073dd" => :mojave
   end
 
   depends_on "pkg-config" => :build
