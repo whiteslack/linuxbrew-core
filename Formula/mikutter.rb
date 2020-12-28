@@ -4,7 +4,7 @@ class Mikutter < Formula
   url "https://mikutter.hachune.net/bin/mikutter-4.1.1.tar.gz"
   sha256 "4cce3a4770a0d9a2691d21e3379fe616797e583a47273d69d1ec44f48b98836d"
   license "MIT"
-  revision 1
+  revision 2
   head "git://mikutter.hachune.net/mikutter.git", branch: "develop"
 
   livecheck do
@@ -14,17 +14,16 @@ class Mikutter < Formula
 
   bottle do
     cellar :any
-    sha256 "05602cf2baf13aa8fc70515b3270e8c3ef35fa5ff14a17faf3ce0314b2fa991a" => :big_sur
-    sha256 "33fed263ea13d392d90a59acc17318e4c663506d653b544e8921845a519c0838" => :arm64_big_sur
-    sha256 "7c9175012fdf291829d0de67195189c260f24691cf8131d9e093647221c33a8f" => :catalina
-    sha256 "354323253bbb46781049fd442fd286c94d0b0195f0d796f05882cdeb6747861e" => :mojave
-    sha256 "889255fb6180d661537363cd855dd388ff1cb478fff879d061c9f86db28020f4" => :x86_64_linux
+    sha256 "28bbc7b323d3ecdaf288c71e469192475ecd331518568af06d62035e7f4c1577" => :big_sur
+    sha256 "1a3ad524040a6b2f1a9328f231c51f49689731b419650c211a816d144baa3232" => :arm64_big_sur
+    sha256 "81343393fd8217ae7ce465bc06965b7ecaf218fc8cab32f58fa5f29973c10ff3" => :catalina
+    sha256 "b7c86be22b9559edc1ef689bb4d4470dda8083c90e7218165b67b009418411e5" => :mojave
   end
 
   depends_on "gobject-introspection"
   depends_on "gtk+"
   depends_on "libidn"
-  depends_on "ruby@2.6"
+  depends_on "ruby@2.7"
 
   uses_from_macos "xz"
 
@@ -228,14 +227,14 @@ class Mikutter < Formula
     (lib/"mikutter").install "plugin"
     libexec.install Dir["*"]
 
-    ruby_series = Formula["ruby@2.6"].any_installed_version.major_minor
+    ruby_series = Formula["ruby@2.7"].any_installed_version.major_minor
     env = {
       DISABLE_BUNDLER_SETUP: "1",
       GEM_HOME:              HOMEBREW_PREFIX/"lib/mikutter/vendor/ruby/#{ruby_series}.0",
       GTK_PATH:              HOMEBREW_PREFIX/"lib/gtk-2.0",
     }
 
-    (bin/"mikutter").write_env_script Formula["ruby@2.6"].opt_bin/"ruby", "#{libexec}/mikutter.rb", env
+    (bin/"mikutter").write_env_script Formula["ruby@2.7"].opt_bin/"ruby", "#{libexec}/mikutter.rb", env
     pkgshare.install_symlink libexec/"core/skin"
 
     # enable other formulae to install plugins
