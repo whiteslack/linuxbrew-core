@@ -4,7 +4,7 @@ class Libxslt < Formula
   url "http://xmlsoft.org/sources/libxslt-1.1.34.tar.gz"
   sha256 "98b1bd46d6792925ad2dfe9a87452ea2adebf69dcb9919ffd55bf926a7f93f7f"
   license "X11"
-  revision 1 unless OS.mac?
+  revision OS.mac? ? 1 : 2
 
   livecheck do
     url "http://xmlsoft.org/sources/"
@@ -13,12 +13,10 @@ class Libxslt < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4d8bbc4930065bfae260d355421894d1efbbe652b0db616b717885c4bf3bf1f2" => :big_sur
-    sha256 "7642592b795c0b76ea90d1c205bafa13c053c1b212fd8fb7c61594d858137784" => :arm64_big_sur
-    sha256 "cbadecf3186f45754220dff4cbdfbb576882a211d615b52249a4c9d8ba4d7c3a" => :catalina
-    sha256 "6feb1b8d57dd0d8b651733720d4dac728d2e27cf8c9fa9f88e60612fe0a0c882" => :mojave
-    sha256 "733c15b756070866d08196dcd5eef9facea1ce98d9c233cd6bf73fa426e0d062" => :high_sierra
-    sha256 "c16054b828e41ac85f98e50ca2a8c086a5b477feef554d12d286a2103471967d" => :x86_64_linux
+    sha256 "fc4a9d38d4d9f1eddeae21590da5e2b83efa09746aac3b88782f649ce11e7ab8" => :big_sur
+    sha256 "8ec4882a50963dc9e2fd75d6ef9ad8758f8471d8d4fe6acd2f1ca70e5b855f84" => :arm64_big_sur
+    sha256 "00b65e03cb4e10b0a5fc325afe63c7fb227bd5bb74e91d8832c70c040f200aa4" => :catalina
+    sha256 "61161548ecff81c00db284f921f7435ac1ae2395d1feead4d207caf5c62edcba" => :mojave
   end
 
   head do
@@ -31,6 +29,7 @@ class Libxslt < Formula
 
   keg_only :provided_by_macos
 
+  depends_on "libgcrypt"
   depends_on "libxml2"
 
   def install
@@ -39,8 +38,8 @@ class Libxslt < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          ("--without-crypto" unless OS.mac?),
                           "--without-python",
+                          "--with-crypto",
                           "--with-libxml-prefix=#{Formula["libxml2"].opt_prefix}"
     system "make"
     system "make", "install"
@@ -55,5 +54,15 @@ class Libxslt < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/xslt-config --version")
+    (testpath/"test.c").write <<~EOS
+      #include <libexslt/exslt.h>
+      int main(int argc, char *argv[]) {
+        exsltCryptoRegister();
+        return 0;
+      }
+    EOS
+    flags = shell_output("#{bin}/xslt-config --cflags --libs").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags, "-lexslt"
+    system "./test"
   end
 end

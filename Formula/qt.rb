@@ -20,6 +20,7 @@ class Qt < Formula
   bottle do
     cellar :any
     sha256 "ac22ab5828d894518e42f00e254f1e36d5be4e5f3f1c08b3cd49b57819daaf2d" => :big_sur
+    sha256 "049a78d3f84586a28d9d035bc5ff1a677b0dd9bd8c81b5775919591cde99f258" => :arm64_big_sur
     sha256 "51ab78a99ff3498a236d15d9bed92962ddd2499c4020356469f7ab1090cf6825" => :catalina
     sha256 "25c4a693c787860b090685ac5cbeea18128d4d6361eed5b1bfed1b16ff6e4494" => :mojave
     sha256 "7aa522535cdf682145668c193a89b59128b3cfb8f724af63e093cd692c422ed0" => :x86_64_linux
@@ -68,6 +69,16 @@ class Qt < Formula
     sha256 "fa99c7ffb8a510d140c02694a11e6c321930f43797dbf2fe8f2476680db4c2b2"
   end
 
+  # Patch for qmake on ARM
+  # https://codereview.qt-project.org/c/qt/qtbase/+/327649
+  if Hardware::CPU.arm?
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/9dc732/qt/qt-split-arch.patch"
+      sha256 "36915fde68093af9a147d76f88a4e205b789eec38c0c6f422c21ae1e576d45c0"
+      directory "qtbase"
+    end
+  end
+
   def install
     # Workaround for disk space issues on github actions
     # https://github.com/Homebrew/linuxbrew-core/pull/19595
@@ -86,7 +97,6 @@ class Qt < Formula
       -nomake tests
       -pkg-config
       -dbus-runtime
-      -proprietary-codecs
     ]
 
     if OS.mac?
@@ -103,6 +113,15 @@ class Qt < Formula
       args += %w[-skip qtwebengine]
       args -= ["-proprietary-codecs"]
       args << "-no-sql-mysql"
+    end
+    if OS.mac?
+      if Hardware::CPU.arch == :arm64
+        # Temporarily fixes for Apple Silicon
+        args << "-skip" << "qtwebengine" << "-no-assimp"
+      else
+        # Should be reenabled unconditionnaly once it is fixed on Apple Silicon
+        args << "-proprietary-codecs"
+      end
     end
 
     system "./configure", *args
@@ -134,10 +153,19 @@ class Qt < Formula
   end
 
   def caveats
-    <<~EOS
+    s = <<~EOS
       We agreed to the Qt open source license for you.
       If this is unacceptable you should uninstall.
     EOS
+
+    if Hardware::CPU.arm?
+      s += <<~EOS
+
+        This version of Qt on Apple Silicon does not include QtWebEngine
+      EOS
+    end
+
+    s
   end
 
   test do
@@ -162,6 +190,9 @@ class Qt < Formula
         return 0;
       }
     EOS
+
+    # Work around "error: no member named 'signbit' in the global namespace"
+    ENV.delete "CPATH"
 
     system bin/"qmake", testpath/"hello.pro"
     system "make"
