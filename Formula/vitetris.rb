@@ -12,6 +12,7 @@ class Vitetris < Formula
     sha256 "802182254bcd3d143d7499b9ed0df276958aac04af0728dafa1f337a2789fb45" => :arm64_big_sur
     sha256 "618e1eb2f8e9d70d3e7f6593ae58615f8d2217faa512af717d52b62cb4d5bc26" => :catalina
     sha256 "316f0e559e519a2a44e6e3fff6298cd138f7df3e62372a07f6b03fd7d5bf650e" => :mojave
+    sha256 "e82e15ba131eceee51f028442f5bb9e210a287332c9e66b1c89dee9fe2493686" => :x86_64_linux
   end
 
   def install
