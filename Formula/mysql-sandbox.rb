@@ -18,6 +18,7 @@ class MysqlSandbox < Formula
     sha256 "7534bbd546393a62cfd0b6bf5022973094743219dee948d004e790b162152edb" => :arm64_big_sur
     sha256 "0b01929ca2d5a53f9ea2c18dfcef7f4468b5d625ba75dcfcafe5f74ab8954bf6" => :catalina
     sha256 "dc52de83d9b8f7d85273c64665a80165a8d13e8e4654a0655017d3453fac97ed" => :mojave
+    sha256 "1770bcbb706b2c1601b7a30731758af6a7b085be37f64c429ad4fda481733a44" => :x86_64_linux
   end
 
   uses_from_macos "perl"
