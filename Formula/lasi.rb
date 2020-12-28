@@ -16,6 +16,7 @@ class Lasi < Formula
     sha256 "e00c7b114025b62a0666b5fe26603b48b4a2592f4e11c1cba044bf9b2ffc913f" => :big_sur
     sha256 "2c29f3bef5230641352714e4dee8bca0278f45bd22928c1908b696821d5b8261" => :catalina
     sha256 "fa986f8628b3e9914b46ab430d1f8105d1e83e70857c5e41e69c1fa022c16064" => :mojave
+    sha256 "576e11d240a9d92223890d998076c70fb6bbb3f628f1181d2c8e7e826a066954" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
