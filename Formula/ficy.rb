@@ -18,6 +18,7 @@ class Ficy < Formula
     sha256 "586d692ab7b64ad5805d51280e78ef997bf0ad2ebd1db2ed57ddc05b126f950b" => :arm64_big_sur
     sha256 "9974dd8c30bcfe482222a8e6f4040c6c5ccb21c7ef6b893dbbf3033f7e5a85ab" => :catalina
     sha256 "01d1a72a131cb19375bc8a068a59759d3207a60c84a4772cd8d52641ae1f8b8e" => :mojave
+    sha256 "444ee03e04226f979f00d81206a21a58c190a5605680a2a3b8012ab04a82e851" => :x86_64_linux
   end
 
   def install
