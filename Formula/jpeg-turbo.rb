@@ -17,6 +17,7 @@ class JpegTurbo < Formula
     sha256 "ed33cdd98575680b68055415bc8416e4ff84cb5a458e65924027ef1726e37261" => :arm64_big_sur
     sha256 "30d3f9a97040a6070c5bf183e4ae5e2f7f7cb1a233a0c987e5cb67f82939c4ad" => :catalina
     sha256 "4b087792a6794f715924c735882adb54314da0e2927cd810b0449e0ac061f095" => :mojave
+    sha256 "47e8a6175abdc6c45f531b219160c680c1155f6e75a41254434ca7f062f0c7b8" => :x86_64_linux
   end
 
   keg_only "libjpeg-turbo is not linked to prevent conflicts with the standard libjpeg"
