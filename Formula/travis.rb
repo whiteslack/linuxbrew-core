@@ -11,6 +11,7 @@ class Travis < Formula
     sha256 "d1ca463037b159e2f8053f42fe40501f1f9782ed0372ab2ed615a6534dac19b0" => :arm64_big_sur
     sha256 "5fc09b846132893e34c32ae7d2e197a013dbcf7e45bb4ea94071bbf7f5ef8396" => :catalina
     sha256 "605b7d21dedd57046d5a02bb06e88162ef90384d3bf54f7236388f83a19fb7b8" => :mojave
+    sha256 "c4f0bd0e7973adf0f954cbd99157b0a223869e466049225e7aa21e75f201c8b3" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
