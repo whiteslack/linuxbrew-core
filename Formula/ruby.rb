@@ -1,8 +1,8 @@
 class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.2.tar.xz"
-  sha256 "1b95ab193cc8f5b5e59d2686cb3d5dcf1ddf2a86cb6950e0b4bdaae5040ec0d6"
+  url "https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.0.tar.xz"
+  sha256 "68bfaeef027b6ccd0032504a68ae69721a70e97d921ff328c0c8836c798f6cb1"
   license "Ruby"
 
   livecheck do
@@ -11,12 +11,10 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 "39e7896f6b1c365dcff147f41ca2072d901b4edadb16e6d9e8cd7a6084be9e04" => :big_sur
-    sha256 "1914e3513c5b58f5362be4bb41af89c6e8dc661fe1d40bfad823d0bdb2529f62" => :arm64_big_sur
-    sha256 "c5c8fef5a6068f0657558662aaf83abd21d4d456f2bf5f5152d932dae09ab3fd" => :catalina
-    sha256 "0c46013234250f1bea09127fa33899a51bbae47109dc9eb3ac6f883ab394e43f" => :mojave
-    sha256 "ea7555713b598bb8c21a1af1554658c65ca8e9368f663a44540343122008afc3" => :high_sierra
-    sha256 "57646a5fe27b89464990921e85773fba854fda0d2fdd17c24f2a3c303d6cea6d" => :x86_64_linux
+    sha256 "481d432636b34cf494849808415e6311c57b898404f9eef91a7c9e540077abdb" => :big_sur
+    sha256 "16813d6b4a821c6f97b14f97a08de10219b07d5d67b27b2b03c12a5d901290a5" => :arm64_big_sur
+    sha256 "8ac76da7189d330564486386b5f420faddc6eca602e9d0bd62aaaf6305e40947" => :catalina
+    sha256 "1e6a2b72bdf846f56df42e6b8e5f19376190bb04852d67d46f4b9602ed9b8678" => :mojave
   end
 
   head do
@@ -31,14 +29,15 @@ class Ruby < Formula
   depends_on "openssl@1.1"
   depends_on "readline"
 
+  uses_from_macos "libffi"
   uses_from_macos "zlib"
 
   # Should be updated only when Ruby is updated (if an update is available).
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https://rubygems.org/rubygems/rubygems-3.1.4.tgz"
-    sha256 "d8030019d86d60469d3f4f48b7cfcd724b184157ac2881a5bec4394d9cd93f7d"
+    url "https://rubygems.org/rubygems/rubygems-3.2.3.tgz"
+    sha256 "a15dd7cd471a5fee2b6a36cf855ac2952a64d46629cd628b1a52c57bcebf52df"
   end
 
   def api_version

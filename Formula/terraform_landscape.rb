@@ -4,15 +4,13 @@ class TerraformLandscape < Formula
   url "https://github.com/coinbase/terraform-landscape/archive/v0.3.3.tar.gz"
   sha256 "8594948ebfc0d4f311a2f0a2261a0397b190500f33492c5bf647b3e07b8b625d"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b1cd673262c489afeee5919fc33d4897cbda66974454d40f1b66dcb587dd3895" => :big_sur
-    sha256 "c6f513db43d9809fe8ff9cb33f261e57ccafc41068118719fbbe262b8e24c4a6" => :arm64_big_sur
-    sha256 "e621a330795fc10591b1eccb2048f64b10d38564a2c5cb21823f195fed768239" => :catalina
-    sha256 "c364081610b7d9de7913c77ed10368f843b6c0dfa5c8a19ad069da9594007c7c" => :mojave
-    sha256 "ed113c64ee8bbcf265633ae8b6d5839e2a4b91d003247e42c71b8ff7b6c36cc2" => :high_sierra
-    sha256 "9710b576f22eb67387e18457dcd54929400f156764489f98f425592fa6eab075" => :x86_64_linux
+    sha256 "dfcaccd99f2866de1de46bc0e87a03f0a6dc4ea7c432dd249617047c2f666a22" => :big_sur
+    sha256 "9b65ee51d8262be5ef5c5cfc3b20edc986a4a9f3e8efd2eb01fcc0d77953cc93" => :catalina
+    sha256 "d0c0c1a888e7cb90db13fab12b1a652dcb9ea9104c26bfe2d2bd45f655d6a0f4" => :mojave
   end
 
   depends_on "ruby"
@@ -45,6 +43,13 @@ class TerraformLandscape < Formula
   resource "treetop" do
     url "https://rubygems.org/gems/treetop-1.6.10.gem"
     sha256 "67df9f52c5fdeb7b2b8ce42156f9d019c1c4eb643481a68149ff6c0b65bc613c"
+  end
+
+  # Fix Ruby 3 syntax errors
+  # https://github.com/coinbase/terraform-landscape/pull/118
+  patch do
+    url "https://github.com/coinbase/terraform-landscape/commit/29b07f3c0a23e00b10d8ea3ed018a1cb5805689e.patch?full_index=1"
+    sha256 "ea651dc182bbd4cfddfbec098d641657097270eceb0c056a38a0f34286ef1144"
   end
 
   def install
