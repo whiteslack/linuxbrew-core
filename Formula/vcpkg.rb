@@ -9,10 +9,11 @@ class Vcpkg < Formula
 
   bottle do
     cellar :any
-    sha256 "5d02a65c2f0d49ee6af1b6af90a3daa5fbabf62c8b1552d18ae10c85eb6cba1f" => :big_sur
-    sha256 "585cc3fd22497deca02ec61dd63b14653fcb59258f14f3313110d323f240102d" => :catalina
-    sha256 "0e5f3a484461879e358301f2b3e26d26fbd726d5d0495e57c934ecab99e189a7" => :mojave
-    sha256 "79a09d5626c2dc3230e03d412b27762531ae7d7a223653a29666a93d30acdd43" => :high_sierra
+    rebuild 1
+    sha256 "b0eeafb5709891c77ab0b05e8b6ce6977b72d30651869dfba98f6b501048fbc3" => :big_sur
+    sha256 "9dcff0e796b3e9b34dd365e79e114a862bc297b289a64703698badf5a9b84cac" => :arm64_big_sur
+    sha256 "37195113f690360e2e6efd0f4657f5b0e60f4a65e2c37ee25558bf8488d1aeb8" => :catalina
+    sha256 "f1c8ef840126a72be1ed20a9f032bcfe25fdf4c30f3adb1da0e0905d7075a8d7" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -23,6 +24,13 @@ class Vcpkg < Formula
     fails_with :clang do
       cause "'file_status' is unavailable: introduced in macOS 10.15"
     end
+  end
+
+  # build fix for arm
+  # remove in next release
+  patch do
+    url "https://github.com/microsoft/vcpkg/commit/7f328aa.patch?full_index=1"
+    sha256 "afe40ee3c294b85f062dc1598ff0cd7ae4f550336ac0b13f2a4f0226c50c501e"
   end
 
   def install
