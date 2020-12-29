@@ -21,6 +21,7 @@ class ImagemagickAT6 < Formula
     sha256 "00123561bba2820333daee9641413c1d39be34bf2fe7992960a76dc09620a253" => :arm64_big_sur
     sha256 "0e46cb8383bdf8530ae5d4068c83ed4aba25404b689a690d4b66a664a1b1068b" => :catalina
     sha256 "30dfde2132f41adae7c0bab6fe6ee4a431a0bcb6db2a6774c7d227231bb3b9ab" => :mojave
+    sha256 "9205348ff1ced87dcde836ad344c233860ab4798c9d112d43b3210d9a3beda24" => :x86_64_linux
   end
 
   keg_only :versioned_formula
