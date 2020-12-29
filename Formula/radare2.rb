@@ -12,6 +12,7 @@ class Radare2 < Formula
     sha256 "806bf4d9bdd9714586cee4a32efb3cf75c735b7329a05e34fa79aa6cce1ee17f" => :arm64_big_sur
     sha256 "2e7491f612ffa9161ed34670cf345f52998b39a99cbe6c7fb3f660e2ac02e592" => :catalina
     sha256 "d40bc7db7d6a8e16bc41aa3db7e622bf324e99af7283501c595140aaeacbe286" => :mojave
+    sha256 "8157d8b6c8ed7f9841977a6b5091028a39350f97fcf4e35ffd5ed274681b9c5b" => :x86_64_linux
   end
 
   def install
