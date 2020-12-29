@@ -13,6 +13,7 @@ class TerraformLandscape < Formula
     sha256 "a3e4ee0c52c10a093b7f98155b0c703706f8672bd2997aec587519911f6d292e" => :arm64_big_sur
     sha256 "923ff33a2daf927dbc8932be5ce48ea831dee75856fbba608cd9b92337e14609" => :catalina
     sha256 "553ff98671692fb3e8e6f5fe067b9bfe9ea9ab219936e235be1ac7976fde00b8" => :mojave
+    sha256 "2fb15ed314e2da4becbf5c4e55970d7ed00666aee6255cfd656dfee82ce8922d" => :x86_64_linux
   end
 
   depends_on "ruby"
