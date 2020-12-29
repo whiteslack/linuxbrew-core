@@ -19,6 +19,7 @@ class Sshuttle < Formula
     sha256 "9b1b795e0817955ebc66c0a8ddfa18e41951c6cea2dea4126cd346c3afbbd5a3" => :arm64_big_sur
     sha256 "c9d9ba4721a391e1e02484003fc995fd3a11b8f2e2a803353f24e0b5ef87da78" => :catalina
     sha256 "874db8f6c57d63d054b1e24d6ad083f218cbf366d926406faa78ce4c0bcfc987" => :mojave
+    sha256 "5c2d2ce61575ac96493ab0a774dce4d4aaa210766522030a2a9d582a343694b7" => :x86_64_linux
   end
 
   depends_on "python@3.9"
