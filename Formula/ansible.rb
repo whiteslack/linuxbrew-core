@@ -14,11 +14,11 @@ class Ansible < Formula
 
   bottle do
     cellar :any
-    sha256 "f37d6b4d9f678ad34d8e6842354dcc64ca6777a925333eaf1071dd14e0b02ebd" => :big_sur
-    sha256 "f31658515f119adb69dcdd58dc9adfcc36421ff72f24b04e26f0b47e6add5fc0" => :arm64_big_sur
-    sha256 "6c4fe1373f9fac5367b970fd2a361295d970ff40977f9161806e46ef676320eb" => :catalina
-    sha256 "90ee5b88d11409334cf150d14d85cbd5dc2d7564380b1765977e90694765bef2" => :mojave
-    sha256 "36999e7ab24af554d292a0b5f3473846f93418077830494ba0be3e33a1d39d66" => :x86_64_linux
+    rebuild 1
+    sha256 "3999686e7366ebb71a4ef215087e08dca344f823ac9b041657e7e75e70402917" => :big_sur
+    sha256 "21d3cac05c189484ac87af659fcfd05c61c07ca17cdaf54397caba648b39eea5" => :arm64_big_sur
+    sha256 "a6c1fb4f681b052b528601365b117c924c4ff6dfb80500e87db36a5b76c66d03" => :catalina
+    sha256 "0a9e7db53e7ca79bb1e22ac01233e48b402d0a1fc0e7d2cdcbd4afb558ffd0c3" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -114,8 +114,8 @@ class Ansible < Formula
   end
 
   resource "ansible-base" do
-    url "https://files.pythonhosted.org/packages/2e/d1/92422f8f53ae2d4e75ebdc2be2186a9ca2796b5d9679f20ed0239e86d8cf/ansible-base-2.10.3.tar.gz"
-    sha256 "35a208726b10fecbcf00c263ae4572b48f505b5796fb77a85c3e9c1036ea5e4f"
+    url "https://files.pythonhosted.org/packages/2d/e0/3eabf1be1211f653c73bc7827084c301aaefc6d8fc73e33572172cf0306b/ansible-base-2.10.4.tar.gz"
+    sha256 "d4dad569864c08d8efb6ad99acf48ec46d7d118f8ced64f1185f8eac2c280ec3"
   end
 
   resource "apache-libcloud" do
