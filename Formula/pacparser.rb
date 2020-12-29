@@ -13,6 +13,7 @@ class Pacparser < Formula
     sha256 "1999482c32deaa8c6b9a38800b6dbc4f6d18076177f6a8a0dad49c21c4327781" => :arm64_big_sur
     sha256 "ca13d2507c9c6616bc6c3604c19a7f6f1652bb3b3c1fed3168c4d832a10b0174" => :catalina
     sha256 "3544e7aed8d310d3407997f46b8b51cbbc2b1d962f90535175baff72301e375e" => :mojave
+    sha256 "c589a12cc1f53e3928cb55b04c9b8f250b02676d37e491e64ebac32bbeedbd57" => :x86_64_linux
   end
 
   # Fix build for MacOS 11.1
