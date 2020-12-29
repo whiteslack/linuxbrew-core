@@ -16,6 +16,7 @@ class Libcddb < Formula
     sha256 "5c01ee6149ed61a23ad7d8a2c09250fedf3b605638552fe82057cf77b0ac61f1" => :arm64_big_sur
     sha256 "ca3cb9caeed526ef59a167293871d7b739c2ee6271571225dd1640f4af101140" => :catalina
     sha256 "534e9e7afc756a552c414b224d86ffa84c9966bbccf3a7d781a6b55a482e9bdf" => :mojave
+    sha256 "c62b478fcca3571e1d44a1284631dadb9958bbf13cca10bbc20b851e0776ad90" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
