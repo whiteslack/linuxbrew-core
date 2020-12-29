@@ -13,6 +13,7 @@ class Dfc < Formula
     sha256 "6f2d7350e0c7e1c905718b6dcf282367bc846bbd51538a9a525f681dda03be61" => :arm64_big_sur
     sha256 "cefa6f0f5e96a815ebbee4d4618dc927f88052f4137d52c31d21688fac211aa8" => :catalina
     sha256 "93406a46f6e08d861ddbc5ea7f4ce910629f33090c39eeb827f05444d61fe466" => :mojave
+    sha256 "95dd8ab4bea192888d550c89d60f8458f0d523b11d19f0e3fbd4ac4e31ce7304" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
