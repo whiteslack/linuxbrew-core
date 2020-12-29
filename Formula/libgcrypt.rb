@@ -17,6 +17,7 @@ class Libgcrypt < Formula
     sha256 "7b930440e5155aa2b7373cfa253165a52739de2022f97f1becd3a23ddb26aab5" => :arm64_big_sur
     sha256 "899287732003176706501ba11ab37d616523a974acf0c75b6229e3f6157d2fd0" => :catalina
     sha256 "c25a11f0b29055cdcd994e661699eac0f7da7e9b91135a91de7a76d6f07525c1" => :mojave
+    sha256 "b6461504a16af692bc67ffea60ce635f77bda1fa5d158f22e82683df1afec31c" => :x86_64_linux
   end
 
   depends_on "libgpg-error"
