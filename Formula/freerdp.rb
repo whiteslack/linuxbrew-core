@@ -11,6 +11,7 @@ class Freerdp < Formula
     sha256 "8cfd66b03f01827edc1e2241478db3a22c62e4a1d12ae5d52591d4aa47df51b2" => :arm64_big_sur
     sha256 "b98d3c21d6312c35a8c1807527badd41b43ec8c19fd1ad6307d52a134ab979c1" => :catalina
     sha256 "d63e808db517d0299636b514c940c4486aca8ce82bf927c5de420eceee08241b" => :mojave
+    sha256 "900c808b88e7e123d2536348be9bc91a99a284ced01aa1eb15ad2b47eae677c7" => :x86_64_linux
   end
 
   head do
