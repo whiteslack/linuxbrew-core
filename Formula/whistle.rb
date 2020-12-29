@@ -18,6 +18,7 @@ class Whistle < Formula
     sha256 "e3811837472f44bdf219e762aee71555ed0e17181e0d677d3f2cc615fe555540" => :arm64_big_sur
     sha256 "32fdd97a68642d375403c0a252693dcfc08590290d96eb163b8ad0ccc9f9433c" => :catalina
     sha256 "856c6989452371a77ac5c2aa9e3bdb7a26c5ace476a3c318b9b4b9f0a0104772" => :mojave
+    sha256 "78ab887ea25e6a3a1bd779bdaf3c3ecbd0ad57ceb9b2452737f4af2852d843f0" => :x86_64_linux
   end
 
   depends_on "node"
