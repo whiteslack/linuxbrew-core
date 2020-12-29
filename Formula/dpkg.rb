@@ -7,7 +7,8 @@ class Dpkg < Formula
   url "https://dl.bintray.com/homebrew/mirror/dpkg-1.20.5.tar.xz"
   mirror "https://deb.debian.org/debian/pool/main/d/dpkg/dpkg_1.20.5.tar.xz"
   sha256 "f2f23f3197957d89e54b87cf8fc42ab00e1b74f3a32090efe9acd08443f3e0dd"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/d/dpkg/"
@@ -15,11 +16,9 @@ class Dpkg < Formula
   end
 
   bottle do
-    sha256 "4f28e3cf9f5efab34cfeca360751e5369552e9a5122e2b76b6375e0c7425999f" => :big_sur
-    sha256 "32ae6083fd4207f4cecd58087b68afc43a22d6020bd7a89184a0af20ecc9a2fb" => :catalina
-    sha256 "ec0d8e85f436bc6394de1f261c1c0e791ed72797d7ae20e6fb8f1cda016a7b43" => :mojave
-    sha256 "483c5e48a18dd401638399670aff9fd1a2800a243a37f208235777e9fc140986" => :high_sierra
-    sha256 "e8166ade60f4123249bb43847196092b3cec3f696449de98eba2e9dc74a2a84c" => :x86_64_linux
+    sha256 "3d26c34cebe35d59aa12bf67d5402a6b1e233951a548e852362c15b943c5968a" => :big_sur
+    sha256 "38c63631f4feda8dd19380fefdfcfb5d3853c42755fff3a1026f81c1e8d37851" => :catalina
+    sha256 "b5208a55481fa889d0fdd14b918b74cea2b6670728b2f613515f2cd0be23ccc6" => :mojave
   end
 
   depends_on "pkg-config" => :build

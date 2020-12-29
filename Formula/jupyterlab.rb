@@ -6,6 +6,7 @@ class Jupyterlab < Formula
   url "https://files.pythonhosted.org/packages/a2/5c/c209190ba2a6dac3937d91f2610f5eee9a29b7f05f5a66bb7058e83e730b/jupyterlab-3.0.0.tar.gz"
   sha256 "15228dff3f77b0bca795fd232cb25f02121510cec83f1d25856b3bc8e585b087"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,10 +14,9 @@ class Jupyterlab < Formula
 
   bottle do
     cellar :any
-    sha256 "92e45c85e6570c24c1a5536749c98f6ba8df93a719b881151ecae0416d159641" => :big_sur
-    sha256 "7eebb721052e86f8a0620ed44a0329e7a31bf692bdad0439ae5b300a6ec80661" => :catalina
-    sha256 "0093ea4638abd24d1bf9fb5ef2a1a865df4f7b49e5344a744d3980f5d304d274" => :mojave
-    sha256 "f5799ba10e51df201b342d7bd6c4a272775d7fdb64adf17ddcc59dc8609a09c4" => :x86_64_linux
+    sha256 "1dbeea124f3ef40af35359371a3ead9202169a47428014fdb522e119d8c64cf0" => :big_sur
+    sha256 "e42c961813386519d4303dc9865ac2ea39ded0d5885f90fbc91c8fd2c444ce78" => :catalina
+    sha256 "66bdf0716f8f53ca245d6b3b9b3a3bb395207d0b6ea1352d86d90e7b762efcfe" => :mojave
   end
 
   depends_on "ipython"

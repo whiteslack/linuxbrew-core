@@ -4,6 +4,7 @@ class Libepoxy < Formula
   url "https://download.gnome.org/sources/libepoxy/1.5/libepoxy-1.5.5.tar.xz"
   sha256 "261663db21bcc1cc232b07ea683252ee6992982276536924271535875f5b0556"
   license "MIT"
+  revision 1
 
   # We use a common regex because libepoxy doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -13,11 +14,10 @@ class Libepoxy < Formula
   end
 
   bottle do
-    sha256 "667873f9c3ce190c398412dc2777628e4805f21cf29d4aac958aee93f82daaa7" => :big_sur
-    sha256 "5384a83afdae256d771cb950907183f2ed2325ff0625d3a15247a4ec9f87036c" => :arm64_big_sur
-    sha256 "2ff068dba2f188c30bc4e456e22a089f323c30d24dfa9df610d1515bf159d407" => :catalina
-    sha256 "8263978cde00e743fef88e91afae02966e53e25e278aa0cea23aae648d1d11fa" => :mojave
-    sha256 "2292151beaae8032dd84ead44e43d9f11a6d96173ba2eb0a33874b09a6842506" => :x86_64_linux
+    sha256 "70c98f994735bd0cd3c23286460c06fcbe324294f97b61ea91dc72303132c64d" => :big_sur
+    sha256 "f4b0803937d1fa962e698890caa1ec96d7ba1847a4df990ad07db5ed480d8821" => :arm64_big_sur
+    sha256 "f410ca0d9f4d101901beec178b22f4e65facdad58d496c7b2b5f9a56ec241852" => :catalina
+    sha256 "4ca20871fe9fd9bf37cebd4dc3b7f081406dc08d60c404d970132cb48f26900b" => :mojave
   end
 
   depends_on "meson" => :build

@@ -4,14 +4,14 @@ class GitDelta < Formula
   url "https://github.com/dandavison/delta/archive/0.4.5.tar.gz"
   sha256 "e19ab2d6a7977a3aa939a2d70b6d007aad8b494a901d47a3e0c2357eedad0c80"
   license "MIT"
+  revision 1
   head "https://github.com/dandavison/delta.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ea97c81e666640dad59723fc79e5a7773b064b1cefbb93d2164f2454d2635436" => :big_sur
-    sha256 "a2d632b219259aaf9febbf383a0b243a24328a273d859ce320731d017ece8f30" => :catalina
-    sha256 "506bc14a8e5e0a371dd1ac5cceaeff6b337d4b84444c6b9809ff4a7c3a588be7" => :mojave
-    sha256 "77da51ec36b0f1b15774e079a192be792031f9b675ddc09781bd5667cfcc060e" => :x86_64_linux
+    sha256 "aee0af5a8de8eb12ba91831a9f76ca3303285505539aa6e8c80671ab1f705281" => :big_sur
+    sha256 "a9d1db1320dde94de82bb5697c9d155a9c76b6da2ec448265aebdeb1d9b7ae60" => :catalina
+    sha256 "266585a17107f7fb7fe6942cb2abb7dd4f5bc8c0ef582fc50e63a51501d33852" => :mojave
   end
 
   depends_on "rust" => :build
