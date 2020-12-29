@@ -13,6 +13,7 @@ class Zpaq < Formula
     sha256 "2a840dbf456e81e691300d615db206c1c046fe99746db13e41f972d6707c6a72" => :big_sur
     sha256 "5ac8de4997136cd5496e5480ce72421881da11cf0548cacbd2ed62b7e85dc0e5" => :catalina
     sha256 "572127bcc5ca3efba20c4f61c385dbf48873a241efd9349e0759d0ca14afb79d" => :mojave
+    sha256 "76456edb7898e8e2ac40b04131e1abd04ba9315ec6f4cee82791fd5fb9b9377c" => :x86_64_linux
   end
 
   resource "test" do
