@@ -6,6 +6,7 @@ class Streamlink < Formula
   url "https://files.pythonhosted.org/packages/b4/d6/4981231ee8d23a7898d44efb3cf36e3a7820eb485c937f67d02428c6c585/streamlink-2.0.0.tar.gz"
   sha256 "c0ead9e961638d41cab9bd9677cdc701f2313bfd4d23cd8158410932839c62db"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/streamlink/streamlink.git"
 
   livecheck do
@@ -14,11 +15,10 @@ class Streamlink < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "9a40404ba44abbebfb97c9b7a75ee3b0dc8014222851fd8588ec6e81a768c1f1" => :big_sur
-    sha256 "c474e6696864a6a3f1b287b7380356d1258e8902406d7df16e2bb2de9e49bfeb" => :arm64_big_sur
-    sha256 "6684af66d59bf79e4170de53087bb1a4aa459d881adfe56b3632dd9df72485b0" => :catalina
-    sha256 "cf61ea3e8e59ed1a59e8433343ac29917894408df94f85bd56374d0e261ef13a" => :mojave
-    sha256 "5459aea98c2dd678550e51993aa00329f42d979f10abe5427c804be23ce5c6c8" => :x86_64_linux
+    sha256 "667e16ecc596e88508591b2a616dd90d609af5303daf333b5551a9376164e1c8" => :big_sur
+    sha256 "fd9b93cc41448ba2f1d79d5c10f1e12a680707080945e00cf9f18822af95c0c1" => :arm64_big_sur
+    sha256 "7b56adfd1c5dc642365ccea36e7ba55493f9f1cfd231b0eee6c3741dedb9d8b9" => :catalina
+    sha256 "5d726e98e4a496094e43200e49749eb28d5ddb20e46f0264b3c2bad5c8b7a40b" => :mojave
   end
 
   depends_on "python@3.9"
