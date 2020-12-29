@@ -13,6 +13,7 @@ class Hamlib < Formula
     sha256 "8faea293fa6fd60893c05571b2d52b52339866d4c65fb103d097ccbe91897aa9" => :arm64_big_sur
     sha256 "cf210e6b1a182e52f93c26e99b36e76db21b5b11ab45f30f553dbb58f51cd936" => :catalina
     sha256 "d45e4cdde74cac09f37a111e965cfb9cfa110ff68b15ea8575766bf161697704" => :mojave
+    sha256 "7df65c4446bd2c26f0cec86709df61af438fe5b41e967d7721ba550b84fa8700" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
