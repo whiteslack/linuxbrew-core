@@ -10,6 +10,7 @@ class CrystalIcr < Formula
     sha256 "27aca5fd1d1b212b90575dd385b27cbc215aea9510cab6c24efe18ec15d617cc" => :big_sur
     sha256 "a0683b8dce5fd77b89f4ba6412ad1ad7b793abfd2e703f9cff72e2ffe7248d43" => :catalina
     sha256 "30bbc4ad85339e27305d4294cf53e3ddc252f137599b7602ca2930f01728cd8c" => :mojave
+    sha256 "ac10ad637bebc3fdd3284bc36c00b211154597251874a6360bc2fc9444bd96c7" => :x86_64_linux
   end
 
   depends_on "crystal"
