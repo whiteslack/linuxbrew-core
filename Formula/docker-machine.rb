@@ -14,6 +14,7 @@ class DockerMachine < Formula
     sha256 "da044dcd33a56a30d48a65bcccfc481aeab60401dc67ba05a6f335a11baf97c8" => :arm64_big_sur
     sha256 "99b99466af55891199daccd77e78e6006c193c00b8ffb1e624945c6f5a378119" => :catalina
     sha256 "b01a09ab4be172d932acb5b8b8a203df5454117023b9454c617ba383a27e2195" => :mojave
+    sha256 "da01d0c91f574327f0d1a2cdc01f0ea74d25dabdd8d331c7a11134d76e30b9ef" => :x86_64_linux
   end
 
   depends_on "automake" => :build
