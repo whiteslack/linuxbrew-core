@@ -12,6 +12,7 @@ class LeanCli < Formula
     sha256 "04088e4e5a87da1e0266edac6c2ecb7b155e7cb8a776d9794729261d459d20a4" => :arm64_big_sur
     sha256 "b717de9611edc3ec6fbde30c9391dabf469e4c2342cb30939b0ecc7ecbf7172d" => :catalina
     sha256 "c46be6237896b2733a2f630087bd23bf70fa589a1aad5b67ceb66ccd57e2cd19" => :mojave
+    sha256 "d774b961220ced616560a2cbc1a076df5e405a94a89078ef9644c45458c31bf3" => :x86_64_linux
   end
 
   depends_on "go" => :build
