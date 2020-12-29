@@ -13,6 +13,7 @@ class Pcrexx < Formula
     sha256 "1232e288cacfd0124da243208e1584caf1925be4dcdcc7b94b96585fb50bfabf" => :arm64_big_sur
     sha256 "15b001d9d01f073cb76772112bc6b3ebac92a3337b19c6dee4eb54d39fe9b6f6" => :catalina
     sha256 "fdaf9cab000ba7b2f7787acd98e53aa3cade6e6536c0c0ec32a010ecade2cb53" => :mojave
+    sha256 "1ccba2c50d2c14132afe80be18e1bce27282cd9467091cff52da6d1cc8f5bed0" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
