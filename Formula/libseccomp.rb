@@ -12,7 +12,6 @@ class Libseccomp < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "ab6d430d4c758ce3cc55e5ec6ba8609196655bc03988271c25ad086ff54f823e" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
