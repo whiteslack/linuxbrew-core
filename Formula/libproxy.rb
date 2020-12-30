@@ -1,17 +1,16 @@
 class Libproxy < Formula
   desc "Library that provides automatic proxy configuration management"
   homepage "https://libproxy.github.io/libproxy/"
-  url "https://github.com/libproxy/libproxy/archive/0.4.16.tar.gz"
-  sha256 "9e7959d6ae1d6c817f0ac1e253105ce8d99f55d7821c1b6eaef32bf6879c6f0a"
+  url "https://github.com/libproxy/libproxy/archive/0.4.17.tar.gz"
+  sha256 "88c624711412665515e2800a7e564aabb5b3ee781b9820eca9168035b0de60a9"
   license "LGPL-2.1-or-later"
   head "https://github.com/libproxy/libproxy.git"
 
   bottle do
-    sha256 "f3d87ec7e6d5ee417691c26a776886216436ab1b190bf6674c8dede66da0ec00" => :big_sur
-    sha256 "868bf3c73324f4e9275dfe482be9b23a251563ba12f51a7c9d2df678fc4b439b" => :arm64_big_sur
-    sha256 "76cde5260a836b3ce6c3ed0d1e588c29159018d702866209fe36c0be24995603" => :catalina
-    sha256 "69e02ca786abaa1fb825995039e67750f2315a8d93206c15ec60e839830c0bf7" => :mojave
-    sha256 "ee3dc851cceae671fd5020c87abaa8b4c8a7940be1a06e140c884cdfd87894c4" => :x86_64_linux
+    sha256 "d094201c939cfab859da673186809a6c7a24b9a216829b862a1bb53059309d4c" => :big_sur
+    sha256 "aa72de0f8f5be2c730d84f20308df804c156e61ff321de0a4b63ba5623517ab7" => :arm64_big_sur
+    sha256 "c847a5adafa14e2614351edc46fdf1f8884908912845a9e425ce30925bb55e32" => :catalina
+    sha256 "5f6f14d95746e1b4c3328f23c7d9018e7e6a1fab70eba1255276ad89c0c405e5" => :mojave
   end
 
   depends_on "cmake" => :build
