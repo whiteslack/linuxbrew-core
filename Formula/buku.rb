@@ -3,10 +3,9 @@ class Buku < Formula
 
   desc "Powerful command-line bookmark manager"
   homepage "https://github.com/jarun/buku"
-  url "https://files.pythonhosted.org/packages/67/89/84eb841cf5958371c16c31d03adad5f1555235d1172ed065c01e597cc1fc/buku-4.4.tar.gz"
-  sha256 "ef6d7f601c78fedcb8f827d8ebfe3aea47411bdae27facb2eae2583775833dbc"
-  license "GPL-3.0"
-  revision 1
+  url "https://files.pythonhosted.org/packages/d5/af/90b27f5e932ae7bf7ccdc86f0619a8726cd61233258faac51caafe7116b8/buku-4.5.tar.gz"
+  sha256 "b148fd335fe532b46616587f5d7a5c338202b99ae71ae777a44591a1bc8063ae"
+  license "GPL-3.0-or-later"
   head "https://github.com/jarun/buku.git"
 
   livecheck do
@@ -15,12 +14,9 @@ class Buku < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "5dafe02e7074f5b220f555d52cd724e2a6f5f12438fd8a856fffdddf4d577416" => :big_sur
-    sha256 "8c40d49622828015b2599b97d17d7bea1bf0693fcd21c62fb195a5c2c0cd84d9" => :catalina
-    sha256 "e138b7f8acd80a7df6f46cd31bc35fcf0debac7bda299e13652cfbace7ccf25f" => :mojave
-    sha256 "32804045377c07731a9cec04176d92886680a8121361db853e9d9c9b5f44352a" => :high_sierra
-    sha256 "e909b4ad004674ca93c4c6e1a8c718fd090355b07d34e74850bb582891cea723" => :x86_64_linux
+    sha256 "ac5450196f6df19e734b6072aa9b6fd315520ffd87de0e58bfc3bd88523a73c9" => :big_sur
+    sha256 "4989cb77e5bc410ad664f5e8904b7815916d334bbfa807992a42dd617f01731e" => :catalina
+    sha256 "ada22914af378002d0815a8c09cc13ed6068a62c3f8742156753b2cd2be84c22" => :mojave
   end
 
   depends_on "openssl@1.1"
@@ -39,18 +35,18 @@ class Buku < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/e6/de/879cf857ae6f890dfa23c3d6239814c5471936b618c8fb0c8732ad5da885/certifi-2020.11.8.tar.gz"
-    sha256 "f05def092c44fbf25834a51509ef6e631dc19765ab8a57b4e7ab85531f0a9cf4"
+    url "https://files.pythonhosted.org/packages/06/a9/cd1fd8ee13f73a4d4f491ee219deeeae20afefa914dfb4c130cfc9dc397a/certifi-2020.12.5.tar.gz"
+    sha256 "1a4995114262bffbc2413b159f2a1a480c969de6e6eb13ee966d470af86af59c"
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
-    sha256 "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+    url "https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
+    sha256 "1a465cbe98a7fd391d47dce4b8f7e5b921e6cd805ef421d04f5f66ba8f06086c"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/94/5c/42de91c7fbdb817b2d9a4e64b067946eb38a4eb36c1a09c96c87a0f86a82/cryptography-3.2.1.tar.gz"
-    sha256 "d3d5e10be0cf2a12214ddee45c6bd203dab435e3d83b4560c03066eda600bfe3"
+    url "https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz"
+    sha256 "7e177e4bea2de937a584b13645cab32f25e3d96fc0bc4a4cf99c27dc77682be6"
   end
 
   resource "html5lib" do
@@ -69,8 +65,8 @@ class Buku < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/3e/db/5ba900920642414333bdc3cb397075381d63eafc7e75c2373bbc560a9fa1/soupsieve-2.0.1.tar.gz"
-    sha256 "a59dc181727e95d25f781f0eb4fd1825ff45590ec8ff49eadfd7f1a537cc0232"
+    url "https://files.pythonhosted.org/packages/58/5d/445e21e92345848305eecf473338e9ec7ed8905b99ea78415042060127fc/soupsieve-2.1.tar.gz"
+    sha256 "6dc52924dc0bc710a5d16794e6b3480b2c7c08b07729505feab2b2c16661ff6e"
   end
 
   resource "urllib3" do

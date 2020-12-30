@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-8.20201127/git-annex-8.20201127.tar.gz"
-  sha256 "e7ff248e49ee6acb5122d0f7975c8a9cf327f76179ea96a005bafef59c2b3559"
+  url "https://hackage.haskell.org/package/git-annex-8.20201129/git-annex-8.20201129.tar.gz"
+  sha256 "8324b71bafc5c30e630699534f410a9cfcfdfeed078dc62bc410f41244a1dd81"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/"
@@ -13,10 +13,9 @@ class GitAnnex < Formula
 
   bottle do
     cellar :any
-    sha256 "9986c28e45e63ea67725836cb6ec0f96cdab24c52c3a416fc5442cf146b2e600" => :big_sur
-    sha256 "9d0e87f03d5e50f8b2391c51330e81ea844dfcaaa0c109b2a6821f62edb69048" => :catalina
-    sha256 "f777f7d5b3f59526e8eaaec7d99428be9e551a43e2304a55508d162ee2b92f73" => :mojave
-    sha256 "41332912c212dd55ee384f0a94776bd1012473526f843fab5b575bd7dc3b8db7" => :x86_64_linux
+    sha256 "0bbb56b04054ca98667fb71c8731b4d3894b436b9c04c3c030da01a6b939a7b5" => :big_sur
+    sha256 "ac8d58a49a0ea3d82e1796c33ee2e9032213db7c734dc0d12cf1bcd58e1cec13" => :catalina
+    sha256 "0235b53d49d4ba220139024aa924da0f14a12560a6beed7f1e8efa06cf5961a8" => :mojave
   end
 
   depends_on "cabal-install" => :build
@@ -75,7 +74,7 @@ class GitAnnex < Formula
     # make sure the various remotes were built
     assert_match shell_output("git annex version | grep 'remote types:'").chomp,
                  "remote types: git gcrypt p2p S3 bup directory rsync web bittorrent " \
-                 "webdav adb tahoe glacier ddar git-lfs httpalso hook external"
+                 "webdav adb tahoe glacier ddar git-lfs httpalso borg hook external"
 
     # The steps below are necessary to ensure the directory cleanly deletes.
     # git-annex guards files in a way that isn't entirely friendly of automatically

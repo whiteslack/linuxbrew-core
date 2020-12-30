@@ -3,8 +3,8 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/f0/c8/1f4086495a830a9dbb325b955d68a01a593a8a8bf54d44d0ca365bc40116/commitizen-2.11.1.tar.gz"
-  sha256 "a141ba4317256daf6b6a9f4f390cd57fc53e63df7989ba46019b10c75a101359"
+  url "https://files.pythonhosted.org/packages/cd/79/143629355c5c578e37f4bf7c7ab02dafc2e10cb11bf5304b7fd72375f9de/commitizen-2.12.0.tar.gz"
+  sha256 "50cddcd1d07512fcf002dedf3ddf2c3ea78da0bc85793e01b7009627c96ef62d"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git"
 
@@ -14,10 +14,10 @@ class Commitizen < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "c2804e1e1191a90b9ab30dffbeecfa9bf58b522ddc99f3ecdaa9054cb4135a1b" => :big_sur
-    sha256 "eaa9d624ca94cd1ba6ec513b55a61bb2202257ccb8f2aa41f432d6d53f057944" => :arm64_big_sur
-    sha256 "df2a8682329053d2859a393e3222c2645bdf0d8d657cd4530572262d796ff173" => :catalina
-    sha256 "e048a17052fa2b6cb1751aa5ca7c95bd4486282cd79d8cc908bda179dcebe23c" => :mojave
+    sha256 "3d0b202f678af384cddc3109c46b9965848e9c1b889bfc8a09a7f5029e969cc2" => :big_sur
+    sha256 "989750b8d2f10884dc5b48676cd52f66d98322e6829b8752308c01b2b62b3171" => :arm64_big_sur
+    sha256 "0e940c3ba3da058e233a625089113401d4b545aff30da8ef458e7bba3e0b11f0" => :catalina
+    sha256 "05129fbcf1e7bb18d37047a7fe4c7592cc92da604c06e93d0be6ef7e4315b008" => :mojave
   end
 
   depends_on "python@3.9"
@@ -68,8 +68,8 @@ class Commitizen < Formula
   end
 
   resource "questionary" do
-    url "https://files.pythonhosted.org/packages/89/a5/12f446d595f3db937da1689f5ebf672bdbaa777fa0577b3e099924317f9b/questionary-1.8.1.tar.gz"
-    sha256 "f2999f01735db77a80d6cb119766cb15b84c468cab325168941a3e0d91207437"
+    url "https://files.pythonhosted.org/packages/b5/a5/20e0d643ce997cd5d87b3100373e24eb2c6aa874f713b08552a01639145e/questionary-1.9.0.tar.gz"
+    sha256 "a050fdbb81406cddca679a6f492c6272da90cb09988963817828f697cf091c55"
   end
 
   resource "termcolor" do
@@ -78,8 +78,8 @@ class Commitizen < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/53/10/1f1186fcd453d10254450a7e947e92e6dbb0bf1418484aa4da2829be44f9/tomlkit-0.5.11.tar.gz"
-    sha256 "f044eda25647882e5ef22b43a1688fb6ab12af2fc50e8456cdfc751c873101cf"
+    url "https://files.pythonhosted.org/packages/64/e0/6c8c96024d118cb029a97752e9a6d70bd06e4fd4c8b00fd9446ad6178f1d/tomlkit-0.7.0.tar.gz"
+    sha256 "ac57f29693fab3e309ea789252fcce3061e19110085aa31af5446ca749325618"
   end
 
   resource "wcwidth" do

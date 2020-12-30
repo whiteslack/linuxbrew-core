@@ -4,17 +4,25 @@ class Fragroute < Formula
   url "https://www.monkey.org/~dugsong/fragroute/fragroute-1.2.tar.gz"
   mirror "https://mirrorservice.org/sites/ftp.wiretapped.net/pub/security/packet-construction/fragroute-1.2.tar.gz"
   sha256 "6899a61ecacba3bb400a65b51b3c0f76d4e591dbf976fba0389434a29efc2003"
+  license "BSD-3-Clause"
   revision 2
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?fragroute[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
-    sha256 "8b5a87b7cae2d578e00075136ceccaca0c29dbcbb1b01e15675bc29b9205e93d" => :catalina
-    sha256 "49f91a2616ef97ae98f005907b63d6a76e25ac32c9efff8f277d16742b7b971c" => :mojave
-    sha256 "3392e2a1e9a8631c45d4ddcd16284d8ab5cac2dc3f71783688db50183ad414b6" => :high_sierra
-    sha256 "cc8ca43ae5c45a8821a8a4803e4aca6e316a1b0c2083adb6cdc539acce3cfbbe" => :sierra
+    rebuild 1
+    sha256 "bc2aad3bd752e06ec939f1fd2f49ae26ceaff3175c6675be53c9dfebd41e694b" => :big_sur
+    sha256 "7bd2a4a54f15b14b015e4defdfdf633db0b51cee12f126402dd99b708540ce9d" => :catalina
+    sha256 "76571eb2b3a3026700b58e589b6a2e30651898763b63b26f9bc8d78856cf7e51" => :mojave
   end
 
   depends_on "libdnet"
   depends_on "libevent"
+
+  uses_from_macos "libpcap"
 
   patch :p0 do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/2f5cab626/fragroute/configure.patch"
@@ -32,6 +40,10 @@ class Fragroute < Formula
   end
 
   def install
+    # pcaputil.h defines a "pcap_open()" helper function, but that name
+    # conflicts with an unrelated function in newer versions of libpcap
+    inreplace %w[pcaputil.h pcaputil.c tun-loop.c fragtest.c], /pcap_open\b/, "pcap_open_device_named"
+
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
