@@ -4,7 +4,7 @@ class R < Formula
   url "https://cran.r-project.org/src/base/R-4/R-4.0.3.tar.gz"
   sha256 "09983a8a78d5fb6bc45d27b1c55f9ba5265f78fa54a55c13ae691f87c5bb9e0d"
   license "GPL-2.0-or-later"
-  revision OS.mac? ? 1 : 2
+  revision OS.mac? ? 2 : 3
 
   livecheck do
     url "https://cran.rstudio.com/banner.shtml"
@@ -12,11 +12,10 @@ class R < Formula
   end
 
   bottle do
-    sha256 "01bf5a586b3699a50b5e7ec6b7eebab213ef47dfa94754db497d0f41ac5a6110" => :big_sur
-    sha256 "749af4baa5b517b2957c4e9ad572b1c9265d7d71388af1d411c5e3e1e61f505c" => :arm64_big_sur
-    sha256 "c600906bfe86b80c5c14129148692364a6a5c2d4c1417e7c9f8a4eff5f508ec2" => :catalina
-    sha256 "22731d36544e6eb86b88e89638225133c8975377c3c4cdd1cc06e61e72f846b9" => :mojave
-    sha256 "3c7d69c0f29630d9b5c6aaace2e0981b61c00a308853a1cc9c370cc9b7cebfbc" => :x86_64_linux
+    sha256 "d3859bfc06a1cac65a60a43f105aec2b3c2ebdb465b69eb6988a4686eefd0819" => :big_sur
+    sha256 "67c3d8b4f5adcfe3da2651c5f300b56a2129130db579c65eda952023ef305849" => :arm64_big_sur
+    sha256 "057a9e1fafd85ec2f65ecbfb651f6299cbbaab630158d6cf6d1057b43f7b9f29" => :catalina
+    sha256 "ffffeb9ad7f2892187d26fde97bc8f47ba4b27bf95ea8bcc1ce43a09771f7d51" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -24,6 +23,7 @@ class R < Formula
   depends_on "gettext"
   depends_on "jpeg"
   depends_on "libpng"
+  depends_on "openblas"
   depends_on "pcre2"
   depends_on "readline"
   depends_on "tcl-tk"
@@ -49,11 +49,16 @@ class R < Formula
       ENV["ac_cv_have_decl_clock_gettime"] = "no"
     end
 
+    # BLAS detection fails with Xcode 12 due to missing prototype
+    # https://bugs.r-project.org/bugzilla/show_bug.cgi?id=18024
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     args = [
       "--prefix=#{prefix}",
       "--enable-memory-profiling",
       "--with-tcl-config=#{Formula["tcl-tk"].opt_lib}/tclConfig.sh",
       "--with-tk-config=#{Formula["tcl-tk"].opt_lib}/tkConfig.sh",
+      "--with-blas=-L#{Formula["openblas"].opt_lib} -lopenblas",
       "--enable-R-shlib",
       "--disable-java",
     ]
