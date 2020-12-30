@@ -3,8 +3,8 @@ require "os/linux/glibc"
 class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  revision 7 unless OS.mac?
   license "GPL-3.0"
+  revision OS.mac? ? 1 : 7
   head "https://gcc.gnu.org/git/gcc.git" if OS.mac?
 
   if OS.mac?
@@ -38,10 +38,10 @@ class Gcc < Formula
   # reminder: always add 'cellar :any'
   bottle do
     cellar :any
-    sha256 "dc3ea9a854cf248590ee06450993c80955fc8a37aa3274701d39e0c13934f942" => :big_sur
-    sha256 "e7b39fcb031d3c9f9fc6ebc48a8a6d1f4f486277ab3cdf1451a33b6cf655bcc0" => :arm64_big_sur
-    sha256 "a61e50f55795f44f3e9f4f92453c0a7832624e356c098db82c03984700701b76" => :catalina
-    sha256 "ba63918e8523e8c37cefee8da0c97da98eb4dd5cffef7a39d0bef7b630906e17" => :mojave
+    sha256 "60424299458ac0e658f3ac4515916b3efb930b3717084601fc957c8962680740" => :big_sur
+    sha256 "a5ebb1c2db1dbf7bec08c0e67844c1b521f959c103b5e33091f4a7e5bf319e44" => :arm64_big_sur
+    sha256 "93f7199203fa36df4e197687a1eb9a582e06aae793e16e258d75abfc5ba6d528" => :catalina
+    sha256 "257f9d4fd82675c99e97bcf6063ce17874bda6110f4fcdd2481faddc7fb82b6a" => :mojave
     sha256 "8cae5e1f1e2074f46bfeda826313afb7b823879d190f27dbcd6b00fbfd8daedd" => :x86_64_linux
   end
 
@@ -150,6 +150,10 @@ class Gcc < Formula
         args << "--with-native-system-header-dir=/usr/include"
         args << "--with-sysroot=#{sdk}"
       end
+
+      # Mojave uses the Catalina SDK which causes issues like
+      # https://github.com/Homebrew/homebrew-core/issues/46393
+      ENV["ac_cv_func_aligned_alloc"] = "no" if MacOS.version == :mojave
 
       # Avoid reference to sed shim
       args << "SED=/usr/bin/sed"

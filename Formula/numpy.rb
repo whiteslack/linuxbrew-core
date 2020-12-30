@@ -4,6 +4,7 @@ class Numpy < Formula
   url "https://files.pythonhosted.org/packages/c5/63/a48648ebc57711348420670bb074998f79828291f68aebfff1642be212ec/numpy-1.19.4.zip"
   sha256 "141ec3a3300ab89c7f2b0775289954d193cc8edb621ea05f99db9cb181530512"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/numpy/numpy.git"
 
   livecheck do
@@ -12,12 +13,10 @@ class Numpy < Formula
 
   bottle do
     cellar :any
-    sha256 "980ff2b2a656a9bd8583d8ac53d79149db57c4e0ebc0787c7339ffff61196651" => :big_sur
-    sha256 "12fa9cba958b6e32a78ac795469ba679dce6c8614e7fcd87a61a95de566feb00" => :arm64_big_sur
-    sha256 "a9316c2fbc6289f359a8379f667d5c7db067f86c2be153d40cd400ab03fe83a5" => :catalina
-    sha256 "a01c9eac38f92f3079f860dada4f49543cb40ecbc42a62f3adf022529fb990bc" => :mojave
-    sha256 "5884958d5903b9a8e5b47a81f0dc9ad5435873b472d3709b6956998356c8c353" => :high_sierra
-    sha256 "225ea32a60c1dd8e6738324111f9f6a31fc91b0b8a8787b7d15e012a90a4cca6" => :x86_64_linux
+    sha256 "fb2e87332b99e24056b915e28a78e17a33c1a13547e2cc144760646421aee01d" => :big_sur
+    sha256 "a32c273bf47a9304a415ea8c58b801e255eb69f3fbc1c3054c03ecdba0e0da13" => :arm64_big_sur
+    sha256 "ed781d5ce1f7c7a8495860b27b577cc83fd4eb056ad2f7f2c630a17141ccd0e8" => :catalina
+    sha256 "3ccaa0bf93bbc235d04af89c2777252e7655f6b4ddcef09b4fb100f28b2a5cc1" => :mojave
   end
 
   depends_on "cython" => :build
