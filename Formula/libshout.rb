@@ -16,6 +16,7 @@ class Libshout < Formula
     sha256 "f1490d2569813b44c082e8e040d0fa89dfbc01e7b85b73a52c37a26415cfc794" => :arm64_big_sur
     sha256 "a791567ecf1d73d8f04d643d9698201348c671a118a78f8689b2b558dc10a026" => :catalina
     sha256 "dc69a84a8e5089f8e8af3e567db1cad3eb0b126ca800c83e371097fa78c1dcdf" => :mojave
+    sha256 "9df39ed302a6dbb66bf46b10768feb5ea21b5da70a4f4db9f7c60a5e29a0affe" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
