@@ -18,6 +18,7 @@ class XercesC < Formula
     sha256 "482e14a0ff78e66b3f701a744411b2144479f69a7d4b876def7723d4683ae81a" => :arm64_big_sur
     sha256 "3591a0891b6796e46eb12c7ba5fdac497e96e624eae13f0596a3cc58e64d3f29" => :catalina
     sha256 "3ae5c637d059994fb5549ecd066a16f690a8974dd9284161fa5aa84854b4b9c3" => :mojave
+    sha256 "a34fbe2a8445a3b536138a11230e79f6980d5bb1f4b59ee83217003d66c9d415" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
