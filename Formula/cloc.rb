@@ -16,6 +16,8 @@ class Cloc < Formula
     sha256 "c18878eb25b176796223a7936874886efc875a5ad3dd2ae6bd99ef4a6d0aca91" => :x86_64_linux
   end
 
+  uses_from_macos "perl"
+
   resource "Regexp::Common" do
     url "https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz"
     sha256 "ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b"

@@ -19,6 +19,8 @@ class Perltidy < Formula
     sha256 "81298157bc1d047196c58a64905fd110824b309faf973b53eaacf3904102bf54" => :x86_64_linux
   end
 
+  uses_from_macos "perl"
+
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}",

@@ -18,6 +18,8 @@ class Resty < Formula
     sha256 "1c6a12ebf97852447f6f16628fdf0acd3f9d156404ab3ca9aa680c2275f40538" => :x86_64_linux
   end
 
+  uses_from_macos "perl"
+
   conflicts_with "nss", because: "both install `pp` binaries"
 
   resource "JSON" do
