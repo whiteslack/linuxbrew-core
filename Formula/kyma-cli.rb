@@ -12,6 +12,7 @@ class KymaCli < Formula
     sha256 "9da6f18bf1f7481bd341bd9de2ec6c283842e5d382f1f12aab62e1b49796917f" => :big_sur
     sha256 "6e5722bc459a0ba3796038ee74937686dae941927fb395c18091c9a6b7c91f75" => :catalina
     sha256 "46d9dd3817ecb02b8f4e4dd60623af408c6b599c87fecee570291e3b62b93e71" => :mojave
+    sha256 "0b9c14fb2e53015f6c4bda5e0a7b75f0925152633e6ed08ad2f3e4fcde0dcc34" => :x86_64_linux
   end
 
   depends_on "go@1.14" => :build
