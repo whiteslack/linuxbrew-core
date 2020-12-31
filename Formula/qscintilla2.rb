@@ -15,6 +15,7 @@ class Qscintilla2 < Formula
     sha256 "f5546d10d3c473aeed9ecb374feab4fe893cb66fae6f19ac471375f988a81b10" => :big_sur
     sha256 "e6d4bf7383c3358038268d418cf83f529dac7e5883ef11d19acab98204703094" => :catalina
     sha256 "48ed5b801eb552d398cdf3f1ba4881be8335fd0beb3515f9525ab1d8c1006c1d" => :mojave
+    sha256 "fe0996bfc75204cbc62f0e870db714d925d569c96af21b9b2ebf823d7fc88bb2" => :x86_64_linux
   end
 
   depends_on "pyqt"
