@@ -5,14 +5,14 @@ class Vim < Formula
   url "https://github.com/vim/vim/archive/v8.2.2250.tar.gz"
   sha256 "be1de89b4e41d17a4f27bb70210e9e7d334b80a8f488659617d0742e0cd1bbbd"
   license "Vim"
+  revision 1
   head "https://github.com/vim/vim.git"
 
   bottle do
-    sha256 "322b126a67ba779a89999b4df91a17ac94e4967e0dad9922866f2f8db8a44256" => :big_sur
-    sha256 "a8b7584db1d8a3e77ef9b5a2a7f58754911f847ebd4e688ea387ab0be4234b19" => :arm64_big_sur
-    sha256 "6a46c763b64b947a91f16dcffa842616ab54d1eef920fffd9a0fbf9218adf340" => :catalina
-    sha256 "643f2072aec4943b4a49bb94354264bc6800b9db313b16b1ac86ed06bf252ba4" => :mojave
-    sha256 "840da10f40979012b0c3de4d565ad4f93173061dd80ce9b55872aeec5e8af6a5" => :x86_64_linux
+    sha256 "3606b6328f2fa6440c47793e37c8e243833efd836d5a57a0a6788fb703ac2696" => :big_sur
+    sha256 "d95b0d7b51aacbdb476d43919750f7d124e669a616be60b20917e299f90fc042" => :arm64_big_sur
+    sha256 "764e98ea72aea88b0f644ec2432c5ed883286e596cd7e5442c1d31a79a569208" => :catalina
+    sha256 "0cad1117d350e630069c47b00d9f8903a2daf0aaf9560b31b92a8d0db1c6911c" => :mojave
   end
 
   depends_on "gettext"
@@ -29,10 +29,14 @@ class Vim < Formula
   conflicts_with "macvim",
     because: "vim and macvim both install vi* binaries"
 
-  def install
-    # Fix error: '__declspec' attributes are not enabled
-    ENV.append_to_cflags "-fdeclspec" if ENV.compiler == :clang
+  # Fix vimscript issue that was fixed upstream in 8.2.2251 (just missed our cutoff of every 50 releases)
+  # Remove the next time vim is updated.
+  patch do
+    url "https://github.com/vim/vim/commit/a04d447d3aaddb5b978dd9a0e0186007fde8e09e.patch?full_index=1"
+    sha256 "ddc00f61dc75e3875ea490c56b9cf843f20292844bc34ad434c566ab30e2335a"
+  end
 
+  def install
     ENV.prepend_path "PATH", Formula["python@3.9"].opt_libexec/"bin"
 
     # https://github.com/Homebrew/homebrew-core/pull/1046
