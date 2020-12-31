@@ -1,8 +1,8 @@
 class Pypy3 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy3.6-v7.3.2-src.tar.bz2"
-  sha256 "fd6175fed63ff9fccd7886068078853078948d98afae9bd4f5554c6f7873c10d"
+  url "https://downloads.python.org/pypy/pypy3.7-v7.3.3-src.tar.bz2"
+  sha256 "f6c96401f76331e474cca2d14437eb3b2f68a0f27220a6dcbc537445fe9d5b78"
   license "MIT"
   head "https://foss.heptapod.net/pypy/pypy", using: :hg, branch: "py3.7"
 
@@ -12,10 +12,8 @@ class Pypy3 < Formula
   end
 
   bottle do
-    sha256 "0abe67d4da37ae77c85e8883bcb01ed6b5b8061ad54d4ef9f659b50d9e7a8246" => :catalina
-    sha256 "7b80681acba5b237e6a164e3f91dd1d968ebf5b35b60c503d19e4ad3d903147e" => :mojave
-    sha256 "022d70ee06728680081e825e1d6737fab2d74d0b51fcc758361a01258423df34" => :high_sierra
-    sha256 "006cdc3958a43673ede27c56230a5455053f1649f6144165b78cca504ef6d177" => :x86_64_linux
+    sha256 "856c421f1051e802767e23bdfd58727fb168dcffff904ab1eb486a57fc614f47" => :catalina
+    sha256 "a2f43940fe3fb2604aa01c9f7720c26c74b3cb9e09b7bf0846f4341ded919e17" => :mojave
   end
 
   depends_on "pkg-config" => :build
@@ -35,55 +33,20 @@ class Pypy3 < Formula
   uses_from_macos "unzip"
   uses_from_macos "zlib"
 
-  # packaging depends on pyparsing
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz"
-    sha256 "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"
-  end
-
-  # packaging and setuptools depend on six
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/21/9f/b251f7f8a76dec1d6651be194dfba8fb8d7781d10ab3987190de8391d08e/six-1.14.0.tar.gz"
-    sha256 "236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"
-  end
-
-  # setuptools depends on packaging
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/37/83e3f492eb52d771e2820e88105f605335553fe10422cba9d256faeb1702/packaging-20.3.tar.gz"
-    sha256 "3c292b474fda1671ec57d46d739d072bfd495a4f51ad01a055121d81e952b7a3"
-  end
-
-  # setuptools depends on appdirs
-  resource "appdirs" do
-    url "https://files.pythonhosted.org/packages/48/69/d87c60746b393309ca30761f8e2b49473d43450b150cb08f3c6df5c11be5/appdirs-1.4.3.tar.gz"
-    sha256 "9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92"
-  end
-
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/b5/96/af1686ea8c1e503f4a81223d4a3410e7587fd52df03083de24161d0df7d4/setuptools-46.1.3.zip"
-    sha256 "795e0475ba6cd7fa082b1ee6e90d552209995627a2a227a47c6ea93282f4bfb1"
+    url "https://files.pythonhosted.org/packages/94/23/e9e3d96500c063129a19feb854efbb01e6ffe7d913f1da8176692418ab8e/setuptools-51.1.1.tar.gz"
+    sha256 "0b43d1e0e0ac1467185581c2ceaf86b5c1a1bc408f8f6407687b0856302d1850"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/8e/76/66066b7bc71817238924c7e4b448abdb17eb0c92d645769c223f9ace478f/pip-20.0.2.tar.gz"
-    sha256 "7db0c8ea4c7ea51c8049640e8e6e7fde949de672bfa4949920675563a5a6967f"
+    url "https://files.pythonhosted.org/packages/ca/1e/d91d7aae44d00cd5001957a1473e4e4b7d1d0f072d1af7c34b5899c9ccdf/pip-20.3.3.tar.gz"
+    sha256 "79c1ac8a9dccbec8752761cb5a2df833224263ca661477a2a9ed03ddf4e0e3ba"
   end
 
   def install
-    if OS.mac?
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{prefix}/opt/openssl/lib/pkgconfig:#{prefix}/opt/tcl-tk/lib/pkgconfig"
-      ENV.prepend "LDFLAGS", "-L#{prefix}/opt/tcl-tk/lib"
-      ENV.prepend "CPPFLAGS", "-I#{prefix}/opt/tcl-tk/include"
-    end
-    # Work around "dyld: Symbol not found: _utimensat"
-    ENV.delete("SDKROOT") if OS.mac? && MacOS.version == :sierra && MacOS::Xcode.version >= "9.0"
-
-    unless OS.mac?
-      inreplace "lib_pypy/_tkinter/tklib_build.py" do |s|
-        s.gsub! "/usr/include/tcl", Formula["tcl-tk"].opt_include.to_s
-        s.gsub! "'tcl' + _ver, 'tk' + _ver", "'tcl8.6', 'tk8.6'"
-      end
-    end
+    ENV.prepend_path "PKG_CONFIG_PATH", "#{prefix}/opt/openssl/lib/pkgconfig:#{prefix}/opt/tcl-tk/lib/pkgconfig"
+    ENV.prepend "LDFLAGS", "-L#{prefix}/opt/tcl-tk/lib"
+    ENV.prepend "CPPFLAGS", "-I#{prefix}/opt/tcl-tk/include"
 
     # Having PYTHONPATH set can cause the build to fail if another
     # Python is present, e.g. a Homebrew-provided Python 2.x
@@ -123,7 +86,7 @@ class Pypy3 < Formula
     # we want to avoid putting PyPy's Python.h somewhere that configure
     # scripts will find it.
     bin.install_symlink libexec/"bin/pypy3"
-    bin.install_symlink libexec/"bin/pypy" => "pypy3.6"
+    bin.install_symlink libexec/"bin/pypy" => "pypy3.7"
     lib.install_symlink libexec/"lib/#{shared_library("libpypy3-c")}"
 
     # Delete two files shipped which we do not want to deliver
@@ -153,14 +116,14 @@ class Pypy3 < Formula
 
     # Tell distutils-based installers where to put scripts
     scripts_folder.mkpath
-    (distutils+"distutils.cfg").atomic_write <<~EOS
+    (distutils/"distutils.cfg").atomic_write <<~EOS
       [install]
       install-scripts=#{scripts_folder}
     EOS
 
-    %w[appdirs six packaging setuptools pyparsing pip].each do |pkg|
+    %w[setuptools pip].each do |pkg|
       resource(pkg).stage do
-        system bin/"pypy3", "-s", "setup.py", "install", "--force"
+        system bin/"pypy3", "-s", "setup.py", "--no-user-cfg", "install", "--force", "--verbose"
       end
     end
 
@@ -195,21 +158,22 @@ class Pypy3 < Formula
 
   # The HOMEBREW_PREFIX location of site-packages
   def prefix_site_packages
-    HOMEBREW_PREFIX+"lib/pypy3/site-packages"
+    HOMEBREW_PREFIX/"lib/pypy3/site-packages"
   end
 
   # Where setuptools will install executable scripts
   def scripts_folder
-    HOMEBREW_PREFIX+"share/pypy3"
+    HOMEBREW_PREFIX/"share/pypy3"
   end
 
   # The Cellar location of distutils
   def distutils
-    libexec+"lib-python/3/distutils"
+    libexec/"lib-python/3/distutils"
   end
 
   test do
     system bin/"pypy3", "-c", "print('Hello, world!')"
+    system bin/"pypy3", "-c", "import time; time.clock()"
     system scripts_folder/"pip", "list"
   end
 end
