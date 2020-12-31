@@ -17,6 +17,7 @@ class Mesa < Formula
     sha256 "fd0368e10f736aebc0709ada911ad45d28cfd73e75f63e3197868c4715364f33" => :arm64_big_sur
     sha256 "72afadeb2d338adb20f2d2b20c473355e2f4128091d1ce14650a0d57533971a0" => :catalina
     sha256 "8456a4b58b0288bfed4756410475fc3cb5894d74a895d19d9b4733fd4df4360d" => :mojave
+    sha256 "14a18bdda33c5fb875cf713a542505ac2045a67bfe24e2b7e7daf6095c5a7ff8" => :x86_64_linux
   end
 
   depends_on "meson" => :build
