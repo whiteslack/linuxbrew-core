@@ -19,6 +19,7 @@ class EyeD3 < Formula
     sha256 "a4613276d6a11d859910c4fc261acd46ed8c79f6fb39e1174fc9a0e3aa9a425f" => :arm64_big_sur
     sha256 "fac417d9f81abb4a7f9a7c422e166eecafc1d7eedfeb0db93e47d59d9e1894b7" => :catalina
     sha256 "9a2595374e19a747a5c5e04bd25cd95d80cf99e3a78c9259fe9b4cd9414f9afc" => :mojave
+    sha256 "1537870b63cae0c6b209eb4893c63cde14da32ba7bc482646caef591ddd6caad" => :x86_64_linux
   end
 
   depends_on "python@3.9"
