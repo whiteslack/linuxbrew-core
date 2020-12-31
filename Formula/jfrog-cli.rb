@@ -11,6 +11,7 @@ class JfrogCli < Formula
     sha256 "cb874aca025edb09508ebe68f72d4105afb009996a7de738490e3e916a91c24a" => :arm64_big_sur
     sha256 "6d3e399aa7acfea9323e5a66564cb6104da1416ffd4d8b084f3e059583d93ee9" => :catalina
     sha256 "1af1ca94789aef08275e5807b43ffdf9c8dc2e923a4b6474716ba9774094f315" => :mojave
+    sha256 "16a66bc893e97d6852933022d1d7324f2c128c31298e3f6e37c22a7bb4b420bd" => :x86_64_linux
   end
 
   depends_on "go" => :build
